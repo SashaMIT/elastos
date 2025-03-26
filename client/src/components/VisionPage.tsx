@@ -86,13 +86,13 @@ export function VisionPage() {
           </div>
         </div>
       </div>
-
-      {/* Footer */}
-      <div className="w-full mt-20">
-        <StackedCircularFooter />
+      
+      <div className="w-full">
+        {/* Footer */}
+        <div className="w-full mt-20">
+          <StackedCircularFooter />
+        </div>
       </div>
     </div>
-
-     
   );
 }
