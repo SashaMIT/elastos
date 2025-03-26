@@ -82,7 +82,7 @@ export function VisionPage() {
 
       {/* A World Computer for Everyone Banner */}
           <div className="-mx-4">
-            <WorldComputerBanner />
+            <LogoCarouselDemo />
           </div>
         </div>
       </div>
