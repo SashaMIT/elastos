@@ -80,10 +80,19 @@ export function VisionPage() {
         </div>
       </div>
 
+      {/* A World Computer for Everyone Banner */}
+          <div className="-mx-4">
+            <LogoCarouselDemo />
+          </div>
+        </div>
+      </div>
+
       {/* Footer */}
       <div className="w-full mt-20">
         <StackedCircularFooter />
       </div>
     </div>
+
+     
   );
 }
