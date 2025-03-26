@@ -1,4 +1,3 @@
-
 import React from "react";
 import { TextScramble } from "@/components/ui/text-scramble";
 import { BackgroundCells } from "@/components/blocks/background-ripple-effect";
@@ -26,33 +25,32 @@ export function VisionPage() {
       </div>
 
       {/* Content */}
-      <div className="relative z-10">
-        <div className="min-h-screen flex flex-col items-center justify-center p-4 md:p-8">
-          <div className="max-w-7xl mx-auto w-full">
-            {/* Hero Section */}
-            <div className="flex flex-col items-center text-center mb-16">
-              <TextScramble
-                className="text-4xl md:text-6xl font-bold leading-tight text-black dark:text-white mb-4"
-                scrambles={taglines}
-                scrambleSpeed={20}
-                pauseTime={3000}
-              />
-              <p className="text-lg md:text-xl text-neutral-600 dark:text-neutral-300 max-w-3xl">
-                Elastos is building a new internet infrastructure that empowers users with true ownership of their digital assets, identity, and data.
-              </p>
-            </div>
+      <div className="relative z-10 max-w-7xl mx-auto px-4">
+        <div className="py-16 md:py-24">
+          {/* Hero Section */}
+          <div className="text-center max-w-3xl mx-auto mb-20">
+            <h1 className="font-bold text-6xl mb-8 text-black dark:text-white">
+              <TextScramble phrases={taglines} />
+            </h1>
+            <p className="text-lg text-gray-600 dark:text-gray-300 mb-8">
+              Elastos is building a new paradigm for the internet—a Web3 infrastructure that gives you true digital ownership and privacy, secured by Bitcoin.
+            </p>
+          </div>
 
-            {/* Features Sections */}
-            <div className="mb-20">
+          <div className="space-y-32">
+            {/* Feature Section with Bento Grid */}
+            <div>
               <FeaturesSectionWithBentoGrid />
             </div>
 
-            <div className="mb-20">
-              <WhyTheWorldNeedsThis />
+            {/* FeaturesSectionWithHoverEffects */}
+            <div>
+              <FeaturesSectionWithHoverEffects />
             </div>
 
+            {/* Feature Cards */}
             <div className="mb-20">
-              <FeaturesSectionWithHoverEffects />
+              <FeatureCards />
             </div>
 
             {/* Mission Statement */}
