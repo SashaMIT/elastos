@@ -35,7 +35,7 @@ export default defineConfig({
     },
     host: '0.0.0.0',
     port: 3000,
-    allowedHosts: 'all'
+    allowedHosts: ['c0b56459-2666-4001-a4bb-92502af66317-00-1dvqr9mkxq95y.sisko.replit.dev', 'all']
   },
   optimizeDeps: {
     include: ['react-router-dom', 'embla-carousel-react']
