@@ -34,7 +34,7 @@ export default defineConfig({
     hmr: {
       clientPort: 443
     },
-    allowedHosts: ['024bbc9c-b64f-4b5b-b383-44ef1ae09c01-00-ogqry17bf5w4.sisko.replit.dev', 'all']
+    allowedHosts: ['c0b56459-2666-4001-a4bb-92502af66317-00-1dvqr9mkxq95y.sisko.replit.dev', '024bbc9c-b64f-4b5b-b383-44ef1ae09c01-00-ogqry17bf5w4.sisko.replit.dev', 'all']
   },
   optimizeDeps: {
     include: ['react-router-dom', 'embla-carousel-react']
