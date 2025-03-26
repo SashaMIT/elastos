@@ -1,0 +1,10 @@
+import {
+  IconAlignBoxTopRight
+} from "./chunk-PFEDVWLZ.js";
+import "./chunk-SVB3ZUB5.js";
+import "./chunk-7X7SXSYK.js";
+import "./chunk-WOOG5QLI.js";
+export {
+  IconAlignBoxTopRight as default
+};
+//# sourceMappingURL=IconAlignBoxTopRight-GBE6RDYH.js.map

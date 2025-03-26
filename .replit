@@ -1,0 +1,62 @@
+modules = ["nodejs-20", "web", "nix"]
+hidden = [".config", "package-lock.json"]
+run = "npm run dev"
+
+[nix]
+channel = "stable-24_05"
+
+[deployment]
+run = ["sh", "-c", "npm run dev"]
+deploymentTarget = "cloudrun"
+ignorePorts = false
+
+[[ports]]
+localPort = 5173
+externalPort = 80
+
+[[ports]]
+localPort = 5174
+externalPort = 3000
+
+[[ports]]
+localPort = 5175
+externalPort = 3001
+
+[env]
+PORT = "5173"
+NODE_ENV = "development"
+
+[languages]
+[languages.javascript]
+pattern = "**/{*.js,*.jsx,*.ts,*.tsx}"
+[languages.javascript.languageServer]
+start = "typescript-language-server --stdio"
+
+[packager]
+language = "nodejs"
+[packager.features]
+packageSearch = true
+guessImports = true
+enabledForHosting = true
+
+[unitTest]
+language = "nodejs"
+
+[workflows]
+runButton = "Run"
+
+[[workflows.workflow]]
+name = "Run"
+author = 27016459
+
+[[workflows.workflow.tasks]]
+task = "shell.exec"
+args = "npm run dev"
+
+[[workflows.workflow]]
+name = "Dev"
+author = 27016459
+
+[[workflows.workflow.tasks]]
+task = "shell.exec"
+args = "npm run dev"

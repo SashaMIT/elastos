@@ -1,0 +1,99 @@
+import React from 'react';
+
+export const ForwardRoadmap = () => {
+  const milestones = [
+    {
+      year: '2024',
+      quarter: 'Q1-Q2 2024',
+      items: [
+        {
+          title: 'Elastos 2.0 Launch',
+          details: 'Complete infrastructure upgrade with enhanced security and scalability features'
+        },
+        {
+          title: 'DID 2.0 Integration',
+          details: 'Advanced decentralized identity system with improved verification mechanisms'
+        },
+        {
+          title: 'Smart Contract Updates',
+          details: 'Implementation of new contract standards and optimization protocols'
+        }
+      ]
+    },
+    {
+      year: '2025',
+      quarter: 'Q3-Q4 2025',
+      items: [
+        {
+          title: 'Cross-Chain Bridge',
+          details: 'Improved interoperability with major blockchain networks'
+        },
+        {
+          title: 'Developer Tools Expansion',
+          details: 'New SDKs and comprehensive documentation for developers'
+        },
+        {
+          title: 'ESC Protocol Upgrade',
+          details: 'Enhanced throughput and reduced transaction costs'
+        }
+      ]
+    },
+    {
+      year: '2026',
+      quarter: '2026',
+      items: [
+        {
+          title: 'Web3 OS Integration',
+          details: 'Full integration of decentralized operating system features'
+        },
+        {
+          title: 'Global Adoption Push',
+          details: 'Strategic partnerships and mainstream integration initiatives'
+        },
+        {
+          title: 'Enterprise Solutions',
+          details: 'Specialized features for business and institutional users'
+        }
+      ]
+    }
+  ];
+
+  return (
+    <div className="w-full bg-white dark:bg-[#171717] font-sans md:px-10 relative">
+      <div className="max-w-7xl mx-auto py-10 px-4 md:px-8 lg:px-10">
+        <h2 className="text-2xl md:text-4xl mb-4 text-black dark:text-white max-w-4xl">
+          Forward Roadmap
+        </h2>
+      </div>
+
+      <div className="relative max-w-7xl mx-auto pb-20 px-4 md:px-8 lg:px-10">
+        <div className="flex flex-col md:flex-row gap-8 relative">
+          {milestones.map((milestone, index) => (
+            <div key={index} className="flex-1 relative">
+              <div className="bg-[#5C8EFF]/10 rounded-xl p-6 shadow-lg hover:shadow-xl transition-shadow duration-300">
+                <div className="absolute -top-3 left-1/2 transform -translate-x-1/2 w-6 h-6 rounded-full bg-gradient-to-r from-[#F6921A] to-[#95B5FF] shadow-md" />
+                <div className="text-center mb-6">
+                  <h3 className="text-2xl font-bold bg-gradient-to-r from-[#F6921A] to-[#95B5FF] bg-clip-text text-transparent">
+                    {milestone.quarter}
+                  </h3>
+                </div>
+                <div className="space-y-6">
+                  {milestone.items.map((item, idx) => (
+                    <div key={idx} className="relative">
+                      <h4 className="font-semibold text-lg mb-2 text-black dark:text-white">
+                        {item.title}
+                      </h4>
+                      <p className="text-sm text-gray-600 dark:text-gray-300">
+                        {item.details}
+                      </p>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  );
+};

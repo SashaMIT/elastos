@@ -1,0 +1,118 @@
+  {/* Core Functions Cards */}
+      <div className="w-full max-w-7xl mx-auto px-4 py-16">
+        <h2 className="text-4xl font-bold text-center mb-16">Core Functions of ELA</h2>
+
+        <div className="grid grid-cols-1 gap-8 md:grid-cols-1 lg:grid-cols-1 xl:grid-cols-1">
+          {/* Security & Trust Card */}
+          <div className="rounded-2xl bg-[#5C8EFF]/[0.06] p-8 flex flex-col md:flex-row items-center gap-8">
+            <div className="w-24 h-24 md:w-32 md:h-32 relative flex-shrink-0">
+              <div className="w-full h-full rounded-full bg-gradient-to-br from-orange-400 to-orange-600 flex items-center justify-center">
+                <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                  <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+                </svg>
+              </div>
+            </div>
+            <div className="flex-1">
+              <h3 className="text-2xl font-bold mb-2">Security & Trust</h3>
+              <h4 className="text-xl text-gray-700 dark:text-gray-300 mb-4">Bitcoin-Backed Protection & Reserve Asset</h4>
+              <p className="text-gray-600 dark:text-gray-400">
+                ELA is secured through merged mining with Bitcoin, leveraging Bitcoin's immense hash power. This makes Elastos one of the most secure blockchain networks in existence.
+              </p>
+            </div>
+            <a href="/security" className="inline-flex items-center justify-center px-6 py-3 rounded-full bg-[#5C8EFF]/10 hover:bg-[#5C8EFF]/20 transition-all group">
+              <span className="text-[#5C8EFF] font-medium">Learn More</span>
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="ml-2 text-[#5C8EFF] group-hover:translate-x-1 transition-transform">
+                <path d="M5 12h14M12 5l7 7-7 7"/>
+              </svg>
+            </a>
+          </div>
+
+          {/* Governance Card */}
+          <div className="rounded-2xl bg-[#5C8EFF]/[0.06] p-8 flex flex-col md:flex-row items-center gap-8">
+            <div className="w-24 h-24 md:w-32 md:h-32 relative flex-shrink-0">
+              <div className="w-full h-full rounded-full bg-gradient-to-br from-purple-400 to-purple-600 flex items-center justify-center">
+                <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                  <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
+                </svg>
+              </div>
+            </div>
+            <div className="flex-1">
+              <h3 className="text-2xl font-bold mb-2">Governance & Decentralization</h3>
+              <h4 className="text-xl text-gray-700 dark:text-gray-300 mb-4">Elastos DAO</h4>
+              <p className="text-gray-600 dark:text-gray-400">
+                ELA is the governance token used in the Elastos DAO. ELA holders can vote on proposals, fund projects, and participate in decision-making.
+              </p>
+            </div>
+            <a href="/governance" className="inline-flex items-center justify-center px-6 py-3 rounded-full bg-[#5C8EFF]/10 hover:bg-[#5C8EFF]/20 transition-all group">
+              <span className="text-[#5C8EFF] font-medium">Learn More</span>
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="ml-2 text-[#5C8EFF] group-hover:translate-x-1 transition-transform">
+                <path d="M5 12h14M12 5l7 7-7 7"/>
+              </svg>
+            </a>
+          </div>
+          {/* Digital Identity & Ownership Card */}
+          <div className="rounded-2xl bg-[#5C8EFF]/[0.06] p-8 flex flex-col md:flex-row items-center gap-8">
+            <div className="w-24 h-24 md:w-32 md:h-32 relative flex-shrink-0">
+              <div className="w-full h-full rounded-full bg-gradient-to-br from-green-400 to-green-600 flex items-center justify-center">
+                <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                  <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+                </svg>
+              </div>
+            </div>
+            <div className="flex-1">
+              <h3 className="text-2xl font-bold mb-2">Digital Identity & Ownership</h3>
+              <h4 className="text-xl text-gray-700 dark:text-gray-300 mb-4">Elastos DID</h4>
+              <p className="text-gray-600 dark:text-gray-400">
+                ELA enables the creation and management of Decentralized IDs (DIDs), allowing users to own and control their digital identity.
+              </p>
+            </div>
+            <a href="/identity" className="inline-flex items-center justify-center px-6 py-3 rounded-full bg-[#5C8EFF]/10 hover:bg-[#5C8EFF]/20 transition-all group">
+              <span className="text-[#5C8EFF] font-medium">Learn More</span>
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="ml-2 text-[#5C8EFF] group-hover:translate-x-1 transition-transform">
+                <path d="M5 12h14M12 5l7 7-7 7"/>
+              </svg>
+            </a>
+          </div>
+          {/* Smart Web Services Card */}
+          <div className="rounded-2xl bg-[#5C8EFF]/[0.06] p-8 flex flex-col md:flex-row items-center gap-8">
+            <div className="w-24 h-24 md:w-32 md:h-32 relative flex-shrink-0">
+              <div className="w-full h-full rounded-full bg-gradient-to-br from-yellow-400 to-yellow-600 flex items-center justify-center">
+                <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                  <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+                </svg>
+              </div>
+            </div>
+            <div className="flex-1">
+              <h3 className="text-2xl font-bold mb-2">Smart Web Services</h3>
+              <h4 className="text-xl text-gray-700 dark:text-gray-300 mb-4">Fueling Transactions & Applications</h4>
+              <p className="text-gray-600 dark:text-gray-400">
+                ELA is used for gas fees on Elastos Smart Contract Chain (ESC), an Ethereum-compatible sidechain that supports dApps and DeFi.
+              </p>
+            </div>
+            <a href="/services" className="inline-flex items-center justify-center px-6 py-3 rounded-full bg-[#5C8EFF]/10 hover:bg-[#5C8EFF]/20 transition-all group">
+              <span className="text-[#5C8EFF] font-medium">Learn More</span>
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="ml-2 text-[#5C8EFF] group-hover:translate-x-1 transition-transform">
+                <path d="M5 12h14M12 5l7 7-7 7"/>
+              </svg>
+            </a>
+          </div>
+          {/* Digital Economy & Asset Management Card */}
+          <div className="rounded-2xl bg-[#5C8EFF]/[0.06] p-8 flex flex-col md:flex-row items-center gap-8 md:col-span-2">
+            <div className="w-24 h-24 md:w-32 md:h-32 relative flex-shrink-0">
+              <div className="w-full h-full rounded-full bg-gradient-to-br from-red-400 to-red-600 flex items-center justify-center">
+                <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                  <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+                </svg>
+              </div>
+            </div>
+            <div className="flex-1">
+              <h3 className="text-2xl font-bold mb-2">Digital Economy & Asset Management</h3>
+              <p className="text-gray-600 dark:text-gray-400">
+                ELA can be used for peer-to-peer payments, digital asset purchases, and staking within the Elastos ecosystem.
+              </p>
+            </div>
+            <a href="/economy" className="inline-flex items-center justify-center px-6 py-3 rounded-full bg-[#5C8EFF]/10 hover:bg-[#5C8EFF]/20 transition-all group">
+              <span className="text-[#5C8EFF] font-medium">Learn More</span>
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="ml-2 text-[#5C8EFF] group-hover:translate-x-1 transition-transform">
+                <path d="M5 12h14M12 5l7 7-7 7"/>
+              </svg>

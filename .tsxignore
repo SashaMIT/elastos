@@ -1,0 +1,6 @@
+
+/client/**
+*.timestamp-*.mjs
+.vite/
+dist/
+node_modules/

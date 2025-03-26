@@ -1,0 +1,61 @@
+🧠 Elastos Vision: Building the World Computer
+
+Elastos is creating the World Computer—an open, programmable internet where users own their data, identity, and assets, powered by the most secure blockchain infrastructure in existence.
+
+This isn’t just a blockchain or a smart contract platform. It’s the missing layer of the internet: a complete re-architecture of how information, applications, and value move across the web. The World Computer integrates decentralized computation, identity, storage, and communication—all governed by its users, not corporations.
+
+A platform designed for full-stack decentralization, Elastos combines Bitcoin-backed security with modular Web3 infrastructure, empowering anyone to build sovereign apps and launch their own digital economies.
+
+🔹 Core Tenets of the World Computer
+
+Trustless by DesignSecured by Bitcoin’s hashpower via merged mining, Elastos offers the most secure base layer in the Web3 ecosystem.
+
+Owned by the UserThrough Elastos’ Decentralized Identity (DID), every person, asset, and device has a self-sovereign ID, verifiable on-chain and owned by its rightful holder.
+
+Programmable by AllDevelopers can build across a horizontally scalable multi-chain architecture, launching EVM-compatible dApps and smart contracts powered by ELA.
+
+Peer-to-Peer by DefaultElastos Carrier enables encrypted, decentralized messaging and networking without centralized servers.
+
+Persistent and Sovereign DataWith Elastos Hive, users store, serve, and monetize their data in private cloud vaults that they own—not Big Tech.
+
+Governed by Its PeopleThrough the Elastos DAO and Cyber Republic, the ecosystem evolves based on transparent, community-led governance—enabling anyone to propose, fund, and build.
+
+🌐 Why the World Needs This
+
+The Web is Broken: Data is exploited, identity is owned by platforms, and central points of failure dominate.
+
+The Future Needs Trust: Web3 must deliver more than tokens—it must deliver sovereignty, privacy, and resilience.
+
+Users Want Ownership: People deserve control over their identities, creative works, and digital relationships.
+
+Developers Need Tools: Builders need open infrastructure that is modular, scalable, and secure.
+
+Bitcoin Deserves a Future: Elastos gives Bitcoin a layer-2 vision—where the world's most secure network powers the most advanced internet.
+
+🛠 What You Can Build With Elastos
+
+Decentralized Apps — dApps with native DID login, secure storage, and encrypted communication.
+
+Digital Nations — Communities, platforms, and networks that govern themselves via DAO infrastructure.
+
+Decentralized Marketplaces — Platforms like Elacity where creators tokenize and control access to their digital work.
+
+DeFi Platforms — Borrowing, lending, staking, and on-chain economies secured by ELA and DID.
+
+P2P Web Services — User-hosted websites, APIs, and cloud services shared via Elastos Carrier.
+
+🌍 A World Computer for Everyone
+
+Elastos is more than an ecosystem—it’s an internet built on open values:
+
+No centralized control.
+
+No surveillance capitalism.
+
+No compromise on security.
+
+ELA is the oil of this machine—the single asset that powers the World Computer’s economy, governance, and trust.
+
+Own your identity. Own your data. Own your internet.
+
+Build on Elastos. Power the World Computer.
