@@ -12,50 +12,42 @@ import { WhyTheWorldNeedsThis } from "@/components/blocks/why-the-world-needs-th
 
 export function VisionPage() {
   const taglines = [
-    "Own Your Digital Life – Secured by Bitcoin",
-    "Reclaim Your Internet: Privacy, Freedom, and Digital Ownership",
-    "The Smart Web: An Internet Where You're in Control",
-    "No More Middlemen. No More Censorship. No More Data Exploitation."
+    "The Operating System of the Smart Web",
+    "Digital Freedom & Self-Sovereignty",
+    "Bitcoin-Backed DeFi, Identity & Apps",
+    "Privacy, Control, Ownership"
   ];
 
   return (
-    <div className="relative w-full min-h-screen overflow-hidden">
-      <div className="absolute inset-0 -top-0">
-        <BackgroundCells className="h-screen -mt-16">
-          <div className="h-full flex items-center justify-center">
-            <TextScramble 
-              className="md:text-4xl lg:text-7xl font-medium text-center bg-clip-text text-transparent bg-gradient-to-b from-neutral-100 to-neutral-400"
-            >
-              The World Computer
-            </TextScramble>
-          </div>
-        </BackgroundCells>
-      </div>
-
-      <div className="relative z-10 pt-[80vh]">
-        <div className="w-full bg-background dark:bg-[#171717] py-16 font-sans">
-          <div className="container mx-auto px-4">
-            {/* Vision Statement */}
-            <div className="max-w-4xl mx-auto text-center mb-16">
+    <div className="relative">
+      <div className="relative">
+        <BackgroundCells className="absolute inset-0 z-0" />
+        <div className="relative z-10 px-4 pb-20">
+          <div className="pt-20 md:pt-32 text-center mb-20">
+            <h1 className="text-4xl md:text-6xl font-bold mb-6 tracking-tight bg-clip-text text-black dark:text-white">
+              Elastos: The World Computer
+            </h1>
+            <div className="max-w-2xl mx-auto">
               <TextScramble
-                as="h1"
-                className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-[#F6921A] to-[#95B5FF]"
-                duration={1.2}
-                speed={0.05}
-              >
-                The World Computer
-              </TextScramble>
-              <p className="text-xl md:text-2xl text-gray-700 dark:text-gray-300 italic">
-                Elastos is building the World Computer: a decentralized system where individuals truly can own their identity, data, and digital assets—secured by Bitcoin's trust and immutability.
+                phrases={taglines}
+                className="text-xl md:text-2xl text-muted-foreground dark:text-muted-foreground mb-12"
+              />
+            </div>
+          </div>
+
+          <div className="max-w-7xl mx-auto">
+            <div className="max-w-4xl mx-auto space-y-4 text-center mb-16">
+              <h2 className="text-2xl md:text-4xl font-bold mb-6 text-black dark:text-white">
+                Building the Internet's Missing Layer
+              </h2>
+              <p className="text-lg text-gray-600 dark:text-gray-300 mb-6">
+                Elastos combines blockchain security with decentralized identity and storage to create the foundation for a more secure, private internet where users own their data.
               </p>
             </div>
 
-            {/* Features Grid */}
-            <div className="my-16">
-              <FeaturesSectionWithBentoGrid />
-            </div>
+            {/* Why The World Needs This Section */}
+            <WhyTheWorldNeedsThis />
 
-            {/* Feature Cards */}
             <div className="mb-20">
               <FeatureCards />
             </div>
@@ -65,30 +57,9 @@ export function VisionPage() {
               <h2 className="text-2xl md:text-3xl font-bold mb-4 text-black dark:text-white">
                 Our Mission
               </h2>
-              <p className="text-lg text-gray-700 dark:text-gray-300">
-                To create a new internet infrastructure that gives users and developers full control over their digital interactions, enabling a secure, private, and censorship-resistant online experience.
+              <p className="text-lg text-gray-600 dark:text-gray-300 leading-relaxed">
+                To create a new internet infrastructure where digital rights are respected, privacy is ensured, and decentralized applications can flourish without the constraints of centralized control.
               </p>
-            </div>
-
-            {/* Technology Stack */}
-            <div className="w-full mb-20">
-              <h2 className="text-2xl md:text-3xl font-bold mb-8 text-center text-black dark:text-white">
-                Technology Stack
-              </h2>
-              <FeaturesSectionWithHoverEffects />
-            </div>
-
-            {/* Taglines */}
-            <div className="max-w-4xl mx-auto text-center">
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                {taglines.map((tagline, index) => (
-                  <div key={index} className="bg-[#5C8EFF]/[0.06] p-4 rounded-lg border border-gray-100 dark:border-gray-800">
-                    <p className="text-lg font-medium text-gray-800 dark:text-gray-200">
-                      {tagline}
-                    </p>
-                  </div>
-                ))}
-              </div>
             </div>
           </div>
         </div>
