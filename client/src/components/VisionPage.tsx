@@ -11,6 +11,7 @@ import { WhyTheWorldNeedsThis } from "@/components/blocks/why-the-world-needs-th
 import { WhatYouCanBuild } from "@/components/blocks/what-you-can-build";
 import { WorldComputerBanner } from "@/components/blocks/world-computer-banner";
 import { DetailedVisionSection } from "@/components/blocks/detailed-vision-section";
+import { LogoCarouselDemo } from "@/components/LogoCarouselDemo";
 
 export function VisionPage() {
   const technologies = [
@@ -65,22 +66,17 @@ export function VisionPage() {
             <WhyTheWorldNeedsThis />
           </div>
          
-
           {/* Features Grid */}
           <div className="-mt-55 mb-0">
             <FeaturesSectionWithBentoGrid />
           </div>
-
          
-
           {/* A World Computer for Everyone Banner */}
           <div className="-mx-4">
             <WorldComputerBanner />
           </div>
-        </div>
-      </div>
-
-      {/* A World Computer for Everyone Banner */}
+          
+          {/* Logo Carousel */}
           <div className="-mx-4">
             <LogoCarouselDemo />
           </div>
