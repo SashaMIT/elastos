@@ -64,7 +64,7 @@ export function VisionPage() {
             </div>
 
             {/* World Computer Banner */}
-            <div className="mb-20">
+            <div className="mb-20 p-8 bg-gradient-to-br from-[#5C8EFF]/10 to-[#F6921A]/10 rounded-2xl border border-[#5C8EFF]/30">
               <WorldComputerBanner />
             </div>
 
