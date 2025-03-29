@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 
 export function WorldComputerBanner() {
   return (
-    <div className="w-full py-20">
+    <div className="w-full py-20 bg-gradient-to-br from-[#5C8EFF]/10 to-[#F6921A]/10 rounded-2xl border border-[#5C8EFF]/30">
       <div className="max-w-4xl mx-auto px-4 text-center">
         <motion.h2 
           initial={{ opacity: 0, y: 20 }}
