@@ -13,6 +13,7 @@ import WhitepaperPage from './pages/WhitepaperPage';
 import EcosystemPage from './pages/EcosystemPage'; 
 import NewsPage from './pages/NewsPage'; 
 import FaqPage from './pages/FaqPage'; 
+import Explorer from './pages/Explorer'; // Added import for Explorer page
 
 
 function App() {
@@ -29,6 +30,7 @@ function App() {
       <Route path="/news" element={<NewsPage />} />
       <Route path="/faq" element={<FaqPage />} />
       <Route path="/whitepaper" element={<WhitepaperPage />} />
+      <Route path="/explorer" element={<Explorer />} /> {/* Added route for Explorer page */}
     </Routes>
   );
 }

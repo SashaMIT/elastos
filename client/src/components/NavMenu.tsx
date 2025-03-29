@@ -155,7 +155,7 @@ export function NavMenu() {
                     <Link to="/explorer">
                       <NavigationMenuLink className={navigationMenuTriggerStyle()}>
                         <div className="flex items-center gap-2">
-                          <MessageCircle className="h-4 w-4 text-[#94b5ff]" />
+                          <Search className="h-4 w-4 text-[#94b5ff]" />
                           <span>Explorer</span>
                         </div>
                       </NavigationMenuLink>
