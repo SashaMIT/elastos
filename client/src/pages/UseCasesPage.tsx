@@ -6,7 +6,7 @@ import { SplashCursor } from "@/components/ui/splash-cursor";
 import { StackedCircularFooter } from "@/components/ui/stacked-circular-footer";
 import { LogoCarouselDemo } from "@/components/LogoCarouselDemo";
 import { Layout } from "@/components/Layout";
-import { CodeBlock } from "@/components/CodeBlock";
+import { CodeBlock } from "@/components/ui/code-block";
 import { UseCaseModal } from "@/components/UseCaseModal";
 
 interface UseCase {
