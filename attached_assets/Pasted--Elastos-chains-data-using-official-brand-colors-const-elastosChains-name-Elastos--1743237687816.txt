@@ -1,0 +1,66 @@
+// Elastos chains data - using official brand colors
+const elastosChains = [
+  {
+    name: "Elastos Mainchain",
+    description: "The Layer 1 blockchain of the Elastos ecosystem, secured by merged mining with Bitcoin",
+    icon: <Box className="w-10 h-10 text-[#F7921A]" />,
+    features: [
+      "Secured by BTC hashpower",
+      "Consensus via AuxPoW + DPoS",
+      "UTXO-based transaction model",
+      "Native ELA coins",
+      "Provides root of trust for sidechains",
+      "Cross-chain interoperability"
+    ],
+    explorerUrl: "https://blockchain.elastos.io/",
+    ctaText: "MC Explorer",
+    color: "from-[#F7921A]/10 to-[#F7921A]/5",
+    borderColor: "border-[#F7921A]/20",
+    textColor: "text-[#F7921A]",
+    gradientColors: "from-[#F7921A] to-[#F7921A]/70",
+    glowColor: "bg-[#F7921A]/20",
+    shortName: "MC"
+  },
+  {
+    name: "Elastos ESC",
+    description: "A Layer 2 Ethereum-compatible sidechain designed for smart contracts and dApp's",
+    icon: <Code className="w-10 h-10 text-[#8BABFF]" />,
+    features: [
+      "EVM compatibility",
+      "Smart contract platform",
+      "Support for Solidity",
+      "Web3 API compatibility",
+      "Fast block times (~5 seconds)",
+      "Low transaction fees"
+    ],
+    explorerUrl: "https://esc.elastos.io/",
+    ctaText: "ESC Explorer",
+    color: "from-[#8BABFF]/10 to-[#8BABFF]/5",
+    borderColor: "border-[#8BABFF]/20",
+    textColor: "text-[#8BABFF]",
+    gradientColors: "from-[#8BABFF] to-[#8BABFF]/70",
+    glowColor: "bg-[#8BABFF]/20",
+    shortName: "ESC"
+  },
+  {
+    name: "Elastos EID",
+    description: "A Layer 2 specialized sidechain focused on decentralized identity solutions",
+    icon: <Fingerprint className="w-10 h-10 text-[#8BABFF]" />,
+    features: [
+      "W3C DID compliant",
+      "Verifiable credentials",
+      "Self-sovereign identity",
+      "Privacy preservation",
+      "Identity verification",
+      "Credential management"
+    ],
+    explorerUrl: "https://eid.elastos.io/",
+    ctaText: "EID Explorer",
+    color: "from-[#8BABFF]/10 to-[#8BABFF]/5", 
+    borderColor: "border-[#8BABFF]/20",
+    textColor: "text-[#8BABFF]",
+    gradientColors: "from-[#8BABFF] to-[#4758A8]",
+    glowColor: "bg-[#8BABFF]/20",
+    shortName: "EID"
+  }
+];

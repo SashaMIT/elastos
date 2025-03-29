@@ -62,7 +62,7 @@ const elastosChains = [
   },
   {
     name: "Elastos ESC",
-    description: "A Layer 2 Ethereum-compatible sidechain designed for smart contracts and dApp deployment",
+    description: "A Layer 2 Ethereum-compatible sidechain designed for smart contracts and dApp's",
     icon: <Code className="w-10 h-10 text-[#8BABFF]" />,
     features: [
       "EVM compatibility",
