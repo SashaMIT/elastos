@@ -154,7 +154,7 @@ export default function ElaUtilityPage() {
               </div>
               <h3 className="font-semibold text-lg mb-2">Stats</h3>
               <p className="text-gray-600 dark:text-gray-300 text-sm mb-4">Track real-time metrics for Elastos blockchain performance and user adoption.</p>
-              <a href="/stats" className="px-3 py-2 bg-[rgba(246,146,26,0.10)] text-[#F6921A] rounded-full font-medium transition-all flex items-center gap-1 border border-[rgba(246,146,26,0.50)] text-sm">
+              <a href="/stats" className="inline-flex px-3 py-2 bg-[rgba(246,146,26,0.10)] text-[#F6921A] rounded-full font-medium transition-all items-center gap-1 border border-[rgba(246,146,26,0.50)] text-sm">
                 <span>Learn More</span>
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 35 34" fill="none">
                   <circle cx="17.333" cy="17" r="16.75" stroke="#F6921A" strokeOpacity="0.5" strokeWidth="0.5"/>
@@ -176,7 +176,7 @@ export default function ElaUtilityPage() {
               <p className="text-gray-600 dark:text-gray-300 text-sm mb-4">Explore how ELA maintains Bitcoin-level security and protects your assets.</p>
               <a 
                 href="/security"
-                className="px-3 py-2 bg-[rgba(246,146,26,0.10)] text-[#F6921A] rounded-full font-medium transition-all flex items-center gap-1 border border-[rgba(246,146,26,0.50)]"
+                className="inline-flex px-3 py-2 bg-[rgba(246,146,26,0.10)] text-[#F6921A] rounded-full font-medium transition-all items-center gap-1 border border-[rgba(246,146,26,0.50)] text-sm"
               >
                 <span>Learn More</span>
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 35 34" fill="none">
@@ -197,7 +197,7 @@ export default function ElaUtilityPage() {
               </div>
               <h3 className="font-semibold text-lg mb-2">Supply</h3>
               <p className="text-gray-600 dark:text-gray-300 text-sm mb-4">Understand ELA's tokenomics, emission schedule, and circulation metrics.</p>
-              <a href="/supply" className="px-3 py-2 bg-[rgba(246,146,26,0.10)] text-[#F6921A] rounded-full font-medium transition-all flex items-center gap-1 border border-[rgba(246,146,26,0.50)] text-sm">
+              <a href="/supply" className="inline-flex px-3 py-2 bg-[rgba(246,146,26,0.10)] text-[#F6921A] rounded-full font-medium transition-all items-center gap-1 border border-[rgba(246,146,26,0.50)] text-sm">
                 <span>Learn More</span>
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 35 34" fill="none">
                   <circle cx="17.333" cy="17" r="16.75" stroke="#F6921A" strokeOpacity="0.5" strokeWidth="0.5"/>
@@ -219,7 +219,7 @@ export default function ElaUtilityPage() {
               <p className="text-gray-600 dark:text-gray-300 text-sm mb-4">Get ELA on leading exchanges and decentralized platforms for easy access.</p>
               <a 
                 href="/buy-ela"
-                className="px-3 py-2 bg-[rgba(246,146,26,0.10)] text-[#F6921A] rounded-full font-medium transition-all flex items-center gap-1 border border-[rgba(246,146,26,0.50)]"
+                className="inline-flex px-3 py-2 bg-[rgba(246,146,26,0.10)] text-[#F6921A] rounded-full font-medium transition-all items-center gap-1 border border-[rgba(246,146,26,0.50)] text-sm"
               >
                 <span>Learn More</span>
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 35 34" fill="none">
