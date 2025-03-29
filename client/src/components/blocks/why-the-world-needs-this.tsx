@@ -53,7 +53,7 @@ export function WhyTheWorldNeedsThis() {
       <div className="max-w-7xl mx-auto">
         <h2 className="text-3xl md:text-4xl font-bold text-center mb-12">Why the World Needs This</h2>
 
-        <div className="flex justify-center mb-16">
+        <div className="flex justify-center mb-8">
           <div className="rounded-full border-[0.5px] border-[#95B5FF]/30 bg-[#95B5FF]/10 dark:bg-[#95B5FF]/10 flex overflow-x-auto">
             {reasons.map((reason, index) => (
               <button
@@ -78,10 +78,10 @@ export function WhyTheWorldNeedsThis() {
           animate={{ opacity: 1, y: 0 }}
           exit={{ opacity: 0, y: -20 }}
           transition={{ duration: 0.3 }}
-          className={`bg-transparent border-0 shadow-none p-8`} 
+          className={`bg-transparent border-0 shadow-none p-4 md:p-8`} 
         >
           <div className="flex flex-col md:flex-row md:items-start gap-6">
-            <div className="flex-shrink-0 bg-[#24272f] p-4 rounded-full shadow-sm">
+            <div className="flex-shrink-0 bg-[#24272f] p-4 rounded-full shadow-sm mx-auto md:mx-0" style={{ width: 'fit-content' }}>
               {selectedReason.icon}
             </div>
             <div>
