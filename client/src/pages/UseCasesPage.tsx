@@ -116,12 +116,7 @@ DID (device identity), Carrier (mesh networking), ESC (payment logic), ELA (valu
 Transparent decisions. Verified voters. Immutable records.
 Elastos DAO infrastructure lets you build governance systems with real identity, not bots. Use DID to authenticate voters, ESC to manage proposals, and Hive to store minutes or on-chain referenda.
 
-💡 What You Can Build:
-
-Local or national governance tools for communities, DAOs, or NGOs.
-Protocol DAOs with anti-sybil voting and smart contract-controlled treasuries.
-Alumni or membership orgs where verified identity enables trusted participation.
-Funding DAOs that allow creators to raise capital and report progress to token holders.
+💡 What You Can Build: Local or national governance tools for communities, DAOs, or NGOs. Protocol DAOs with anti-sybil voting and smart contract-controlled treasuries. Alumni or membership orgs where verified identity enables trusted participation. Funding DAOs that allow creators to raise capital and report progress to token holders.
 
 🔧 Tech Used:
 DID (voter verification), ESC (DAO logic), Hive (record-keeping), ELA (collateral/staking).`
@@ -137,7 +132,7 @@ DID (voter verification), ESC (DAO logic), Hive (record-keeping), ELA (collatera
 Issue, hold, and verify digital credentials—no middlemen needed.
 Using Elastos DID, institutions can issue tamper-proof certificates that are easily verified on-chain but stored privately off-chain by users.
 
-💡 What You Can Build:
+What You Can Build:
 
 University diplomas that can be instantly verified by employers.
 Professional licenses (law, medicine, trades) with cryptographic proof.
