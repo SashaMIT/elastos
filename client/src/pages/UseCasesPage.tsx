@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect } from "react";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { BackgroundCells } from "@/components/blocks/background-ripple-effect";
@@ -20,10 +19,20 @@ interface UseCase {
   modalContent: string; // Added modalContent property
 }
 
-const UseCasesPage = () => {
-  const [selectedCategory, setSelectedCategory] = useState<string>("All");
-  const [selectedUseCase, setSelectedUseCase] = useState<UseCase | null>(null);
-  const [isModalOpen, setIsModalOpen] = useState(false);
+const UseCasesPage: React.FC = () => {
+  const [isLoading, setIsLoading] = useState(true);
+  const [selectedCategory, setSelectedCategory] = useState<string | null>(null);
+  const [selectedUseCase, setSelectedUseCase] = useState<UseCase | null>(null); // Added state for selected use case
+  const [isModalOpen, setIsModalOpen] = useState<boolean>(false); // Added modal open state
+
+  useEffect(() => {
+    // Simulate loading for demonstration
+    const timer = setTimeout(() => {
+      setIsLoading(false);
+    }, 800);
+
+    return () => clearTimeout(timer);
+  }, []);
 
   // Sample use cases data with modal content
   const useCases: UseCase[] = [
@@ -34,18 +43,7 @@ const UseCasesPage = () => {
       image: "https://placehold.co/600x400/2a2a2a/FFFFFF?text=Digital+Identity+Management",
       category: "Identity",
       link: "https://elastos.info/did/",
-      modalContent: `🔐 Digital Identity Management
-Empower a world where users control their digital lives.
-Elastos DID is not just a decentralized login—it's a verifiable, self-sovereign identity system for people, devices, and assets. Unlike third-party OAuth systems, Elastos DID gives users complete control over how their data is shared across applications.
-
-💡 What You Can Build:
-
-Passwordless login systems that authenticate users via blockchain-anchored DID.
-Platforms where users own and control their personal profiles—porting them across apps.
-Subscription services that authenticate users via verifiable credentials, not email-password pairs.
-KYC/AML-compliant apps that respect privacy through selective disclosure.
-🔧 Tech Used:
-Elastos DID, Hive (for storing verifiable credentials), Carrier (for DID-based comms), ESC (for permissioning access via smart contracts).`
+      modalContent: "Digital Identity Management Modal Content" // Add modal content here
     },
     {
       id: 2,
@@ -54,18 +52,7 @@ Elastos DID, Hive (for storing verifiable credentials), Carrier (for DID-based c
       image: "https://placehold.co/600x400/2a2a2a/FFFFFF?text=Data+Marketplaces",
       category: "Data",
       link: "#",
-      modalContent: `📊 Data Marketplaces
-Turn personal data into a personal asset.
-Using Elastos DID + Hive, users can selectively package, price, and sell their own data. Buyers verify data provenance via DID, while Hive ensures it's stored securely and off-chain.
-
-💡 What You Can Build:
-
-Marketplaces where users license their health or fitness data to researchers.
-AI training datasets with verifiable origin and usage rights tied to creators.
-Anonymous web browsing where attention data is paid for in ELA.
-Zero-party marketing platforms where users opt in to share insights with brands.
-🔧 Tech Used:
-Hive (personal vaults), DID (ownership/auth), ESC (settlement), ELA (payments).`
+      modalContent: "Data Marketplaces Modal Content" // Add modal content here
     },
     {
       id: 3,
@@ -74,18 +61,7 @@ Hive (personal vaults), DID (ownership/auth), ESC (settlement), ELA (payments).`
       image: "https://placehold.co/600x400/2a2a2a/FFFFFF?text=NFT+Platforms",
       category: "Assets",
       link: "https://elacity.io",
-      modalContent: `🎨 NFT Platforms
-Go beyond ownership—build programmable digital rights.
-Elastos NFTs are not just tokens—they're tied to verifiable creators via DID and powered by a full rights system. Integrate DRM, fractional ownership, or time-based access to digital goods using ESC and smart contracts.
-
-💡 What You Can Build:
-
-NFT marketplaces with auto-enforced royalties and DID-authenticated creators.
-Music platforms where fans buy limited access to tracks, albums, or live sessions.
-Film or eBook platforms where NFTs unlock access instead of downloads.
-Games where in-game items are truly user-owned, tradable, and provably scarce.
-🔧 Tech Used:
-DID (authorship), ESC (NFT logic), Hive (media hosting), Elacity Runtime (playback rules).`
+      modalContent: "NFT Platforms Modal Content" // Add modal content here
     },
     {
       id: 4,
@@ -104,13 +80,14 @@ Twitter-style platforms where no central party can delete or shadowban posts.
 Creators owning their followership with portable DIDs across social dApps.
 Voice chat apps where connections are encrypted and peer-to-peer.
 Messaging dApps that store message history in personal Hive vaults.
+
 🔧 Tech Used:
 Carrier (P2P communication), DID (user identity), Hive (content storage), ESC (tipping or governance).`
     },
     {
-      id: 5,
+      id: 7,
       title: "Secure IoT Networks",
-      description: "Internet of Things solutions where devices have secure digital identities, enabling trustworthy machine-to-machine communication and autonomous transactions.",
+      description: "IoT devices with verifiable identities that can securely communicate, share data, and perform micropayments without centralized servers or vulnerability to network attacks.",
       image: "/images/usecases/usecase-default.jpg",
       category: "IoT",
       link: "#",
@@ -129,6 +106,70 @@ Automated vehicles that transact tolls or energy payments in real time.
 DID (device identity), Carrier (mesh networking), ESC (payment logic), ELA (value transfer).`
     },
     {
+      id: 8,
+      title: "Decentralized Governance",
+      description: "DAO frameworks for community-led decision making, with transparent voting mechanisms secured by Elastos DID for authentication and verification of participants.",
+      image: "/images/usecases/usecase-default.jpg",
+      category: "Governance",
+      link: "https://www.cyberrepublic.org",
+      modalContent: `🗳 Decentralized Governance
+Transparent decisions. Verified voters. Immutable records.
+Elastos DAO infrastructure lets you build governance systems with real identity, not bots. Use DID to authenticate voters, ESC to manage proposals, and Hive to store minutes or on-chain referenda.
+
+💡 What You Can Build: Local or national governance tools for communities, DAOs, or NGOs. Protocol DAOs with anti-sybil voting and smart contract-controlled treasuries. Alumni or membership orgs where verified identity enables trusted participation. Funding DAOs that allow creators to raise capital and report progress to token holders.
+
+🔧 Tech Used:
+DID (voter verification), ESC (DAO logic), Hive (record-keeping), ELA (collateral/staking).`
+    },
+    {
+      id: 9,
+      title: "Verifiable Credentials",
+      description: "Issue and verify digital credentials for education, professional certifications, and identity documents without relying on centralized authorities.",
+      image: "/images/usecases/usecase-default.jpg",
+      category: "Identity",
+      link: "#",
+      modalContent: `🎓 Verifiable Credentials
+Issue, hold, and verify digital credentials—no middlemen needed.
+Using Elastos DID, institutions can issue tamper-proof certificates that are easily verified on-chain but stored privately off-chain by users.
+
+What You Can Build:
+
+University diplomas that can be instantly verified by employers.
+Professional licenses (law, medicine, trades) with cryptographic proof.
+Event tickets or certifications that can't be forged or transferred without rules.
+Citizen IDs with selective data disclosure (e.g., prove you're over 18 without showing DOB).
+
+🔧 Tech Used:
+DID (issuer + holder), Hive (credential storage), ESC (rules + revocation), ELA (fee/payment).`
+    },
+    {
+      id: 10,
+      title: "Digital Content Marketplace",
+      description: "Platforms for creators to distribute digital content directly to consumers with verifiable ownership, built-in royalty mechanisms, and protection against unauthorized copying.",
+      image: "/images/usecases/usecase-default.jpg",
+      category: "Content",
+      link: "#",
+      modalContent: "Digital Content Marketplace Modal Content" // Add modal content here
+    },
+    {
+      id: 11,
+      title: "Decentralized Storage Solutions",
+      description: "Secure, encrypted storage networks where users maintain ownership of their data while benefiting from distributed redundancy and access control.",
+      image: "/images/usecases/usecase-default.jpg",
+      category: "Storage",
+      link: "#",
+      modalContent: "Decentralized Storage Solutions Modal Content" // Add modal content here
+    },
+    {
+      id: 12,
+      title: "Supply Chain Tracking",
+      description: "End-to-end visibility in supply chains with immutable records of product journeys, enabling verification of authenticity, origin, and handling conditions.",
+      image: "/images/usecases/usecase-default.jpg",
+      category: "Enterprise",
+      link: "#",
+      modalContent: "Supply Chain Tracking Modal Content" // Add modal content here
+    },
+    {
       id: 6,
       title: "Decentralized Finance",
       description: "Financial applications that operate without centralized intermediaries, offering transparent and permissionless access to financial services.",
@@ -145,309 +186,171 @@ Peer-to-peer lending platforms with identity-based credit scoring.
 Decentralized savings products for users in emerging markets.
 Insurance DAOs that payout based on smart oracles.
 Cross-chain bridges to Bitcoin and other assets, secured by merged mining.
+
 🔧 Tech Used:
 ESC (DeFi logic), DID (user identity), ELA (gas, staking, collateral), Hive (off-chain data), BTC (security via AuxPoW).`
-    },
-    {
-      id: 7,
-      title: "Privacy-Preserving Services",
-      description: "Applications that respect user privacy by design, allowing selective disclosure of information and giving users control over their digital footprint.",
-      image: "/images/usecases/usecase-default.jpg",
-      category: "Privacy",
-      link: "#",
-      modalContent: `🛡️ Privacy-Preserving Services
-Privacy by design, control by default.
-Using Elastos' DID and Hive architecture, build services where users control what data is shared, with whom, and for how long. Leverage zero-knowledge proofs for validation without revealing underlying data.
-
-💡 What You Can Build:
-
-Healthcare apps where patient data remains private but verifiable.
-Dating platforms with verified attributes but protected personal details.
-Anonymous voting systems with cryptographic integrity.
-Selective disclosure identity verification without exposing full credentials.
-🔧 Tech Used:
-DID (identity management), Hive (private storage), Carrier (encrypted communications), ESC (zero-knowledge validation).`
-    },
-    {
-      id: 8,
-      title: "Decentralized Governance",
-      description: "DAO frameworks for community-led decision making, with transparent voting mechanisms secured by Elastos DID for authentication and verification of participants.",
-      image: "/images/usecases/usecase-default.jpg",
-      category: "Governance",
-      link: "https://www.cyberrepublic.org",
-      modalContent: `🗳 Decentralized Governance
-Transparent decisions. Verified voters. Immutable records.
-Elastos DAO infrastructure lets you build governance systems with real identity, not bots. Use DID to authenticate voters, ESC to manage proposals, and Hive to store minutes or on-chain referenda.
-
-💡 What You Can Build:
-
-Local or national governance tools for communities, DAOs, or NGOs.
-Protocol DAOs with anti-sybil voting and smart contract-controlled treasuries.
-Alumni or membership orgs where verified identity enables trusted participation.
-Funding DAOs that allow creators to raise capital and report progress to token holders.
-🔧 Tech Used:
-DID (voter verification), ESC (DAO logic), Hive (record-keeping), ELA (collateral/staking).`
-    },
-    {
-      id: 9,
-      title: "Verifiable Credentials",
-      description: "Issue and verify digital credentials for education, professional certifications, and identity documents without relying on centralized authorities.",
-      image: "/images/usecases/usecase-default.jpg",
-      category: "Identity",
-      link: "#",
-      modalContent: `🎓 Verifiable Credentials
-Issue, hold, and verify digital credentials—no middlemen needed.
-Using Elastos DID, institutions can issue tamper-proof certificates that are easily verified on-chain but stored privately off-chain by users.
-
-💡 What You Can Build:
-
-University diplomas that can be instantly verified by employers.
-Professional licenses (law, medicine, trades) with cryptographic proof.
-Event tickets or certifications that can't be forged or transferred without rules.
-Citizen IDs with selective data disclosure (e.g., prove you're over 18 without showing DOB).
-🔧 Tech Used:
-DID (issuer + holder), Hive (credential storage), ESC (rules + revocation), ELA (fee/payment).`
-    },
-    {
-      id: 10,
-      title: "Digital Content Marketplace",
-      description: "Platforms for creators to distribute digital content directly to consumers with verifiable ownership, built-in royalty mechanisms, and protection against unauthorized copying.",
-      image: "/images/usecases/usecase-default.jpg",
-      category: "Content",
-      link: "#",
-      modalContent: `📺 Digital Content Marketplace
-Creators distribute and monetize with total control.
-With Elastos, content isn't streamed from centralized servers—it's stored in Hive, verified with DID, and monetized via ESC smart contracts or ELA payments. Elacity makes this easy with tools for access control, licensing, and dynamic pricing.
-
-💡 What You Can Build:
-
-A Spotify alternative where artists publish and get paid instantly, per stream.
-eBook platforms where ownership is NFT-based, not platform-locked.
-Video marketplaces where viewers pay per view or rent content directly.
-Content subscription services where credentials control access tiers.
-🔧 Tech Used:
-Hive (media hosting), DID (creator + consumer identity), ESC (access rights), Elacity Runtime, ELA (settlement).`
-    },
-    {
-      id: 11,
-      title: "Decentralized Storage Solutions",
-      description: "Secure, encrypted storage networks where users maintain ownership of their data while benefiting from distributed redundancy and access control.",
-      image: "/images/usecases/usecase-default.jpg",
-      category: "Storage",
-      link: "#",
-      modalContent: `🗄 Decentralized Storage Solutions
-Own your data vault. Choose your host. Control your access.
-Elastos Hive allows users and developers to store data in personal, permissioned vaults—with end-to-end encryption and total data portability. Hive can be self-hosted, trusted-hosted, or decentralized across community nodes.
-
-💡 What You Can Build:
-
-Decentralized Dropbox alternatives.
-Messaging apps where chat histories are user-owned, not cloud-controlled.
-Decentralized CRMs or productivity suites where no provider sees your files.
-Healthcare apps where patient records live with the patient.
-🔧 Tech Used:
-Hive (data storage), DID (access control), Carrier (data routing), ESC (payment/token gating).`
-    },
-    {
-      id: 12,
-      title: "Supply Chain Tracking",
-      description: "End-to-end visibility in supply chains with immutable records of product journeys, enabling verification of authenticity, origin, and handling conditions.",
-      image: "/images/usecases/usecase-default.jpg",
-      category: "Enterprise",
-      link: "#",
-      modalContent: `📦 Supply Chain Tracking
-Transparency you can verify, not just trust.
-Elastos enables every item or actor in a supply chain to carry a DID, log their touchpoints immutably on-chain, and report status/data via secure protocols.
-
-💡 What You Can Build:
-
-Food traceability systems from farm to fork.
-Anti-counterfeit platforms for luxury goods or pharmaceuticals.
-Shipment tracking for eCommerce with real-time updates via IoT + Hive.
-ESG compliance dashboards that show full product lifecycle data.
-🔧 Tech Used:
-DID (actor/item IDs), Hive (data logs), Carrier (device comms), ESC (traceability tokens).`
-    },
+    }
   ];
 
-  const categories = ["All", ...Array.from(new Set(useCases.map((useCase) => useCase.category)))];
-
-  const filteredUseCases = selectedCategory === "All"
-    ? useCases
-    : useCases.filter((useCase) => useCase.category === selectedCategory);
-
-  const handleOpenModal = (useCase: UseCase) => {
+  const openModal = (useCase: UseCase) => {
     setSelectedUseCase(useCase);
     setIsModalOpen(true);
   };
 
-  const handleCloseModal = () => {
+  const closeModal = () => {
     setIsModalOpen(false);
     setSelectedUseCase(null);
   };
 
+  // Extract unique categories from use cases
+  const categories = Array.from(new Set(useCases.map(useCase => useCase.category)));
+
+  // Filter use cases by selected category
+  const filteredUseCases = selectedCategory
+    ? useCases.filter(useCase => useCase.category === selectedCategory)
+    : useCases;
+
   return (
-    <Layout>
-      <div className="relative min-h-screen bg-white dark:bg-[#171717]">
-        {/* Background */}
-        <div className="absolute inset-0 overflow-hidden">
-          <BackgroundCells className="w-full h-full" />
+    <div className="min-h-screen bg-white dark:bg-[#171717]">
+      <Layout>
+        <div className="w-full relative">
+          <BackgroundCells className="bg-slate-950 h-[50vh] -mt-60 pt-0">
+            <div className="relative flex flex-col items-center justify-center h-full text-center" style={{ zIndex: 5 }}>
+              <div className="absolute inset-0 pointer-events-none" style={{ zIndex: 0 }}>
+                <SplashCursor />
+              </div>
+              <div className="w-full mt-[3rem] space-y-4 px-4 md:px-0">
+                <h1 className="text-4xl md:text-6xl font-telegraf-ultralight font-extralight leading-tight text-white tracking-tight text-center">
+                  Elastos Use Cases
+                </h1>
+                <p className="text-md md:text-xl font-telegraf-ultralight text-white/70 max-w-3xl mx-auto">
+                  Transforming digital identity, ownership, and connectivity across industries.
+                </p>
+              </div>
+            </div>
+          </BackgroundCells>
         </div>
 
-        {/* Content */}
-        <div className="relative z-10 max-w-7xl mx-auto px-4 py-16">
-          {/* Header */}
-          <div className="text-center mb-16">
-            <h1 className="text-4xl md:text-5xl font-bold mb-6 text-black dark:text-white">
-              Use Cases
-            </h1>
-            <p className="text-lg text-gray-600 dark:text-gray-300 max-w-3xl mx-auto mb-8">
-              Elastos provides the infrastructure for a new generation of decentralized applications
-              that prioritize user ownership, privacy, and interoperability.
-            </p>
+        <div className="max-w-7xl mx-auto px-4 pb-20 pt-0">
+          <div className="text-center max-w-3xl mx-auto mb-16">
 
-            {/* Category filters */}
-            <div className="flex flex-wrap justify-center gap-3 mb-12">
-              {categories.map((category) => (
-                <button
+            {/* Category filter */}
+            <div className="flex flex-wrap justify-center gap-2 mb-8">
+              <span
+                className={`px-4 py-2 ${!selectedCategory ? 'bg-[#F6921A]/10 border border-[#F6921A]/30' : 'bg-[#5C8EFF]/10 border border-[#5C8EFF]/30'} text-white rounded-full text-base font-medium cursor-pointer`}
+                onClick={() => setSelectedCategory(null)}
+              >
+                All
+              </span>
+              {categories.map(category => (
+                <span
                   key={category}
+                  className={`px-4 py-2 ${selectedCategory === category ? 'bg-[#F6921A]/10 border border-[#F6921A]/30' : 'bg-[#5C8EFF]/10 border border-[#5C8EFF]/30'} text-white rounded-full text-base font-medium cursor-pointer`}
                   onClick={() => setSelectedCategory(category)}
-                  className={`px-4 py-2 rounded-full text-sm font-medium ${
-                    selectedCategory === category
-                      ? "bg-blue-500 text-white"
-                      : "bg-gray-100 text-gray-800 dark:bg-gray-800 dark:text-gray-200 hover:bg-gray-200 dark:hover:bg-gray-700"
-                  }`}
                 >
                   {category}
-                </button>
+                </span>
               ))}
             </div>
           </div>
 
-          {/* Use Cases Grid */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {filteredUseCases.map((useCase) => (
-              <Card key={useCase.id} className="overflow-hidden bg-white dark:bg-[#1f1f1f] border border-gray-200 dark:border-gray-800 shadow-sm hover:shadow-md transition-shadow">
-                <CardHeader className="p-6">
-                  <CardTitle className="text-xl">{useCase.title}</CardTitle>
-                  <CardDescription className="text-gray-600 dark:text-gray-400">
+            {filteredUseCases.map(useCase => (
+              <Card key={useCase.id} className="overflow-hidden border border-gray-200 dark:border-gray-800 transition-all hover:shadow-md">
+                <div className="relative h-48 overflow-hidden">
+                  <img
+                    src={useCase.image}
+                    alt={useCase.title}
+                    className="w-full h-full object-cover transition-transform duration-300 hover:scale-105"
+                  />
+                  <span className="absolute top-4 right-4 px-4 py-1 bg-[#5C8EFF]/10 border border-[#5C8EFF]/30 text-white rounded-full text-xs font-medium">
                     {useCase.category}
-                  </CardDescription>
+                  </span>
+                </div>
+                <CardHeader>
+                  <CardTitle>{useCase.title}</CardTitle>
                 </CardHeader>
-                <CardContent className="p-6 pt-0 space-y-4">
-                  <p className="text-gray-600 dark:text-gray-300">
+                <CardContent>
+                  <CardDescription className="text-sm text-muted-foreground mb-4">
                     {useCase.description}
-                  </p>
-                  <div className="flex justify-between items-center pt-4">
-                    <Button 
-                      onClick={() => handleOpenModal(useCase)}
-                      variant="outline"
-                      className="text-blue-600 dark:text-blue-400 hover:text-blue-700 dark:hover:text-blue-300"
+                  </CardDescription>
+                  <div className="mt-4">
+                    <button
+                      className="px-3 py-2 bg-[rgba(246,146,26,0.10)] text-[#F6921A] rounded-full font-medium transition-all flex items-center gap-1 border border-[rgba(246,146,26,0.50)] text-sm justify-start"
+                      onClick={() => openModal(useCase)}
                     >
-                      Learn More
-                    </Button>
-                    {useCase.link !== "#" && (
-                      <a
-                        href={useCase.link}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="text-blue-600 dark:text-blue-400 hover:text-blue-700 dark:hover:text-blue-300 text-sm flex items-center gap-1"
-                      >
-                        Visit
-                        <span className="inline-block transform rotate-45">↗</span>
-                      </a>
-                    )}
+                      <span>Learn More</span>
+                      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 35 34" fill="none">
+                        <circle cx="17.333" cy="17" r="16.75" stroke="#F6921A" strokeOpacity="0.5" strokeWidth="0.5" />
+                        <path d="M17.3338 22.9405L23.2741 17.0002L17.3338 11.0598L16.4162 11.9774L20.7628 16.324H10.8622V17.6763H20.7628L16.4162 22.0229L17.3338 22.9405Z" fill="#F6921A" />
+                        <path d="M20.7628 17.6638H10.8747V16.3365H20.7628H20.7929L20.7716 16.3152L16.4338 11.9774L17.3338 11.0775L23.2564 17.0002L17.3338 22.9228L16.4338 22.0229L20.7716 17.6851L20.7929 17.6638H20.7628Z" stroke="#F6921A" strokeOpacity="0.5" strokeWidth="0.025" />
+                      </svg>
+                    </button>
                   </div>
                 </CardContent>
               </Card>
             ))}
           </div>
 
-          {/* Sample Code Section */}
-          <div className="mt-20 mb-12">
-            <h2 className="text-2xl md:text-3xl font-bold mb-6 text-center text-black dark:text-white">
-              Developer Resources
-            </h2>
-            <p className="text-center text-gray-600 dark:text-gray-300 mb-8 max-w-3xl mx-auto">
-              Get started building on Elastos with these code examples. Our SDKs provide simple interfaces to powerful decentralized protocols.
-            </p>
-
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-              <div className="bg-white dark:bg-[#1f1f1f] rounded-lg p-6 shadow-sm border border-gray-200 dark:border-gray-800">
-                <h3 className="text-lg font-medium mb-2">Elastos DID Example</h3>
-                <p className="text-gray-600 dark:text-gray-300 text-sm mb-4">Create and verify a decentralized identity:</p>
-                <CodeBlock
-                  language="javascript"
-                  value={`// Create a new DID
+          <div className="mt-20 p-8 bg-gradient-to-br from-[#5C8EFF]/10 to-[#F6921A]/10 rounded-2xl border border-[#5C8EFF]/30 text-center max-w-5xl mx-auto">
+            <div className="py-10"> {/* Added padding here */}
+              <div className="flex flex-col md:flex-row gap-6 items-center">
+                <div className="md:w-1/2 text-left">
+                  <h2 className="text-2xl md:text-3xl font-bold mb-4">Build Your Own Elastos Application</h2>
+                  <p className="text-muted-foreground mb-6">
+                    Ready to build the next revolutionary dApp? Elastos provides comprehensive SDKs, tools, and infrastructure to bring your vision to life. Plus, you can apply for funding through the Cyber Republic DAO to accelerate your project.
+                  </p>
+                  <div className="flex flex-wrap gap-4 mt-8">
+                    <button
+                      className="px-3 py-2 bg-[rgba(92,142,255,0.10)] text-[#5C8EFF] rounded-full font-medium transition-all flex items-center gap-1 border border-[rgba(92,142,255,0.50)] text-sm"
+                      onClick={() => window.open("https://elastos.dev/sdk/welcome/", "_blank")}
+                    >
+                      <span>Explore SDKs</span>
+                      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 35 34" fill="none">
+                        <circle cx="17.333" cy="17" r="16.75" stroke="#5C8EFF" strokeOpacity="0.5" strokeWidth="0.5" />
+                        <path d="M17.3338 22.9405L23.2741 17.0002L17.3338 11.0598L16.4162 11.9774L20.7628 16.324H10.8622V17.6763H20.7628L16.4162 22.0229L17.3338 22.9405Z" fill="#5C8EFF" />
+                        <path d="M20.7628 17.6638H10.8747V16.3365H20.7628H20.7929L20.7716 16.3152L16.4338 11.9774L17.3338 11.0775L23.2564 17.0002L17.3338 22.9228L16.4338 22.0229L20.7716 17.6851L20.7929 17.6638H20.7628Z" stroke="#5C8EFF" strokeOpacity="0.5" strokeWidth="0.025" />
+                      </svg>
+                    </button>
+                    <button
+                      className="px-3 py-2 bg-[rgba(246,146,26,0.10)] text-[#F6921A] rounded-full font-medium transition-all flex items-center gap-1 border border-[rgba(246,146,26,0.50)] text-sm"
+                      onClick={() => window.open("https://cyberrepublic.org", "_blank")}
+                    >
+                      <span>Apply for Funding</span>
+                      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 35 34" fill="none">
+                        <circle cx="17.333" cy="17" r="16.75" stroke="#F6921A" strokeOpacity="0.5" strokeWidth="0.5" />
+                        <path d="M17.3338 22.9405L23.2741 17.0002L17.3338 11.0598L16.4162 11.9774L20.7628 16.324H10.8622V17.6763H20.7628L16.4162 22.0229L17.3338 22.9405Z" fill="#F6921A" />
+                        <path d="M20.7628 17.6638H10.8747V16.3365H20.7628H20.7929L20.7716 16.3152L16.4338 11.9774L17.3338 11.0775L23.2564 17.0002L17.3338 22.9228L16.4338 22.0229L20.7716 17.6851L20.7929 17.6638H20.7628Z" stroke="#F6921A" strokeOpacity="0.5" strokeWidth="0.025" />
+                      </svg>
+                    </button>
+                  </div>
+                </div>
+                <div className="md:w-1/2 p-4 bg-black/5 dark:bg-white/5 rounded-lg shadow-inner">
+                  <CodeBlock language="jsx" filename="ElastosExample.jsx" code={`// Sample code using Elastos SDKs
 import { DID } from '@elastosfoundation/did-js-sdk';
+import { Hive } from '@elastosfoundation/hive-js-sdk';
 
+// Create a decentralized identity
 const mnemonic = DID.generateMnemonic();
-const rootIdentity = RootIdentity.createFromMnemonic(
-  mnemonic, '', true, passphrase
-);
+const identity = DID.createIdentity(mnemonic);
 
-const did = rootIdentity.newDid(passphrase);
-console.log("New DID created:", did.toString());
+// Connect to decentralized storage
+const vault = await Hive.createVault(identity);
 
-// Publish to the blockchain
-const didDocument = did.createDocument();
-const signedDoc = didDocument.sign(did, passphrase);
-await signedDoc.publish();`}
-                />
-              </div>
-
-              <div className="bg-white dark:bg-[#1f1f1f] rounded-lg p-6 shadow-sm border border-gray-200 dark:border-gray-800">
-                <h3 className="text-lg font-medium mb-2">Elastos Hive Storage Example</h3>
-                <p className="text-gray-600 dark:text-gray-300 text-sm mb-4">Store and retrieve data from a user's vault:</p>
-                <CodeBlock
-                  language="javascript"
-                  value={`// Initialize Hive client with user's DID
-import { Vault } from '@elastosfoundation/hive-js-sdk';
-
-const userDid = 'did:elastos:YOUR_USER_DID';
-const appDid = 'did:elastos:YOUR_APP_DID';
-const vault = new Vault({
-  userDid,
-  appDid,
-  vaultUrl: 'https://hive1.trinity-tech.io'
-});
-
-// Store data
-await vault.getDatabase().insertOne({
-  collection: 'profile',
-  document: {
-    name: 'Alice',
-    email: 'alice@example.com',
-    preferences: { theme: 'dark' }
-  }
-});
-
-// Retrieve data
-const result = await vault.getDatabase().findOne({
-  collection: 'profile',
-  filter: { name: 'Alice' }
-});
-console.log(result);`}
-                />
+export default function App() {
+  return <YourAwesomeApp />;
+}`} />
+                </div>
               </div>
             </div>
           </div>
+          <div className="mt-20 mb-16">
+            <LogoCarouselDemo />
+          </div>
+          <UseCaseModal isOpen={isModalOpen} useCase={selectedUseCase} onClose={closeModal} /> {/* Updated UseCaseModal */}
         </div>
-
-        {/* Footer */}
-        <div className="relative z-10">
-          <LogoCarouselDemo />
-          <StackedCircularFooter />
-        </div>
-      </div>
-
-      {/* Modal */}
-      <UseCaseModal
-        isOpen={isModalOpen}
-        useCase={selectedUseCase}
-        onClose={handleCloseModal}
-      />
-    </Layout>
+      </Layout>
+    </div>
   );
 };
 
