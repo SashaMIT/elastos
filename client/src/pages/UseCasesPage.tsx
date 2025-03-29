@@ -43,7 +43,24 @@ const UseCasesPage: React.FC = () => {
       image: "https://placehold.co/600x400/2a2a2a/FFFFFF?text=Digital+Identity+Management",
       category: "Identity",
       link: "https://elastos.info/did/",
-      modalContent: "Digital Identity Management Modal Content" // Add modal content here
+      modalContent: `🔐 Digital Identity Management
+Redefine trust online — with a decentralized ID you truly own.
+
+Elastos DID is a blockchain-native, self-sovereign identity framework for people, devices, and organizations. It removes the need for centralized logins and allows users to authorize access to data, services, and apps on their own terms.
+
+🔍 What You Can Build:
+
+Passwordless login systems for apps and platforms.
+Unified user identities that travel across dApps and ecosystems.
+Auth flows for Web3 wallets, games, and DAO participation.
+Role-based access control systems in enterprises or private networks.
+
+🔧 Elastos Stack:
+
+DID for secure, verifiable identity.
+ESC for on-chain permissions or access logic.
+Hive for storing credentials or proofs.
+Carrier for encrypted, DID-authenticated communication.`
     },
     {
       id: 2,
@@ -52,7 +69,24 @@ const UseCasesPage: React.FC = () => {
       image: "https://placehold.co/600x400/2a2a2a/FFFFFF?text=Data+Marketplaces",
       category: "Data",
       link: "#",
-      modalContent: "Data Marketplaces Modal Content" // Add modal content here
+      modalContent: `📊 Data Marketplaces
+Flip the surveillance model — let users profit from their data.
+
+Elastos empowers a new type of digital economy where individuals own, control, and monetize their personal data. With DID and Hive, users can package datasets, control access with smart contracts, and receive payments in ELA — all without relying on third-party aggregators.
+
+🔍 What You Can Build:
+
+Data exchanges where users set terms and price for access.
+Wearable/health data platforms that reward contributors.
+Decentralized ad networks that pay users for attention metrics.
+Analytics tools with zero-party data and DID-authenticated consent.
+
+🔧 Elastos Stack:
+
+DID to prove data ownership and consent.
+Hive to store and serve data from personal vaults.
+ESC to enforce licensing terms and settle payments.
+ELA for frictionless, on-chain settlement.`
     },
     {
       id: 3,
@@ -61,7 +95,24 @@ const UseCasesPage: React.FC = () => {
       image: "https://placehold.co/600x400/2a2a2a/FFFFFF?text=NFT+Platforms",
       category: "Assets",
       link: "https://elacity.io",
-      modalContent: "NFT Platforms Modal Content" // Add modal content here
+      modalContent: `🎨 NFT Platforms
+Go beyond JPEGs — enable programmable ownership and real-world rights.
+
+Elastos elevates NFTs with native creator identity, access controls, and built-in economic rules. Every asset is tied to a verifiable DID, access is managed via smart contracts, and content can be delivered securely through Hive or streamed via Elacity Runtime.
+
+🔍 What You Can Build:
+
+NFT marketplaces with auto-royalties and verified creator identities.
+Music and video NFTs with timed unlocks or license terms.
+Digital memberships, event passes, or tokenized IP rights.
+In-game items with portable ownership and secondary sales tracking.
+
+🔧 Elastos Stack:
+
+DID for creator/authorship proof.
+ESC for NFT logic and marketplace contracts.
+Hive for storing unlockable content or previews.
+Elacity Runtime for access enforcement.`
     },
     {
       id: 4,
@@ -149,7 +200,24 @@ DID (issuer + holder), Hive (credential storage), ESC (rules + revocation), ELA 
       image: "/images/usecases/usecase-default.jpg",
       category: "Content",
       link: "#",
-      modalContent: "Digital Content Marketplace Modal Content" // Add modal content here
+      modalContent: `📺 Digital Content Marketplace
+Let creators distribute and earn — without giving up control.
+
+With Elastos, creators can publish music, videos, ebooks, code, and more — assigning fine-grained access rights, streaming permissions, and royalty models. Unlike Web2 platforms, ownership and payment flows are transparent and fully programmable.
+
+🔍 What You Can Build:
+
+Music or video platforms that pay creators per stream or unlock.
+Token-gated libraries or knowledge-sharing communities.
+eBook marketplaces where NFTs replace DRM.
+Multi-format content hubs (audio, video, documents) with tiered access.
+
+🔧 Elastos Stack:
+
+DID to verify creator and consumer identity.
+Hive to store and stream the actual content.
+ESC to handle licenses, subscriptions, or per-access payments.
+ELA as the medium of exchange and staking.`
     },
     {
       id: 11,
@@ -158,7 +226,24 @@ DID (issuer + holder), Hive (credential storage), ESC (rules + revocation), ELA 
       image: "/images/usecases/usecase-default.jpg",
       category: "Storage",
       link: "#",
-      modalContent: "Decentralized Storage Solutions Modal Content" // Add modal content here
+      modalContent: `🗄 Decentralized Storage Solutions
+Free your data from the cloud — and take full control.
+
+Elastos Hive allows users and apps to store data in personal or trusted cloud vaults, fully encrypted and accessible only through DID-based authentication. No central servers, no single point of failure — just sovereign, user-owned storage.
+
+🔍 What You Can Build:
+
+Personal cloud storage that users own, access, and back up.
+Encrypted chat apps that store histories per user vault.
+Productivity tools where documents are owned by contributors.
+Any dApp requiring off-chain storage — with full control and privacy.
+
+🔧 Elastos Stack:
+
+Hive for encrypted, distributed file storage.
+DID for authentication and permissioning.
+ESC for access rules, versioning, and marketplace features.
+Carrier for secure file transfers without central relays.`
     },
     {
       id: 12,
@@ -167,7 +252,24 @@ DID (issuer + holder), Hive (credential storage), ESC (rules + revocation), ELA 
       image: "/images/usecases/usecase-default.jpg",
       category: "Enterprise",
       link: "#",
-      modalContent: "Supply Chain Tracking Modal Content" // Add modal content here
+      modalContent: `📦 Supply Chain Tracking
+Trust every step — from origin to delivery.
+
+Using Elastos DID, Hive, and smart contracts, supply chain actors can create verifiable, timestamped records at every phase of a product's journey. Provenance, ownership, handling conditions, and transfer logs can be authenticated and stored immutably.
+
+🔍 What You Can Build:
+
+Track-and-trace platforms for food, pharma, luxury goods.
+Authenticity verification systems using DIDs for producers and shippers.
+Condition logging for cold-chain or high-value deliveries.
+Real-time logistics dashboards with data stored in Hive and verified on-chain.
+
+🔧 Elastos Stack:
+
+DID for identifying suppliers, products, and handlers.
+ESC to anchor events and automate processes.
+Hive for storing metadata and documents.
+Carrier for real-time device communication or peer updates.`
     },
     {
       id: 6,
