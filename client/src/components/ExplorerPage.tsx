@@ -1,4 +1,3 @@
-
 import React, { useState } from "react";
 import { motion } from "framer-motion";
 import { 
@@ -20,7 +19,6 @@ import {
   Shield, 
   Workflow 
 } from "lucide-react";
-import { cn } from "@/lib/utils";
 import { StackedCircularFooter } from "@/components/ui/stacked-circular-footer";
 
 // Custom arrow component based on the provided SVG
@@ -196,7 +194,7 @@ const ecosystemFeatures = [
     title: "Economy",
     description: "A unified economy with ELA coins on the mainchain and related tokens on sidechains and external networks",
     icon: <Coins className="w-6 h-6 text-[#5C8EFF]" />,
-    gradient: "from-amber-500/10 via-yellow-500/5 to-transparent",
+    gradient: "from-amber-500/10 via-orange-500/5 to-transparent",
     border: "border-amber-500/20"
   }
 ];
@@ -223,304 +221,190 @@ export function ExplorerPage() {
           </p>
         </div>
 
-        {/* Chain Cards Section */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-5 mb-16">
+        {/* Chains Overview */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-20">
           {elastosChains.map((chain, index) => (
             <motion.div
-              key={index}
-              initial={{ opacity: 0, y: 30 }}
+              key={chain.name}
+              className={`relative rounded-xl overflow-hidden border ${chain.borderColor} bg-gradient-to-br ${chain.color}`}
+              initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: index * 0.1 }}
-              className={cn(
-                "relative rounded-xl border p-5 overflow-hidden group",
-                chain.borderColor
-              )}
+              transition={{ delay: index * 0.1 }}
+              whileHover={{ y: -5, transition: { duration: 0.2 } }}
             >
-              {/* Background gradient */}
-              <div className={cn(
-                "absolute inset-0 bg-gradient-to-br opacity-20",
-                chain.color
-              )} />
-              
-              {/* Content */}
-              <div className="relative z-10">
-                <div className="flex items-start justify-between mb-4">
-                  <div className={cn(
-                    "p-3 rounded-lg",
-                    chain.glowColor
-                  )}>
-                    {chain.icon}
-                  </div>
-                  <div className="px-3 py-1 rounded-full text-xs font-medium border border-[#5C8EFF]/20 bg-[#5C8EFF]/10 text-[#5C8EFF]">
-                    {chain.shortName}
-                  </div>
+              <div className="p-6">
+                <div className={`w-12 h-12 rounded-full ${chain.glowColor} flex items-center justify-center mb-4`}>
+                  {chain.icon}
                 </div>
-                
-                <h3 className={cn("text-xl font-semibold mb-2", chain.textColor)}>
-                  {chain.name}
-                </h3>
-                <p className="text-gray-400 text-sm mb-4">
-                  {chain.description}
-                </p>
-                
-                {/* Features */}
-                <div className="space-y-2 mb-5">
-                  {chain.features.map((feature, idx) => (
-                    <div key={idx} className="flex items-center gap-2">
-                      <CircleCheck className="h-4 w-4 text-[#5C8EFF]/70" />
+                <h2 className={`text-xl font-bold mb-2 ${chain.textColor}`}>{chain.name}</h2>
+                <p className="text-gray-400 text-sm mb-4">{chain.description}</p>
+                <div className="space-y-2 mb-6">
+                  {chain.features.slice(0, 3).map((feature, idx) => (
+                    <div key={idx} className="flex items-center">
+                      <CircleCheck className="w-4 h-4 text-green-400 mr-2" />
                       <span className="text-gray-300 text-sm">{feature}</span>
                     </div>
                   ))}
                 </div>
-                
-                {/* CTA Button */}
                 <a
                   href={chain.explorerUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-center gap-2 w-full justify-center rounded-lg py-2 px-3 bg-gradient-to-r border border-[#5C8EFF]/20 text-white transition-all duration-300 hover:bg-[#5C8EFF]/30"
+                  className={`inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-gradient-to-r ${chain.gradientColors} text-white text-sm hover:opacity-90 transition-opacity`}
                 >
                   <span>{chain.ctaText}</span>
-                  <ExternalLink className="h-4 w-4" />
+                  <ExternalLink className="w-3.5 h-3.5" />
                 </a>
+              </div>
+              <div className="absolute bottom-0 right-0 p-4 opacity-10">
+                <div className="text-5xl font-bold">{chain.shortName}</div>
               </div>
             </motion.div>
           ))}
         </div>
 
-        {/* Tabs Section */}
-        <div className="mb-16">
-          <div className="flex border-b border-gray-800 mb-8">
-            <button
-              onClick={() => handleTabChange(0)}
-              className={cn(
-                "py-3 px-5 text-sm font-medium relative",
-                activeTab === 0 
-                  ? "text-[#5C8EFF] border-b-2 border-[#5C8EFF]" 
-                  : "text-gray-400 hover:text-gray-300"
-              )}
-            >
-              Chain Architecture
-            </button>
-            <button
-              onClick={() => handleTabChange(1)}
-              className={cn(
-                "py-3 px-5 text-sm font-medium relative",
-                activeTab === 1 
-                  ? "text-[#5C8EFF] border-b-2 border-[#5C8EFF]" 
-                  : "text-gray-400 hover:text-gray-300"
-              )}
-            >
-              ELA Across Chains
-            </button>
-          </div>
+        {/* ELA Across Chains */}
+        <div className="mb-20">
+          <motion.h2
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="text-3xl font-bold text-white text-center mb-8"
+          >
+            ELA Across <span className="text-[#F7921A]">Chains</span>
+          </motion.h2>
 
-          {/* Tab Content */}
-          <div className="transition-all duration-300">
-            {/* Architecture Tab */}
-            {activeTab === 0 && (
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            {elaTokens.map((token, index) => (
               <motion.div
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                exit={{ opacity: 0 }}
-                className="grid grid-cols-1 md:grid-cols-2 gap-8"
+                key={token.network}
+                className="bg-[#1A1A1A] border border-white/10 rounded-xl overflow-hidden"
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: index * 0.1 }}
               >
-                <div>
-                  <h3 className="text-xl font-semibold text-white mb-4">
-                    Multi-Chain Excellence
-                  </h3>
-                  <p className="text-gray-400 mb-6">
-                    Elastos employs a multi-chain architecture that combines the security of Bitcoin-merged mining with the flexibility of specialized sidechains. This approach allows for optimal performance, security, and functionality across different use cases.
-                  </p>
-                  
-                  <div className="space-y-4">
-                    {ecosystemFeatures.slice(0, 3).map((feature, index) => (
-                      <motion.div
-                        key={index}
-                        onMouseEnter={() => setHoveredFeature(index)}
-                        onMouseLeave={() => setHoveredFeature(null)}
-                        className={cn(
-                          "p-4 rounded-lg border transition-all duration-300",
-                          feature.border,
-                          hoveredFeature === index 
-                            ? "bg-gradient-to-r " + feature.gradient 
-                            : "bg-[#1A1A1A]/50"
-                        )}
-                      >
-                        <div className="flex gap-3">
-                          <div className="mt-1">
-                            {feature.icon}
-                          </div>
-                          <div>
-                            <h4 className="text-white font-medium mb-1">{feature.title}</h4>
-                            <p className="text-gray-400 text-sm">{feature.description}</p>
-                          </div>
-                        </div>
-                      </motion.div>
-                    ))}
+                <div className="p-5">
+                  <div className="flex items-center mb-4">
+                    <div className={`w-10 h-10 rounded-full ${token.iconBg} flex items-center justify-center mr-3 ${token.borderColor}`}>
+                      {token.icon}
+                    </div>
+                    <div>
+                      <h3 className="text-white font-medium">{token.network}</h3>
+                      <p className="text-gray-400 text-sm">{token.tokenType}</p>
+                    </div>
                   </div>
-                </div>
-                
-                <div>
-                  <h3 className="text-xl font-semibold text-white mb-4">
-                    Ecosystem Advantages
-                  </h3>
-                  <p className="text-gray-400 mb-6">
-                    The multi-chain design creates a comprehensive ecosystem where specialized chains work together, each optimized for specific functions while maintaining interoperability and security.
-                  </p>
-                  
-                  <div className="space-y-4">
-                    {ecosystemFeatures.slice(3).map((feature, index) => (
-                      <motion.div
-                        key={index + 3}
-                        onMouseEnter={() => setHoveredFeature(index + 3)}
-                        onMouseLeave={() => setHoveredFeature(null)}
-                        className={cn(
-                          "p-4 rounded-lg border transition-all duration-300",
-                          feature.border,
-                          hoveredFeature === index + 3 
-                            ? "bg-gradient-to-r " + feature.gradient 
-                            : "bg-[#1A1A1A]/50"
-                        )}
-                      >
-                        <div className="flex gap-3">
-                          <div className="mt-1">
-                            {feature.icon}
-                          </div>
-                          <div>
-                            <h4 className="text-white font-medium mb-1">{feature.title}</h4>
-                            <p className="text-gray-400 text-sm">{feature.description}</p>
-                          </div>
-                        </div>
-                      </motion.div>
-                    ))}
+                  <p className="text-gray-400 text-sm mb-4">{token.description}</p>
+                  <div className="flex items-center justify-between text-xs text-gray-500">
+                    <span>Decimals: {token.decimals}</span>
+                    <span>Chain ID: {token.chainId}</span>
                   </div>
-                </div>
-              </motion.div>
-            )}
-
-            {/* ELA Across Chains Tab */}
-            {activeTab === 1 && (
-              <motion.div
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                exit={{ opacity: 0 }}
-              >
-                <p className="text-gray-400 mb-8 text-center max-w-3xl mx-auto">
-                  ELA is the native asset of the Elastos ecosystem, functioning seamlessly across multiple chains with different implementations depending on the chain's purpose and technology.
-                </p>
-                
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                  {elaTokens.map((token, index) => (
-                    <motion.div
-                      key={index}
-                      initial={{ opacity: 0, y: 20 }}
-                      animate={{ opacity: 1, y: 0 }}
-                      transition={{ duration: 0.3, delay: index * 0.1 }}
-                      className={cn(
-                        "p-5 rounded-xl border bg-[#1A1A1A]/40",
-                        token.borderColor
-                      )}
+                  <div className="mt-4 flex justify-end">
+                    <a
+                      href={token.explorerUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-1 text-[#5C8EFF] hover:underline"
                     >
-                      <div className="flex items-center gap-3 mb-3">
-                        <div className={cn(
-                          "p-2 rounded-md",
-                          token.iconBg
-                        )}>
-                          {token.icon}
-                        </div>
-                        <div>
-                          <div className="flex items-center gap-2">
-                            <h3 className="font-medium text-white">{token.network}</h3>
-                            {token.address && (
-                              <div className="text-xs bg-gray-800 text-gray-400 px-2 py-0.5 rounded-full">
-                                ERC20
-                              </div>
-                            )}
-                          </div>
-                          <p className="text-gray-500 text-xs">{token.tokenType}</p>
-                        </div>
-                      </div>
-                      
-                      <p className="text-gray-400 text-sm mb-4">
-                        {token.description}
-                      </p>
-                      
-                      <div className="grid grid-cols-2 gap-3 mb-4">
-                        <div className="bg-[#1D1D1D] rounded-lg p-3">
-                          <p className="text-xs text-gray-500 mb-1">Chain ID</p>
-                          <p className="text-sm text-gray-300">
-                            {token.chainId}
-                          </p>
-                        </div>
-                        <div className="bg-[#1D1D1D] rounded-lg p-3">
-                          <p className="text-xs text-gray-500 mb-1">Decimals</p>
-                          <p className="text-sm text-gray-300">
-                            {token.decimals}
-                          </p>
-                        </div>
-                      </div>
-                      
-                      <a
-                        href={token.explorerUrl}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="flex items-center gap-1 text-[#5C8EFF] text-sm hover:underline"
-                      >
-                        <LinkIcon className="h-3 w-3" />
-                        <span>View in Explorer</span>
-                      </a>
-                    </motion.div>
-                  ))}
+                      <span className="text-sm">View on Explorer</span>
+                      <LinkIcon className="w-3 h-3" />
+                    </a>
+                  </div>
                 </div>
               </motion.div>
-            )}
+            ))}
           </div>
         </div>
 
-        {/* Banner CTA */}
-        <div className="rounded-xl bg-gradient-to-br from-[#5C8EFF]/20 to-[#5C8EFF]/5 border border-[#5C8EFF]/20 p-6 md:p-8 text-center">
-          <h2 className="text-xl md:text-2xl font-semibold text-white mb-4">
-            Ready to Explore Elastos Blockchains?
-          </h2>
-          <p className="text-gray-400 mb-6 max-w-2xl mx-auto">
-            Visit the block explorers for each Elastos chain to view transactions, check balances, and verify smart contracts across the ecosystem.
-          </p>
-          <div className="flex flex-wrap justify-center gap-4">
-            <a
-              href="https://blockchain.elastos.io/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex items-center gap-2 rounded-lg py-2 px-4 bg-[#F7921A]/20 text-[#F7921A] border border-[#F7921A]/30 hover:bg-[#F7921A]/30 transition-all"
-            >
-              <Box className="h-4 w-4" />
-              <span>Mainchain Explorer</span>
-              <ArrowUpRight className="h-4 w-4" />
-            </a>
-            <a
-              href="https://esc.elastos.io/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex items-center gap-2 rounded-lg py-2 px-4 bg-[#8BABFF]/20 text-[#8BABFF] border border-[#8BABFF]/30 hover:bg-[#8BABFF]/30 transition-all"
-            >
-              <Code className="h-4 w-4" />
-              <span>ESC Explorer</span>
-              <ArrowUpRight className="h-4 w-4" />
-            </a>
-            <a
-              href="https://eid.elastos.io/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex items-center gap-2 rounded-lg py-2 px-4 bg-[#8BABFF]/20 text-[#8BABFF] border border-[#8BABFF]/30 hover:bg-[#8BABFF]/30 transition-all"
-            >
-              <Fingerprint className="h-4 w-4" />
-              <span>EID Explorer</span>
-              <ArrowUpRight className="h-4 w-4" />
-            </a>
+        {/* Ecosystem Features */}
+        <div className="mb-20">
+          <motion.h2
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="text-3xl font-bold text-white text-center mb-8"
+          >
+            Ecosystem <span className="text-[#5C8EFF]">Features</span>
+          </motion.h2>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {ecosystemFeatures.map((feature, index) => (
+              <motion.div
+                key={feature.title}
+                className={`feature-card bg-[#1A1A1A] border ${feature.border} rounded-xl overflow-hidden`}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: index * 0.1 }}
+                onMouseEnter={() => setHoveredFeature(index)}
+                onMouseLeave={() => setHoveredFeature(null)}
+              >
+                <div className="p-6">
+                  <div className="w-12 h-12 rounded-full bg-[#1E1E1E] flex items-center justify-center mb-4">
+                    {feature.icon}
+                  </div>
+                  <h3 className="text-white font-bold text-lg mb-2">{feature.title}</h3>
+                  <p className="text-gray-400 text-sm">{feature.description}</p>
+                </div>
+                <div 
+                  className={`h-1 bg-gradient-to-r ${feature.gradient} transition-all duration-500 ease-in-out`}
+                  style={{ 
+                    width: hoveredFeature === index ? '100%' : '0%',
+                    opacity: hoveredFeature === index ? 1 : 0
+                  }}
+                ></div>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+
+        {/* CTA Section */}
+        <div className="relative rounded-2xl overflow-hidden bg-gradient-to-br from-[#1A1A1A] to-[#0E0E0E] border border-white/10 mb-16">
+          <div className="absolute inset-0 bg-[url('/elastos-pattern.svg')] opacity-5"></div>
+          <div className="relative p-8 md:p-12">
+            <div className="max-w-3xl mx-auto text-center">
+              <h2 className="text-2xl md:text-3xl font-bold text-white mb-4">Ready to Explore the Elastos Ecosystem?</h2>
+              <p className="text-gray-400 mb-8">Visit our blockchain explorers to track transactions, view smart contracts, and monitor network activity</p>
+
+              <div className="flex flex-wrap justify-center gap-4">
+                <a
+                  href="https://blockchain.elastos.io/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-2 rounded-lg py-2 px-4 bg-[#F7921A]/20 text-[#F7921A] border border-[#F7921A]/30 hover:bg-[#F7921A]/30 transition-all"
+                >
+                  <Box className="h-4 w-4" />
+                  <span>Mainchain Explorer</span>
+                  <ArrowUpRight className="h-4 w-4" />
+                </a>
+
+                <a
+                  href="https://esc.elastos.io/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-2 rounded-lg py-2 px-4 bg-[#8BABFF]/20 text-[#8BABFF] border border-[#8BABFF]/30 hover:bg-[#8BABFF]/30 transition-all"
+                >
+                  <Code className="h-4 w-4" />
+                  <span>ESC Explorer</span>
+                  <ArrowUpRight className="h-4 w-4" />
+                </a>
+
+                <a
+                  href="https://eid.elastos.io/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-2 rounded-lg py-2 px-4 bg-[#8BABFF]/20 text-[#8BABFF] border border-[#8BABFF]/30 hover:bg-[#8BABFF]/30 transition-all"
+                >
+                  <Fingerprint className="h-4 w-4" />
+                  <span>EID Explorer</span>
+                  <ArrowUpRight className="h-4 w-4" />
+                </a>
+              </div>
+            </div>
           </div>
         </div>
       </div>
-      
+
       {/* Footer */}
       <StackedCircularFooter />
     </div>

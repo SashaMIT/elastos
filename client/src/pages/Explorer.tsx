@@ -1,4 +1,3 @@
-
 import React, { useState } from "react";
 import { motion } from "framer-motion";
 import { 
@@ -334,7 +333,7 @@ export default function ExplorerRedesignedPage() {
           >
             Explore the specialized blockchains that make up the Elastos ecosystem
           </motion.p>
-
+          
           {/* Tabs for chain selection */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -375,7 +374,7 @@ export default function ExplorerRedesignedPage() {
               ))}
             </div>
           </motion.div>
-
+          
           {/* Chain Content */}
           <div className="max-w-6xl mx-auto">
             {elastosChains.map((chain, index) => (
@@ -403,7 +402,7 @@ export default function ExplorerRedesignedPage() {
                     </div>
                   </div>
                 </div>
-
+                
                 {/* Chain Details */}
                 <div className="md:col-span-2">
                   <h3 className="text-3xl font-bold text-white mb-4 flex items-center">
@@ -415,7 +414,7 @@ export default function ExplorerRedesignedPage() {
                   <p className="text-white/70 text-lg mb-8">
                     {chain.description}
                   </p>
-
+                  
                   {/* Features Grid */}
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-8">
                     {chain.features.map((feature, idx) => (
@@ -430,7 +429,7 @@ export default function ExplorerRedesignedPage() {
                       </div>
                     ))}
                   </div>
-
+                  
                   {/* Explorer Button */}
                   <a 
                     href={chain.explorerUrl}
@@ -557,7 +556,7 @@ export default function ExplorerRedesignedPage() {
                 ELA exists as native coins on the Mainchain and as tokens on sidechains and external networks
               </p>
             </motion.div>
-
+            
             {/* Card-based token display instead of table */}
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
               {elaTokens.map((token, index) => (
@@ -584,7 +583,7 @@ export default function ExplorerRedesignedPage() {
                     <div className="flex-1">
                       <div className="flex justify-between items-start mb-3">
                         <h3 className="text-xl font-semibold text-white">{token.network}</h3>
-                        <span className="px-2 py-1 bg-[#5C8EFF]/10 text-[#5C8EFF] text-xs rounded-full">
+                        <span className="px-2 py-1 bg-[#5C8EFF]/10 text-[#5C8EFF] text-xs rounded-full"><span>
                           {token.tokenType}
                         </span>
                       </div>
@@ -616,7 +615,7 @@ export default function ExplorerRedesignedPage() {
                 </motion.div>
               ))}
             </div>
-
+            
             {/* Ethereum Token Info - More dynamic */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -690,7 +689,7 @@ export default function ExplorerRedesignedPage() {
           >
             Elastos combines the strengths of multiple specialized blockchains to create a powerful ecosystem
           </motion.p>
-
+          
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -858,7 +857,6 @@ export default function ExplorerRedesignedPage() {
                       >
                         https://eid.elastos.io/
                       </a>
-
                     </div>
                   </div>
                 </div>

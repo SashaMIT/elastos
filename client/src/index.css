@@ -1,4 +1,3 @@
-
 @layer utilities {
   .image-rendering-high-quality {
     image-rendering: high-quality;
@@ -9,24 +8,24 @@
   [data-rmiz] {
     @apply block relative;
   }
-  
+
   [data-rmiz-ghost] {
     @apply pointer-events-none absolute;
   }
-  
+
   [data-rmiz-btn-zoom],
   [data-rmiz-btn-unzoom] {
     @apply hidden;
   }
-  
+
   [data-rmiz-modal][open] {
     @apply fixed inset-0 w-screen h-screen m-0 p-0 overflow-hidden max-w-none max-h-none bg-transparent;
   }
-  
+
   [data-rmiz-modal-overlay] {
     @apply absolute inset-0 transition-colors;
   }
-  
+
   [data-rmiz-modal-img] {
     @apply absolute transform-gpu transition-transform duration-300;
 
@@ -39,7 +38,7 @@
 
     transform-origin: 0 0;
   }
-  
+
   [data-rmiz-content="found"] img {
     @apply cursor-zoom-in;
   }
@@ -122,9 +121,7 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
 @import "./styles/explorer-animations.css";
-@import './styles/explorer-animations.css';
 
 @layer base {
   html {
