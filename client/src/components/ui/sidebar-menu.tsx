@@ -48,7 +48,7 @@ export const SidebarMenu = () => {
                 <Layers className="h-4 w-4 text-[#94b5ff]" />
                 <span>Staking & Nodes</span>
               </Link>
-              <Link href="/explorer" className="py-2 hover:text-primary flex items-center gap-2">
+              <Link to="/explorer" className="py-2 hover:text-primary flex items-center gap-2">
                 <Search className="h-4 w-4 text-[#94b5ff]" />
                 <span>Explorer</span>
               </Link>

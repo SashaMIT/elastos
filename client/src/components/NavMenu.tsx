@@ -136,14 +136,6 @@ export function NavMenu() {
                   </div>
                   <div>
                     <h4 className="font-medium text-sm text-muted-foreground mb-2 px-2 text-[#94b5ff]">NETWORK</h4>
-                    <Link href="/wallet">
-                      <NavigationMenuLink className={navigationMenuTriggerStyle()}>
-                        <div className="flex items-center gap-2">
-                          <Shield className="h-4 w-4 text-[#94b5ff]" />
-                          <span>Wallet</span>
-                        </div>
-                      </NavigationMenuLink>
-                    </Link>
                     <Link href="/staking">
                       <NavigationMenuLink className={navigationMenuTriggerStyle()}>
                         <div className="flex items-center gap-2">

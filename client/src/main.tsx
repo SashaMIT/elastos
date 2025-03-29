@@ -1,5 +1,6 @@
 import Vision from './pages/Vision';
 import WhitepaperPage from './pages/WhitepaperPage'; // Added import
+import Explorer from './pages/Explorer'; // Added Explorer import
 
 import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
@@ -44,6 +45,7 @@ function Router() {
           <Route path="/ela-utility" component={ElaUtilityPage} />
           <Route path="/use-cases" component={UseCasesPage} /> 
           <Route path="/whitepaper" component={WhitepaperPage} /> {/* Added WhitepaperPage route */}
+          <Route path="/explorer" component={Explorer} /> {/* Added Explorer route */}
           <Route>404 Page Not Found</Route>
         </Switch>
       </Suspense>
