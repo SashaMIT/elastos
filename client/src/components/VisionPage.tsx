@@ -62,22 +62,22 @@ export function VisionPage() {
           </div>
 
           {/* Why the World Needs This */}
-          <div className="mt-10 mb-10">
+          <div className="mt-10 mb-20">
             <WhyTheWorldNeedsThis />
           </div>
          
           {/* Features Grid */}
-          <div className="-mt-55 mb-0">
+          <div className="-mt-20 mb-0">
             <FeaturesSectionWithBentoGrid />
           </div>
          
           {/* A World Computer for Everyone Banner */}
-          <div className="-mx-4">
+          <div className="mt-20 -mx-4">
             <WorldComputerBanner />
           </div>
           
           {/* Logo Carousel */}
-          <div className="-mx-4">
+          <div className="mt-20 -mx-4">
             <LogoCarouselDemo />
           </div>
         </div>
@@ -85,7 +85,7 @@ export function VisionPage() {
       
       <div className="w-full">
         {/* Footer */}
-        <div className="w-full mt-20">
+        <div className="w-full ">
           <StackedCircularFooter />
         </div>
       </div>
