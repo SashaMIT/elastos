@@ -122,6 +122,8 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@import "./styles/explorer-animations.css";
 @import './styles/explorer-animations.css';
 
 @layer base {

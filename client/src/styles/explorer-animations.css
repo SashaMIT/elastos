@@ -13,3 +13,44 @@
     transform: scale(1);
   }
 }
+/* Explorer page specific animations */
+.chain-card-enter {
+  opacity: 0;
+  transform: translateY(20px);
+}
+.chain-card-enter-active {
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 500ms, transform 500ms;
+}
+.chain-card-exit {
+  opacity: 1;
+}
+.chain-card-exit-active {
+  opacity: 0;
+  transition: opacity 300ms;
+}
+
+.tab-content-enter {
+  opacity: 0;
+}
+.tab-content-enter-active {
+  opacity: 1;
+  transition: opacity 300ms;
+}
+.tab-content-exit {
+  opacity: 1;
+}
+.tab-content-exit-active {
+  opacity: 0;
+  transition: opacity 300ms;
+}
+
+/* Hover effect for feature cards */
+.feature-card {
+  transition: all 0.3s ease;
+}
+.feature-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px -5px rgba(92, 142, 255, 0.1);
+}
