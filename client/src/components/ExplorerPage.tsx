@@ -209,7 +209,7 @@ export function ExplorerPage() {
   };
 
   return (
-    <div className="min-h-screen bg-[#141414] overflow-hidden">
+    <div className="min-h-screen bg-[#171717] overflow-hidden">
       {/* Hero Section */}
       <div className="w-full max-w-7xl mx-auto px-4 py-16 sm:px-6 lg:px-8">
         <div className="text-center mb-12">
