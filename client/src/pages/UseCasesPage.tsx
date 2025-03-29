@@ -23,6 +23,7 @@ const UseCasesPage: React.FC = () => {
   const [isLoading, setIsLoading] = useState(true);
   const [selectedCategory, setSelectedCategory] = useState<string | null>(null);
   const [selectedUseCase, setSelectedUseCase] = useState<UseCase | null>(null); // Added state for selected use case
+  const [isModalOpen, setIsModalOpen] = useState<boolean>(false); // Added modal open state
 
   useEffect(() => {
     // Simulate loading for demonstration
@@ -138,10 +139,12 @@ const UseCasesPage: React.FC = () => {
 
   const openModal = (useCase: UseCase) => {
     setSelectedUseCase(useCase);
+    setIsModalOpen(true);
   };
 
   const closeModal = () => {
     setSelectedUseCase(null);
+    setIsModalOpen(false);
   };
 
   // Extract unique categories from use cases
@@ -289,8 +292,7 @@ export default function App() {
           <div className="mt-20 mb-16">
             <LogoCarouselDemo />
           </div>
-          <StackedCircularFooter />
-          <UseCaseModal useCase={selectedUseCase} onClose={closeModal} /> {/* Added UseCaseModal */}
+          <UseCaseModal isOpen={isModalOpen} useCase={selectedUseCase} onClose={closeModal} /> {/* Updated UseCaseModal */}
         </div>
       </Layout>
     </div>
