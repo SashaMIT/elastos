@@ -54,7 +54,7 @@ export function VisionPage() {
           </div>
 
           {/* Technology Stack */}
-          <div className="w-full mb-10 mt-20">
+          <div className="w-full mb-0 mt-20">
             <h2 className="text-2xl md:text-3xl font-bold mb-8 text-center text-black dark:text-white">
               Technology Stack
             </h2>
