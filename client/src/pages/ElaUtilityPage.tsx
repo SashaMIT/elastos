@@ -134,7 +134,7 @@ export default function ElaUtilityPage() {
         <div className="text-center" id="text-effect-trigger">
           <TextGenerateEffect
             words="ELA is the native digital asset that fuels Elastos, providing security, governance, and utility across the World Computer. Merged-mined with Bitcoin, there will only ever be 28,219,999 total by 2105."
-            className="font-normal font-telegraf-ultralight"
+            className="font-normal font-telegraf-ultralight text-sm sm:text-base md:text-lg" // Added responsiveness
           />
         </div>
         <div className="py-8">
