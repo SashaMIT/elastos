@@ -13,6 +13,7 @@ interface UseCase {
 }
 
 interface UseCaseModalProps {
+  isOpen: boolean;
   useCase: UseCase | null;
   onClose: () => void;
 }
@@ -27,10 +28,11 @@ const formatDescription = (content: string) => {
 };
 
 export const UseCaseModal: React.FC<UseCaseModalProps> = ({
+  isOpen,
   useCase,
   onClose
 }) => {
-  if (!useCase) return null;
+  if (!isOpen || !useCase) return null;
 
   return (
     <div className="fixed inset-0 flex items-center justify-center z-50 p-4">

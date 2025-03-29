@@ -66,11 +66,23 @@ const UseCasesPage: React.FC = () => {
     {
       id: 4,
       title: "Decentralized Social Media",
-      description: "Social networks where user data isn't harvested for advertising, content can't be censored arbitrarily, and interactions are authenticated through DIDs.",
+      description: "Social platforms built on user-owned identity and content, offering censorship-resistance, data portability, and direct monetization without relying on advertising or algorithms.",
       image: "/images/usecases/usecase-default.jpg",
       category: "Social",
       link: "#",
-      modalContent: "Decentralized Social Media Modal Content" // Add modal content here
+      modalContent: `🗣 Decentralized Social Media
+Own your audience. Own your content.
+Elastos enables serverless, censorship-resistant social media, where users are verified via DID, posts are stored via Hive, and interactions flow P2P via Carrier. No ads. No exploitation.
+
+💡 What You Can Build:
+
+Twitter-style platforms where no central party can delete or shadowban posts.
+Creators owning their followership with portable DIDs across social dApps.
+Voice chat apps where connections are encrypted and peer-to-peer.
+Messaging dApps that store message history in personal Hive vaults.
+
+🔧 Tech Used:
+Carrier (P2P communication), DID (user identity), Hive (content storage), ESC (tipping or governance).`
     },
     {
       id: 7,
@@ -79,7 +91,19 @@ const UseCasesPage: React.FC = () => {
       image: "/images/usecases/usecase-default.jpg",
       category: "IoT",
       link: "#",
-      modalContent: "Secure IoT Networks Modal Content" // Add modal content here
+      modalContent: `📡 Secure IoT Networks
+The internet of trusted devices.
+Elastos lets you assign DIDs to IoT devices, enabling secure machine-to-machine interactions and autonomous microtransactions. Carrier allows P2P comms without centralized servers. DIDs let devices prove who they are—no spoofing, no hijacking.
+
+💡 What You Can Build:
+
+Smart home networks where devices talk to each other securely without cloud relays.
+Supply chain IoT sensors with verifiable identities and tamper-proof data.
+Industrial control systems that prevent rogue device injection.
+Automated vehicles that transact tolls or energy payments in real time.
+
+🔧 Tech Used:
+DID (device identity), Carrier (mesh networking), ESC (payment logic), ELA (value transfer).`
     },
     {
       id: 8,
@@ -88,7 +112,19 @@ const UseCasesPage: React.FC = () => {
       image: "/images/usecases/usecase-default.jpg",
       category: "Governance",
       link: "https://www.cyberrepublic.org",
-      modalContent: "Decentralized Governance Modal Content" // Add modal content here
+      modalContent: `🗳 Decentralized Governance
+Transparent decisions. Verified voters. Immutable records.
+Elastos DAO infrastructure lets you build governance systems with real identity, not bots. Use DID to authenticate voters, ESC to manage proposals, and Hive to store minutes or on-chain referenda.
+
+💡 What You Can Build:
+
+Local or national governance tools for communities, DAOs, or NGOs.
+Protocol DAOs with anti-sybil voting and smart contract-controlled treasuries.
+Alumni or membership orgs where verified identity enables trusted participation.
+Funding DAOs that allow creators to raise capital and report progress to token holders.
+
+🔧 Tech Used:
+DID (voter verification), ESC (DAO logic), Hive (record-keeping), ELA (collateral/staking).`
     },
     {
       id: 9,
@@ -97,7 +133,19 @@ const UseCasesPage: React.FC = () => {
       image: "/images/usecases/usecase-default.jpg",
       category: "Identity",
       link: "#",
-      modalContent: "Verifiable Credentials Modal Content" // Add modal content here
+      modalContent: `🎓 Verifiable Credentials
+Issue, hold, and verify digital credentials—no middlemen needed.
+Using Elastos DID, institutions can issue tamper-proof certificates that are easily verified on-chain but stored privately off-chain by users.
+
+💡 What You Can Build:
+
+University diplomas that can be instantly verified by employers.
+Professional licenses (law, medicine, trades) with cryptographic proof.
+Event tickets or certifications that can't be forged or transferred without rules.
+Citizen IDs with selective data disclosure (e.g., prove you're over 18 without showing DOB).
+
+🔧 Tech Used:
+DID (issuer + holder), Hive (credential storage), ESC (rules + revocation), ELA (fee/payment).`
     },
     {
       id: 10,
@@ -133,7 +181,19 @@ const UseCasesPage: React.FC = () => {
       image: "/images/usecases/usecase-default.jpg",
       category: "Finance",
       link: "#",
-      modalContent: "Decentralized Finance Modal Content" // Add modal content here
+      modalContent: `💸 Decentralized Finance
+Unbanked. Unchained. Unstoppable.
+Elastos ESC is an Ethereum-compatible smart contract chain secured by Bitcoin's hashpower. Build lending markets, liquidity pools, and stable assets with confidence. DID gives identity. Hive gives storage. ELA powers it all.
+
+💡 What You Can Build:
+
+Peer-to-peer lending platforms with identity-based credit scoring.
+Decentralized savings products for users in emerging markets.
+Insurance DAOs that payout based on smart oracles.
+Cross-chain bridges to Bitcoin and other assets, secured by merged mining.
+
+🔧 Tech Used:
+ESC (DeFi logic), DID (user identity), ELA (gas, staking, collateral), Hive (off-chain data), BTC (security via AuxPoW).`
     }
   ];
 
@@ -143,8 +203,8 @@ const UseCasesPage: React.FC = () => {
   };
 
   const closeModal = () => {
-    setSelectedUseCase(null);
     setIsModalOpen(false);
+    setSelectedUseCase(null);
   };
 
   // Extract unique categories from use cases
