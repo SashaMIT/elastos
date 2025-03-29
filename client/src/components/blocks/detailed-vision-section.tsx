@@ -16,7 +16,7 @@ export function DetailedVisionSection() {
           className="text-lg text-gray-700 dark:text-gray-300 space-y-4"
         >
           <p>
-            Elastos is creating the World Computer—an open, programmable internet where users own their data, identity, and assets, powered by the most secure blockchain infrastructure in existence.
+            Elastos is creating the World Computer—an open, programmable internet where users own their data, identity, and assets, powered by the most secure blockchain infrastructure in existence, Bitcoin.
           </p>
 
           <p>
