@@ -154,14 +154,14 @@ export default function ElaUtilityPage() {
               </div>
               <h3 className="font-semibold text-lg mb-2">Stats</h3>
               <p className="text-gray-600 dark:text-gray-300 text-sm mb-4">Track real-time metrics for Elastos blockchain performance and user adoption.</p>
-              <button className="px-3 py-2 bg-[rgba(246,146,26,0.10)] text-[#F6921A] rounded-full font-medium transition-all flex items-center gap-1 border border-[rgba(246,146,26,0.50)] text-sm">
+              <a href="/stats" className="px-3 py-2 bg-[rgba(246,146,26,0.10)] text-[#F6921A] rounded-full font-medium transition-all flex items-center gap-1 border border-[rgba(246,146,26,0.50)] text-sm">
                 <span>Learn More</span>
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 35 34" fill="none">
                   <circle cx="17.333" cy="17" r="16.75" stroke="#F6921A" strokeOpacity="0.5" strokeWidth="0.5"/>
                   <path d="M17.3338 22.9405L23.2741 17.0002L17.3338 11.0598L16.4162 11.9774L20.7628 16.324H10.8622V17.6763H20.7628L16.4162 22.0229L17.3338 22.9405Z" fill="#F6921A"/>
                   <path d="M20.7628 17.6638H10.8747V16.3365H20.7628H20.7929L20.7716 16.3152L16.4338 11.9774L17.3338 11.0775L23.2564 17.0002L17.3338 22.9228L16.4338 22.0229L20.7716 17.6851L20.7929 17.6638H20.7628Z" stroke="#F6921A" strokeOpacity="0.5" strokeWidth="0.025"/>
                 </svg>
-              </button>
+              </a>
             </div>
 
             {/* Security Card */}
@@ -174,7 +174,8 @@ export default function ElaUtilityPage() {
               </div>
               <h3 className="font-semibold text-lg mb-2">Security</h3>
               <p className="text-gray-600 dark:text-gray-300 text-sm mb-4">Explore how ELA maintains Bitcoin-level security and protects your assets.</p>
-              <button 
+              <a 
+                href="/security"
                 className="px-3 py-2 bg-[rgba(246,146,26,0.10)] text-[#F6921A] rounded-full font-medium transition-all flex items-center gap-1 border border-[rgba(246,146,26,0.50)]"
               >
                 <span>Learn More</span>
@@ -183,7 +184,7 @@ export default function ElaUtilityPage() {
                   <path d="M17.3338 22.9405L23.2741 17.0002L17.3338 11.0598L16.4162 11.9774L20.7628 16.324H10.8622V17.6763H20.7628L16.4162 22.0229L17.3338 22.9405Z" fill="#F6921A"/>
                   <path d="M20.7628 17.6638H10.8747V16.3365H20.7628H20.7929L20.7716 16.3152L16.4338 11.9774L17.3338 11.0775L23.2564 17.0002L17.3338 22.9228L16.4338 22.0229L20.7716 17.6851L20.7929 17.6638H20.7628Z" stroke="#F6921A" strokeOpacity="0.5" strokeWidth="0.025"/>
                 </svg>
-              </button>
+              </a>
             </div>
 
             {/* Supply Card */}
@@ -196,14 +197,14 @@ export default function ElaUtilityPage() {
               </div>
               <h3 className="font-semibold text-lg mb-2">Supply</h3>
               <p className="text-gray-600 dark:text-gray-300 text-sm mb-4">Understand ELA's tokenomics, emission schedule, and circulation metrics.</p>
-              <button className="px-3 py-2 bg-[rgba(246,146,26,0.10)] text-[#F6921A] rounded-full font-medium transition-all flex items-center gap-1 border border-[rgba(246,146,26,0.50)] text-sm">
+              <a href="/supply" className="px-3 py-2 bg-[rgba(246,146,26,0.10)] text-[#F6921A] rounded-full font-medium transition-all flex items-center gap-1 border border-[rgba(246,146,26,0.50)] text-sm">
                 <span>Learn More</span>
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 35 34" fill="none">
                   <circle cx="17.333" cy="17" r="16.75" stroke="#F6921A" strokeOpacity="0.5" strokeWidth="0.5"/>
                   <path d="M17.3338 22.9405L23.2741 17.0002L17.3338 11.0598L16.4162 11.9774L20.7628 16.324H10.8622V17.6763H20.7628L16.4162 22.0229L17.3338 22.9405Z" fill="#F6921A"/>
                   <path d="M20.7628 17.6638H10.8747V16.3365H20.7628H20.7929L20.7716 16.3152L16.4338 11.9774L17.3338 11.0775L23.2564 17.0002L17.3338 22.9228L16.4338 22.0229L20.7716 17.6851L20.7929 17.6638H20.7628Z" stroke="#F6921A" strokeOpacity="0.5" strokeWidth="0.025"/>
                 </svg>
-              </button>
+              </a>
             </div>
 
             {/* Buy ELA Card */}
@@ -216,7 +217,8 @@ export default function ElaUtilityPage() {
               </div>
               <h3 className="font-semibold text-lg mb-2">Buy ELA</h3>
               <p className="text-gray-600 dark:text-gray-300 text-sm mb-4">Get ELA on leading exchanges and decentralized platforms for easy access.</p>
-              <button 
+              <a 
+                href="/buy-ela"
                 className="px-3 py-2 bg-[rgba(246,146,26,0.10)] text-[#F6921A] rounded-full font-medium transition-all flex items-center gap-1 border border-[rgba(246,146,26,0.50)]"
               >
                 <span>Learn More</span>
@@ -225,7 +227,7 @@ export default function ElaUtilityPage() {
                   <path d="M17.3338 22.9405L23.2741 17.0002L17.3338 11.0598L16.4162 11.9774L20.7628 16.324H10.8622V17.6763H20.7628L16.4162 22.0229L17.3338 22.9405Z" fill="#F6921A"/>
                   <path d="M20.7628 17.6638H10.8747V16.3365H20.7628H20.7929L20.7716 16.3152L16.4338 11.9774L17.3338 11.0775L23.2564 17.0002L17.3338 22.9228L16.4338 22.0229L20.7716 17.6851L20.7929 17.6638H20.7628Z" stroke="#F6921A" strokeOpacity="0.5" strokeWidth="0.025"/>
                 </svg>
-              </button>
+              </a>
             </div>
           </div>
         </div>
