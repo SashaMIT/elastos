@@ -14,7 +14,7 @@ export function WhyTheWorldNeedsThis() {
   const reasons = [
     {
       id: "digital-ownership",
-      title: "Digital Ownership Crisis",
+      title: "Ownership",
       description: "Your data is owned by corporations, not you.",
       longDescription: "In today's digital landscape, your personal data, digital identities, and online assets are controlled by big tech companies. These corporations monetize your information while you have little say over how it's used. Elastos gives you true ownership and control over your digital life.",
       icon: <IconLock className="h-8 w-8 text-[#F6921A]" />,
@@ -22,7 +22,7 @@ export function WhyTheWorldNeedsThis() {
     },
     {
       id: "identity-theft",
-      title: "Identity Theft & Data Breaches",
+      title: "Identity",
       description: "Our digital identities are increasingly vulnerable.",
       longDescription: "Identity theft affects millions yearly, with personal data regularly exposed in breaches. The Elastos DID (Decentralized Identity) gives you a self-sovereign identity verified on the blockchain, letting you prove who you are without exposing personal data to countless third parties.",
       icon: <IconFingerprint className="h-8 w-8 text-[#F6921A]" />,
@@ -30,7 +30,7 @@ export function WhyTheWorldNeedsThis() {
     },
     {
       id: "centralized-control",
-      title: "Centralized Internet Control",
+      title: "Control",
       description: "A few powerful entities control what we see and do online.",
       longDescription: "A handful of tech giants act as gatekeepers to the internet, deciding what content gets promoted, censored, or monetized. Elastos creates a peer-to-peer internet infrastructure where users can interact directly without intermediaries controlling the flow of information.",
       icon: <IconServer className="h-8 w-8 text-[#F6921A]" />,
@@ -38,7 +38,7 @@ export function WhyTheWorldNeedsThis() {
     },
     {
       id: "bitcoin-future",
-      title: "Re-Architecting the Internet",
+      title: "Freedom",
       description: "The original internet lacks critical identity and ownership layers.",
       longDescription: "The internet was built for information sharing, not digital ownership or secure identities. Elastos adds these missing layers by combining Bitcoin's security with a modern multi-chain architecture, creating a complete platform for a truly decentralized digital economy.",
       icon: <IconDatabase className="h-8 w-8 text-[#F6921A]" />,
