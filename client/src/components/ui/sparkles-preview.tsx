@@ -7,7 +7,7 @@ import { SparklesCore } from "./sparkles";
 export function SparklesPreview() {
   return (
     <div className="h-[20rem] w-full bg-[#171717] flex flex-col items-center justify-center overflow-hidden rounded-md">
-      <h1 className="text-6xl md:text-8xl lg:text-9xl font-normal text-center text-white relative z-20">
+      <h1 className="text-6xl md:text-8xl lg:text-9xl font-extralight text-center text-white relative z-20">
         ELA
       </h1>
       <div className="w-[40rem] h-40 relative">
