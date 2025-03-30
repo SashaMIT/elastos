@@ -70,17 +70,17 @@ export const ForwardRoadmap = () => {
         <div className="flex flex-col md:flex-row gap-8 relative">
           {milestones.map((milestone, index) => (
             <div key={index} className="flex-1 relative">
-              <div className="bg-[#5C8EFF]/10 rounded-xl p-6 shadow-lg hover:shadow-xl transition-shadow duration-300">
+              <div className="bg-gradient-to-br from-[#8BABFF]/10 to-[#8BABFF]/5 rounded-xl p-6 shadow-lg hover:shadow-xl transition-shadow duration-300 border border-[#8BABFF]/20">
                 <div className="absolute -top-3 left-1/2 transform -translate-x-1/2 w-6 h-6 rounded-full bg-gradient-to-r from-[#F6921A] to-[#95B5FF] shadow-md" />
                 <div className="text-center mb-6">
-                  <h3 className="text-2xl font-bold bg-gradient-to-r from-[#F6921A] to-[#95B5FF] bg-clip-text text-transparent">
+                  <h3 className="text-2xl font-bold bg-gradient-to-r from-[#8BABFF] to-[#8BABFF]/70 bg-clip-text text-transparent">
                     {milestone.quarter}
                   </h3>
                 </div>
                 <div className="space-y-6">
                   {milestone.items.map((item, idx) => (
                     <div key={idx} className="relative">
-                      <h4 className="font-semibold text-lg mb-2 text-black dark:text-white">
+                      <h4 className="font-semibold text-lg mb-2 text-[#8BABFF]">
                         {item.title}
                       </h4>
                       <p className="text-sm text-gray-600 dark:text-gray-300">
