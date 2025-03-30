@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import { motion } from 'framer-motion'; // Added import statement
 import { Card, CardHeader, CardTitle, CardContent } from '@/components/ui/card';
 import { Shield, Lock, Bitcoin, Star, Wallet, ExternalLink, CheckCircle, CheckCircle2, Info } from 'lucide-react';
 import {
@@ -286,50 +285,47 @@ const BuyElaPage = () => {
           </div>
 
           <div className="grid md:grid-cols-2 gap-3">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.1 }}
-              className="bg-gradient-to-br from-[#F7921A]/10 via-[#8BABFF]/5 to-transparent rounded-xl p-6 border border-[#F7921A]/20 h-[300px] overflow-auto"
-            >
-              <h3 className="text-xl font-bold text-white mb-2">Security & Supply Benefits</h3>
-              <p className="text-sm text-white/70 mb-3">
-                Bitcoin-level security with a fixed max supply of 28.22M tokens.
-              </p>
+            <div className="bg-gradient-to-r from-[#5C8EFF] to-[#F7921A] text-white p-3 rounded-lg h-[300px] overflow-auto relative overflow-hidden">
+              {/* Background glow elements */}
+              <div className="absolute -top-10 -right-10 w-32 h-32 rounded-full bg-[#F7921A]/10 blur-[40px]"></div>
+              <div className="absolute -bottom-10 -left-10 w-40 h-40 rounded-full bg-[#5C8EFF]/10 blur-[50px]"></div>
 
-              <h4 className="text-base font-semibold text-white/90 mb-1">Security Leadership</h4>
-              <ul className="space-y-1 mb-3">
-                <li className="flex items-start gap-1 text-xs text-white/70">
-                  <span className="text-[#F7921A] mt-0.5">•</span> Bitcoin-level security at fraction of energy cost
-                </li>
-                <li className="flex items-start gap-1 text-xs text-white/70">
-                  <span className="text-[#F7921A] mt-0.5">•</span> Highest merge-mining participation ({((elastosHashrate/bitcoinHashrate) * 100).toFixed(1)}%+)
-                </li>
-                <li className="flex items-start gap-1 text-xs text-white/70">
-                  <span className="text-[#F7921A] mt-0.5">•</span> {elastosHashrate} EH/s of protection and growing
-                </li>
-                <li className="flex items-start gap-1 text-xs text-white/70">
-                  <span className="text-[#F7921A] mt-0.5">•</span> 6+ years of proven security
-                </li>
-              </ul>
-
-              <h4 className="text-base font-semibold text-white/90 mb-1">Supply Certainty</h4>
-              <ul className="space-y-1">
-                <li className="flex items-start gap-1 text-xs text-white/70">
-                  <span className="text-[#F7921A] mt-0.5">•</span> Fixed maximum supply of 28.22M tokens
-                </li>
-                <li className="flex items-start gap-1 text-xs text-white/70">
-                  <span className="text-[#F7921A] mt-0.5">•</span> Final supply reached by 2105
-                </li>
-                <li className="flex items-start gap-1 text-xs text-white/70">
-                  <span className="text-[#F7921A] mt-0.5">•</span> Mathematically guaranteed cap
-                </li>
-                <li className="flex items-start gap-1 text-xs text-white/70">
-                  <span className="text-[#F7921A] mt-0.5">•</span> Transparent emission schedule
-                </li>
-              </ul>
-            </motion.div>
+              <h3 className="text-sm font-bold mb-2 relative z-10">Security & Supply Benefits</h3>
+              <div className="grid gap-3 relative z-10">
+                <div>
+                  <h4 className="text-xs font-semibold mb-1">Security Leadership</h4>
+                  <ul className="space-y-1">
+                    {[
+                      "Bitcoin-level security at fraction of energy cost",
+                      `Highest merge-mining participation (${((elastosHashrate/bitcoinHashrate) * 100).toFixed(1)}%+)`,
+                      `${elastosHashrate} EH/s of protection and growing`,
+                      "6+ years of proven security"
+                    ].map((point, i) => (
+                      <li key={i} className="flex items-center gap-1">
+                        <CheckCircle className="h-3 w-3 shrink-0 text-[#F7921A]" />
+                        <span className="text-xs opacity-90">{point}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+                <div>
+                  <h4 className="text-xs font-semibold mb-1">Supply Certainty</h4>
+                  <ul className="space-y-1">
+                    {[
+                      "Fixed maximum supply of 28.22M tokens",
+                      "Final supply reached by 2105",
+                      "Mathematically guaranteed cap",
+                      "Transparent emission schedule"
+                    ].map((point, i) => (
+                      <li key={i} className="flex items-center gap-1">
+                        <CheckCircle className="h-3 w-3 shrink-0 text-[#F7921A]" />
+                        <span className="text-xs opacity-90">{point}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              </div>
+            </div>
 
             <div className="bg-white dark:bg-[#171717] rounded-lg border dark:border-gray-700 p-2 h-[300px]">
               <h3 className="text-sm font-medium mb-2 flex items-center gap-2 dark:text-white">
