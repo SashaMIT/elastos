@@ -80,7 +80,7 @@ export default function RoadmapPage() {
             Elastos <span className="text-[#5C8EFF]">Roadmap</span>
           </h1>
           <p className="text-gray-400 max-w-2xl mx-auto text-sm sm:text-base md:text-lg">
-            Discover the multi-chain structure of Elastos, where Bitcoin-secured blockchain technology combines with purpose-built sidechains to deliver a comprehensive Web3 infrastructure
+            Explore the Elastos roadmap—an evolving vision for the World Computer, driven by community governance, decentralized innovation, and a commitment to digital sovereignty.
           </p>
         </div>
       </div>
