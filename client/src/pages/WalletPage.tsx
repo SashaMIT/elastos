@@ -133,7 +133,7 @@ const WalletPage: React.FC = () => {
                   <path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6" />
                 </svg>
               </div>
-              <h3 className="text-2xl font-bold text-white mb-3">Digital Asset and Staking Support</h3>
+              <h3 className="text-2xl font-bold text-white mb-3">Digital Assets and Staking</h3>
               <p className="text-white/70">
                 Manage assets and stake tokens across Elastos and multiple blockchains.
               </p>
@@ -176,7 +176,7 @@ const WalletPage: React.FC = () => {
               </div>
               <h3 className="text-2xl font-bold text-white mb-3">Contacts</h3>
               <p className="text-white/70">
-                Connect via verified DIDs from Elastos' identity ledger for secure messaging.
+                Connect via verified DIDs from Elastos' identity ledger.
               </p>
             </motion.div>
 
@@ -247,94 +247,6 @@ const WalletPage: React.FC = () => {
         </div>
       </section>
 
-      {/* Additional Wallet Features */}
-      <section className="py-16">
-        <div className="container mx-auto px-4">
-          <div className="max-w-6xl mx-auto">
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-              {[
-                {
-                  title: "Multi-Chain Support",
-                  description: "Manage your assets across Elastos Smart Chain, Elastos Identity Chain, and other popular networks like Ethereum, BSC, and HECO."
-                },
-                {
-                  title: "Decentralized Identity",
-                  description: "Create and manage your decentralized identity (DID) that gives you complete control of your digital credentials."
-                },
-                {
-                  title: "DApp Browser",
-                  description: "Discover and interact with decentralized applications directly from within the Elastos Essentials wallet."
-                }
-              ].map((feature, index) => (
-                <motion.div
-                  key={index}
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: 0.1 * index }}
-                  className={cn(
-                    "bg-gradient-to-br from-[#1E1E1E] to-[#252525] p-6 rounded-xl border border-[#333]/30",
-                    index === 1 ? "border-[#8BABFF]/30" : "border-transparent"
-                  )}
-                >
-                  <h3 className="text-xl font-bold text-white mb-3">{feature.title}</h3>
-                  <p className="text-white/70">{feature.description}</p>
-                </motion.div>
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Download Links Section */}
-      <section className="py-16 bg-gradient-to-b from-[#1A1A1A] to-[#171717]">
-        <div className="container mx-auto px-4">
-          <div className="max-w-6xl mx-auto text-center">
-            <motion.h2
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              className="text-3xl font-bold text-white mb-6"
-            >
-              Download Elastos Essentials Today
-            </motion.h2>
-            <motion.p
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.1 }}
-              className="text-lg text-white/70 max-w-2xl mx-auto mb-8"
-            >
-              Take full control of your digital identity and assets with the official Elastos wallet
-            </motion.p>
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.2 }}
-              className="flex flex-wrap justify-center gap-4"
-            >
-              <a
-                href="https://apps.apple.com/us/app/elastos-essentials/id1568931743"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-[#F7921A] to-[#F7921A]/80 text-white rounded-lg hover:opacity-90 transition-opacity"
-              >
-                iOS <ExternalLink className="w-4 h-4" />
-              </a>
-              <a
-                href="https://play.google.com/store/apps/details?id=org.elastos.essentials.app"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-[#8BABFF] to-[#8BABFF]/80 text-white rounded-lg hover:opacity-90 transition-opacity"
-              >
-                Android <ExternalLink className="w-4 h-4" />
-              </a>
-            </motion.div>
-          </div>
-        </div>
-      </section>
-    </div>
   );
 };
 
