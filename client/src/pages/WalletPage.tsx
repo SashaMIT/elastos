@@ -3,6 +3,7 @@ import { motion } from "framer-motion";
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Code, Download, ExternalLink, Wallet, CheckCircle, Fingerprint } from "lucide-react";
+import { LogoCarouselDemo } from "@/components/LogoCarouselDemo";
 import { StackedCircularFooter } from "@/components/ui/stacked-circular-footer";
 
 const WalletPage: React.FC = () => {
@@ -400,6 +401,7 @@ const WalletPage: React.FC = () => {
       <div className="w-full bg-background dark:bg-[#171717] mt-20">
         <StackedCircularFooter />
       </div>
+      <LogoCarouselDemo/>
     </div>
   );
 };
