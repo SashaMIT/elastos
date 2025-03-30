@@ -2,7 +2,7 @@ import React from "react";
 import { motion } from "framer-motion";
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
-import { ArrowRight, Code, Download, ExternalLink, Wallet, CheckCircle } from "lucide-react";
+import { ArrowRight, Code, Download, ExternalLink, Wallet, CheckCircle, Fingerprint } from "lucide-react";
 
 const WalletPage: React.FC = () => {
   return (
@@ -395,10 +395,10 @@ const WalletPage: React.FC = () => {
         </div>
       </section>
 
-      
 
 
-      
+
+
     </div>
   );
 };
