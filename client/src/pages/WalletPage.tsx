@@ -3,6 +3,7 @@ import { motion } from "framer-motion";
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Code, Download, ExternalLink, Wallet, CheckCircle, Fingerprint } from "lucide-react";
+import { StackedCircularFooter } from "@/components/ui/stacked-circular-footer";
 
 const WalletPage: React.FC = () => {
   return (
