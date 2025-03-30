@@ -152,14 +152,14 @@ export function NavMenu() {
                         </div>
                       </NavigationMenuLink>
                     </Link>
-                    <a href="https://c0b56459-2666-4001-a4bb-92502af66317-00-1dvqr9mkxq95y.sisko.replit.dev/ecosystem" target="_blank" rel="noopener noreferrer">
+                    <Link to="/ecosystem"> {/* Changed to Link component and removed target="_blank" */}
                       <NavigationMenuLink className={navigationMenuTriggerStyle()}>
                         <div className="flex items-center gap-2">
                           <ShoppingCart className="h-4 w-4 text-[#94b5ff]" />
                           <span>Ecosystem Projects</span>
                         </div>
                       </NavigationMenuLink>
-                    </a>
+                    </Link>
                     <Link href="/faq">
                       <NavigationMenuLink className={navigationMenuTriggerStyle()}>
                         <div className="flex items-center gap-2">
