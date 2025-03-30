@@ -43,7 +43,7 @@ const WalletPage: React.FC = () => {
               <div className="grid md:grid-cols-2 gap-10 items-center">
                 <div className="flex justify-center">
                   <img 
-                    src="/assets/wallet-mockup.png" 
+                    src="/images/Essentials.png" 
                     alt="Elastos Essentials" 
                     className="w-full max-w-[250px] rounded-xl shadow-lg shadow-black/20"
                     onError={(e) => {
