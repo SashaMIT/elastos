@@ -398,10 +398,15 @@ const WalletPage: React.FC = () => {
       </section>
 
       {/* Footer */}
-      <div className="w-full bg-background dark:bg-[#171717] mt-20">
+      {/* Logo Carousel */}
+      <div className="w-full py-16">
+        <LogoCarouselDemo />
+      </div>
+
+      {/* Footer */}
+      <div className="w-full bg-background dark:bg-[#171717]">
         <StackedCircularFooter />
       </div>
-      <LogoCarouselDemo/>
     </div>
   );
 };
