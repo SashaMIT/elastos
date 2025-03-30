@@ -9,10 +9,10 @@
             className="text-center mb-12"
           >
             <h2 className="text-4xl font-bold text-white mb-3">
-              Features that give you control
+              Essential Features
             </h2>
             <p className="text-xl text-white/70">
-              The road to Web3 begins here.
+              Your Web3 toolkit
             </p>
           </motion.div>
 
@@ -30,9 +30,9 @@
                   <path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6" />
                 </svg>
               </div>
-              <h3 className="text-2xl font-bold text-white mb-3">Digital Asset and Staking Support</h3>
+              <h3 className="text-2xl font-bold text-white mb-3">Assets & Staking</h3>
               <p className="text-white/70">
-                Manage assets and stake tokens across Elastos and other blockchain ecosystems.
+                Manage assets across multiple blockchains.
               </p>
             </motion.div>
 
@@ -49,9 +49,9 @@
                   <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
                 </svg>
               </div>
-              <h3 className="text-2xl font-bold text-white mb-3">Decentralized ID (DID)</h3>
+              <h3 className="text-2xl font-bold text-white mb-3">DID</h3>
               <p className="text-white/70">
-                Create self-sovereign identities and claim your true digital presence.
+                Self-sovereign digital identity.
               </p>
             </motion.div>
 
@@ -73,7 +73,7 @@
               </div>
               <h3 className="text-2xl font-bold text-white mb-3">Contacts</h3>
               <p className="text-white/70">
-                Connect via DIDs with verified contacts from Elastos' identity ledger.
+                DID-verified connections.
               </p>
             </motion.div>
 
@@ -92,9 +92,9 @@
                   <line x1="12" y1="17" x2="12" y2="21" />
                 </svg>
               </div>
-              <h3 className="text-2xl font-bold text-white mb-3">Decentralized Applications</h3>
+              <h3 className="text-2xl font-bold text-white mb-3">dApps</h3>
               <p className="text-white/70">
-                Access social media, NFT marketplaces, and other Elastos dApps seamlessly.
+                Seamless access to Elastos ecosystem.
               </p>
             </motion.div>
 
@@ -113,9 +113,9 @@
                   <path d="M13 20V4a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1v16" />
                 </svg>
               </div>
-              <h3 className="text-2xl font-bold text-white mb-3">Decentralized Storage</h3>
+              <h3 className="text-2xl font-bold text-white mb-3">Storage</h3>
               <p className="text-white/70">
-                Store data in DID-secured vaults under your complete control.
+                User-controlled data vaults.
               </p>
             </motion.div>
 
@@ -135,9 +135,9 @@
                   <rect x="4" y="7" width="16" height="14" rx="2" />
                 </svg>
               </div>
-              <h3 className="text-2xl font-bold text-white mb-3">Secure Communication</h3>
+              <h3 className="text-2xl font-bold text-white mb-3">Communication</h3>
               <p className="text-white/70">
-                Exchange encrypted messages through Carrier's P2P network.
+                End-to-end encrypted P2P messaging.
               </p>
             </motion.div>
           </div>
