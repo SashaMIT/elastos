@@ -115,7 +115,7 @@ const WalletPage: React.FC = () => {
               Features that give you control
             </h2>
             <p className="text-xl text-white/70">
-              The road to Web3 begins here.
+              Your gateway to Web3.
             </p>
           </motion.div>
 
@@ -135,7 +135,7 @@ const WalletPage: React.FC = () => {
               </div>
               <h3 className="text-2xl font-bold text-white mb-3">Digital Asset and Staking Support</h3>
               <p className="text-white/70">
-                Manage digital assets and staking with ease. The Essentials Super-Wallet supports ELA, all Elastos ecosystem assets, and multiple other blockchain tokens.
+                Manage assets and stake tokens across Elastos and multiple blockchains.
               </p>
             </motion.div>
 
@@ -154,7 +154,7 @@ const WalletPage: React.FC = () => {
               </div>
               <h3 className="text-2xl font-bold text-white mb-3">Decentralized ID (DID)</h3>
               <p className="text-white/70">
-                Create and manage your decentralized identities with just a few clicks. Claim your digital presence in the metaverse with self-sovereign identity.
+                Create self-sovereign digital identities to control your online presence.
               </p>
             </motion.div>
 
@@ -176,7 +176,7 @@ const WalletPage: React.FC = () => {
               </div>
               <h3 className="text-2xl font-bold text-white mb-3">Contacts</h3>
               <p className="text-white/70">
-                Connect with friends via DIDs and chat securely. Contact information comes directly from Elastos' identity ledger, ensuring accuracy and authenticity.
+                Connect via verified DIDs from Elastos' identity ledger for secure messaging.
               </p>
             </motion.div>
 
@@ -197,7 +197,7 @@ const WalletPage: React.FC = () => {
               </div>
               <h3 className="text-2xl font-bold text-white mb-3">Decentralized Applications</h3>
               <p className="text-white/70">
-                Access ecosystem dApps from social media to NFT marketplaces. Essentials serves as your gateway to the most innovative Elastos applications and communities.
+                Access social, NFT, and other Elastos ecosystem dApps through a unified gateway.
               </p>
             </motion.div>
 
@@ -218,7 +218,7 @@ const WalletPage: React.FC = () => {
               </div>
               <h3 className="text-2xl font-bold text-white mb-3">Decentralized Storage</h3>
               <p className="text-white/70">
-                Store your data where you choose with Elastos Hive. DID-secured access to your personal vault ensures only you control your information.
+                Store data in DID-secured Hive vaults with complete user control.
               </p>
             </motion.div>
 
@@ -240,7 +240,7 @@ const WalletPage: React.FC = () => {
               </div>
               <h3 className="text-2xl font-bold text-white mb-3">Secure Communication</h3>
               <p className="text-white/70">
-                Communicate privately through Elastos Carrier's P2P network. End-to-end encrypted messaging is seamlessly integrated into the Essentials experience.
+                Exchange end-to-end encrypted messages via Carrier's P2P network.
               </p>
             </motion.div>
           </div>
