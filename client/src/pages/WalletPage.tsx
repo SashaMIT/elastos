@@ -135,7 +135,7 @@ const WalletPage: React.FC = () => {
               </div>
               <h3 className="text-2xl font-bold text-white mb-3">Digital Asset and Staking Support</h3>
               <p className="text-white/70">
-                Essentials makes managing your digital assets and staking participation simple. The Essentials Super-Wallet supports ELA and all Elastos ecosystem assets, as well as a number of assets from other prominent blockchain ecosystems.
+                Manage digital assets and staking with ease. The Essentials Super-Wallet supports ELA, all Elastos ecosystem assets, and multiple other blockchain tokens.
               </p>
             </motion.div>
 
@@ -154,7 +154,7 @@ const WalletPage: React.FC = () => {
               </div>
               <h3 className="text-2xl font-bold text-white mb-3">Decentralized ID (DID)</h3>
               <p className="text-white/70">
-                On Essentials, registering your very own DID (or several!) is never more than a few clicks away. Get started carving out your own decentralized identity, so you can claim your piece of digital real estate in the metaverse!
+                Create and manage your decentralized identities with just a few clicks. Claim your digital presence in the metaverse with self-sovereign identity.
               </p>
             </motion.div>
 
@@ -176,7 +176,7 @@ const WalletPage: React.FC = () => {
               </div>
               <h3 className="text-2xl font-bold text-white mb-3">Contacts</h3>
               <p className="text-white/70">
-                Find your friends on Essentials, exchange DIDs, and begin chatting. Essentials retrieves all contact information directly from Elastos' public identity ledger, so it's always accurate and up to date.
+                Connect with friends via DIDs and chat securely. Contact information comes directly from Elastos' identity ledger, ensuring accuracy and authenticity.
               </p>
             </motion.div>
 
@@ -197,7 +197,7 @@ const WalletPage: React.FC = () => {
               </div>
               <h3 className="text-2xl font-bold text-white mb-3">Decentralized Applications</h3>
               <p className="text-white/70">
-                On Essentials, users can browse and engage third-party dApps developed by Elastos ecosystem teams. From decentralized social media on Feeds to Elacity's DID-based NFT marketplace, Essentials serves as a portal many of Elastos' most exciting applications and communities.
+                Access ecosystem dApps from social media to NFT marketplaces. Essentials serves as your gateway to the most innovative Elastos applications and communities.
               </p>
             </motion.div>
 
@@ -218,7 +218,7 @@ const WalletPage: React.FC = () => {
               </div>
               <h3 className="text-2xl font-bold text-white mb-3">Decentralized Storage</h3>
               <p className="text-white/70">
-                Elastos Hive allows users to choose where they want to store specific pieces of their data. Essentials employs decentralized identities to secure user access to Hive storage, and provides user-friendly Hive Vault management services.
+                Store your data where you choose with Elastos Hive. DID-secured access to your personal vault ensures only you control your information.
               </p>
             </motion.div>
 
@@ -240,7 +240,7 @@ const WalletPage: React.FC = () => {
               </div>
               <h3 className="text-2xl font-bold text-white mb-3">Secure Communication</h3>
               <p className="text-white/70">
-                Essentials offers a unique, user-friendly access point to Elastos Carrier's Peer-to-Peer network. Just like other elements of the Elastos tech stack, Carrier's private communication network is never more than a few taps away on Elastos Essentials.
+                Communicate privately through Elastos Carrier's P2P network. End-to-end encrypted messaging is seamlessly integrated into the Essentials experience.
               </p>
             </motion.div>
           </div>
