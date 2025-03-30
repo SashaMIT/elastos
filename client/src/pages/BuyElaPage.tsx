@@ -233,7 +233,7 @@ const BuyElaPage = () => {
                 href="https://play.google.com/store/apps/details?id=io.web3essentials.app"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-1 text-xs bg-white dark:bg-[#171717] text-black dark:text-white hover:bg-gray-100 dark:hover:bg-gray-800 px-2 py-1 rounded border border-gray-200 dark:border-gray-700 transition-colors"
+                className="inline-flex items-center gap-1 px-4 py-1 bg-[#5C8EFF]/10 border border-[#5C8EFF]/30 text-white rounded-full text-xs font-medium whitespace-nowrap transition-colors hover:bg-[#5C8EFF]/20"
               >
                 How to stake ELA
                 <ExternalLink size={12} />
@@ -256,7 +256,7 @@ const BuyElaPage = () => {
                       href={exchange.url}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="inline-flex items-center gap-1 text-xs bg-white dark:bg-[#171717] text-black dark:text-white hover:bg-gray-100 dark:hover:bg-gray-800 px-2 py-1 rounded border border-gray-200 dark:border-gray-700 transition-colors"
+                      className="inline-flex items-center gap-1 px-4 py-1 bg-[#5C8EFF]/10 border border-[#5C8EFF]/30 text-white rounded-full text-xs font-medium whitespace-nowrap transition-colors hover:bg-[#5C8EFF]/20"
                     >
                       {exchange.name}
                       <ExternalLink size={12} />
@@ -274,7 +274,7 @@ const BuyElaPage = () => {
                       href={exchange.url}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="inline-flex items-center gap-1 text-xs bg-white dark:bg-[#171717] text-black dark:text-white hover:bg-gray-100 dark:hover:bg-gray-800 px-2 py-1 rounded border border-gray-200 dark:border-gray-700 transition-colors"
+                      className="inline-flex items-center gap-1 px-4 py-1 bg-[#F7921A]/10 border border-[#F7921A]/30 text-white rounded-full text-xs font-medium whitespace-nowrap transition-colors hover:bg-[#F7921A]/20"
                     >
                       {exchange.name}
                       <ExternalLink size={12} />
