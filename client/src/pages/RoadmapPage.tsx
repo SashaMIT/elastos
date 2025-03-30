@@ -1,20 +1,10 @@
+
 import React from 'react';
 import { Timeline } from "@/components/ui/timeline";
 import { ImageZoom } from "@/components/ui/zoomable-image";
 import { ForwardRoadmap } from "@/components/ui/forward-roadmap";
 
 export default function RoadmapPage() {
-  {/* Hero Section */}
-  <div className="w-full max-w-7xl mx-auto px-4 py-16 sm:px-6 lg:px-8">
-    <div className="text-center mb-12">
-      <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-6">
-        Elastos <span className="text-[#5C8EFF]">Roadmap</span>
-      </h1>
-      <p className="text-gray-400 max-w-2xl mx-auto text-sm sm:text-base md:text-lg">
-        Discover the multi-chain structure of Elastos, where Bitcoin-secured blockchain technology combines with purpose-built sidechains to deliver a comprehensive Web3 infrastructure
-      </p>
-    </div>
-  </div>
   const timelineData = [
     {
       title: "2000-2006",
@@ -83,6 +73,18 @@ export default function RoadmapPage() {
 
   return (
     <div className="container mx-auto px-4 py-12">
+      {/* Hero Section */}
+      <div className="w-full max-w-7xl mx-auto px-4 py-16 sm:px-6 lg:px-8">
+        <div className="text-center mb-12">
+          <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-6">
+            Elastos <span className="text-[#5C8EFF]">Roadmap</span>
+          </h1>
+          <p className="text-gray-400 max-w-2xl mx-auto text-sm sm:text-base md:text-lg">
+            Discover the multi-chain structure of Elastos, where Bitcoin-secured blockchain technology combines with purpose-built sidechains to deliver a comprehensive Web3 infrastructure
+          </p>
+        </div>
+      </div>
+      
       <ForwardRoadmap />
       <div className="mt-20">
         <Timeline timelineData={timelineData} />
