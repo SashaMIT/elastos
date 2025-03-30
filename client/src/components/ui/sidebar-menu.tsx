@@ -11,7 +11,7 @@ import { Link } from "wouter";
 
 export const SidebarMenu = () => {
   return (
-    <div className="flex flex-col h-[calc(100vh-4rem)] overflow-y-auto bg-background text-foreground pt-8">
+    <div className="flex flex-col h-[calc(100vh-4rem)] overflow-y-auto bg-background text-foreground pt-16">
       <Accordion type="single" collapsible className="w-full">
         <AccordionItem value="explore" className="border-b-0">
           <AccordionTrigger className="px-4 text-white">Explore</AccordionTrigger>
