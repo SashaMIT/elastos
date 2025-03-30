@@ -147,9 +147,9 @@ const elaTokens = [
     chainId: "1",
     address: "0xe6fd75ff38adca4b97fbcd938c86b98772431867",
     explorerUrl: "https://etherscan.io/token/0xe6fd75ff38adca4b97fbcd938c86b98772431867",
-    iconBg: "bg-gray-500/10",
-    borderColor: "border-gray-500/20",
-    icon: <Globe className="w-6 h-6 text-gray-400" />
+    iconBg: "bg-[#8BABFF]/10",
+    borderColor: "border-[#8BABFF]/20",
+    icon: <Globe className="w-6 h-6 text-[#8BABFF]" />
   }
 ];
 
