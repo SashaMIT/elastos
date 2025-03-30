@@ -395,10 +395,10 @@ const WalletPage: React.FC = () => {
         </div>
       </section>
 
-
-
-
-
+      {/* Footer */}
+      <div className="w-full bg-background dark:bg-[#171717] mt-20">
+        <StackedCircularFooter />
+      </div>
     </div>
   );
 };
