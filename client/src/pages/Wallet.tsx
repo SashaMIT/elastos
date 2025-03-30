@@ -1,5 +1,5 @@
 
-import { WalletPage } from "./WalletPage";
+import WalletPage from "./WalletPage";
 
 export default function Wallet() {
   return <WalletPage />;

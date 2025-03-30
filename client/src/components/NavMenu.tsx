@@ -2,7 +2,7 @@
 
 import * as React from "react";
 import { Link } from "wouter";
-import { Home, Shield, Code, HelpCircle, MessageCircle, Newspaper, Menu as MenuIcon, Moon, Sun, LineChart, Coins, ShoppingCart, ScrollText, Target, FileText, Terminal, Github, Download, PiggyBank, FileCode2, BookOpen, Video, Database, Star } from "lucide-react";
+import { Home, Shield, Code, HelpCircle, MessageCircle, Newspaper, Menu as MenuIcon, Moon, Sun, LineChart, Coins, ShoppingCart, ScrollText, Target, FileText, Terminal, Github, Download, PiggyBank, FileCode2, BookOpen, Video, Database, Star, Wallet } from "lucide-react";
 import { SidebarMenu } from "@/components/ui/sidebar-menu";
 import { useTheme } from "@/hooks/useTheme";
 import {
@@ -165,6 +165,14 @@ export function NavMenu() {
                         <div className="flex items-center gap-2">
                           <HelpCircle className="h-4 w-4 text-[#94b5ff]" />
                           <span>FAQs</span>
+                        </div>
+                      </NavigationMenuLink>
+                    </Link>
+                    <Link href="/wallet">
+                      <NavigationMenuLink className={navigationMenuTriggerStyle()}>
+                        <div className="flex items-center gap-2">
+                          <Wallet className="h-4 w-4 text-[#94b5ff]" />
+                          <span>Wallet</span>
                         </div>
                       </NavigationMenuLink>
                     </Link>
