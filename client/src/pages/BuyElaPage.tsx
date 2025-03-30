@@ -204,12 +204,8 @@ const BuyElaPage = () => {
             </div>
           </div>
 
-          <div className="bg-blue-50 dark:bg-[#222] p-3 rounded-lg dark:text-white relative">
-            {/* Background elements */}
-            <div className="absolute -top-10 -right-10 w-32 h-32 rounded-full bg-[#5C8EFF]/10 blur-[50px]"></div>
-            <div className="absolute -bottom-10 -left-10 w-32 h-32 rounded-full bg-[#5C8EFF]/10 blur-[50px]"></div>
-            
-            <div className="flex items-center gap-2 mb-2 relative z-10">
+          <div className="bg-blue-50 dark:bg-[#222] p-3 rounded-lg dark:text-white">
+            <div className="flex items-center gap-2 mb-2">
               <Wallet className="w-4 h-4 text-blue-500" />
               <h3 className="text-sm font-medium">Download Essentials Wallet</h3>
             </div>
@@ -218,50 +214,34 @@ const BuyElaPage = () => {
                 href="https://apps.apple.com/us/app/web3-essentials-crypto-wallet/id1568931743"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex px-3 py-2 bg-[rgba(92,142,255,0.10)] text-[#5C8EFF] rounded-full font-medium transition-all items-center gap-1 border border-[rgba(92,142,255,0.50)] text-sm"
+                className="inline-flex items-center gap-1 text-xs bg-white dark:bg-[#171717] text-black dark:text-white hover:bg-gray-100 dark:hover:bg-gray-800 px-2 py-1 rounded border border-gray-200 dark:border-gray-700 transition-colors"
               >
-                <span>Essentials for iOS</span>
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 35 34" fill="none">
-                  <circle cx="17.333" cy="17" r="16.75" stroke="#5C8EFF" strokeOpacity="0.5" strokeWidth="0.5"/>
-                  <path d="M17.3338 22.9405L23.2741 17.0002L17.3338 11.0598L16.4162 11.9774L20.7628 16.324H10.8622V17.6763H20.7628L16.4162 22.0229L17.3338 22.9405Z" fill="#5C8EFF"/>
-                  <path d="M20.7628 17.6638H10.8747V16.3365H20.7628H20.7929L20.7716 16.3152L16.4338 11.9774L17.3338 11.0775L23.2564 17.0002L17.3338 22.9228L16.4338 22.0229L20.7716 17.6851L20.7929 17.6638H20.7628Z" stroke="#5C8EFF" strokeOpacity="0.5" strokeWidth="0.025"/>
-                </svg>
+                Essentials for iOS
+                <ExternalLink size={12} />
               </a>
               <a
                 href="https://download.elastos.io/app/elastos-essentials/Essentials.apk"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex px-3 py-2 bg-[rgba(246,146,26,0.10)] text-[#F6921A] rounded-full font-medium transition-all items-center gap-1 border border-[rgba(246,146,26,0.50)] text-sm"
+                className="inline-flex items-center gap-1 text-xs bg-white dark:bg-[#171717] text-black dark:text-white hover:bg-gray-100 dark:hover:bg-gray-800 px-2 py-1 rounded border border-gray-200 dark:border-gray-700 transition-colors"
               >
-                <span>Essentials for Android</span>
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 35 34" fill="none">
-                  <circle cx="17.333" cy="17" r="16.75" stroke="#F6921A" strokeOpacity="0.5" strokeWidth="0.5"/>
-                  <path d="M17.3338 22.9405L23.2741 17.0002L17.3338 11.0598L16.4162 11.9774L20.7628 16.324H10.8622V17.6763H20.7628L16.4162 22.0229L17.3338 22.9405Z" fill="#F6921A"/>
-                  <path d="M20.7628 17.6638H10.8747V16.3365H20.7628H20.7929L20.7716 16.3152L16.4338 11.9774L17.3338 11.0775L23.2564 17.0002L17.3338 22.9228L16.4338 22.0229L20.7716 17.6851L20.7929 17.6638H20.7628Z" stroke="#F6921A" strokeOpacity="0.5" strokeWidth="0.025"/>
-                </svg>
+                Essentials for Android
+                <ExternalLink size={12} />
               </a>
               <a
                 href="https://elastos.info/tutorial/bpos-staking-and-voting-guide/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex px-3 py-2 bg-[rgba(92,142,255,0.10)] text-[#5C8EFF] rounded-full font-medium transition-all items-center gap-1 border border-[rgba(92,142,255,0.50)] text-sm"
+                className="inline-flex items-center gap-1 text-xs bg-white dark:bg-[#171717] text-black dark:text-white hover:bg-gray-100 dark:hover:bg-gray-800 px-2 py-1 rounded border border-gray-200 dark:border-gray-700 transition-colors"
               >
-                <span>How to stake ELA</span>
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 35 34" fill="none">
-                  <circle cx="17.333" cy="17" r="16.75" stroke="#5C8EFF" strokeOpacity="0.5" strokeWidth="0.5"/>
-                  <path d="M17.3338 22.9405L23.2741 17.0002L17.3338 11.0598L16.4162 11.9774L20.7628 16.324H10.8622V17.6763H20.7628L16.4162 22.0229L17.3338 22.9405Z" fill="#5C8EFF"/>
-                  <path d="M20.7628 17.6638H10.8747V16.3365H20.7628H20.7929L20.7716 16.3152L16.4338 11.9774L17.3338 11.0775L23.2564 17.0002L17.3338 22.9228L16.4338 22.0229L20.7716 17.6851L20.7929 17.6638H20.7628Z" stroke="#5C8EFF" strokeOpacity="0.5" strokeWidth="0.025"/>
-                </svg>
+                How to stake ELA
+                <ExternalLink size={12} />
               </a>
             </div>
           </div>
 
-          <div className="bg-green-50 dark:bg-[#171717] p-3 rounded-lg dark:text-white relative">
-            {/* Background elements */}
-            <div className="absolute -top-10 -right-10 w-32 h-32 rounded-full bg-[#F7921A]/10 blur-[50px]"></div>
-            <div className="absolute -bottom-10 -left-10 w-32 h-32 rounded-full bg-[#8BABFF]/10 blur-[50px]"></div>
-            
-            <h3 className="text-sm font-medium text-black-700 dark:text-white mb-2 flex items-center gap-2 relative z-10">
+          <div className="bg-green-50 dark:bg-[#171717] p-3 rounded-lg dark:text-white">
+            <h3 className="text-sm font-medium text-black-700 dark:text-white mb-2 flex items-center gap-2">
               <Star className="w-4 h-4 text-green-500" />
               Buy ELA
             </h3>
@@ -305,13 +285,9 @@ const BuyElaPage = () => {
           </div>
 
           <div className="grid md:grid-cols-2 gap-3">
-            <div className="bg-gradient-to-r from-[#5C8EFF] to-[#F7921A] text-white p-3 rounded-lg h-[300px] overflow-auto relative">
-              {/* Background elements */}
-              <div className="absolute -top-10 -right-10 w-40 h-40 rounded-full bg-[#F7921A]/10 blur-[60px]"></div>
-              <div className="absolute -bottom-10 -left-10 w-40 h-40 rounded-full bg-[#8BABFF]/10 blur-[60px]"></div>
-              
-              <h3 className="text-sm font-bold mb-2 relative z-10">Security & Supply Benefits</h3>
-              <div className="grid gap-3 relative z-10">
+            <div className="bg-gradient-to-r from-[#5C8EFF] to-[#F7921A] text-white p-3 rounded-lg h-[300px] overflow-auto">
+              <h3 className="text-sm font-bold mb-2">Security & Supply Benefits</h3>
+              <div className="grid gap-3">
                 <div>
                   <h4 className="text-xs font-semibold mb-1">Security Leadership</h4>
                   <ul className="space-y-1">
@@ -347,12 +323,8 @@ const BuyElaPage = () => {
               </div>
             </div>
 
-            <div className="bg-white dark:bg-[#171717] rounded-lg border dark:border-gray-700 p-2 h-[300px] relative">
-              {/* Background elements */}
-              <div className="absolute -top-10 -right-10 w-40 h-40 rounded-full bg-[#F7921A]/10 blur-[60px]"></div>
-              <div className="absolute -bottom-10 -left-10 w-40 h-40 rounded-full bg-[#8BABFF]/10 blur-[60px]"></div>
-              
-              <h3 className="text-sm font-medium mb-2 flex items-center gap-2 dark:text-white relative z-10">
+            <div className="bg-white dark:bg-[#171717] rounded-lg border dark:border-gray-700 p-2 h-[300px]">
+              <h3 className="text-sm font-medium mb-2 flex items-center gap-2 dark:text-white">
                 <Shield className="h-4 w-4 text-blue-500" />
                 Security Integration
               </h3>
