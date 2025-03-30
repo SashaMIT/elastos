@@ -230,7 +230,7 @@ const BuyElaPage = () => {
                 <ExternalLink size={12} />
               </a>
               <a
-                href="https://elastos.info/tutorial/bpos-staking-and-voting-guide/"
+                href="https://play.google.com/store/apps/details?id=io.web3essentials.app"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-1 text-xs bg-white dark:bg-[#171717] text-black dark:text-white hover:bg-gray-100 dark:hover:bg-gray-800 px-2 py-1 rounded border border-gray-200 dark:border-gray-700 transition-colors"
