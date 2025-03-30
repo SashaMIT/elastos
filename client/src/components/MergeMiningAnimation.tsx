@@ -268,44 +268,64 @@ const MergeMiningAnimation = () => {
 
         {/* Bitcoin Mining Side */}
         <div className="absolute left-1 sm:left-8 top-1/2 transform -translate-y-1/2 z-10">
-          <div className="p-2 sm:p-6 bg-gradient-to-br from-orange-100 to-orange-50 dark:bg-gradient-to-br dark:from-orange-950 dark:to-orange-900 rounded-xl border-2 border-orange-400 dark:border-orange-700 shadow-lg dark:shadow-[0_0_15px_rgba(234,88,12,0.2)] dark:hover:shadow-[0_0_25px_rgba(234,88,12,0.3)] transition-all duration-300">
+          <div className="p-2 sm:p-6 bg-[rgba(246,146,26,0.10)] rounded-xl border border-[rgba(246,146,26,0.50)] text-[#F6921A] shadow-lg transition-all duration-300 dark:shadow-[0_0_15px_rgba(246,146,26,0.2)] dark:hover:shadow-[0_0_25px_rgba(246,146,26,0.3)]">
             <div className="flex items-center gap-1 sm:gap-3 mb-1 sm:mb-4">
-              <Server className="text-orange-600 dark:text-orange-400 w-4 h-4 sm:w-8 sm:h-8" />
+              <Server className="text-[#F6921A] w-4 h-4 sm:w-8 sm:h-8" />
               <div>
-                <span className="font-bold text-sm sm:text-xl block text-neutral-900 dark:text-orange-100">
+                <span className="font-bold text-sm sm:text-xl block text-[#F6921A]">
                   Bitcoin
                 </span>
-                <span className="text-xs sm:text-sm text-orange-600 dark:text-orange-400">
+                <span className="text-xs sm:text-sm text-[#F6921A]">
                   Miners
                 </span>
               </div>
             </div>
 
-            <div className="flex items-center gap-2 text-sm mt-4 p-2 rounded-lg">
-              <Coins className="w-5 h-5 text-orange-600 dark:text-orange-400" />
-              <span className="text-neutral-900 dark:text-orange-100">BTC Rewards</span>
+            <div className="flex items-center justify-between mt-4">
+              <div className="flex items-center gap-2 text-sm">
+                <Coins className="w-5 h-5 text-[#F6921A]" />
+                <span className="text-[#F6921A]">BTC Rewards</span>
+              </div>
+              
+              <div className="flex items-center gap-1">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 35 34" fill="none">
+                  <circle cx="17.333" cy="17" r="16.75" stroke="#F6921A" strokeOpacity="0.5" strokeWidth="0.5"/>
+                  <path d="M17.3338 22.9405L23.2741 17.0002L17.3338 11.0598L16.4162 11.9774L20.7628 16.324H10.8622V17.6763H20.7628L16.4162 22.0229L17.3338 22.9405Z" fill="#F6921A"/>
+                  <path d="M20.7628 17.6638H10.8747V16.3365H20.7628H20.7929L20.7716 16.3152L16.4338 11.9774L17.3338 11.0775L23.2564 17.0002L17.3338 22.9228L16.4338 22.0229L20.7716 17.6851L20.7929 17.6638H20.7628Z" stroke="#F6921A" strokeOpacity="0.5" strokeWidth="0.025"/>
+                </svg>
+              </div>
             </div>
           </div>
         </div>
 
         {/* Elastos Side */}
         <div className="absolute right-1 sm:right-8 top-1/2 transform -translate-y-1/2 z-10">
-          <div className="p-2 sm:p-6 bg-gradient-to-br from-blue-100 to-blue-50 dark:bg-gradient-to-br dark:from-blue-950 dark:to-blue-900 rounded-xl border-2 border-blue-400 dark:border-blue-700 shadow-lg dark:shadow-[0_0_15px_rgba(59,130,246,0.2)] dark:hover:shadow-[0_0_25px_rgba(59,130,246,0.3)] transition-all duration-300">
+          <div className="p-2 sm:p-6 bg-[rgba(92,142,255,0.10)] rounded-xl border border-[rgba(92,142,255,0.50)] text-[#5C8EFF] shadow-lg transition-all duration-300 dark:shadow-[0_0_15px_rgba(92,142,255,0.2)] dark:hover:shadow-[0_0_25px_rgba(92,142,255,0.3)]">
             <div className="flex items-center gap-1 sm:gap-3 mb-1 sm:mb-4">
-              <Shield className="text-blue-600 dark:text-blue-400 w-4 h-4 sm:w-8 sm:h-8" />
+              <Shield className="text-[#5C8EFF] w-4 h-4 sm:w-8 sm:h-8" />
               <div>
-                <span className="font-bold text-sm sm:text-xl block text-neutral-900 dark:text-blue-100">
+                <span className="font-bold text-sm sm:text-xl block text-[#5C8EFF]">
                   Elastos
                 </span>
-                <span className="text-xs sm:text-sm text-blue-600 dark:text-blue-400">
+                <span className="text-xs sm:text-sm text-[#5C8EFF]">
                   Merge Mining
                 </span>
               </div>
             </div>
 
-            <div className="flex items-center gap-2 text-sm mt-4 p-2 rounded-lg">
-              <Coins className="w-5 h-5 text-blue-600 dark:text-blue-400" />
-              <span className="text-neutral-900 dark:text-blue-100">ELA Rewards</span>
+            <div className="flex items-center justify-between mt-4">
+              <div className="flex items-center gap-2 text-sm">
+                <Coins className="w-5 h-5 text-[#5C8EFF]" />
+                <span className="text-[#5C8EFF]">ELA Rewards</span>
+              </div>
+              
+              <div className="flex items-center gap-1">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 35 34" fill="none">
+                  <circle cx="17.333" cy="17" r="16.75" stroke="#5C8EFF" strokeOpacity="0.5" strokeWidth="0.5"/>
+                  <path d="M17.3338 22.9405L23.2741 17.0002L17.3338 11.0598L16.4162 11.9774L20.7628 16.324H10.8622V17.6763H20.7628L16.4162 22.0229L17.3338 22.9405Z" fill="#5C8EFF"/>
+                  <path d="M20.7628 17.6638H10.8747V16.3365H20.7628H20.7929L20.7716 16.3152L16.4338 11.9774L17.3338 11.0775L23.2564 17.0002L17.3338 22.9228L16.4338 22.0229L20.7716 17.6851L20.7929 17.6638H20.7628Z" stroke="#5C8EFF" strokeOpacity="0.5" strokeWidth="0.025"/>
+                </svg>
+              </div>
             </div>
           </div>
         </div>
