@@ -136,6 +136,17 @@ export function NavMenu() {
                   </div>
                   <div>
                     <h4 className="font-medium text-sm text-muted-foreground mb-2 px-2 text-[#94b5ff]">NETWORK</h4>
+                    <a href="https://staking.elastos.net/" target="_blank" rel="noopener noreferrer">
+                      <NavigationMenuLink className={navigationMenuTriggerStyle()}>
+                        <div className="flex items-center gap-2">
+                          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#94b5ff" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                            <path d="M5 12h14"></path>
+                            <path d="M12 5v14"></path>
+                          </svg>
+                          <span>Staking and Nodes</span>
+                        </div>
+                      </NavigationMenuLink>
+                    </a>
                     <Link to="/wallet">
                       <NavigationMenuLink className={navigationMenuTriggerStyle()}>
                         <div className="flex items-center gap-2">
