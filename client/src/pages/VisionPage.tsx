@@ -72,50 +72,6 @@ export function VisionPage() {
             <div className="mb-20">
               <LogoCarouselDemo />
             </div>
-
-            {/* Testnets Section */}
-            <div className="mb-20">
-              <div className="text-center mb-10">
-                <h2 className="text-3xl md:text-4xl font-bold mb-4 text-black dark:text-white">
-                  Elastos <span className="text-[#F7921A]">Testnets</span>
-                </h2>
-                <p className="text-lg text-gray-600 dark:text-gray-300">
-                  Test and build with our developer-friendly environments
-                </p>
-              </div>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto">
-                <a 
-                  href="https://esc-testnet.elastos.io/" 
-                  target="_blank" 
-                  rel="noopener noreferrer"
-                  className="flex flex-col p-6 rounded-xl border border-[#5C8EFF]/30 bg-white dark:bg-[#1A1A1A] hover:shadow-lg transition-all"
-                >
-                  <h3 className="text-xl font-bold mb-2 text-[#5C8EFF]">Elastos ESC Testnet</h3>
-                  <p className="text-gray-500 dark:text-gray-400 mb-4">Test your smart contracts and dApps on the Elastos Smart Contract chain</p>
-                  <div className="mt-auto text-sm text-[#F7921A] font-medium flex items-center">
-                    Visit Testnet
-                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 35 34" fill="none" className="ml-1">
-                      <path d="M17.3338 22.9405L23.2741 17.0002L17.3338 11.0598L16.4162 11.9774L20.7628 16.324H10.8622V17.6763H20.7628L16.4162 22.0229L17.3338 22.9405Z" fill="#F7921A"/>
-                    </svg>
-                  </div>
-                </a>
-                <a 
-                  href="https://eid-testnet.elastos.io/" 
-                  target="_blank" 
-                  rel="noopener noreferrer"
-                  className="flex flex-col p-6 rounded-xl border border-[#5C8EFF]/30 bg-white dark:bg-[#1A1A1A] hover:shadow-lg transition-all"
-                >
-                  <h3 className="text-xl font-bold mb-2 text-[#5C8EFF]">Elastos EID Testnet</h3>
-                  <p className="text-gray-500 dark:text-gray-400 mb-4">Develop and test applications with Elastos Identity on the testnet</p>
-                  <div className="mt-auto text-sm text-[#F7921A] font-medium flex items-center">
-                    Visit Testnet
-                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 35 34" fill="none" className="ml-1">
-                      <path d="M17.3338 22.9405L23.2741 17.0002L17.3338 11.0598L16.4162 11.9774L20.7628 16.324H10.8622V17.6763H20.7628L16.4162 22.0229L17.3338 22.9405Z" fill="#F7921A"/>
-                    </svg>
-                  </div>
-                </a>
-              </div>
-            </div>
           </div>
         </div>
 
