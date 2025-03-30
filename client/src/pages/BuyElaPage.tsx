@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { motion } from 'framer-motion'; // Added import statement
 import { Card, CardHeader, CardTitle, CardContent } from '@/components/ui/card';
 import { Shield, Lock, Bitcoin, Star, Wallet, ExternalLink, CheckCircle, CheckCircle2, Info } from 'lucide-react';
 import {
@@ -299,7 +300,7 @@ const BuyElaPage = () => {
               <p className="text-white/70 mb-4">
                 Bitcoin-level security with a fixed max supply of 28.22M tokens.
               </p>
-              
+
               <div className="space-y-4">
                 <div>
                   <h4 className="text-lg font-semibold mb-2">Security Leadership</h4>
@@ -317,7 +318,7 @@ const BuyElaPage = () => {
                     ))}
                   </ul>
                 </div>
-                
+
                 <div>
                   <h4 className="text-lg font-semibold mb-2">Supply Certainty</h4>
                   <ul className="space-y-2">
