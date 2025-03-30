@@ -1,4 +1,3 @@
-
 import React from "react";
 import { FeaturesSectionWithHoverEffects } from "@/components/blocks/feature-section-with-hover-effects";
 import { FeaturesSectionWithBentoGrid } from "@/components/blocks/feature-section-with-bento-grid";
@@ -65,24 +64,35 @@ export function VisionPage() {
           <div className="mt-0 mb-20">
             <WhyTheWorldNeedsThis />
           </div>
-         
+
           {/* Features Grid */}
           <div className="-mt-20 mb-0">
             <FeaturesSectionWithBentoGrid />
           </div>
-         
+
           {/* A World Computer for Everyone Banner */}
           <div className="mt-20 -mx-4 px-4 md:px-0">
             <WorldComputerBanner />
           </div>
-          
+
           {/* Logo Carousel */}
-          <div className="mt-20 -mx-4">
+          <div className="mb-20">
             <LogoCarouselDemo />
+            <div className="mt-8 text-center">
+              <a href="/ecosystem" className="px-6 py-2 rounded-full border border-[#5C8EFF] text-[#5C8EFF] inline-flex items-center gap-2 bg-transparent hover:bg-[#5C8EFF]/10 transition-colors">
+                <span>Explore Ecosystem</span>
+                <div className="rounded-full border border-[#5C8EFF]/50 flex items-center justify-center" style={{ width: '24px', height: '24px' }}>
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="#5C8EFF" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                  </svg>
+                </div>
+              </a>
+            </div>
           </div>
+
         </div>
       </div>
-      
+
       <div className="w-full">
         {/* Footer */}
         <div className="w-full ">
