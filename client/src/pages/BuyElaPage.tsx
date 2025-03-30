@@ -285,7 +285,7 @@ const BuyElaPage = () => {
           </div>
 
           <div className="grid md:grid-cols-2 gap-3">
-            <div className="bg-gradient-to-r from-blue-500 to-blue-600 text-white p-3 rounded-lg h-[300px] overflow-auto">
+            <div className="bg-gradient-to-r from-[#5C8EFF] to-[#F7921A] text-white p-3 rounded-lg h-[300px] overflow-auto">
               <h3 className="text-sm font-bold mb-2">Security & Supply Benefits</h3>
               <div className="grid gap-3">
                 <div>
