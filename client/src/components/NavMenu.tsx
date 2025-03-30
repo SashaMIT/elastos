@@ -144,14 +144,14 @@ export function NavMenu() {
                         </div>
                       </NavigationMenuLink>
                     </Link>
-                    <Link to="/staking">
+                    <a href="https://staking.elastos.net/" target="_blank" rel="noopener noreferrer">
                       <NavigationMenuLink className={navigationMenuTriggerStyle()}>
                         <div className="flex items-center gap-2">
                           <LineChart className="h-4 w-4 text-[#94b5ff]" />
                           <span>Staking & Nodes</span>
                         </div>
                       </NavigationMenuLink>
-                    </Link>
+                    </a>
                     <Link to="/explorer">
                       <NavigationMenuLink className={navigationMenuTriggerStyle()}>
                         <div className="flex items-center gap-2">
