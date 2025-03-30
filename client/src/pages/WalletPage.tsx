@@ -1,6 +1,8 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { cn } from "@/lib/utils";
+import { Button } from "@/components/ui/button";
+import { ArrowRight, Code, Download, ExternalLink, Wallet } from "lucide-react";
 
 const WalletPage: React.FC = () => {
   return (
@@ -26,7 +28,7 @@ const WalletPage: React.FC = () => {
               </p>
             </motion.div>
 
-            <div className="bg-[#232323] rounded-xl overflow-hidden shadow-2xl">
+            <div className="bg-gradient-to-br from-[#F7921A]/10 to-[#F7921A]/5 rounded-xl overflow-hidden shadow-2xl border border-[#F7921A]/20">
               <div className="p-8 md:p-12 flex flex-col md:flex-row items-center">
                 <div className="md:w-1/2 mb-8 md:mb-0">
                   <motion.div
@@ -54,9 +56,14 @@ const WalletPage: React.FC = () => {
                     viewport={{ once: true }}
                     transition={{ delay: 0.2 }}
                   >
-                    <h3 className="text-2xl font-bold text-white mb-6">
-                      The Complete Elastos Experience
-                    </h3>
+                    <div className="flex items-center gap-3 mb-4">
+                      <div className="w-10 h-10 rounded-full bg-[#F7921A]/20 flex items-center justify-center">
+                        <Wallet className="w-6 h-6 text-[#F7921A]" />
+                      </div>
+                      <h3 className="text-2xl font-bold text-[#F7921A]">
+                        The Complete Elastos Experience
+                      </h3>
+                    </div>
                     <p className="text-white/70 mb-6">
                       Elastos Essentials is the native wallet and identity manager for the Elastos ecosystem. With Elastos Essentials, you get:
                     </p>
