@@ -1,0 +1,90 @@
+{/* Elastos Essentials Wallet Section */}
+<section className="py-16 relative overflow-hidden">
+  <div className="absolute inset-0 bg-gradient-to-b from-white/[0.00] via-white/[0.02] to-white/[0.00] z-0"></div>
+  
+  <div className="container mx-auto px-4 relative z-10">
+    <div className="max-w-6xl mx-auto">
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        className="mb-8 text-center"
+      >
+        <h2 className="text-4xl font-bold text-white mb-4">
+          <span className="text-[#F7921A]">Elastos</span>{" "}
+          <span className="text-[#8BABFF]">Essentials</span> Wallet
+        </h2>
+        <p className="text-xl text-white/70 max-w-3xl mx-auto">
+          Experience the official Elastos wallet with native support for the entire Elastos ecosystem
+        </p>
+      </motion.div>
+      
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ delay: 0.2 }}
+        className="rounded-3xl bg-gradient-to-br from-[#F7921A]/10 via-[#8BABFF]/10 to-transparent p-10 border border-[#8BABFF]/20 max-w-5xl mx-auto relative overflow-hidden"
+      >
+        {/* Background elements */}
+        <div className="absolute -top-20 -right-20 w-64 h-64 rounded-full bg-[#F7921A]/10 blur-[80px]"></div>
+        <div className="absolute -bottom-20 -left-20 w-72 h-72 rounded-full bg-[#8BABFF]/10 blur-[100px]"></div>
+        
+        <div className="grid md:grid-cols-2 gap-10 items-center">
+          <div className="flex justify-center">
+            <img 
+              src="/elastos-essentials-phone-new.png" 
+              alt="Elastos Essentials" 
+              className="w-full max-w-[250px] rounded-xl shadow-lg shadow-black/20"
+            />
+          </div>
+          <div>
+            <h3 className="text-2xl font-bold text-white mb-4">The Complete Elastos Experience</h3>
+            <div className="space-y-4 text-white/70">
+              <p>Elastos Essentials is the native wallet and identity manager for the Elastos ecosystem. With Elastos Essentials, you get:</p>
+              <ul className="space-y-2">
+                <li className="flex items-start gap-2">
+                  <CircleCheck className="w-5 h-5 text-[#F7921A] mt-0.5 flex-shrink-0" />
+                  <span>Native support for all Elastos chains including Mainchain, ESC, and EID</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <CircleCheck className="w-5 h-5 text-[#F7921A] mt-0.5 flex-shrink-0" />
+                  <span>Integrated DID (Decentralized Identity) management</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <CircleCheck className="w-5 h-5 text-[#F7921A] mt-0.5 flex-shrink-0" />
+                  <span>Secure digital asset management with multi-chain support</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <CircleCheck className="w-5 h-5 text-[#F7921A] mt-0.5 flex-shrink-0" />
+                  <span>Built-in DApp browser and credential manager</span>
+                </li>
+              </ul>
+              
+              <div className="flex flex-wrap gap-4 pt-4">
+                <a
+                  href="https://apps.apple.com/us/app/elastos-essentials/id1568931743"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-2 px-4 py-2 bg-white/10 hover:bg-white/15 transition-colors rounded-lg border border-white/10"
+                >
+                  <img src="/apple-logo.svg" alt="App Store" className="w-5 h-5" />
+                  <span className="text-white">App Store</span>
+                </a>
+                <a
+                  href="https://play.google.com/store/apps/details?id=org.elastos.essentials.app"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-2 px-4 py-2 bg-white/10 hover:bg-white/15 transition-colors rounded-lg border border-white/10"
+                >
+                  <img src="/google-play.svg" alt="Google Play" className="w-5 h-5" />
+                  <span className="text-white">Google Play</span>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </motion.div>
+    </div>
+  </div>
+</section>
