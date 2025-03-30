@@ -293,13 +293,9 @@ const BuyElaPage = () => {
               transition={{ delay: 0.1 }}
               className="bg-gradient-to-br from-[#F7921A]/10 via-[#8BABFF]/5 to-transparent rounded-xl p-6 border border-[#F7921A]/20 h-full"
             >
-              <div className="rounded-full bg-[#F7921A]/10 p-4 w-16 h-16 flex items-center justify-center mb-5">
-                <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8 text-[#F7921A]" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                  <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
-                </svg>
-              </div>
-              <h3 className="text-2xl font-bold text-white mb-3">Security & Supply Benefits</h3>
-              <p className="text-white/70">
+              
+              <h3 className="text-xl font-bold text-white mb-2">Security & Supply Benefits</h3>
+              <p className="text-sm text-white/70">
                 Bitcoin-level security with a fixed max supply of 28.22M tokens.
               </p>
               <div className="grid gap-3">
