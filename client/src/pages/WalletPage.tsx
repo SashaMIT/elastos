@@ -1,4 +1,3 @@
-
 import React from "react";
 import { motion } from "framer-motion";
 import { cn } from "@/lib/utils";
@@ -11,7 +10,7 @@ const WalletPage: React.FC = () => {
       {/* Elastos Essentials Wallet Section */}
       <section className="py-16 relative overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-b from-white/[0.00] via-white/[0.02] to-white/[0.00] z-0"></div>
-        
+
         <div className="container mx-auto px-4 relative z-10">
           <div className="max-w-6xl mx-auto">
             <motion.div
@@ -28,7 +27,7 @@ const WalletPage: React.FC = () => {
                 Experience the official Elastos wallet with native support for the entire Elastos ecosystem
               </p>
             </motion.div>
-            
+
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -39,7 +38,7 @@ const WalletPage: React.FC = () => {
               {/* Background elements */}
               <div className="absolute -top-20 -right-20 w-64 h-64 rounded-full bg-[#F7921A]/10 blur-[80px]"></div>
               <div className="absolute -bottom-20 -left-20 w-72 h-72 rounded-full bg-[#8BABFF]/10 blur-[100px]"></div>
-              
+
               <div className="grid md:grid-cols-2 gap-10 items-center">
                 <div className="flex justify-center">
                   <img 
@@ -74,7 +73,7 @@ const WalletPage: React.FC = () => {
                         <span>Built-in DApp browser and credential manager</span>
                       </li>
                     </ul>
-                    
+
                     <div className="flex flex-wrap gap-4 pt-4">
                       <a
                         href="https://apps.apple.com/us/app/elastos-essentials/id1568931743"
@@ -98,6 +97,151 @@ const WalletPage: React.FC = () => {
                   </div>
                 </div>
               </div>
+            </motion.div>
+          </div>
+        </div>
+      </section>
+
+      {/* Features Section */}
+      <section className="py-16 relative">
+        <div className="container mx-auto px-4">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="text-center mb-12"
+          >
+            <h2 className="text-4xl font-bold text-white mb-3">
+              Features that give you control
+            </h2>
+            <p className="text-xl text-white/70">
+              The road to Web3 begins here.
+            </p>
+          </motion.div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-7xl mx-auto">
+            {/* Digital Asset and Staking Support */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.1 }}
+              className="bg-gradient-to-br from-[#F7921A]/10 via-[#8BABFF]/5 to-transparent rounded-xl p-6 border border-[#F7921A]/20 h-full"
+            >
+              <div className="rounded-full bg-[#F7921A]/10 p-4 w-16 h-16 flex items-center justify-center mb-5">
+                <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8 text-[#F7921A]" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                  <path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6" />
+                </svg>
+              </div>
+              <h3 className="text-2xl font-bold text-white mb-3">Digital Asset and Staking Support</h3>
+              <p className="text-white/70">
+                Essentials makes managing your digital assets and staking participation simple. The Essentials Super-Wallet supports ELA and all Elastos ecosystem assets, as well as a number of assets from other prominent blockchain ecosystems.
+              </p>
+            </motion.div>
+
+            {/* Decentralized ID (DID) */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.2 }}
+              className="bg-gradient-to-br from-[#8BABFF]/10 via-[#F7921A]/5 to-transparent rounded-xl p-6 border border-[#8BABFF]/20 h-full"
+            >
+              <div className="rounded-full bg-[#8BABFF]/10 p-4 w-16 h-16 flex items-center justify-center mb-5">
+                <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8 text-[#8BABFF]" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                  <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+                </svg>
+              </div>
+              <h3 className="text-2xl font-bold text-white mb-3">Decentralized ID (DID)</h3>
+              <p className="text-white/70">
+                On Essentials, registering your very own DID (or several!) is never more than a few clicks away. Get started carving out your own decentralized identity, so you can claim your piece of digital real estate in the metaverse!
+              </p>
+            </motion.div>
+
+            {/* Contacts */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.3 }}
+              className="bg-gradient-to-br from-[#F7921A]/10 via-[#8BABFF]/5 to-transparent rounded-xl p-6 border border-[#F7921A]/20 h-full"
+            >
+              <div className="rounded-full bg-[#F7921A]/10 p-4 w-16 h-16 flex items-center justify-center mb-5">
+                <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8 text-[#F7921A]" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                  <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
+                  <circle cx="9" cy="7" r="4" />
+                  <path d="M23 21v-2a4 4 0 0 0-3-3.87" />
+                  <path d="M16 3.13a4 4 0 0 1 0 7.75" />
+                </svg>
+              </div>
+              <h3 className="text-2xl font-bold text-white mb-3">Contacts</h3>
+              <p className="text-white/70">
+                Find your friends on Essentials, exchange DIDs, and begin chatting. Essentials retrieves all contact information directly from Elastos' public identity ledger, so it's always accurate and up to date.
+              </p>
+            </motion.div>
+
+            {/* Decentralized Applications */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.4 }}
+              className="bg-gradient-to-br from-[#8BABFF]/10 via-[#F7921A]/5 to-transparent rounded-xl p-6 border border-[#8BABFF]/20 h-full"
+            >
+              <div className="rounded-full bg-[#8BABFF]/10 p-4 w-16 h-16 flex items-center justify-center mb-5">
+                <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8 text-[#8BABFF]" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                  <rect x="2" y="3" width="20" height="14" rx="2" ry="2" />
+                  <line x1="8" y1="21" x2="16" y2="21" />
+                  <line x1="12" y1="17" x2="12" y2="21" />
+                </svg>
+              </div>
+              <h3 className="text-2xl font-bold text-white mb-3">Decentralized Applications</h3>
+              <p className="text-white/70">
+                On Essentials, users can browse and engage third-party dApps developed by Elastos ecosystem teams. From decentralized social media on Feeds to Elacity's DID-based NFT marketplace, Essentials serves as a portal many of Elastos' most exciting applications and communities.
+              </p>
+            </motion.div>
+
+            {/* Decentralized Storage */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.5 }}
+              className="bg-gradient-to-br from-[#F7921A]/10 via-[#8BABFF]/5 to-transparent rounded-xl p-6 border border-[#F7921A]/20 h-full"
+            >
+              <div className="rounded-full bg-[#F7921A]/10 p-4 w-16 h-16 flex items-center justify-center mb-5">
+                <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8 text-[#F7921A]" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                  <path d="M2 20h20" />
+                  <path d="M5 20V7a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1v13" />
+                  <path d="M13 20V4a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1v16" />
+                </svg>
+              </div>
+              <h3 className="text-2xl font-bold text-white mb-3">Decentralized Storage</h3>
+              <p className="text-white/70">
+                Elastos Hive allows users to choose where they want to store specific pieces of their data. Essentials employs decentralized identities to secure user access to Hive storage, and provides user-friendly Hive Vault management services.
+              </p>
+            </motion.div>
+
+            {/* Secure Communication */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.6 }}
+              className="bg-gradient-to-br from-[#8BABFF]/10 via-[#F7921A]/5 to-transparent rounded-xl p-6 border border-[#8BABFF]/20 h-full"
+            >
+              <div className="rounded-full bg-[#8BABFF]/10 p-4 w-16 h-16 flex items-center justify-center mb-5">
+                <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8 text-[#8BABFF]" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                  <path d="M11 17.25a.25.25 0 1 1-.25.25.25.25 0 0 1 .25-.25" />
+                  <path d="M16 21h-2a2 2 0 0 1-2-2v-6a2 2 0 0 1 2-2h2" />
+                  <path d="M14 7V5c0-2.8-2.2-5-5-5S4 2.2 4 5v2" />
+                  <rect x="4" y="7" width="16" height="14" rx="2" />
+                </svg>
+              </div>
+              <h3 className="text-2xl font-bold text-white mb-3">Secure Communication</h3>
+              <p className="text-white/70">
+                Essentials offers a unique, user-friendly access point to Elastos Carrier's Peer-to-Peer network. Just like other elements of the Elastos tech stack, Carrier's private communication network is never more than a few taps away on Elastos Essentials.
+              </p>
             </motion.div>
           </div>
         </div>
