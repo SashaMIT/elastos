@@ -268,7 +268,7 @@ const MergeMiningAnimation = () => {
 
         {/* Bitcoin Mining Side */}
         <div className="absolute left-1 sm:left-8 top-1/2 transform -translate-y-1/2 z-10">
-          <div className="p-2 sm:p-6 bg-[rgba(246,146,26,0.10)] rounded-xl border border-[rgba(246,146,26,0.50)] text-[#F6921A] shadow-lg transition-all duration-300 dark:shadow-[0_0_15px_rgba(246,146,26,0.2)] dark:hover:shadow-[0_0_25px_rgba(246,146,26,0.3)]">
+          <div className="p-2 sm:p-6 bg-[#2f241a] rounded-xl border border-[#F6921A] text-[#F6921A] shadow-lg transition-all duration-300 dark:shadow-[0_0_15px_rgba(246,146,26,0.2)] dark:hover:shadow-[0_0_25px_rgba(246,146,26,0.3)]">
             <div className="flex items-center gap-1 sm:gap-3 mb-1 sm:mb-4">
               <Server className="text-[#F6921A] w-4 h-4 sm:w-8 sm:h-8" />
               <div>
@@ -300,7 +300,7 @@ const MergeMiningAnimation = () => {
 
         {/* Elastos Side */}
         <div className="absolute right-1 sm:right-8 top-1/2 transform -translate-y-1/2 z-10">
-          <div className="p-2 sm:p-6 bg-[rgba(92,142,255,0.10)] rounded-xl border border-[rgba(92,142,255,0.50)] text-[#5C8EFF] shadow-lg transition-all duration-300 dark:shadow-[0_0_15px_rgba(92,142,255,0.2)] dark:hover:shadow-[0_0_25px_rgba(92,142,255,0.3)]">
+          <div className="p-2 sm:p-6 bg-[#1f232f] rounded-xl border border-[#5C8EFF] text-[#5C8EFF] shadow-lg transition-all duration-300 dark:shadow-[0_0_15px_rgba(92,142,255,0.2)] dark:hover:shadow-[0_0_25px_rgba(92,142,255,0.3)]">
             <div className="flex items-center gap-1 sm:gap-3 mb-1 sm:mb-4">
               <Shield className="text-[#5C8EFF] w-4 h-4 sm:w-8 sm:h-8" />
               <div>
