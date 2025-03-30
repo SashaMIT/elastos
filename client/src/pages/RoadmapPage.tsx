@@ -77,10 +77,10 @@ export default function RoadmapPage() {
       {/* Hero Section */}
       <div className="w-full max-w-7xl mx-auto px-4 py-16 sm:px-6 lg:px-8">
         <div className="text-center mb-12">
-          <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-6">
+          <h1 className="text-4xl sm:text-4xl md:text-5xl font-bold text-white mb-6">
             Elastos <span className="text-[#5C8EFF]">Roadmap</span>
           </h1>
-          <p className="text-gray-400 max-w-2xl mx-auto text-sm sm:text-base md:text-lg">
+          <p className="text-gray-400 max-w-2xl mx-auto text-md sm:text-base md:text-lg">
             Explore the Elastos roadmap—an evolving vision for the World Computer, driven by community governance, decentralized innovation, and a commitment to digital sovereignty.
           </p>
         </div>
