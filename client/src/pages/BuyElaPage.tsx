@@ -215,7 +215,7 @@ const BuyElaPage = () => {
                 href="https://apps.apple.com/us/app/web3-essentials-crypto-wallet/id1568931743"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-1 text-xs bg-white dark:bg-[#171717] text-black dark:text-white hover:bg-gray-100 dark:hover:bg-gray-800 px-2 py-1 rounded border border-gray-200 dark:border-gray-700 transition-colors"
+                className="inline-flex items-center gap-1 px-4 py-1 bg-[#5C8EFF]/10 border border-[#5C8EFF]/30 text-white rounded-full text-xs font-medium whitespace-nowrap transition-colors hover:bg-[#5C8EFF]/20"
               >
                 Essentials for iOS
                 <ExternalLink size={12} />
@@ -224,7 +224,7 @@ const BuyElaPage = () => {
                 href="https://download.elastos.io/app/elastos-essentials/Essentials.apk"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-1 text-xs bg-white dark:bg-[#171717] text-black dark:text-white hover:bg-gray-100 dark:hover:bg-gray-800 px-2 py-1 rounded border border-gray-200 dark:border-gray-700 transition-colors"
+                className="inline-flex items-center gap-1 px-4 py-1 bg-[#5C8EFF]/10 border border-[#5C8EFF]/30 text-white rounded-full text-xs font-medium whitespace-nowrap transition-colors hover:bg-[#5C8EFF]/20"
               >
                 Essentials for Android
                 <ExternalLink size={12} />
