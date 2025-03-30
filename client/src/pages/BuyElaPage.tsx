@@ -10,6 +10,7 @@ import {
 } from "@/components/ui/tooltip";
 import { useHashrateData } from '../hooks/useHashrateData';
 import { AreaChart, Area, XAxis, YAxis, Tooltip as RechartsTooltip, ResponsiveContainer } from 'recharts';
+import { StackedCircularFooter } from "@/components/ui/stacked-circular-footer";
 
 const BuyElaPage = () => {
   const { data: hashrateData } = useHashrateData();
@@ -293,7 +294,7 @@ const BuyElaPage = () => {
               transition={{ delay: 0.1 }}
               className="bg-gradient-to-br from-[#F7921A]/10 via-[#8BABFF]/5 to-transparent rounded-xl p-6 border border-[#F7921A]/20 h-full"
             >
-              
+
               <h3 className="text-xl font-bold text-white mb-2">Security & Supply Benefits</h3>
               <p className="text-sm text-white/70">
                 Bitcoin-level security with a fixed max supply of 28.22M tokens.
@@ -368,6 +369,7 @@ const BuyElaPage = () => {
 
         </CardContent>
       </Card>
+      <StackedCircularFooter />
     </div>
   );
 };

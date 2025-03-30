@@ -17,6 +17,8 @@ import {
 import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip as RechartsTooltip, Legend, ResponsiveContainer, ReferenceLine } from 'recharts';
 import { Button } from '../components/ui/button';
 import { Slider } from '../components/ui/slider';
+import { StackedCircularFooter } from '../components/ui/stacked-circular-footer'; // Added import
+
 
 const ELASupplyPage = () => {
   const currentSupply = 25748861;
@@ -473,6 +475,7 @@ const ELASupplyPage = () => {
             </DialogContent>
           </Dialog>
         </CardContent>
+        <StackedCircularFooter /> {/* Added StackedCircularFooter */}
       </Card>
     </div>
   );

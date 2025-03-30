@@ -1,9 +1,9 @@
-
 import React, { useState, useEffect } from 'react';
 import HashrateVisualizer from '../components/HashrateVisualizer';
 import { useHashrateData } from '@/hooks/useHashrateData';
 import { Card, CardContent } from '@/components/ui/card';
 import { Dots_v2 } from "@/components/ui/spinner";
+import { StackedCircularFooter } from "@/components/ui/stacked-circular-footer";
 
 const SecurityPage = () => {
   const { data: hashrateData, isLoading, error } = useHashrateData();
@@ -52,6 +52,7 @@ const SecurityPage = () => {
       ) : (
         <HashrateVisualizer />
       )}
+      <StackedCircularFooter />
     </div>
   );
 };
