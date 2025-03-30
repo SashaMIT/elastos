@@ -24,7 +24,8 @@ const EcosystemPage = lazy(() => import("./pages/EcosystemPage"));
 const FaqPage = lazy(() => import("./pages/FaqPage"));
 const RoadmapPage = lazy(() => import("./pages/RoadmapPage"));
 const ElaUtilityPage = lazy(() => import("./pages/ElaUtilityPage"));
-const UseCasesPage = lazy(() => import("./pages/UseCasesPage")); 
+const UseCasesPage = lazy(() => import("./pages/UseCasesPage"));
+const Wallet = lazy(() => import("./pages/Wallet")); 
 
 
 function Router() {
@@ -44,6 +45,7 @@ function Router() {
           <Route path="/vision" component={Vision} />
           <Route path="/ela-utility" component={ElaUtilityPage} />
           <Route path="/use-cases" component={UseCasesPage} /> 
+          <Route path="/wallet" component={Wallet} /> {/* Added Wallet route */}
           <Route path="/whitepaper" component={WhitepaperPage} /> {/* Added WhitepaperPage route */}
           <Route path="/explorer" component={Explorer} /> {/* Added Explorer route */}
           <Route>404 Page Not Found</Route>
