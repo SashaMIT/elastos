@@ -3,7 +3,6 @@ import { motion } from "framer-motion";
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Code, Download, ExternalLink, Wallet, CheckCircle } from "lucide-react";
-import { StackedCircularFooter } from "@/components/ui/stacked-circular-footer";
 
 const WalletPage: React.FC = () => {
   return (
@@ -11,54 +10,94 @@ const WalletPage: React.FC = () => {
       {/* Elastos Essentials Wallet Section */}
       <section className="py-16 relative overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-b from-white/[0.00] via-white/[0.02] to-white/[0.00] z-0"></div>
-        <div className="container mx-auto px-4 relative z-10">
-          <div className="flex flex-col lg:flex-row items-center gap-8 lg:gap-16">
-            {/* Text Content */}
-            <div className="flex-1">
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5 }}
-              >
-                <h1 className="text-4xl md:text-5xl font-bold text-white mb-6">
-                  Essentials Super-Wallet
-                </h1>
-                <p className="text-xl text-white/70 mb-8">
-                  Your gateway to the new decentralized internet. Manage assets, identities, and dApps in one secure application.
-                </p>
-                <div className="flex flex-wrap gap-4">
-                  <a href="https://elastos.info/essentialswallet/" target="_blank" rel="noopener noreferrer">
-                    <button className="px-6 py-3 bg-gradient-to-r from-[#F6921A] to-[#F6921A]/80 text-white rounded-lg font-medium">
-                      Learn More
-                    </button>
-                  </a>
-                  <a href="https://elastos.info/downloads/" target="_blank" rel="noopener noreferrer">
-                    <button className="px-6 py-3 bg-white/10 text-white rounded-lg font-medium border border-white/20">
-                      Download App
-                    </button>
-                  </a>
-                </div>
-              </motion.div>
-            </div>
 
-            {/* App Image */}
-            <div className="flex-1 flex justify-center">
-              <motion.div
-                initial={{ opacity: 0, scale: 0.8 }}
-                animate={{ opacity: 1, scale: 1 }}
-                transition={{ duration: 0.5, delay: 0.2 }}
-                className="relative w-full max-w-md"
-              >
-                <div className="bg-gradient-to-b from-[#F6921A]/20 to-[#5C8EFF]/20 rounded-[40px] p-1">
-                  <img
-                    src="/images/essentials-wallet-preview.png"
-                    alt="Essentials Wallet Preview"
-                    className="w-full h-auto rounded-[36px] border border-white/10"
+        <div className="container mx-auto px-4 relative z-10">
+          <div className="max-w-6xl mx-auto">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="mb-8 text-center"
+            >
+              <h2 className="text-4xl font-bold text-white mb-4">
+                <span className="text-[#F7921A]">Elastos</span>{" "}
+                <span className="text-[#8BABFF]">Essentials</span> Wallet
+              </h2>
+              <p className="text-xl text-white/70 max-w-3xl mx-auto">
+                Experience the official Elastos wallet with native support for the entire Elastos ecosystem
+              </p>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.2 }}
+              className="rounded-3xl bg-gradient-to-br from-[#F7921A]/10 via-[#8BABFF]/10 to-transparent p-10 border border-[#8BABFF]/20 max-w-5xl mx-auto relative overflow-hidden"
+            >
+              {/* Background elements */}
+              <div className="absolute -top-20 -right-20 w-64 h-64 rounded-full bg-[#F7921A]/10 blur-[80px]"></div>
+              <div className="absolute -bottom-20 -left-20 w-72 h-72 rounded-full bg-[#8BABFF]/10 blur-[100px]"></div>
+
+              <div className="grid md:grid-cols-2 gap-10 items-center">
+                <div className="flex justify-center">
+                  <img 
+                    src="/images/Essentials.png" 
+                    alt="Elastos Essentials" 
+                    className="w-full max-w-[350px] rounded-xl"
+                    onError={(e) => {
+                      const target = e.target as HTMLImageElement;
+                      target.src = "https://via.placeholder.com/350x700?text=Elastos+Essentials";
+                    }}
                   />
                 </div>
-                <div className="absolute -z-10 inset-0 blur-3xl bg-[#F6921A]/20 rounded-full"></div>
-              </motion.div>
-            </div>
+                <div>
+                  <h3 className="text-2xl font-bold text-white mb-4">The Complete Elastos Experience</h3>
+                  <div className="space-y-4 text-white/70">
+                    <p>Elastos Essentials is the native wallet and identity manager for the Elastos ecosystem. With Elastos Essentials, you get:</p>
+                    <ul className="space-y-2">
+                      <li className="flex items-start gap-2">
+                        <CheckCircle className="w-5 h-5 text-[#F7921A] mt-0.5 flex-shrink-0" />
+                        <span>Native support for all Elastos chains including Mainchain, ESC, and EID</span>
+                      </li>
+                      <li className="flex items-start gap-2">
+                        <CheckCircle className="w-5 h-5 text-[#F7921A] mt-0.5 flex-shrink-0" />
+                        <span>Integrated DID (Decentralized Identity) management</span>
+                      </li>
+                      <li className="flex items-start gap-2">
+                        <CheckCircle className="w-5 h-5 text-[#F7921A] mt-0.5 flex-shrink-0" />
+                        <span>Secure digital asset management with multi-chain support</span>
+                      </li>
+                      <li className="flex items-start gap-2">
+                        <CheckCircle className="w-5 h-5 text-[#F7921A] mt-0.5 flex-shrink-0" />
+                        <span>Built-in DApp browser and credential manager</span>
+                      </li>
+                    </ul>
+
+                    <div className="flex flex-wrap gap-4 pt-4">
+                      <a
+                        href="https://apps.apple.com/us/app/elastos-essentials/id1568931743"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="flex items-center gap-2 px-4 py-2 bg-white/10 hover:bg-white/15 transition-colors rounded-lg border border-white/10"
+                      >
+                        <Download className="w-5 h-5" />
+                        <span className="text-white">App Store</span>
+                      </a>
+                      <a
+                        href="https://play.google.com/store/apps/details?id=org.elastos.essentials.app"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="flex items-center gap-2 px-4 py-2 bg-white/10 hover:bg-white/15 transition-colors rounded-lg border border-white/10"
+                      >
+                        <Download className="w-5 h-5" />
+                        <span className="text-white">Google Play</span>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </motion.div>
           </div>
         </div>
       </section>
@@ -68,11 +107,11 @@ const WalletPage: React.FC = () => {
         <div className="container mx-auto px-4">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5 }}
-            className="text-center max-w-3xl mx-auto mb-16"
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="text-center mb-12"
           >
-            <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
+            <h2 className="text-4xl font-bold text-white mb-3">
               Features that give you control
             </h2>
             <p className="text-xl text-white/70">
@@ -80,38 +119,37 @@ const WalletPage: React.FC = () => {
             </p>
           </motion.div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {/* Card 1: Digital Asset */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-7xl mx-auto">
+            {/* Digital Asset and Staking Support */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: 0.1 }}
-              className="bg-white/5 p-6 rounded-xl border border-white/10"
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.1 }}
+              className="bg-gradient-to-br from-[#F7921A]/10 via-[#8BABFF]/5 to-transparent rounded-xl p-6 border border-[#F7921A]/20 h-full"
             >
-              <div className="w-12 h-12 bg-gradient-to-br from-[#F6921A] to-[#F6921A]/60 rounded-lg flex items-center justify-center mb-4">
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-white">
-                  <circle cx="12" cy="12" r="10"></circle>
-                  <path d="M16 8h-6a2 2 0 1 0 0 4h4a2 2 0 1 1 0 4H8"></path>
-                  <path d="M12 18V6"></path>
+              <div className="rounded-full bg-[#F7921A]/10 p-4 w-16 h-16 flex items-center justify-center mb-5">
+                <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8 text-[#F7921A]" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                  <path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6" />
                 </svg>
               </div>
-              <h3 className="text-2xl font-bold text-white mb-3">Digital Asset and Staking Support</h3>
+              <h3 className="text-2xl font-bold text-white mb-3">Digital Assets and Staking</h3>
               <p className="text-white/70">
                 Manage assets and stake tokens across Elastos and multiple blockchains.
               </p>
             </motion.div>
 
-            {/* Card 2: DID */}
+            {/* Decentralized ID (DID) */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: 0.2 }}
-              className="bg-white/5 p-6 rounded-xl border border-white/10"
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.2 }}
+              className="bg-gradient-to-br from-[#8BABFF]/10 via-[#F7921A]/5 to-transparent rounded-xl p-6 border border-[#8BABFF]/20 h-full"
             >
-              <div className="w-12 h-12 bg-gradient-to-br from-[#5C8EFF] to-[#5C8EFF]/60 rounded-lg flex items-center justify-center mb-4">
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-white">
-                  <path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"></path>
-                  <circle cx="12" cy="7" r="4"></circle>
+              <div className="rounded-full bg-[#8BABFF]/10 p-4 w-16 h-16 flex items-center justify-center mb-5">
+                <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8 text-[#8BABFF]" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                  <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
                 </svg>
               </div>
               <h3 className="text-2xl font-bold text-white mb-3">Decentralized ID (DID)</h3>
@@ -120,40 +158,41 @@ const WalletPage: React.FC = () => {
               </p>
             </motion.div>
 
-            {/* Card 3: Contacts */}
+            {/* Contacts */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: 0.3 }}
-              className="bg-white/5 p-6 rounded-xl border border-white/10"
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.3 }}
+              className="bg-gradient-to-br from-[#F7921A]/10 via-[#8BABFF]/5 to-transparent rounded-xl p-6 border border-[#F7921A]/20 h-full"
             >
-              <div className="w-12 h-12 bg-gradient-to-br from-[#F6921A] to-[#5C8EFF] rounded-lg flex items-center justify-center mb-4">
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-white">
-                  <path d="M17 18a2 2 0 0 0-2-2H9a2 2 0 0 0-2 2"></path>
-                  <rect width="18" height="18" x="3" y="4" rx="2"></rect>
-                  <circle cx="12" cy="10" r="2"></circle>
-                  <line x1="8" x2="8" y1="2" y2="4"></line>
-                  <line x1="16" x2="16" y1="2" y2="4"></line>
+              <div className="rounded-full bg-[#F7921A]/10 p-4 w-16 h-16 flex items-center justify-center mb-5">
+                <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8 text-[#F7921A]" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                  <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
+                  <circle cx="9" cy="7" r="4" />
+                  <path d="M23 21v-2a4 4 0 0 0-3-3.87" />
+                  <path d="M16 3.13a4 4 0 0 1 0 7.75" />
                 </svg>
               </div>
               <h3 className="text-2xl font-bold text-white mb-3">Contacts</h3>
               <p className="text-white/70">
-                Connect via verified DIDs from Elastos' identity ledger for secure messaging.
+                Connect via verified DIDs from Elastos' identity ledger.
               </p>
             </motion.div>
 
-            {/* Card 4: dApps */}
+            {/* Decentralized Applications */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: 0.4 }}
-              className="bg-white/5 p-6 rounded-xl border border-white/10"
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.4 }}
+              className="bg-gradient-to-br from-[#8BABFF]/10 via-[#F7921A]/5 to-transparent rounded-xl p-6 border border-[#8BABFF]/20 h-full"
             >
-              <div className="w-12 h-12 bg-gradient-to-br from-[#5C8EFF] to-[#5C8EFF]/60 rounded-lg flex items-center justify-center mb-4">
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-white">
-                  <rect width="18" height="18" x="3" y="3" rx="2" ry="2"></rect>
-                  <line x1="12" x2="12" y1="9" y2="15"></line>
-                  <line x1="9" x2="15" y1="12" y2="12"></line>
+              <div className="rounded-full bg-[#8BABFF]/10 p-4 w-16 h-16 flex items-center justify-center mb-5">
+                <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8 text-[#8BABFF]" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                  <rect x="2" y="3" width="20" height="14" rx="2" ry="2" />
+                  <line x1="8" y1="21" x2="16" y2="21" />
+                  <line x1="12" y1="17" x2="12" y2="21" />
                 </svg>
               </div>
               <h3 className="text-2xl font-bold text-white mb-3">Decentralized Applications</h3>
@@ -162,20 +201,19 @@ const WalletPage: React.FC = () => {
               </p>
             </motion.div>
 
-            {/* Card 5: Storage */}
+            {/* Decentralized Storage */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: 0.5 }}
-              className="bg-white/5 p-6 rounded-xl border border-white/10"
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.5 }}
+              className="bg-gradient-to-br from-[#F7921A]/10 via-[#8BABFF]/5 to-transparent rounded-xl p-6 border border-[#F7921A]/20 h-full"
             >
-              <div className="w-12 h-12 bg-gradient-to-br from-[#F6921A] to-[#F6921A]/60 rounded-lg flex items-center justify-center mb-4">
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-white">
-                  <path d="M21 8H3"></path>
-                  <path d="M21 12H3"></path>
-                  <path d="M21 16H3"></path>
-                  <path d="M6 4v16"></path>
-                  <path d="M18 4v16"></path>
+              <div className="rounded-full bg-[#F7921A]/10 p-4 w-16 h-16 flex items-center justify-center mb-5">
+                <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8 text-[#F7921A]" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                  <path d="M2 20h20" />
+                  <path d="M5 20V7a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1v13" />
+                  <path d="M13 20V4a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1v16" />
                 </svg>
               </div>
               <h3 className="text-2xl font-bold text-white mb-3">Decentralized Storage</h3>
@@ -184,21 +222,20 @@ const WalletPage: React.FC = () => {
               </p>
             </motion.div>
 
-            {/* Card 6: Communication */}
+            {/* Secure Communication */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: 0.6 }}
-              className="bg-white/5 p-6 rounded-xl border border-white/10"
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.6 }}
+              className="bg-gradient-to-br from-[#8BABFF]/10 via-[#F7921A]/5 to-transparent rounded-xl p-6 border border-[#8BABFF]/20 h-full"
             >
-              <div className="w-12 h-12 bg-gradient-to-br from-[#5C8EFF] to-[#F6921A] rounded-lg flex items-center justify-center mb-4">
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-white">
-                  <path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z"></path>
-                  <polyline points="14 2 14 8 20 8"></polyline>
-                  <path d="M8 13h2"></path>
-                  <path d="M8 17h2"></path>
-                  <path d="M14 13h2"></path>
-                  <path d="M14 17h2"></path>
+              <div className="rounded-full bg-[#8BABFF]/10 p-4 w-16 h-16 flex items-center justify-center mb-5">
+                <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8 text-[#8BABFF]" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                  <path d="M11 17.25a.25.25 0 1 1-.25.25.25.25 0 0 1 .25-.25" />
+                  <path d="M16 21h-2a2 2 0 0 1-2-2v-6a2 2 0 0 1 2-2h2" />
+                  <path d="M14 7V5c0-2.8-2.2-5-5-5S4 2.2 4 5v2" />
+                  <rect x="4" y="7" width="16" height="14" rx="2" />
                 </svg>
               </div>
               <h3 className="text-2xl font-bold text-white mb-3">Secure Communication</h3>
@@ -210,9 +247,6 @@ const WalletPage: React.FC = () => {
         </div>
       </section>
 
-      {/* Footer */}
-      <StackedCircularFooter />
-    </div>
   );
 };
 
