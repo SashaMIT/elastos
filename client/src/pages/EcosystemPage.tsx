@@ -560,7 +560,7 @@ export default function EcosystemPage() {
                     </h3>
                     <p className="text-gray-700 dark:text-neutral-200 mb-4">{project.description}</p>
                     <div className="mt-auto">
-                      <span className="text-xs bg-gray-200/50 dark:bg-white/10 px-3 py-1.5 rounded-full inline-block text-gray-700 dark:text-gray-200">
+                      <span className="px-4 py-1 bg-[#5C8EFF]/10 border border-[#5C8EFF]/30 text-[#5C8EFF] dark:text-white rounded-full text-xs font-medium whitespace-nowrap">
                         {project.category}
                       </span>
                     </div>
