@@ -376,106 +376,64 @@ const ecosystemFeatures = [
           <LearnMoreButton />
         </div>
 
-        {/* Testnets Section */}
-        <div className="w-full py-16 px-4 bg-white dark:bg-[#1A1A1A] border-b border-gray-200 dark:border-gray-800">
-          <div className="max-w-6xl mx-auto">
-            <motion.h2 
-              className="text-3xl md:text-4xl font-bold mb-8 text-center"
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5 }}
-            >
-              Elastos <span className="text-[#F7921A]">Testnets</span>
-            </motion.h2>
-
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto">
-              <motion.div 
-                className="flex flex-col p-6 rounded-xl border border-[#5C8EFF]/30 bg-white dark:bg-[#171717] hover:shadow-lg transition-all"
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: 0.1 }}
-              >
-                <h3 className="text-xl font-bold mb-2 text-[#5C8EFF]">Elastos ESC Testnet</h3>
-                <p className="text-gray-600 dark:text-gray-400 mb-4">Test your smart contracts and dApps on the Elastos Smart Contract chain</p>
-                <div className="mt-auto">
-                  <a 
-                    href="https://esc-testnet.elastos.io/" 
-                    target="_blank" 
-                    rel="noopener noreferrer"
-                    className="inline-flex items-center gap-1.5 text-sm font-medium text-[#F7921A] hover:underline"
-                  >
-                    <span>Visit ESC Testnet</span>
-                    <ExternalLink size={14} />
-                  </a>
-                </div>
-              </motion.div>
-
-              <motion.div 
-                className="flex flex-col p-6 rounded-xl border border-[#5C8EFF]/30 bg-white dark:bg-[#171717] hover:shadow-lg transition-all"
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: 0.2 }}
-              >
-                <h3 className="text-xl font-bold mb-2 text-[#5C8EFF]">Elastos EID Testnet</h3>
-                <p className="text-gray-600 dark:text-gray-400 mb-4">Develop and test applications with Elastos Identity on the testnet</p>
-                <div className="mt-auto">
-                  <a 
-                    href="https://eid-testnet.elastos.io/" 
-                    target="_blank" 
-                    rel="noopener noreferrer"
-                    className="inline-flex items-center gap-1.5 text-sm font-medium text-[#F7921A] hover:underline"
-                  >
-                    <span>Visit EID Testnet</span>
-                    <ExternalLink size={14} />
-                  </a>
-                </div>
-              </motion.div>
-            </div>
-          </div>
-        </div>
-
         {/* CTA Section */}
-        <div className="w-full py-16 px-4 bg-gradient-to-r from-[#F6921A]/10 to-[#5C8EFF]/10 border-y border-[#F6921A]/30 dark:border-[#5C8EFF]/30">
-          <div className="max-w-6xl mx-auto">
-            <h2 className="text-3xl md:text-4xl font-bold mb-8 text-center text-white">
-              Ready to Explore the Elastos Ecosystem?
-            </h2>
+        <div className="relative rounded-2xl overflow-hidden bg-gradient-to-br from-[#1A1A1A] to-[#0E0E0E] border border-white/10 mb-16">
+          <div className="absolute inset-0 bg-[url('/elastos-pattern.svg')] opacity-5"></div>
+          <div className="relative p-8 md:p-12">
+            <div className="max-w-3xl mx-auto text-center">
+              <h2 className="text-2xl md:text-3xl font-bold text-white mb-4">Ready to Explore the Elastos Ecosystem?</h2>
+              <p className="text-gray-400 mb-8">Visit our blockchain explorers to track transactions, view smart contracts, and monitor network activity</p>
 
-            <p className="text-gray-400 mb-12 text-center max-w-2xl mx-auto">
-              Visit our blockchain explorers to track transactions, view smart contracts, and monitor network activity.
-            </p>
-            <div className="flex flex-wrap justify-center gap-8">
-              <a
-                href="https://blockchain.elastos.io/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="w-full sm:w-auto inline-flex px-6 py-3 rounded-xl text-white bg-[#F7921A] hover:bg-[#F7921A]/90 font-medium transition-all"
-              >
-                Mainchain Explorer
-              </a>
-              <a
-                href="https://esc.elastos.io/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="w-full sm:w-auto inline-flex px-6 py-3 rounded-xl text-white bg-[#5C8EFF] hover:bg-[#5C8EFF]/90 font-medium transition-all"
-              >
-                ESC Explorer
-              </a>
-              <a
-                href="https://eid.elastos.io/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="w-full sm:w-auto inline-flex px-6 py-3 rounded-xl text-white bg-[#5C8EFF] hover:bg-[#5C8EFF]/90 font-medium transition-all"
-              >
-                EID Explorer
-              </a>
+              <div className="flex flex-wrap justify-center gap-4">
+                <a
+                  href="https://blockchain.elastos.io/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex px-3 py-2 bg-[rgba(246,146,26,0.10)] text-[#F6921A] rounded-full font-medium transition-all items-center gap-1 border border-[rgba(246,146,26,0.50)] text-sm"
+                >
+                  <span>Mainchain Explorer</span>
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 35 34" fill="none">
+                    <circle cx="17.333" cy="17" r="16.75" stroke="#F6921A" strokeOpacity="0.5" strokeWidth="0.5"/>
+                    <path d="M17.3338 22.9405L23.2741 17.0002L17.3338 11.0598L16.4162 11.9774L20.7628 16.324H10.8622V17.6763H20.7628L16.4162 22.0229L17.3338 22.9405Z" fill="#F6921A"/>
+                    <path d="M20.7628 17.6638H10.8747V16.3365H20.7628H20.7929L20.7716 16.3152L16.4338 11.9774L17.3338 11.0775L23.2564 17.0002L17.3338 22.9228L16.4338 22.0229L20.7716 17.6851L20.7929 17.6638H20.7628Z" stroke="#F6921A" strokeOpacity="0.5" strokeWidth="0.025"/>
+                  </svg>
+                </a>
+
+                <a
+                  href="https://esc.elastos.io/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex px-3 py-2 bg-[rgba(92,142,255,0.10)] text-[#5C8EFF] rounded-full font-medium transition-all items-center gap-1 border border-[rgba(92,142,255,0.50)] text-sm"
+                >
+                  <span>ESC Explorer</span>
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 35 34" fill="none">
+                    <circle cx="17.333" cy="17" r="16.75" stroke="#5C8EFF" strokeOpacity="0.5" strokeWidth="0.5"/>
+                    <path d="M17.3338 22.9405L23.2741 17.0002L17.3338 11.0598L16.4162 11.9774L20.7628 16.324H10.8622V17.6763H20.7628L16.4162 22.0229L17.3338 22.9405Z" fill="#5C8EFF"/>
+                    <path d="M20.7628 17.6638H10.8747V16.3365H20.7628H20.7929L20.7716 16.3152L16.4338 11.9774L17.3338 11.0775L23.2564 17.0002L17.3338 22.9228L16.4338 22.0229L20.7716 17.6851L20.7929 17.6638H20.7628Z" stroke="#5C8EFF" strokeOpacity="0.5" strokeWidth="0.025"/>
+                  </svg>
+                </a>
+
+                <a
+                  href="https://eid.elastos.io/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex px-3 py-2 bg-[rgba(92,142,255,0.10)] text-[#5C8EFF] rounded-full font-medium transition-all items-center gap-1 border border-[rgba(92,142,255,0.50)] text-sm"
+                >
+                  <span>EID Explorer</span>
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 35 34" fill="none">
+                    <circle cx="17.333" cy="17" r="16.75" stroke="#5C8EFF" strokeOpacity="0.5" strokeWidth="0.5"/>
+                    <path d="M17.3338 22.9405L23.2741 17.0002L17.3338 11.0598L16.4162 11.9774L20.7628 16.324H10.8622V17.6763H20.7628L16.4162 22.0229L17.3338 22.9405Z" fill="#5C8EFF"/>
+                    <path d="M20.7628 17.6638H10.8747V16.3365H20.7628H20.7929L20.7716 16.3152L16.4338 11.9774L17.3338 11.0775L23.2564 17.0002L17.3338 22.9228L16.4338 22.0229L20.7716 17.6851L20.7929 17.6638H20.7628Z" stroke="#5C8EFF" strokeOpacity="0.5" strokeWidth="0.025"/>
+                  </svg>
+                </a>
+              </div>
             </div>
           </div>
         </div>
-
-        {/* Footer */}
-        <StackedCircularFooter />
       </div>
+
+      {/* Footer */}
+      <StackedCircularFooter />
     </div>
   );
 }
