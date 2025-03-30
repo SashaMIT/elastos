@@ -285,9 +285,13 @@ const BuyElaPage = () => {
           </div>
 
           <div className="grid md:grid-cols-2 gap-3">
-            <div className="bg-gradient-to-r from-[#5C8EFF] to-[#F7921A] text-white p-3 rounded-lg h-[300px] overflow-auto">
-              <h3 className="text-sm font-bold mb-2">Security & Supply Benefits</h3>
-              <div className="grid gap-3">
+            <div className="bg-gradient-to-r from-[#5C8EFF] to-[#F7921A] text-white p-3 rounded-lg h-[300px] overflow-auto relative overflow-hidden">
+              {/* Background glow elements */}
+              <div className="absolute -top-10 -right-10 w-32 h-32 rounded-full bg-[#F7921A]/10 blur-[40px]"></div>
+              <div className="absolute -bottom-10 -left-10 w-40 h-40 rounded-full bg-[#5C8EFF]/10 blur-[50px]"></div>
+
+              <h3 className="text-sm font-bold mb-2 relative z-10">Security & Supply Benefits</h3>
+              <div className="grid gap-3 relative z-10">
                 <div>
                   <h4 className="text-xs font-semibold mb-1">Security Leadership</h4>
                   <ul className="space-y-1">
@@ -298,7 +302,7 @@ const BuyElaPage = () => {
                       "6+ years of proven security"
                     ].map((point, i) => (
                       <li key={i} className="flex items-center gap-1">
-                        <CheckCircle className="h-3 w-3 shrink-0" />
+                        <CheckCircle className="h-3 w-3 shrink-0 text-[#F7921A]" />
                         <span className="text-xs opacity-90">{point}</span>
                       </li>
                     ))}
@@ -314,7 +318,7 @@ const BuyElaPage = () => {
                       "Transparent emission schedule"
                     ].map((point, i) => (
                       <li key={i} className="flex items-center gap-1">
-                        <CheckCircle className="h-3 w-3 shrink-0" />
+                        <CheckCircle className="h-3 w-3 shrink-0 text-[#F7921A]" />
                         <span className="text-xs opacity-90">{point}</span>
                       </li>
                     ))}
