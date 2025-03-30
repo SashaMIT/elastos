@@ -376,10 +376,68 @@ const ecosystemFeatures = [
           <LearnMoreButton />
         </div>
 
+        {/* Elastos Testnets Section */}
+        <div className="w-full max-w-7xl mx-auto px-4 py-16 sm:px-6 lg:px-8">
+          <div className="text-center mb-12">
+            <motion.h2 
+              className="text-3xl sm:text-4xl font-bold text-white mb-6"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 0.2 }}
+            >
+              Elastos <span className="text-[#F7921A]">Testnets</span>
+            </motion.h2>
+            <p className="text-gray-400 max-w-2xl mx-auto text-sm sm:text-base">
+              Explore and build on Elastos test environments
+            </p>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto">
+            <motion.a 
+              href="https://esc-testnet.elastos.io/" 
+              target="_blank"
+              rel="noopener noreferrer"
+              className="bg-[#171717] border border-[#5C8EFF]/20 rounded-xl p-6 hover:border-[#5C8EFF]/50 transition-all"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 0.3 }}
+              whileHover={{ scale: 1.02 }}
+            >
+              <h3 className="text-xl font-semibold text-white mb-3">Elastos ESC Testnet</h3>
+              <p className="text-gray-400 mb-4">Test your smart contracts and dApps on the Elastos Smart Contract chain</p>
+              <div className="flex items-center text-[#5C8EFF]">
+                <span>Visit Testnet</span>
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="ml-2">
+                  <path d="M5 12h14"></path>
+                  <path d="m12 5 7 7-7 7"></path>
+                </svg>
+              </div>
+            </motion.a>
+            <motion.a 
+              href="https://eid-testnet.elastos.io/" 
+              target="_blank"
+              rel="noopener noreferrer"
+              className="bg-[#171717] border border-[#5C8EFF]/20 rounded-xl p-6 hover:border-[#5C8EFF]/50 transition-all"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 0.4 }}
+              whileHover={{ scale: 1.02 }}
+            >
+              <h3 className="text-xl font-semibold text-white mb-3">Elastos EID Testnet</h3>
+              <p className="text-gray-400 mb-4">Develop and test applications with Elastos Identity on the testnet</p>
+              <div className="flex items-center text-[#5C8EFF]">
+                <span>Visit Testnet</span>
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="ml-2">
+                  <path d="M5 12h14"></path>
+                  <path d="m12 5 7 7-7 7"></path>
+                </svg>
+              </div>
+            </motion.a>
+          </div>
+        </div>
+
         {/* CTA Section */}
-        <div className="relative rounded-2xl overflow-hidden bg-gradient-to-br from-[#1A1A1A] to-[#0E0E0E] border border-white/10 mb-16">
-          <div className="absolute inset-0 bg-[url('/elastos-pattern.svg')] opacity-5"></div>
-          <div className="relative p-8 md:p-12">
+        <div className="w-full max-w-7xl mx-auto px-4 py-16 sm:px-6 lg:px-8">
+          <div className="bg-gradient-to-br from-[#5C8EFF]/10 to-[#F6921A]/10 rounded-2xl p-8 sm:p-12 border border-[#5C8EFF]/30">
             <div className="max-w-3xl mx-auto text-center">
               <h2 className="text-2xl md:text-3xl font-bold text-white mb-4">Ready to Explore the Elastos Ecosystem?</h2>
               <p className="text-gray-400 mb-8">Visit our blockchain explorers to track transactions, view smart contracts, and monitor network activity</p>
