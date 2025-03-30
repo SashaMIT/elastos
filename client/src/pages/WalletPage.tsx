@@ -45,10 +45,10 @@ const WalletPage: React.FC = () => {
                   <img 
                     src="/images/Essentials.png" 
                     alt="Elastos Essentials" 
-                    className="w-full max-w-[250px] rounded-xl shadow-lg shadow-black/20"
+                    className="w-full max-w-[350px] rounded-xl"
                     onError={(e) => {
                       const target = e.target as HTMLImageElement;
-                      target.src = "https://via.placeholder.com/250x500?text=Elastos+Essentials";
+                      target.src = "https://via.placeholder.com/350x700?text=Elastos+Essentials";
                     }}
                   />
                 </div>
