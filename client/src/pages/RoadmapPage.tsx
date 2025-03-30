@@ -3,6 +3,7 @@ import React from 'react';
 import { Timeline } from "@/components/ui/timeline";
 import { ImageZoom } from "@/components/ui/zoomable-image";
 import { ForwardRoadmap } from "@/components/ui/forward-roadmap";
+import { StackedCircularFooter } from "@/components/ui/stacked-circular-footer";
 
 export default function RoadmapPage() {
   const timelineData = [
@@ -102,6 +103,9 @@ export default function RoadmapPage() {
           ))}
         </div>
       </div>
+      
+      {/* Footer */}
+      <StackedCircularFooter />
     </div>
   );
 }
