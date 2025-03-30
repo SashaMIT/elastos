@@ -246,7 +246,7 @@ const WalletPage: React.FC = () => {
           </div>
         </div>
       </section>
-
+    </div>
   );
 };
 
