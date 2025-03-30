@@ -246,10 +246,10 @@ const ELASupplyPage = () => {
               </div>
             </div>
 
-            <div className="w-full bg-purple-50 dark:bg-[#171717] p-2 sm:p-3 rounded-lg col-span-2 sm:col-span-1 dark:border dark:border-neutral-800">
-              <div className="flex items-center justify-center w-full gap-3">
+            <div className="w-full bg-[rgba(92,142,255,0.10)] dark:bg-[#171717] p-2 sm:p-3 rounded-lg dark:border dark:border-neutral-800 border border-[rgba(92,142,255,0.50)]">
+              <div className="flex items-center justify-center w-full gap-2 sm:gap-3">
                 <div className="flex flex-col items-center">
-                  <Clock className="text-purple-500 h-5 w-5 mb-1" />
+                  <Clock className="text-[#5C8EFF] h-5 w-5 mb-1" />
                   <TooltipProvider delayDuration={0}>
                     <Tooltip>
                       <TooltipTrigger>
@@ -257,16 +257,16 @@ const ELASupplyPage = () => {
                           <div className="text-sm text-gray-600 dark:text-gray-300">Next Halving</div>
                           <div className="flex items-center justify-center gap-2">
                             <span className="font-bold">{nextHalvingDate.toLocaleDateString()}</span>
-                            <span className="text-sm text-purple-600">({countdown})</span>
+                            <span className="text-sm text-[#5C8EFF]">({countdown})</span>
                           </div>
                           <div className="flex items-center gap-2 mt-2">
-                            <div className="flex-1 bg-purple-200 rounded-full h-1.5">
+                            <div className="flex-1 bg-[rgba(92,142,255,0.20)] rounded-full h-1.5">
                               <div
-                                className="bg-purple-500 h-1.5 rounded-full transition-all duration-1000"
+                                className="bg-[#5C8EFF] h-1.5 rounded-full transition-all duration-1000"
                                 style={{ width: `${getHalvingProgress()}%` }}
                               />
                             </div>
-                            <span className="text-xs text-purple-600 min-w-[3rem]">
+                            <span className="text-xs text-[#5C8EFF] min-w-[3rem]">
                               {getHalvingProgress().toFixed(1)}%
                             </span>
                           </div>
@@ -329,7 +329,7 @@ const ELASupplyPage = () => {
               <div className="flex flex-col w-full gap-4">
                 <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4 w-full">
                   <div className="flex items-center gap-2 w-full sm:w-auto">
-                    <Focus className="h-4 w-4 text-purple-500 shrink-0" />
+                    <Focus className="h-4 w-4 text-[#5C8EFF] shrink-0" />
                     <TooltipProvider delayDuration={0}>
                       <Tooltip>
                         <TooltipTrigger>
