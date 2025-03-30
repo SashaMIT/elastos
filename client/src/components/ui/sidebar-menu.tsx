@@ -34,10 +34,10 @@ export const SidebarMenu = () => {
                 <Target className="h-4 w-4 text-[#94b5ff]" />
                 <span>Use Cases</span>
               </Link>
-              <Link to="/whitepaper" className="flex items-center gap-2 py-2 px-2 rounded-md hover:bg-accent text-[#F6921A]">
-                <FileText className="h-4 w-4 text-[#F6921A]" />
+              <a href="https://whitepaper.elastos.net" target="_blank" rel="noopener noreferrer" className="py-2 hover:text-primary flex items-center gap-2">
+                <FileText className="h-4 w-4 text-[#94b5ff]" />
                 <span>Litepaper / Whitepaper</span>
-              </Link>
+              </a>
 
               <h4 className="font-medium text-sm text-[#94b5ff] mb-2 mt-4">NETWORK</h4>
               <Link href="/wallet" className="py-2 hover:text-primary flex items-center gap-2">
