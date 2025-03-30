@@ -281,18 +281,10 @@ const MergeMiningAnimation = () => {
               </div>
             </div>
 
-            <div className="flex items-center justify-between mt-4">
+            <div className="flex items-center mt-4">
               <div className="flex items-center gap-2 text-sm">
                 <Coins className="w-5 h-5 text-[#F6921A]" />
                 <span className="text-[#F6921A]">BTC Rewards</span>
-              </div>
-              
-              <div className="flex items-center gap-1">
-                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 35 34" fill="none">
-                  <circle cx="17.333" cy="17" r="16.75" stroke="#F6921A" strokeOpacity="0.5" strokeWidth="0.5"/>
-                  <path d="M17.3338 22.9405L23.2741 17.0002L17.3338 11.0598L16.4162 11.9774L20.7628 16.324H10.8622V17.6763H20.7628L16.4162 22.0229L17.3338 22.9405Z" fill="#F6921A"/>
-                  <path d="M20.7628 17.6638H10.8747V16.3365H20.7628H20.7929L20.7716 16.3152L16.4338 11.9774L17.3338 11.0775L23.2564 17.0002L17.3338 22.9228L16.4338 22.0229L20.7716 17.6851L20.7929 17.6638H20.7628Z" stroke="#F6921A" strokeOpacity="0.5" strokeWidth="0.025"/>
-                </svg>
               </div>
             </div>
           </div>
@@ -313,18 +305,10 @@ const MergeMiningAnimation = () => {
               </div>
             </div>
 
-            <div className="flex items-center justify-between mt-4">
+            <div className="flex items-center mt-4">
               <div className="flex items-center gap-2 text-sm">
                 <Coins className="w-5 h-5 text-[#5C8EFF]" />
                 <span className="text-[#5C8EFF]">ELA Rewards</span>
-              </div>
-              
-              <div className="flex items-center gap-1">
-                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 35 34" fill="none">
-                  <circle cx="17.333" cy="17" r="16.75" stroke="#5C8EFF" strokeOpacity="0.5" strokeWidth="0.5"/>
-                  <path d="M17.3338 22.9405L23.2741 17.0002L17.3338 11.0598L16.4162 11.9774L20.7628 16.324H10.8622V17.6763H20.7628L16.4162 22.0229L17.3338 22.9405Z" fill="#5C8EFF"/>
-                  <path d="M20.7628 17.6638H10.8747V16.3365H20.7628H20.7929L20.7716 16.3152L16.4338 11.9774L17.3338 11.0775L23.2564 17.0002L17.3338 22.9228L16.4338 22.0229L20.7716 17.6851L20.7929 17.6638H20.7628Z" stroke="#5C8EFF" strokeOpacity="0.5" strokeWidth="0.025"/>
-                </svg>
               </div>
             </div>
           </div>
