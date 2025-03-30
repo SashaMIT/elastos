@@ -285,13 +285,23 @@ const BuyElaPage = () => {
           </div>
 
           <div className="grid md:grid-cols-2 gap-3">
-            <div className="bg-gradient-to-r from-[#5C8EFF] to-[#F7921A] text-white p-3 rounded-lg h-[300px] overflow-auto relative overflow-hidden">
-              {/* Background glow elements */}
-              <div className="absolute -top-10 -right-10 w-32 h-32 rounded-full bg-[#F7921A]/10 blur-[40px]"></div>
-              <div className="absolute -bottom-10 -left-10 w-40 h-40 rounded-full bg-[#5C8EFF]/10 blur-[50px]"></div>
-
-              <h3 className="text-sm font-bold mb-2 relative z-10">Security & Supply Benefits</h3>
-              <div className="grid gap-3 relative z-10">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.1 }}
+              className="bg-gradient-to-br from-[#F7921A]/10 via-[#8BABFF]/5 to-transparent rounded-xl p-6 border border-[#F7921A]/20 h-full"
+            >
+              <div className="rounded-full bg-[#F7921A]/10 p-4 w-16 h-16 flex items-center justify-center mb-5">
+                <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8 text-[#F7921A]" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                  <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+                </svg>
+              </div>
+              <h3 className="text-2xl font-bold text-white mb-3">Security & Supply Benefits</h3>
+              <p className="text-white/70">
+                Bitcoin-level security with a fixed max supply of 28.22M tokens.
+              </p>
+              <div className="grid gap-3">
                 <div>
                   <h4 className="text-xs font-semibold mb-1">Security Leadership</h4>
                   <ul className="space-y-1">
@@ -325,9 +335,9 @@ const BuyElaPage = () => {
                   </ul>
                 </div>
               </div>
-            </div>
+            </motion.div>
 
-            <div className="bg-white dark:bg-[#171717] rounded-lg border dark:border-gray-700 p-2 h-[300px]">
+            <div className="bg-white dark:bg-[#171717] rounded-lg border dark:border-gray-700 p-2 h-full">
               <h3 className="text-sm font-medium mb-2 flex items-center gap-2 dark:text-white">
                 <Shield className="h-4 w-4 text-blue-500" />
                 Security Integration
