@@ -325,7 +325,7 @@ const HashrateVisualizer = () => {
 
             <div className="space-y-4">
               <motion.div 
-                className="relative h-28 bg-[rgba(246,146,26,0.10)] rounded-lg overflow-hidden shadow-md border border-[rgba(246,146,26,0.50)] text-[#F6921A] dark:bg-[#3D2A18]"
+                className="relative h-28 bg-gradient-to-r from-orange-100/50 to-orange-50/50 dark:from-orange-950/30 dark:to-orange-900/20 rounded-lg overflow-hidden shadow-md border border-orange-200/50 dark:border-orange-900/50 dark:bg-[#3D2A18]"
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.3 }}
@@ -341,7 +341,7 @@ const HashrateVisualizer = () => {
                               <TooltipProvider>
                                 <Tooltip>
                                   <TooltipTrigger asChild>
-                                    <Info className="w-4 h-4 text-[#F6921A]/70" aria-label="Data from blockchain.info API" />
+                                    <Info className="w-4 h-4 text-muted-foreground" aria-label="Data from blockchain.info API" />
                                   </TooltipTrigger>
                                   <TooltipContent>
                                     <p className="text-sm">Data from blockchain.info API</p>
@@ -349,13 +349,13 @@ const HashrateVisualizer = () => {
                                 </Tooltip>
                               </TooltipProvider>
                             </div>
-                            <div className="text-xl sm:text-2xl font-bold text-[#F6921A]">
+                            <div className="text-xl sm:text-2xl font-bold text-primary">
                               {formatNumber(calculateEquivalent(bitcoinHashrate, scales[selectedScale].base))} {scales[selectedScale].unit}
                             </div>
                             <div className="flex items-center gap-4">
                               <span className="text-sm">{bitcoinHashrate.toFixed(2)} EH/s</span>
-                              <div className="w-24 h-2 bg-[rgba(246,146,26,0.20)] rounded-full overflow-hidden">
-                                <div className="h-full w-full bg-[#F6921A] rounded-full" />
+                              <div className="w-24 h-2 bg-green-200 rounded-full overflow-hidden">
+                                <div className="h-full w-full bg-green-500 rounded-full" />
                               </div>
                               <span className="text-sm">100%</span>
                             </div>
@@ -371,7 +371,7 @@ const HashrateVisualizer = () => {
               </motion.div>
 
               <motion.div 
-                className="relative h-28 bg-[rgba(92,142,255,0.10)] rounded-lg overflow-hidden shadow-md border border-[rgba(92,142,255,0.50)] text-[#5C8EFF] dark:bg-[#182A3D]"
+                className="relative h-28 bg-gradient-to-r from-blue-100/50 to-blue-50/50 dark:from-blue-950/30 dark:to-blue-900/20 rounded-lg overflow-hidden shadow-md border border-blue-200/50 dark:border-blue-900/50 dark:bg-[#182A3D]"
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.3, delay: 0.2 }}
@@ -387,7 +387,7 @@ const HashrateVisualizer = () => {
                               <TooltipProvider>
                                 <Tooltip>
                                   <TooltipTrigger asChild>
-                                    <Info className="w-4 h-4 text-[#5C8EFF]/70" aria-label="Data from ela.elastos.io/api/v1/data-statistics API" />
+                                    <Info className="w-4 h-4 text-muted-foreground" aria-label="Data from ela.elastos.io/api/v1/data-statistics API" />
                                   </TooltipTrigger>
                                   <TooltipContent>
                                     <p className="text-sm">Data from ela.elastos.io/api/v1/data-statistics API</p>
@@ -395,14 +395,14 @@ const HashrateVisualizer = () => {
                                 </Tooltip>
                               </TooltipProvider>
                             </div>
-                            <div className="text-xl sm:text-2xl font-bold text-[#5C8EFF]">
+                            <div className="text-xl sm:text-2xl font-bold text-primary">
                               {formatNumber(calculateEquivalent(elastosHashrate, scales[selectedScale].base))} {scales[selectedScale].unit}
                             </div>
                             <div className="flex items-center gap-4">
                               <span className="text-sm">{elastosHashrate.toFixed(2)} EH/s</span>
-                              <div className="w-24 h-2 bg-[rgba(92,142,255,0.20)] rounded-full overflow-hidden">
+                              <div className="w-24 h-2 bg-green-200 rounded-full overflow-hidden">
                                 <div 
-                                  className="h-full bg-[#5C8EFF] rounded-full transition-all duration-500"
+                                  className="h-full bg-green-500 rounded-full transition-all duration-500"
                                   style={{ width: `${(elastosHashrate/bitcoinHashrate) * 100}%` }}
                                 />
                               </div>
