@@ -122,7 +122,8 @@ const SocialChannelsPage: React.FC = () => {
                   href={channel.url} 
                   target="_blank" 
                   rel="noopener noreferrer"
-                  className={`px-3 py-2 ${channel.buttonStyle === "blue" ? 'bg-[rgba(92,142,255,0.10)] text-[#5C8EFF] border border-[rgba(92,142,255,0.50)]' : 'bg-[rgba(246,146,26,0.10)] text-[#F6921A] border border-[rgba(246,146,26,0.50)]'} rounded-full font-medium transition-all flex items-center gap-1 text-sm inline-flex w-auto`}
+                  className={`px-3 py-2 ${channel.buttonStyle === "blue" ? 'bg-[rgba(92,142,255,0.10)] text-[#5C8EFF] border border-[rgba(92,142,255,0.50)]' : 'bg-[rgba(246,146,26,0.10)] text-[#F6921A] border border-[rgba(246,146,26,0.50)]'} rounded-full font-medium transition-all flex items-center gap-1 text-sm inline-flex`}
+                  style={{ width: 'fit-content' }}
                 >
                   <span>Visit Channel</span>
                   <ArrowRight className="ml-2 h-4 w-4" />
