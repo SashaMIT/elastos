@@ -25,7 +25,7 @@ const SocialChannelsPage: React.FC = () => {
       icon: <svg xmlns="http://www.w3.org/2000/svg" className="h-10 w-10 text-[#1DA1F2]" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z"/></svg>,
       bgColor: "from-[#1DA1F2]/10 to-transparent",
       borderColor: "border-[#1DA1F2]/20",
-      subscribers: "30K+",
+      subscribers: "60.3K",
       buttonStyle: "blue" as const,
     },
     {
@@ -35,7 +35,7 @@ const SocialChannelsPage: React.FC = () => {
       icon: <MessageCircle className="h-10 w-10 text-[#0088cc]" />,
       bgColor: "from-[#0088cc]/10 to-transparent",
       borderColor: "border-[#0088cc]/20",
-      subscribers: "35K+",
+      subscribers: "5,381",
       buttonStyle: "orange" as const,
     },
     {
@@ -45,7 +45,7 @@ const SocialChannelsPage: React.FC = () => {
       icon: <svg xmlns="http://www.w3.org/2000/svg" className="h-10 w-10 text-[#5865F2]" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><circle cx="9" cy="12" r="1"/><circle cx="15" cy="12" r="1"/><path d="M7.5 7.5c3.5-1 5.5-1 9 0"/><path d="M7 16.5c3.5 1 6.5 1 10 0"/><path d="M15.5 17c0 1 1.5 3 2 3 1.5 0 2.833-1.667 3.5-3 .667-1.667.5-5.833 0-7-1.5-3.5-3-4.5-4.5-5 1.5-1.5 2-4.5 0-6.5-1.5-1.5-3-1.5-4-1.5L8.5 7.5"/><path d="M8.5 4.5v-2s-2.5-.5-4.5 1c-1.5 1.5-1 4-.5 5.5-1.5.5-3 2-3.5 4.5-.667 1.667-.833 5.833 0 7.5.833 1.833 2.333 3.5 4 3.5.667 0 2-1.5 2-3"/><path d="M8.5 13.5c0 1.5.5 3 2 4.5 1.5 1.5 5.5 2 7.5-.5"/></svg>,
       bgColor: "from-[#5865F2]/10 to-transparent",
       borderColor: "border-[#5865F2]/20",
-      subscribers: "15K+",
+      subscribers: "1,983",
       buttonStyle: "blue" as const,
     },
     {
@@ -55,7 +55,7 @@ const SocialChannelsPage: React.FC = () => {
       icon: <Asterisk className="h-10 w-10 text-[#FF4500]" />,
       bgColor: "from-[#FF4500]/10 to-transparent",
       borderColor: "border-[#FF4500]/20",
-      subscribers: "12K+",
+      subscribers: "9.5K",
       buttonStyle: "orange" as const,
     },
     {
@@ -65,7 +65,7 @@ const SocialChannelsPage: React.FC = () => {
       icon: <Video className="h-10 w-10 text-[#FF0000]" />,
       bgColor: "from-[#FF0000]/10 to-transparent",
       borderColor: "border-[#FF0000]/20",
-      subscribers: "5K+",
+      subscribers: "2.14K",
       buttonStyle: "blue" as const,
     },
     {
@@ -75,7 +75,7 @@ const SocialChannelsPage: React.FC = () => {
       icon: <Facebook className="h-10 w-10 text-[#1877F2]" />,
       bgColor: "from-[#1877F2]/10 to-transparent",
       borderColor: "border-[#1877F2]/20",
-      subscribers: "7K+",
+      subscribers: "15K",
       buttonStyle: "orange" as const,
     },
   ];
