@@ -42,7 +42,7 @@ function Feature() {
                 words="Your Gateway to the Decentralized Internet for Autonomy and Freedom."
                 duration={2}
                 filter={false}
-                className="mb-16 text-sm sm:text-base md:text-lg lg:text-xl font-normal"
+                className="mb-16 text-xs sm:text-base md:text-lg lg:text-xl font-normal"
                 startOnIntersect={true}
               />
               <div className="flex justify-center mb-8 mt-12">
