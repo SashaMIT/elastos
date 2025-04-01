@@ -318,15 +318,19 @@ export function NavMenu() {
                         </div>
                       </NavigationMenuLink>
                     </Link>
-                    <Link href="/contact-us">
-                      <NavigationMenuLink className={navigationMenuTriggerStyle()}>
-                        <div className="flex items-center gap-2">
-                          <HelpCircle className="h-4 w-4 text-[#94b5ff]" />
-                          <span className="text-white">Contact Us</span>
-                        </div>
-                      </NavigationMenuLink>
-                    </Link>
                   </div>
+                </div>
+              </NavigationMenuContent>
+            </NavigationMenuItem>
+            <NavigationMenuItem>
+              <Link href="/contact-us">
+                <NavigationMenuLink className={navigationMenuTriggerStyle()}>
+                  <div className="flex items-center gap-2">
+                    <HelpCircle className="h-4 w-4" />
+                    <span>Contact Us</span>
+                  </div>
+                </NavigationMenuLink>
+              </Link>
                 </div>
               </NavigationMenuContent>
             </NavigationMenuItem>
