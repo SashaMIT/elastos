@@ -160,7 +160,7 @@ export default function ElaUtilityPage() {
               <div className="flex justify-between items-center mb-2 relative z-10">
                 <h3 className="text-lg font-bold text-black dark:text-white">Stats</h3>
                 <div className="px-2 py-1 bg-[#5C8EFF]/10 border border-[#5C8EFF]/30 text-[#5C8EFF] dark:text-white rounded-full text-xs font-medium whitespace-nowrap">
-                  ${isHashrateLoading ? '...' : (hashrateData?.elaPrice?.toFixed(2) || '0.00')}
+                  ${isHashrateLoading ? '...' : (hashrateData?.elaPrice?.toFixed(2) || '0.00')} Per ELA
                 </div>
               </div>
 
@@ -192,7 +192,7 @@ export default function ElaUtilityPage() {
               <div className="flex justify-between items-center mb-2 relative z-10">
                 <h3 className="text-lg font-bold text-black dark:text-white">Security</h3>
                 <div className="px-2 py-1 bg-[#F7921A]/10 border border-[#F7921A]/30 text-[#F7921A] dark:text-white rounded-full text-xs font-medium whitespace-nowrap">
-                  {isHashrateLoading ? '...' : `${((hashrateData?.elastosHashrate ?? 0) / (hashrateData?.bitcoinHashrate ?? 1) * 100).toFixed(2)}%`}
+                  {isHashrateLoading ? '...' : `${((hashrateData?.elastosHashrate ?? 0) / (hashrateData?.bitcoinHashrate ?? 1) * 100).toFixed(2)}%`} Share of BTC
                 </div>
               </div>
 
@@ -224,7 +224,7 @@ export default function ElaUtilityPage() {
               <div className="flex justify-between items-center mb-2 relative z-10">
                 <h3 className="text-lg font-bold text-black dark:text-white">Supply</h3>
                 <div className="px-2 py-1 bg-[#5C8EFF]/10 border border-[#5C8EFF]/30 text-[#5C8EFF] dark:text-white rounded-full text-xs font-medium whitespace-nowrap">
-                  {isSupplyLoading ? '...' : formatNumber(totalSupply)}
+                  {isSupplyLoading ? '...' : formatNumber(totalSupply)} Circulating
                 </div>
               </div>
 
@@ -254,7 +254,7 @@ export default function ElaUtilityPage() {
               <div className="flex justify-between items-center mb-2 relative z-10">
                 <h3 className="text-lg font-bold text-black dark:text-white">Buy ELA</h3>
                 <div className="px-2 py-1 bg-[#F7921A]/10 border border-[#F7921A]/30 text-[#F7921A] dark:text-white rounded-full text-xs font-medium whitespace-nowrap">
-                  {isMarketCapLoading ? '...' : formatNumber(marketCapData?.elastosMarketCap)}
+                  {isMarketCapLoading ? '...' : formatNumber(marketCapData?.elastosMarketCap)} MarketCap
                 </div>
               </div>
 
