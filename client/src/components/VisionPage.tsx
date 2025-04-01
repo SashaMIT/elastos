@@ -5,6 +5,7 @@ import { FeaturesSectionWithHoverEffects } from "@/components/blocks/feature-sec
 import { FeaturesSectionWithBentoGrid } from "@/components/blocks/feature-section-with-bento-grid";
 import { FeaturesSectionWithTechStack } from "@/components/blocks/feature-section-with-tech-stack";
 import { TextScramble } from "@/components/ui/text-scramble";
+import { Feature } from "@/components/ui/feature-with-advantages";
 import { BackgroundCells } from "@/components/blocks/background-ripple-effect";
 import { VideoPlayerDemo } from "@/components/VideoPlayerDemo";
 import { StackedCircularFooter } from "@/components/ui/stacked-circular-footer";
@@ -53,6 +54,11 @@ export function VisionPage() {
           {/* Video Demo */}
           <div className="px-10 md:px-0 -mt-20">
             <VideoPlayerDemo />
+          </div>
+          
+          {/* Feature with Advantages */}
+          <div className="mt-16">
+            <Feature />
           </div>
 
           {/* Detailed Vision Section */}

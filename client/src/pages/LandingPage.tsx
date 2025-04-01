@@ -25,7 +25,6 @@ import { useHashrateData } from '../hooks/useHashrateData';
 import { useMarketCapData } from '../hooks/useMarketCapData';
 import { useElaSupply } from '../hooks/useElaSupply';
 import { Shield, Lock, Bitcoin, Star, ArrowUpRight, ArrowDownRight, Wallet, ChartBar, Server, Clock, X } from 'lucide-react';
-import { Feature } from "@/components/ui/feature-with-advantages";
 import { HeroScrollDemo } from "@/components/HeroScrollDemo";
 import { SecurityStats } from "@/components/SecurityStats";
 import { TextGenerateEffect } from "@/components/ui/text-generate-effect";
@@ -357,11 +356,7 @@ const LandingPage = () => {
           <FeaturesCarousel />
         </div>
 
-      <div className="pt-12 px-4 md:px-0">
-        <Feature />
-      </div>
-    
-        <div className="mt-32">
+      <div className="mt-32">
           <ScalingSection />
         </div>
 
