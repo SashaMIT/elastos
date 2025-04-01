@@ -461,7 +461,7 @@ export function VisionPage() {
                 </p>
               </motion.div>
 
-              {/* Cyber Republic */}
+              {/* Elacity Labs */}
               <motion.div
                 initial={{ opacity: 0, y: 10 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -472,14 +472,14 @@ export function VisionPage() {
               >
                 <div className="h-16 mb-3 flex items-center justify-center">
                   <img 
-                    src="/images/CRC.png" 
-                    alt="Cyber Republic" 
+                    src="/images/ElacityLabs logo.png" 
+                    alt="Elacity Labs" 
                     className="h-10 object-contain"
                   />
                 </div>
-                <h3 className="text-base font-bold text-black dark:text-white">Cyber Republic</h3>
+                <h3 className="text-base font-bold text-black dark:text-white">Elacity Labs</h3>
                 <p className="text-xs text-gray-600 dark:text-gray-400 mt-1">
-                  Decentralized governance managing ecosystem development
+                  Responsible for building dDRM technology for P2P commerce
                 </p>
               </motion.div>
             </div>
