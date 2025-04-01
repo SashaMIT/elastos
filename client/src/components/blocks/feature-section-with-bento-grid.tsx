@@ -39,8 +39,8 @@ export function FeaturesSectionWithBentoGrid() {
       className: "col-span-1 md:col-span-2 lg:col-span-2 border-b md:border-r dark:border-neutral-800"
     },
     {
-      title: "Rights Management",
-      description: "Decentralized ownership and trading for creators and businesses.",
+      title: "Finance and Rights Management",
+      description: "Decentralized ownership and trading for everyone online.",
       icon: <Database className="h-5 w-5 stroke-[1.5] text-[#F6921A]" />,
       className: "col-span-1 md:col-span-2 lg:col-span-2 border-b md:border-r dark:border-neutral-800"
     },
