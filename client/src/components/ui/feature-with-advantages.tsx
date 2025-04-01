@@ -26,10 +26,9 @@ function Feature() {
             </div>
             <div className="flex flex-col sm:flex-row items-center justify-center w-full gap-2">
               <h2
-                className="font-sans text-[60px] leading-[60px] font-normal text-black dark:text-[rgb(225,231,239)] text-center"
+                className="font-sans text-[40px] sm:text-[60px] leading-[45px] sm:leading-[60px] font-normal text-black dark:text-[rgb(225,231,239)] text-center"
                 style={{
-                  fontFamily:
-                    'ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji"',
+                  fontFamily: 'PP Telegraf Ultralight, system-ui, sans-serif',
                 }}
               >
                 The World Computer
@@ -43,7 +42,7 @@ function Feature() {
                 words="Your Gateway to the Decentralized Internet for Autonomy and Freedom."
                 duration={2}
                 filter={false}
-                className="mb-16 !text-[5px] sm:text-base md:text-lg lg:text-xl font-normal"
+                className="mb-16 text-sm sm:text-base md:text-lg lg:text-xl font-normal"
                 startOnIntersect={true}
               />
               <div className="flex justify-center mb-8 mt-12">
