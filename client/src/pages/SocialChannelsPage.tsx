@@ -75,13 +75,7 @@ const SocialChannelsPage: React.FC = () => {
     <div className="min-h-screen bg-[#171717]">
       {/* Hero Section */}
       <section className="relative py-20 overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-b from-[#5C8EFF]/10 via-transparent to-transparent"></div>
-
-        {/* Background elements */}
-        <div className="absolute top-0 left-0 w-full h-full overflow-hidden">
-          <div className="absolute -top-40 -right-40 w-96 h-96 rounded-full bg-[#5C8EFF]/5 blur-[100px] transform rotate-45"></div>
-          <div className="absolute top-60 -left-20 w-72 h-72 rounded-full bg-[#F6921A]/5 blur-[80px]"></div>
-        </div>
+        {/* Background elements removed */}
 
         <div className="container mx-auto px-4 relative z-10">
           <motion.div
