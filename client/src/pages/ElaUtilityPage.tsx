@@ -153,155 +153,130 @@ export default function ElaUtilityPage() {
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-7xl mx-auto">
             {/* Stats Card */}
-            <div className="group bg-gradient-to-br from-[#F7921A]/10 via-[#8BABFF]/5 to-transparent rounded-xl p-6 border border-[#F7921A]/20 h-full transition-all hover:shadow-lg hover:border-[#F7921A]/40 cursor-pointer relative overflow-hidden">
+            <div className="group bg-gradient-to-br from-[#F7921A]/10 via-[#8BABFF]/5 to-transparent rounded-xl p-4 border border-[#F7921A]/20 transition-all hover:shadow-lg hover:border-[#F7921A]/40 cursor-pointer relative overflow-hidden">
               <div className="absolute -top-20 -right-20 w-64 h-64 rounded-full bg-[#F7921A]/5 blur-[80px] opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
               <div className="absolute -bottom-20 -left-20 w-64 h-64 rounded-full bg-[#8BABFF]/5 blur-[80px] opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
-              
-              <div className="flex justify-between items-start mb-4 relative z-10">
-                <h3 className="text-xl font-bold text-black dark:text-white">Stats</h3>
+
+              <div className="flex justify-between items-center mb-2 relative z-10">
+                <h3 className="text-lg font-bold text-black dark:text-white">Stats</h3>
                 <div className="px-2 py-1 bg-[#5C8EFF]/10 border border-[#5C8EFF]/30 text-[#5C8EFF] dark:text-white rounded-full text-xs font-medium whitespace-nowrap">
                   ${isHashrateLoading ? '...' : (hashrateData?.elaPrice?.toFixed(2) || '0.00')}
                 </div>
               </div>
-              <div className="h-36 mb-4 overflow-hidden rounded-lg relative z-10 transition-transform duration-500 group-hover:scale-[1.02]">
-                <div className="w-full h-full bg-gradient-to-br from-[#5C8EFF]/20 to-[#F7921A]/20 flex items-center justify-center">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="text-[#F7921A]">
-                    <path d="M12 6v12"></path>
-                    <path d="m8 10 4-4 4 4"></path>
-                    <rect width="16" height="6" x="4" y="18" rx="2"></rect>
-                    <path d="M20 18v-8a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v8"></path>
-                  </svg>
+
+              <div className="flex flex-col justify-center items-center mb-3 relative z-10">
+                <div className="text-3xl font-bold text-white mb-1">
+                  {networkStats?.walletAddresses ? formatNumber(networkStats.walletAddresses) : 'Loading...'}
                 </div>
+                <div className="text-xs text-gray-400">Wallet Addresses</div>
               </div>
-</old_str>
-<new_str>
-              <div className="h-36 mb-4 overflow-hidden rounded-lg relative z-10 transition-transform duration-500 group-hover:scale-[1.02]">
-                <div className="w-full h-full bg-gradient-to-br from-[#5C8EFF]/20 to-[#F7921A]/20 flex items-center justify-center">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="text-[#F7921A]">
-                    <path d="M12 6v12"></path>
-                    <path d="m8 10 4-4 4 4"></path>
-                    <rect width="16" height="6" x="4" y="18" rx="2"></rect>
-                    <path d="M20 18v-8a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v8"></path>
-                  </svg>
-                </div>
-              </div>
-              <p className="text-gray-600 dark:text-gray-300 text-sm mb-4 relative z-10">
+
+              <p className="text-gray-600 dark:text-gray-300 text-xs mb-3 relative z-10">
                 Track real-time metrics for Elastos blockchain performance and user adoption.
               </p>
-              <a href="/stats" className="inline-flex px-3 py-2 bg-[rgba(246,146,26,0.10)] text-[#F6921A] rounded-full font-medium transition-all items-center gap-1 border border-[rgba(246,146,26,0.50)] text-sm relative z-10 hover:bg-[rgba(246,146,26,0.15)]">
+
+              <a href="/stats" className="inline-flex px-3 py-1 bg-[rgba(246,146,26,0.10)] text-[#F6921A] rounded-full font-medium transition-all items-center gap-1 border border-[rgba(246,146,26,0.50)] text-xs relative z-10 hover:bg-[rgba(246,146,26,0.15)]">
                 <span>Learn More</span>
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 35 34" fill="none">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 35 34" fill="none">
                   <circle cx="17.333" cy="17" r="16.75" stroke="#F6921A" strokeOpacity="0.5" strokeWidth="0.5"/>
                   <path d="M17.3338 22.9405L23.2741 17.0002L17.3338 11.0598L16.4162 11.9774L20.7628 16.324H10.8622V17.6763H20.7628L16.4162 22.0229L17.3338 22.9405Z" fill="#F6921A"/>
-                  <path d="M20.7628 17.6638H10.8747V16.3365H20.7628H20.7929L20.7716 16.3152L16.4338 11.9774L17.3338 11.0775L23.2564 17.0002L17.3338 22.9228L16.4338 22.0229L20.7716 17.6851L20.7929 17.6638H20.7628Z" stroke="#F6921A" strokeOpacity="0.5" strokeWidth="0.025"/>
                 </svg>
               </a>
             </div>
 
             {/* Security Card */}
-            <div className="group bg-gradient-to-br from-[#8BABFF]/10 via-[#F7921A]/5 to-transparent rounded-xl p-6 border border-[#8BABFF]/20 h-full transition-all hover:shadow-lg hover:border-[#8BABFF]/40 cursor-pointer relative overflow-hidden">
+            <div className="group bg-gradient-to-br from-[#8BABFF]/10 via-[#F7921A]/5 to-transparent rounded-xl p-4 border border-[#8BABFF]/20 transition-all hover:shadow-lg hover:border-[#8BABFF]/40 cursor-pointer relative overflow-hidden">
               <div className="absolute -top-20 -right-20 w-64 h-64 rounded-full bg-[#8BABFF]/5 blur-[80px] opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
               <div className="absolute -bottom-20 -left-20 w-64 h-64 rounded-full bg-[#F7921A]/5 blur-[80px] opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
-              
-              <div className="flex justify-between items-start mb-4 relative z-10">
-                <h3 className="text-xl font-bold text-black dark:text-white">Security</h3>
+
+              <div className="flex justify-between items-center mb-2 relative z-10">
+                <h3 className="text-lg font-bold text-black dark:text-white">Security</h3>
                 <div className="px-2 py-1 bg-[#F7921A]/10 border border-[#F7921A]/30 text-[#F7921A] dark:text-white rounded-full text-xs font-medium whitespace-nowrap">
                   {isHashrateLoading ? '...' : `${((hashrateData?.elastosHashrate ?? 0) / (hashrateData?.bitcoinHashrate ?? 1) * 100).toFixed(2)}%`}
                 </div>
               </div>
-              <div className="h-36 mb-4 overflow-hidden rounded-lg relative z-10 transition-transform duration-500 group-hover:scale-[1.02]">
-                <div className="w-full h-full bg-gradient-to-br from-[#F7921A]/20 to-[#5C8EFF]/20 flex items-center justify-center">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="text-[#F7921A]">
-                    <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10"></path>
-                    <path d="m9 12 2 2 4-4"></path>
-                  </svg>
+
+              <div className="flex flex-col justify-center items-center mb-3 relative z-10">
+                <div className="text-3xl font-bold text-white mb-1">
+                  {isHashrateLoading ? '...' : `${(hashrateData?.elastosHashrate ?? 0).toFixed(2)} EH/s`}
                 </div>
+                <div className="text-xs text-gray-400">Network Hashrate</div>
               </div>
-              <p className="text-gray-600 dark:text-gray-300 text-sm mb-4 relative z-10">
+
+              <p className="text-gray-600 dark:text-gray-300 text-xs mb-3 relative z-10">
                 Explore how ELA maintains Bitcoin-level security and protects your assets.
               </p>
-              <a 
-                href="/security"
-                className="inline-flex px-3 py-2 bg-[rgba(246,146,26,0.10)] text-[#F6921A] rounded-full font-medium transition-all items-center gap-1 border border-[rgba(246,146,26,0.50)] text-sm relative z-10 hover:bg-[rgba(246,146,26,0.15)]"
-              >
+
+              <a href="/security" className="inline-flex px-3 py-1 bg-[rgba(246,146,26,0.10)] text-[#F6921A] rounded-full font-medium transition-all items-center gap-1 border border-[rgba(246,146,26,0.50)] text-xs relative z-10 hover:bg-[rgba(246,146,26,0.15)]">
                 <span>Learn More</span>
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 35 34" fill="none">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 35 34" fill="none">
                   <circle cx="17.333" cy="17" r="16.75" stroke="#F6921A" strokeOpacity="0.5" strokeWidth="0.5"/>
                   <path d="M17.3338 22.9405L23.2741 17.0002L17.3338 11.0598L16.4162 11.9774L20.7628 16.324H10.8622V17.6763H20.7628L16.4162 22.0229L17.3338 22.9405Z" fill="#F6921A"/>
-                  <path d="M20.7628 17.6638H10.8747V16.3365H20.7628H20.7929L20.7716 16.3152L16.4338 11.9774L17.3338 11.0775L23.2564 17.0002L17.3338 22.9228L16.4338 22.0229L20.7716 17.6851L20.7929 17.6638H20.7628Z" stroke="#F6921A" strokeOpacity="0.5" strokeWidth="0.025"/>
                 </svg>
               </a>
             </div>
 
             {/* Supply Card */}
-            <div className="group bg-gradient-to-br from-[#F7921A]/10 via-[#8BABFF]/5 to-transparent rounded-xl p-6 border border-[#F7921A]/20 h-full transition-all hover:shadow-lg hover:border-[#F7921A]/40 cursor-pointer relative overflow-hidden">
+            <div className="group bg-gradient-to-br from-[#F7921A]/10 via-[#8BABFF]/5 to-transparent rounded-xl p-4 border border-[#F7921A]/20 transition-all hover:shadow-lg hover:border-[#F7921A]/40 cursor-pointer relative overflow-hidden">
               <div className="absolute -top-20 -right-20 w-64 h-64 rounded-full bg-[#F7921A]/5 blur-[80px] opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
               <div className="absolute -bottom-20 -left-20 w-64 h-64 rounded-full bg-[#8BABFF]/5 blur-[80px] opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
-              
-              <div className="flex justify-between items-start mb-4 relative z-10">
-                <h3 className="text-xl font-bold text-black dark:text-white">Supply</h3>
+
+              <div className="flex justify-between items-center mb-2 relative z-10">
+                <h3 className="text-lg font-bold text-black dark:text-white">Supply</h3>
                 <div className="px-2 py-1 bg-[#5C8EFF]/10 border border-[#5C8EFF]/30 text-[#5C8EFF] dark:text-white rounded-full text-xs font-medium whitespace-nowrap">
                   {isSupplyLoading ? '...' : formatNumber(totalSupply)}
                 </div>
               </div>
-              <div className="h-36 mb-4 overflow-hidden rounded-lg relative z-10 transition-transform duration-500 group-hover:scale-[1.02]">
-                <div className="w-full h-full bg-gradient-to-br from-[#5C8EFF]/20 to-[#F7921A]/20 flex items-center justify-center">
-                  <div className="flex flex-col items-center">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="52" height="52" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="text-[#F7921A] mb-2">
-                      <circle cx="8" cy="8" r="7"></circle>
-                      <circle cx="16" cy="16" r="7"></circle>
-                    </svg>
-                    <span className="text-2xl font-bold text-white">28.2M</span>
-                  </div>
-                </div>
+
+              <div className="flex flex-col justify-center items-center mb-3 relative z-10">
+                <div className="text-3xl font-bold text-white mb-1">28.2M</div>
+                <div className="text-xs text-gray-400">Maximum Supply</div>
               </div>
-              <p className="text-gray-600 dark:text-gray-300 text-sm mb-4 relative z-10">
+
+              <p className="text-gray-600 dark:text-gray-300 text-xs mb-3 relative z-10">
                 Understand ELA's tokenomics, emission schedule, and circulation metrics.
               </p>
-              <a href="/supply" className="inline-flex px-3 py-2 bg-[rgba(246,146,26,0.10)] text-[#F6921A] rounded-full font-medium transition-all items-center gap-1 border border-[rgba(246,146,26,0.50)] text-sm relative z-10 hover:bg-[rgba(246,146,26,0.15)]">
+
+              <a href="/supply" className="inline-flex px-3 py-1 bg-[rgba(246,146,26,0.10)] text-[#F6921A] rounded-full font-medium transition-all items-center gap-1 border border-[rgba(246,146,26,0.50)] text-xs relative z-10 hover:bg-[rgba(246,146,26,0.15)]">
                 <span>Learn More</span>
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 35 34" fill="none">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 35 34" fill="none">
                   <circle cx="17.333" cy="17" r="16.75" stroke="#F6921A" strokeOpacity="0.5" strokeWidth="0.5"/>
                   <path d="M17.3338 22.9405L23.2741 17.0002L17.3338 11.0598L16.4162 11.9774L20.7628 16.324H10.8622V17.6763H20.7628L16.4162 22.0229L17.3338 22.9405Z" fill="#F6921A"/>
-                  <path d="M20.7628 17.6638H10.8747V16.3365H20.7628H20.7929L20.7716 16.3152L16.4338 11.9774L17.3338 11.0775L23.2564 17.0002L17.3338 22.9228L16.4338 22.0229L20.7716 17.6851L20.7929 17.6638H20.7628Z" stroke="#F6921A" strokeOpacity="0.5" strokeWidth="0.025"/>
                 </svg>
               </a>
             </div>
 
             {/* Buy ELA Card */}
-            <div className="group bg-gradient-to-br from-[#8BABFF]/10 via-[#F7921A]/5 to-transparent rounded-xl p-6 border border-[#8BABFF]/20 h-full transition-all hover:shadow-lg hover:border-[#8BABFF]/40 cursor-pointer relative overflow-hidden">
+            <div className="group bg-gradient-to-br from-[#8BABFF]/10 via-[#F7921A]/5 to-transparent rounded-xl p-4 border border-[#8BABFF]/20 transition-all hover:shadow-lg hover:border-[#8BABFF]/40 cursor-pointer relative overflow-hidden">
               <div className="absolute -top-20 -right-20 w-64 h-64 rounded-full bg-[#8BABFF]/5 blur-[80px] opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
               <div className="absolute -bottom-20 -left-20 w-64 h-64 rounded-full bg-[#F7921A]/5 blur-[80px] opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
-              
-              <div className="flex justify-between items-start mb-4 relative z-10">
-                <h3 className="text-xl font-bold text-black dark:text-white">Buy ELA</h3>
+
+              <div className="flex justify-between items-center mb-2 relative z-10">
+                <h3 className="text-lg font-bold text-black dark:text-white">Buy ELA</h3>
                 <div className="px-2 py-1 bg-[#F7921A]/10 border border-[#F7921A]/30 text-[#F7921A] dark:text-white rounded-full text-xs font-medium whitespace-nowrap">
                   {isMarketCapLoading ? '...' : formatNumber(marketCapData?.elastosMarketCap)}
                 </div>
               </div>
-              <div className="h-36 mb-4 overflow-hidden rounded-lg relative z-10 transition-transform duration-500 group-hover:scale-[1.02]">
-                <div className="w-full h-full bg-gradient-to-br from-[#F7921A]/20 to-[#5C8EFF]/20 flex items-center justify-center">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="text-[#F7921A]">
-                    <circle cx="8" cy="21" r="1"></circle>
-                    <circle cx="19" cy="21" r="1"></circle>
-                    <path d="M2.05 2.05h2l2.66 12.42a2 2 0 0 0 2 1.58h9.78a2 2 0 0 0 1.95-1.57l1.65-7.43H5.12"></path>
-                    <path d="M12 9V4"></path>
-                    <path d="M9 7h6"></path>
-                  </svg>
+
+              <div className="flex items-center justify-center mb-3 relative z-10">
+                <div className="flex items-center">
+                  <img src="/images/Elastos.png" alt="Elastos" className="h-8 w-8 mr-2" />
+                  <div className="flex flex-col">
+                    <div className="text-3xl font-bold text-white">${isHashrateLoading ? '...' : (hashrateData?.elaPrice?.toFixed(2) || '0.00')}</div>
+                    <div className="text-xs text-gray-400">Current Price</div>
+                  </div>
                 </div>
               </div>
-              <p className="text-gray-600 dark:text-gray-300 text-sm mb-4 relative z-10">
+
+              <p className="text-gray-600 dark:text-gray-300 text-xs mb-3 relative z-10">
                 Get ELA on leading exchanges and decentralized platforms for easy access.
               </p>
-              <a 
-                href="/buy-ela"
-                className="inline-flex px-3 py-2 bg-[rgba(246,146,26,0.10)] text-[#F6921A] rounded-full font-medium transition-all items-center gap-1 border border-[rgba(246,146,26,0.50)] text-sm relative z-10 hover:bg-[rgba(246,146,26,0.15)]"
-              >
+
+              <a href="/buy-ela" className="inline-flex px-3 py-1 bg-[rgba(246,146,26,0.10)] text-[#F6921A] rounded-full font-medium transition-all items-center gap-1 border border-[rgba(246,146,26,0.50)] text-xs relative z-10 hover:bg-[rgba(246,146,26,0.15)]">
                 <span>Learn More</span>
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 35 34" fill="none">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 35 34" fill="none">
                   <circle cx="17.333" cy="17" r="16.75" stroke="#F6921A" strokeOpacity="0.5" strokeWidth="0.5"/>
                   <path d="M17.3338 22.9405L23.2741 17.0002L17.3338 11.0598L16.4162 11.9774L20.7628 16.324H10.8622V17.6763H20.7628L16.4162 22.0229L17.3338 22.9405Z" fill="#F6921A"/>
-                  <path d="M20.7628 17.6638H10.8747V16.3365H20.7628H20.7929L20.7716 16.3152L16.4338 11.9774L17.3338 11.0775L23.2564 17.0002L17.3338 22.9228L16.4338 22.0229L20.7716 17.6851L20.7929 17.6638H20.7628Z" stroke="#F6921A" strokeOpacity="0.5" strokeWidth="0.025"/>
                 </svg>
               </a>
             </div>
