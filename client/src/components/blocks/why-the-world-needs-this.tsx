@@ -80,11 +80,11 @@ export function WhyTheWorldNeedsThis() {
           transition={{ duration: 0.3 }}
           className={`bg-transparent border-0 shadow-none p-4 md:p-8`} 
         >
-          <div className="flex flex-col md:flex-row md:items-start gap-6">
-            <div className="flex-shrink-0 bg-[#24272f] p-4 rounded-full shadow-sm mx-auto md:mx-0" style={{ width: 'fit-content' }}>
+          <div className="flex flex-col items-center gap-6">
+            <div className="flex-shrink-0 bg-[#24272f] p-4 rounded-full shadow-sm" style={{ width: 'fit-content' }}>
               {selectedReason.icon}
             </div>
-            <div>
+            <div className="text-center max-w-3xl">
               <h3 className="text-xl md:text-2xl font-bold mb-3">{selectedReason.title}</h3>
               <p className="text-lg font-medium text-black dark:text-white mb-4">{selectedReason.description}</p>
               <p className="text-gray-700 dark:text-gray-300 leading-relaxed">{selectedReason.longDescription}</p>
