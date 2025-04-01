@@ -1,0 +1,66 @@
+🏛️ Page Title: Elastos DAO: Governance for the World Computer
+🟡 Intro Header (Hero Section)
+Community-powered governance for a truly decentralized internet.
+Elastos DAO is the on-chain, self-sovereign governance framework behind the Elastos ecosystem—where stakeholders shape the future of the World Computer through transparent proposals, voting, and funding.
+
+📜 What is Elastos DAO?
+Formerly known as the Cyber Republic, the Elastos DAO is the decentralized autonomous organization that governs the development, direction, and funding of the Elastos ecosystem. It puts ELA holders in control, letting them participate in elections, submit proposals, fund projects, and maintain ecosystem integrity—without corporate gatekeepers.
+
+Elastos DAO is not just governance for a blockchain—it is governance for a new internet.
+
+🧱 Core Components
+🔹 CR Council
+A 12-seat, community-elected council responsible for overseeing strategic development, approving proposals, and distributing DAO funds. Councilors are elected by ELA stakers and must stake 5,000 ELA as collateral.
+
+🔹 Proposal System
+Any verified DID holder can submit ecosystem proposals—ranging from tech development, marketing campaigns, dApps, community efforts, or DAO upgrades. The council reviews, votes, and funds approved ideas.
+
+🔹 Elections
+Held annually. ELA holders vote using their staked tokens to elect trusted representatives to the council. Everything is on-chain, transparent, and backed by DID-based identity.
+
+🔹 Treasury
+The Elastos DAO treasury is funded through a portion of ELA token inflation and ecosystem revenue. It is used to support community-led initiatives, bounties, grants, and ecosystem infrastructure.
+
+🔧 Powered by Elastos Technology
+DID (Decentralized Identity): Every participant in the DAO—voters, proposers, and council members—is verifiably identified using a self-sovereign DID.
+ESC (Elastos Smart Chain): All governance logic, votes, and funding mechanisms are run via smart contracts.
+ELA: Used for staking, voting, and DAO budgeting.
+💡 Why It Matters
+🗳️ Truly Democratic: One of the only DAOs where real identity (via DID) meets transparent on-chain voting.
+🌎 Global Participation: Anyone with ELA and a verified DID can help shape the network’s future.
+💰 Funding for Builders: Developers, creators, and community leaders can get funded to build on Elastos.
+🔒 Security by Design: Every vote, credential, and transaction is verified, immutable, and transparent.
+🏗️ Built for Scalability: Govern not just a blockchain—but a full-stack Web3 infrastructure and its expanding ecosystem.
+🧠 From Cyber Republic to Elastos DAO: A Quick History
+2018: Cyber Republic is founded as Elastos’ community growth and governance initiative.
+2019: The first CR Council election is held. Community begins funding real-world dApps and initiatives.
+2021: Governance and voting systems are transitioned to smart contracts on ESC.
+2022–2023: Full DAO framework implemented. The Cyber Republic brand is deprecated as the DAO takes full control under the Elastos banner.
+2024: DAO continues to evolve with new tools, funding processes, and increased autonomy.
+🧭 How to Get Involved
+🗳️ Vote
+Stake your ELA.
+Connect with your DID.
+Participate in Council elections and proposal votes.
+✍️ Submit a Proposal
+Have an idea that benefits the Elastos ecosystem?
+Write and submit a proposal through the DAO portal.
+If approved, receive funding and community support.
+👥 Run for Council
+Stake 5,000 ELA as collateral.
+Share your vision and campaign.
+Earn a seat to shape the future of decentralized infrastructure.
+🚀 DAO in Action (Optional Section)
+Use this to show live metrics or case studies:
+
+💰 DAO Treasury Balance: X ELA
+✅ Proposals Funded: X
+👤 Active Voters: X
+🔧 Recent Projects Funded: [List of 3–4 examples with links]
+📣 Call to Action
+Shape the future of the internet.
+Whether you’re a builder, voter, or visionary—you have a place in the Elastos DAO.
+
+👉 [Join the DAO Portal]
+👉 [View Current Proposals]
+👉 [Run for Council]
