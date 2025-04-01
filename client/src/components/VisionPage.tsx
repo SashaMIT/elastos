@@ -32,14 +32,19 @@ export function VisionPage() {
   return (
     <div className="w-full relative" style={{ zIndex: 0 }}>
       <BackgroundCells className="bg-slate-950 h-[50vh] -mt-6 pt-0">
-        <TextScramble
-          className="text-4xl md:text-5xl lg:text-7xl font-normal text-center bg-clip-text text-transparent bg-gradient-to-b from-neutral-100 to-neutral-400"
-        >
-          The World Computer
-        </TextScramble>
-        <p className="text-lg md:text-xl text-gray-700 dark:text-gray-300 italic px-4 md:px-8 lg:px-16 max-w-4xl mx-auto text-center mt-4">
-          Our mission is to create a new internet infrastructure that gives users and developers full control over their digital interactions, enabling a secure, private, and censorship-resistant online experience.
-        </p>
+        <div className="container mx-auto px-4 relative z-10">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5 }}
+            className="text-center max-w-3xl mx-auto mb-16"
+          >
+            <h1 className="text-4xl md:text-5xl font-bold text-white mb-6">The <span className="text-[#5C8EFF]">World Computer</span></h1>
+            <p className="text-white/70 text-lg">
+              Our mission is to create a new internet infrastructure that gives users and developers full control over their digital interactions, enabling a secure, private, and censorship-resistant online experience.
+            </p>
+          </motion.div>
+      
       </BackgroundCells>
       <div className="w-full bg-white dark:bg-[#171717] py-16 font-sans">
         <div className="container mx-auto px-4">
