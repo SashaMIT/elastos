@@ -216,25 +216,28 @@ export function VisionPage() {
             </motion.div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-7xl mx-auto mb-10">
-              {/* Essentials */}
+              {/* Elastos DAO */}
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: 0.1 }}
                 className="bg-gradient-to-br from-[#F7921A]/10 via-[#8BABFF]/5 to-transparent rounded-xl p-6 border border-[#F7921A]/20 h-full cursor-pointer"
-                onClick={() => window.open("https://essentials.elastos.org", "_blank")}
+                onClick={() => window.open("https://cyberrepublic.org", "_blank")}
               >
                 <div className="h-40 mb-4">
                   <img 
-                    src="/images/Ecosystem/Essentials.png" 
-                    alt="Elastos Essentials" 
+                    src="/images/Ecosystem/Cyber Republic.png" 
+                    alt="Cyber Republic DAO" 
                     className="w-full h-full object-cover rounded-lg"
                   />
                 </div>
-                <h3 className="text-xl font-bold text-black dark:text-white mb-2">Essentials</h3>
+                <div className="flex justify-between items-start mb-2">
+                  <h3 className="text-xl font-bold text-black dark:text-white">Elastos DAO</h3>
+                  <span className="px-2 py-1 bg-[#5C8EFF]/10 border border-[#5C8EFF]/30 text-white rounded-full text-xs font-medium whitespace-nowrap">Governance</span>
+                </div>
                 <p className="text-gray-600 dark:text-gray-300 text-sm">
-                  Elastos SuperWallet with ELA staking, multi-chain, identity and CR governance
+                  A community-driven governance system for the Elastos ecosystem
                 </p>
               </motion.div>
 
@@ -254,7 +257,10 @@ export function VisionPage() {
                     className="w-full h-full object-cover rounded-lg"
                   />
                 </div>
-                <h3 className="text-xl font-bold text-black dark:text-white mb-2">Elacity</h3>
+                <div className="flex justify-between items-start mb-2">
+                  <h3 className="text-xl font-bold text-black dark:text-white">Elacity</h3>
+                  <span className="px-2 py-1 bg-[#F7921A]/10 border border-[#F7921A]/30 text-white rounded-full text-xs font-medium whitespace-nowrap">Marketplace</span>
+                </div>
                 <p className="text-gray-600 dark:text-gray-300 text-sm">
                   Trade ERC-721 and ERC-1155 NFTs, tokenize IP into royalty-based assets
                 </p>
@@ -276,7 +282,10 @@ export function VisionPage() {
                     className="w-full h-full object-cover rounded-lg"
                   />
                 </div>
-                <h3 className="text-xl font-bold text-black dark:text-white mb-2">Glide Finance</h3>
+                <div className="flex justify-between items-start mb-2">
+                  <h3 className="text-xl font-bold text-black dark:text-white">Glide Finance</h3>
+                  <span className="px-2 py-1 bg-[#5C8EFF]/10 border border-[#5C8EFF]/30 text-white rounded-full text-xs font-medium whitespace-nowrap">DEX</span>
+                </div>
                 <p className="text-gray-600 dark:text-gray-300 text-sm">
                   Bridge and DEX for ERC-20 token trading on Elastos Smart Chain
                 </p>
@@ -298,7 +307,10 @@ export function VisionPage() {
                     className="w-full h-full object-cover rounded-lg"
                   />
                 </div>
-                <h3 className="text-xl font-bold text-black dark:text-white mb-2">BeL2</h3>
+                <div className="flex justify-between items-start mb-2">
+                  <h3 className="text-xl font-bold text-black dark:text-white">BeL2</h3>
+                  <span className="px-2 py-1 bg-[#F7921A]/10 border border-[#F7921A]/30 text-white rounded-full text-xs font-medium whitespace-nowrap">BTCFi</span>
+                </div>
                 <p className="text-gray-600 dark:text-gray-300 text-sm">
                   Test BeL2's Bitcoin DeFi capabilities with lending demo
                 </p>
