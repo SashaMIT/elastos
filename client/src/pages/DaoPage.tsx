@@ -774,7 +774,7 @@ const DaoPage: React.FC = () => {
                       </li>
                       <li className="flex items-start gap-2">
                         <CheckCircle className="w-5 h-5 text-[#F7921A] mt-0.5 flex-shrink-0" />
-                        <span>Stake your ELA tokens to vote on DAO proposals and elections</span>
+                        <span>Stake your ELA to vote on Council members to represent you annually</span>
                       </li>
                       <li className="flex items-start gap-2">
                         <CheckCircle className="w-5 h-5 text-[#F7921A] mt-0.5 flex-shrink-0" />
