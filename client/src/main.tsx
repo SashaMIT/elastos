@@ -51,6 +51,7 @@ function Router() {
           <Route path="/whitepaper" component={WhitepaperPage} /> 
           <Route path="/explorer" component={Explorer} /> 
           <Route path="/dao" component={Dao} /> {/* Added Dao route */}
+          <Route path="/social-channels" component={SocialChannelsPage} /> {/* Added SocialChannelsPage route */}
           <Route>404 Page Not Found</Route>
         </Switch>
       </Suspense>
