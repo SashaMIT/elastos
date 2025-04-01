@@ -1,5 +1,6 @@
 
 import React from "react";
+import { motion } from "framer-motion";
 import { FeaturesSectionWithHoverEffects } from "@/components/blocks/feature-section-with-hover-effects";
 import { FeaturesSectionWithBentoGrid } from "@/components/blocks/feature-section-with-bento-grid";
 import { FeaturesSectionWithTechStack } from "@/components/blocks/feature-section-with-tech-stack";
@@ -44,8 +45,9 @@ export function VisionPage() {
               Our mission is to create a new internet infrastructure that gives users and developers full control over their digital interactions, enabling a secure, private, and censorship-resistant online experience.
             </p>
           </motion.div>
-      
+        </div>
       </BackgroundCells>
+      
       <div className="w-full bg-white dark:bg-[#171717] py-16 font-sans">
         <div className="container mx-auto px-4">
           {/* Video Demo */}
@@ -90,7 +92,7 @@ export function VisionPage() {
       
       <div className="w-full">
         {/* Footer */}
-        <div className="w-full ">
+        <div className="w-full">
           <StackedCircularFooter />
         </div>
       </div>
