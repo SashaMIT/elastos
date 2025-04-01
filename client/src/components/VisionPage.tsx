@@ -317,7 +317,7 @@ export function VisionPage() {
               </motion.div>
             </div>
             
-            <div className="flex justify-center">
+            <div className="flex justify-center mb-20">
               <a href="/ecosystem" className="inline-flex px-3 py-2 bg-[rgba(246,146,26,0.10)] text-[#F6921A] rounded-full font-medium transition-all items-center gap-1 border border-[rgba(246,146,26,0.50)] text-sm">
                 <span>Explore Ecosystem</span>
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 35 34" fill="none">
@@ -330,7 +330,7 @@ export function VisionPage() {
           </div>
 
           {/* A World Computer for Everyone Banner */}
-          <div className="mt-10 -mx-4 px-4 md:px-0">
+          <div className="mt-20 -mx-4 px-4 md:px-0">
             <WorldComputerBanner />
           </div>
           
