@@ -136,21 +136,21 @@ const timelineEvents = [
     icon: <Vote className="w-5 h-5 text-[#8BABFF]" />
   },
   {
-    year: "2021",
-    title: "Smart Contract Transition",
-    description: "Governance and voting systems are transitioned to smart contracts on ESC.",
-    icon: <FileText className="w-5 h-5 text-[#F7921A]" />
-  },
-  {
-    year: "2022-2023",
+    year: "2020",
     title: "Full DAO Implementation",
     description: "Full DAO framework implemented. The Cyber Republic brand is deprecated as the DAO takes full control under the Elastos banner.",
     icon: <Building2 className="w-5 h-5 text-[#8BABFF]" />
   },
   {
+    year: "2021-2023",
+    title: "Ecosystem Growth",
+    description: "DAO expands support for ecosystem projects and development initiatives across the Elastos network.",
+    icon: <FileText className="w-5 h-5 text-[#F7921A]" />
+  },
+  {
     year: "2024",
-    title: "Continuous Evolution",
-    description: "DAO continues to evolve with new tools, funding processes, and increased autonomy.",
+    title: "Legal Registration",
+    description: "Elastos DAO was legally registered in the Marshall Islands, establishing formal legal status.",
     icon: <ArrowRight className="w-5 h-5 text-[#F7921A]" />
   }
 ];
