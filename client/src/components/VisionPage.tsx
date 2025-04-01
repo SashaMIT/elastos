@@ -67,17 +67,7 @@ export function VisionPage() {
             </h2>
             <FeaturesSectionWithHoverEffects />
           </div>
-
-          {/* Why the World Needs This */}
-          <div className="mt-0 mb-20">
-            <WhyTheWorldNeedsThis />
-          </div>
-         
-          {/* Features Grid */}
-          <div className="-mt-20 mb-0">
-            <FeaturesSectionWithBentoGrid />
-          </div>
-         
+          
           {/* Rong Chen Quote */}
           <div className="w-full max-w-5xl mx-auto px-4 py-16 mt-10">
             <div className="bg-gradient-to-br from-[#5C8EFF]/10 to-[#F6921A]/10 rounded-xl p-8 border border-[#5C8EFF]/30 relative">
@@ -105,6 +95,16 @@ export function VisionPage() {
                 </div>
               </div>
             </div>
+          </div>
+
+          {/* Why the World Needs This */}
+          <div className="mt-10 mb-20">
+            <WhyTheWorldNeedsThis />
+          </div>
+         
+          {/* Features Grid */}
+          <div className="-mt-10 mb-0">
+            <FeaturesSectionWithBentoGrid />
           </div>
 
           {/* A World Computer for Everyone Banner */}
