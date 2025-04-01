@@ -314,7 +314,7 @@ export function NavMenu() {
                       <NavigationMenuLink className={navigationMenuTriggerStyle()}>
                         <div className="flex items-center gap-2">
                           <Code className="h-4 w-4 text-[#94b5ff]" />
-                          <span className="text-white">dApps</span>
+                          <span className="text-white">Decentralized Apps</span>
                         </div>
                       </NavigationMenuLink>
                     </Link>
