@@ -168,7 +168,7 @@ export default function ElaUtilityPage() {
                 <div className="text-3xl font-bold text-white mb-1">
                   {networkStats?.walletAddresses ? formatNumber(networkStats.walletAddresses) : 'Loading...'}
                 </div>
-                <div className="text-xs text-gray-400">Wallet Addresses</div>
+                <div className="text-xs text-gray-400">Active Wallets</div>
               </div>
 
               <p className="text-gray-600 dark:text-gray-300 text-xs mb-3 relative z-10">
@@ -200,7 +200,7 @@ export default function ElaUtilityPage() {
                 <div className="text-3xl font-bold text-white mb-1">
                   {isHashrateLoading ? '...' : `${(hashrateData?.elastosHashrate ?? 0).toFixed(2)} EH/s`}
                 </div>
-                <div className="text-xs text-gray-400">Network Hashrate</div>
+                <div className="text-xs text-gray-400">Bitcoin Security</div>
               </div>
 
               <p className="text-gray-600 dark:text-gray-300 text-xs mb-3 relative z-10">
@@ -230,7 +230,7 @@ export default function ElaUtilityPage() {
 
               <div className="flex flex-col justify-center items-center mb-3 relative z-10">
                 <div className="text-3xl font-bold text-white mb-1">28.2M</div>
-                <div className="text-xs text-gray-400">Maximum Supply</div>
+                <div className="text-xs text-gray-400">Max Supply</div>
               </div>
 
               <p className="text-gray-600 dark:text-gray-300 text-xs mb-3 relative z-10">
@@ -258,14 +258,9 @@ export default function ElaUtilityPage() {
                 </div>
               </div>
 
-              <div className="flex items-center justify-center mb-3 relative z-10">
-                <div className="flex items-center">
-                  <img src="/images/Elastos.png" alt="Elastos" className="h-8 w-8 mr-2" />
-                  <div className="flex flex-col">
-                    <div className="text-3xl font-bold text-white">${isHashrateLoading ? '...' : (hashrateData?.elaPrice?.toFixed(2) || '0.00')}</div>
-                    <div className="text-xs text-gray-400">Current Price</div>
-                  </div>
-                </div>
+              <div className="flex flex-col justify-center items-center mb-3 relative z-10">
+                <div className="text-3xl font-bold text-white mb-1">${isHashrateLoading ? '...' : (hashrateData?.elaPrice?.toFixed(2) || '0.00')}</div>
+                <div className="text-xs text-gray-400">Current Price</div>
               </div>
 
               <p className="text-gray-600 dark:text-gray-300 text-xs mb-3 relative z-10">
