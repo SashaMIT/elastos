@@ -717,7 +717,7 @@ const DaoPage: React.FC = () => {
                         href="https://cyberrepublic.org/council/election"
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="inline-flex w-full px-3 py-2 bg-[rgba(246,146,26,0.10)] text-[#F6921A] rounded-full font-medium transition-all items-center justify-center gap-1 border border-[rgba(246,146,26,0.50)] text-sm"
+                        className="inline-flex px-3 py-2 bg-[rgba(246,146,26,0.10)] text-[#F6921A] rounded-full font-medium transition-all items-center justify-center gap-1 border border-[rgba(246,146,26,0.50)] text-sm"
                       >
                         <span>How to Vote</span>
                         <CircleArrow />
@@ -728,7 +728,7 @@ const DaoPage: React.FC = () => {
                         href="https://cyberrepublic.org/proposals/new"
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="inline-flex w-full px-3 py-2 bg-[rgba(92,142,255,0.10)] text-[#5C8EFF] rounded-full font-medium transition-all items-center justify-center gap-1 border border-[rgba(92,142,255,0.50)] text-sm"
+                        className="inline-flex px-3 py-2 bg-[rgba(92,142,255,0.10)] text-[#5C8EFF] rounded-full font-medium transition-all items-center justify-center gap-1 border border-[rgba(92,142,255,0.50)] text-sm"
                       >
                         <span>Submit a Proposal</span>
                         <BlueCircleArrow />
@@ -739,7 +739,7 @@ const DaoPage: React.FC = () => {
                         href="https://cyberrepublic.org/council/election"
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="inline-flex w-full px-3 py-2 bg-[rgba(246,146,26,0.10)] text-[#F6921A] rounded-full font-medium transition-all items-center justify-center gap-1 border border-[rgba(246,146,26,0.50)] text-sm"
+                        className="inline-flex px-3 py-2 bg-[rgba(246,146,26,0.10)] text-[#F6921A] rounded-full font-medium transition-all items-center justify-center gap-1 border border-[rgba(246,146,26,0.50)] text-sm"
                       >
                         <span>Run for Council</span>
                         <CircleArrow />
