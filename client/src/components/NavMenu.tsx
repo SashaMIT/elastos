@@ -241,40 +241,45 @@ export function NavMenu() {
                 Insights
               </NavigationMenuTrigger>
               <NavigationMenuContent>
-                <div className="grid w-[400px] gap-1 p-2 md:w-[500px] md:grid-cols-1">
-                  <h4 className="font-medium text-sm text-muted-foreground mb-2 px-2 text-[#94b5ff]">Learning Hub</h4>
-                  <Link href="/announcements">
-                    <NavigationMenuLink className={navigationMenuTriggerStyle()}>
-                      <div className="flex items-center gap-2">
-                        <BookOpen className="h-4 w-4 text-[#94b5ff]" />
-                        <span>Announcements</span>
-                      </div>
-                    </NavigationMenuLink>
-                  </Link>
-                  <Link href="/blogs-news">
-                    <NavigationMenuLink className={navigationMenuTriggerStyle()}>
-                      <div className="flex items-center gap-2">
-                        <BookOpen className="h-4 w-4 text-[#94b5ff]" />
-                        <span>Blogs & News</span>
-                      </div>
-                    </NavigationMenuLink>
-                  </Link>
-                  <Link href="/videos-tutorials">
-                    <NavigationMenuLink className={navigationMenuTriggerStyle()}>
-                      <div className="flex items-center gap-2">
-                        <Video className="h-4 w-4 text-[#94b5ff]" />
-                        <span>Videos & Tutorials</span>
-                      </div>
-                    </NavigationMenuLink>
-                  </Link>
-                  <Link href="/knowledge-base">
-                    <NavigationMenuLink className={navigationMenuTriggerStyle()}>
-                      <div className="flex items-center gap-2">
-                        <Database className="h-4 w-4 text-[#94b5ff]" />
-                        <span>Knowledge Base</span>
-                      </div>
-                    </NavigationMenuLink>
-                  </Link>
+                <div className="grid w-[400px] gap-1 p-2 md:w-[500px] md:grid-cols-2">
+                  <div>
+                    <h4 className="font-medium text-sm text-muted-foreground mb-2 px-2 text-[#94b5ff]">UPDATES</h4>
+                    <Link href="/announcements">
+                      <NavigationMenuLink className={navigationMenuTriggerStyle()}>
+                        <div className="flex items-center gap-2">
+                          <BookOpen className="h-4 w-4 text-[#94b5ff]" />
+                          <span>Announcements</span>
+                        </div>
+                      </NavigationMenuLink>
+                    </Link>
+                    <Link href="/blogs-news">
+                      <NavigationMenuLink className={navigationMenuTriggerStyle()}>
+                        <div className="flex items-center gap-2">
+                          <BookOpen className="h-4 w-4 text-[#94b5ff]" />
+                          <span>Blogs & News</span>
+                        </div>
+                      </NavigationMenuLink>
+                    </Link>
+                  </div>
+                  <div>
+                    <h4 className="font-medium text-sm text-muted-foreground mb-2 px-2 text-[#94b5ff]">LEARNING</h4>
+                    <Link href="/videos-tutorials">
+                      <NavigationMenuLink className={navigationMenuTriggerStyle()}>
+                        <div className="flex items-center gap-2">
+                          <Video className="h-4 w-4 text-[#94b5ff]" />
+                          <span>Videos & Tutorials</span>
+                        </div>
+                      </NavigationMenuLink>
+                    </Link>
+                    <Link href="/knowledge-base">
+                      <NavigationMenuLink className={navigationMenuTriggerStyle()}>
+                        <div className="flex items-center gap-2">
+                          <Database className="h-4 w-4 text-[#94b5ff]" />
+                          <span>Knowledge Base</span>
+                        </div>
+                      </NavigationMenuLink>
+                    </Link>
+                  </div>
                 </div>
               </NavigationMenuContent>
             </NavigationMenuItem>
