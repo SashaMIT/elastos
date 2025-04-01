@@ -2,6 +2,7 @@ import Vision from './pages/Vision';
 import WhitepaperPage from './pages/WhitepaperPage'; 
 import Explorer from './pages/Explorer'; 
 import Dao from './pages/Dao'; // Added import for Dao page
+import SocialChannelsPage from './pages/SocialChannelsPage';
 
 import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
