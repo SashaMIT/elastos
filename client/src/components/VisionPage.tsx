@@ -48,7 +48,7 @@ export function VisionPage() {
         >
           Our mission is to create a new internet infrastructure that gives users and developers full control over their digital interactions, enabling a secure, private, and censorship-resistant online experience.
         </motion.p>
-      </BackgroundCells>
+      </div>
       <div className="w-full bg-white dark:bg-[#171717] py-16 font-sans">
         <div className="container mx-auto px-4">
           {/* Video Demo */}
