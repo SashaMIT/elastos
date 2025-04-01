@@ -26,7 +26,7 @@ function Feature() {
             </div>
             <div className="flex flex-col sm:flex-row items-center justify-center w-full gap-2">
               <h2
-                className="font-sans text-[40px] sm:text-[60px] leading-[45px] sm:leading-[60px] font-normal text-black dark:text-[rgb(225,231,239)] text-center"
+                className="font-sans text-[36px] sm:text-[50px] leading-[42px] sm:leading-[55px] font-normal text-black dark:text-[rgb(225,231,239)] text-center"
                 style={{
                   fontFamily: 'PP Telegraf Ultralight, system-ui, sans-serif',
                 }}
