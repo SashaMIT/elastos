@@ -359,7 +359,6 @@ const LandingPage = () => {
 
       <div className="pt-12 px-4 md:px-0">
         <Feature />
-        <HeroScrollDemo />
       </div>
     
         <div className="mt-32">
