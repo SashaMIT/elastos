@@ -15,7 +15,7 @@ import {
   Globe,
   Database,
   Share2,
-  BoxesStacked,
+  Boxes,
   LifeBuoy
 } from "lucide-react";
 import { Link } from "wouter";
@@ -104,7 +104,7 @@ export const SidebarMenu = () => {
                 <span>Developer Portal</span>
               </a>
               <a href="https://elastos.dev/sdk/welcome/" target="_blank" rel="noopener noreferrer" className="py-2 hover:text-primary flex items-center gap-2">
-                <BoxesStacked className="h-4 w-4 text-[#94b5ff]" />
+                <Boxes className="h-4 w-4 text-[#94b5ff]" />
                 <span>SDKs & Tools</span>
               </a>
               <a href="https://cyberrepublic.org/" target="_blank" rel="noopener noreferrer" className="py-2 hover:text-primary flex items-center gap-2">
