@@ -283,102 +283,6 @@ export default function ElaUtilityPage() {
         </div>
 
       
-        {/* ELA Use Cases Section */}
-        <div className="my-20">
-          <div className="motion-section text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold text-black dark:text-white mb-3">
-              What Can You <span className="text-[#F6921A]">Build</span> With ELA?
-            </h2>
-            <p className="text-lg text-gray-600 dark:text-gray-300">
-              Discover the possibilities enabled by Elastos' native token
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-7xl mx-auto">
-            {/* DeFi Card */}
-            <div className="group rounded-xl overflow-hidden relative h-80 cursor-pointer">
-              <div className="absolute inset-0 bg-gradient-to-br from-[#8BABFF]/80 to-[#F7921A]/60 opacity-90 group-hover:opacity-100 transition-opacity duration-300"></div>
-              <img src="https://images.unsplash.com/photo-1639322537228-f710d846310a?q=80&w=1032&auto=format&fit=crop" alt="DeFi" className="absolute inset-0 w-full h-full object-cover" />
-
-              <div className="absolute inset-0 p-6 flex flex-col justify-between z-10">
-                <div className="w-12 h-12 rounded-full bg-white/20 flex items-center justify-center backdrop-blur-sm">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                    <rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect>
-                    <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path>
-                  </svg>
-                </div>
-
-                <div>
-                  <h3 className="text-2xl font-bold text-white mb-2">Decentralized Finance</h3>
-                  <p className="text-white/80 text-sm mb-4">Build lending platforms, DEXs, yield farming, and more using ELA as the base asset</p>
-                  <a href="https://elastos.dev/defi" className="inline-flex px-3 py-2 bg-white/20 text-white rounded-full font-medium transition-all items-center gap-1 text-sm backdrop-blur-sm hover:bg-white/30">
-                    <span>Explore DeFi</span>
-                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                      <path d="M5 12h14"></path>
-                      <path d="m12 5 7 7-7 7"></path>
-                    </svg>
-                  </a>
-                </div>
-              </div>
-            </div>
-
-            {/* Identity Card */}
-            <div className="group rounded-xl overflow-hidden relative h-80 cursor-pointer">
-              <div className="absolute inset-0 bg-gradient-to-br from-[#F7921A]/80 to-[#8BABFF]/60 opacity-90 group-hover:opacity-100 transition-opacity duration-300"></div>
-              <img src="https://images.unsplash.com/photo-1633265486501-0cf524a07213?q=80&w=2070&auto=format&fit=crop" alt="Identity" className="absolute inset-0 w-full h-full object-cover" />
-
-              <div className="absolute inset-0 p-6 flex flex-col justify-between z-10">
-                <div className="w-12 h-12 rounded-full bg-white/20 flex items-center justify-center backdrop-blur-sm">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                    <path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"></path>
-                    <circle cx="12" cy="7" r="4"></circle>
-                  </svg>
-                </div>
-
-                <div>
-                  <h3 className="text-2xl font-bold text-white mb-2">Identity & Credentials</h3>
-                  <p className="text-white/80 text-sm mb-4">Create applications with verified credentials, digital passports, and self-sovereign identity</p>
-                  <a href="https://elastos.dev/identity" className="inline-flex px-3 py-2 bg-white/20 text-white rounded-full font-medium transition-all items-center gap-1 text-sm backdrop-blur-sm hover:bg-white/30">
-                    <span>Build with DID</span>
-                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                      <path d="M5 12h14"></path>
-                      <path d="m12 5 7 7-7 7"></path>
-                    </svg>
-                  </a>
-                </div>
-              </div>
-            </div>
-
-            {/* Web3 Card */}
-            <div className="group rounded-xl overflow-hidden relative h-80 cursor-pointer">
-              <div className="absolute inset-0 bg-gradient-to-br from-[#5C8EFF]/80 to-[#F7921A]/60 opacity-90 group-hover:opacity-100 transition-opacity duration-300"></div>
-              <img src="https://images.unsplash.com/photo-1614064548237-096d1bfaf2fa?q=80&w=2070&auto=format&fit=crop" alt="Web3" className="absolute inset-0 w-full h-full object-cover" />
-
-              <div className="absolute inset-0 p-6 flex flex-col justify-between z-10">
-                <div className="w-12 h-12 rounded-full bg-white/20 flex items-center justify-center backdrop-blur-sm">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                    <circle cx="12" cy="12" r="10"></circle>
-                    <line x1="2" y1="12" x2="22" y2="12"></line>
-                    <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
-                  </svg>
-                </div>
-
-                <div>
-                  <h3 className="text-2xl font-bold text-white mb-2">Web3 Social Networks</h3>
-                  <p className="text-white/80 text-sm mb-4">Create decentralized social platforms with user-owned data and content monetization</p>
-                  <a href="https://elastos.dev/social" className="inline-flex px-3 py-2 bg-white/20 text-white rounded-full font-medium transition-all items-center gap-1 text-sm backdrop-blur-sm hover:bg-white/30">
-                    <span>Explore Social</span>
-                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                      <path d="M5 12h14"></path>
-                      <path d="m12 5 7 7-7 7"></path>
-                    </svg>
-                  </a>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
         <ScalingSection2 />
       </div>
 
@@ -486,7 +390,7 @@ export default function ElaUtilityPage() {
       </div>
 
       {/* Elastos Essentials Wallet CTA */}
-      <div className="my-20 bg-gradient-to-br from-[#5C8EFF]/10 via-[#F7921A]/5 to-transparent rounded-xl p-8 border border-[#5C8EFF]/20 relative overflow-hidden">
+      <div className="my-20 bg-gradient-to-br from-[#5C8EFF]/10 via-[#F7921A]/5 to-transparent rounded-xl p-8 border border-[#5C8EFF]/20 relative overflow-hidden max-w-7xl mx-auto">
         <div className="absolute -top-20 -right-20 w-96 h-96 rounded-full bg-[#F7921A]/10 blur-[100px]"></div>
         <div className="absolute -bottom-20 -left-20 w-96 h-96 rounded-full bg-[#5C8EFF]/10 blur-[100px]"></div>
 
