@@ -346,12 +346,34 @@ export function VisionPage() {
             </motion.div>
 
             <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4 max-w-7xl mx-auto">
-              {/* Bitmain */}
+              {/* Elacity Labs */}
               <motion.div
                 initial={{ opacity: 0, y: 10 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: 0.1 }}
+                whileHover={{ y: -5, transition: { duration: 0.2 } }}
+                className="bg-gradient-to-br from-[#8BABFF]/5 to-transparent rounded-xl p-4 border border-[#8BABFF]/10 flex flex-col items-center text-center"
+              >
+                <div className="h-16 mb-3 flex items-center justify-center">
+                  <img 
+                    src="/images/ElacityLabs logo.png" 
+                    alt="Elacity Labs" 
+                    className="h-10 object-contain"
+                  />
+                </div>
+                <h3 className="text-base font-bold text-black dark:text-white">Elacity Labs</h3>
+                <p className="text-xs text-gray-600 dark:text-gray-400 mt-1">
+                  Responsible for building dDRM technology for P2P commerce
+                </p>
+              </motion.div>
+              
+              {/* Bitmain */}
+              <motion.div
+                initial={{ opacity: 0, y: 10 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: 0.15 }}
                 whileHover={{ y: -5, transition: { duration: 0.2 } }}
                 className="bg-gradient-to-br from-[#F7921A]/5 to-transparent rounded-xl p-4 border border-[#F7921A]/10 flex flex-col items-center text-center"
               >
@@ -373,7 +395,7 @@ export function VisionPage() {
                 initial={{ opacity: 0, y: 10 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                transition={{ delay: 0.15 }}
+                transition={{ delay: 0.2 }}
                 whileHover={{ y: -5, transition: { duration: 0.2 } }}
                 className="bg-gradient-to-br from-[#8BABFF]/5 to-transparent rounded-xl p-4 border border-[#8BABFF]/10 flex flex-col items-center text-center"
               >
@@ -395,7 +417,7 @@ export function VisionPage() {
                 initial={{ opacity: 0, y: 10 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                transition={{ delay: 0.2 }}
+                transition={{ delay: 0.25 }}
                 whileHover={{ y: -5, transition: { duration: 0.2 } }}
                 className="bg-gradient-to-br from-[#F7921A]/5 to-transparent rounded-xl p-4 border border-[#F7921A]/10 flex flex-col items-center text-center"
               >
@@ -422,7 +444,7 @@ export function VisionPage() {
                 initial={{ opacity: 0, y: 10 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                transition={{ delay: 0.25 }}
+                transition={{ delay: 0.3 }}
                 whileHover={{ y: -5, transition: { duration: 0.2 } }}
                 className="bg-gradient-to-br from-[#8BABFF]/5 to-transparent rounded-xl p-4 border border-[#8BABFF]/10 flex flex-col items-center text-center"
               >
@@ -444,7 +466,7 @@ export function VisionPage() {
                 initial={{ opacity: 0, y: 10 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                transition={{ delay: 0.3 }}
+                transition={{ delay: 0.35 }}
                 whileHover={{ y: -5, transition: { duration: 0.2 } }}
                 className="bg-gradient-to-br from-[#F7921A]/5 to-transparent rounded-xl p-4 border border-[#F7921A]/10 flex flex-col items-center text-center"
               >
@@ -458,28 +480,6 @@ export function VisionPage() {
                 <h3 className="text-base font-bold text-black dark:text-white">ViaBTC</h3>
                 <p className="text-xs text-gray-600 dark:text-gray-400 mt-1">
                   Major mining pool enhancing network security and decentralization
-                </p>
-              </motion.div>
-
-              {/* Elacity Labs */}
-              <motion.div
-                initial={{ opacity: 0, y: 10 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: 0.35 }}
-                whileHover={{ y: -5, transition: { duration: 0.2 } }}
-                className="bg-gradient-to-br from-[#8BABFF]/5 to-transparent rounded-xl p-4 border border-[#8BABFF]/10 flex flex-col items-center text-center"
-              >
-                <div className="h-16 mb-3 flex items-center justify-center">
-                  <img 
-                    src="/images/ElacityLabs logo.png" 
-                    alt="Elacity Labs" 
-                    className="h-10 object-contain"
-                  />
-                </div>
-                <h3 className="text-base font-bold text-black dark:text-white">Elacity Labs</h3>
-                <p className="text-xs text-gray-600 dark:text-gray-400 mt-1">
-                  Responsible for building dDRM technology for P2P commerce
                 </p>
               </motion.div>
             </div>
