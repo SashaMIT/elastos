@@ -139,9 +139,10 @@ const MobileSidebar = ({
                 <SidebarMenuItem label="Elastos DAO" href="https://cyberrepublic.org/" target="_blank" />
               </SidebarMenuItem>
               <SidebarMenuItem label="CONNECT">
+                <SidebarMenuItem label="Social Channels" href="/social-channels" />
                 <SidebarMenuItem label="Community" href="/community" />
-                <SidebarMenuItem label="Discord" href="/discord" />
-                <SidebarMenuItem label="Twitter" href="/twitter" />
+                <SidebarMenuItem label="Discord" href="https://discord.com/invite/elastos" target="_blank" />
+                <SidebarMenuItem label="Twitter" href="https://x.com/ElastosInfo" target="_blank" />
               </SidebarMenuItem>
               <SidebarMenuItem label="INSIGHTS">
                 <SidebarMenuItem label="Blog" href="/blog" />
@@ -214,9 +215,9 @@ export const SidebarLink: React.FC<SidebarLinkProps> = ({
 };
 
 // Added a dummy SidebarMenuItem component (replace with your actual implementation)
-const SidebarMenuItem = ({ label, href, icon, children }: { label?: string; href?: string; icon?: React.ReactNode; children?: React.ReactNode }) => {
+const SidebarMenuItem = ({ label, href, icon, children, target }: { label?: string; href?: string; icon?: React.ReactNode; children?: React.ReactNode; target?: string }) => {
     return (
-        <Link href={href} className="py-2 hover:text-primary flex items-center gap-2">
+        <Link href={href} className="py-2 hover:text-primary flex items-center gap-2" target={target}>
             {icon}
             <span>{label ?? children}</span>
         </Link>
