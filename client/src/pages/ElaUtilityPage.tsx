@@ -362,7 +362,7 @@ export default function ElaUtilityPage() {
               <div className="md:w-3/5 relative z-10">
                 <h3 className="text-2xl font-bold text-white mb-3">Shape the Future</h3>
                 <p className="text-white/70 text-sm mb-4">
-                  Participate in Elastos DAO governance with your ELA tokens. Vote on proposals, elect council members, and help determine the future direction of the network.
+                  Participate in Elastos DAO governance with your ELA tokens. Elect and run as a council member, and help determine the future direction of the Elastos.
                 </p>
                 <div className="grid grid-cols-2 gap-3 mb-4">
                   <div className="bg-[#1A1A1A]/50 p-3 rounded-lg">
