@@ -317,7 +317,7 @@ export function VisionPage() {
               </motion.div>
             </div>
             
-            <div className="flex justify-center mb-20">
+            <div className="flex justify-center mb-10">
               <a href="/ecosystem" className="inline-flex px-3 py-2 bg-[rgba(246,146,26,0.10)] text-[#F6921A] rounded-full font-medium transition-all items-center gap-1 border border-[rgba(246,146,26,0.50)] text-sm">
                 <span>Explore Ecosystem</span>
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 35 34" fill="none">
@@ -326,6 +326,156 @@ export function VisionPage() {
                   <path d="M20.7628 17.6638H10.8747V16.3365H20.7628H20.7929L20.7716 16.3152L16.4338 11.9774L17.3338 11.0775L23.2564 17.0002L17.3338 22.9228L16.4338 22.0229L20.7716 17.6851L20.7929 17.6638H20.7628Z" stroke="#F6921A" strokeOpacity="0.5" strokeWidth="0.025"/>
                 </svg>
               </a>
+            </div>
+          </div>
+
+          {/* Elastos Core Builders and Partners Section */}
+          <div className="mt-10 mb-20">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="text-center mb-12"
+            >
+              <h2 className="text-3xl md:text-4xl font-bold text-black dark:text-white mb-3">
+                Core <span className="text-[#F6921A]">Builders</span> and Partners
+              </h2>
+              <p className="text-lg text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
+                Meet the organizations and teams building the foundation of the Elastos ecosystem
+              </p>
+            </motion.div>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
+              {/* Bitmain */}
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: 0.1 }}
+                className="bg-gradient-to-br from-[#F7921A]/10 via-[#8BABFF]/5 to-transparent rounded-xl p-6 border border-[#F7921A]/20"
+              >
+                <div className="h-24 mb-4 flex items-center justify-center">
+                  <img 
+                    src="/images/Bitmain.png" 
+                    alt="Bitmain" 
+                    className="h-16 object-contain"
+                  />
+                </div>
+                <h3 className="text-xl font-bold text-black dark:text-white mb-2">Bitmain</h3>
+                <p className="text-gray-600 dark:text-gray-300">
+                  The world's largest Bitcoin mining hardware manufacturer provides merged mining support for Elastos, securing the network with Bitcoin-level hashrate.
+                </p>
+              </motion.div>
+
+              {/* OKMINER */}
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: 0.2 }}
+                className="bg-gradient-to-br from-[#8BABFF]/10 via-[#F7921A]/5 to-transparent rounded-xl p-6 border border-[#8BABFF]/20"
+              >
+                <div className="h-24 mb-4 flex items-center justify-center">
+                  <img 
+                    src="/images/OKMINER.png" 
+                    alt="OKMINER" 
+                    className="h-16 object-contain"
+                  />
+                </div>
+                <h3 className="text-xl font-bold text-black dark:text-white mb-2">OKMINER</h3>
+                <p className="text-gray-600 dark:text-gray-300">
+                  A leading mining pool operator that contributes significant hashrate to the Elastos network through merged mining with Bitcoin.
+                </p>
+              </motion.div>
+
+              {/* Tencent */}
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: 0.3 }}
+                className="bg-gradient-to-br from-[#F7921A]/10 via-[#8BABFF]/5 to-transparent rounded-xl p-6 border border-[#F7921A]/20"
+              >
+                <div className="h-24 mb-4 flex items-center justify-center">
+                  <img 
+                    src="/images/Ten.png" 
+                    alt="Tencent" 
+                    className="h-16 object-contain dark:hidden"
+                  />
+                  <img 
+                    src="/images/Ten-w.png" 
+                    alt="Tencent" 
+                    className="h-16 object-contain hidden dark:block"
+                  />
+                </div>
+                <h3 className="text-xl font-bold text-black dark:text-white mb-2">Tencent</h3>
+                <p className="text-gray-600 dark:text-gray-300">
+                  One of China's largest technology companies, where Rong Chen worked for years before founding Elastos, bringing decades of OS development experience.
+                </p>
+              </motion.div>
+
+              {/* F2Pool */}
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: 0.4 }}
+                className="bg-gradient-to-br from-[#8BABFF]/10 via-[#F7921A]/5 to-transparent rounded-xl p-6 border border-[#8BABFF]/20"
+              >
+                <div className="h-24 mb-4 flex items-center justify-center">
+                  <img 
+                    src="/images/f2.png" 
+                    alt="F2Pool" 
+                    className="h-16 object-contain"
+                  />
+                </div>
+                <h3 className="text-xl font-bold text-black dark:text-white mb-2">F2Pool</h3>
+                <p className="text-gray-600 dark:text-gray-300">
+                  One of the largest Bitcoin mining pools in the world, contributing to Elastos security through merged mining operations.
+                </p>
+              </motion.div>
+
+              {/* ViaBTC */}
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: 0.5 }}
+                className="bg-gradient-to-br from-[#F7921A]/10 via-[#8BABFF]/5 to-transparent rounded-xl p-6 border border-[#F7921A]/20"
+              >
+                <div className="h-24 mb-4 flex items-center justify-center">
+                  <img 
+                    src="/images/Via.png" 
+                    alt="ViaBTC" 
+                    className="h-16 object-contain"
+                  />
+                </div>
+                <h3 className="text-xl font-bold text-black dark:text-white mb-2">ViaBTC</h3>
+                <p className="text-gray-600 dark:text-gray-300">
+                  A major mining pool that supports Elastos through merged mining, enhancing network security and decentralization.
+                </p>
+              </motion.div>
+
+              {/* Cyber Republic */}
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: 0.6 }}
+                className="bg-gradient-to-br from-[#8BABFF]/10 via-[#F7921A]/5 to-transparent rounded-xl p-6 border border-[#8BABFF]/20"
+              >
+                <div className="h-24 mb-4 flex items-center justify-center">
+                  <img 
+                    src="/images/CRC.png" 
+                    alt="Cyber Republic" 
+                    className="h-16 object-contain"
+                  />
+                </div>
+                <h3 className="text-xl font-bold text-black dark:text-white mb-2">Cyber Republic</h3>
+                <p className="text-gray-600 dark:text-gray-300">
+                  The decentralized governance organization for Elastos, managing community funds and guiding ecosystem development through democratic processes.
+                </p>
+              </motion.div>
             </div>
           </div>
 
