@@ -142,18 +142,32 @@ export default function ElaUtilityPage() {
         </div>
 
         <div className="my-16">
-          <h2 className="text-2xl md:text-3xl font-bold text-center mb-8">Explore ELA</h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="motion-section text-center mb-12">
+            <h2 className="text-3xl md:text-4xl font-bold text-black dark:text-white mb-3">
+              Explore <span className="text-[#F6921A]">ELA</span>
+            </h2>
+            <p className="text-lg text-gray-600 dark:text-gray-300">
+              Discover the utility and capabilities of Elastos' native digital asset
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-7xl mx-auto">
             {/* Stats Card */}
-            <div className="bg-[#ececec] dark:bg-[#5C8EFF]/[0.06] rounded-lg p-6 shadow-sm border border-gray-100 dark:border-gray-800 transition-all hover:shadow-md">
-              <div className="rounded-full bg-[#5C8EFF]/10 p-3 mb-4 text-center">
-                <p className="font-mono text-lg font-bold text-[#5C8EFF]">
-                  {isHashrateLoading ? 'Loading...' : `$${hashrateData?.elaPrice?.toFixed(2) || '0.00'}`}
-                </p>
-                <p className="text-xs text-gray-500 dark:text-gray-400">Current ELA Price</p>
+            <div className="bg-gradient-to-br from-[#F7921A]/10 via-[#8BABFF]/5 to-transparent rounded-xl p-6 border border-[#F7921A]/20 h-full transition-all hover:shadow-lg">
+              <div className="flex justify-between items-start mb-4">
+                <h3 className="text-xl font-bold text-black dark:text-white">Stats</h3>
+                <div className="px-2 py-1 bg-[#5C8EFF]/10 border border-[#5C8EFF]/30 text-[#5C8EFF] dark:text-white rounded-full text-xs font-medium whitespace-nowrap">
+                  ${isHashrateLoading ? '...' : (hashrateData?.elaPrice?.toFixed(2) || '0.00')}
+                </div>
               </div>
-              <h3 className="font-semibold text-lg mb-2">Stats</h3>
-              <p className="text-gray-600 dark:text-gray-300 text-sm mb-4">Track real-time metrics for Elastos blockchain performance and user adoption.</p>
+              <div className="h-32 mb-4 overflow-hidden rounded-lg">
+                <div className="w-full h-full bg-gradient-to-br from-[#5C8EFF]/30 to-[#F7921A]/30 flex items-center justify-center">
+                  <span className="text-2xl font-bold text-white">ELA</span>
+                </div>
+              </div>
+              <p className="text-gray-600 dark:text-gray-300 text-sm mb-4">
+                Track real-time metrics for Elastos blockchain performance and user adoption.
+              </p>
               <a href="/stats" className="inline-flex px-3 py-2 bg-[rgba(246,146,26,0.10)] text-[#F6921A] rounded-full font-medium transition-all items-center gap-1 border border-[rgba(246,146,26,0.50)] text-sm">
                 <span>Learn More</span>
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 35 34" fill="none">
@@ -165,15 +179,21 @@ export default function ElaUtilityPage() {
             </div>
 
             {/* Security Card */}
-            <div className="bg-[#ececec] dark:bg-[#5C8EFF]/[0.06] rounded-lg p-6 shadow-sm border border-gray-100 dark:border-gray-800 transition-all hover:shadow-md">
-              <div className="rounded-full bg-[#5C8EFF]/10 p-3 mb-4 text-center">
-                <p className="font-mono text-lg font-bold text-[#5C8EFF]">
-                  {isHashrateLoading ? 'Loading...' : `${((hashrateData?.elastosHashrate ?? 0) / (hashrateData?.bitcoinHashrate ?? 1) * 100).toFixed(2)}%`}
-                </p>
-                <p className="text-xs text-gray-500 dark:text-gray-400">BTC Security Level</p>
+            <div className="bg-gradient-to-br from-[#8BABFF]/10 via-[#F7921A]/5 to-transparent rounded-xl p-6 border border-[#8BABFF]/20 h-full transition-all hover:shadow-lg">
+              <div className="flex justify-between items-start mb-4">
+                <h3 className="text-xl font-bold text-black dark:text-white">Security</h3>
+                <div className="px-2 py-1 bg-[#F7921A]/10 border border-[#F7921A]/30 text-[#F7921A] dark:text-white rounded-full text-xs font-medium whitespace-nowrap">
+                  {isHashrateLoading ? '...' : `${((hashrateData?.elastosHashrate ?? 0) / (hashrateData?.bitcoinHashrate ?? 1) * 100).toFixed(2)}%`}
+                </div>
               </div>
-              <h3 className="font-semibold text-lg mb-2">Security</h3>
-              <p className="text-gray-600 dark:text-gray-300 text-sm mb-4">Explore how ELA maintains Bitcoin-level security and protects your assets.</p>
+              <div className="h-32 mb-4 overflow-hidden rounded-lg">
+                <div className="w-full h-full bg-gradient-to-br from-[#F7921A]/30 to-[#5C8EFF]/30 flex items-center justify-center">
+                  <span className="text-2xl font-bold text-white">BTC</span>
+                </div>
+              </div>
+              <p className="text-gray-600 dark:text-gray-300 text-sm mb-4">
+                Explore how ELA maintains Bitcoin-level security and protects your assets.
+              </p>
               <a 
                 href="/security"
                 className="inline-flex px-3 py-2 bg-[rgba(246,146,26,0.10)] text-[#F6921A] rounded-full font-medium transition-all items-center gap-1 border border-[rgba(246,146,26,0.50)] text-sm"
@@ -188,15 +208,21 @@ export default function ElaUtilityPage() {
             </div>
 
             {/* Supply Card */}
-            <div className="bg-[#ececec] dark:bg-[#5C8EFF]/[0.06] rounded-lg p-6 shadow-sm border border-gray-100 dark:border-gray-800 transition-all hover:shadow-md">
-              <div className="rounded-full bg-[#5C8EFF]/10 p-3 mb-4 text-center">
-                <p className="font-mono text-lg font-bold text-[#5C8EFF]">
-                  {isSupplyLoading ? 'Loading...' : formatNumber(totalSupply)}
-                </p>
-                <p className="text-xs text-gray-500 dark:text-gray-400">Circulating Supply</p>
+            <div className="bg-gradient-to-br from-[#F7921A]/10 via-[#8BABFF]/5 to-transparent rounded-xl p-6 border border-[#F7921A]/20 h-full transition-all hover:shadow-lg">
+              <div className="flex justify-between items-start mb-4">
+                <h3 className="text-xl font-bold text-black dark:text-white">Supply</h3>
+                <div className="px-2 py-1 bg-[#5C8EFF]/10 border border-[#5C8EFF]/30 text-[#5C8EFF] dark:text-white rounded-full text-xs font-medium whitespace-nowrap">
+                  {isSupplyLoading ? '...' : formatNumber(totalSupply)}
+                </div>
               </div>
-              <h3 className="font-semibold text-lg mb-2">Supply</h3>
-              <p className="text-gray-600 dark:text-gray-300 text-sm mb-4">Understand ELA's tokenomics, emission schedule, and circulation metrics.</p>
+              <div className="h-32 mb-4 overflow-hidden rounded-lg">
+                <div className="w-full h-full bg-gradient-to-br from-[#5C8EFF]/30 to-[#F7921A]/30 flex items-center justify-center">
+                  <span className="text-2xl font-bold text-white">28.2M</span>
+                </div>
+              </div>
+              <p className="text-gray-600 dark:text-gray-300 text-sm mb-4">
+                Understand ELA's tokenomics, emission schedule, and circulation metrics.
+              </p>
               <a href="/supply" className="inline-flex px-3 py-2 bg-[rgba(246,146,26,0.10)] text-[#F6921A] rounded-full font-medium transition-all items-center gap-1 border border-[rgba(246,146,26,0.50)] text-sm">
                 <span>Learn More</span>
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 35 34" fill="none">
@@ -208,15 +234,21 @@ export default function ElaUtilityPage() {
             </div>
 
             {/* Buy ELA Card */}
-            <div className="bg-[#ececec] dark:bg-[#5C8EFF]/[0.06] rounded-lg p-6 shadow-sm border border-gray-100 dark:border-gray-800 transition-all hover:shadow-md">
-              <div className="rounded-full bg-[#5C8EFF]/10 p-3 mb-4 text-center">
-                <p className="font-mono text-lg font-bold text-[#5C8EFF]">
-                  {isMarketCapLoading ? 'Loading...' : formatNumber(marketCapData?.elastosMarketCap)}
-                </p>
-                <p className="text-xs text-gray-500 dark:text-gray-400">ELA Market Cap</p>
+            <div className="bg-gradient-to-br from-[#8BABFF]/10 via-[#F7921A]/5 to-transparent rounded-xl p-6 border border-[#8BABFF]/20 h-full transition-all hover:shadow-lg">
+              <div className="flex justify-between items-start mb-4">
+                <h3 className="text-xl font-bold text-black dark:text-white">Buy ELA</h3>
+                <div className="px-2 py-1 bg-[#F7921A]/10 border border-[#F7921A]/30 text-[#F7921A] dark:text-white rounded-full text-xs font-medium whitespace-nowrap">
+                  {isMarketCapLoading ? '...' : formatNumber(marketCapData?.elastosMarketCap)}
+                </div>
               </div>
-              <h3 className="font-semibold text-lg mb-2">Buy ELA</h3>
-              <p className="text-gray-600 dark:text-gray-300 text-sm mb-4">Get ELA on leading exchanges and decentralized platforms for easy access.</p>
+              <div className="h-32 mb-4 overflow-hidden rounded-lg">
+                <div className="w-full h-full bg-gradient-to-br from-[#F7921A]/30 to-[#5C8EFF]/30 flex items-center justify-center">
+                  <span className="text-2xl font-bold text-white">Trade</span>
+                </div>
+              </div>
+              <p className="text-gray-600 dark:text-gray-300 text-sm mb-4">
+                Get ELA on leading exchanges and decentralized platforms for easy access.
+              </p>
               <a 
                 href="/buy-ela"
                 className="inline-flex px-3 py-2 bg-[rgba(246,146,26,0.10)] text-[#F6921A] rounded-full font-medium transition-all items-center gap-1 border border-[rgba(246,146,26,0.50)] text-sm"
