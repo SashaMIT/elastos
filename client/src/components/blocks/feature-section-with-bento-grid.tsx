@@ -44,7 +44,7 @@ export function FeaturesSectionWithBentoGrid() {
     },
     {
       title: "Modular Web3 Ecosystem",
-      description: "EVM-compatible sidechain for seamless dApp development.",
+      description: "EVM-compatible sidechain for easy dApp development.",
       icon: <IconApps className="h-10 w-10 text-[#F6921A]" />,
       className: "col-span-1 md:col-span-2 lg:col-span-2 border-b md:border-none dark:border-neutral-800"
     }

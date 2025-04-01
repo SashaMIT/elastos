@@ -38,7 +38,7 @@ export function FeaturesSectionWithHoverEffects() {
     },
     {
       title: "Elastos Essentials",
-      description: "Super wallet & dApp gateway for seamless interaction",
+      description: "Super wallet & dApp gateway for simple interaction",
       icon: <IconWallet className="w-6 h-6" />,
     }
   ];

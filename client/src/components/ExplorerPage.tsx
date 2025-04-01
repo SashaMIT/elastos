@@ -178,7 +178,7 @@ const ecosystemFeatures = [
   },
   {
     title: "Interoperability",
-    description: "Seamless asset transfers between chains with 1:1 mapping of ELA coins and tokens across the Elastos ecosystem",
+    description: "Easy asset transfers between chains with 1:1 mapping of ELA coins and tokens across the Elastos ecosystem",
     icon: <Network className="w-6 h-6 text-[#5C8EFF]" />,
     gradient: "from-cyan-500/10 via-blue-500/5 to-transparent",
     border: "border-cyan-500/20"
