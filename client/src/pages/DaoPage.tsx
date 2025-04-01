@@ -21,6 +21,7 @@ import {
 import { Button } from "@/components/ui/button";
 import { Progress } from "@/components/ui/progress";
 import { StackedCircularFooter } from "@/components/ui/stacked-circular-footer";
+import { LogoCarouselDemo } from "@/components/LogoCarouselDemo";
 
 // Circle arrow component for buttons
 const CircleArrow = () => (
@@ -869,25 +870,10 @@ const DaoPage: React.FC = () => {
         </div>
       </section>
 
-      {/* CTA Section */}
+      {/* LogoCarouselDemo Section */}
       <section className="py-16 relative">
         <div className="container mx-auto px-4">
-          <div className="max-w-5xl mx-auto">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              className="bg-gradient-to-br from-[#F7921A]/10 via-[#8BABFF]/10 to-transparent rounded-2xl p-10 border border-[#F7921A]/20 text-center"
-            >
-              <h2 className="text-3xl font-bold text-white mb-4">
-                Shape the Future of the Internet
-              </h2>
-              <p className="text-lg text-white/70 max-w-3xl mx-auto mb-8">
-                Whether you're a builder, voter, or visionary—you have a place in the Elastos DAO.
-              </p>
-              {/* Removed CTA buttons here */}
-            </motion.div>
-          </div>
+          <LogoCarouselDemo />
         </div>
       </section>
 

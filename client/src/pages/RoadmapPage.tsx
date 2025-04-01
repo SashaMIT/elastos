@@ -4,6 +4,7 @@ import { Timeline } from "@/components/ui/timeline";
 import { ImageZoom } from "@/components/ui/zoomable-image";
 import { ForwardRoadmap } from "@/components/ui/forward-roadmap";
 import { StackedCircularFooter } from "@/components/ui/stacked-circular-footer";
+import { LogoCarouselDemo } from "@/components/LogoCarouselDemo";
 
 export default function RoadmapPage() {
   const timelineData = [
@@ -131,6 +132,11 @@ export default function RoadmapPage() {
             />
           ))}
         </div>
+      </div>
+
+      {/* LogoCarouselDemo Section */}
+      <div className="mt-10">
+        <LogoCarouselDemo />
       </div>
       
       {/* Footer */}
