@@ -161,45 +161,45 @@ const SocialChannelsPage: React.FC = () => {
                 <div className="w-12 h-12 rounded-full bg-[#F6921A]/10 flex items-center justify-center">
                   <Globe className="h-6 w-6 text-[#F6921A]" />
                 </div>
-                <h3 className="text-xl font-bold text-white">Regional Communities</h3>
+                <h3 className="text-xl font-bold text-white">Subgroups</h3>
               </div>
 
               <p className="text-white/70 mb-6">
-                Connect with Elastos enthusiasts in your region through our localized community channels.
+                Join specialized Elastos community subgroups to connect with others and get focused support.
               </p>
 
               <div className="space-y-3">
                 <div>
                   <a
-                    href="https://t.me/ElastosChina"
+                    href="https://t.me/elastosgroup/1135570"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="text-[#F6921A] hover:underline text-sm flex items-center gap-1"
                   >
                     <Globe className="h-3.5 w-3.5" />
-                    <span>China Community</span>
+                    <span>Help and Support</span>
                   </a>
                 </div>
                 <div>
                   <a
-                    href="https://t.me/ElastosEurope"
+                    href="https://t.me/elastosgroup/1186551"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="text-[#F6921A] hover:underline text-sm flex items-center gap-1"
                   >
                     <Globe className="h-3.5 w-3.5" />
-                    <span>European Community</span>
+                    <span>Announcements</span>
                   </a>
                 </div>
                 <div>
                   <a 
-                    href="https://discord.com/invite/elastos"
+                    href="https://t.me/elastosgroup/1155782"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-[#5865F2] hover:underline text-sm flex items-center gap-1"
+                    className="text-[#F6921A] hover:underline text-sm flex items-center gap-1"
                   >
-                    <svg xmlns="http://www.w3.org/2000/svg" className="h-3.5 w-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><circle cx="9" cy="12" r="1"/><circle cx="15" cy="12" r="1"/><path d="M7.5 7.5c3.5-1 5.5-1 9 0"/><path d="M7 16.5c3.5 1 6.5 1 10 0"/><path d="M15.5 17c0 1 1.5 3 2 3 1.5 0 2.833-1.667 3.5-3 .667-1.667.5-5.833 0-7-1.5-3.5-3-4.5-4.5-5 1.5-1.5 2-4.5 0-6.5-1.5-1.5-3-1.5-4-1.5L8.5 7.5"/><path d="M8.5 4.5v-2s-2.5-.5-4.5 1c-1.5 1.5-1 4-.5 5.5-1.5.5-3 2-3.5 4.5-.667 1.667-.833 5.833 0 7.5.833 1.833 2.333 3.5 4 3.5.667 0 2-1.5 2-3"/><path d="M8.5 13.5c0 1.5.5 3 2 4.5 1.5 1.5 5.5 2 7.5-.5"/></svg>
-                    <span>Discord</span>
+                    <Globe className="h-3.5 w-3.5" />
+                    <span>Elastos AMAs</span>
                   </a>
                 </div>
               </div>
@@ -251,13 +251,13 @@ const SocialChannelsPage: React.FC = () => {
                 </div>
                 <div>
                   <a
-                    href="https://t.me/elastos_dev"
+                    href="https://t.me/elastosgroup/1141313"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="text-[#5C8EFF] hover:underline text-sm flex items-center gap-1"
                   >
                     <MessageCircle className="h-3.5 w-3.5" />
-                    <span>Developer Chat</span>
+                    <span>Promotion Hub</span>
                   </a>
                 </div>
               </div>
