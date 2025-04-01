@@ -164,12 +164,25 @@ export default function ElaUtilityPage() {
                 </div>
               </div>
               <div className="h-36 mb-4 overflow-hidden rounded-lg relative z-10 transition-transform duration-500 group-hover:scale-[1.02]">
-                <img 
-                  src="/images/Elastos New Logo_Kit-03.png"
-                  alt="ELA Stats"
-                  className="w-1/3 h-auto object-contain absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-10"
-                />
                 <div className="w-full h-full bg-gradient-to-br from-[#5C8EFF]/20 to-[#F7921A]/20 flex items-center justify-center">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="text-[#F7921A]">
+                    <path d="M12 6v12"></path>
+                    <path d="m8 10 4-4 4 4"></path>
+                    <rect width="16" height="6" x="4" y="18" rx="2"></rect>
+                    <path d="M20 18v-8a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v8"></path>
+                  </svg>
+                </div>
+              </div>
+</old_str>
+<new_str>
+              <div className="h-36 mb-4 overflow-hidden rounded-lg relative z-10 transition-transform duration-500 group-hover:scale-[1.02]">
+                <div className="w-full h-full bg-gradient-to-br from-[#5C8EFF]/20 to-[#F7921A]/20 flex items-center justify-center">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="text-[#F7921A]">
+                    <path d="M12 6v12"></path>
+                    <path d="m8 10 4-4 4 4"></path>
+                    <rect width="16" height="6" x="4" y="18" rx="2"></rect>
+                    <path d="M20 18v-8a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v8"></path>
+                  </svg>
                 </div>
               </div>
               <p className="text-gray-600 dark:text-gray-300 text-sm mb-4 relative z-10">
@@ -197,12 +210,11 @@ export default function ElaUtilityPage() {
                 </div>
               </div>
               <div className="h-36 mb-4 overflow-hidden rounded-lg relative z-10 transition-transform duration-500 group-hover:scale-[1.02]">
-                <img 
-                  src="/images/Security.png"
-                  alt="ELA Security"
-                  className="w-1/3 h-auto object-contain absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-10"
-                />
                 <div className="w-full h-full bg-gradient-to-br from-[#F7921A]/20 to-[#5C8EFF]/20 flex items-center justify-center">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="text-[#F7921A]">
+                    <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10"></path>
+                    <path d="m9 12 2 2 4-4"></path>
+                  </svg>
                 </div>
               </div>
               <p className="text-gray-600 dark:text-gray-300 text-sm mb-4 relative z-10">
@@ -234,7 +246,13 @@ export default function ElaUtilityPage() {
               </div>
               <div className="h-36 mb-4 overflow-hidden rounded-lg relative z-10 transition-transform duration-500 group-hover:scale-[1.02]">
                 <div className="w-full h-full bg-gradient-to-br from-[#5C8EFF]/20 to-[#F7921A]/20 flex items-center justify-center">
-                  <span className="text-3xl font-bold text-white">28.2M</span>
+                  <div className="flex flex-col items-center">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="52" height="52" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="text-[#F7921A] mb-2">
+                      <circle cx="8" cy="8" r="7"></circle>
+                      <circle cx="16" cy="16" r="7"></circle>
+                    </svg>
+                    <span className="text-2xl font-bold text-white">28.2M</span>
+                  </div>
                 </div>
               </div>
               <p className="text-gray-600 dark:text-gray-300 text-sm mb-4 relative z-10">
@@ -262,12 +280,14 @@ export default function ElaUtilityPage() {
                 </div>
               </div>
               <div className="h-36 mb-4 overflow-hidden rounded-lg relative z-10 transition-transform duration-500 group-hover:scale-[1.02]">
-                <img 
-                  src="/images/Elastos New Logo_Kit-02.png"
-                  alt="Buy ELA"
-                  className="w-1/3 h-auto object-contain absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-10"
-                />
                 <div className="w-full h-full bg-gradient-to-br from-[#F7921A]/20 to-[#5C8EFF]/20 flex items-center justify-center">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="text-[#F7921A]">
+                    <circle cx="8" cy="21" r="1"></circle>
+                    <circle cx="19" cy="21" r="1"></circle>
+                    <path d="M2.05 2.05h2l2.66 12.42a2 2 0 0 0 2 1.58h9.78a2 2 0 0 0 1.95-1.57l1.65-7.43H5.12"></path>
+                    <path d="M12 9V4"></path>
+                    <path d="M9 7h6"></path>
+                  </svg>
                 </div>
               </div>
               <p className="text-gray-600 dark:text-gray-300 text-sm mb-4 relative z-10">
