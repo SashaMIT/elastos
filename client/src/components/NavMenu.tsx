@@ -307,6 +307,9 @@ export function NavMenu() {
                         </div>
                       </NavigationMenuLink>
                     </Link>
+                  </div>
+                  <div>
+                    <h4 className="font-medium text-sm text-muted-foreground mb-2 px-2 text-[#94b5ff]">RESOURCES</h4>
                     <Link href="/dapps">
                       <NavigationMenuLink className={navigationMenuTriggerStyle()}>
                         <div className="flex items-center gap-2">
@@ -323,9 +326,6 @@ export function NavMenu() {
                         </div>
                       </NavigationMenuLink>
                     </Link>
-                  </div>
-                  <div>
-                    <h4 className="font-medium text-sm text-muted-foreground mb-2 px-2 text-[#94b5ff]">RESOURCES</h4>
                   </div>
                 </div>
               </NavigationMenuContent>
