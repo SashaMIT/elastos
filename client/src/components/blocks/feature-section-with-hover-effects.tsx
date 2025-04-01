@@ -1,4 +1,3 @@
-
 import { cn } from "@/lib/utils";
 import {
   IconShieldLock,
@@ -8,6 +7,7 @@ import {
   IconCode,
   IconWallet
 } from "@tabler/icons-react";
+import React, { ReactNode } from 'react';
 
 export function FeaturesSectionWithHoverEffects() {
   const features = [
@@ -15,31 +15,37 @@ export function FeaturesSectionWithHoverEffects() {
       title: "Elastos Blockchain",
       description: "Security & trust layer secured by Bitcoin merge mining",
       icon: <IconShieldLock className="w-6 h-6" />,
+      tag: "ACCOUNTING"
     },
     {
       title: "Elastos DID",
       description: "Identity & authentication layer for true data ownership",
       icon: <IconFingerprint className="w-6 h-6" />,
+      tag: "IDENTITY"
     },
     {
       title: "Elastos Carrier",
       description: "P2P communication layer for direct data exchange",
       icon: <IconNetwork className="w-6 h-6" />,
+      tag: "NETWORKING"
     },
     {
       title: "Elastos Hive",
       description: "Decentralized storage layer for secure data persistence",
       icon: <IconDatabase className="w-6 h-6" />,
+      tag: "STORAGE"
     },
     {
       title: "Elastos Runtime",
       description: "Decentralized execution layer for secure dApp operations",
       icon: <IconCode className="w-6 h-6" />,
+      tag: "COMPUTING"
     },
     {
       title: "Elastos Essentials",
       description: "Super wallet & dApp gateway for simple interaction",
       icon: <IconWallet className="w-6 h-6" />,
+      tag: "WALLET"
     }
   ];
 
@@ -57,11 +63,13 @@ const Feature = ({
   description,
   icon,
   index,
+  tag,
 }: {
   title: string;
   description: string;
-  icon: React.ReactNode;
+  icon: ReactNode;
   index: number;
+  tag: string;
 }) => {
   return (
     <div
@@ -80,10 +88,13 @@ const Feature = ({
       <div className="mb-4 relative z-10 px-10 text-neutral-600 dark:text-neutral-400">
         {icon}
       </div>
-      <div className="text-lg font-bold mb-2 relative z-10 px-10">
+      <div className="text-lg font-bold mb-2 relative z-10 px-10 flex justify-between items-center">
         <div className="absolute left-0 inset-y-0 h-6 group-hover/feature:h-8 w-1 rounded-tr-full rounded-br-full bg-neutral-300 dark:bg-neutral-700 group-hover/feature:bg-[#F6921A] transition-all duration-200 origin-center" />
         <span className="group-hover/feature:translate-x-2 transition duration-200 inline-block text-neutral-800 dark:text-neutral-100">
           {title}
+        </span>
+        <span className="px-3 py-1 bg-[#5C8EFF]/10 border border-[#5C8EFF]/30 text-white rounded-full text-xs font-medium whitespace-nowrap">
+          {tag}
         </span>
       </div>
       <p className="text-sm text-neutral-600 dark:text-neutral-300 max-w-xs relative z-10 px-10">
