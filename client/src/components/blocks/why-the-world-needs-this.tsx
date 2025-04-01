@@ -89,11 +89,9 @@ export function WhyTheWorldNeedsThis() {
               <p className="text-lg font-medium text-black dark:text-white mb-4">{selectedReason.description}</p>
               <p className="text-gray-700 dark:text-gray-300 leading-relaxed">{selectedReason.longDescription}</p>
 
-              {selectedReason.id === "bitcoin-future" && (
-                <div className="mt-6 bg-white/50 dark:bg-gray-900/50 p-4 rounded-lg border-0">
-                  <p className="font-medium text-[#F6921A]">Elastos uniquely leverages Bitcoin's security while avoiding its scalability limitations.</p>
-                </div>
-              )}
+              <div className="mt-6 bg-white/10 dark:bg-[#292F3D] p-6 rounded-lg border border-[#5C8EFF]/20 shadow-sm">
+                <p className="font-medium text-[#F6921A]">Elastos uniquely leverages Bitcoin's security while avoiding its scalability limitations.</p>
+              </div>
             </div>
           </div>
         </motion.div>
