@@ -43,9 +43,16 @@ function Feature() {
                 words="Your Gateway to the Decentralized Internet for Autonomy and Freedom."
                 duration={2}
                 filter={false}
-                className="mb-8 !text-[5px] sm:text-base md:text-lg lg:text-xl font-normal"
+                className="mb-4 !text-[5px] sm:text-base md:text-lg lg:text-xl font-normal"
                 startOnIntersect={true}
               />
+              <div className="flex justify-center mt-6 mb-8">
+                <img 
+                  src="/images/Elastos Vision World Computer.png" 
+                  alt="Elastos Vision World Computer" 
+                  className="max-w-full md:max-w-3xl rounded-lg shadow-lg"
+                />
+              </div>
             </div>
           </div>
         </div>
