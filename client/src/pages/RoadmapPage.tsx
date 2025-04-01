@@ -106,7 +106,7 @@ export default function RoadmapPage() {
             <div className="md:w-3/4">
               <blockquote className="italic text-lg text-gray-200">
                 <span className="text-4xl text-[#F7921A]">"</span>
-                If there's a world computer, what's its operating system? The operating system is what ensures security and privacy. Elastos is primarily made up of Personal Cloud Compute (PC2) nodes run by self-sovereign individuals from their homes, rather than institutions. Web3 is about selling digital goods directly from people's homes — and Elastos serves as the operating system for this network, leveraging Bitcoin's trillion-dollar consensus to empower users with scalable, decentralized utilities.
+                I left Microsoft because I believed we needed to go deeper—down to the metal—not build on abstractions like C#. I wanted to design a true networked OS, not just software for a single machine. When I discovered blockchain, it felt like the missing piece. It gave us decentralized trust—something we couldn’t build ourselves. Combine that with a peer-to-peer infrastructure, virtual machines, and a self-sovereign identity system, and you don’t just get apps—you get an unstoppable, autonomous internet. This isn’t just innovation. It’s a new foundation.
                 <span className="text-4xl text-[#F7921A]">"</span>
               </blockquote>
               <div className="mt-4 font-semibold text-[#5C8EFF]">
