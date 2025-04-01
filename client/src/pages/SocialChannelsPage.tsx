@@ -9,9 +9,48 @@ import {
   ExternalLink,
   Users,
   Shield,
+  ArrowRight,
 } from "lucide-react";
 import { StackedCircularFooter } from "@/components/ui/stacked-circular-footer";
 import { LogoCarouselDemo } from "@/components/LogoCarouselDemo";
+
+interface SocialCardProps {
+  icon: React.ReactNode;
+  title: string;
+  description: string;
+  url: string;
+  buttonStyle: "blue" | "orange";
+}
+
+const SocialCard = ({ icon, title, description, url, buttonStyle }: SocialCardProps) => {
+  const isBlue = buttonStyle === "blue";
+
+  return (
+    <motion.div
+      initial={{ opacity: 0, y: 20 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true }}
+      className="bg-[#1E1E1E] rounded-xl p-6 border border-gray-800 hover:border-gray-700 transition-all shadow-lg"
+    >
+      <div className="flex items-center mb-4">
+        <div className="rounded-xl bg-[#2A2A2A] p-3 mr-4">
+          {icon}
+        </div>
+        <h3 className="text-xl font-semibold text-white">{title}</h3>
+      </div>
+      <p className="text-gray-400 mb-4">{description}</p>
+      <a 
+        href={url} 
+        target="_blank" 
+        rel="noopener noreferrer"
+        className={`px-3 py-2 ${isBlue ? 'bg-[rgba(92,142,255,0.10)] text-[#5C8EFF] border border-[rgba(92,142,255,0.50)]' : 'bg-[rgba(246,146,26,0.10)] text-[#F6921A] border border-[rgba(246,146,26,0.50)]'} rounded-full font-medium transition-all flex items-center gap-1 text-sm`}
+      >
+        <span>Visit Channel</span>
+        <ArrowRight className="ml-2 h-4 w-4" />
+      </a>
+    </motion.div>
+  );
+};
 
 const SocialChannelsPage: React.FC = () => {
   const socialChannels = [
@@ -23,6 +62,7 @@ const SocialChannelsPage: React.FC = () => {
       bgColor: "from-[#1DA1F2]/10 to-transparent",
       borderColor: "border-[#1DA1F2]/20",
       subscribers: "30K+",
+      buttonStyle: "blue" as const,
     },
     {
       name: "Telegram",
@@ -32,6 +72,7 @@ const SocialChannelsPage: React.FC = () => {
       bgColor: "from-[#0088cc]/10 to-transparent",
       borderColor: "border-[#0088cc]/20",
       subscribers: "35K+",
+      buttonStyle: "orange" as const,
     },
     {
       name: "Discord",
@@ -41,6 +82,7 @@ const SocialChannelsPage: React.FC = () => {
       bgColor: "from-[#5865F2]/10 to-transparent",
       borderColor: "border-[#5865F2]/20",
       subscribers: "15K+",
+      buttonStyle: "blue" as const,
     },
     {
       name: "Reddit",
@@ -50,6 +92,7 @@ const SocialChannelsPage: React.FC = () => {
       bgColor: "from-[#FF4500]/10 to-transparent",
       borderColor: "border-[#FF4500]/20",
       subscribers: "12K+",
+      buttonStyle: "orange" as const,
     },
     {
       name: "YouTube",
@@ -59,6 +102,7 @@ const SocialChannelsPage: React.FC = () => {
       bgColor: "from-[#FF0000]/10 to-transparent",
       borderColor: "border-[#FF0000]/20",
       subscribers: "5K+",
+      buttonStyle: "blue" as const,
     },
     {
       name: "Facebook",
@@ -68,6 +112,7 @@ const SocialChannelsPage: React.FC = () => {
       bgColor: "from-[#1877F2]/10 to-transparent",
       borderColor: "border-[#1877F2]/20",
       subscribers: "7K+",
+      buttonStyle: "orange" as const,
     },
   ];
 
@@ -109,15 +154,13 @@ const SocialChannelsPage: React.FC = () => {
 
                 <p className="text-white/70 mb-4 flex-grow">{channel.description}</p>
 
-                <a
-                  href={channel.url}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center gap-1 text-[#5C8EFF] hover:underline font-medium"
-                >
-                  Visit {channel.name}
-                  <ExternalLink className="h-4 w-4" />
-                </a>
+                <SocialCard 
+                  icon={channel.icon} 
+                  title={channel.name} 
+                  description={channel.description} 
+                  url={channel.url} 
+                  buttonStyle={channel.buttonStyle} 
+                />
               </motion.div>
             ))}
           </div>
