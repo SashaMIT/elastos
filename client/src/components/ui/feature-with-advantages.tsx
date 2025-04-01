@@ -49,7 +49,7 @@ function Feature() {
                 <img 
                   src="/images/Elastos Vision World Computer.png" 
                   alt="Elastos Vision World Computer" 
-                  className="w-[85%] md:w-[85%] rounded-lg shadow-lg" 
+                  className="w-[100%] md:w-[50%] rounded-lg shadow-lg" 
                 />
               </div>
             </div>
