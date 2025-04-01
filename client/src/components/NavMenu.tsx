@@ -289,38 +289,44 @@ export function NavMenu() {
               </NavigationMenuTrigger>
               <NavigationMenuContent>
                 <div className="grid w-[400px] gap-1 p-2 md:w-[500px] md:grid-cols-2">
-                  <Link href="/support/help">
-                    <NavigationMenuLink className={navigationMenuTriggerStyle()}>
-                      <div className="flex items-center gap-2">
-                        <Code className="h-4 w-4 text-[#94b5ff]" />
-                        <span className="text-white">Developers</span>
-                      </div>
-                    </NavigationMenuLink>
-                  </Link>
-                  <Link href="/faq" className={navigationMenuTriggerStyle()}>
-                    <NavigationMenuLink>
-                      <div className="flex items-center gap-2">
-                        <HelpCircle className="h-4 w-4 text-[#94b5ff]" />
-                        <span className="text-white">AI & FAQ</span>
-                      </div>
-                    </NavigationMenuLink>
-                  </Link>
-                  <Link href="/support/contact">
-                    <NavigationMenuLink className={navigationMenuTriggerStyle()}>
-                      <div className="flex items-center gap-2">
-                        <MessageCircle className="h-4 w-4 text-[#94b5ff]" />
-                        <span className="text-white">Contact Us</span>
-                      </div>
-                    </NavigationMenuLink>
-                  </Link>
-                  <Link href="/support/news">
-                    <NavigationMenuLink className={navigationMenuTriggerStyle()}>
-                      <div className="flex items-center gap-2">
-                        <Newspaper className="h-4 w-4 text-[#94b5ff]" />
-                        <span className="text-white">Latest News</span>
-                      </div>
-                    </NavigationMenuLink>
-                  </Link>
+                  <div>
+                    <h4 className="font-medium text-sm text-muted-foreground mb-2 px-2 text-[#94b5ff]">COMMUNITY</h4>
+                    <Link href="/social-channels">
+                      <NavigationMenuLink className={navigationMenuTriggerStyle()}>
+                        <div className="flex items-center gap-2">
+                          <MessageCircle className="h-4 w-4 text-[#94b5ff]" />
+                          <span className="text-white">Social Channels</span>
+                        </div>
+                      </NavigationMenuLink>
+                    </Link>
+                    <Link href="/ambassador-program">
+                      <NavigationMenuLink className={navigationMenuTriggerStyle()}>
+                        <div className="flex items-center gap-2">
+                          <Star className="h-4 w-4 text-[#94b5ff]" />
+                          <span className="text-white">Ambassador Program</span>
+                        </div>
+                      </NavigationMenuLink>
+                    </Link>
+                  </div>
+                  <div>
+                    <h4 className="font-medium text-sm text-muted-foreground mb-2 px-2 text-[#94b5ff]">RESOURCES</h4>
+                    <Link href="/dapps">
+                      <NavigationMenuLink className={navigationMenuTriggerStyle()}>
+                        <div className="flex items-center gap-2">
+                          <Code className="h-4 w-4 text-[#94b5ff]" />
+                          <span className="text-white">dApps</span>
+                        </div>
+                      </NavigationMenuLink>
+                    </Link>
+                    <Link href="/contact-us">
+                      <NavigationMenuLink className={navigationMenuTriggerStyle()}>
+                        <div className="flex items-center gap-2">
+                          <HelpCircle className="h-4 w-4 text-[#94b5ff]" />
+                          <span className="text-white">Contact Us</span>
+                        </div>
+                      </NavigationMenuLink>
+                    </Link>
+                  </div>
                 </div>
               </NavigationMenuContent>
             </NavigationMenuItem>
