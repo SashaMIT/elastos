@@ -87,6 +87,35 @@ export default function RoadmapPage() {
       </div>
       
       <ForwardRoadmap />
+      
+      <div className="w-full max-w-5xl mx-auto px-4 py-16 sm:px-6 lg:px-8">
+        <div className="bg-gradient-to-br from-[#5C8EFF]/10 to-[#F6921A]/10 rounded-xl p-8 border border-[#5C8EFF]/30 relative">
+          {/* Background blur elements */}
+          <div className="absolute -top-20 -right-20 w-64 h-64 rounded-full bg-[#F7921A]/10 blur-[80px]"></div>
+          <div className="absolute -bottom-20 -left-20 w-72 h-72 rounded-full bg-[#8BABFF]/10 blur-[100px]"></div>
+          
+          <div className="flex flex-col md:flex-row gap-8 items-center relative z-10">
+            <div className="md:w-1/4 flex justify-center">
+              <img 
+                src="/images/Rong Chen.png" 
+                alt="Rong Chen, Elastos Founder" 
+                className="w-48 h-48 object-cover rounded-full border-4 border-[#5C8EFF]/30"
+              />
+            </div>
+            <div className="md:w-3/4">
+              <blockquote className="italic text-lg text-gray-200">
+                <span className="text-4xl text-[#F7921A]">"</span>
+                If there's a world computer, what's its operating system? The operating system is what ensures security and privacy. Elastos is primarily made up of Personal Cloud Compute (#PC2) nodes run by self-sovereign individuals from their homes, rather than institutions. Web3 is about selling digital goods directly from people's homes — and Elastos serves as the operating system for this network, leveraging Bitcoin's trillion-dollar consensus to empower users with scalable, decentralized utilities.
+                <span className="text-4xl text-[#F7921A]">"</span>
+              </blockquote>
+              <div className="mt-4 font-semibold text-[#5C8EFF]">
+                Rong Chen, Elastos Founder
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      
       <div className="mt-20">
         <Timeline timelineData={timelineData} />
       </div>
