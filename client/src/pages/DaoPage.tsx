@@ -1,4 +1,3 @@
-
 import React, { useState } from "react";
 import { motion } from "framer-motion";
 import { 
@@ -525,7 +524,7 @@ const DaoPage: React.FC = () => {
           <div className="max-w-4xl mx-auto relative">
             {/* Timeline line */}
             <div className="absolute h-full w-1 bg-gradient-to-b from-[#F7921A]/30 via-[#8BABFF]/30 to-[#F7921A]/30 left-1/2 transform -translate-x-1/2 rounded-full"></div>
-            
+
             {/* Timeline events */}
             <div className="space-y-12">
               {timelineEvents.map((event, index) => (
@@ -539,7 +538,7 @@ const DaoPage: React.FC = () => {
                 >
                   {/* Timeline dot */}
                   <div className="absolute left-1/2 transform -translate-x-1/2 w-5 h-5 rounded-full bg-[#171717] border-2 border-[#F7921A] z-10"></div>
-                  
+
                   {/* Content */}
                   <div className={`w-1/2 ${index % 2 === 0 ? 'pr-10 text-right' : 'pl-10 text-left'}`}>
                     <div className="bg-[#1A1A1A] rounded-xl p-5 border border-white/10">
@@ -552,7 +551,7 @@ const DaoPage: React.FC = () => {
                       <p className="text-gray-400 text-sm">{event.description}</p>
                     </div>
                   </div>
-                  
+
                   {/* Empty div for spacing */}
                   <div className="w-1/2"></div>
                 </motion.div>
@@ -712,6 +711,41 @@ const DaoPage: React.FC = () => {
                       </li>
                     ))}
                   </ul>
+                  <div className="mt-6">
+                    {item.title === "Vote" && (
+                      <a
+                        href="https://cyberrepublic.org/council/election"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex w-full px-3 py-2 bg-[rgba(246,146,26,0.10)] text-[#F6921A] rounded-full font-medium transition-all items-center justify-center gap-1 border border-[rgba(246,146,26,0.50)] text-sm"
+                      >
+                        <span>How to Vote</span>
+                        <CircleArrow />
+                      </a>
+                    )}
+                    {item.title === "Submit a Proposal" && (
+                      <a
+                        href="https://cyberrepublic.org/proposals/new"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex w-full px-3 py-2 bg-[rgba(92,142,255,0.10)] text-[#5C8EFF] rounded-full font-medium transition-all items-center justify-center gap-1 border border-[rgba(92,142,255,0.50)] text-sm"
+                      >
+                        <span>Submit a Proposal</span>
+                        <BlueCircleArrow />
+                      </a>
+                    )}
+                    {item.title === "Run for Council" && (
+                      <a
+                        href="https://cyberrepublic.org/council/election"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex w-full px-3 py-2 bg-[rgba(246,146,26,0.10)] text-[#F6921A] rounded-full font-medium transition-all items-center justify-center gap-1 border border-[rgba(246,146,26,0.50)] text-sm"
+                      >
+                        <span>Run for Council</span>
+                        <CircleArrow />
+                      </a>
+                    )}
+                  </div>
                 </div>
               </motion.div>
             ))}
@@ -851,35 +885,7 @@ const DaoPage: React.FC = () => {
               <p className="text-lg text-white/70 max-w-3xl mx-auto mb-8">
                 Whether you're a builder, voter, or visionary—you have a place in the Elastos DAO.
               </p>
-              <div className="flex flex-wrap justify-center gap-4">
-                <a
-                  href="https://cyberrepublic.org"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex px-4 py-3 bg-[rgba(246,146,26,0.10)] text-[#F6921A] rounded-full font-medium transition-all items-center gap-2 border border-[rgba(246,146,26,0.50)] text-base"
-                >
-                  <span>Join the DAO Portal</span>
-                  <CircleArrow />
-                </a>
-                <a
-                  href="https://cyberrepublic.org/proposals/new"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex px-4 py-3 bg-[rgba(92,142,255,0.10)] text-[#5C8EFF] rounded-full font-medium transition-all items-center gap-2 border border-[rgba(92,142,255,0.50)] text-base"
-                >
-                  <span>Submit a Proposal</span>
-                  <BlueCircleArrow />
-                </a>
-                <a
-                  href="https://cyberrepublic.org/council/election"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex px-4 py-3 bg-[rgba(246,146,26,0.10)] text-[#F6921A] rounded-full font-medium transition-all items-center gap-2 border border-[rgba(246,146,26,0.50)] text-base"
-                >
-                  <span>Run for Council</span>
-                  <CircleArrow />
-                </a>
-              </div>
+              {/* Removed CTA buttons here */}
             </motion.div>
           </div>
         </div>
