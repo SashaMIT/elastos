@@ -142,15 +142,21 @@ const timelineEvents = [
     icon: <Building2 className="w-5 h-5 text-[#8BABFF]" />
   },
   {
-    year: "2021-2023",
-    title: "Ecosystem Growth",
-    description: "DAO expands support for ecosystem projects and development initiatives across the Elastos network.",
+    year: "2021",
+    title: "Delaware LLC Registration",
+    description: "Elastos DAO was legally registered as a DAO LLC in Delaware, establishing initial legal status.",
     icon: <FileText className="w-5 h-5 text-[#F7921A]" />
   },
   {
+    year: "2022-2023",
+    title: "Ecosystem Growth",
+    description: "DAO expands support for ecosystem projects and development initiatives across the Elastos network.",
+    icon: <Building2 className="w-5 h-5 text-[#8BABFF]" />
+  },
+  {
     year: "2024",
-    title: "Legal Registration",
-    description: "Elastos DAO was legally registered in the Marshall Islands, establishing formal legal status.",
+    title: "Marshall Islands Registration",
+    description: "Elastos DAO transitioned from Delaware to the Marshall Islands, establishing enhanced legal status in a more crypto-friendly jurisdiction.",
     icon: <ArrowRight className="w-5 h-5 text-[#F7921A]" />
   }
 ];
