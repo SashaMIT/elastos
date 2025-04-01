@@ -15,7 +15,9 @@ import {
   CircleDollarSign,
   CalendarDays,
   Wallet,
-  ExternalLink
+  ExternalLink,
+  Fingerprint,
+  Code
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Progress } from "@/components/ui/progress";
