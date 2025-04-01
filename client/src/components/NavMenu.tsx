@@ -331,8 +331,6 @@ export function NavMenu() {
                   </div>
                 </NavigationMenuLink>
               </Link>
-                </div>
-              </NavigationMenuContent>
             </NavigationMenuItem>
           </NavigationMenuList>
         </NavigationMenu>
