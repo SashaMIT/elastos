@@ -153,22 +153,29 @@ export default function ElaUtilityPage() {
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-7xl mx-auto">
             {/* Stats Card */}
-            <div className="bg-gradient-to-br from-[#F7921A]/10 via-[#8BABFF]/5 to-transparent rounded-xl p-6 border border-[#F7921A]/20 h-full transition-all hover:shadow-lg">
-              <div className="flex justify-between items-start mb-4">
+            <div className="group bg-gradient-to-br from-[#F7921A]/10 via-[#8BABFF]/5 to-transparent rounded-xl p-6 border border-[#F7921A]/20 h-full transition-all hover:shadow-lg hover:border-[#F7921A]/40 cursor-pointer relative overflow-hidden">
+              <div className="absolute -top-20 -right-20 w-64 h-64 rounded-full bg-[#F7921A]/5 blur-[80px] opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
+              <div className="absolute -bottom-20 -left-20 w-64 h-64 rounded-full bg-[#8BABFF]/5 blur-[80px] opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
+              
+              <div className="flex justify-between items-start mb-4 relative z-10">
                 <h3 className="text-xl font-bold text-black dark:text-white">Stats</h3>
                 <div className="px-2 py-1 bg-[#5C8EFF]/10 border border-[#5C8EFF]/30 text-[#5C8EFF] dark:text-white rounded-full text-xs font-medium whitespace-nowrap">
                   ${isHashrateLoading ? '...' : (hashrateData?.elaPrice?.toFixed(2) || '0.00')}
                 </div>
               </div>
-              <div className="h-32 mb-4 overflow-hidden rounded-lg">
-                <div className="w-full h-full bg-gradient-to-br from-[#5C8EFF]/30 to-[#F7921A]/30 flex items-center justify-center">
-                  <span className="text-2xl font-bold text-white">ELA</span>
+              <div className="h-36 mb-4 overflow-hidden rounded-lg relative z-10 transition-transform duration-500 group-hover:scale-[1.02]">
+                <img 
+                  src="/images/Elastos New Logo_Kit-03.png"
+                  alt="ELA Stats"
+                  className="w-1/3 h-auto object-contain absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-10"
+                />
+                <div className="w-full h-full bg-gradient-to-br from-[#5C8EFF]/20 to-[#F7921A]/20 flex items-center justify-center">
                 </div>
               </div>
-              <p className="text-gray-600 dark:text-gray-300 text-sm mb-4">
+              <p className="text-gray-600 dark:text-gray-300 text-sm mb-4 relative z-10">
                 Track real-time metrics for Elastos blockchain performance and user adoption.
               </p>
-              <a href="/stats" className="inline-flex px-3 py-2 bg-[rgba(246,146,26,0.10)] text-[#F6921A] rounded-full font-medium transition-all items-center gap-1 border border-[rgba(246,146,26,0.50)] text-sm">
+              <a href="/stats" className="inline-flex px-3 py-2 bg-[rgba(246,146,26,0.10)] text-[#F6921A] rounded-full font-medium transition-all items-center gap-1 border border-[rgba(246,146,26,0.50)] text-sm relative z-10 hover:bg-[rgba(246,146,26,0.15)]">
                 <span>Learn More</span>
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 35 34" fill="none">
                   <circle cx="17.333" cy="17" r="16.75" stroke="#F6921A" strokeOpacity="0.5" strokeWidth="0.5"/>
@@ -179,24 +186,31 @@ export default function ElaUtilityPage() {
             </div>
 
             {/* Security Card */}
-            <div className="bg-gradient-to-br from-[#8BABFF]/10 via-[#F7921A]/5 to-transparent rounded-xl p-6 border border-[#8BABFF]/20 h-full transition-all hover:shadow-lg">
-              <div className="flex justify-between items-start mb-4">
+            <div className="group bg-gradient-to-br from-[#8BABFF]/10 via-[#F7921A]/5 to-transparent rounded-xl p-6 border border-[#8BABFF]/20 h-full transition-all hover:shadow-lg hover:border-[#8BABFF]/40 cursor-pointer relative overflow-hidden">
+              <div className="absolute -top-20 -right-20 w-64 h-64 rounded-full bg-[#8BABFF]/5 blur-[80px] opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
+              <div className="absolute -bottom-20 -left-20 w-64 h-64 rounded-full bg-[#F7921A]/5 blur-[80px] opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
+              
+              <div className="flex justify-between items-start mb-4 relative z-10">
                 <h3 className="text-xl font-bold text-black dark:text-white">Security</h3>
                 <div className="px-2 py-1 bg-[#F7921A]/10 border border-[#F7921A]/30 text-[#F7921A] dark:text-white rounded-full text-xs font-medium whitespace-nowrap">
                   {isHashrateLoading ? '...' : `${((hashrateData?.elastosHashrate ?? 0) / (hashrateData?.bitcoinHashrate ?? 1) * 100).toFixed(2)}%`}
                 </div>
               </div>
-              <div className="h-32 mb-4 overflow-hidden rounded-lg">
-                <div className="w-full h-full bg-gradient-to-br from-[#F7921A]/30 to-[#5C8EFF]/30 flex items-center justify-center">
-                  <span className="text-2xl font-bold text-white">BTC</span>
+              <div className="h-36 mb-4 overflow-hidden rounded-lg relative z-10 transition-transform duration-500 group-hover:scale-[1.02]">
+                <img 
+                  src="/images/Security.png"
+                  alt="ELA Security"
+                  className="w-1/3 h-auto object-contain absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-10"
+                />
+                <div className="w-full h-full bg-gradient-to-br from-[#F7921A]/20 to-[#5C8EFF]/20 flex items-center justify-center">
                 </div>
               </div>
-              <p className="text-gray-600 dark:text-gray-300 text-sm mb-4">
+              <p className="text-gray-600 dark:text-gray-300 text-sm mb-4 relative z-10">
                 Explore how ELA maintains Bitcoin-level security and protects your assets.
               </p>
               <a 
                 href="/security"
-                className="inline-flex px-3 py-2 bg-[rgba(246,146,26,0.10)] text-[#F6921A] rounded-full font-medium transition-all items-center gap-1 border border-[rgba(246,146,26,0.50)] text-sm"
+                className="inline-flex px-3 py-2 bg-[rgba(246,146,26,0.10)] text-[#F6921A] rounded-full font-medium transition-all items-center gap-1 border border-[rgba(246,146,26,0.50)] text-sm relative z-10 hover:bg-[rgba(246,146,26,0.15)]"
               >
                 <span>Learn More</span>
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 35 34" fill="none">
@@ -208,22 +222,25 @@ export default function ElaUtilityPage() {
             </div>
 
             {/* Supply Card */}
-            <div className="bg-gradient-to-br from-[#F7921A]/10 via-[#8BABFF]/5 to-transparent rounded-xl p-6 border border-[#F7921A]/20 h-full transition-all hover:shadow-lg">
-              <div className="flex justify-between items-start mb-4">
+            <div className="group bg-gradient-to-br from-[#F7921A]/10 via-[#8BABFF]/5 to-transparent rounded-xl p-6 border border-[#F7921A]/20 h-full transition-all hover:shadow-lg hover:border-[#F7921A]/40 cursor-pointer relative overflow-hidden">
+              <div className="absolute -top-20 -right-20 w-64 h-64 rounded-full bg-[#F7921A]/5 blur-[80px] opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
+              <div className="absolute -bottom-20 -left-20 w-64 h-64 rounded-full bg-[#8BABFF]/5 blur-[80px] opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
+              
+              <div className="flex justify-between items-start mb-4 relative z-10">
                 <h3 className="text-xl font-bold text-black dark:text-white">Supply</h3>
                 <div className="px-2 py-1 bg-[#5C8EFF]/10 border border-[#5C8EFF]/30 text-[#5C8EFF] dark:text-white rounded-full text-xs font-medium whitespace-nowrap">
                   {isSupplyLoading ? '...' : formatNumber(totalSupply)}
                 </div>
               </div>
-              <div className="h-32 mb-4 overflow-hidden rounded-lg">
-                <div className="w-full h-full bg-gradient-to-br from-[#5C8EFF]/30 to-[#F7921A]/30 flex items-center justify-center">
-                  <span className="text-2xl font-bold text-white">28.2M</span>
+              <div className="h-36 mb-4 overflow-hidden rounded-lg relative z-10 transition-transform duration-500 group-hover:scale-[1.02]">
+                <div className="w-full h-full bg-gradient-to-br from-[#5C8EFF]/20 to-[#F7921A]/20 flex items-center justify-center">
+                  <span className="text-3xl font-bold text-white">28.2M</span>
                 </div>
               </div>
-              <p className="text-gray-600 dark:text-gray-300 text-sm mb-4">
+              <p className="text-gray-600 dark:text-gray-300 text-sm mb-4 relative z-10">
                 Understand ELA's tokenomics, emission schedule, and circulation metrics.
               </p>
-              <a href="/supply" className="inline-flex px-3 py-2 bg-[rgba(246,146,26,0.10)] text-[#F6921A] rounded-full font-medium transition-all items-center gap-1 border border-[rgba(246,146,26,0.50)] text-sm">
+              <a href="/supply" className="inline-flex px-3 py-2 bg-[rgba(246,146,26,0.10)] text-[#F6921A] rounded-full font-medium transition-all items-center gap-1 border border-[rgba(246,146,26,0.50)] text-sm relative z-10 hover:bg-[rgba(246,146,26,0.15)]">
                 <span>Learn More</span>
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 35 34" fill="none">
                   <circle cx="17.333" cy="17" r="16.75" stroke="#F6921A" strokeOpacity="0.5" strokeWidth="0.5"/>
@@ -234,24 +251,31 @@ export default function ElaUtilityPage() {
             </div>
 
             {/* Buy ELA Card */}
-            <div className="bg-gradient-to-br from-[#8BABFF]/10 via-[#F7921A]/5 to-transparent rounded-xl p-6 border border-[#8BABFF]/20 h-full transition-all hover:shadow-lg">
-              <div className="flex justify-between items-start mb-4">
+            <div className="group bg-gradient-to-br from-[#8BABFF]/10 via-[#F7921A]/5 to-transparent rounded-xl p-6 border border-[#8BABFF]/20 h-full transition-all hover:shadow-lg hover:border-[#8BABFF]/40 cursor-pointer relative overflow-hidden">
+              <div className="absolute -top-20 -right-20 w-64 h-64 rounded-full bg-[#8BABFF]/5 blur-[80px] opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
+              <div className="absolute -bottom-20 -left-20 w-64 h-64 rounded-full bg-[#F7921A]/5 blur-[80px] opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
+              
+              <div className="flex justify-between items-start mb-4 relative z-10">
                 <h3 className="text-xl font-bold text-black dark:text-white">Buy ELA</h3>
                 <div className="px-2 py-1 bg-[#F7921A]/10 border border-[#F7921A]/30 text-[#F7921A] dark:text-white rounded-full text-xs font-medium whitespace-nowrap">
                   {isMarketCapLoading ? '...' : formatNumber(marketCapData?.elastosMarketCap)}
                 </div>
               </div>
-              <div className="h-32 mb-4 overflow-hidden rounded-lg">
-                <div className="w-full h-full bg-gradient-to-br from-[#F7921A]/30 to-[#5C8EFF]/30 flex items-center justify-center">
-                  <span className="text-2xl font-bold text-white">Trade</span>
+              <div className="h-36 mb-4 overflow-hidden rounded-lg relative z-10 transition-transform duration-500 group-hover:scale-[1.02]">
+                <img 
+                  src="/images/Elastos New Logo_Kit-02.png"
+                  alt="Buy ELA"
+                  className="w-1/3 h-auto object-contain absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-10"
+                />
+                <div className="w-full h-full bg-gradient-to-br from-[#F7921A]/20 to-[#5C8EFF]/20 flex items-center justify-center">
                 </div>
               </div>
-              <p className="text-gray-600 dark:text-gray-300 text-sm mb-4">
+              <p className="text-gray-600 dark:text-gray-300 text-sm mb-4 relative z-10">
                 Get ELA on leading exchanges and decentralized platforms for easy access.
               </p>
               <a 
                 href="/buy-ela"
-                className="inline-flex px-3 py-2 bg-[rgba(246,146,26,0.10)] text-[#F6921A] rounded-full font-medium transition-all items-center gap-1 border border-[rgba(246,146,26,0.50)] text-sm"
+                className="inline-flex px-3 py-2 bg-[rgba(246,146,26,0.10)] text-[#F6921A] rounded-full font-medium transition-all items-center gap-1 border border-[rgba(246,146,26,0.50)] text-sm relative z-10 hover:bg-[rgba(246,146,26,0.15)]"
               >
                 <span>Learn More</span>
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 35 34" fill="none">
