@@ -106,7 +106,7 @@ const SocialChannelsPage: React.FC = () => {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: 0.1 * index }}
-                className={`rounded-xl bg-gradient-to-br ${channel.bgColor} p-6 ${channel.borderColor} border hover:border-opacity-40 transition-all duration-300 flex flex-col h-full`}
+                className={`rounded-xl bg-gradient-to-br from-[#F6921A]/10 via-[#5C8EFF]/10 to-transparent p-6 border border-white/10 hover:border-white/20 transition-all duration-300 flex flex-col h-full`}
               >
                 <div className="flex items-start gap-4 mb-4">
                   {channel.icon}
