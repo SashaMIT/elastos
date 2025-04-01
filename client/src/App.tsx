@@ -13,8 +13,7 @@ import WhitepaperPage from './pages/WhitepaperPage';
 import EcosystemPage from './pages/EcosystemPage'; 
 import NewsPage from './pages/NewsPage'; 
 import FaqPage from './pages/FaqPage'; 
-import SocialChannelsPage from './pages/SocialChannelsPage'; // Added import
-
+import SocialChannelsPage from './pages/SocialChannelsPage';
 
 function App() {
   return (
@@ -30,54 +29,9 @@ function App() {
       <Route path="/news" element={<NewsPage />} />
       <Route path="/faq" element={<FaqPage />} />
       <Route path="/whitepaper" element={<WhitepaperPage />} />
-      <Route path="/social-channels" element={<SocialChannelsPage />} /> {/* Added route */}
+      <Route path="/social-channels" element={<SocialChannelsPage />} />
     </Routes>
   );
 }
 
 export default App;
-
-// pages/SocialChannelsPage.tsx
-import React from 'react';
-
-const SocialChannelsPage = () => {
-  return (
-    <div>
-      <h1>Social Channels</h1>
-      <ul>
-        <li>
-          <a href="https://x.com/ElastosInfo" target="_blank" rel="noopener noreferrer">
-            X Account
-          </a>
-        </li>
-        <li>
-          <a href="https://t.me/elastosgroup" target="_blank" rel="noopener noreferrer">
-            Telegram
-          </a>
-        </li>
-        <li>
-          <a href="https://discord.com/invite/elastos" target="_blank" rel="noopener noreferrer">
-            Discord
-          </a>
-        </li>
-        <li>
-          <a href="https://www.reddit.com/r/Elastos/" target="_blank" rel="noopener noreferrer">
-            Reddit
-          </a>
-        </li>
-        <li>
-          <a href="https://www.youtube.com/channel/UCy5AjgpQIQq3bv8oy_L5WTQ" target="_blank" rel="noopener noreferrer">
-            YouTube
-          </a>
-        </li>
-        <li>
-          <a href="https://www.facebook.com/elastosorg/" target="_blank" rel="noopener noreferrer">
-            Facebook
-          </a>
-        </li>
-      </ul>
-    </div>
-  );
-};
-
-export default SocialChannelsPage;
