@@ -83,7 +83,7 @@ export function WorldComputerBanner() {
           className="mt-10 flex flex-wrap gap-4 justify-center"
         >
           <a 
-            href="/stats" 
+            href="/ela-utility" 
             className="inline-flex px-3 py-2 bg-[rgba(246,146,26,0.10)] text-[#F6921A] rounded-full font-medium transition-all items-center gap-1 border border-[rgba(246,146,26,0.50)] text-sm"
           >
             <span>ELA Utility</span>
