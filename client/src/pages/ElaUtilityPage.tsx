@@ -283,6 +283,109 @@ export default function ElaUtilityPage() {
         </div>
 
         <ScalingSection2 />
+        
+        {/* World Computer Vision Section */}
+        <div className="py-16 relative overflow-hidden">
+          <div className="absolute -top-40 -right-40 w-96 h-96 rounded-full bg-[#5C8EFF]/10 blur-[120px]"></div>
+          <div className="absolute -bottom-40 -left-40 w-96 h-96 rounded-full bg-[#F7921A]/10 blur-[120px]"></div>
+          
+          <div className="max-w-6xl mx-auto">
+            <div className="text-center mb-12">
+              <h2 className="text-3xl md:text-4xl font-bold text-black dark:text-white mb-3">
+                ELA: Powering the <span className="text-[#5C8EFF]">World Computer</span>
+              </h2>
+              <p className="text-lg text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
+                ELA is more than a cryptocurrency—it's the fuel that powers the entire Elastos ecosystem
+              </p>
+            </div>
+            
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-10 mb-16">
+              <div className="bg-gradient-to-br from-[#5C8EFF]/10 to-transparent rounded-xl p-8 border border-[#5C8EFF]/30 relative group hover:border-[#5C8EFF]/50 transition-all">
+                <div className="absolute -top-20 -right-20 w-64 h-64 rounded-full bg-[#5C8EFF]/5 blur-[80px] opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
+                <h3 className="text-xl font-bold text-white mb-4 flex items-center">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-[#5C8EFF] mr-2"><path d="m2 4 3 12h14l3-12-6 7-4-7-4 7-6-7zm3 16h14"></path></svg>
+                  Decentralized Computing
+                </h3>
+                <p className="text-gray-300">
+                  ELA serves as the computational gas for running distributed applications across the Elastos Network, enabling a truly decentralized computing environment secured by Bitcoin's hashpower.
+                </p>
+                <ul className="mt-4 space-y-2">
+                  <li className="flex items-start gap-2">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-[#F7921A] mt-1"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
+                    <span className="text-sm text-gray-400">Powers virtual machines across the network</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-[#F7921A] mt-1"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
+                    <span className="text-sm text-gray-400">Ensures service nodes receive fair compensation</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-[#F7921A] mt-1"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
+                    <span className="text-sm text-gray-400">Provides anti-spam protection for network resources</span>
+                  </li>
+                </ul>
+              </div>
+              
+              <div className="bg-gradient-to-br from-[#F7921A]/10 to-transparent rounded-xl p-8 border border-[#F7921A]/30 relative group hover:border-[#F7921A]/50 transition-all">
+                <div className="absolute -top-20 -right-20 w-64 h-64 rounded-full bg-[#F7921A]/5 blur-[80px] opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
+                <h3 className="text-xl font-bold text-white mb-4 flex items-center">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-[#F7921A] mr-2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+                  Digital Sovereignty
+                </h3>
+                <p className="text-gray-300">
+                  ELA enables true ownership of your digital assets and identity, granting you self-sovereign control in a new internet paradigm without central authorities or data exploitation.
+                </p>
+                <ul className="mt-4 space-y-2">
+                  <li className="flex items-start gap-2">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-[#5C8EFF] mt-1"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
+                    <span className="text-sm text-gray-400">Anchors self-sovereign identity credentials</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-[#5C8EFF] mt-1"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
+                    <span className="text-sm text-gray-400">Enables users to monetize their own data</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-[#5C8EFF] mt-1"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
+                    <span className="text-sm text-gray-400">Provides democratic governance of the ecosystem</span>
+                  </li>
+                </ul>
+              </div>
+            </div>
+            
+            {/* Developer Focus Section */}
+            <div className="bg-gradient-to-br from-[#5C8EFF]/10 via-[#F7921A]/5 to-transparent rounded-xl p-8 border border-[#5C8EFF]/20 relative overflow-hidden">
+              <div className="absolute -top-20 -right-20 w-64 h-64 rounded-full bg-[#5C8EFF]/5 blur-[80px]"></div>
+              <div className="absolute -bottom-20 -left-20 w-64 h-64 rounded-full bg-[#F7921A]/5 blur-[80px]"></div>
+              
+              <div className="relative z-10">
+                <h3 className="text-2xl font-bold text-white mb-6">Building on Elastos with ELA</h3>
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+                  <div className="bg-[#171717]/50 p-5 rounded-lg border border-[#5C8EFF]/20 hover:border-[#5C8EFF]/40 transition-all">
+                    <h4 className="text-lg font-semibold text-[#5C8EFF] mb-3">Identity Solutions</h4>
+                    <p className="text-sm text-gray-300">Create applications with user-owned identity through the W3C-compliant EID sidechain, where ELA secures verification credentials</p>
+                  </div>
+                  <div className="bg-[#171717]/50 p-5 rounded-lg border border-[#F7921A]/20 hover:border-[#F7921A]/40 transition-all">
+                    <h4 className="text-lg font-semibold text-[#F7921A] mb-3">P2P Infrastructure</h4>
+                    <p className="text-sm text-gray-300">Deploy services using Elastos Carrier network for direct device-to-device connections without centralized servers</p>
+                  </div>
+                  <div className="bg-[#171717]/50 p-5 rounded-lg border border-[#5C8EFF]/20 hover:border-[#5C8EFF]/40 transition-all">
+                    <h4 className="text-lg font-semibold text-[#5C8EFF] mb-3">Decentralized Storage</h4>
+                    <p className="text-sm text-gray-300">Leverage Hive for user-controlled storage where ELA incentivizes providers and enables access management</p>
+                  </div>
+                </div>
+                <div className="mt-8 flex justify-center">
+                  <a href="https://elastos.dev" target="_blank" rel="noopener noreferrer" className="inline-flex px-4 py-2 bg-[rgba(92,142,255,0.10)] text-[#5C8EFF] rounded-full font-medium transition-all items-center gap-2 border border-[rgba(92,142,255,0.50)] hover:bg-[rgba(92,142,255,0.15)]">
+                    <span>Explore Developer Docs</span>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 35 34" fill="none">
+                      <circle cx="17.333" cy="17" r="16.75" stroke="#5C8EFF" strokeOpacity="0.5" strokeWidth="0.5"/>
+                      <path d="M17.3338 22.9405L23.2741 17.0002L17.3338 11.0598L16.4162 11.9774L20.7628 16.324H10.8622V17.6763H20.7628L16.4162 22.0229L17.3338 22.9405Z" fill="#5C8EFF"/>
+                      <path d="M20.7628 17.6638H10.8747V16.3365H20.7628H20.7929L20.7716 16.3152L16.4338 11.9774L17.3338 11.0775L23.2564 17.0002L17.3338 22.9228L16.4338 22.0229L20.7716 17.6851L20.7929 17.6638H20.7628Z" stroke="#5C8EFF" strokeOpacity="0.5" strokeWidth="0.025"/>
+                    </svg>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
       <LogoCarouselDemo />
       <StackedCircularFooter />
