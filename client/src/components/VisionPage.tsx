@@ -1,3 +1,4 @@
+
 import React from "react";
 import { motion } from "framer-motion";
 import { CheckCircle } from "lucide-react";
@@ -48,14 +49,14 @@ export function VisionPage() {
           </motion.div>
         </div>
       </BackgroundCells>
-
+      
       <div className="w-full bg-white dark:bg-[#171717] py-16 font-sans">
         <div className="container mx-auto px-4">
           {/* Video Demo */}
           <div className="px-10 md:px-0 -mt-20">
             <VideoPlayerDemo />
           </div>
-
+          
           {/* Feature with Advantages */}
           <div className="mt-16">
             <Feature />
@@ -73,14 +74,14 @@ export function VisionPage() {
             </h2>
             <FeaturesSectionWithHoverEffects />
           </div>
-
+          
           {/* Rong Chen Quote */}
           <div className="w-full max-w-5xl mx-auto px-4 py-8 mt-6">
             <div className="bg-gradient-to-br from-[#5C8EFF]/10 to-[#F6921A]/10 rounded-xl p-8 border border-[#5C8EFF]/30 relative">
               {/* Background blur elements */}
               <div className="absolute -top-20 -right-20 w-64 h-64 rounded-full bg-[#F7921A]/10 blur-[80px]"></div>
               <div className="absolute -bottom-20 -left-20 w-72 h-72 rounded-full bg-[#8BABFF]/10 blur-[100px]"></div>
-
+              
               <div className="flex flex-col md:flex-row gap-8 items-center relative z-10">
                 <div className="md:w-1/4 flex justify-center">
                   <img 
@@ -107,7 +108,7 @@ export function VisionPage() {
           <div className="mt-6 mb-16">
             <WhyTheWorldNeedsThis />
           </div>
-
+         
           {/* Features Grid */}
           <div className="-mt-10 mb-0">
             <FeaturesSectionWithBentoGrid />
@@ -199,7 +200,7 @@ export function VisionPage() {
           </section>
 
           {/* Ecosystem dApps Section */}
-          <div className="mt-32">
+          <div className="mt-20">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -315,7 +316,7 @@ export function VisionPage() {
                 </p>
               </motion.div>
             </div>
-
+            
             <div className="flex justify-center mb-10">
               <a href="/ecosystem" className="inline-flex px-3 py-2 bg-[rgba(246,146,26,0.10)] text-[#F6921A] rounded-full font-medium transition-all items-center gap-1 border border-[rgba(246,146,26,0.50)] text-sm">
                 <span>Explore Ecosystem</span>
@@ -366,7 +367,7 @@ export function VisionPage() {
                   Responsible for building dDRM technology for P2P commerce
                 </p>
               </motion.div>
-
+              
               {/* Bitmain */}
               <motion.div
                 initial={{ opacity: 0, y: 10 }}
@@ -482,7 +483,7 @@ export function VisionPage() {
                 </p>
               </motion.div>
             </div>
-
+            
             <div className="flex justify-center mt-8">
               <a href="/ecosystem" className="inline-flex px-3 py-2 bg-[rgba(92,142,255,0.10)] text-[#5C8EFF] rounded-full font-medium transition-all items-center gap-1 border border-[rgba(92,142,255,0.50)] text-sm hover:bg-[rgba(92,142,255,0.15)]">
                 <span>Learn More About Partners</span>
@@ -499,14 +500,14 @@ export function VisionPage() {
           <div className="mt-20 -mx-4 px-4 md:px-0">
             <WorldComputerBanner />
           </div>
-
+          
           {/* Logo Carousel */}
           <div className="mt-20 -mx-4">
             <LogoCarouselDemo />
           </div>
         </div>
       </div>
-
+      
       <div className="w-full">
         {/* Footer */}
         <div className="w-full">
