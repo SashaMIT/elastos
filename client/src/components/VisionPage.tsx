@@ -113,6 +113,124 @@ export function VisionPage() {
             <FeaturesSectionWithBentoGrid />
           </div>
 
+          {/* Ecosystem dApps Section */}
+          <div className="mt-20">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="text-center mb-12"
+            >
+              <h2 className="text-3xl md:text-4xl font-bold text-black dark:text-white mb-3">
+                Ecosystem <span className="text-[#F6921A]">dApps</span>
+              </h2>
+              <p className="text-lg text-gray-600 dark:text-gray-300">
+                Explore applications built on Elastos
+              </p>
+            </motion.div>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-7xl mx-auto mb-10">
+              {/* Essentials */}
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: 0.1 }}
+                className="bg-gradient-to-br from-[#F7921A]/10 via-[#8BABFF]/5 to-transparent rounded-xl p-6 border border-[#F7921A]/20 h-full cursor-pointer"
+                onClick={() => window.open("https://essentials.elastos.org", "_blank")}
+              >
+                <div className="h-40 mb-4">
+                  <img 
+                    src="/images/Ecosystem/Essentials.png" 
+                    alt="Elastos Essentials" 
+                    className="w-full h-full object-cover rounded-lg"
+                  />
+                </div>
+                <h3 className="text-xl font-bold text-black dark:text-white mb-2">Essentials</h3>
+                <p className="text-gray-600 dark:text-gray-300 text-sm">
+                  Elastos SuperWallet with ELA staking, multi-chain, identity and CR governance
+                </p>
+              </motion.div>
+
+              {/* Elacity */}
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: 0.2 }}
+                className="bg-gradient-to-br from-[#8BABFF]/10 via-[#F7921A]/5 to-transparent rounded-xl p-6 border border-[#8BABFF]/20 h-full cursor-pointer"
+                onClick={() => window.open("https://ela.city", "_blank")}
+              >
+                <div className="h-40 mb-4">
+                  <img 
+                    src="/images/Ecosystem/Elacity Market.png" 
+                    alt="Elacity" 
+                    className="w-full h-full object-cover rounded-lg"
+                  />
+                </div>
+                <h3 className="text-xl font-bold text-black dark:text-white mb-2">Elacity</h3>
+                <p className="text-gray-600 dark:text-gray-300 text-sm">
+                  Trade ERC-721 and ERC-1155 NFTs, tokenize IP into royalty-based assets
+                </p>
+              </motion.div>
+
+              {/* Glide Finance */}
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: 0.3 }}
+                className="bg-gradient-to-br from-[#F7921A]/10 via-[#8BABFF]/5 to-transparent rounded-xl p-6 border border-[#F7921A]/20 h-full cursor-pointer"
+                onClick={() => window.open("https://glidefinance.io", "_blank")}
+              >
+                <div className="h-40 mb-4">
+                  <img 
+                    src="/images/Ecosystem/Glide Finance Website.png" 
+                    alt="Glide Finance" 
+                    className="w-full h-full object-cover rounded-lg"
+                  />
+                </div>
+                <h3 className="text-xl font-bold text-black dark:text-white mb-2">Glide Finance</h3>
+                <p className="text-gray-600 dark:text-gray-300 text-sm">
+                  Bridge and DEX for ERC-20 token trading on Elastos Smart Chain
+                </p>
+              </motion.div>
+
+              {/* BeL2 */}
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: 0.4 }}
+                className="bg-gradient-to-br from-[#8BABFF]/10 via-[#F7921A]/5 to-transparent rounded-xl p-6 border border-[#8BABFF]/20 h-full cursor-pointer"
+                onClick={() => window.open("https://lending.bel2.org", "_blank")}
+              >
+                <div className="h-40 mb-4">
+                  <img 
+                    src="/images/Ecosystem/BeL2 Lending dapp.png" 
+                    alt="BeL2" 
+                    className="w-full h-full object-cover rounded-lg"
+                  />
+                </div>
+                <h3 className="text-xl font-bold text-black dark:text-white mb-2">BeL2</h3>
+                <p className="text-gray-600 dark:text-gray-300 text-sm">
+                  Test BeL2's Bitcoin DeFi capabilities with lending demo
+                </p>
+              </motion.div>
+            </div>
+            
+            <div className="flex justify-center">
+              <a href="/ecosystem" className="inline-flex px-3 py-2 bg-[rgba(246,146,26,0.10)] text-[#F6921A] rounded-full font-medium transition-all items-center gap-1 border border-[rgba(246,146,26,0.50)] text-sm">
+                <span>Explore Ecosystem</span>
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 35 34" fill="none">
+                  <circle cx="17.333" cy="17" r="16.75" stroke="#F6921A" strokeOpacity="0.5" strokeWidth="0.5"/>
+                  <path d="M17.3338 22.9405L23.2741 17.0002L17.3338 11.0598L16.4162 11.9774L20.7628 16.324H10.8622V17.6763H20.7628L16.4162 22.0229L17.3338 22.9405Z" fill="#F6921A"/>
+                  <path d="M20.7628 17.6638H10.8747V16.3365H20.7628H20.7929L20.7716 16.3152L16.4338 11.9774L17.3338 11.0775L23.2564 17.0002L17.3338 22.9228L16.4338 22.0229L20.7716 17.6851L20.7929 17.6638H20.7628Z" stroke="#F6921A" strokeOpacity="0.5" strokeWidth="0.025"/>
+                </svg>
+              </a>
+            </div>
+          </div>
+
           {/* A World Computer for Everyone Banner */}
           <div className="mt-10 -mx-4 px-4 md:px-0">
             <WorldComputerBanner />
