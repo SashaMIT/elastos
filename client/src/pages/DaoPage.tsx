@@ -233,7 +233,7 @@ const getInvolved = [
     steps: [
       "Stake your ELA",
       "Connect with your DID",
-      "Participate in Council elections and proposal votes"
+      "Participate in Council elections and voting"
     ],
     color: "bg-gradient-to-br from-[#F7921A] to-[#F7921A]/70",
     borderColor: "border-[#F7921A]/20"
