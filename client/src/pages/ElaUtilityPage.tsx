@@ -270,6 +270,293 @@ export default function ElaUtilityPage() {
                 Get ELA on leading exchanges and decentralized platforms for easy access.
               </p>
 
+        <div className="my-16">
+          <div className="motion-section text-center mb-12">
+            <h2 className="text-3xl md:text-4xl font-bold text-black dark:text-white mb-3">
+              <span className="text-[#5C8EFF]">Use</span> Your ELA
+            </h2>
+            <p className="text-lg text-gray-600 dark:text-gray-300">
+              Engage with the ecosystem and earn rewards
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 max-w-7xl mx-auto">
+            {/* Staking Component */}
+            <div className="bg-gradient-to-br from-[#5C8EFF]/10 to-transparent rounded-xl p-6 border border-[#5C8EFF]/20 transition-all hover:shadow-lg hover:border-[#5C8EFF]/40 relative overflow-hidden">
+              <div className="absolute -top-20 -right-20 w-64 h-64 rounded-full bg-[#5C8EFF]/10 blur-[80px]"></div>
+              <div className="absolute -bottom-20 -left-20 w-64 h-64 rounded-full bg-[#F7921A]/5 blur-[80px]"></div>
+              
+              <div className="flex flex-col md:flex-row gap-6 items-center">
+                <div className="md:w-2/5 relative z-10">
+                  <img 
+                    src="/images/Essentials.png" 
+                    alt="Elastos Staking" 
+                    className="w-full max-w-[180px] mx-auto rounded-xl shadow-lg"
+                  />
+                </div>
+                <div className="md:w-3/5 relative z-10">
+                  <h3 className="text-2xl font-bold text-white mb-3">Stake & Earn</h3>
+                  <p className="text-white/70 text-sm mb-4">
+                    ELA staking offers a secure way to earn up to 3.29% APY while supporting the network's security and decentralization. It also grants voting rights in the DAO governance.
+                  </p>
+                  <div className="mb-5">
+                    <div className="flex justify-between text-sm mb-1">
+                      <span className="text-white/80">Current APY</span>
+                      <span className="text-[#5C8EFF]">3.29%</span>
+                    </div>
+                    <div className="w-full h-2 bg-[#1A1A1A] rounded-full overflow-hidden">
+                      <div className="h-full bg-gradient-to-r from-[#5C8EFF] to-[#F7921A] rounded-full" style={{ width: '32.9%' }}></div>
+                    </div>
+                  </div>
+                  <div className="mb-5">
+                    <div className="flex justify-between text-sm mb-1">
+                      <span className="text-white/80">Network Staked</span>
+                      <span className="text-[#5C8EFF]">{networkStats?.stakedAmount ? formatNumber(networkStats.stakedAmount) : 'Loading...'} ELA</span>
+                    </div>
+                    <div className="w-full h-2 bg-[#1A1A1A] rounded-full overflow-hidden">
+                      <div className="h-full bg-gradient-to-r from-[#5C8EFF] to-[#F7921A] rounded-full" style={{ width: `${((networkStats?.stakedAmount || 0) / (totalSupply || 1)) * 100}%` }}></div>
+                    </div>
+                  </div>
+                  
+                  <a href="https://elastos.info/guides/staking-ela/" target="_blank" rel="noopener noreferrer" className="inline-flex px-3 py-2 bg-[rgba(92,142,255,0.10)] text-[#5C8EFF] rounded-full font-medium transition-all items-center gap-1 border border-[rgba(92,142,255,0.50)] text-sm">
+                    <span>Learn How to Stake</span>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 35 34" fill="none">
+                      <circle cx="17.333" cy="17" r="16.75" stroke="#5C8EFF" strokeOpacity="0.5" strokeWidth="0.5"/>
+                      <path d="M17.3338 22.9405L23.2741 17.0002L17.3338 11.0598L16.4162 11.9774L20.7628 16.324H10.8622V17.6763H20.7628L16.4162 22.0229L17.3338 22.9405Z" fill="#5C8EFF"/>
+                      <path d="M20.7628 17.6638H10.8747V16.3365H20.7628H20.7929L20.7716 16.3152L16.4338 11.9774L17.3338 11.0775L23.2564 17.0002L17.3338 22.9228L16.4338 22.0229L20.7716 17.6851L20.7929 17.6638H20.7628Z" stroke="#5C8EFF" strokeOpacity="0.5" strokeWidth="0.025"/>
+                    </svg>
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            {/* Governance Component */}
+            <div className="bg-gradient-to-br from-[#F7921A]/10 to-transparent rounded-xl p-6 border border-[#F7921A]/20 transition-all hover:shadow-lg hover:border-[#F7921A]/40 relative overflow-hidden">
+              <div className="absolute -top-20 -right-20 w-64 h-64 rounded-full bg-[#F7921A]/10 blur-[80px]"></div>
+              <div className="absolute -bottom-20 -left-20 w-64 h-64 rounded-full bg-[#5C8EFF]/5 blur-[80px]"></div>
+              
+              <div className="flex flex-col md:flex-row gap-6 items-center">
+                <div className="md:w-2/5 relative z-10">
+                  <img 
+                    src="/images/Ecosystem/Cyber Republic.png" 
+                    alt="Elastos DAO" 
+                    className="w-full max-w-[180px] mx-auto rounded-xl shadow-lg"
+                  />
+                </div>
+                <div className="md:w-3/5 relative z-10">
+                  <h3 className="text-2xl font-bold text-white mb-3">Shape the Future</h3>
+                  <p className="text-white/70 text-sm mb-4">
+                    Participate in Elastos DAO governance with your ELA tokens. Vote on proposals, elect council members, and help determine the future direction of the network.
+                  </p>
+                  <div className="grid grid-cols-2 gap-3 mb-4">
+                    <div className="bg-[#1A1A1A]/50 p-3 rounded-lg">
+                      <div className="text-[#F7921A] text-xl font-bold">73+</div>
+                      <div className="text-white/60 text-xs">Funded Proposals</div>
+                    </div>
+                    <div className="bg-[#1A1A1A]/50 p-3 rounded-lg">
+                      <div className="text-[#F7921A] text-xl font-bold">1.24M</div>
+                      <div className="text-white/60 text-xs">Treasury (ELA)</div>
+                    </div>
+                  </div>
+                  
+                  <a href="https://cyberrepublic.org" target="_blank" rel="noopener noreferrer" className="inline-flex px-3 py-2 bg-[rgba(246,146,26,0.10)] text-[#F6921A] rounded-full font-medium transition-all items-center gap-1 border border-[rgba(246,146,26,0.50)] text-sm">
+                    <span>Explore DAO</span>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 35 34" fill="none">
+                      <circle cx="17.333" cy="17" r="16.75" stroke="#F6921A" strokeOpacity="0.5" strokeWidth="0.5"/>
+                      <path d="M17.3338 22.9405L23.2741 17.0002L17.3338 11.0598L16.4162 11.9774L20.7628 16.324H10.8622V17.6763H20.7628L16.4162 22.0229L17.3338 22.9405Z" fill="#F6921A"/>
+                      <path d="M20.7628 17.6638H10.8747V16.3365H20.7628H20.7929L20.7716 16.3152L16.4338 11.9774L17.3338 11.0775L23.2564 17.0002L17.3338 22.9228L16.4338 22.0229L20.7716 17.6851L20.7929 17.6638H20.7628Z" stroke="#F6921A" strokeOpacity="0.5" strokeWidth="0.025"/>
+                    </svg>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* Elastos Essentials Wallet CTA */}
+        <div className="my-20 bg-gradient-to-br from-[#5C8EFF]/10 via-[#F7921A]/5 to-transparent rounded-xl p-8 border border-[#5C8EFF]/20 relative overflow-hidden">
+          <div className="absolute -top-20 -right-20 w-96 h-96 rounded-full bg-[#F7921A]/10 blur-[100px]"></div>
+          <div className="absolute -bottom-20 -left-20 w-96 h-96 rounded-full bg-[#5C8EFF]/10 blur-[100px]"></div>
+          
+          <div className="flex flex-col md:flex-row gap-10 items-center relative z-10">
+            <div className="md:w-1/3 flex justify-center">
+              <img 
+
+        {/* ELA Use Cases Section */}
+        <div className="my-20">
+          <div className="motion-section text-center mb-12">
+            <h2 className="text-3xl md:text-4xl font-bold text-black dark:text-white mb-3">
+              What Can You <span className="text-[#F6921A]">Build</span> With ELA?
+            </h2>
+            <p className="text-lg text-gray-600 dark:text-gray-300">
+              Discover the possibilities enabled by Elastos' native token
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-7xl mx-auto">
+            {/* DeFi Card */}
+            <div className="group rounded-xl overflow-hidden relative h-80 cursor-pointer">
+              <div className="absolute inset-0 bg-gradient-to-br from-[#8BABFF]/80 to-[#F7921A]/60 opacity-90 group-hover:opacity-100 transition-opacity duration-300"></div>
+              <img src="https://images.unsplash.com/photo-1639322537228-f710d846310a?q=80&w=1032&auto=format&fit=crop" alt="DeFi" className="absolute inset-0 w-full h-full object-cover" />
+              
+              <div className="absolute inset-0 p-6 flex flex-col justify-between z-10">
+                <div className="w-12 h-12 rounded-full bg-white/20 flex items-center justify-center backdrop-blur-sm">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                    <rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect>
+                    <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path>
+                  </svg>
+                </div>
+                
+                <div>
+                  <h3 className="text-2xl font-bold text-white mb-2">Decentralized Finance</h3>
+                  <p className="text-white/80 text-sm mb-4">Build lending platforms, DEXs, yield farming, and more using ELA as the base asset</p>
+                  <a href="https://elastos.dev/defi" className="inline-flex px-3 py-2 bg-white/20 text-white rounded-full font-medium transition-all items-center gap-1 text-sm backdrop-blur-sm hover:bg-white/30">
+                    <span>Explore DeFi</span>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                      <path d="M5 12h14"></path>
+                      <path d="m12 5 7 7-7 7"></path>
+                    </svg>
+                  </a>
+                </div>
+              </div>
+            </div>
+            
+            {/* Identity Card */}
+            <div className="group rounded-xl overflow-hidden relative h-80 cursor-pointer">
+              <div className="absolute inset-0 bg-gradient-to-br from-[#F7921A]/80 to-[#8BABFF]/60 opacity-90 group-hover:opacity-100 transition-opacity duration-300"></div>
+              <img src="https://images.unsplash.com/photo-1633265486501-0cf524a07213?q=80&w=2070&auto=format&fit=crop" alt="Identity" className="absolute inset-0 w-full h-full object-cover" />
+              
+              <div className="absolute inset-0 p-6 flex flex-col justify-between z-10">
+                <div className="w-12 h-12 rounded-full bg-white/20 flex items-center justify-center backdrop-blur-sm">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                    <path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"></path>
+                    <circle cx="12" cy="7" r="4"></circle>
+                  </svg>
+                </div>
+                
+                <div>
+                  <h3 className="text-2xl font-bold text-white mb-2">Identity & Credentials</h3>
+                  <p className="text-white/80 text-sm mb-4">Create applications with verified credentials, digital passports, and self-sovereign identity</p>
+                  <a href="https://elastos.dev/identity" className="inline-flex px-3 py-2 bg-white/20 text-white rounded-full font-medium transition-all items-center gap-1 text-sm backdrop-blur-sm hover:bg-white/30">
+                    <span>Build with DID</span>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                      <path d="M5 12h14"></path>
+                      <path d="m12 5 7 7-7 7"></path>
+                    </svg>
+                  </a>
+                </div>
+              </div>
+            </div>
+            
+            {/* Web3 Card */}
+            <div className="group rounded-xl overflow-hidden relative h-80 cursor-pointer">
+              <div className="absolute inset-0 bg-gradient-to-br from-[#5C8EFF]/80 to-[#F7921A]/60 opacity-90 group-hover:opacity-100 transition-opacity duration-300"></div>
+              <img src="https://images.unsplash.com/photo-1614064548237-096d1bfaf2fa?q=80&w=2070&auto=format&fit=crop" alt="Web3" className="absolute inset-0 w-full h-full object-cover" />
+              
+              <div className="absolute inset-0 p-6 flex flex-col justify-between z-10">
+                <div className="w-12 h-12 rounded-full bg-white/20 flex items-center justify-center backdrop-blur-sm">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                    <circle cx="12" cy="12" r="10"></circle>
+                    <line x1="2" y1="12" x2="22" y2="12"></line>
+                    <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
+                  </svg>
+                </div>
+                
+                <div>
+                  <h3 className="text-2xl font-bold text-white mb-2">Web3 Social Networks</h3>
+                  <p className="text-white/80 text-sm mb-4">Create decentralized social platforms with user-owned data and content monetization</p>
+                  <a href="https://elastos.dev/social" className="inline-flex px-3 py-2 bg-white/20 text-white rounded-full font-medium transition-all items-center gap-1 text-sm backdrop-blur-sm hover:bg-white/30">
+                    <span>Explore Social</span>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                      <path d="M5 12h14"></path>
+                      <path d="m12 5 7 7-7 7"></path>
+                    </svg>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+                src="/images/Essentials.png" 
+                alt="Elastos Essentials" 
+                className="w-full max-w-[280px] rounded-xl shadow-lg"
+              />
+            </div>
+            <div className="md:w-2/3">
+              <h3 className="text-3xl font-bold text-white mb-4">Get Started with <span className="text-[#F7921A]">Essentials</span> Wallet</h3>
+              <p className="text-white/80 text-base mb-6">
+                The all-in-one gateway to the Elastos ecosystem. Store and stake your ELA, access dApps, manage your decentralized identity, and participate in governance—all from a single secure application.
+              </p>
+              
+              <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 mb-6">
+                <div className="bg-[#1A1A1A]/50 p-3 rounded-lg text-center">
+                  <div className="text-[#5C8EFF] text-xl font-bold">Multi-Chain</div>
+                  <div className="text-white/60 text-xs">Support</div>
+                </div>
+                <div className="bg-[#1A1A1A]/50 p-3 rounded-lg text-center">
+                  <div className="text-[#5C8EFF] text-xl font-bold">DID</div>
+                  <div className="text-white/60 text-xs">Integration</div>
+                </div>
+                <div className="bg-[#1A1A1A]/50 p-3 rounded-lg text-center">
+                  <div className="text-[#5C8EFF] text-xl font-bold">Staking</div>
+                  <div className="text-white/60 text-xs">Rewards</div>
+                </div>
+                <div className="bg-[#1A1A1A]/50 p-3 rounded-lg text-center">
+                  <div className="text-[#5C8EFF] text-xl font-bold">dApp</div>
+                  <div className="text-white/60 text-xs">Browser</div>
+                </div>
+              </div>
+              
+              <div className="flex flex-wrap gap-4">
+                <a 
+                  href="https://apps.apple.com/us/app/elastos-essentials/id1568931743" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="inline-flex px-4 py-2 bg-[rgba(92,142,255,0.15)] text-[#5C8EFF] rounded-full font-medium transition-all items-center gap-2 border border-[rgba(92,142,255,0.50)] text-sm hover:bg-[rgba(92,142,255,0.25)]"
+                >
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                    <path d="M12 19a1 1 0 1 0 0-2 1 1 0 0 0 0 2Z"></path>
+                    <path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"></path>
+                    <path d="M12 1v10"></path>
+                    <path d="m16 5-4-4-4 4"></path>
+                  </svg>
+                  <span>App Store</span>
+                </a>
+                <a 
+                  href="https://play.google.com/store/apps/details?id=io.web3essentials.app" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="inline-flex px-4 py-2 bg-[rgba(246,146,26,0.15)] text-[#F6921A] rounded-full font-medium transition-all items-center gap-2 border border-[rgba(246,146,26,0.50)] text-sm hover:bg-[rgba(246,146,26,0.25)]"
+                >
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                    <path d="M5 4h14a1 1 0 0 1 1 1v15l-4-3.5-3 1-3-1-4 3.5V5a1 1 0 0 1 1-1z"></path>
+                    <path d="M10 8.5a2.5 2.5 0 0 1 5 0 2.5 2.5 0 0 1-5 0z"></path>
+                    <path d="M12 7v3"></path>
+                    <path d="M10.5 9.5h3"></path>
+                  </svg>
+                  <span>Google Play</span>
+                </a>
+                <a 
+                  href="https://elastos.info/guides/essentials-wallet/" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="inline-flex px-4 py-2 bg-[rgba(255,255,255,0.1)] text-white rounded-full font-medium transition-all items-center gap-2 border border-white/20 text-sm hover:bg-white/20"
+                >
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                    <path d="M17 7.8A6 6 0 0 0 6 6m0 0a6 6 0 0 0 1 10.22m11-5.54a6 6 0 0 1-1 4.32"></path>
+                    <path d="M15.8 20.2a6 6 0 0 1-9.8-2"></path>
+                    <path d="m4 8-2 2 2 2"></path>
+                    <path d="m20 18 2-2-2-2"></path>
+                  </svg>
+                  <span>Setup Guide</span>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+
               <a href="/buy-ela" className="inline-flex px-3 py-2 bg-[rgba(246,146,26,0.10)] text-[#F6921A] rounded-full font-medium transition-all items-center gap-1 border border-[rgba(246,146,26,0.50)] text-sm relative z-10 hover:bg-[rgba(246,146,26,0.15)]">
                 <span>Learn More</span>
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 35 34" fill="none">
