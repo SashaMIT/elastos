@@ -30,7 +30,7 @@ export function VisionPage() {
           {/* Hero Section */}
           <div className="text-center max-w-3xl mx-auto mb-20">
             <h1 className="font-bold text-6xl mb-8 text-black dark:text-white">
-              <TextScramble phrases={taglines} />
+              <TextScramble>{taglines[0]}</TextScramble>
             </h1>
             <p className="text-lg text-gray-600 dark:text-gray-300 mb-8">
               Elastos is building a new paradigm for the internet—a Web3 infrastructure that gives you true digital ownership and privacy, secured by Bitcoin.
