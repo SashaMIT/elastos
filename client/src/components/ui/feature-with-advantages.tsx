@@ -46,11 +46,11 @@ function Feature() {
                 className="mb-4 !text-[5px] sm:text-base md:text-lg lg:text-xl font-normal"
                 startOnIntersect={true}
               />
-              <div className="flex justify-center mt-6 mb-8">
+              <div className="flex justify-center mt-10 mb-8">
                 <img 
                   src="/images/Elastos Vision World Computer.png" 
                   alt="Elastos Vision World Computer" 
-                  className="max-w-[150%] md:max-w-[150%] rounded-lg shadow-lg transform scale-150"
+                  className="max-w-[60%] md:max-w-[60%] rounded-lg shadow-lg transform scale-150"
                 />
               </div>
             </div>
