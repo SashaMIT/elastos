@@ -1,6 +1,7 @@
 import Vision from './pages/Vision';
-import WhitepaperPage from './pages/WhitepaperPage'; // Added import
-import Explorer from './pages/Explorer'; // Added Explorer import
+import WhitepaperPage from './pages/WhitepaperPage'; 
+import Explorer from './pages/Explorer'; 
+import Dao from './pages/Dao'; // Added import for Dao page
 
 import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
@@ -45,9 +46,10 @@ function Router() {
           <Route path="/vision" component={Vision} />
           <Route path="/ela-utility" component={ElaUtilityPage} />
           <Route path="/use-cases" component={UseCasesPage} /> 
-          <Route path="/wallet" component={Wallet} /> {/* Added Wallet route */}
-          <Route path="/whitepaper" component={WhitepaperPage} /> {/* Added WhitepaperPage route */}
-          <Route path="/explorer" component={Explorer} /> {/* Added Explorer route */}
+          <Route path="/wallet" component={Wallet} /> 
+          <Route path="/whitepaper" component={WhitepaperPage} /> 
+          <Route path="/explorer" component={Explorer} /> 
+          <Route path="/dao" component={Dao} /> {/* Added Dao route */}
           <Route>404 Page Not Found</Route>
         </Switch>
       </Suspense>
