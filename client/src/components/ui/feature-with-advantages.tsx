@@ -33,7 +33,7 @@ function Feature() {
               >
                 The World Computer
               </h2>
-              <div className="hidden sm:flex items-center gap-2 text-xl md:text-2xl whitespace-nowrap">
+              <div className="hidden sm:flex items-center gap-2 text-lg md:text-2xl whitespace-nowrap">
 
               </div>
             </div>
