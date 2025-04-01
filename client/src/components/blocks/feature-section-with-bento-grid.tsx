@@ -1,51 +1,51 @@
 import React from "react";
 import { cn } from "@/lib/utils";
 import { motion } from "framer-motion";
-import {
-  IconLock,
-  IconBolt,
-  IconNetwork,
-  IconFingerprint,
-  IconLicense,
-  IconApps
-} from "@tabler/icons-react";
+import { 
+  ShieldCheck, 
+  Network, 
+  Fingerprint, 
+  Database, 
+  Users, 
+  GitBranch 
+} from "lucide-react";
 
 export function FeaturesSectionWithBentoGrid() {
   const features = [
     {
       title: "Digital Sovereignty & User Ownership",
       description: "Own your data, identity, and digital assets without centralized intermediaries.",
-      icon: <IconLock className="h-10 w-10 text-[#F6921A]" />,
+      icon: <ShieldCheck className="h-5 w-5 stroke-[1.5] text-[#F6921A]" />,
       className: "col-span-1 md:col-span-2 lg:col-span-2 border-b md:border-r dark:border-neutral-800"
     },
     {
       title: "Bitcoin-Backed Security",
       description: "Utilize Bitcoin's PoW hashpower via merged mining for trustless validation.",
-      icon: <IconBolt className="h-10 w-10 text-[#F6921A]" />,
+      icon: <GitBranch className="h-5 w-5 stroke-[1.5] text-[#F6921A]" />,
       className: "col-span-1 md:col-span-2 lg:col-span-2 border-b md:border-r dark:border-neutral-800"
     },
     {
       title: "Decentralized Infrastructure",
       description: "P2P interactions without third-party control or data breaches.",
-      icon: <IconNetwork className="h-10 w-10 text-[#F6921A]" />,
+      icon: <Network className="h-5 w-5 stroke-[1.5] text-[#F6921A]" />,
       className: "col-span-1 md:col-span-2 lg:col-span-2 border-b dark:border-neutral-800"
     },
     {
       title: "Self-Sovereign Identity",
       description: "Verifiable identity for every person, device, and digital asset.",
-      icon: <IconFingerprint className="h-10 w-10 text-[#F6921A]" />,
+      icon: <Fingerprint className="h-5 w-5 stroke-[1.5] text-[#F6921A]" />,
       className: "col-span-1 md:col-span-2 lg:col-span-2 border-b md:border-r dark:border-neutral-800"
     },
     {
       title: "Rights Management",
       description: "Decentralized ownership and trading for creators and businesses.",
-      icon: <IconLicense className="h-10 w-10 text-[#F6921A]" />,
+      icon: <Database className="h-5 w-5 stroke-[1.5] text-[#F6921A]" />,
       className: "col-span-1 md:col-span-2 lg:col-span-2 border-b md:border-r dark:border-neutral-800"
     },
     {
       title: "Modular Web3 Ecosystem",
       description: "EVM-compatible sidechain for easy dApp development.",
-      icon: <IconApps className="h-10 w-10 text-[#F6921A]" />,
+      icon: <Users className="h-5 w-5 stroke-[1.5] text-[#F6921A]" />,
       className: "col-span-1 md:col-span-2 lg:col-span-2 border-b md:border-none dark:border-neutral-800"
     }
   ];
