@@ -1,5 +1,5 @@
+
 import React from "react";
-import { motion } from 'framer-motion'; // Added missing import
 import { FeaturesSectionWithHoverEffects } from "@/components/blocks/feature-section-with-hover-effects";
 import { FeaturesSectionWithBentoGrid } from "@/components/blocks/feature-section-with-bento-grid";
 import { FeaturesSectionWithTechStack } from "@/components/blocks/feature-section-with-tech-stack";
@@ -31,25 +31,16 @@ export function VisionPage() {
 
   return (
     <div className="w-full relative" style={{ zIndex: 0 }}>
-      <BackgroundCells /> {/* Moved BackgroundCells to be a sibling of the header and paragraph */}
-      <div className="min-h-[50vh] bg-slate-950 flex flex-col items-center justify-center -mt-6 pt-0">
-        <motion.h1
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5 }}
+      <BackgroundCells className="bg-slate-950 h-[50vh] -mt-6 pt-0">
+        <TextScramble
           className="text-4xl md:text-5xl lg:text-7xl font-normal text-center bg-clip-text text-transparent bg-gradient-to-b from-neutral-100 to-neutral-400"
         >
           The World Computer
-        </motion.h1>
-        <motion.p
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, delay: 0.2 }}
-          className="text-lg md:text-xl text-gray-700 dark:text-gray-300 italic px-4 md:px-8 lg:px-16 max-w-4xl mx-auto text-center mt-4"
-        >
+        </TextScramble>
+        <p className="text-lg md:text-xl text-gray-700 dark:text-gray-300 italic px-4 md:px-8 lg:px-16 max-w-4xl mx-auto text-center mt-4">
           Our mission is to create a new internet infrastructure that gives users and developers full control over their digital interactions, enabling a secure, private, and censorship-resistant online experience.
-        </motion.p>
-      </div>
+        </p>
+      </BackgroundCells>
       <div className="w-full bg-white dark:bg-[#171717] py-16 font-sans">
         <div className="container mx-auto px-4">
           {/* Video Demo */}
@@ -74,24 +65,24 @@ export function VisionPage() {
           <div className="mt-0 mb-20">
             <WhyTheWorldNeedsThis />
           </div>
-
+         
           {/* Features Grid */}
           <div className="-mt-20 mb-0">
             <FeaturesSectionWithBentoGrid />
           </div>
-
+         
           {/* A World Computer for Everyone Banner */}
           <div className="mt-20 -mx-4 px-4 md:px-0">
             <WorldComputerBanner />
           </div>
-
+          
           {/* Logo Carousel */}
           <div className="mt-20 -mx-4">
             <LogoCarouselDemo />
           </div>
         </div>
       </div>
-
+      
       <div className="w-full">
         {/* Footer */}
         <div className="w-full ">
