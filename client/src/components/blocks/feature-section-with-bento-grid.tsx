@@ -56,7 +56,7 @@ export function FeaturesSectionWithBentoGrid() {
     <div className="relative z-20 py-8 max-w-7xl mx-auto">
       <div className="text-center mb-6">
         <h2 className="text-2xl md:text-3xl font-bold text-black dark:text-white">
-          Core Technology Stack
+          Core Purpose
         </h2>
       </div>
       <div className="relative">
