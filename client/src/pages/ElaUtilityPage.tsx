@@ -403,7 +403,7 @@ export default function ElaUtilityPage() {
             />
           </div>
           <div className="md:w-2/3">
-            <h3 className="text-3xl font-bold text-white mb-4">Get Started with <span className="text-[#F7921A]">Essentials</span> Wallet</h3>
+            <h3 className="text-3xl font-bold text-white mb-4">Get Started with <span className="text-[#F7921A]">Elastos Essentials</span> Wallet</h3>
             <p className="text-white/80 text-base mb-6">
               The all-in-one gateway to the Elastos ecosystem. Store and stake your ELA, access dApps, manage your decentralized identity, and participate in governance—all from a single secure application.
             </p>
