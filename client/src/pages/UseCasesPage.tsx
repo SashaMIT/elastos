@@ -499,6 +499,7 @@ export default function App() {
           </div>
           <UseCaseModal isOpen={isModalOpen} useCase={selectedUseCase} onClose={closeModal} /> {/* Updated UseCaseModal */}
         </div>
+        <StackedCircularFooter />
       </Layout>
     </div>
   );
