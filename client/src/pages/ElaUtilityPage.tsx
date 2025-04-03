@@ -153,13 +153,13 @@ export default function ElaUtilityPage() {
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-7xl mx-auto">
             {/* Stats Card */}
-            <div className="group bg-gradient-to-br from-[#F7921A]/5 via-[#8BABFF]/3 to-transparent rounded-xl p-4 border border-[#F7921A]/20 transition-all hover:shadow-lg hover:border-[#F7921A]/40 cursor-pointer relative overflow-hidden">
-              <div className="absolute -top-20 -right-20 w-64 h-64 rounded-full bg-[#F7921A]/3 blur-[80px] opacity-0 group-hover:opacity-50 transition-opacity duration-700"></div>
-              <div className="absolute -bottom-20 -left-20 w-64 h-64 rounded-full bg-[#8BABFF]/3 blur-[80px] opacity-0 group-hover:opacity-50 transition-opacity duration-700"></div>
+            <div className="group bg-gradient-to-br from-[#5C8EFF]/5 via-[#5C8EFF]/3 to-transparent rounded-xl p-4 border border-[#5C8EFF]/20 transition-all hover:shadow-lg hover:border-[#5C8EFF]/40 cursor-pointer relative overflow-hidden">
+              <div className="absolute -top-20 -right-20 w-64 h-64 rounded-full bg-[#5C8EFF]/3 blur-[80px] opacity-0 group-hover:opacity-50 transition-opacity duration-700"></div>
+              <div className="absolute -bottom-20 -left-20 w-64 h-64 rounded-full bg-[#5C8EFF]/3 blur-[80px] opacity-0 group-hover:opacity-50 transition-opacity duration-700"></div>
 
               <div className="flex justify-between items-center mb-2 relative z-10">
                 <h3 className="text-lg font-bold text-black dark:text-white">Stats</h3>
-                <div className="px-2 py-1 bg-[#5C8EFF]/10 border border-[#5C8EFF]/30 text-[#5C8EFF] dark:text-white rounded-full text-xs font-medium whitespace-nowrap">
+                <div className="px-2 py-1 bg-[#F6921A]/10 border border-[#F6921A]/30 text-[#F6921A] dark:text-white rounded-full text-xs font-medium whitespace-nowrap">
                   ${isHashrateLoading ? '...' : (hashrateData?.elaPrice?.toFixed(2) || '0.00')} Per ELA
                 </div>
               </div>
@@ -186,13 +186,13 @@ export default function ElaUtilityPage() {
             </div>
 
             {/* Security Card */}
-            <div className="group bg-gradient-to-br from-[#8BABFF]/5 via-[#F7921A]/3 to-transparent rounded-xl p-4 border border-[#8BABFF]/20 transition-all hover:shadow-lg hover:border-[#8BABFF]/40 cursor-pointer relative overflow-hidden">
-              <div className="absolute -top-20 -right-20 w-64 h-64 rounded-full bg-[#8BABFF]/3 blur-[80px] opacity-0 group-hover:opacity-50 transition-opacity duration-700"></div>
-              <div className="absolute -bottom-20 -left-20 w-64 h-64 rounded-full bg-[#F7921A]/3 blur-[80px] opacity-0 group-hover:opacity-50 transition-opacity duration-700"></div>
+            <div className="group bg-gradient-to-br from-[#5C8EFF]/5 via-[#5C8EFF]/3 to-transparent rounded-xl p-4 border border-[#5C8EFF]/20 transition-all hover:shadow-lg hover:border-[#5C8EFF]/40 cursor-pointer relative overflow-hidden">
+              <div className="absolute -top-20 -right-20 w-64 h-64 rounded-full bg-[#5C8EFF]/3 blur-[80px] opacity-0 group-hover:opacity-50 transition-opacity duration-700"></div>
+              <div className="absolute -bottom-20 -left-20 w-64 h-64 rounded-full bg-[#5C8EFF]/3 blur-[80px] opacity-0 group-hover:opacity-50 transition-opacity duration-700"></div>
 
               <div className="flex justify-between items-center mb-2 relative z-10">
                 <h3 className="text-lg font-bold text-black dark:text-white">Security</h3>
-                <div className="px-2 py-1 bg-[#F7921A]/10 border border-[#F7921A]/30 text-[#F7921A] dark:text-white rounded-full text-xs font-medium whitespace-nowrap">
+                <div className="px-2 py-1 bg-[#F6921A]/10 border border-[#F6921A]/30 text-[#F6921A] dark:text-white rounded-full text-xs font-medium whitespace-nowrap">
                   {isHashrateLoading ? '...' : `${((hashrateData?.elastosHashrate ?? 0) / (hashrateData?.bitcoinHashrate ?? 1) * 100).toFixed(2)}%`} Share of BTC
                 </div>
               </div>
@@ -219,13 +219,13 @@ export default function ElaUtilityPage() {
             </div>
 
             {/* Supply Card */}
-            <div className="group bg-gradient-to-br from-[#F7921A]/5 via-[#8BABFF]/3 to-transparent rounded-xl p-4 border border-[#F7921A]/20 transition-all hover:shadow-lg hover:border-[#F7921A]/40 cursor-pointer relative overflow-hidden">
-              <div className="absolute -top-20 -right-20 w-64 h-64 rounded-full bg-[#F7921A]/3 blur-[80px] opacity-0 group-hover:opacity-50 transition-opacity duration-700"></div>
-              <div className="absolute -bottom-20 -left-20 w-64 h-64 rounded-full bg-[#8BABFF]/3 blur-[80px] opacity-0 group-hover:opacity-50 transition-opacity duration-700"></div>
+            <div className="group bg-gradient-to-br from-[#5C8EFF]/5 via-[#5C8EFF]/3 to-transparent rounded-xl p-4 border border-[#5C8EFF]/20 transition-all hover:shadow-lg hover:border-[#5C8EFF]/40 cursor-pointer relative overflow-hidden">
+              <div className="absolute -top-20 -right-20 w-64 h-64 rounded-full bg-[#5C8EFF]/3 blur-[80px] opacity-0 group-hover:opacity-50 transition-opacity duration-700"></div>
+              <div className="absolute -bottom-20 -left-20 w-64 h-64 rounded-full bg-[#5C8EFF]/3 blur-[80px] opacity-0 group-hover:opacity-50 transition-opacity duration-700"></div>
 
               <div className="flex justify-between items-center mb-2 relative z-10">
                 <h3 className="text-lg font-bold text-black dark:text-white">Supply</h3>
-                <div className="px-2 py-1 bg-[#5C8EFF]/10 border border-[#5C8EFF]/30 text-[#5C8EFF] dark:text-white rounded-full text-xs font-medium whitespace-nowrap">
+                <div className="px-2 py-1 bg-[#F6921A]/10 border border-[#F6921A]/30 text-[#F6921A] dark:text-white rounded-full text-xs font-medium whitespace-nowrap">
                   {isSupplyLoading ? '...' : formatNumber(totalSupply)} Circulating
                 </div>
               </div>
@@ -250,13 +250,13 @@ export default function ElaUtilityPage() {
             </div>
 
             {/* Buy ELA Card */}
-            <div className="group bg-gradient-to-br from-[#8BABFF]/5 via-[#F7921A]/3 to-transparent rounded-xl p-4 border border-[#8BABFF]/20 transition-all hover:shadow-lg hover:border-[#8BABFF]/40 cursor-pointer relative overflow-hidden">
-              <div className="absolute -top-20 -right-20 w-64 h-64 rounded-full bg-[#8BABFF]/3 blur-[80px] opacity-0 group-hover:opacity-50 transition-opacity duration-700"></div>
-              <div className="absolute -bottom-20 -left-20 w-64 h-64 rounded-full bg-[#F7921A]/3 blur-[80px] opacity-0 group-hover:opacity-50 transition-opacity duration-700"></div>
+            <div className="group bg-gradient-to-br from-[#5C8EFF]/5 via-[#5C8EFF]/3 to-transparent rounded-xl p-4 border border-[#5C8EFF]/20 transition-all hover:shadow-lg hover:border-[#5C8EFF]/40 cursor-pointer relative overflow-hidden">
+              <div className="absolute -top-20 -right-20 w-64 h-64 rounded-full bg-[#5C8EFF]/3 blur-[80px] opacity-0 group-hover:opacity-50 transition-opacity duration-700"></div>
+              <div className="absolute -bottom-20 -left-20 w-64 h-64 rounded-full bg-[#5C8EFF]/3 blur-[80px] opacity-0 group-hover:opacity-50 transition-opacity duration-700"></div>
 
               <div className="flex justify-between items-center mb-2 relative z-10">
                 <h3 className="text-lg font-bold text-black dark:text-white">Buy ELA</h3>
-                <div className="px-2 py-1 bg-[#F7921A]/10 border border-[#F7921A]/30 text-[#F7921A] dark:text-white rounded-full text-xs font-medium whitespace-nowrap">
+                <div className="px-2 py-1 bg-[#F6921A]/10 border border-[#F6921A]/30 text-[#F6921A] dark:text-white rounded-full text-xs font-medium whitespace-nowrap">
                   {isMarketCapLoading ? '...' : formatNumber(marketCapData?.elastosMarketCap)} MarketCap
                 </div>
               </div>
