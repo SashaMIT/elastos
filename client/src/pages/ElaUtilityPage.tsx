@@ -153,9 +153,9 @@ export default function ElaUtilityPage() {
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-7xl mx-auto">
             {/* Stats Card */}
-            <div className="group bg-gradient-to-br from-[#F7921A]/10 via-[#8BABFF]/5 to-transparent rounded-xl p-4 border border-[#F7921A]/20 transition-all hover:shadow-lg hover:border-[#F7921A]/40 cursor-pointer relative overflow-hidden">
-              <div className="absolute -top-20 -right-20 w-64 h-64 rounded-full bg-[#F7921A]/5 blur-[80px] opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
-              <div className="absolute -bottom-20 -left-20 w-64 h-64 rounded-full bg-[#8BABFF]/5 blur-[80px] opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
+            <div className="group bg-gradient-to-br from-[#F7921A]/5 via-[#8BABFF]/3 to-transparent rounded-xl p-4 border border-[#F7921A]/20 transition-all hover:shadow-lg hover:border-[#F7921A]/40 cursor-pointer relative overflow-hidden">
+              <div className="absolute -top-20 -right-20 w-64 h-64 rounded-full bg-[#F7921A]/3 blur-[80px] opacity-0 group-hover:opacity-50 transition-opacity duration-700"></div>
+              <div className="absolute -bottom-20 -left-20 w-64 h-64 rounded-full bg-[#8BABFF]/3 blur-[80px] opacity-0 group-hover:opacity-50 transition-opacity duration-700"></div>
 
               <div className="flex justify-between items-center mb-2 relative z-10">
                 <h3 className="text-lg font-bold text-black dark:text-white">Stats</h3>
@@ -186,9 +186,9 @@ export default function ElaUtilityPage() {
             </div>
 
             {/* Security Card */}
-            <div className="group bg-gradient-to-br from-[#8BABFF]/10 via-[#F7921A]/5 to-transparent rounded-xl p-4 border border-[#8BABFF]/20 transition-all hover:shadow-lg hover:border-[#8BABFF]/40 cursor-pointer relative overflow-hidden">
-              <div className="absolute -top-20 -right-20 w-64 h-64 rounded-full bg-[#8BABFF]/5 blur-[80px] opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
-              <div className="absolute -bottom-20 -left-20 w-64 h-64 rounded-full bg-[#F7921A]/5 blur-[80px] opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
+            <div className="group bg-gradient-to-br from-[#8BABFF]/5 via-[#F7921A]/3 to-transparent rounded-xl p-4 border border-[#8BABFF]/20 transition-all hover:shadow-lg hover:border-[#8BABFF]/40 cursor-pointer relative overflow-hidden">
+              <div className="absolute -top-20 -right-20 w-64 h-64 rounded-full bg-[#8BABFF]/3 blur-[80px] opacity-0 group-hover:opacity-50 transition-opacity duration-700"></div>
+              <div className="absolute -bottom-20 -left-20 w-64 h-64 rounded-full bg-[#F7921A]/3 blur-[80px] opacity-0 group-hover:opacity-50 transition-opacity duration-700"></div>
 
               <div className="flex justify-between items-center mb-2 relative z-10">
                 <h3 className="text-lg font-bold text-black dark:text-white">Security</h3>
@@ -219,9 +219,9 @@ export default function ElaUtilityPage() {
             </div>
 
             {/* Supply Card */}
-            <div className="group bg-gradient-to-br from-[#F7921A]/10 via-[#8BABFF]/5 to-transparent rounded-xl p-4 border border-[#F7921A]/20 transition-all hover:shadow-lg hover:border-[#F7921A]/40 cursor-pointer relative overflow-hidden">
-              <div className="absolute -top-20 -right-20 w-64 h-64 rounded-full bg-[#F7921A]/5 blur-[80px] opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
-              <div className="absolute -bottom-20 -left-20 w-64 h-64 rounded-full bg-[#8BABFF]/5 blur-[80px] opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
+            <div className="group bg-gradient-to-br from-[#F7921A]/5 via-[#8BABFF]/3 to-transparent rounded-xl p-4 border border-[#F7921A]/20 transition-all hover:shadow-lg hover:border-[#F7921A]/40 cursor-pointer relative overflow-hidden">
+              <div className="absolute -top-20 -right-20 w-64 h-64 rounded-full bg-[#F7921A]/3 blur-[80px] opacity-0 group-hover:opacity-50 transition-opacity duration-700"></div>
+              <div className="absolute -bottom-20 -left-20 w-64 h-64 rounded-full bg-[#8BABFF]/3 blur-[80px] opacity-0 group-hover:opacity-50 transition-opacity duration-700"></div>
 
               <div className="flex justify-between items-center mb-2 relative z-10">
                 <h3 className="text-lg font-bold text-black dark:text-white">Supply</h3>
@@ -250,9 +250,9 @@ export default function ElaUtilityPage() {
             </div>
 
             {/* Buy ELA Card */}
-            <div className="group bg-gradient-to-br from-[#8BABFF]/10 via-[#F7921A]/5 to-transparent rounded-xl p-4 border border-[#8BABFF]/20 transition-all hover:shadow-lg hover:border-[#8BABFF]/40 cursor-pointer relative overflow-hidden">
-              <div className="absolute -top-20 -right-20 w-64 h-64 rounded-full bg-[#8BABFF]/5 blur-[80px] opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
-              <div className="absolute -bottom-20 -left-20 w-64 h-64 rounded-full bg-[#F7921A]/5 blur-[80px] opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
+            <div className="group bg-gradient-to-br from-[#8BABFF]/5 via-[#F7921A]/3 to-transparent rounded-xl p-4 border border-[#8BABFF]/20 transition-all hover:shadow-lg hover:border-[#8BABFF]/40 cursor-pointer relative overflow-hidden">
+              <div className="absolute -top-20 -right-20 w-64 h-64 rounded-full bg-[#8BABFF]/3 blur-[80px] opacity-0 group-hover:opacity-50 transition-opacity duration-700"></div>
+              <div className="absolute -bottom-20 -left-20 w-64 h-64 rounded-full bg-[#F7921A]/3 blur-[80px] opacity-0 group-hover:opacity-50 transition-opacity duration-700"></div>
 
               <div className="flex justify-between items-center mb-2 relative z-10">
                 <h3 className="text-lg font-bold text-black dark:text-white">Buy ELA</h3>
@@ -298,9 +298,9 @@ export default function ElaUtilityPage() {
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 max-w-7xl mx-auto">
           {/* Staking Component */}
-          <div className="bg-gradient-to-br from-[#5C8EFF]/10 to-transparent rounded-xl p-6 border border-[#5C8EFF]/20 transition-all hover:shadow-lg hover:border-[#5C8EFF]/40 relative overflow-hidden">
-            <div className="absolute -top-20 -right-20 w-64 h-64 rounded-full bg-[#5C8EFF]/10 blur-[80px]"></div>
-            <div className="absolute -bottom-20 -left-20 w-64 h-64 rounded-full bg-[#F7921A]/5 blur-[80px]"></div>
+          <div className="bg-gradient-to-br from-[#5C8EFF]/5 to-transparent rounded-xl p-6 border border-[#5C8EFF]/20 transition-all hover:shadow-lg hover:border-[#5C8EFF]/40 relative overflow-hidden">
+            <div className="absolute -top-20 -right-20 w-64 h-64 rounded-full bg-[#5C8EFF]/5 blur-[80px]"></div>
+            <div className="absolute -bottom-20 -left-20 w-64 h-64 rounded-full bg-[#F7921A]/3 blur-[80px]"></div>
 
             <div className="flex flex-col md:flex-row gap-6 items-center">
               <div className="md:w-2/5 relative z-10">
@@ -347,9 +347,9 @@ export default function ElaUtilityPage() {
           </div>
 
           {/* Governance Component */}
-          <div className="bg-gradient-to-br from-[#F7921A]/10 to-transparent rounded-xl p-6 border border-[#F7921A]/20 transition-all hover:shadow-lg hover:border-[#F7921A]/40 relative overflow-hidden">
-            <div className="absolute -top-20 -right-20 w-64 h-64 rounded-full bg-[#F7921A]/10 blur-[80px]"></div>
-            <div className="absolute -bottom-20 -left-20 w-64 h-64 rounded-full bg-[#5C8EFF]/5 blur-[80px]"></div>
+          <div className="bg-gradient-to-br from-[#F7921A]/5 to-transparent rounded-xl p-6 border border-[#F7921A]/20 transition-all hover:shadow-lg hover:border-[#F7921A]/40 relative overflow-hidden">
+            <div className="absolute -top-20 -right-20 w-64 h-64 rounded-full bg-[#F7921A]/5 blur-[80px]"></div>
+            <div className="absolute -bottom-20 -left-20 w-64 h-64 rounded-full bg-[#5C8EFF]/3 blur-[80px]"></div>
 
             <div className="flex flex-col md:flex-row gap-6 items-center">
               <div className="md:w-2/5 relative z-10">
@@ -390,9 +390,9 @@ export default function ElaUtilityPage() {
       </div>
 
       {/* Elastos Essentials Wallet CTA */}
-      <div className="my-20 bg-gradient-to-br from-[#5C8EFF]/10 via-[#F7921A]/5 to-transparent rounded-xl p-8 border border-[#5C8EFF]/20 relative overflow-hidden max-w-7xl mx-auto">
-        <div className="absolute -top-20 -right-20 w-96 h-96 rounded-full bg-[#F7921A]/10 blur-[100px]"></div>
-        <div className="absolute -bottom-20 -left-20 w-96 h-96 rounded-full bg-[#5C8EFF]/10 blur-[100px]"></div>
+      <div className="my-20 bg-gradient-to-br from-[#5C8EFF]/5 via-[#F7921A]/3 to-transparent rounded-xl p-8 border border-[#5C8EFF]/20 relative overflow-hidden max-w-7xl mx-auto">
+        <div className="absolute -top-20 -right-20 w-96 h-96 rounded-full bg-[#F7921A]/5 blur-[100px]"></div>
+        <div className="absolute -bottom-20 -left-20 w-96 h-96 rounded-full bg-[#5C8EFF]/5 blur-[100px]"></div>
 
         <div className="flex flex-col md:flex-row gap-10 items-center relative z-10">
           <div className="md:w-1/3 flex justify-center">
