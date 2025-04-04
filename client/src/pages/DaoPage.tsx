@@ -388,7 +388,7 @@ const DaoPage: React.FC = () => {
       </section>
 
       {/* Powered by Elastos Technology */}
-      <section className="py-16 relative bg-gradient-to-b from-[#171717] via-[#1D1D1D] to-[#171717]">
+      <section className="py-16 relative bg-[#171717]">
         <div className="container mx-auto px-4">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -563,7 +563,7 @@ const DaoPage: React.FC = () => {
       </section>
 
       {/* DAO in Action Stats */}
-      <section className="py-16 relative bg-gradient-to-b from-[#171717] via-[#1D1D1D] to-[#171717]">
+      <section className="py-16 relative bg-[#171717]">
         <div className="container mx-auto px-4">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -755,8 +755,8 @@ const DaoPage: React.FC = () => {
       </section>
 
       {/* Elastos Essentials Wallet Section */}
-      <section className="py-16 relative overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-b from-white/[0.00] via-white/[0.02] to-white/[0.00] z-0"></div>
+      <section className="py-16 relative overflow-hidden bg-[#171717]">
+        <div className="absolute inset-0 bg-[#171717] z-0"></div>
 
         <div className="container mx-auto px-4 relative z-10">
           <div className="max-w-6xl mx-auto">
