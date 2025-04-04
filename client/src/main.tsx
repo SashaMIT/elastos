@@ -30,9 +30,14 @@ const UseCasesPage = lazy(() => import("./pages/UseCasesPage"));
 const Wallet = lazy(() => import("./pages/Wallet")); 
 
 
+// Import the ScrollToTop component
+import { ScrollToTop } from "./components/ScrollToTop";
+
 function Router() {
   return (
     <Layout>
+      {/* Add ScrollToTop to ensure pages load at the top */}
+      <ScrollToTop />
       <Suspense fallback={<div className="w-full h-screen flex items-center justify-center"><Spinner size="lg" color="blue" /></div>}>
         <Switch>
           <Route path="/" component={LandingPage} />
