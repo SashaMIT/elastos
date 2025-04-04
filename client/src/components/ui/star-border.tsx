@@ -18,7 +18,7 @@ export function StarBorder<T extends ElementType = "button">({
   ...props
 }: StarBorderProps<T> & Omit<ComponentPropsWithoutRef<T>, keyof StarBorderProps<T>>) {
   const Component = as || "button"
-  const defaultColor = color || "hsl(30, 100%, 50%)"; // Changed to orange
+  const defaultColor = color || "#5C8EFF"; // Changed to blue
 
   return (
     <Component 

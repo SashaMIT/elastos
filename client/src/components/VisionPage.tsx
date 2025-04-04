@@ -138,7 +138,7 @@ export function VisionPage() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: 0.1 }}
-                className="bg-gradient-to-br from-[#F7921A]/10 via-[#8BABFF]/5 to-transparent rounded-xl p-6 border border-[#F7921A]/20 h-full flex flex-col"
+                className="bg-gradient-to-br from-[#8BABFF]/10 via-[#8BABFF]/5 to-transparent rounded-xl p-6 border border-[#8BABFF]/20 h-full flex flex-col"
               >
                 <div className="flex flex-col sm:flex-row gap-6 items-center sm:items-start">
                   <img 
@@ -148,7 +148,7 @@ export function VisionPage() {
                   />
                   <div>
                     <h3 className="text-xl font-bold text-black dark:text-white mb-1">Rong Chen</h3>
-                    <span className="px-3 py-1 bg-[#F7921A]/10 border border-[#F7921A]/30 text-[#F7921A] dark:text-white rounded-full text-xs font-medium whitespace-nowrap mb-3 inline-block">
+                    <span className="px-3 py-1 bg-[#8BABFF]/10 border border-[#8BABFF]/30 text-[#8BABFF] dark:text-white rounded-full text-xs font-medium whitespace-nowrap mb-3 inline-block">
                       Founder & Lead Architect
                     </span>
                     <p className="text-gray-600 dark:text-gray-300 text-sm mt-3">
