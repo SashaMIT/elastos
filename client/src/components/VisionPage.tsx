@@ -172,7 +172,7 @@ export function VisionPage() {
               >
                 <div className="flex flex-col sm:flex-row gap-6 items-center sm:items-start">
                   <img 
-                    src="/images/Roadmap/Sunny Feng Han in DACA event.jpg" 
+                    src="/images/Sunny.jpeg" 
                     alt="Sunny Feng Han" 
                     className="w-32 h-32 rounded-full object-cover border-2 border-[#8BABFF]/30"
                   />
