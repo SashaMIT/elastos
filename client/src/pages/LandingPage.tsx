@@ -651,7 +651,7 @@ const LandingPage = () => {
           <div className="grid grid-cols-3 md:grid-cols-12 gap-6">
             <ImageZoom
               key="1"
-              src="client/public/images/Roadmap/Elastos Members.jpeg"
+              src="/images/Roadmap/Elastos Members.jpeg"
               alt="Elastos Community Event"
               className="w-full aspect-square object-cover"
               loading="lazy"
@@ -669,7 +669,7 @@ const LandingPage = () => {
             />
             <ImageZoom
               key="3"
-              src="client/public/images/Roadmap/Rong Chen and kevin Zhang hosted a meetup in London.jpeg"
+              src="/images/Roadmap/Rong Chen and kevin Zhang hosted a meetup in London.jpeg"
               alt="Elastos Community Gathering"
               className="w-full aspect-square object-cover"
               loading="lazy"
@@ -705,7 +705,7 @@ const LandingPage = () => {
             />
             <ImageZoom
               key="7"
-              src="client/public/images/Community/EiJX5nNVoAEe9pX.jpeg"
+              src="/images/Community/EiJX5nNVoAEe9pX.jpeg"
               alt="Elastos Community Event"
               className="w-full aspect-square object-cover"
               loading="lazy"
@@ -813,8 +813,8 @@ const LandingPage = () => {
             />
             <ImageZoom
               key="19"
-              src="/images/Community/F-Jr2ZIaQAAiRH4.jpeg"
-              alt="Elastos Community Gathering"
+              src="/images/Roadmap/Elastos 1 Year.jpeg"
+              alt="Elastos 1 Year"
               className="w-full aspect-square object-cover"
               loading="lazy"
               width={300}
@@ -849,8 +849,8 @@ const LandingPage = () => {
             />
             <ImageZoom
               key="23"
-              src="client/public/images/Roadmap/Rong Pomp.png"
-              alt="Elastos Community Gathering"
+              src="/images/Roadmap/Rong Pomp.png"
+              alt="Rong Chen with Pomp"
               className="w-full aspect-square object-cover"
               loading="lazy"
               width={300}
