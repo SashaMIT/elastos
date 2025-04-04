@@ -594,8 +594,13 @@ const LandingPage = () => {
 
       {/* Testimonials Section */}
       <div className="w-full bg-background dark:bg-[#171717]">
+        <div className="container mx-auto px-4 md:px-0 mb-8">
+          <h3 className="text-xl md:text-2xl lg:text-3xl font-[400] leading-tight text-left mb-4 text-black dark:text-white">
+            Our Community
+          </h3>
+        </div>
         <TestimonialsSection 
-          title="Our Community" 
+          title="" 
           description=""
           testimonials={[
             {
