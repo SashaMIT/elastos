@@ -103,7 +103,9 @@ export default function RoadmapPage() {
       </div>
 
       <div className="container mx-auto px-4 py-12 bg-[#171717]">
-        <div className="w-full max-w-5xl mx-auto px-4 py-12 sm:px-6 lg:px-8">
+        <ForwardRoadmap />
+        
+        <div className="w-full max-w-5xl mx-auto px-4 py-16 sm:px-6 lg:px-8">
           <div className="bg-gradient-to-br from-[#5C8EFF]/10 to-[#F6921A]/10 rounded-xl p-8 border border-[#5C8EFF]/30 relative">
             {/* Background blur elements */}
             <div className="absolute -top-20 -right-20 w-64 h-64 rounded-full bg-[#F7921A]/10 blur-[80px]"></div>
@@ -129,10 +131,6 @@ export default function RoadmapPage() {
               </div>
             </div>
           </div>
-        </div>
-
-        <div className="mt-8">
-          <ForwardRoadmap />
         </div>
         
         <div className="mt-20">
