@@ -93,7 +93,8 @@ export function ScalingSection() {
                   <span className="px-4 py-1 bg-[#5C8EFF]/10 border border-[#5C8EFF]/30 text-white rounded-full text-xs font-medium">LIVE</span>
                 </div>
                 <p className="text-muted-foreground mb-6 max-w-xl">
-                  Leveraging merged mining with Bitcoin, Elastos delivers state-of-the-art blockchain protection for your digital assets and online identity.
+                  We anchor our security to Bitcoin’s proof-of-work hashpower and utilize multiple sidechains for specialized functions.
+
                 </p>
                 <div className="flex gap-4">
                   <button className="w-8 h-8 rounded-full border border-[#F6921A] bg-[#F6921A]/30 flex items-center justify-center transition-all hover:bg-[#F6921A]/50 hover:scale-110">
@@ -115,7 +116,7 @@ export function ScalingSection() {
                   <span className="px-4 py-1 bg-[#5C8EFF]/10 border border-[#5C8EFF]/30 text-white rounded-full text-xs font-medium">LIVE</span>
                 </div>
                 <p className="text-muted-foreground mb-6 max-w-xl">
-                  Unlock your Bitcoins value without selling. No custodians or wrapping, supporting native BTC-backed loans, swaps, and stablecoin issuence.
+                  ELA, Secured by Bitcoin is the oil of the Elastos SmartWeb. Use your Bitcoin for DeFi without custodians or ever moving it off the Bitcoin mainchain.
                 </p>
                 <div className="flex gap-4">
                   <button className="w-8 h-8 rounded-full border border-[#F6921A] bg-[#F6921A]/30 flex items-center justify-center transition-all hover:bg-[#F6921A]/50 hover:scale-110">
@@ -137,7 +138,7 @@ export function ScalingSection() {
                   <span className="px-4 py-1 bg-[#5C8EFF]/10 border border-[#5C8EFF]/30 text-white rounded-full text-xs font-medium whitespace-nowrap">IN PROGRESS</span>
                 </div>
                 <p className="text-muted-foreground mb-6 max-w-xl">
-                  Combining blockchain, decentralized identity, and secure off-chain data storage and networking, Elastos is your gateway to a resilient smart web.
+                  Combining blockchain, decentralized identity, and secure off-chain data storage and networking, Elastos is your gateway to owning your digital life.
                 </p>
                 <div className="flex gap-4">
                   <button className="w-8 h-8 rounded-full border border-[#F6921A] bg-[#F6921A]/30 flex items-center justify-center transition-all hover:bg-[#F6921A]/50 hover:scale-110">
