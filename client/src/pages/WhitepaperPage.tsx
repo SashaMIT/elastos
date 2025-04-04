@@ -27,7 +27,7 @@ const WhitepaperPage = () => {
           <Card className="overflow-hidden hover:shadow-lg transition-shadow duration-300 border border-gray-100 dark:border-gray-800">
             <div className="h-48 bg-gray-200 dark:bg-gray-700 relative overflow-hidden">
               <img 
-                src="/whitepapers/whitepaper-cover.jpg" 
+                src="/whitepapers/original-wp-cover.png" 
                 alt="Elastos Whitepaper Cover"
                 className="w-full h-full object-cover"
                 onError={(e) => {
@@ -88,7 +88,7 @@ const WhitepaperPage = () => {
           <Card className="overflow-hidden hover:shadow-lg transition-shadow duration-300 border border-gray-100 dark:border-gray-800">
             <div className="h-48 bg-gray-200 dark:bg-gray-700 relative overflow-hidden">
               <img 
-                src="/whitepapers/litepaper-cover.jpg" 
+                src="/whitepapers/litepaper-cover.png" 
                 alt="Elastos Litepaper Cover"
                 className="w-full h-full object-cover"
                 onError={(e) => {
@@ -148,7 +148,7 @@ const WhitepaperPage = () => {
           <Card className="overflow-hidden hover:shadow-lg transition-shadow duration-300 border border-gray-100 dark:border-gray-800">
             <div className="h-48 bg-gray-200 dark:bg-gray-700 relative overflow-hidden">
               <img 
-                src="/whitepapers/technical-docs-cover.jpg" 
+                src="/whitepapers/tech-docs-cover.png" 
                 alt="Elastos Technical Documentation Cover"
                 className="w-full h-full object-cover"
                 onError={(e) => {
