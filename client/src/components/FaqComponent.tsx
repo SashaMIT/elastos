@@ -56,18 +56,18 @@ const FaqComponent: React.FC<FaqComponentProps> = ({ className = "", showButtons
   return (
     <Card className={`w-full overflow-hidden bg-card dark:bg-[#171717] border-0 shadow-none mt-20 ${className}`} style={{ boxShadow: 'none' }}>
       <CardHeader className="p-6 pl-0 pb-2">
-        <div className="flex flex-col md:flex-row md:items-center md:justify-between mb-2">
-          <CardTitle className="text-3xl font-[400] text-foreground dark:text-foreground mb-2 md:mb-0" style={{ fontWeight: 400 }}>Your Questions</CardTitle>
+        <div className="flex flex-row items-center justify-between mb-2">
+          <CardTitle className="text-2xl md:text-3xl font-[400] text-foreground dark:text-foreground mb-0" style={{ fontWeight: 400 }}>Your Questions</CardTitle>
           {showButtons && (
             <a 
               href="https://chatgpt.com/g/g-j1VMlnktX-elastos" 
               target="_blank" 
               rel="noopener noreferrer"
-              className="inline-flex items-center justify-center rounded-full bg-transparent text-[#5C8EFF] px-4 py-2 text-sm font-medium border border-[#5C8EFF] hover:bg-[#5C8EFF]/10 transition-colors gap-2 self-start md:self-center"
+              className="inline-flex items-center justify-center rounded-full bg-transparent text-[#5C8EFF] px-3 py-1.5 md:px-4 md:py-2 text-sm font-medium border border-[#5C8EFF] hover:bg-[#5C8EFF]/10 transition-colors gap-1 md:gap-2"
             >
               Talk with AI
-              <div className="w-6 h-6 rounded-full border border-[#5C8EFF] flex items-center justify-center">
-                <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+              <div className="w-5 h-5 md:w-6 md:h-6 rounded-full border border-[#5C8EFF] flex items-center justify-center">
+                <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                   <path d="M5 12h14"></path>
                   <path d="m12 5 7 7-7 7"></path>
                 </svg>
