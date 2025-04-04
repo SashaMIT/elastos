@@ -6,6 +6,7 @@ import { LogoCarouselDemo } from "@/components/LogoCarouselDemo";
 import { ScalingSection } from "@/components/ScalingSection";
 import { CenteredSpinner } from "@/components/ui/centered-spinner";
 import { TestimonialsSection } from "@/components/TestimonialsSection";
+import { ImageZoom } from "@/components/ui/zoomable-image";
 
 import { Card, CardContent } from '@/components/ui/card';
 import {
@@ -589,6 +590,61 @@ const LandingPage = () => {
             }
           ]}
         />
+        
+        {/* Community Image Grid */}
+        <div className="container mx-auto px-4 py-16">
+          <h2 className="text-2xl md:text-3xl font-bold mb-10 text-center text-black dark:text-white">Community Events & Engagement</h2>
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
+            <ImageZoom
+              key="1"
+              src="/images/Roadmap/BeL2 booth in Bitcoin 2024.jpeg"
+              alt="BeL2 booth in Bitcoin 2024"
+              className="w-full h-[200px] object-cover"
+            />
+            <ImageZoom
+              key="2"
+              src="/images/Roadmap/The Node Effect event Singapore.jpeg"
+              alt="The Node Effect event Singapore"
+              className="w-full h-[200px] object-cover"
+            />
+            <ImageZoom
+              key="3"
+              src="/images/Roadmap/Cyber Republic DAO meetup.jpeg"
+              alt="Cyber Republic DAO meetup"
+              className="w-full h-[200px] object-cover"
+            />
+            <ImageZoom
+              key="4"
+              src="/images/Roadmap/Sash as speaker in Bitcoin2024.jpeg"
+              alt="Sash as speaker in Bitcoin2024"
+              className="w-full h-[200px] object-cover"
+            />
+            <ImageZoom
+              key="5"
+              src="/images/Roadmap/Elastos in Couinstore event.jpeg"
+              alt="Elastos in Couinstore event"
+              className="w-full h-[200px] object-cover"
+            />
+            <ImageZoom
+              key="6"
+              src="/images/Roadmap/Elastos hosted a meetup in Hong Kong.jpeg"
+              alt="Elastos hosted a meetup in Hong Kong"
+              className="w-full h-[200px] object-cover"
+            />
+            <ImageZoom
+              key="7"
+              src="/images/Roadmap/Rong Chen and Kevin Zhang hosted a meetup in Barcelona.jpeg"
+              alt="Rong Chen and Kevin Zhang hosted a meetup in Barcelona"
+              className="w-full h-[200px] object-cover"
+            />
+            <ImageZoom
+              key="8"
+              src="/images/Roadmap/Sunny Feng Han at Teamz Web Summit in Tokyo.jpeg"
+              alt="Sunny Feng Han at Teamz Web Summit in Tokyo"
+              className="w-full h-[200px] object-cover"
+            />
+          </div>
+        </div>
       </div>
 
       <StackedCircularFooter />
