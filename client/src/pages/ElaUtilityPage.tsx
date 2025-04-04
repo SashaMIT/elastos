@@ -154,131 +154,167 @@ export default function ElaUtilityPage() {
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-7xl mx-auto">
             {/* Stats Card */}
-            <div className="group bg-gradient-to-br from-[#5C8EFF]/5 via-[#5C8EFF]/3 to-transparent rounded-xl p-4 border border-[#5C8EFF]/20 transition-all hover:shadow-lg hover:border-[#5C8EFF]/40 cursor-pointer relative overflow-hidden">
-              <div className="absolute -top-20 -right-20 w-64 h-64 rounded-full bg-[#5C8EFF]/3 blur-[80px] opacity-0 group-hover:opacity-50 transition-opacity duration-700"></div>
-              <div className="absolute -bottom-20 -left-20 w-64 h-64 rounded-full bg-[#5C8EFF]/3 blur-[80px] opacity-0 group-hover:opacity-50 transition-opacity duration-700"></div>
+            <div className="min-h-[14rem] list-none">
+              <div className="relative h-full rounded-[1.25rem] p-2 md:rounded-[1.5rem] md:p-3">
+                <GlowingEffect
+                  spread={40}
+                  glow={true}
+                  disabled={false}
+                  proximity={64}
+                  inactiveZone={0.01}
+                  borderWidth={3}
+                />
+                <div className="relative flex h-full flex-col justify-between overflow-hidden rounded-xl bg-gradient-to-br from-[#5C8EFF]/[0.15] to-[#5C8EFF]/[0.03] p-4 shadow-sm dark:shadow-[0px_0px_27px_0px_rgba(45,45,45,0.3)]">
+                  <div className="flex justify-between items-center mb-2 relative z-10">
+                    <h3 className="text-lg font-bold text-black dark:text-white">Stats</h3>
+                    <div className="px-2 py-1 bg-[#F6921A]/10 border border-[#F6921A]/30 text-[#F6921A] dark:text-white rounded-full text-xs font-medium whitespace-nowrap">
+                      ${isHashrateLoading ? '...' : (hashrateData?.elaPrice?.toFixed(2) || '0.00')} Per ELA
+                    </div>
+                  </div>
 
-              <div className="flex justify-between items-center mb-2 relative z-10">
-                <h3 className="text-lg font-bold text-black dark:text-white">Stats</h3>
-                <div className="px-2 py-1 bg-[#F6921A]/10 border border-[#F6921A]/30 text-[#F6921A] dark:text-white rounded-full text-xs font-medium whitespace-nowrap">
-                  ${isHashrateLoading ? '...' : (hashrateData?.elaPrice?.toFixed(2) || '0.00')} Per ELA
+                  <div className="flex flex-col justify-center items-center mb-3 relative z-10">
+                    <div className="text-3xl font-[200] text-white mb-1">
+                      {networkStats?.walletAddresses ? formatNumber(networkStats.walletAddresses) : 'Loading...'}
+                    </div>
+                    <div className="text-xs text-gray-400">Active Wallets</div>
+                  </div>
+
+                  <p className="text-gray-600 dark:text-gray-300 text-xs mb-3 relative z-10">
+                    Track real-time metrics for Elastos blockchain performance and user adoption.
+                  </p>
+
+                  <a href="/stats" className="inline-flex px-3 py-2 bg-[rgba(246,146,26,0.10)] text-[#F6921A] rounded-full font-medium transition-all items-center gap-1 border border-[rgba(246,146,26,0.50)] text-sm relative z-10 hover:bg-[rgba(246,146,26,0.15)]">
+                    <span>Learn More</span>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 35 34" fill="none">
+                      <circle cx="17.333" cy="17" r="16.75" stroke="#F6921A" strokeOpacity="0.5" strokeWidth="0.5"/>
+                      <path d="M17.3338 22.9405L23.2741 17.0002L17.3338 11.0598L16.4162 11.9774L20.7628 16.324H10.8622V17.6763H20.7628L16.4162 22.0229L17.3338 22.9405Z" fill="#F6921A"/>
+                      <path d="M20.7628 17.6638H10.8747V16.3365H20.7628H20.7929L20.7716 16.3152L16.4338 11.9774L17.3338 11.0775L23.2564 17.0002L17.3338 22.9228L16.4338 22.0229L20.7716 17.6851L20.7929 17.6638H20.7628Z" stroke="#F6921A" strokeOpacity="0.5" strokeWidth="0.025"/>
+                    </svg>
+                  </a>
                 </div>
               </div>
-
-              <div className="flex flex-col justify-center items-center mb-3 relative z-10">
-                <div className="text-3xl font-bold text-white mb-1">
-                  {networkStats?.walletAddresses ? formatNumber(networkStats.walletAddresses) : 'Loading...'}
-                </div>
-                <div className="text-xs text-gray-400">Active Wallets</div>
-              </div>
-
-              <p className="text-gray-600 dark:text-gray-300 text-xs mb-3 relative z-10">
-                Track real-time metrics for Elastos blockchain performance and user adoption.
-              </p>
-
-              <a href="/stats" className="inline-flex px-3 py-2 bg-[rgba(246,146,26,0.10)] text-[#F6921A] rounded-full font-medium transition-all items-center gap-1 border border-[rgba(246,146,26,0.50)] text-sm relative z-10 hover:bg-[rgba(246,146,26,0.15)]">
-                <span>Learn More</span>
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 35 34" fill="none">
-                  <circle cx="17.333" cy="17" r="16.75" stroke="#F6921A" strokeOpacity="0.5" strokeWidth="0.5"/>
-                  <path d="M17.3338 22.9405L23.2741 17.0002L17.3338 11.0598L16.4162 11.9774L20.7628 16.324H10.8622V17.6763H20.7628L16.4162 22.0229L17.3338 22.9405Z" fill="#F6921A"/>
-                  <path d="M20.7628 17.6638H10.8747V16.3365H20.7628H20.7929L20.7716 16.3152L16.4338 11.9774L17.3338 11.0775L23.2564 17.0002L17.3338 22.9228L16.4338 22.0229L20.7716 17.6851L20.7929 17.6638H20.7628Z" stroke="#F6921A" strokeOpacity="0.5" strokeWidth="0.025"/>
-                </svg>
-              </a>
             </div>
 
             {/* Security Card */}
-            <div className="group bg-gradient-to-br from-[#5C8EFF]/5 via-[#5C8EFF]/3 to-transparent rounded-xl p-4 border border-[#5C8EFF]/20 transition-all hover:shadow-lg hover:border-[#5C8EFF]/40 cursor-pointer relative overflow-hidden">
-              <div className="absolute -top-20 -right-20 w-64 h-64 rounded-full bg-[#5C8EFF]/3 blur-[80px] opacity-0 group-hover:opacity-50 transition-opacity duration-700"></div>
-              <div className="absolute -bottom-20 -left-20 w-64 h-64 rounded-full bg-[#5C8EFF]/3 blur-[80px] opacity-0 group-hover:opacity-50 transition-opacity duration-700"></div>
+            <div className="min-h-[14rem] list-none">
+              <div className="relative h-full rounded-[1.25rem] p-2 md:rounded-[1.5rem] md:p-3">
+                <GlowingEffect
+                  spread={40}
+                  glow={true}
+                  disabled={false}
+                  proximity={64}
+                  inactiveZone={0.01}
+                  borderWidth={3}
+                />
+                <div className="relative flex h-full flex-col justify-between overflow-hidden rounded-xl bg-gradient-to-br from-[#5C8EFF]/[0.15] to-[#5C8EFF]/[0.03] p-4 shadow-sm dark:shadow-[0px_0px_27px_0px_rgba(45,45,45,0.3)]">
+                  <div className="flex justify-between items-center mb-2 relative z-10">
+                    <h3 className="text-lg font-bold text-black dark:text-white">Security</h3>
+                    <div className="px-2 py-1 bg-[#F6921A]/10 border border-[#F6921A]/30 text-[#F6921A] dark:text-white rounded-full text-xs font-medium whitespace-nowrap">
+                      {isHashrateLoading ? '...' : `${((hashrateData?.elastosHashrate ?? 0) / (hashrateData?.bitcoinHashrate ?? 1) * 100).toFixed(2)}%`} Share of BTC
+                    </div>
+                  </div>
 
-              <div className="flex justify-between items-center mb-2 relative z-10">
-                <h3 className="text-lg font-bold text-black dark:text-white">Security</h3>
-                <div className="px-2 py-1 bg-[#F6921A]/10 border border-[#F6921A]/30 text-[#F6921A] dark:text-white rounded-full text-xs font-medium whitespace-nowrap">
-                  {isHashrateLoading ? '...' : `${((hashrateData?.elastosHashrate ?? 0) / (hashrateData?.bitcoinHashrate ?? 1) * 100).toFixed(2)}%`} Share of BTC
+                  <div className="flex flex-col justify-center items-center mb-3 relative z-10">
+                    <div className="text-3xl font-[200] text-white mb-1">
+                      {isHashrateLoading ? '...' : `${(hashrateData?.elastosHashrate ?? 0).toFixed(2)} EH/s`}
+                    </div>
+                    <div className="text-xs text-gray-400">Bitcoin Security</div>
+                  </div>
+
+                  <p className="text-gray-600 dark:text-gray-300 text-xs mb-3 relative z-10">
+                    Explore how ELA maintains Bitcoin-level security and protects your assets.
+                  </p>
+
+                  <a href="/security" className="inline-flex px-3 py-2 bg-[rgba(246,146,26,0.10)] text-[#F6921A] rounded-full font-medium transition-all items-center gap-1 border border-[rgba(246,146,26,0.50)] text-sm relative z-10 hover:bg-[rgba(246,146,26,0.15)]">
+                    <span>Learn More</span>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 35 34" fill="none">
+                      <circle cx="17.333" cy="17" r="16.75" stroke="#F6921A" strokeOpacity="0.5" strokeWidth="0.5"/>
+                      <path d="M17.3338 22.9405L23.2741 17.0002L17.3338 11.0598L16.4162 11.9774L20.7628 16.324H10.8622V17.6763H20.7628L16.4162 22.0229L17.3338 22.9405Z" fill="#F6921A"/>
+                      <path d="M20.7628 17.6638H10.8747V16.3365H20.7628H20.7929L20.7716 16.3152L16.4338 11.9774L17.3338 11.0775L23.2564 17.0002L17.3338 22.9228L16.4338 22.0229L20.7716 17.6851L20.7929 17.6638H20.7628Z" stroke="#F6921A" strokeOpacity="0.5" strokeWidth="0.025"/>
+                    </svg>
+                  </a>
                 </div>
               </div>
-
-              <div className="flex flex-col justify-center items-center mb-3 relative z-10">
-                <div className="text-3xl font-bold text-white mb-1">
-                  {isHashrateLoading ? '...' : `${(hashrateData?.elastosHashrate ?? 0).toFixed(2)} EH/s`}
-                </div>
-                <div className="text-xs text-gray-400">Bitcoin Security</div>
-              </div>
-
-              <p className="text-gray-600 dark:text-gray-300 text-xs mb-3 relative z-10">
-                Explore how ELA maintains Bitcoin-level security and protects your assets.
-              </p>
-
-              <a href="/security" className="inline-flex px-3 py-2 bg-[rgba(246,146,26,0.10)] text-[#F6921A] rounded-full font-medium transition-all items-center gap-1 border border-[rgba(246,146,26,0.50)] text-sm relative z-10 hover:bg-[rgba(246,146,26,0.15)]">
-                <span>Learn More</span>
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 35 34" fill="none">
-                  <circle cx="17.333" cy="17" r="16.75" stroke="#F6921A" strokeOpacity="0.5" strokeWidth="0.5"/>
-                  <path d="M17.3338 22.9405L23.2741 17.0002L17.3338 11.0598L16.4162 11.9774L20.7628 16.324H10.8622V17.6763H20.7628L16.4162 22.0229L17.3338 22.9405Z" fill="#F6921A"/>
-                  <path d="M20.7628 17.6638H10.8747V16.3365H20.7628H20.7929L20.7716 16.3152L16.4338 11.9774L17.3338 11.0775L23.2564 17.0002L17.3338 22.9228L16.4338 22.0229L20.7716 17.6851L20.7929 17.6638H20.7628Z" stroke="#F6921A" strokeOpacity="0.5" strokeWidth="0.025"/>
-                </svg>
-              </a>
             </div>
 
             {/* Supply Card */}
-            <div className="group bg-gradient-to-br from-[#5C8EFF]/5 via-[#5C8EFF]/3 to-transparent rounded-xl p-4 border border-[#5C8EFF]/20 transition-all hover:shadow-lg hover:border-[#5C8EFF]/40 cursor-pointer relative overflow-hidden">
-              <div className="absolute -top-20 -right-20 w-64 h-64 rounded-full bg-[#5C8EFF]/3 blur-[80px] opacity-0 group-hover:opacity-50 transition-opacity duration-700"></div>
-              <div className="absolute -bottom-20 -left-20 w-64 h-64 rounded-full bg-[#5C8EFF]/3 blur-[80px] opacity-0 group-hover:opacity-50 transition-opacity duration-700"></div>
+            <div className="min-h-[14rem] list-none">
+              <div className="relative h-full rounded-[1.25rem] p-2 md:rounded-[1.5rem] md:p-3">
+                <GlowingEffect
+                  spread={40}
+                  glow={true}
+                  disabled={false}
+                  proximity={64}
+                  inactiveZone={0.01}
+                  borderWidth={3}
+                />
+                <div className="relative flex h-full flex-col justify-between overflow-hidden rounded-xl bg-gradient-to-br from-[#5C8EFF]/[0.15] to-[#5C8EFF]/[0.03] p-4 shadow-sm dark:shadow-[0px_0px_27px_0px_rgba(45,45,45,0.3)]">
+                  <div className="flex justify-between items-center mb-2 relative z-10">
+                    <h3 className="text-lg font-bold text-black dark:text-white">Supply</h3>
+                    <div className="px-2 py-1 bg-[#F6921A]/10 border border-[#F6921A]/30 text-[#F6921A] dark:text-white rounded-full text-xs font-medium whitespace-nowrap">
+                      {isSupplyLoading ? '...' : formatNumber(totalSupply)} Circulating
+                    </div>
+                  </div>
 
-              <div className="flex justify-between items-center mb-2 relative z-10">
-                <h3 className="text-lg font-bold text-black dark:text-white">Supply</h3>
-                <div className="px-2 py-1 bg-[#F6921A]/10 border border-[#F6921A]/30 text-[#F6921A] dark:text-white rounded-full text-xs font-medium whitespace-nowrap">
-                  {isSupplyLoading ? '...' : formatNumber(totalSupply)} Circulating
+                  <div className="flex flex-col justify-center items-center mb-3 relative z-10">
+                    <div className="text-3xl font-[200] text-white mb-1">28.2M</div>
+                    <div className="text-xs text-gray-400">Max Supply</div>
+                  </div>
+
+                  <p className="text-gray-600 dark:text-gray-300 text-xs mb-3 relative z-10">
+                    Understand ELA's tokenomics, emission schedule, and circulation metrics.
+                  </p>
+
+                  <a href="/supply" className="inline-flex px-3 py-2 bg-[rgba(246,146,26,0.10)] text-[#F6921A] rounded-full font-medium transition-all items-center gap-1 border border-[rgba(246,146,26,0.50)] text-sm relative z-10 hover:bg-[rgba(246,146,26,0.15)]">
+                    <span>Learn More</span>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 35 34" fill="none">
+                      <circle cx="17.333" cy="17" r="16.75" stroke="#F6921A" strokeOpacity="0.5" strokeWidth="0.5"/>
+                      <path d="M17.3338 22.9405L23.2741 17.0002L17.3338 11.0598L16.4162 11.9774L20.7628 16.324H10.8622V17.6763H20.7628L16.4162 22.0229L17.3338 22.9405Z" fill="#F6921A"/>
+                      <path d="M20.7628 17.6638H10.8747V16.3365H20.7628H20.7929L20.7716 16.3152L16.4338 11.9774L17.3338 11.0775L23.2564 17.0002L17.3338 22.9228L16.4338 22.0229L20.7716 17.6851L20.7929 17.6638H20.7628Z" stroke="#F6921A" strokeOpacity="0.5" strokeWidth="0.025"/>
+                    </svg>
+                  </a>
                 </div>
               </div>
-
-              <div className="flex flex-col justify-center items-center mb-3 relative z-10">
-                <div className="text-3xl font-bold text-white mb-1">28.2M</div>
-                <div className="text-xs text-gray-400">Max Supply</div>
-              </div>
-
-              <p className="text-gray-600 dark:text-gray-300 text-xs mb-3 relative z-10">
-                Understand ELA's tokenomics, emission schedule, and circulation metrics.
-              </p>
-
-              <a href="/supply" className="inline-flex px-3 py-2 bg-[rgba(246,146,26,0.10)] text-[#F6921A] rounded-full font-medium transition-all items-center gap-1 border border-[rgba(246,146,26,0.50)] text-sm relative z-10 hover:bg-[rgba(246,146,26,0.15)]">
-                <span>Learn More</span>
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 35 34" fill="none">
-                  <circle cx="17.333" cy="17" r="16.75" stroke="#F6921A" strokeOpacity="0.5" strokeWidth="0.5"/>
-                  <path d="M17.3338 22.9405L23.2741 17.0002L17.3338 11.0598L16.4162 11.9774L20.7628 16.324H10.8622V17.6763H20.7628L16.4162 22.0229L17.3338 22.9405Z" fill="#F6921A"/>
-                  <path d="M20.7628 17.6638H10.8747V16.3365H20.7628H20.7929L20.7716 16.3152L16.4338 11.9774L17.3338 11.0775L23.2564 17.0002L17.3338 22.9228L16.4338 22.0229L20.7716 17.6851L20.7929 17.6638H20.7628Z" stroke="#F6921A" strokeOpacity="0.5" strokeWidth="0.025"/>
-                </svg>
-              </a>
             </div>
 
             {/* Buy ELA Card */}
-            <div className="group bg-gradient-to-br from-[#5C8EFF]/5 via-[#5C8EFF]/3 to-transparent rounded-xl p-4 border border-[#5C8EFF]/20 transition-all hover:shadow-lg hover:border-[#5C8EFF]/40 cursor-pointer relative overflow-hidden">
-              <div className="absolute -top-20 -right-20 w-64 h-64 rounded-full bg-[#5C8EFF]/3 blur-[80px] opacity-0 group-hover:opacity-50 transition-opacity duration-700"></div>
-              <div className="absolute -bottom-20 -left-20 w-64 h-64 rounded-full bg-[#5C8EFF]/3 blur-[80px] opacity-0 group-hover:opacity-50 transition-opacity duration-700"></div>
+            <div className="min-h-[14rem] list-none">
+              <div className="relative h-full rounded-[1.25rem] p-2 md:rounded-[1.5rem] md:p-3">
+                <GlowingEffect
+                  spread={40}
+                  glow={true}
+                  disabled={false}
+                  proximity={64}
+                  inactiveZone={0.01}
+                  borderWidth={3}
+                />
+                <div className="relative flex h-full flex-col justify-between overflow-hidden rounded-xl bg-gradient-to-br from-[#5C8EFF]/[0.15] to-[#5C8EFF]/[0.03] p-4 shadow-sm dark:shadow-[0px_0px_27px_0px_rgba(45,45,45,0.3)]">
+                  <div className="flex justify-between items-center mb-2 relative z-10">
+                    <h3 className="text-lg font-bold text-black dark:text-white">Buy ELA</h3>
+                    <div className="px-2 py-1 bg-[#F6921A]/10 border border-[#F6921A]/30 text-[#F6921A] dark:text-white rounded-full text-xs font-medium whitespace-nowrap">
+                      {isMarketCapLoading ? '...' : formatNumber(marketCapData?.elastosMarketCap)} MarketCap
+                    </div>
+                  </div>
 
-              <div className="flex justify-between items-center mb-2 relative z-10">
-                <h3 className="text-lg font-bold text-black dark:text-white">Buy ELA</h3>
-                <div className="px-2 py-1 bg-[#F6921A]/10 border border-[#F6921A]/30 text-[#F6921A] dark:text-white rounded-full text-xs font-medium whitespace-nowrap">
-                  {isMarketCapLoading ? '...' : formatNumber(marketCapData?.elastosMarketCap)} MarketCap
+                  <div className="flex flex-col justify-center items-center mb-3 relative z-10">
+                    <div className="text-3xl font-[200] text-white mb-1">${isHashrateLoading ? '...' : (hashrateData?.elaPrice?.toFixed(2) || '0.00')}</div>
+                    <div className="text-xs text-gray-400">Current Price</div>
+                  </div>
+
+                  <p className="text-gray-600 dark:text-gray-300 text-xs mb-3 relative z-10">
+                    Get ELA on leading exchanges and decentralized platforms for easy access.
+                  </p>
+
+                  <a href="/buy-ela" className="inline-flex px-3 py-2 bg-[rgba(246,146,26,0.10)] text-[#F6921A] rounded-full font-medium transition-all items-center gap-1 border border-[rgba(246,146,26,0.50)] text-sm relative z-10 hover:bg-[rgba(246,146,26,0.15)]">
+                    <span>Learn More</span>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 35 34" fill="none">
+                      <circle cx="17.333" cy="17" r="16.75" stroke="#F6921A" strokeOpacity="0.5" strokeWidth="0.5"/>
+                      <path d="M17.3338 22.9405L23.2741 17.0002L17.3338 11.0598L16.4162 11.9774L20.7628 16.324H10.8622V17.6763H20.7628L16.4162 22.0229L17.3338 22.9405Z" fill="#F6921A"/>
+                      <path d="M20.7628 17.6638H10.8747V16.3365H20.7628H20.7929L20.7716 16.3152L16.4338 11.9774L17.3338 11.0775L23.2564 17.0002L17.3338 22.9228L16.4338 22.0229L20.7716 17.6851L20.7929 17.6638H20.7628Z" stroke="#F6921A" strokeOpacity="0.5" strokeWidth="0.025"/>
+                    </svg>
+                  </a>
                 </div>
               </div>
-
-              <div className="flex flex-col justify-center items-center mb-3 relative z-10">
-                <div className="text-3xl font-bold text-white mb-1">${isHashrateLoading ? '...' : (hashrateData?.elaPrice?.toFixed(2) || '0.00')}</div>
-                <div className="text-xs text-gray-400">Current Price</div>
-              </div>
-
-              <p className="text-gray-600 dark:text-gray-300 text-xs mb-3 relative z-10">
-                Get ELA on leading exchanges and decentralized platforms for easy access.
-              </p>
-
-              <a href="/buy-ela" className="inline-flex px-3 py-2 bg-[rgba(246,146,26,0.10)] text-[#F6921A] rounded-full font-medium transition-all items-center gap-1 border border-[rgba(246,146,26,0.50)] text-sm relative z-10 hover:bg-[rgba(246,146,26,0.15)]">
-                <span>Learn More</span>
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 35 34" fill="none">
-                  <circle cx="17.333" cy="17" r="16.75" stroke="#F6921A" strokeOpacity="0.5" strokeWidth="0.5"/>
-                  <path d="M17.3338 22.9405L23.2741 17.0002L17.3338 11.0598L16.4162 11.9774L20.7628 16.324H10.8622V17.6763H20.7628L16.4162 22.0229L17.3338 22.9405Z" fill="#F6921A"/>
-                  <path d="M20.7628 17.6638H10.8747V16.3365H20.7628H20.7929L20.7716 16.3152L16.4338 11.9774L17.3338 11.0775L23.2564 17.0002L17.3338 22.9228L16.4338 22.0229L20.7716 17.6851L20.7929 17.6638H20.7628Z" stroke="#F6921A" strokeOpacity="0.5" strokeWidth="0.025"/>
-                </svg>
-              </a>
             </div>
           </div>
         </div>
