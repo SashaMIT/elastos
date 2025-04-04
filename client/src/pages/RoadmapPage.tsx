@@ -123,14 +123,102 @@ export default function RoadmapPage() {
 
       <div className="mt-20 mb-20">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
-          {[...Array(16)].map((_, i) => (
-            <ImageZoom
-              key={i}
-              src={`https://picsum.photos/400/300?random=${i}`}
-              alt={`Placeholder ${i + 1}`}
-              className="w-full h-[200px] object-cover"
-            />
-          ))}
+          <ImageZoom
+            key="1"
+            src="/images/Roadmap/Elastos Project Early Days 2017.jpeg"
+            alt="Elastos Project Early Days 2017"
+            className="w-full h-[200px] object-cover"
+          />
+          <ImageZoom
+            key="2"
+            src="/images/Roadmap/Elastos 1 Year.jpeg"
+            alt="Elastos 1 Year"
+            className="w-full h-[200px] object-cover"
+          />
+          <ImageZoom
+            key="3"
+            src="/images/Roadmap/Rong Chen Early Elastos days.jpeg"
+            alt="Rong Chen Early Elastos days"
+            className="w-full h-[200px] object-cover"
+          />
+          <ImageZoom
+            key="4"
+            src="/images/Roadmap/Elastos Members.jpeg"
+            alt="Elastos Members"
+            className="w-full h-[200px] object-cover"
+          />
+          <ImageZoom
+            key="5"
+            src="/images/Roadmap/Rong Chen, founder of Elastos, speaking at a tech event (circa 2017–2018) 2.jpeg"
+            alt="Rong Chen speaking at a tech event"
+            className="w-full h-[200px] object-cover"
+          />
+          <ImageZoom
+            key="6"
+            src="/images/Roadmap/Elastos hosted a meetup in Hong Kong.jpeg"
+            alt="Elastos hosted a meetup in Hong Kong"
+            className="w-full h-[200px] object-cover"
+          />
+          <ImageZoom
+            key="7"
+            src="/images/Roadmap/Rong Chen and Kevin Zhang hosted a meetup in Barcelona.jpeg"
+            alt="Rong Chen and Kevin Zhang hosted a meetup in Barcelona"
+            className="w-full h-[200px] object-cover"
+          />
+          <ImageZoom
+            key="8"
+            src="/images/Roadmap/Rong Chen and kevin Zhang hosted a meetup in London.jpeg"
+            alt="Rong Chen and kevin Zhang hosted a meetup in London"
+            className="w-full h-[200px] object-cover"
+          />
+          <ImageZoom
+            key="9"
+            src="/images/Roadmap/Elastos in Couinstore event.jpeg"
+            alt="Elastos in Couinstore event"
+            className="w-full h-[200px] object-cover"
+          />
+          <ImageZoom
+            key="10"
+            src="/images/Roadmap/Cyber Republic DAO meetup.jpeg"
+            alt="Cyber Republic DAO meetup"
+            className="w-full h-[200px] object-cover"
+          />
+          <ImageZoom
+            key="11"
+            src="/images/Roadmap/Jon and Fakhuil in StakingSummit2023.jpeg"
+            alt="Jon and Fakhuil in StakingSummit2023"
+            className="w-full h-[200px] object-cover"
+          />
+          <ImageZoom
+            key="12"
+            src="/images/Roadmap/Sunny Feng Han at Teamz Web Summit in Tokyo.jpeg"
+            alt="Sunny Feng Han at Teamz Web Summit in Tokyo"
+            className="w-full h-[200px] object-cover"
+          />
+          <ImageZoom
+            key="13"
+            src="/images/Roadmap/Sunny Feng Han in DACA event.jpg"
+            alt="Sunny Feng Han in DACA event"
+            className="w-full h-[200px] object-cover"
+          />
+          <ImageZoom
+            key="14"
+            src="/images/Roadmap/The Node Effect event Singapore.jpeg"
+            alt="The Node Effect event Singapore"
+            className="w-full h-[200px] object-cover"
+          />
+          <ImageZoom
+            key="15"
+            src="/images/Roadmap/BeL2 booth in Bitcoin 2024.jpeg"
+            alt="BeL2 booth in Bitcoin 2024"
+            className="w-full h-[200px] object-cover"
+          />
+          <ImageZoom
+            key="16"
+            src="/images/Roadmap/Sash as speaker in Bitcoin2024.jpeg"
+            alt="Sash as speaker in Bitcoin2024"
+            className="w-full h-[200px] object-cover"
+          />
         </div>
       </div>
 
