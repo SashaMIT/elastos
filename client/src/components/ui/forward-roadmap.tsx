@@ -60,7 +60,7 @@ export const ForwardRoadmap = () => {
   ];
 
   return (
-    <div className="w-full bg-white dark:bg-[#171717] font-sans md:px-10 relative">
+    <div className="w-full bg-white dark:bg-[#171717] font-sans md:px-1 relative">
       <div className="max-w-7xl mx-auto py-10 px-4 md:px-8 lg:px-10">
         <h2 className="text-2xl md:text-4xl mb-4 text-black dark:text-white max-w-4xl">
           Forward Roadmap
