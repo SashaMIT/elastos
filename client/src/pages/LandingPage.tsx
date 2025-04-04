@@ -580,12 +580,10 @@ const LandingPage = () => {
 
 
         <LogoCarouselDemo />
-
-
       </div>
 
-
-
+      {/* Spacer div to add more distance */}
+      <div className="py-16 md:py-24"></div>
 
       {/* News Section */}
       <div className="px-4 md:px-0">
