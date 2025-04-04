@@ -651,7 +651,7 @@ const LandingPage = () => {
           <div className="grid grid-cols-3 md:grid-cols-12 gap-6">
             <ImageZoom
               key="1"
-              src="/images/Community/EoWgfLHXEAIpyQe.jpeg"
+              src="client/public/images/Roadmap/Elastos Members.jpeg"
               alt="Elastos Community Event"
               className="w-full aspect-square object-cover"
               loading="lazy"
@@ -669,7 +669,7 @@ const LandingPage = () => {
             />
             <ImageZoom
               key="3"
-              src="/images/Community/EdTCNAzU0AAs42k.jpeg"
+              src="client/public/images/Roadmap/Rong Chen and kevin Zhang hosted a meetup in London.jpeg"
               alt="Elastos Community Gathering"
               className="w-full aspect-square object-cover"
               loading="lazy"
@@ -705,7 +705,7 @@ const LandingPage = () => {
             />
             <ImageZoom
               key="7"
-              src="/images/Community/EyAPODsUUAAdPoz.jpeg"
+              src="client/public/images/Community/EiJX5nNVoAEe9pX.jpeg"
               alt="Elastos Community Event"
               className="w-full aspect-square object-cover"
               loading="lazy"
@@ -840,7 +840,7 @@ const LandingPage = () => {
             />
             <ImageZoom
               key="22"
-              src="/images/Community/EiKLV1TU4AAR4OV.jpeg"
+              src="client/public/images/Roadmap/Elastos 1 Year.jpeg"
               alt="Elastos Community Event"
               className="w-full aspect-square object-cover"
               loading="lazy"
@@ -849,7 +849,7 @@ const LandingPage = () => {
             />
             <ImageZoom
               key="23"
-              src="/images/Community/E5YyMc3VkAA2AwE.jpeg"
+              src="client/public/images/Roadmap/Rong Pomp.png"
               alt="Elastos Community Gathering"
               className="w-full aspect-square object-cover"
               loading="lazy"
