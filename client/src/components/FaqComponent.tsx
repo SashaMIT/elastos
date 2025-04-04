@@ -54,7 +54,7 @@ interface FaqComponentProps {
 const FaqComponent: React.FC<FaqComponentProps> = ({ className = "", showButtons = true }) => {
   const [openItem, setOpenItem] = useState<string | null>(null);
   return (
-    <Card className={`w-full overflow-hidden bg-card dark:bg-[#171717] border-0 shadow-none mt-20 ${className}`} style={{ boxShadow: 'none' }}>
+    <Card className={`w-full overflow-hidden bg-card dark:bg-[#171717] border-0 shadow-none mt-8 ${className}`} style={{ boxShadow: 'none' }}>
       <CardHeader className="p-6 pl-0 pb-2">
         <div className="flex flex-row items-center justify-between mb-2">
           <CardTitle className="text-2xl md:text-3xl font-[400] text-foreground dark:text-foreground mb-0" style={{ fontWeight: 400 }}>Your Questions</CardTitle>
