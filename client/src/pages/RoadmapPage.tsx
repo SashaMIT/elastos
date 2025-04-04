@@ -177,8 +177,8 @@ export default function RoadmapPage() {
             />
             <ImageZoom
               key="7"
-              src="/images/Community/D35ZHIUUYAA2xKO.jpeg"
-              alt="Elastos Community Event"
+              src="/images/Roadmap/Rong Chen and Kevin Zhang hosted a meetup in Barcelona.jpeg"
+              alt="Rong Chen and Kevin Zhang hosted a meetup in Barcelona"
               className="w-full h-[200px] object-cover"
             />
             <ImageZoom
