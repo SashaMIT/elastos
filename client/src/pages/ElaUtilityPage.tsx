@@ -288,7 +288,7 @@ export default function ElaUtilityPage() {
       </div>
 
       <div className="my-16">
-        <div className="motion-section text-center mb-12">
+        <div className="motion-section text-center mb-12 px-4">
           <h2 className="text-3xl md:text-4xl font-bold text-black dark:text-white mb-3">
             Use Your ELA
           </h2>
@@ -297,7 +297,7 @@ export default function ElaUtilityPage() {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 max-w-7xl mx-auto">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 max-w-7xl mx-auto px-4">
           {/* Staking Component */}
           <div className="bg-gradient-to-br from-[#5C8EFF]/5 to-transparent rounded-xl p-6 border border-[#5C8EFF]/20 transition-all hover:shadow-lg hover:border-[#5C8EFF]/40 relative overflow-hidden">
             <div className="absolute -top-20 -right-20 w-64 h-64 rounded-full bg-[#5C8EFF]/5 blur-[80px]"></div>
