@@ -31,7 +31,7 @@ function Feature() {
                   fontFamily: 'PP Telegraf Ultralight, system-ui, sans-serif',
                 }}
               >
-                The Whole Web3 System
+                The SmartWeb System
               </h2>
               <div className="hidden sm:flex items-center gap-2 text-lg md:text-2xl whitespace-nowrap">
 
