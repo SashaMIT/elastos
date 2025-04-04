@@ -487,8 +487,119 @@ export function VisionPage() {
             
           </div>
 
+          {/* Founding Members Section */}
+          <div className="mt-20">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="text-center mb-12"
+            >
+              <h2 className="text-3xl md:text-4xl font-bold text-black dark:text-white mb-3">
+                Founding <span className="text-[#F6921A]">Members</span>
+              </h2>
+              <p className="text-lg text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
+                Meet the visionaries who brought Elastos to life
+              </p>
+            </motion.div>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-6xl mx-auto mb-10">
+              {/* Rong Chen */}
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: 0.1 }}
+                className="bg-gradient-to-br from-[#F7921A]/10 via-[#8BABFF]/5 to-transparent rounded-xl p-6 border border-[#F7921A]/20 h-full flex flex-col"
+              >
+                <div className="flex flex-col sm:flex-row gap-6 items-center sm:items-start">
+                  <img 
+                    src="/images/Rong Chen.png" 
+                    alt="Rong Chen" 
+                    className="w-32 h-32 rounded-full object-cover border-2 border-[#F7921A]/30"
+                  />
+                  <div>
+                    <h3 className="text-xl font-bold text-black dark:text-white mb-1">Rong Chen</h3>
+                    <span className="px-3 py-1 bg-[#F7921A]/10 border border-[#F7921A]/30 text-[#F7921A] dark:text-white rounded-full text-xs font-medium whitespace-nowrap mb-3 inline-block">
+                      Founder & Lead Architect
+                    </span>
+                    <p className="text-gray-600 dark:text-gray-300 text-sm mt-3">
+                      Former Microsoft employee and Tencent senior engineer, Rong has spent 
+                      30+ years developing operating systems. His vision of a secure "World Computer" 
+                      led to the creation of Elastos. With a background in computer science 
+                      from Tsinghua University, he's dedicated his career to addressing 
+                      the fundamental architectural flaws of today's internet.
+                    </p>
+                  </div>
+                </div>
+                <div className="mt-auto pt-4 flex justify-end">
+                  <a href="#" className="inline-flex px-3 py-2 bg-[rgba(246,146,26,0.10)] text-[#F6921A] rounded-full font-medium transition-all items-center gap-1 border border-[rgba(246,146,26,0.50)] text-sm">
+                    <span>Learn More</span>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 35 34" fill="none">
+                      <circle cx="17.333" cy="17" r="16.75" stroke="#F6921A" strokeOpacity="0.5" strokeWidth="0.5"/>
+                      <path d="M17.3338 22.9405L23.2741 17.0002L17.3338 11.0598L16.4162 11.9774L20.7628 16.324H10.8622V17.6763H20.7628L16.4162 22.0229L17.3338 22.9405Z" fill="#F6921A"/>
+                      <path d="M20.7628 17.6638H10.8747V16.3365H20.7628H20.7929L20.7716 16.3152L16.4338 11.9774L17.3338 11.0775L23.2564 17.0002L17.3338 22.9228L16.4338 22.0229L20.7716 17.6851L20.7929 17.6638H20.7628Z" stroke="#F6921A" strokeOpacity="0.5" strokeWidth="0.025"/>
+                    </svg>
+                  </a>
+                </div>
+              </motion.div>
+
+              {/* Sunny Feng Han */}
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: 0.2 }}
+                className="bg-gradient-to-br from-[#8BABFF]/10 via-[#F7921A]/5 to-transparent rounded-xl p-6 border border-[#8BABFF]/20 h-full flex flex-col"
+              >
+                <div className="flex flex-col sm:flex-row gap-6 items-center sm:items-start">
+                  <img 
+                    src="/images/Roadmap/Sunny Feng Han in DACA event.jpg" 
+                    alt="Sunny Feng Han" 
+                    className="w-32 h-32 rounded-full object-cover border-2 border-[#8BABFF]/30"
+                  />
+                  <div>
+                    <h3 className="text-xl font-bold text-black dark:text-white mb-1">Sunny Feng Han</h3>
+                    <span className="px-3 py-1 bg-[#5C8EFF]/10 border border-[#5C8EFF]/30 text-[#5C8EFF] dark:text-white rounded-full text-xs font-medium whitespace-nowrap mb-3 inline-block">
+                      Co-Founder & Economics Adviser
+                    </span>
+                    <p className="text-gray-600 dark:text-gray-300 text-sm mt-3">
+                      A graduate of Tsinghua University's School of Economics and Management, 
+                      Sunny is a blockchain economics researcher and instructor at several 
+                      prestigious universities. He co-founded the Elastos Foundation with Rong Chen 
+                      and has been instrumental in developing the economic model and ecosystem 
+                      strategies. Sunny leads initiatives connecting Elastos with academic 
+                      and industry partners worldwide.
+                    </p>
+                  </div>
+                </div>
+                <div className="mt-auto pt-4 flex justify-end">
+                  <a href="#" className="inline-flex px-3 py-2 bg-[rgba(92,142,255,0.10)] text-[#5C8EFF] rounded-full font-medium transition-all items-center gap-1 border border-[rgba(92,142,255,0.50)] text-sm">
+                    <span>Learn More</span>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 35 34" fill="none">
+                      <circle cx="17.333" cy="17" r="16.75" stroke="#5C8EFF" strokeOpacity="0.5" strokeWidth="0.5"/>
+                      <path d="M17.3338 22.9405L23.2741 17.0002L17.3338 11.0598L16.4162 11.9774L20.7628 16.324H10.8622V17.6763H20.7628L16.4162 22.0229L17.3338 22.9405Z" fill="#5C8EFF"/>
+                      <path d="M20.7628 17.6638H10.8747V16.3365H20.7628H20.7929L20.7716 16.3152L16.4338 11.9774L17.3338 11.0775L23.2564 17.0002L17.3338 22.9228L16.4338 22.0229L20.7716 17.6851L20.7929 17.6638H20.7628Z" stroke="#5C8EFF" strokeOpacity="0.5" strokeWidth="0.025"/>
+                    </svg>
+                  </a>
+                </div>
+              </motion.div>
+            </div>
+            
+            <div className="flex justify-center mb-12">
+              <a href="#" className="inline-flex px-4 py-3 bg-[rgba(246,146,26,0.10)] text-[#F6921A] rounded-full font-medium transition-all items-center gap-2 border border-[rgba(246,146,26,0.50)] text-sm">
+                <span>Meet the Entire Elastos Team</span>
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 35 34" fill="none">
+                  <circle cx="17.333" cy="17" r="16.75" stroke="#F6921A" strokeOpacity="0.5" strokeWidth="0.5"/>
+                  <path d="M17.3338 22.9405L23.2741 17.0002L17.3338 11.0598L16.4162 11.9774L20.7628 16.324H10.8622V17.6763H20.7628L16.4162 22.0229L17.3338 22.9405Z" fill="#F6921A"/>
+                  <path d="M20.7628 17.6638H10.8747V16.3365H20.7628H20.7929L20.7716 16.3152L16.4338 11.9774L17.3338 11.0775L23.2564 17.0002L17.3338 22.9228L16.4338 22.0229L20.7716 17.6851L20.7929 17.6638H20.7628Z" stroke="#F6921A" strokeOpacity="0.5" strokeWidth="0.025"/>
+                </svg>
+              </a>
+            </div>
+          </div>
+
           {/* A World Computer for Everyone Banner */}
-          <div className="mt-20 -mx-4 px-4 md:px-0">
+          <div className="mt-10 -mx-4 px-4 md:px-0">
             <WorldComputerBanner />
           </div>
           
