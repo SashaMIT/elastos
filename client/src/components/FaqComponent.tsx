@@ -56,14 +56,14 @@ const FaqComponent: React.FC<FaqComponentProps> = ({ className = "", showButtons
   return (
     <Card className={`w-full overflow-hidden bg-card dark:bg-[#171717] border-0 shadow-none mt-20 ${className}`} style={{ boxShadow: 'none' }}>
       <CardHeader className="p-6 pl-0">
-        <CardTitle className="text-3xl font-[400] mb-6 text-foreground dark:text-foreground" style={{ fontWeight: 400 }}>Your Questions</CardTitle>
-        {showButtons && (
-          <div className="flex flex-wrap gap-4 sm:gap-6 mb-4">
+        <div className="flex flex-col md:flex-row md:items-center md:justify-between mb-6">
+          <CardTitle className="text-3xl font-[400] text-foreground dark:text-foreground mb-4 md:mb-0" style={{ fontWeight: 400 }}>Your Questions</CardTitle>
+          {showButtons && (
             <a 
               href="https://chatgpt.com/g/g-j1VMlnktX-elastos" 
               target="_blank" 
               rel="noopener noreferrer"
-              className="inline-flex items-center justify-center rounded-full bg-transparent text-[#5C8EFF] px-4 py-2 text-sm font-medium border border-[#5C8EFF] hover:bg-[#5C8EFF]/10 transition-colors gap-2"
+              className="inline-flex items-center justify-center rounded-full bg-transparent text-[#5C8EFF] px-4 py-2 text-sm font-medium border border-[#5C8EFF] hover:bg-[#5C8EFF]/10 transition-colors gap-2 self-start md:self-center"
             >
               Talk with AI
               <div className="w-6 h-6 rounded-full border border-[#5C8EFF] flex items-center justify-center">
@@ -73,8 +73,9 @@ const FaqComponent: React.FC<FaqComponentProps> = ({ className = "", showButtons
                 </svg>
               </div>
             </a>
-            <a 
-              href="https://t.me/elastosgroup" 
+          )}
+        </div>
+            {/* Talk with Community button removed */}osgroup" 
               target="_blank" 
               rel="noopener noreferrer"
               className="inline-flex items-center justify-center rounded-full bg-transparent text-[#5C8EFF] px-4 py-2 text-sm font-medium border border-[#5C8EFF] hover:bg-[#5C8EFF]/10 transition-colors gap-2"
