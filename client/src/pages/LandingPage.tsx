@@ -36,8 +36,7 @@ import { FeatureGrid } from "@/components/FeatureGrid";
 import { FeaturesCarousel } from "@/components/FeaturesCarousel";
 import { cn } from '@/lib/utils';
 import BlockTable from '@/components/BlockTable';
-import { Dots_v2 } from "@/components/ui/spinner"; // Import the spinner component
-import { RoundSpinner } from "@/components/ui/spinner"; // Import the RoundSpinner component
+import { Dots_v2, Spinner, RoundSpinner } from "@/components/ui/spinner"; // Import spinner components
 
 
 interface FeatureCardProps {
