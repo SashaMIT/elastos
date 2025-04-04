@@ -76,7 +76,7 @@ export default function RoadmapPage() {
   return (
     <div className="relative w-full">
       {/* Full-width hero image with gradient overlay */}
-      <div className="relative w-full h-[500px] overflow-hidden -mt-6">
+      <div className="relative w-full h-[500px] overflow-hidden -mt-16">
         <img 
           src="/images/Roadmap/Elastos Project Early Days 2017.jpeg" 
           alt="Elastos Roadmap" 
