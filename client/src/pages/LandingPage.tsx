@@ -273,7 +273,7 @@ const LandingPage = () => {
             preload="none"
             poster="/images/Elastosvideoimage.png"
           >
-            <source src="/videos/Elastosvid2.mp4" type="video/mp4" />
+            <source src="/videos/Elastos Hero Video2.mp4" type="video/mp4" />
           </video>
 
           {/* Overlay for better text readability */}
