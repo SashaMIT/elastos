@@ -55,9 +55,9 @@ const FaqComponent: React.FC<FaqComponentProps> = ({ className = "", showButtons
   const [openItem, setOpenItem] = useState<string | null>(null);
   return (
     <Card className={`w-full overflow-hidden bg-card dark:bg-[#171717] border-0 shadow-none mt-20 ${className}`} style={{ boxShadow: 'none' }}>
-      <CardHeader className="p-6 pl-0">
-        <div className="flex flex-col md:flex-row md:items-center md:justify-between mb-6">
-          <CardTitle className="text-3xl font-[400] text-foreground dark:text-foreground mb-4 md:mb-0" style={{ fontWeight: 400 }}>Your Questions</CardTitle>
+      <CardHeader className="p-6 pl-0 pb-2">
+        <div className="flex flex-col md:flex-row md:items-center md:justify-between mb-2">
+          <CardTitle className="text-3xl font-[400] text-foreground dark:text-foreground mb-2 md:mb-0" style={{ fontWeight: 400 }}>Your Questions</CardTitle>
           {showButtons && (
             <a 
               href="https://chatgpt.com/g/g-j1VMlnktX-elastos" 
@@ -76,7 +76,7 @@ const FaqComponent: React.FC<FaqComponentProps> = ({ className = "", showButtons
           )}
         </div>
       </CardHeader>
-      <CardContent className="p-6 pl-0 pt-2">
+      <CardContent className="p-6 pl-0 pt-0">
         <Accordion type="single" collapsible className="w-full" defaultValue="1">
           {faqItems.map((item) => (
             <AccordionItem 
