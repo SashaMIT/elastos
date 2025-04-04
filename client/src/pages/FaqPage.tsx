@@ -23,7 +23,7 @@ const FaqPage = () => {
         {/* Full-width hero image with gradient overlay */}
         <div className="relative w-full h-[500px] overflow-hidden -mt-20">
           <img 
-            src="/images/Roadmap/Community crowd.png" 
+            src="/images/Roadmap/Elastos hosted a meetup in Hong Kong.jpeg" 
             alt="Elastos FAQ" 
             className="w-full h-full object-cover opacity-100"
           />
