@@ -598,7 +598,7 @@ const DaoPage: React.FC = () => {
 
               {/* Proposals Funded */}
               <div className="bg-[#1A1A1A] rounded-xl p-6 border border-[#8BABFF]/20">
-                <div className="w-12 h-12 rounded-full bg-[#8BABFF]/10 flex items-center justify-center mb-3">
+                <div className="w-12 h-12rounded-full bg-[#8BABFF]/10 flex items-center justify-center mb-3">
                   <FileText className="w-6 h-6 text-[#8BABFF]" />
                 </div>
                 <h3 className="text-white text-sm mb-2">Proposals Funded</h3>
