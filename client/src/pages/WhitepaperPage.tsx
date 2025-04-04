@@ -13,7 +13,7 @@ const WhitepaperPage = () => {
     <Layout>
       <div className="relative w-full">
         {/* Full-width hero image with gradient overlay */}
-        <div className="relative w-full h-[500px] overflow-hidden -mt-24">
+        <div className="relative w-full h-[500px] overflow-hidden -mt-32">
           <img 
             src="/images/Roadmap/Elastos Project Early Days 2017.jpeg" 
             alt="Elastos Documentation" 
