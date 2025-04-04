@@ -143,7 +143,7 @@ export function VisionPage() {
                   <img 
                     src="/images/Rong Chen.png" 
                     alt="Rong Chen" 
-                    className="w-32 h-32 rounded-full object-cover border-2 border-[#F7921A]/30"
+                    className="w-32 h-32 rounded-full object-cover border-2 border-[#8BABFF]/30"
                   />
                   <div>
                     <h3 className="text-xl font-bold text-black dark:text-white mb-1">Rong Chen</h3>
@@ -167,7 +167,7 @@ export function VisionPage() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: 0.2 }}
-                className="bg-gradient-to-br from-[#8BABFF]/10 via-[#F7921A]/5 to-transparent rounded-xl p-6 border border-[#8BABFF]/20 h-full flex flex-col"
+                className="bg-gradient-to-br from-[#8BABFF]/10 via-[#8BABFF]/5 to-transparent rounded-xl p-6 border border-[#8BABFF]/20 h-full flex flex-col"
               >
                 <div className="flex flex-col sm:flex-row gap-6 items-center sm:items-start">
                   <img 
@@ -194,12 +194,12 @@ export function VisionPage() {
             </div>
 
             <div className="flex justify-center mb-12">
-              <a href="#" className="inline-flex px-4 py-3 bg-[rgba(246,146,26,0.10)] text-[#F6921A] rounded-full font-medium transition-all items-center gap-2 border border-[rgba(246,146,26,0.50)] text-sm">
+              <a href="#" className="inline-flex px-4 py-3 bg-[rgba(92,142,255,0.10)] text-[#5C8EFF] rounded-full font-medium transition-all items-center gap-2 border border-[rgba(92,142,255,0.50)] text-sm">
                 <span>Meet the Entire Elastos Team</span>
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 35 34" fill="none">
-                  <circle cx="17.333" cy="17" r="16.75" stroke="#F6921A" strokeOpacity="0.5" strokeWidth="0.5"/>
-                  <path d="M17.3338 22.9405L23.2741 17.0002L17.3338 11.0598L16.4162 11.9774L20.7628 16.324H10.8622V17.6763H20.7628L16.4162 22.0229L17.3338 22.9405Z" fill="#F6921A"/>
-                  <path d="M20.7628 17.6638H10.8747V16.3365H20.7628H20.7929L20.7716 16.3152L16.4338 11.9774L17.3338 11.0775L23.2564 17.0002L17.3338 22.9228L16.4338 22.0229L20.7716 17.6851L20.7929 17.6638H20.7628Z" stroke="#F6921A" strokeOpacity="0.5" strokeWidth="0.025"/>
+                  <circle cx="17.333" cy="17" r="16.75" stroke="#5C8EFF" strokeOpacity="0.5" strokeWidth="0.5"/>
+                  <path d="M17.3338 22.9405L23.2741 17.0002L17.3338 11.0598L16.4162 11.9774L20.7628 16.324H10.8622V17.6763H20.7628L16.4162 22.0229L17.3338 22.9405Z" fill="#5C8EFF"/>
+                  <path d="M20.7628 17.6638H10.8747V16.3365H20.7628H20.7929L20.7716 16.3152L16.4338 11.9774L17.3338 11.0775L23.2564 17.0002L17.3338 22.9228L16.4338 22.0229L20.7716 17.6851L20.7929 17.6638H20.7628Z" stroke="#5C8EFF" strokeOpacity="0.5" strokeWidth="0.025"/>
                 </svg>
               </a>
             </div>
@@ -229,7 +229,7 @@ export function VisionPage() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: 0.1 }}
-                className="bg-gradient-to-br from-[#F7921A]/10 via-[#8BABFF]/5 to-transparent rounded-xl p-6 border border-[#F7921A]/20 h-full cursor-pointer"
+                className="bg-gradient-to-br from-[#8BABFF]/10 via-[#8BABFF]/5 to-transparent rounded-xl p-6 border border-[#8BABFF]/20 h-full cursor-pointer"
                 onClick={() => window.open("https://cyberrepublic.org", "_blank")}
               >
                 <div className="h-40 mb-4">
@@ -279,7 +279,7 @@ export function VisionPage() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: 0.3 }}
-                className="bg-gradient-to-br from-[#F7921A]/10 via-[#8BABFF]/5 to-transparent rounded-xl p-6 border border-[#F7921A]/20 h-full cursor-pointer"
+                className="bg-gradient-to-br from-[#8BABFF]/10 via-[#8BABFF]/5 to-transparent rounded-xl p-6 border border-[#8BABFF]/20 h-full cursor-pointer"
                 onClick={() => window.open("https://glidefinance.io", "_blank")}
               >
                 <div className="h-40 mb-4">
@@ -304,7 +304,7 @@ export function VisionPage() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: 0.4 }}
-                className="bg-gradient-to-br from-[#8BABFF]/10 via-[#F7921A]/5 to-transparent rounded-xl p-6 border border-[#8BABFF]/20 h-full cursor-pointer"
+                className="bg-gradient-to-br from-[#8BABFF]/10 via-[#8BABFF]/5 to-transparent rounded-xl p-6 border border-[#8BABFF]/20 h-full cursor-pointer"
                 onClick={() => window.open("https://lending.bel2.org", "_blank")}
               >
                 <div className="h-40 mb-4">
@@ -325,12 +325,12 @@ export function VisionPage() {
             </div>
 
             <div className="flex justify-center mb-10">
-              <a href="/ecosystem" className="inline-flex px-3 py-2 bg-[rgba(246,146,26,0.10)] text-[#F6921A] rounded-full font-medium transition-all items-center gap-1 border border-[rgba(246,146,26,0.50)] text-sm">
+              <a href="/ecosystem" className="inline-flex px-3 py-2 bg-[rgba(92,142,255,0.10)] text-[#5C8EFF] rounded-full font-medium transition-all items-center gap-1 border border-[rgba(92,142,255,0.50)] text-sm">
                 <span>Explore Ecosystem</span>
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 35 34" fill="none">
-                  <circle cx="17.333" cy="17" r="16.75" stroke="#F6921A" strokeOpacity="0.5" strokeWidth="0.5"/>
-                  <path d="M17.3338 22.9405L23.2741 17.0002L17.3338 11.0598L16.4162 11.9774L20.7628 16.324H10.8622V17.6763H20.7628L16.4162 22.0229L17.3338 22.9405Z" fill="#F6921A"/>
-                  <path d="M20.7628 17.6638H10.8747V16.3365H20.7628H20.7929L20.7716 16.3152L16.4338 11.9774L17.3338 11.0775L23.2564 17.0002L17.3338 22.9228L16.4338 22.0229L20.7716 17.6851L20.7929 17.6638H20.7628Z" stroke="#F6921A" strokeOpacity="0.5" strokeWidth="0.025"/>
+                  <circle cx="17.333" cy="17" r="16.75" stroke="#5C8EFF" strokeOpacity="0.5" strokeWidth="0.5"/>
+                  <path d="M17.3338 22.9405L23.2741 17.0002L17.3338 11.0598L16.4162 11.9774L20.7628 16.324H10.8622V17.6763H20.7628L16.4162 22.0229L17.3338 22.9405Z" fill="#5C8EFF"/>
+                  <path d="M20.7628 17.6638H10.8747V16.3365H20.7628H20.7929L20.7716 16.3152L16.4338 11.9774L17.3338 11.0775L23.2564 17.0002L17.3338 22.9228L16.4338 22.0229L20.7716 17.6851L20.7929 17.6638H20.7628Z" stroke="#5C8EFF" strokeOpacity="0.5" strokeWidth="0.025"/>
                 </svg>
               </a>
             </div>
@@ -382,7 +382,7 @@ export function VisionPage() {
                 viewport={{ once: true }}
                 transition={{ delay: 0.15 }}
                 whileHover={{ y: -5, transition: { duration: 0.2 } }}
-                className="bg-gradient-to-br from-[#F7921A]/5 to-transparent rounded-xl p-4 border border-[#F7921A]/10 flex flex-col items-center text-center"
+                className="bg-gradient-to-br from-[#8BABFF]/5 to-transparent rounded-xl p-4 border border-[#8BABFF]/10 flex flex-col items-center text-center"
               >
                 <div className="h-16 mb-3 flex items-center justify-center">
                   <img 
@@ -426,7 +426,7 @@ export function VisionPage() {
                 viewport={{ once: true }}
                 transition={{ delay: 0.25 }}
                 whileHover={{ y: -5, transition: { duration: 0.2 } }}
-                className="bg-gradient-to-br from-[#F7921A]/5 to-transparent rounded-xl p-4 border border-[#F7921A]/10 flex flex-col items-center text-center"
+                className="bg-gradient-to-br from-[#8BABFF]/5 to-transparent rounded-xl p-4 border border-[#8BABFF]/10 flex flex-col items-center text-center"
               >
                 <div className="h-16 mb-3 flex items-center justify-center">
                   <img 
@@ -475,7 +475,7 @@ export function VisionPage() {
                 viewport={{ once: true }}
                 transition={{ delay: 0.35 }}
                 whileHover={{ y: -5, transition: { duration: 0.2 } }}
-                className="bg-gradient-to-br from-[#F7921A]/5 to-transparent rounded-xl p-4 border border-[#F7921A]/10 flex flex-col items-center text-center"
+                className="bg-gradient-to-br from-[#8BABFF]/5 to-transparent rounded-xl p-4 border border-[#8BABFF]/10 flex flex-col items-center text-center"
               >
                 <div className="h-16 mb-3 flex items-center justify-center">
                   <img 
