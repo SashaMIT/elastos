@@ -56,7 +56,7 @@ const FaqComponent: React.FC<FaqComponentProps> = ({ className = "", showButtons
   return (
     <Card className={`w-full overflow-hidden bg-card dark:bg-[#171717] border-0 shadow-none ${className}`} style={{ boxShadow: 'none' }}>
       <CardHeader className="p-6 pl-0">
-        <CardTitle className="text-4xl font-[400] mb-6 text-foreground dark:text-foreground" style={{ fontWeight: 400 }}>Your Questions</CardTitle>
+        <CardTitle className="text-3xl font-[400] mb-6 text-foreground dark:text-foreground" style={{ fontWeight: 400 }}>Your Questions</CardTitle>
         {showButtons && (
           <div className="flex flex-wrap gap-4 sm:gap-6 mb-4">
             <a 
