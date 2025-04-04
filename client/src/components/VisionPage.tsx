@@ -41,7 +41,7 @@ export function VisionPage() {
             transition={{ duration: 0.5 }}
             className="text-center max-w-3xl mx-auto mb-16"
           >
-            <h1 className="text-4xl md:text-5xl font-bold text-white mb-6">The <span className="text-[#F6921A]">Elastos SmartWeb</span></h1>
+            <h1 className="text-4xl md:text-5xl font-bold text-white mb-6">The Elastos SmartWebyes</h1>
             <p className="text-white/70 text-lg">
               Our mission is to create a new internet infrastructure that gives users and developers full control over their digital interactions, enabling a secure, private, and censorship-resistant online experience.
             </p>
@@ -124,7 +124,7 @@ export function VisionPage() {
               className="text-center mb-12"
             >
               <h2 className="text-3xl md:text-4xl font-bold text-black dark:text-white mb-3">
-                Founding <span className="text-[#F6921A]">Members</span>
+                Founding Members
               </h2>
               <p className="text-lg text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
                 Meet the visionaries who brought Elastos to life
@@ -216,7 +216,7 @@ export function VisionPage() {
               className="text-center mb-12"
             >
               <h2 className="text-3xl md:text-4xl font-bold text-black dark:text-white mb-3">
-                Ecosystem <span className="text-[#F6921A]">dApps</span>
+                Ecosystem dApps
               </h2>
               <p className="text-lg text-gray-600 dark:text-gray-300">
                 Explore applications built on Elastos
@@ -346,7 +346,7 @@ export function VisionPage() {
               className="text-center mb-10"
             >
               <h2 className="text-3xl md:text-4xl font-bold text-black dark:text-white mb-3">
-                Core <span className="text-[#F6921A]">Builders</span> and Partners
+                Core Builders and Partners
               </h2>
               <p className="text-lg text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
                 Meet the organizations building the foundation of the Elastos ecosystem
