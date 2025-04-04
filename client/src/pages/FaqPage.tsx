@@ -48,7 +48,7 @@ const FaqPage = () => {
         </div>
 
         <div className="container mx-auto px-4 pt-0 pb-8 bg-[#171717]">
-          <div className="w-full max-w-7xl mx-auto px-4 py-0 md:px-8 lg:px-16 xl:px-52 2xl:px-52 -mt-16">
+          <div className="w-full max-w-7xl mx-auto px-4 py-0 md:px-8 lg:px-16 xl:px-52 2xl:px-52 -mt-24">
             <FaqComponent />
           </div>
           

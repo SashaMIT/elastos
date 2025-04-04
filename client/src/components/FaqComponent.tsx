@@ -54,7 +54,7 @@ interface FaqComponentProps {
 const FaqComponent: React.FC<FaqComponentProps> = ({ className = "", showButtons = true }) => {
   const [openItem, setOpenItem] = useState<string | null>(null);
   return (
-    <Card className={`w-full overflow-hidden bg-card dark:bg-[#171717] border-0 shadow-none mt-8 ${className}`} style={{ boxShadow: 'none' }}>
+    <Card className={`w-full overflow-hidden bg-card dark:bg-[#171717] border-0 shadow-none mt-0 ${className}`} style={{ boxShadow: 'none' }}>
       <CardHeader className="p-6 pl-0 pb-2">
         <div className="flex flex-row items-center justify-between mb-2">
           <CardTitle className="text-2xl md:text-3xl font-[400] text-foreground dark:text-foreground mb-0" style={{ fontWeight: 400 }}>Your Questions</CardTitle>
@@ -63,7 +63,8 @@ const FaqComponent: React.FC<FaqComponentProps> = ({ className = "", showButtons
               href="https://chatgpt.com/g/g-j1VMlnktX-elastos" 
               target="_blank" 
               rel="noopener noreferrer"
-              className="inline-flex items-center justify-center rounded-full bg-transparent text-[#5C8EFF] px-3 py-1.5 md:px-4 md:py-2 text-sm font-medium border border-[#5C8EFF] hover:bg-[#5C8EFF]/10 transition-colors gap-1 md:gap-2"
+              className="ml-4 inline-flex items-center justify-center rounded-full bg-transparent text-[#5C8EFF] px-3 py-1.5 md:px-4 md:py-2 text-sm font-medium border border-[#5C8EFF] hover:bg-[#5C8EFF]/10 transition-colors gap-1 md:gap-2"
+              style={{ whiteSpace: 'nowrap' }}
             >
               Talk with AI
               <div className="w-5 h-5 md:w-6 md:h-6 rounded-full border border-[#5C8EFF] flex items-center justify-center">
