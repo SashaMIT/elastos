@@ -66,7 +66,7 @@ const WhitepaperPage = () => {
                     The original whitepaper outlining the foundational concepts behind Elastos,
                     including the architecture of the Elastos Carrier, Runtime, and Blockchain.
                   </p>
-                  <ul className="mt-4 text-sm text-gray-700 dark:text-gray-300 space-y-1">
+                  <ul className="mt-2 text-sm text-gray-700 dark:text-gray-300 space-y-1 mb-3">
                     <li className="flex items-start">
                       <span className="text-[#F6921A] mr-2">•</span>
                       <span>Smart Web powered by blockchain</span>
