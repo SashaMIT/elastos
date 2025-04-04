@@ -50,7 +50,7 @@ export function ScalingSection() {
 
   return (
     <div className="w-full bg-background dark:bg-[#171717] text-foreground py-32">
-      <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-center mb-12">
+      <h2 className="text-4xl md:text-5xl lg:text-6xl font-[200] text-center mb-12">
         Elastos SmartWeb Architecture
       </h2>
       <div className="container mx-auto px-4 lg:px-[180px] max-w-1xl">
