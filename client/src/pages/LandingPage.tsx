@@ -592,13 +592,6 @@ const LandingPage = () => {
         <NewsSection />
       </div>
 
-      {/* FAQ Section */}
-      <div className="w-full py-0 bg-background dark:bg-[#171717]">
-        <div className="container mx-auto px-4 md:px-0">
-          <FaqComponent showButtons={true} className="max-w-full" />
-        </div>
-      </div>
-
       {/* Testimonials Section */}
       <div className="w-full bg-background dark:bg-[#171717]">
         <TestimonialsSection 
@@ -868,6 +861,13 @@ const LandingPage = () => {
               height={300}
             />
           </div>
+        </div>
+      </div>
+
+      {/* FAQ Section */}
+      <div className="w-full py-0 bg-background dark:bg-[#171717]">
+        <div className="container mx-auto px-4 md:px-0">
+          <FaqComponent showButtons={true} className="max-w-full" />
         </div>
       </div>
 
