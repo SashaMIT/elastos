@@ -369,7 +369,7 @@ const LandingPage = () => {
               alt="Elastos Logo" 
               className="h-6 sm:h-8 w-auto"
             />
-            <h2 className="text-lg sm:text-xl md:text-3xl lg:text-4xl font-bold text-white">
+            <h2 className="text-2xl sm:text-xl md:text-3xl lg:text-4xl font-bold text-white">
               Queen ELA: Married to Bitcoin since 2018.
             </h2>
           </div>

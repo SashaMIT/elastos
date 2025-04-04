@@ -96,7 +96,7 @@ export function NewsSection() {
     <div className="w-full py-20 bg-background dark:bg-[#171717]">
       <div className="container mx-auto">
         <div className="flex items-center justify-between mb-6">
-          <h3 className="text-xl md:text-2xl lg:text-3xl font-[400] leading-tight text-left mb-0 text-black dark:text-white">Stay Updated</h3>
+          <h3 className="text-2xl md:text-2xl lg:text-3xl font-[400] leading-tight text-left mb-0 text-black dark:text-white">Stay Updated</h3>
           <div className="flex space-x-2">
             <button 
               onClick={scrollLeft}
