@@ -21,7 +21,7 @@ const FaqPage = () => {
       {isLoading && <CenteredSpinner />}
       <div className="relative w-full">
         {/* Full-width hero image with gradient overlay */}
-        <div className="relative w-full h-[500px] overflow-hidden -mt-16">
+        <div className="relative w-full h-[500px] overflow-hidden -mt-20">
           <img 
             src="/images/Roadmap/Community crowd.png" 
             alt="Elastos FAQ" 
