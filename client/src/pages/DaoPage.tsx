@@ -57,7 +57,7 @@ const BlueCircleArrow = () => (
 const coreComponents = [
   {
     title: "CR Council",
-    icon: <Building2 className="w-10 h-10 text-[#F7921A]" />,
+    icon: <Building2 className="w-10 h-10 text-[#8BABFF]" />,
     description: "A 12-seat, community-elected council responsible for overseeing strategic development, approving proposals, and distributing DAO funds.",
     details: [
       "Elected by ELA stakers",
@@ -67,9 +67,9 @@ const coreComponents = [
       "Approves/rejects proposals",
       "Oversees ecosystem development"
     ],
-    color: "from-[#F7921A]/10 to-[#F7921A]/5",
-    borderColor: "border-[#F7921A]/20",
-    textColor: "text-[#F7921A]"
+    color: "from-[#8BABFF]/10 to-[#8BABFF]/5",
+    borderColor: "border-[#8BABFF]/20",
+    textColor: "text-[#8BABFF]"
   },
   {
     title: "Proposal System",
@@ -89,7 +89,7 @@ const coreComponents = [
   },
   {
     title: "Elections",
-    icon: <Vote className="w-10 h-10 text-[#F7921A]" />,
+    icon: <Vote className="w-10 h-10 text-[#8BABFF]" />,
     description: "Held annually. ELA holders vote using their staked tokens to elect trusted representatives to the council. Everything is on-chain and transparent.",
     details: [
       "Annual council elections",
@@ -99,9 +99,9 @@ const coreComponents = [
       "Self-nomination period",
       "Community debates & AMAs"
     ],
-    color: "from-[#F7921A]/10 to-[#F7921A]/5",
-    borderColor: "border-[#F7921A]/20",
-    textColor: "text-[#F7921A]"
+    color: "from-[#8BABFF]/10 to-[#8BABFF]/5",
+    borderColor: "border-[#8BABFF]/20",
+    textColor: "text-[#8BABFF]"
   },
   {
     title: "Treasury",
