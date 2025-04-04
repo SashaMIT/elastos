@@ -78,12 +78,12 @@ export default function RoadmapPage() {
       {/* Full-width hero image with gradient overlay */}
       <div className="relative w-full h-[500px] overflow-hidden -mt-16">
         <img 
-          src="/images/Roadmap/Elastos Project Early Days 2017.jpeg" 
+          src="/images/Roadmap/Community crowd.png" 
           alt="Elastos Roadmap" 
-          className="w-full h-full object-cover"
+          className="w-full h-full object-cover opacity-80"
         />
         {/* Gradient overlay */}
-        <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/80 to-[#171717]"></div>
+        <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-[#171717]/80 to-[#171717]"></div>
         
         {/* Hero content overlay */}
         <div className="absolute inset-0 flex items-center justify-center">
