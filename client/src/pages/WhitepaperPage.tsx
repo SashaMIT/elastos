@@ -45,11 +45,11 @@ const WhitepaperPage = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-16">
             {/* Whitepaper Card */}
             <Card className="overflow-hidden hover:shadow-lg transition-shadow duration-300 border border-gray-100 dark:border-gray-800">
-              <div className="h-60 bg-gray-200 dark:bg-gray-700 relative overflow-hidden">
+              <div className="h-60 bg-gray-200 dark:bg-gray-700 relative overflow-hidden flex items-center justify-center">
                 <img 
                   src="/images/whitepapers/Elastos 2018 Whitepaper.png" 
                   alt="Elastos Whitepaper Cover"
-                  className="w-full h-full object-cover"
+                  className="h-full object-contain"
                   onError={(e) => {
                     e.currentTarget.src = "https://via.placeholder.com/400x200?text=Elastos+Whitepaper";
                   }}
@@ -98,11 +98,11 @@ const WhitepaperPage = () => {
 
             {/* Litepaper Card */}
             <Card className="overflow-hidden hover:shadow-lg transition-shadow duration-300 border border-gray-100 dark:border-gray-800">
-              <div className="h-60 bg-gray-200 dark:bg-gray-700 relative overflow-hidden">
+              <div className="h-60 bg-gray-200 dark:bg-gray-700 relative overflow-hidden flex items-center justify-center">
                 <img 
                   src="/images/whitepapers/litepaper-cover.png" 
                   alt="Elastos Litepaper Cover"
-                  className="w-full h-full object-cover"
+                  className="h-full object-contain"
                   onError={(e) => {
                     e.currentTarget.src = "https://via.placeholder.com/400x200?text=Elastos+Litepaper";
                   }}
@@ -150,11 +150,11 @@ const WhitepaperPage = () => {
 
             {/* Technical Docs Card */}
             <Card className="overflow-hidden hover:shadow-lg transition-shadow duration-300 border border-gray-100 dark:border-gray-800">
-              <div className="h-60 bg-gray-200 dark:bg-gray-700 relative overflow-hidden">
+              <div className="h-60 bg-gray-200 dark:bg-gray-700 relative overflow-hidden flex items-center justify-center">
                 <img 
                   src="/images/whitepapers/tech-docs-cover.png" 
                   alt="Elastos Technical Documentation Cover"
-                  className="w-full h-full object-cover"
+                  className="h-full object-contain"
                   onError={(e) => {
                     e.currentTarget.src = "https://via.placeholder.com/400x200?text=Technical+Documentation";
                   }}
