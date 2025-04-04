@@ -376,24 +376,40 @@ const LandingPage = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-5xl mx-auto">
             <div className="bg-[#ececec] dark:bg-[#5C8EFF]/[0.06] rounded-lg p-4 sm:p-6 shadow-sm">
               <h3 className="text-lg font-medium mb-4">Current Price</h3>
-              <p className="text-2xl font-bold">${hashrateData?.elaPrice?.toFixed(2) || '0.00'}</p>
-              <p className={`text-sm ${hashrateData?.elaPriceChange24h >= 0 ? 'text-green-500 dark:text-green-400' : 'text-red-500 dark:text-red-400'} mb-4`}>
-                {(hashrateData?.elaPriceChange24h >= 0 ? '+' : '') + (hashrateData?.elaPriceChange24h || 0).toFixed(2)}%
-              </p>
-              <div className="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-1.5">
-                <div className="bg-[#F6921A] h-1.5 rounded-full" style={{ width: `${((hashrateData?.elaPrice || 0) / 77 * 100)}%` }} />
-              </div>
-              <p className="text-sm text-gray-500 dark:text-gray-400 mt-2">{((hashrateData?.elaPrice || 0) / 77 * 100).toFixed(1)}% from ATH ($77.00)</p>
+              {isHashrateLoading ? (
+                <div className="flex flex-col items-center justify-center h-[120px]">
+                  <Dots_v2 />
+                </div>
+              ) : (
+                <>
+                  <p className="text-2xl font-bold">${hashrateData?.elaPrice?.toFixed(2) || '0.00'}</p>
+                  <p className={`text-sm ${hashrateData?.elaPriceChange24h >= 0 ? 'text-green-500 dark:text-green-400' : 'text-red-500 dark:text-red-400'} mb-4`}>
+                    {(hashrateData?.elaPriceChange24h >= 0 ? '+' : '') + (hashrateData?.elaPriceChange24h || 0).toFixed(2)}%
+                  </p>
+                  <div className="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-1.5">
+                    <div className="bg-[#F6921A] h-1.5 rounded-full" style={{ width: `${((hashrateData?.elaPrice || 0) / 77 * 100)}%` }} />
+                  </div>
+                  <p className="text-sm text-gray-500 dark:text-gray-400 mt-2">{((hashrateData?.elaPrice || 0) / 77 * 100).toFixed(1)}% from ATH ($77.00)</p>
+                </>
+              )}
             </div>
 
             <div className="bg-[#ececec] dark:bg-[#5C8EFF]/[0.06] rounded-lg p-4 sm:p-6 shadow-sm">
               <h3 className="text-lg font-medium mb-4">Total Supply</h3>
-              <p className="text-2xl font-bold">28,199,999 ELA</p>
-              <p className="text-sm text-gray-500 dark:text-gray-400 mt-1">91.31% mined</p>
-              <div className="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-1.5 mt-4">
-                <div className="bg-[#F6921A] h-1.5 rounded-full" style={{ width: '91.31%' }} />
-              </div>
-              <p className="text-xs text-gray-500 dark:text-gray-400 mt-2">{(totalSupply || 0).toLocaleString()} ELA currently</p>
+              {isSupplyLoading ? (
+                <div className="flex flex-col items-center justify-center h-[120px]">
+                  <Dots_v2 />
+                </div>
+              ) : (
+                <>
+                  <p className="text-2xl font-bold">28,199,999 ELA</p>
+                  <p className="text-sm text-gray-500 dark:text-gray-400 mt-1">91.31% mined</p>
+                  <div className="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-1.5 mt-4">
+                    <div className="bg-[#F6921A] h-1.5 rounded-full" style={{ width: '91.31%' }} />
+                  </div>
+                  <p className="text-xs text-gray-500 dark:text-gray-400 mt-2">{(totalSupply || 0).toLocaleString()} ELA currently</p>
+                </>
+              )}
             </div>
 
 
@@ -402,12 +418,20 @@ const LandingPage = () => {
 
             <div className="bg-[#ececec] dark:bg-[#5C8EFF]/[0.06] rounded-lg p-4 sm:p-6 shadow-sm">
               <h3 className="text-lg font-medium mb-4">Market Cap</h3>
-              <p className="text-2xl font-bold">${formatNumber(marketCapData?.elastosMarketCap ?? 0)}</p>
-              <p className="text-sm text-gray-500 dark:text-gray-400 mt-1">{((marketCapData?.marketCapRatio ?? 0) * 100).toFixed(4)}% of BTC</p>
-              <div className="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-1.5 mt-4">
-                <div className="bg-[#F6921A] h-1.5 rounded-full" style={{ width: `${((marketCapData?.marketCapRatio ?? 0) * 100)}%` }} />
-              </div>
-              <p className="text-xs text-gray-500 dark:text-gray-400 mt-2">${formatNumber(marketCapData?.bitcoinMarketCap ?? 0)} BTC Cap</p>
+              {isMarketCapLoading ? (
+                <div className="flex flex-col items-center justify-center h-[120px]">
+                  <Dots_v2 />
+                </div>
+              ) : (
+                <>
+                  <p className="text-2xl font-bold">${formatNumber(marketCapData?.elastosMarketCap ?? 0)}</p>
+                  <p className="text-sm text-gray-500 dark:text-gray-400 mt-1">{((marketCapData?.marketCapRatio ?? 0) * 100).toFixed(4)}% of BTC</p>
+                  <div className="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-1.5 mt-4">
+                    <div className="bg-[#F6921A] h-1.5 rounded-full" style={{ width: `${((marketCapData?.marketCapRatio ?? 0) * 100)}%` }} />
+                  </div>
+                  <p className="text-xs text-gray-500 dark:text-gray-400 mt-2">${formatNumber(marketCapData?.bitcoinMarketCap ?? 0)} BTC Cap</p>
+                </>
+              )}
             </div>
 
 
@@ -416,19 +440,27 @@ const LandingPage = () => {
 
             <div className="bg-[#ececec] dark:bg-[#5C8EFF]/[0.06] rounded-lg p-4 sm:p-6 shadow-sm">
               <h3 className="text-lg font-medium mb-4">Current APR</h3>
-              <p className="text-2xl font-bold">3.29%</p>
-              <p className="text-sm text-gray-500 dark:text-gray-400 mt-1">{(networkStats?.stakedAmount || 0).toLocaleString()} ELA staked</p>
-              <div className="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-1.5 mt-4">
-                <div 
-                  className="bg-[#F6921A] h-1.5 rounded-full" 
-                  style={{ 
-                    width: `${((networkStats?.stakedAmount || 0) / (totalSupply || 28199999)) * 100}%` 
-                  }} 
-                />
-              </div>
-              <p className="text-xs text-gray-500 dark:text-gray-400 mt-1">
-                {((networkStats?.stakedAmount || 0) / (totalSupply || 28199999) * 100).toFixed(1)}% of circulating supply
-              </p>
+              {!networkStats ? (
+                <div className="flex flex-col items-center justify-center h-[120px]">
+                  <Dots_v2 />
+                </div>
+              ) : (
+                <>
+                  <p className="text-2xl font-bold">3.29%</p>
+                  <p className="text-sm text-gray-500 dark:text-gray-400 mt-1">{(networkStats?.stakedAmount || 0).toLocaleString()} ELA staked</p>
+                  <div className="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-1.5 mt-4">
+                    <div 
+                      className="bg-[#F6921A] h-1.5 rounded-full" 
+                      style={{ 
+                        width: `${((networkStats?.stakedAmount || 0) / (totalSupply || 28199999)) * 100}%` 
+                      }} 
+                    />
+                  </div>
+                  <p className="text-xs text-gray-500 dark:text-gray-400 mt-1">
+                    {((networkStats?.stakedAmount || 0) / (totalSupply || 28199999) * 100).toFixed(1)}% of circulating supply
+                  </p>
+                </>
+              )}
             </div>
 
 
@@ -445,32 +477,48 @@ const LandingPage = () => {
 
             <div className="bg-[#ececec] dark:bg-[#5C8EFF]/[0.06] rounded-lg p-4 sm:p-6 shadow-sm">
               <h3 className="text-lg font-medium mb-4">BTC Security</h3>
-              <p className="text-2xl font-bold">{((hashrateData?.elastosHashrate ?? 0) / (hashrateData?.bitcoinHashrate ?? 1) * 100).toFixed(2)}%</p>
-              <p className="text-sm text-gray-500 dark:text-gray-400 mt-1">{Math.round(hashrateData?.elastosHashrate || 0)} EH/s of {Math.round(hashrateData?.bitcoinHashrate || 0)} EH/s</p>
-              <div className="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-1.5 mt-4">
-                <div className="bg-[#F6921A] h-1.5 rounded-full" style={{ width: `${((hashrateData?.elastosHashrate ?? 0) / (hashrateData?.bitcoinHashrate ?? 1) * 100)}%` }} />
-              </div>
-              <p className="text-xs text-gray-500 dark:text-gray-400 mt-2">{((hashrateData?.elastosHashrate ?? 0) / 1.102).toFixed(2)} Frontier Supercomputers</p>
+              {isHashrateLoading ? (
+                <div className="flex flex-col items-center justify-center h-[120px]">
+                  <Dots_v2 />
+                </div>
+              ) : (
+                <>
+                  <p className="text-2xl font-bold">{((hashrateData?.elastosHashrate ?? 0) / (hashrateData?.bitcoinHashrate ?? 1) * 100).toFixed(2)}%</p>
+                  <p className="text-sm text-gray-500 dark:text-gray-400 mt-1">{Math.round(hashrateData?.elastosHashrate || 0)} EH/s of {Math.round(hashrateData?.bitcoinHashrate || 0)} EH/s</p>
+                  <div className="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-1.5 mt-4">
+                    <div className="bg-[#F6921A] h-1.5 rounded-full" style={{ width: `${((hashrateData?.elastosHashrate ?? 0) / (hashrateData?.bitcoinHashrate ?? 1) * 100)}%` }} />
+                  </div>
+                  <p className="text-xs text-gray-500 dark:text-gray-400 mt-2">{((hashrateData?.elastosHashrate ?? 0) / 1.102).toFixed(2)} Frontier Supercomputers</p>
+                </>
+              )}
             </div>
 
 
             <div className="bg-[#ececec] dark:bg-[#5C8EFF]/[0.06] rounded-lg p-4 sm:p-6 shadow-sm">
               <h3 className="text-lg font-medium mb-4">Latest Block By</h3>
-              <p className="text-2xl font-bold">{currentBlock?.poolInfo?.poolName || 'Unknown'}</p>
-              <p className="text-sm text-gray-500 dark:text-gray-400 mt-1">Mining Pool</p>
-              <div className="mt-4 pt-[2px] flex justify-center">
-                <button 
-                  className="px-3 py-2 bg-[rgba(92,142,255,0.10)] text-[#5C8EFF] rounded-full font-medium transition-all flex items-center gap-1 border border-[rgba(92,142,255,0.50)] w-[100px] h-[40px] justify-center"
-                  onClick={() => window.open(`https://ela.elastos.io/api/v1/block/${currentBlock?.hash}`, '_blank')}
-                >
-                  <span>Verify</span>
-                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 35 34" fill="none">
-                    <circle cx="17.333" cy="17" r="16.75" stroke="#5C8EFF" strokeOpacity="0.5" strokeWidth="0.5"/>
-                    <path d="M17.3338 22.9405L23.2741 17.0002L17.3338 11.0598L16.4162 11.9774L20.7628 16.324H10.8622V17.6763H20.7628L16.4162 22.0229L17.3338 22.9405Z" fill="#5C8EFF"/>
-                    <path d="M20.7628 17.6638H10.8747V16.3365H20.7628H20.7929L20.7716 16.3152L16.4338 11.9774L17.3338 11.0775L23.2564 17.0002L17.3338 22.9228L16.4338 22.0229L20.7716 17.6851L20.7929 17.6638H20.7628Z" stroke="#5C8EFF" strokeOpacity="0.5" strokeWidth="0.025"/>
-                  </svg>
-                </button>
-              </div>
+              {!currentBlock ? (
+                <div className="flex flex-col items-center justify-center h-[120px]">
+                  <Dots_v2 />
+                </div>
+              ) : (
+                <>
+                  <p className="text-2xl font-bold">{currentBlock?.poolInfo?.poolName || 'Unknown'}</p>
+                  <p className="text-sm text-gray-500 dark:text-gray-400 mt-1">Mining Pool</p>
+                  <div className="mt-4 pt-[2px] flex justify-center">
+                    <button 
+                      className="px-3 py-2 bg-[rgba(92,142,255,0.10)] text-[#5C8EFF] rounded-full font-medium transition-all flex items-center gap-1 border border-[rgba(92,142,255,0.50)] w-[100px] h-[40px] justify-center"
+                      onClick={() => window.open(`https://ela.elastos.io/api/v1/block/${currentBlock?.hash}`, '_blank')}
+                    >
+                      <span>Verify</span>
+                      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 35 34" fill="none">
+                        <circle cx="17.333" cy="17" r="16.75" stroke="#5C8EFF" strokeOpacity="0.5" strokeWidth="0.5"/>
+                        <path d="M17.3338 22.9405L23.2741 17.0002L17.3338 11.0598L16.4162 11.9774L20.7628 16.324H10.8622V17.6763H20.7628L16.4162 22.0229L17.3338 22.9405Z" fill="#5C8EFF"/>
+                        <path d="M20.7628 17.6638H10.8747V16.3365H20.7628H20.7929L20.7716 16.3152L16.4338 11.9774L17.3338 11.0775L23.2564 17.0002L17.3338 22.9228L16.4338 22.0229L20.7716 17.6851L20.7929 17.6638H20.7628Z" stroke="#5C8EFF" strokeOpacity="0.5" strokeWidth="0.025"/>
+                      </svg>
+                    </button>
+                  </div>
+                </>
+              )}
             </div>
 
 
@@ -483,6 +531,7 @@ const LandingPage = () => {
 
             <div className="bg-[#ececec] dark:bg-[#5C8EFF]/[0.06] rounded-lg p-4 sm:p-6 shadow-sm">
               <h3 className="text-lg font-medium mb-4">Next 4 Year Halving</h3>
+              {/* Halving info is static, no need for a loader */}
               <p className="text-2xl font-bold">Dec 1, 2025</p>
               <p className="text-sm text-gray-500 dark:text-gray-400 mt-1">305d 17h 52m remaining</p>
               <div className="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-1.5 mt-4">
@@ -496,21 +545,29 @@ const LandingPage = () => {
 
             <div className="bg-[#ececec] dark:bg-[#5C8EFF]/[0.06] rounded-lg p-4 sm:p-6 shadow-sm">
               <h3 className="text-lg font-medium mb-4">Active Wallets</h3>
-              <p className="text-2xl font-bold">{networkStats?.walletAddresses?.toLocaleString() || '0'}</p>
-              <p className="text-sm text-gray-500 dark:text-gray-400 mt-1">Total Addresses</p>
-              <div className="mt-4 pt-[2px] flex justify-center">
-                <button 
-                  className="px-3 py-2 bg-[rgba(92,142,255,0.10)] text-[#5C8EFF] rounded-full font-medium transition-all flex items-center gap-1 border border-[rgba(92,142,255,0.50)] w-[100px] h-[40px] justify-center"
-                  onClick={() => window.open("https://ela.elastos.io/api/v1/data-statistics/", '_blank')}
-                >
-                  <span>Verify</span>
-                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 35 34" fill="none">
-                    <circle cx="17.333" cy="17" r="16.75" stroke="#5C8EFF" strokeOpacity="0.5" strokeWidth="0.5"/>
-                    <path d="M17.3338 22.9405L23.2741 17.0002L17.3338 11.0598L16.4162 11.9774L20.7628 16.324H10.8622V17.6763H20.7628L16.4162 22.0229L17.3338 22.9405Z" fill="#5C8EFF"/>
-                    <path d="M20.7628 17.6638H10.8747V16.3365H20.7628H20.7929L20.7716 16.3152L16.4338 11.9774L17.3338 11.0775L23.2564 17.0002L17.3338 22.9228L16.4338 22.0229L20.7716 17.6851L20.7929 17.6638H20.7628Z" stroke="#5C8EFF" strokeOpacity="0.5" strokeWidth="0.025"/>
-                  </svg>
-                </button>
-              </div>
+              {!networkStats ? (
+                <div className="flex flex-col items-center justify-center h-[120px]">
+                  <Dots_v2 />
+                </div>
+              ) : (
+                <>
+                  <p className="text-2xl font-bold">{networkStats?.walletAddresses?.toLocaleString() || '0'}</p>
+                  <p className="text-sm text-gray-500 dark:text-gray-400 mt-1">Total Addresses</p>
+                  <div className="mt-4 pt-[2px] flex justify-center">
+                    <button 
+                      className="px-3 py-2 bg-[rgba(92,142,255,0.10)] text-[#5C8EFF] rounded-full font-medium transition-all flex items-center gap-1 border border-[rgba(92,142,255,0.50)] w-[100px] h-[40px] justify-center"
+                      onClick={() => window.open("https://ela.elastos.io/api/v1/data-statistics/", '_blank')}
+                    >
+                      <span>Verify</span>
+                      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 35 34" fill="none">
+                        <circle cx="17.333" cy="17" r="16.75" stroke="#5C8EFF" strokeOpacity="0.5" strokeWidth="0.5"/>
+                        <path d="M17.3338 22.9405L23.2741 17.0002L17.3338 11.0598L16.4162 11.9774L20.7628 16.324H10.8622V17.6763H20.7628L16.4162 22.0229L17.3338 22.9405Z" fill="#5C8EFF"/>
+                        <path d="M20.7628 17.6638H10.8747V16.3365H20.7628H20.7929L20.7716 16.3152L16.4338 11.9774L17.3338 11.0775L23.2564 17.0002L17.3338 22.9228L16.4338 22.0229L20.7716 17.6851L20.7929 17.6638H20.7628Z" stroke="#5C8EFF" strokeOpacity="0.5" strokeWidth="0.025"/>
+                      </svg>
+                    </button>
+                  </div>
+                </>
+              )}
             </div>
           </div>
 
