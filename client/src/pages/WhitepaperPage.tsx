@@ -26,7 +26,7 @@ const WhitepaperPage = () => {
           <div className="absolute inset-0 flex items-center justify-center">
             <div className="container mx-auto px-4">
               <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div className="text-center mb-12">
+                <div className="text-center mb-6">
                   <h1 className="text-4xl sm:text-4xl md:text-5xl font-bold text-white mb-6">
                     Elastos <span className="text-[#F6921A]">Documentation</span>
                   </h1>
@@ -41,7 +41,7 @@ const WhitepaperPage = () => {
           </div>
         </div>
 
-        <div className="container mx-auto px-4 py-16">
+        <div className="container mx-auto px-4 py-8">
           {/* Documents Grid */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-16">
             {/* Whitepaper Card */}
