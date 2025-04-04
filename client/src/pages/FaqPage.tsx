@@ -17,7 +17,7 @@ const FaqPage = () => {
   return (
     <>
       {isLoading && <CenteredSpinner />}
-      <div className="w-full h-full bg-white dark:bg-[#151515] px-4 py-8 md:px-8 lg:px-16 xl:px-52 2xl:px-52">
+      <div className="w-full h-full bg-white dark:bg-[#171717] px-4 py-8 md:px-8 lg:px-16 xl:px-52 2xl:px-52">
         <FaqComponent />
       </div>
     </>
