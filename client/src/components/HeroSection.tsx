@@ -118,10 +118,16 @@ export function HeroSection() {
               className="relative z-10 w-full h-auto rounded-lg shadow-xl dark:shadow-orange-500/20"
             />
             <div className="absolute -bottom-4 -right-4 bg-white dark:bg-[#222222] p-2 rounded-lg shadow-lg z-20 flex items-center gap-2">
-              <img src="/images/Elastos New Logo_Kit-03.png" alt="ELA Logo" className="h-6 w-auto" />
-              <span className="text-sm font-normal text-[#F6921A]">
-                Queen ELA: Married to Bitcoin since 2018
-              </span>
+              <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-12">
+                <img 
+                  src="/images/Elastos New Logo_Kit-03.png" 
+                  alt="Elastos Logo" 
+                  className="h-8 w-auto mb-3 sm:mb-0 sm:h-8"
+                />
+                <h2 className="text-2xl sm:text-xl md:text-3xl lg:text-4xl font-bold text-white">
+                  Queen ELA: Married to Bitcoin since 2018.
+                </h2>
+              </div>
             </div>
           </div>
         </div>
