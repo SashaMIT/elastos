@@ -687,8 +687,8 @@ const LandingPage = () => {
             />
             <ImageZoom
               key="5"
-              src="/images/Community/FmIGJV0XkA4B7wA.jpeg"
-              alt="Elastos Community Gathering"
+              src="/images/Roadmap/Rong Pomp.png"
+              alt="Rong Chen with Pomp"
               className="w-full aspect-square object-cover"
               loading="lazy"
               width={300}
@@ -813,8 +813,8 @@ const LandingPage = () => {
             />
             <ImageZoom
               key="19"
-              src="/images/Community/F-Jr2ZIaQAAiRH4.jpeg"
-              alt="Elastos Community Gathering"
+              src="/images/Roadmap/Elastos 1 Year.jpeg"
+              alt="Elastos 1 Year"
               className="w-full aspect-square object-cover"
               loading="lazy"
               width={300}
@@ -840,8 +840,8 @@ const LandingPage = () => {
             />
             <ImageZoom
               key="22"
-              src="/images/Community/EiKLV1TU4AAR4OV.jpeg"
-              alt="Elastos Community Event"
+              src="/images/Roadmap/Elastos Members.jpeg"
+              alt="Elastos Members"
               className="w-full aspect-square object-cover"
               loading="lazy"
               width={300}
@@ -849,15 +849,6 @@ const LandingPage = () => {
             />
             <ImageZoom
               key="23"
-              src="/images/Community/E5YyMc3VkAA2AwE.jpeg"
-              alt="Elastos Community Gathering"
-              className="w-full aspect-square object-cover"
-              loading="lazy"
-              width={300}
-              height={300}
-            />
-            <ImageZoom
-              key="24"
               src="/images/Community/Ecp2XbVUYAAlUeC.jpeg"
               alt="Elastos Community Event"
               className="w-full aspect-square object-cover"
