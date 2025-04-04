@@ -41,7 +41,9 @@ export function TestimonialsSection({
               </div>
             </div>
 
-            {/* Fade effects removed */}
+            {/* Subtle fade effects that blend into #171717 */}
+            <div className="pointer-events-none absolute inset-y-0 left-0 w-[5%] bg-gradient-to-r from-[#171717] to-transparent" />
+            <div className="pointer-events-none absolute inset-y-0 right-0 w-[5%] bg-gradient-to-l from-[#171717] to-transparent" />
           </div>
         </div>
       </div>
