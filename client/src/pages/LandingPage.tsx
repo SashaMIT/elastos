@@ -840,7 +840,7 @@ const LandingPage = () => {
             />
             <ImageZoom
               key="22"
-              src="/images/Roadmap/Elastos 1 Year.jpeg"
+              src="/images/Community/D35ZHIUUYAA2xKO.jpeg"
               alt="Elastos Community Event"
               className="w-full aspect-square object-cover"
               loading="lazy"
