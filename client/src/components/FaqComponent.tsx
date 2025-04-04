@@ -17,7 +17,7 @@ export const faqItems = [
   {
     id: "3",
     title: "What is the Elastos World Computer?",
-    content: "The Elastos World Computer is a decentralized computing infrastructure for secure, serverless applications under blockchain governance. It integrates Identity, P2P communication, decentralized storage, secure execution, and a blockchain-based trust layer for a new digital economy to emerge. Secured through Bitcoin merge-mining, it leverages Bitcoin’s hash power without extra energy use, ensuring unmatched security while rewarding miners with ELA. DAO governance lets ELA holders elect delegates annually to oversee network decisions, funding, and development, uniting miners, developers, and token holders in a self-sustaining, censorship-resistant ecosystem."
+    content: "The Elastos World Computer is a decentralized computing infrastructure for secure, serverless applications under blockchain governance. It integrates Identity, P2P communication, decentralized storage, secure execution, and a blockchain-based trust layer for a new digital economy to emerge. Secured through Bitcoin merge-mining, it leverages Bitcoin's hash power without extra energy use, ensuring unmatched security while rewarding miners with ELA. DAO governance lets ELA holders elect delegates annually to oversee network decisions, funding, and development, uniting miners, developers, and token holders in a self-sustaining, censorship-resistant ecosystem."
   },
   {
     id: "4",
@@ -75,21 +75,6 @@ const FaqComponent: React.FC<FaqComponentProps> = ({ className = "", showButtons
             </a>
           )}
         </div>
-            {/* Talk with Community button removed */}osgroup" 
-              target="_blank" 
-              rel="noopener noreferrer"
-              className="inline-flex items-center justify-center rounded-full bg-transparent text-[#5C8EFF] px-4 py-2 text-sm font-medium border border-[#5C8EFF] hover:bg-[#5C8EFF]/10 transition-colors gap-2"
-            >
-              Talk with Community
-              <div className="w-6 h-6 rounded-full border border-[#5C8EFF] flex items-center justify-center">
-                <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                  <path d="M5 12h14"></path>
-                  <path d="m12 5 7 7-7 7"></path>
-                </svg>
-              </div>
-            </a>
-          </div>
-        )}
       </CardHeader>
       <CardContent className="p-6 pl-0 pt-2">
         <Accordion type="single" collapsible className="w-full" defaultValue="1">
