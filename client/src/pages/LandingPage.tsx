@@ -379,7 +379,7 @@ const LandingPage = () => {
               <h3 className="text-lg font-medium mb-4">Current Price</h3>
               {isHashrateLoading ? (
                 <div className="flex flex-col items-center justify-center h-[120px]">
-                  <RoundSpinner size="md" color="blue" />
+                  <Dots_v2 />
                 </div>
               ) : (
                 <>
@@ -399,7 +399,7 @@ const LandingPage = () => {
               <h3 className="text-lg font-medium mb-4">Total Supply</h3>
               {isSupplyLoading ? (
                 <div className="flex flex-col items-center justify-center h-[120px]">
-                  <RoundSpinner size="md" color="blue" />
+                  <Dots_v2 />
                 </div>
               ) : (
                 <>
@@ -421,7 +421,7 @@ const LandingPage = () => {
               <h3 className="text-lg font-medium mb-4">Market Cap</h3>
               {isMarketCapLoading ? (
                 <div className="flex flex-col items-center justify-center h-[120px]">
-                  <RoundSpinner size="md" color="blue" />
+                  <Dots_v2 />
                 </div>
               ) : (
                 <>
@@ -443,7 +443,7 @@ const LandingPage = () => {
               <h3 className="text-lg font-medium mb-4">Current APR</h3>
               {!networkStats ? (
                 <div className="flex flex-col items-center justify-center h-[120px]">
-                  <RoundSpinner size="md" color="blue" />
+                  <Dots_v2 />
                 </div>
               ) : (
                 <>
@@ -480,7 +480,7 @@ const LandingPage = () => {
               <h3 className="text-lg font-medium mb-4">BTC Security</h3>
               {isHashrateLoading ? (
                 <div className="flex flex-col items-center justify-center h-[120px]">
-                  <RoundSpinner size="md" color="blue" />
+                  <Dots_v2 />
                 </div>
               ) : (
                 <>
@@ -499,7 +499,7 @@ const LandingPage = () => {
               <h3 className="text-lg font-medium mb-4">Latest Block By</h3>
               {!currentBlock ? (
                 <div className="flex flex-col items-center justify-center h-[120px]">
-                  <RoundSpinner size="md" color="blue" />
+                  <Dots_v2 />
                 </div>
               ) : (
                 <>
@@ -548,7 +548,7 @@ const LandingPage = () => {
               <h3 className="text-lg font-medium mb-4">Active Wallets</h3>
               {!networkStats ? (
                 <div className="flex flex-col items-center justify-center h-[120px]">
-                  <RoundSpinner size="md" color="blue" />
+                  <Dots_v2 />
                 </div>
               ) : (
                 <>
