@@ -21,9 +21,9 @@ const WalletPage: React.FC = () => {
               viewport={{ once: true }}
               className="mb-8 text-center"
             >
+            
               <h2 className="text-4xl font-bold text-white mb-4">
-                <span className="text-[#F7921A]">Elastos</span>{" "}
-                <span className="text-[#8BABFF]">Essentials</span> Wallet
+                Elastos Essentials Wallet
               </h2>
               <p className="text-xl text-white/70 max-w-3xl mx-auto">
                 Experience the official Elastos wallet with native support for the entire Elastos ecosystem

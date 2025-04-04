@@ -145,7 +145,7 @@ export default function ElaUtilityPage() {
         <div className="my-16">
           <div className="motion-section text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-bold text-black dark:text-white mb-3">
-              Explore <span className="text-[#F6921A]">ELA</span>
+              Explore ELA
             </h2>
             <p className="text-lg text-gray-600 dark:text-gray-300">
               Discover the utility and capabilities of Elastos' native digital asset
@@ -290,7 +290,7 @@ export default function ElaUtilityPage() {
       <div className="my-16">
         <div className="motion-section text-center mb-12">
           <h2 className="text-3xl md:text-4xl font-bold text-black dark:text-white mb-3">
-            <span className="text-[#5C8EFF]">Use</span> Your ELA
+            Use Your ELA
           </h2>
           <p className="text-lg text-gray-600 dark:text-gray-300">
             Engage with the ecosystem and earn rewards
@@ -403,8 +403,7 @@ export default function ElaUtilityPage() {
               className="mb-8 text-center"
             >
               <h2 className="text-4xl font-bold text-white mb-4">
-                <span className="text-[#F7921A]">Elastos</span>{" "}
-                <span className="text-[#8BABFF]">Essentials</span> Wallet
+                Elastos Essentials Wallet
               </h2>
               <p className="text-xl text-white/70 max-w-3xl mx-auto">
                 Experience the official Elastos wallet with native support for the entire Elastos ecosystem
