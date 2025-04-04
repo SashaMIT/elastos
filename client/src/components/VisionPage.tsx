@@ -77,7 +77,7 @@ export function VisionPage() {
           </div>
 
           {/* Rong Chen Quote */}
-          <div className="w-full max-w-5xl mx-auto px-4 py-8 mt-6">
+          <div className="w-full max-w-7xl mx-auto px-4 py-8 mt-6">
             <div className="bg-gradient-to-br from-[#5C8EFF]/10 to-[#F6921A]/10 rounded-xl p-8 border border-[#5C8EFF]/30 relative">
               {/* Background blur elements */}
               <div className="absolute -top-20 -right-20 w-64 h-64 rounded-full bg-[#F7921A]/10 blur-[80px]"></div>
