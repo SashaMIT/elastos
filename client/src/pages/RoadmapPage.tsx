@@ -5,6 +5,7 @@ import { ImageZoom } from "@/components/ui/zoomable-image";
 import { ForwardRoadmap } from "@/components/ui/forward-roadmap";
 import { StackedCircularFooter } from "@/components/ui/stacked-circular-footer";
 import { LogoCarouselDemo } from "@/components/LogoCarouselDemo";
+import FaqComponent from "@/components/FaqComponent";
 
 export default function RoadmapPage() {
   const timelineData = [
@@ -237,9 +238,14 @@ export default function RoadmapPage() {
             />
           </div>
         </div>
+        
+        {/* Add FAQ component */}
+        <div className="mt-20 mb-20">
+          <FaqComponent showButtons={true} className="max-w-full" />
+        </div>
 
         {/* LogoCarouselDemo Section */}
-        <div className="mt-10">
+        <div className="mt-20">
           <LogoCarouselDemo />
         </div>
         
