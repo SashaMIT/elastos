@@ -90,7 +90,7 @@ export default function RoadmapPage() {
           <div className="container mx-auto px-4">
             <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
               <div className="text-center mb-12">
-                <h1 className="text-4xl sm:text-4xl md:text-5xl font-bold text-white mb-6">
+                <h1 className="text-4xl sm:text-4xl md:text-5xl font-[200] text-white mb-6">
                   Elastos <span className="text-[#5C8EFF]">Roadmap</span>
                 </h1>
                 <p className="text-gray-300 max-w-2xl mx-auto text-md sm:text-base md:text-lg">
