@@ -620,26 +620,50 @@ const LandingPage = () => {
             />
             <ImageZoom
               key="5"
+              src="/images/Community/DVM2La_VwAEeq-U.jpeg"
+              alt="Elastos Community Event"
+              className="w-full h-[200px] object-cover"
+            />
+            <ImageZoom
+              key="6"
+              src="/images/Community/Div4TBUWsAYmcEq.jpeg"
+              alt="Elastos Community Meetup"
+              className="w-full h-[200px] object-cover"
+            />
+            <ImageZoom
+              key="7"
+              src="/images/Community/FmIGJV0XkA4B7wA.jpeg"
+              alt="Elastos Community Gathering"
+              className="w-full h-[200px] object-cover"
+            />
+            <ImageZoom
+              key="8"
               src="/images/Roadmap/Elastos in Couinstore event.jpeg"
               alt="Elastos in Couinstore event"
               className="w-full h-[200px] object-cover"
             />
             <ImageZoom
-              key="6"
+              key="9"
               src="/images/Roadmap/Elastos hosted a meetup in Hong Kong.jpeg"
               alt="Elastos hosted a meetup in Hong Kong"
               className="w-full h-[200px] object-cover"
             />
             <ImageZoom
-              key="7"
+              key="10"
               src="/images/Roadmap/Rong Chen and Kevin Zhang hosted a meetup in Barcelona.jpeg"
               alt="Rong Chen and Kevin Zhang hosted a meetup in Barcelona"
               className="w-full h-[200px] object-cover"
             />
             <ImageZoom
-              key="8"
+              key="11"
               src="/images/Roadmap/Sunny Feng Han at Teamz Web Summit in Tokyo.jpeg"
               alt="Sunny Feng Han at Teamz Web Summit in Tokyo"
+              className="w-full h-[200px] object-cover"
+            />
+            <ImageZoom
+              key="12"
+              src="/images/Roadmap/Sunny Feng Han in DACA event.jpg"
+              alt="Sunny Feng Han in DACA event"
               className="w-full h-[200px] object-cover"
             />
           </div>
