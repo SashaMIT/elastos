@@ -593,7 +593,6 @@ const LandingPage = () => {
         
         {/* Community Image Grid */}
         <div className="container mx-auto px-4 py-16">
-          <h2 className="text-2xl md:text-3xl font-bold mb-10 text-center text-black dark:text-white">Community Events & Engagement</h2>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
             <ImageZoom
               key="1"
