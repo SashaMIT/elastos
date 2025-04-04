@@ -678,8 +678,8 @@ const LandingPage = () => {
             />
             <ImageZoom
               key="4"
-              src="/images/Roadmap/The Node Effect event Singapore.jpeg"
-              alt="The Node Effect event Singapore"
+              src="/images/Community/Elastos Celebration.png"
+              alt="Elastos Celebration"
               className="w-full aspect-square object-cover"
               loading="lazy"
               width={300}
