@@ -122,7 +122,7 @@ export default function RoadmapPage() {
       </div>
 
       <div className="mt-20 mb-20">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
           <ImageZoom
             key="1"
             src="/images/Roadmap/Elastos Project Early Days 2017.jpeg"
