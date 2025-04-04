@@ -82,7 +82,7 @@ const WhitepaperPage = () => {
                   </ul>
                 </div>
               </CardContent>
-              <CardFooter className="pt-0 mt-1">
+              <CardFooter className="pt-0 -mt-5">
                 <a href="/whitepapers/Elastos_Whitepaper_v0.2.pdf" target="_blank" rel="noopener noreferrer">
                   <button className="px-3 py-2 bg-[rgba(246,146,26,0.10)] text-[#F6921A] rounded-full font-medium transition-all flex items-center gap-1 border border-[rgba(246,146,26,0.50)] text-sm">
                     <span>View</span>
