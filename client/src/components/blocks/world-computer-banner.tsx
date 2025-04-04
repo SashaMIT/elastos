@@ -12,7 +12,7 @@ export function WorldComputerBanner() {
           viewport={{ once: true }}
           className="text-3xl md:text-4xl font-bold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-[#F6921A] to-[#5C8EFF]"
         >
-          A World Computer for Everyone
+          A SmartWeb for Everyone
         </motion.h2>
 
         <motion.p 
@@ -61,7 +61,7 @@ export function WorldComputerBanner() {
           viewport={{ once: true }}
           className="text-lg mb-10"
         >
-          ELA is the oil of this machine—the single asset that powers the World Computer's economy, governance, and trust.
+          ELA is the oil of this machine—the single asset that powers the SmartWeb economy, governance, and trust.
         </motion.p>
 
         <motion.div 
@@ -72,7 +72,7 @@ export function WorldComputerBanner() {
           className="space-y-2"
         >
           <p className="text-xl font-semibold">Own your identity. Own your data. Own your internet.</p>
-          <p className="text-2xl font-bold text-[#F6921A]">Build on Elastos. Power the World Computer.</p>
+          <p className="text-2xl font-bold text-[#F6921A]">Build on Elastos. Power the SmartWeb.</p>
         </motion.div>
 
         <motion.div 
