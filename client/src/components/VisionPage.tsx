@@ -502,7 +502,7 @@ export function VisionPage() {
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
-                  className="bg-gradient-to-br from-[#171717] to-[#272727] rounded-xl p-8 border border-[#444] relative"
+                  className="rounded-xl p-8 border border-[#444] relative"  {/* Removed orange gradient */}
                 >
                   {/* Background elements */}
                   <div className="absolute -top-20 -right-20 w-64 h-64 rounded-full bg-[#F7921A]/10 blur-[80px]"></div>

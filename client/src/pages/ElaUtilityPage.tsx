@@ -439,19 +439,19 @@ export default function ElaUtilityPage() {
                     <p>Elastos Essentials is the native wallet and identity manager for the Elastos ecosystem. With Elastos Essentials, you get:</p>
                     <ul className="space-y-2">
                       <li className="flex items-start gap-2">
-                        <CheckCircle className="w-5 h-5 text-[#F7921A] mt-0.5 flex-shrink-0" />
+                        <CheckCircle className="w-5 h-5 text-[#5C8EFF] mt-0.5 flex-shrink-0" />
                         <span>Native support for all Elastos chains including Mainchain, ESC, and EID</span>
                       </li>
                       <li className="flex items-start gap-2">
-                        <CheckCircle className="w-5 h-5 text-[#F7921A] mt-0.5 flex-shrink-0" />
+                        <CheckCircle className="w-5 h-5 text-[#5C8EFF] mt-0.5 flex-shrink-0" />
                         <span>Integrated DID (Decentralized Identity) management</span>
                       </li>
                       <li className="flex items-start gap-2">
-                        <CheckCircle className="w-5 h-5 text-[#F7921A] mt-0.5 flex-shrink-0" />
+                        <CheckCircle className="w-5 h-5 text-[#5C8EFF] mt-0.5 flex-shrink-0" />
                         <span>Secure digital asset management with multi-chain support</span>
                       </li>
                       <li className="flex items-start gap-2">
-                        <CheckCircle className="w-5 h-5 text-[#F7921A] mt-0.5 flex-shrink-0" />
+                        <CheckCircle className="w-5 h-5 text-[#5C8EFF] mt-0.5 flex-shrink-0" />
                         <span>Built-in DApp browser and credential manager</span>
                       </li>
                     </ul>
