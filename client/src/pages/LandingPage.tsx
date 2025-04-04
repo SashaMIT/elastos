@@ -528,7 +528,7 @@ const LandingPage = () => {
       </div>
 
 
- 
+
 
       {/* News Section */}
       <div className="px-4 md:px-0">
@@ -590,7 +590,7 @@ const LandingPage = () => {
             }
           ]}
         />
-        
+
         {/* Community Image Grid */}
         <div className="container mx-auto px-4 -mt-8 md:-mt-20">
           <div className="grid grid-cols-2 md:grid-cols-12 gap-6">
@@ -598,145 +598,145 @@ const LandingPage = () => {
               key="1"
               src="/images/Community/EoWgfLHXEAIpyQe.jpeg"
               alt="Elastos Community Event"
-              className="w-full h-[200px] object-cover"
+              className="w-full aspect-square object-cover"
             />
             <ImageZoom
               key="2"
               src="/images/Roadmap/Sash as speaker in Bitcoin2024.jpeg"
               alt="Sash as speaker in Bitcoin2024"
-              className="w-full h-[200px] object-cover"
+              className="w-full aspect-square object-cover"
             />
             <ImageZoom
               key="3"
               src="/images/Community/EdTCNAzU0AAs42k.jpeg"
               alt="Elastos Community Gathering"
-              className="w-full h-[200px] object-cover"
+              className="w-full aspect-square object-cover"
             />
             <ImageZoom
               key="4"
               src="/images/Roadmap/The Node Effect event Singapore.jpeg"
               alt="The Node Effect event Singapore"
-              className="w-full h-[200px] object-cover"
+              className="w-full aspect-square object-cover"
             />
             <ImageZoom
               key="5"
               src="/images/Community/FmIGJV0XkA4B7wA.jpeg"
               alt="Elastos Community Gathering"
-              className="w-full h-[200px] object-cover"
+              className="w-full aspect-square object-cover"
             />
             <ImageZoom
               key="6"
               src="/images/Roadmap/Elastos hosted a meetup in Hong Kong.jpeg"
               alt="Elastos hosted a meetup in Hong Kong"
-              className="w-full h-[200px] object-cover"
+              className="w-full aspect-square object-cover"
             />
             <ImageZoom
               key="7"
               src="/images/Community/EyAPODsUUAAdPoz.jpeg"
               alt="Elastos Community Event"
-              className="w-full h-[200px] object-cover"
+              className="w-full aspect-square object-cover"
             />
             <ImageZoom
               key="8"
               src="/images/Roadmap/BeL2 booth in Bitcoin 2024.jpeg"
               alt="BeL2 booth in Bitcoin 2024"
-              className="w-full h-[200px] object-cover"
+              className="w-full aspect-square object-cover"
             />
             <ImageZoom
               key="9"
               src="/images/Community/E4b9vKPXIAYJ1s_.jpeg"
               alt="Elastos Community Event"
-              className="w-full h-[200px] object-cover"
+              className="w-full aspect-square object-cover"
             />
             <ImageZoom
               key="10"
               src="/images/Roadmap/Sunny Feng Han at Teamz Web Summit in Tokyo.jpeg"
               alt="Sunny Feng Han at Teamz Web Summit in Tokyo"
-              className="w-full h-[200px] object-cover"
+              className="w-full aspect-square object-cover"
             />
             <ImageZoom
               key="11"
               src="/images/Community/EdJmPJ-U4AAU8F7.jpeg"
               alt="Elastos Community Gathering"
-              className="w-full h-[200px] object-cover"
+              className="w-full aspect-square object-cover"
             />
             <ImageZoom
               key="12"
               src="/images/Roadmap/Cyber Republic DAO meetup.jpeg"
               alt="Cyber Republic DAO meetup"
-              className="w-full h-[200px] object-cover"
+              className="w-full aspect-square object-cover"
             />
             <ImageZoom
               key="13"
               src="/images/Community/Div4TBUWsAYmcEq.jpeg"
               alt="Elastos Community Meetup"
-              className="w-full h-[200px] object-cover"
+              className="w-full aspect-square object-cover"
             />
             <ImageZoom
               key="14"
               src="/images/Roadmap/Rong Chen and Kevin Zhang hosted a meetup in Barcelona.jpeg"
               alt="Rong Chen and Kevin Zhang hosted a meetup in Barcelona"
-              className="w-full h-[200px] object-cover"
+              className="w-full aspect-square object-cover"
             />
             <ImageZoom
               key="15"
               src="/images/Community/EfLML37U0AMxc-e.jpeg"
               alt="Elastos Community Event"
-              className="w-full h-[200px] object-cover"
+              className="w-full aspect-square object-cover"
             />
             <ImageZoom
               key="16"
               src="/images/Roadmap/Elastos in Couinstore event.jpeg"
               alt="Elastos in Couinstore event"
-              className="w-full h-[200px] object-cover"
+              className="w-full aspect-square object-cover"
             />
             <ImageZoom
               key="17"
               src="/images/Community/DVM2La_VwAEeq-U.jpeg"
               alt="Elastos Community Event"
-              className="w-full h-[200px] object-cover"
+              className="w-full aspect-square object-cover"
             />
             <ImageZoom
               key="18"
               src="/images/Roadmap/Sunny Feng Han in DACA event.jpg"
               alt="Sunny Feng Han in DACA event"
-              className="w-full h-[200px] object-cover"
+              className="w-full aspect-square object-cover"
             />
             <ImageZoom
               key="19"
               src="/images/Community/F-Jr2ZIaQAAiRH4.jpeg"
               alt="Elastos Community Gathering"
-              className="w-full h-[200px] object-cover"
+              className="w-full aspect-square object-cover"
             />
             <ImageZoom
               key="20"
               src="/images/Community/Ezbt41dUUAAjX4p.jpeg"
               alt="Elastos Community Event"
-              className="w-full h-[200px] object-cover"
+              className="w-full aspect-square object-cover"
             />
             <ImageZoom
               key="21"
               src="/images/Community/F6EWQCJXoAAfGlY.jpeg"
               alt="Elastos Community Gathering"
-              className="w-full h-[200px] object-cover"
+              className="w-full aspect-square object-cover"
             />
             <ImageZoom
               key="22"
               src="/images/Community/EiKLV1TU4AAR4OV.jpeg"
               alt="Elastos Community Event"
-              className="w-full h-[200px] object-cover"
+              className="w-full aspect-square object-cover"
             />
             <ImageZoom
               key="23"
               src="/images/Community/E5YyMc3VkAA2AwE.jpeg"
               alt="Elastos Community Gathering"
-              className="w-full h-[200px] object-cover"
+              className="w-full aspect-square object-cover"
             />
             <ImageZoom
               key="24"
               src="/images/Community/Ecp2XbVUYAAlUeC.jpeg"
               alt="Elastos Community Event"
-              className="w-full h-[200px] object-cover"
+              className="w-full aspect-square object-cover"
             />
           </div>
         </div>
