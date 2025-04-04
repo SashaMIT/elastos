@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Network, Lock, Wallet, Zap, Search, CheckCircle } from "lucide-react";
+import { motion } from "framer-motion";
 import { GlowingEffect } from "@/components/ui/glowing-effect";
 import { cn } from "@/lib/utils";
 import { SparklesCore } from "@/components/ui/sparkles";
