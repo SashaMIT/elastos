@@ -106,9 +106,8 @@ export default function RoadmapPage() {
         <ForwardRoadmap />
 
         <div className="w-full max-w-7xl mx-auto px-4 py-16 sm:px-6 lg:px-8">
-          <div className="bg-gradient-to-br from-[#5C8EFF]/10 to-[#F6921A]/10 rounded-xl p-8 border border-[#5C8EFF]/30 relative">
+          <div className="bg-gradient-to-br from-[#5C8EFF]/10 to-[#5C8EFF]/5 rounded-xl p-8 border border-[#5C8EFF]/30 relative">
             {/* Background blur elements */}
-            <div className="absolute -top-20 -right-20 w-64 h-64 rounded-full bg-[#F7921A]/10 blur-[80px]"></div>
             <div className="absolute -bottom-20 -left-20 w-72 h-72 rounded-full bg-[#8BABFF]/10 blur-[100px]"></div>
             
             <div className="flex flex-col md:flex-row gap-8 items-center relative z-10">
@@ -121,9 +120,9 @@ export default function RoadmapPage() {
               </div>
               <div className="md:w-3/4">
                 <blockquote className="italic text-lg text-gray-200">
-                  <span className="text-4xl text-[#F7921A]">"</span>
+                  <span className="text-4xl text-[#5C8EFF]">"</span>
                   I left Microsoft because I believed we needed to go deeper—down to the metal—not build on abstractions like C#. I wanted to design a true networked OS, not just software for a single machine. When I discovered blockchain, it felt like the missing piece. It gave us decentralized trust—something we couldn't build ourselves. Combine that with a peer-to-peer infrastructure, virtual machines, and a self-sovereign identity system, and you don't just get apps—you get an unstoppable, autonomous internet. This isn't just innovation. It's a new foundation.
-                  <span className="text-4xl text-[#F7921A]">"</span>
+                  <span className="text-4xl text-[#5C8EFF]">"</span>
                 </blockquote>
                 <div className="mt-4 font-semibold text-[#5C8EFF]">
                   Rong Chen, Elastos Founder

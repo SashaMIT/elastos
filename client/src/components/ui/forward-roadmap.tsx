@@ -73,7 +73,6 @@ export const ForwardRoadmap = () => {
             <div key={index} className="flex-1 relative">
               <div className="bg-gradient-to-br from-[#8BABFF]/10 to-[#8BABFF]/5 rounded-xl p-6 shadow-lg hover:shadow-xl transition-shadow duration-300 border border-[#8BABFF]/20 relative overflow-visible">
                 {/* Background blur elements */}
-                <div className="absolute -top-20 -right-20 w-64 h-64 rounded-full bg-[#F7921A]/10 blur-[80px]"></div>
                 <div className="absolute -bottom-20 -left-20 w-72 h-72 rounded-full bg-[#8BABFF]/10 blur-[100px]"></div>
                 
                 <div className="absolute -top-3 left-1/2 transform -translate-x-1/2 w-6 h-6 rounded-full bg-gradient-to-r from-[#F6921A] to-[#95B5FF] shadow-md z-20" />
