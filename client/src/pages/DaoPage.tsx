@@ -315,7 +315,7 @@ const DaoPage: React.FC = () => {
       </section>
 
       {/* What is Elastos DAO Section */}
-      <section className="py-16 relative">
+      <section className="py-16 relative bg-[#171717]">
         <div className="container mx-auto px-4">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -339,7 +339,7 @@ const DaoPage: React.FC = () => {
       </section>
 
       {/* Core Components Section */}
-      <section className="py-16 relative">
+      <section className="py-16 relative bg-[#171717]">
         <div className="container mx-auto px-4">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -457,7 +457,7 @@ const DaoPage: React.FC = () => {
       </section>
 
       {/* Why It Matters */}
-      <section className="py-16 relative">
+      <section className="py-16 relative bg-[#171717]">
         <div className="container mx-auto px-4">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -506,7 +506,7 @@ const DaoPage: React.FC = () => {
       </section>
 
       {/* Timeline Section */}
-      <section className="py-16 relative">
+      <section className="py-16 relative bg-[#171717]">
         <div className="container mx-auto px-4">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -669,7 +669,7 @@ const DaoPage: React.FC = () => {
       </section>
 
       {/* How to Get Involved */}
-      <section className="py-16 relative">
+      <section className="py-16 relative bg-[#171717]">
         <div className="container mx-auto px-4">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -870,7 +870,7 @@ const DaoPage: React.FC = () => {
       </section>
 
       {/* LogoCarouselDemo Section */}
-      <section className="py-16 relative">
+      <section className="py-16 relative bg-[#171717]">
         <div className="container mx-auto px-4">
           <LogoCarouselDemo />
         </div>
