@@ -593,15 +593,15 @@ const LandingPage = () => {
       {/* Testimonials Section */}
       <div className="w-full bg-background dark:bg-[#171717]">
         <div className="container mx-auto px-4 md:px-0 mb-0">
-          <div className="flex flex-col md:flex-row items-center justify-between mb-0">
-            <h3 className="text-xl md:text-2xl lg:text-3xl font-[400] leading-tight text-left text-black dark:text-white">
-         Join the Movement
-            </h3>
+          <div className="flex flex-row items-center justify-between mb-0">
+            <h3 className="text-2xl md:text-2xl lg:text-3xl font-[400] leading-tight text-left mb-0 text-black dark:text-white">
+            Join the Movement
+          </h3>
             <a 
               href="https://t.me/elastosgroup" 
               target="_blank" 
               rel="noopener noreferrer"
-              className="inline-flex px-3 py-2 bg-[rgba(246,146,26,0.10)] text-[#F6921A] rounded-full font-medium transition-all items-center gap-1 border border-[rgba(246,146,26,0.50)] text-sm mt-2 md:mt-0"
+              className="inline-flex px-3 py-2 bg-[rgba(246,146,26,0.10)] text-[#F6921A] rounded-full font-medium transition-all items-center gap-1 border border-[rgba(246,146,26,0.50)] text-sm mt-0 md:mt-0"
             >
               <span>Talk with Community</span>
               <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 35 34" fill="none">
