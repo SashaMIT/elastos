@@ -271,7 +271,7 @@ const LandingPage = () => {
             muted
             playsInline
             preload="none"
-            poster="/images/Elastosvideoimage.png"
+            poster="/images/Hero image.png"
           >
             <source src="/videos/Elastos Hero Video2.mp4" type="video/mp4" />
           </video>
