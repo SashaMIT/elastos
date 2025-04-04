@@ -66,7 +66,7 @@ export function VisionPage() {
             <DetailedVisionSection />
           </div>
 
-        
+
 
           {/* Technology Stack */}
           <div className="w-full mb-0 mt-20">
@@ -78,9 +78,8 @@ export function VisionPage() {
 
           {/* Rong Chen Quote */}
           <div className="w-full max-w-7xl mx-auto px-4 py-8 mt-6">
-            <div className="bg-gradient-to-br from-[#5C8EFF]/10 to-[#F6921A]/10 rounded-xl p-8 border border-[#5C8EFF]/30 relative">
+            <div className="bg-gradient-to-br from-[#5C8EFF]/10 to-[#5C8EFF]/5 rounded-xl p-8 border border-[#5C8EFF]/30 relative">
               {/* Background blur elements */}
-              <div className="absolute -top-20 -right-20 w-64 h-64 rounded-full bg-[#F7921A]/10 blur-[80px]"></div>
               <div className="absolute -bottom-20 -left-20 w-72 h-72 rounded-full bg-[#8BABFF]/10 blur-[100px]"></div>
 
               <div className="flex flex-col md:flex-row gap-8 items-center relative z-10">
@@ -93,9 +92,9 @@ export function VisionPage() {
                 </div>
                 <div className="md:w-3/4">
                   <blockquote className="italic text-lg text-gray-200">
-                    <span className="text-4xl text-[#F7921A]">"</span>
+                    <span className="text-4xl text-[#5C8EFF]">"</span>
                     The Internet today is owned by cartels. If Amazon goes down, all my ebooks vanish—that's not ownership. What we're building with Elastos is a World Computer: a decentralized internet that runs code, not just shares files. It's an operating system for the network, not just a blockchain. We give users decentralized IDs so companies like Facebook can't impersonate them or control access. You own your data, your identity, your apps—and no one can shut them down. We don't need another OS. This is the last one. That's why it's called Elastos.
-                    <span className="text-4xl text-[#F7921A]">"</span>
+                    <span className="text-4xl text-[#5C8EFF]">"</span>
                   </blockquote>
                   <div className="mt-4 font-semibold text-[#5C8EFF]">
                     Rong Chen, Elastos Founder
@@ -205,7 +204,7 @@ export function VisionPage() {
               </a>
             </div>
           </div>
-          
+
 
           {/* Ecosystem dApps Section */}
           <div className="mt-20">
@@ -527,19 +526,19 @@ export function VisionPage() {
                         <p>Elastos Essentials is the native wallet and identity manager for the Elastos ecosystem. With Elastos Essentials, you get:</p>
                         <ul className="space-y-2">
                           <li className="flex items-start gap-2">
-                            <CheckCircle className="w-5 h-5 text-[#F7921A] mt-0.5 flex-shrink-0" />
+                            <CheckCircle className="w-5 h-5 text-[#5C8EFF] mt-0.5 flex-shrink-0" />
                             <span>Native support for all Elastos chains including Mainchain, ESC, and EID</span>
                           </li>
                           <li className="flex items-start gap-2">
-                            <CheckCircle className="w-5 h-5 text-[#F7921A] mt-0.5 flex-shrink-0" />
+                            <CheckCircle className="w-5 h-5 text-[#5C8EFF] mt-0.5 flex-shrink-0" />
                             <span>Integrated DID (Decentralized Identity) management</span>
                           </li>
                           <li className="flex items-start gap-2">
-                            <CheckCircle className="w-5 h-5 text-[#F7921A] mt-0.5 flex-shrink-0" />
+                            <CheckCircle className="w-5 h-5 text-[#5C8EFF] mt-0.5 flex-shrink-0" />
                             <span>Secure digital asset management with multi-chain support</span>
                           </li>
                           <li className="flex items-start gap-2">
-                            <CheckCircle className="w-5 h-5 text-[#F7921A] mt-0.5 flex-shrink-0" />
+                            <CheckCircle className="w-5 h-5 text-[#5C8EFF] mt-0.5 flex-shrink-0" />
                             <span>Built-in DApp browser and credential manager</span>
                           </li>
                         </ul>
@@ -562,13 +561,13 @@ export function VisionPage() {
                             href="https://play.google.com/store/apps/details?id=io.web3essentials.app"
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="inline-flex px-3 py-2 bg-[rgba(246,146,26,0.10)] text-[#F6921A] rounded-full font-medium transition-all items-center gap-1 border border-[rgba(246,146,26,0.50)] text-sm"
+                            className="inline-flex px-3 py-2 bg-[rgba(92,142,255,0.10)] text-[#5C8EFF] rounded-full font-medium transition-all items-center gap-1 border border-[rgba(92,142,255,0.50)] text-sm"
                           >
                             <span>Google Play</span>
                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 35 34" fill="none">
-                              <circle cx="17.333" cy="17" r="16.75" stroke="#F6921A" strokeOpacity="0.5" strokeWidth="0.5"/>
-                              <path d="M17.3338 22.9405L23.2741 17.0002L17.3338 11.0598L16.4162 11.9774L20.7628 16.324H10.8622V17.6763H20.7628L16.4162 22.0229L17.3338 22.9405Z" fill="#F6921A"/>
-                              <path d="M20.7628 17.6638H10.8747V16.3365H20.7628H20.7929L20.7716 16.3152L16.4338 11.9774L17.3338 11.0775L23.2564 17.0002L17.3338 22.9228L16.4338 22.0229L20.7716 17.6851L20.7929 17.6638H20.7628Z" stroke="#F6921A" strokeOpacity="0.5" strokeWidth="0.025"/>
+                              <circle cx="17.333" cy="17" r="16.75" stroke="#5C8EFF" strokeOpacity="0.5" strokeWidth="0.5"/>
+                              <path d="M17.3338 22.9405L23.2741 17.0002L17.3338 11.0598L16.4162 11.9774L20.7628 16.324H10.8622V17.6763H20.7628L16.4162 22.0229L17.3338 22.9405Z" fill="#5C8EFF"/>
+                              <path d="M20.7628 17.6638H10.8747V16.3365H20.7628H20.7929L20.7716 16.3152L16.4338 11.9774L17.3338 11.0775L23.2564 17.0002L17.3338 22.9228L16.4338 22.0229L20.7716 17.6851L20.7929 17.6638H20.7628Z" stroke="#5C8EFF" strokeOpacity="0.5" strokeWidth="0.025"/>
                             </svg>
                           </a>
                         </div>
@@ -579,7 +578,7 @@ export function VisionPage() {
               </div>
             </div>
           </section>
-          
+
           {/* A World Computer for Everyone Banner */}
           <div className="mt-10 -mx-4 px-4 md:px-0">
             <WorldComputerBanner />
