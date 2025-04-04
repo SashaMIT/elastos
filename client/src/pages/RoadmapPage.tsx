@@ -75,8 +75,8 @@ export default function RoadmapPage() {
 
   return (
     <div className="relative w-full">
-      {/* Full-width hero image with gradient overlay */}
-      <div className="relative w-full h-[500px] overflow-hidden">
+      {/* Full-width hero image with gradient overlay - positioned absolutely so it goes behind header */}
+      <div className="absolute top-0 left-0 w-full h-[500px] overflow-hidden z-0">
         <img 
           src="/images/Roadmap/Elastos Project Early Days 2017.jpeg" 
           alt="Elastos Roadmap" 
@@ -84,167 +84,168 @@ export default function RoadmapPage() {
         />
         {/* Gradient overlay */}
         <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/80 to-[#171717]"></div>
-        
+      </div>
+      
+      {/* Content with proper spacing to account for the hero image */}
+      <div className="relative pt-[300px] z-10">
         {/* Hero content overlay */}
-        <div className="absolute inset-0 flex items-center justify-center">
-          <div className="container mx-auto px-4">
-            <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-              <div className="text-center mb-12">
-                <h1 className="text-4xl sm:text-4xl md:text-5xl font-bold text-white mb-6">
-                  Elastos <span className="text-[#5C8EFF]">Roadmap</span>
-                </h1>
-                <p className="text-gray-300 max-w-2xl mx-auto text-md sm:text-base md:text-lg">
-                  Explore the Elastos roadmap—an evolving vision for the World Computer, driven by community governance, decentralized innovation, and a commitment to digital sovereignty.
-                </p>
-              </div>
+        <div className="container mx-auto px-4">
+          <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="text-center mb-12">
+              <h1 className="text-4xl sm:text-4xl md:text-5xl font-bold text-white mb-6">
+                Elastos <span className="text-[#5C8EFF]">Roadmap</span>
+              </h1>
+              <p className="text-gray-300 max-w-2xl mx-auto text-md sm:text-base md:text-lg">
+                Explore the Elastos roadmap—an evolving vision for the World Computer, driven by community governance, decentralized innovation, and a commitment to digital sovereignty.
+              </p>
             </div>
           </div>
         </div>
-      </div>
 
-      <div className="container mx-auto px-4 py-12 bg-[#171717]">
-        <ForwardRoadmap />
-        
-        <div className="w-full max-w-5xl mx-auto px-4 py-16 sm:px-6 lg:px-8">
-          <div className="bg-gradient-to-br from-[#5C8EFF]/10 to-[#F6921A]/10 rounded-xl p-8 border border-[#5C8EFF]/30 relative">
-            {/* Background blur elements */}
-            <div className="absolute -top-20 -right-20 w-64 h-64 rounded-full bg-[#F7921A]/10 blur-[80px]"></div>
-            <div className="absolute -bottom-20 -left-20 w-72 h-72 rounded-full bg-[#8BABFF]/10 blur-[100px]"></div>
-            
-            <div className="flex flex-col md:flex-row gap-8 items-center relative z-10">
-              <div className="md:w-1/4 flex justify-center">
-                <img 
-                  src="/images/Rong Chen.png" 
-                  alt="Rong Chen, Elastos Founder" 
-                  className="w-48 h-48 object-cover rounded-full border-4 border-[#5C8EFF]/30"
-                />
-              </div>
-              <div className="md:w-3/4">
-                <blockquote className="italic text-lg text-gray-200">
-                  <span className="text-4xl text-[#F7921A]">"</span>
-                  I left Microsoft because I believed we needed to go deeper—down to the metal—not build on abstractions like C#. I wanted to design a true networked OS, not just software for a single machine. When I discovered blockchain, it felt like the missing piece. It gave us decentralized trust—something we couldn't build ourselves. Combine that with a peer-to-peer infrastructure, virtual machines, and a self-sovereign identity system, and you don't just get apps—you get an unstoppable, autonomous internet. This isn't just innovation. It's a new foundation.
-                  <span className="text-4xl text-[#F7921A]">"</span>
-                </blockquote>
-                <div className="mt-4 font-semibold text-[#5C8EFF]">
-                  Rong Chen, Elastos Founder
+        <div className="container mx-auto px-4 py-12 bg-[#171717]">
+          <ForwardRoadmap />
+          
+          <div className="w-full max-w-5xl mx-auto px-4 py-16 sm:px-6 lg:px-8">
+            <div className="bg-gradient-to-br from-[#5C8EFF]/10 to-[#F6921A]/10 rounded-xl p-8 border border-[#5C8EFF]/30 relative">
+              {/* Background blur elements */}
+              <div className="absolute -top-20 -right-20 w-64 h-64 rounded-full bg-[#F7921A]/10 blur-[80px]"></div>
+              <div className="absolute -bottom-20 -left-20 w-72 h-72 rounded-full bg-[#8BABFF]/10 blur-[100px]"></div>
+              
+              <div className="flex flex-col md:flex-row gap-8 items-center relative z-10">
+                <div className="md:w-1/4 flex justify-center">
+                  <img 
+                    src="/images/Rong Chen.png" 
+                    alt="Rong Chen, Elastos Founder" 
+                    className="w-48 h-48 object-cover rounded-full border-4 border-[#5C8EFF]/30"
+                  />
+                </div>
+                <div className="md:w-3/4">
+                  <blockquote className="italic text-lg text-gray-200">
+                    <span className="text-4xl text-[#F7921A]">"</span>
+                    I left Microsoft because I believed we needed to go deeper—down to the metal—not build on abstractions like C#. I wanted to design a true networked OS, not just software for a single machine. When I discovered blockchain, it felt like the missing piece. It gave us decentralized trust—something we couldn't build ourselves. Combine that with a peer-to-peer infrastructure, virtual machines, and a self-sovereign identity system, and you don't just get apps—you get an unstoppable, autonomous internet. This isn't just innovation. It's a new foundation.
+                    <span className="text-4xl text-[#F7921A]">"</span>
+                  </blockquote>
+                  <div className="mt-4 font-semibold text-[#5C8EFF]">
+                    Rong Chen, Elastos Founder
+                  </div>
                 </div>
               </div>
             </div>
           </div>
-        </div>
-        
-        <div className="mt-20">
-          <Timeline timelineData={timelineData} />
-        </div>
-
-        <div className="mt-20 mb-20">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
-            <ImageZoom
-              key="1"
-              src="/images/Roadmap/Elastos Project Early Days 2017.jpeg"
-              alt="Elastos Project Early Days 2017"
-              className="w-full h-[200px] object-cover"
-            />
-            <ImageZoom
-              key="2"
-              src="/images/Roadmap/Elastos 1 Year.jpeg"
-              alt="Elastos 1 Year"
-              className="w-full h-[200px] object-cover"
-            />
-            <ImageZoom
-              key="3"
-              src="/images/Roadmap/Rong Chen Early Elastos days.jpeg"
-              alt="Rong Chen Early Elastos days"
-              className="w-full h-[200px] object-cover"
-            />
-            <ImageZoom
-              key="4"
-              src="/images/Roadmap/Elastos Members.jpeg"
-              alt="Elastos Members"
-              className="w-full h-[200px] object-cover"
-            />
-            <ImageZoom
-              key="5"
-              src="/images/Roadmap/Rong Chen, founder of Elastos, speaking at a tech event (circa 2017–2018) 2.jpeg"
-              alt="Rong Chen speaking at a tech event"
-              className="w-full h-[200px] object-cover"
-            />
-            <ImageZoom
-              key="6"
-              src="/images/Roadmap/Elastos hosted a meetup in Hong Kong.jpeg"
-              alt="Elastos hosted a meetup in Hong Kong"
-              className="w-full h-[200px] object-cover"
-            />
-            <ImageZoom
-              key="7"
-              src="/images/Roadmap/Rong Chen and Kevin Zhang hosted a meetup in Barcelona.jpeg"
-              alt="Rong Chen and Kevin Zhang hosted a meetup in Barcelona"
-              className="w-full h-[200px] object-cover"
-            />
-            <ImageZoom
-              key="8"
-              src="/images/Roadmap/Rong Chen and kevin Zhang hosted a meetup in London.jpeg"
-              alt="Rong Chen and kevin Zhang hosted a meetup in London"
-              className="w-full h-[200px] object-cover"
-            />
-            <ImageZoom
-              key="9"
-              src="/images/Roadmap/Elastos in Couinstore event.jpeg"
-              alt="Elastos in Couinstore event"
-              className="w-full h-[200px] object-cover"
-            />
-            <ImageZoom
-              key="10"
-              src="/images/Roadmap/Cyber Republic DAO meetup.jpeg"
-              alt="Cyber Republic DAO meetup"
-              className="w-full h-[200px] object-cover"
-            />
-            <ImageZoom
-              key="11"
-              src="/images/Roadmap/Rong Pomp.png"
-              alt="Rong Pomp"
-              className="w-full h-[200px] object-cover"
-            />
-            <ImageZoom
-              key="12"
-              src="/images/Roadmap/Sunny Feng Han at Teamz Web Summit in Tokyo.jpeg"
-              alt="Sunny Feng Han at Teamz Web Summit in Tokyo"
-              className="w-full h-[200px] object-cover"
-            />
-            <ImageZoom
-              key="13"
-              src="/images/Roadmap/Sunny Feng Han in DACA event.jpg"
-              alt="Sunny Feng Han in DACA event"
-              className="w-full h-[200px] object-cover"
-            />
-            <ImageZoom
-              key="14"
-              src="/images/Roadmap/The Node Effect event Singapore.jpeg"
-              alt="The Node Effect event Singapore"
-              className="w-full h-[200px] object-cover"
-            />
-            <ImageZoom
-              key="15"
-              src="/images/Roadmap/BeL2 booth in Bitcoin 2024.jpeg"
-              alt="BeL2 booth in Bitcoin 2024"
-              className="w-full h-[200px] object-cover"
-            />
-            <ImageZoom
-              key="16"
-              src="/images/Roadmap/Sash as speaker in Bitcoin2024.jpeg"
-              alt="Sash as speaker in Bitcoin2024"
-              className="w-full h-[200px] object-cover"
-            />
+          
+          <div className="mt-20">
+            <Timeline timelineData={timelineData} />
           </div>
-        </div>
 
-        {/* LogoCarouselDemo Section */}
-        <div className="mt-10">
-          <LogoCarouselDemo />
+          <div className="mt-20 mb-20">
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
+              <ImageZoom
+                key="1"
+                src="/images/Roadmap/Elastos Project Early Days 2017.jpeg"
+                alt="Elastos Project Early Days 2017"
+                className="w-full h-[200px] object-cover"
+              />
+              <ImageZoom
+                key="2"
+                src="/images/Roadmap/Elastos 1 Year.jpeg"
+                alt="Elastos 1 Year"
+                className="w-full h-[200px] object-cover"
+              />
+              <ImageZoom
+                key="3"
+                src="/images/Roadmap/Rong Chen Early Elastos days.jpeg"
+                alt="Rong Chen Early Elastos days"
+                className="w-full h-[200px] object-cover"
+              />
+              <ImageZoom
+                key="4"
+                src="/images/Roadmap/Elastos Members.jpeg"
+                alt="Elastos Members"
+                className="w-full h-[200px] object-cover"
+              />
+              <ImageZoom
+                key="5"
+                src="/images/Roadmap/Rong Chen, founder of Elastos, speaking at a tech event (circa 2017–2018) 2.jpeg"
+                alt="Rong Chen speaking at a tech event"
+                className="w-full h-[200px] object-cover"
+              />
+              <ImageZoom
+                key="6"
+                src="/images/Roadmap/Elastos hosted a meetup in Hong Kong.jpeg"
+                alt="Elastos hosted a meetup in Hong Kong"
+                className="w-full h-[200px] object-cover"
+              />
+              <ImageZoom
+                key="7"
+                src="/images/Roadmap/Rong Chen and Kevin Zhang hosted a meetup in Barcelona.jpeg"
+                alt="Rong Chen and Kevin Zhang hosted a meetup in Barcelona"
+                className="w-full h-[200px] object-cover"
+              />
+              <ImageZoom
+                key="8"
+                src="/images/Roadmap/Rong Chen and kevin Zhang hosted a meetup in London.jpeg"
+                alt="Rong Chen and kevin Zhang hosted a meetup in London"
+                className="w-full h-[200px] object-cover"
+              />
+              <ImageZoom
+                key="9"
+                src="/images/Roadmap/Elastos in Couinstore event.jpeg"
+                alt="Elastos in Couinstore event"
+                className="w-full h-[200px] object-cover"
+              />
+              <ImageZoom
+                key="10"
+                src="/images/Roadmap/Cyber Republic DAO meetup.jpeg"
+                alt="Cyber Republic DAO meetup"
+                className="w-full h-[200px] object-cover"
+              />
+              <ImageZoom
+                key="11"
+                src="/images/Roadmap/Rong Pomp.png"
+                alt="Rong Pomp"
+                className="w-full h-[200px] object-cover"
+              />
+              <ImageZoom
+                key="12"
+                src="/images/Roadmap/Sunny Feng Han at Teamz Web Summit in Tokyo.jpeg"
+                alt="Sunny Feng Han at Teamz Web Summit in Tokyo"
+                className="w-full h-[200px] object-cover"
+              />
+              <ImageZoom
+                key="13"
+                src="/images/Roadmap/Sunny Feng Han in DACA event.jpg"
+                alt="Sunny Feng Han in DACA event"
+                className="w-full h-[200px] object-cover"
+              />
+              <ImageZoom
+                key="14"
+                src="/images/Roadmap/The Node Effect event Singapore.jpeg"
+                alt="The Node Effect event Singapore"
+                className="w-full h-[200px] object-cover"
+              />
+              <ImageZoom
+                key="15"
+                src="/images/Roadmap/BeL2 booth in Bitcoin 2024.jpeg"
+                alt="BeL2 booth in Bitcoin 2024"
+                className="w-full h-[200px] object-cover"
+              />
+              <ImageZoom
+                key="16"
+                src="/images/Roadmap/Sash as speaker in Bitcoin2024.jpeg"
+                alt="Sash as speaker in Bitcoin2024"
+                className="w-full h-[200px] object-cover"
+              />
+            </div>
+          </div>
+
+          {/* LogoCarouselDemo Section */}
+          <div className="mt-10">
+            <LogoCarouselDemo />
+          </div>
+          
+          {/* Footer */}
+          <StackedCircularFooter />
         </div>
-        
-        {/* Footer */}
-        <StackedCircularFooter />
       </div>
     </div>
   );
