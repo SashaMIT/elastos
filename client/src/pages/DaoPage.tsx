@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from "react";
 import { motion } from "framer-motion";
 import { 
   ArrowRight, 
@@ -22,73 +22,42 @@ import { Button } from "@/components/ui/button";
 import { Progress } from "@/components/ui/progress";
 import { StackedCircularFooter } from "@/components/ui/stacked-circular-footer";
 import { LogoCarouselDemo } from "@/components/LogoCarouselDemo";
-import { ImageZoom } from "@/components/ui/zoomable-image";
 
-// Timeline data for DAO history
-const timelineData = [
-  {
-    title: "2018",
-    content: (
-      <div className="text-sm text-neutral-800 dark:text-neutral-200">
-        <p className="mb-4"><strong>August 2018:</strong> Cyber Republic (CR) launched as Elastos' community growth and governance initiative.</p>
-        <p className="mb-4"><strong>December 2018:</strong> Initial CR Constitution published, establishing governance framework.</p>
-      </div>
-    )
-  },
-  {
-    title: "2019",
-    content: (
-      <div className="text-sm text-neutral-800 dark:text-neutral-200">
-        <p className="mb-4"><strong>June 2019:</strong> First CR Council Election held with global community participation.</p>
-        <p className="mb-4"><strong>October 2019:</strong> First community proposals funded through the governance system.</p>
-      </div>
-    )
-  },
-  {
-    title: "2020",
-    content: (
-      <div className="text-sm text-neutral-800 dark:text-neutral-200">
-        <p className="mb-4"><strong>February 2020:</strong> Full DAO framework implemented with on-chain voting.</p>
-        <p className="mb-4"><strong>May 2020:</strong> Cyber Republic brand deprecated as the DAO takes full control under the Elastos banner.</p>
-        <p className="mb-4"><strong>December 2020:</strong> Second CR Council elected with increased participation.</p>
-      </div>
-    )
-  },
-  {
-    title: "2021",
-    content: (
-      <div className="text-sm text-neutral-800 dark:text-neutral-200">
-        <p className="mb-4"><strong>March 2021:</strong> Elastos DAO legally registered as a DAO LLC in Delaware.</p>
-        <p className="mb-4"><strong>September 2021:</strong> DID integration for enhanced verification of DAO members.</p>
-      </div>
-    )
-  },
-  {
-    title: "2022-2023",
-    content: (
-      <div className="text-sm text-neutral-800 dark:text-neutral-200">
-        <p className="mb-4"><strong>2022:</strong> DAO expands support for ecosystem projects and development initiatives.</p>
-        <p className="mb-4"><strong>2023:</strong> Enhanced proposal system with milestone-based funding released.</p>
-      </div>
-    )
-  },
-  {
-    title: "2024-Present",
-    content: (
-      <div className="text-sm text-neutral-800 dark:text-neutral-200">
-        <p className="mb-4"><strong>January 2024:</strong> Elastos DAO transitioned from Delaware to the Marshall Islands for enhanced legal status.</p>
-        <p className="mb-4"><strong>May 2024:</strong> Fifth CR Council elected with record participation.</p>
-        <p className="mb-4"><strong>Ongoing:</strong> Continued evolution of the governance model for the Elastos World Computer.</p>
-      </div>
-    )
-  }
-];
+// Circle arrow component for buttons
+const CircleArrow = () => (
+  <svg 
+    xmlns="http://www.w3.org/2000/svg" 
+    width="24" 
+    height="24" 
+    viewBox="0 0 35 34" 
+    fill="none"
+  >
+    <circle cx="17.333" cy="17" r="16.75" stroke="#F6921A" strokeOpacity="0.5" strokeWidth="0.5"/>
+    <path d="M17.3338 22.9405L23.2741 17.0002L17.3338 11.0598L16.4162 11.9774L20.7628 16.324H10.8622V17.6763H20.7628L16.4162 22.0229L17.3338 22.9405Z" fill="#F6921A"/>
+    <path d="M20.7628 17.6638H10.8747V16.3365H20.7628H20.7929L20.7716 16.3152L16.4338 11.9774L17.3338 11.0775L23.2564 17.0002L17.3338 22.9228L16.4338 22.0229L20.7716 17.6851L20.7929 17.6638H20.7628Z" stroke="#F6921A" strokeOpacity="0.5" strokeWidth="0.025"/>
+  </svg>
+);
+
+// Blue circle arrow component for buttons
+const BlueCircleArrow = () => (
+  <svg 
+    xmlns="http://www.w3.org/2000/svg" 
+    width="24" 
+    height="24" 
+    viewBox="0 0 35 34" 
+    fill="none"
+  >
+    <circle cx="17.333" cy="17" r="16.75" stroke="#5C8EFF" strokeOpacity="0.5" strokeWidth="0.5"/>
+    <path d="M17.3338 22.9405L23.2741 17.0002L17.3338 11.0598L16.4162 11.9774L20.7628 16.324H10.8622V17.6763H20.7628L16.4162 22.0229L17.3338 22.9405Z" fill="#5C8EFF"/>
+    <path d="M20.7628 17.6638H10.8747V16.3365H20.7628H20.7929L20.7716 16.3152L16.4338 11.9774L17.3338 11.0775L23.2564 17.0002L17.3338 22.9228L16.4338 22.0229L20.7716 17.6851L20.7929 17.6638H20.7628Z" stroke="#5C8EFF" strokeOpacity="0.5" strokeWidth="0.025"/>
+  </svg>
+);
 
 // Core components data
 const coreComponents = [
   {
     title: "CR Council",
-    icon: <Building2 className="w-10 h-10 text-[#5C8EFF]" />,
+    icon: <Building2 className="w-10 h-10 text-[#F7921A]" />,
     description: "A 12-seat, community-elected council responsible for overseeing strategic development, approving proposals, and distributing DAO funds.",
     details: [
       "Elected by ELA stakers",
@@ -97,11 +66,14 @@ const coreComponents = [
       "Manages treasury",
       "Approves/rejects proposals",
       "Oversees ecosystem development"
-    ]
+    ],
+    color: "from-[#F7921A]/10 to-[#F7921A]/5",
+    borderColor: "border-[#F7921A]/20",
+    textColor: "text-[#F7921A]"
   },
   {
     title: "Proposal System",
-    icon: <ScrollText className="w-10 h-10 text-[#5C8EFF]" />,
+    icon: <ScrollText className="w-10 h-10 text-[#8BABFF]" />,
     description: "Any verified DID holder can submit ecosystem proposals—ranging from tech development, marketing campaigns, dApps, community efforts, or DAO upgrades.",
     details: [
       "Open to all DID holders",
@@ -110,11 +82,14 @@ const coreComponents = [
       "Community feedback periods",
       "Smart contract-based execution",
       "Milestone-based funding"
-    ]
+    ],
+    color: "from-[#8BABFF]/10 to-[#8BABFF]/5",
+    borderColor: "border-[#8BABFF]/20",
+    textColor: "text-[#8BABFF]"
   },
   {
     title: "Elections",
-    icon: <Vote className="w-10 h-10 text-[#5C8EFF]" />,
+    icon: <Vote className="w-10 h-10 text-[#F7921A]" />,
     description: "Held annually. ELA holders vote using their staked tokens to elect trusted representatives to the council. Everything is on-chain and transparent.",
     details: [
       "Annual council elections",
@@ -123,11 +98,14 @@ const coreComponents = [
       "Transparent, on-chain results",
       "Self-nomination period",
       "Community debates & AMAs"
-    ]
+    ],
+    color: "from-[#F7921A]/10 to-[#F7921A]/5",
+    borderColor: "border-[#F7921A]/20",
+    textColor: "text-[#F7921A]"
   },
   {
     title: "Treasury",
-    icon: <Coins className="w-10 h-10 text-[#5C8EFF]" />,
+    icon: <Coins className="w-10 h-10 text-[#8BABFF]" />,
     description: "The Elastos DAO treasury is funded through a portion of ELA token inflation and ecosystem revenue. It supports community-led initiatives.",
     details: [
       "Transparent, on-chain funds",
@@ -136,573 +114,772 @@ const coreComponents = [
       "Infrastructure support",
       "Multi-sig protection",
       "Community oversight"
-    ]
+    ],
+    color: "from-[#8BABFF]/10 to-[#8BABFF]/5",
+    borderColor: "border-[#8BABFF]/20",
+    textColor: "text-[#8BABFF]"
   }
 ];
 
-export default function DaoPage() {
+// Timeline data
+const timelineEvents = [
+  {
+    year: "2018",
+    title: "Cyber Republic Founded",
+    description: "Cyber Republic is established as Elastos' community growth and governance initiative.",
+    icon: <History className="w-5 h-5 text-[#F7921A]" />
+  },
+  {
+    year: "2019",
+    title: "First CR Council Election",
+    description: "The first CR Council election is held. Community begins funding real-world dApps and initiatives.",
+    icon: <Vote className="w-5 h-5 text-[#8BABFF]" />
+  },
+  {
+    year: "2020",
+    title: "Full DAO Implementation",
+    description: "Full DAO framework implemented. The Cyber Republic brand is deprecated as the DAO takes full control under the Elastos banner.",
+    icon: <Building2 className="w-5 h-5 text-[#8BABFF]" />
+  },
+  {
+    year: "2021",
+    title: "Delaware LLC Registration",
+    description: "Elastos DAO was legally registered as a DAO LLC in Delaware, establishing initial legal status.",
+    icon: <FileText className="w-5 h-5 text-[#F7921A]" />
+  },
+  {
+    year: "2022-2023",
+    title: "Ecosystem Growth",
+    description: "DAO expands support for ecosystem projects and development initiatives across the Elastos network.",
+    icon: <Building2 className="w-5 h-5 text-[#8BABFF]" />
+  },
+  {
+    year: "2024",
+    title: "Marshall Islands Registration",
+    description: "Elastos DAO transitioned from Delaware to the Marshall Islands, establishing enhanced legal status in a more crypto-friendly jurisdiction.",
+    icon: <ArrowRight className="w-5 h-5 text-[#F7921A]" />
+  }
+];
+
+// Why it matters data
+const whyItMatters = [
+  {
+    title: "Truly Democratic",
+    description: "One of the only DAOs where real identity (via DID) meets transparent on-chain voting.",
+    icon: <Vote className="w-8 h-8 text-[#5C8EFF]" />,
+    gradient: "from-blue-500/10 via-indigo-500/5 to-transparent",
+    border: "border-blue-500/20"
+  },
+  {
+    title: "Global Participation",
+    description: "Anyone with ELA and a verified DID can help shape the network's future.",
+    icon: <Users className="w-8 h-8 text-[#5C8EFF]" />,
+    gradient: "from-indigo-500/10 via-purple-500/5 to-transparent",
+    border: "border-indigo-500/20"
+  },
+  {
+    title: "Funding for Builders",
+    description: "Developers, creators, and community leaders can get funded to build on Elastos.",
+    icon: <Coins className="w-8 h-8 text-[#5C8EFF]" />,
+    gradient: "from-purple-500/10 via-violet-500/5 to-transparent",
+    border: "border-purple-500/20"
+  },
+  {
+    title: "Security by Design",
+    description: "Every vote, credential, and transaction is verified, immutable, and transparent.",
+    icon: <ShieldCheck className="w-8 h-8 text-[#5C8EFF]" />,
+    gradient: "from-cyan-500/10 via-blue-500/5 to-transparent",
+    border: "border-cyan-500/20"
+  },
+  {
+    title: "Built for Scalability",
+    description: "Govern not just a blockchain—but a full-stack Web3 infrastructure and its expanding ecosystem.",
+    icon: <Building2 className="w-8 h-8 text-[#5C8EFF]" />,
+    gradient: "from-emerald-500/10 via-green-500/5 to-transparent",
+    border: "border-emerald-500/20"
+  }
+];
+
+// DAO in Action stats
+const daoStats = {
+  treasuryBalance: "1,245,000 ELA",
+  proposalsFunded: "73",
+  activeVoters: "2,430",
+  recentProjects: [
+    {
+      name: "Elastos Essentials Wallet Upgrade",
+      link: "https://cyberrepublic.org/proposals/123"
+    },
+    {
+      name: "BeL2 Bitcoin DeFi Infrastructure",
+      link: "https://cyberrepublic.org/proposals/456"
+    },
+    {
+      name: "Web3 Education Platform",
+      link: "https://cyberrepublic.org/proposals/789"
+    },
+    {
+      name: "Elastos Africa Community Expansion",
+      link: "https://cyberrepublic.org/proposals/101"
+    }
+  ]
+};
+
+// Get involved steps
+const getInvolved = [
+  {
+    title: "Vote",
+    icon: <Vote className="w-10 h-10 text-white" />,
+    steps: [
+      "Stake your ELA",
+      "Connect with your DID",
+      "Participate in Council elections and voting"
+    ],
+    color: "bg-gradient-to-br from-[#F7921A] to-[#F7921A]/70",
+    borderColor: "border-[#F7921A]/20"
+  },
+  {
+    title: "Submit a Proposal",
+    icon: <FileText className="w-10 h-10 text-white" />,
+    steps: [
+      "Have an idea that benefits the Elastos ecosystem?",
+      "Write and submit a proposal through the DAO portal",
+      "If approved, receive funding and community support"
+    ],
+    color: "bg-gradient-to-br from-[#8BABFF] to-[#8BABFF]/70",
+    borderColor: "border-[#8BABFF]/20"
+  },
+  {
+    title: "Run for Council",
+    icon: <Users className="w-10 h-10 text-white" />,
+    steps: [
+      "Stake 5,000 ELA as collateral",
+      "Share your vision and campaign",
+      "Earn a seat to shape the future of decentralized infrastructure"
+    ],
+    color: "bg-gradient-to-br from-[#F7921A] to-[#F7921A]/70",
+    borderColor: "border-[#F7921A]/20"
+  }
+];
+
+const DaoPage: React.FC = () => {
+  const [hoveredFeature, setHoveredFeature] = useState<number | null>(null);
+
   return (
-    <div className="relative w-full">
-      {/* Full-width hero image with gradient overlay */}
-      <div className="relative w-full h-[500px] overflow-hidden -mt-16">
-        <img 
-          src="/images/Roadmap/Cyber Republic DAO meetup.jpeg" 
-          alt="Elastos DAO" 
-          className="w-full h-full object-cover opacity-100"
-        />
-        {/* Gradient overlay */}
-        <div className="absolute inset-0 bg-gradient-to-b from-black/10 via-[#171717]/80 to-[#171717]"></div>
+    <div className="min-h-screen bg-[#171717]">
+      {/* Hero Section */}
+      <section className="relative overflow-hidden py-20">
+        <div className="absolute inset-0 bg-gradient-to-b from-black/30 via-transparent to-transparent z-0"></div>
+        <div className="absolute top-1/3 left-1/4 w-96 h-96 rounded-full bg-[#F7921A]/5 blur-[150px]"></div>
+        <div className="absolute bottom-1/3 right-1/4 w-96 h-96 rounded-full bg-[#8BABFF]/5 blur-[150px]"></div>
 
-        {/* Hero content overlay */}
-        <div className="absolute inset-0 flex items-center justify-center">
-          <div className="container mx-auto px-4">
-            <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-              <div className="text-center mb-12">
-                <h1 className="text-4xl sm:text-4xl md:text-5xl font-[200] text-white mb-6">
-                  Elastos DAO
-                </h1>
-                <p className="text-gray-300 max-w-2xl mx-auto text-md sm:text-base md:text-lg">
-                  Governance for the World Computer—community-powered, transparent, and decentralized decision making for the Elastos ecosystem.
-                </p>
+        <div className="container mx-auto px-4 relative z-10">
+          <div className="max-w-4xl mx-auto text-center">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5 }}
+            >
+              <h1 className="text-4xl md:text-6xl font-bold text-white mb-6">
+                Elastos DAO: Governance for the World Computer
+              </h1>
+              <p className="text-xl text-white/70 mb-8">
+                Community-powered governance for a truly decentralized internet.
+              </p>
+              <p className="text-lg text-white/80 max-w-3xl mx-auto mb-10">
+                Elastos DAO is the on-chain, self-sovereign governance framework behind the Elastos ecosystem—where stakeholders shape the future of the World Computer through transparent proposals, voting, and funding.
+              </p>
+              <div className="flex flex-wrap justify-center gap-4">
+                <a
+                  href="https://cyberrepublic.org"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex px-3 py-2 bg-[rgba(246,146,26,0.10)] text-[#F6921A] rounded-full font-medium transition-all items-center gap-1 border border-[rgba(246,146,26,0.50)] text-sm"
+                >
+                  <span>Visit DAO Portal</span>
+                  <CircleArrow />
+                </a>
+                <a
+                  href="https://cyberrepublic.org/proposals"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex px-3 py-2 bg-[rgba(92,142,255,0.10)] text-[#5C8EFF] rounded-full font-medium transition-all items-center gap-1 border border-[rgba(92,142,255,0.50)] text-sm"
+                >
+                  <span>View Current Proposals</span>
+                  <BlueCircleArrow />
+                </a>
               </div>
-            </div>
+            </motion.div>
           </div>
         </div>
-      </div>
+      </section>
 
-      <div className="container mx-auto px-4 pt-0 pb-8 bg-[#171717]">
-        <div className="w-full max-w-7xl mx-auto px-4 py-16 sm:px-6 lg:px-8">
-          <div className="bg-gradient-to-br from-[#5C8EFF]/10 to-[#5C8EFF]/5 rounded-xl p-8 border border-[#5C8EFF]/30 relative">
-            {/* Background blur elements */}
-            <div className="absolute -bottom-20 -left-20 w-72 h-72 rounded-full bg-[#8BABFF]/10 blur-[100px]"></div>
-
-            <div className="flex flex-col md:flex-row gap-8 items-center relative z-10">
-              <div className="md:w-1/4 flex justify-center">
-                <img 
-                  src="/images/CRC.png" 
-                  alt="Cyber Republic DAO" 
-                  className="w-48 h-48 object-cover rounded-full border-4 border-[#5C8EFF]/30"
-                />
-              </div>
-              <div className="md:w-3/4">
-                <blockquote className="italic text-lg text-gray-200">
-                  <span className="text-4xl text-[#5C8EFF]">"</span>
-                  Elastos DAO is not just another governance system—it's the cornerstone of a new internet paradigm. By combining verifiable digital identities with transparent voting and community-driven treasury management, we've created a governance framework that matches the innovation of the technology it governs. Our DAO doesn't just decide how funds are allocated; it shapes the future direction of the World Computer itself.
-                  <span className="text-4xl text-[#5C8EFF]">"</span>
-                </blockquote>
-                <div className="mt-4 font-semibold text-[#5C8EFF]">
-                  Cyber Republic Council
-                </div>
-              </div>
+      {/* What is Elastos DAO Section */}
+      <section className="py-16 relative">
+        <div className="container mx-auto px-4">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="max-w-4xl mx-auto"
+          >
+            <h2 className="text-3xl font-bold text-white text-center mb-6">
+              What is Elastos DAO?
+            </h2>
+            <div className="bg-[#1A1A1A] rounded-xl p-8 border border-white/10 shadow-lg">
+              <p className="text-white/80 text-lg leading-relaxed mb-6">
+                Formerly known as the Cyber Republic, the Elastos DAO is the decentralized autonomous organization that governs the development, direction, and funding of the Elastos ecosystem. It puts ELA holders in control, letting them participate in elections, submit proposals, fund projects, and maintain ecosystem integrity—without corporate gatekeepers.
+              </p>
+              <p className="text-white/80 text-lg leading-relaxed font-medium italic">
+                Elastos DAO is not just governance for a blockchain—it is governance for a new internet.
+              </p>
             </div>
-          </div>
+          </motion.div>
         </div>
+      </section>
 
-        {/* What is Elastos DAO Section */}
-        <div className="w-full max-w-7xl mx-auto px-4 py-8">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl font-[200] text-white mb-4">What is Elastos DAO?</h2>
-            <p className="text-gray-300 max-w-3xl mx-auto">
-              Formerly known as the Cyber Republic, the Elastos DAO is the decentralized autonomous organization that governs the development, direction, and funding of the Elastos ecosystem. It puts ELA holders in control through elections, proposals, and transparent treasury management.
+      {/* Core Components Section */}
+      <section className="py-16 relative">
+        <div className="container mx-auto px-4">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="text-center mb-12"
+          >
+            <h2 className="text-3xl font-bold text-white mb-4">
+              Core Components
+            </h2>
+            <p className="text-lg text-white/70 max-w-3xl mx-auto">
+              The foundation of Elastos' decentralized governance system
             </p>
-          </div>
+          </motion.div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-12">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-6xl mx-auto">
             {coreComponents.map((component, index) => (
-              <div key={component.title} className="bg-[#1A1A1A] rounded-xl p-6 border border-[#5C8EFF]/20">
-                <div className="w-16 h-16 rounded-full bg-[#5C8EFF]/10 flex items-center justify-center mb-4">
-                  {component.icon}
+              <motion.div
+                key={component.title}
+                className={`relative rounded-xl overflow-hidden border ${component.borderColor} bg-gradient-to-br ${component.color}`}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: index * 0.1 }}
+                whileHover={{ y: -5, transition: { duration: 0.2 } }}
+              >
+                <div className="p-6">
+                  <div className={`w-16 h-16 rounded-full bg-[#1E1E1E] flex items-center justify-center mb-4`}>
+                    {component.icon}
+                  </div>
+                  <h3 className={`text-xl font-bold mb-2 ${component.textColor}`}>{component.title}</h3>
+                  <p className="text-gray-300 text-sm mb-4">{component.description}</p>
+                  <div className="space-y-2 mb-4">
+                    {component.details.slice(0, 4).map((detail, idx) => (
+                      <div key={idx} className="flex items-center">
+                        <CheckCircle className="w-4 h-4 text-green-400 mr-2 flex-shrink-0" />
+                        <span className="text-gray-300 text-sm">{detail}</span>
+                      </div>
+                    ))}
+                  </div>
                 </div>
-                <h3 className="text-xl font-bold text-white mb-2">{component.title}</h3>
-                <p className="text-gray-300 text-sm mb-4">{component.description}</p>
-                <div className="grid grid-cols-2 gap-2">
-                  {component.details.map((detail, idx) => (
-                    <div key={idx} className="flex items-center">
-                      <CheckCircle className="w-4 h-4 text-[#5C8EFF] mr-2 flex-shrink-0" />
-                      <span className="text-gray-300 text-sm">{detail}</span>
-                    </div>
-                  ))}
-                </div>
-              </div>
+              </motion.div>
             ))}
           </div>
         </div>
+      </section>
 
-        {/* Technology Stack */}
-        <div className="w-full max-w-7xl mx-auto px-4 py-16">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl font-[200] text-white mb-4">Powered by Elastos Technology</h2>
-            <p className="text-gray-300 max-w-3xl mx-auto">
-              The Elastos DAO leverages the full Elastos tech stack for secure, transparent governance
+      {/* Powered by Elastos Technology */}
+      <section className="py-16 relative bg-gradient-to-b from-[#171717] via-[#1D1D1D] to-[#171717]">
+        <div className="container mx-auto px-4">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="text-center mb-12"
+          >
+            <h2 className="text-3xl font-bold text-white mb-4">
+              Powered by Elastos Technology
+            </h2>
+            <p className="text-lg text-white/70 max-w-3xl mx-auto">
+              Leveraging the full Elastos tech stack for secure, transparent governance
             </p>
-          </div>
+          </motion.div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            <div className="bg-[#1A1A1A] border border-[#5C8EFF]/20 rounded-xl p-6 hover:border-[#5C8EFF]/40 transition-all">
-              <div className="w-12 h-12 rounded-full bg-[#5C8EFF]/10 flex items-center justify-center mb-4">
-                <Fingerprint className="w-6 h-6 text-[#5C8EFF]" />
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.1 }}
+              className="bg-[#1A1A1A] border border-[#F7921A]/20 rounded-xl p-6 hover:border-[#F7921A]/40 transition-all"
+            >
+              <div className="w-12 h-12 rounded-full bg-[#F7921A]/10 flex items-center justify-center mb-4">
+                <Fingerprint className="w-6 h-6 text-[#F7921A]" />
               </div>
               <h3 className="text-xl font-semibold text-white mb-2">DID (Decentralized Identity)</h3>
               <p className="text-gray-400">
                 Every participant in the DAO—voters, proposers, and council members—is verifiably identified using a self-sovereign DID.
               </p>
-            </div>
+            </motion.div>
 
-            <div className="bg-[#1A1A1A] border border-[#5C8EFF]/20 rounded-xl p-6 hover:border-[#5C8EFF]/40 transition-all">
-              <div className="w-12 h-12 rounded-full bg-[#5C8EFF]/10 flex items-center justify-center mb-4">
-                <Code className="w-6 h-6 text-[#5C8EFF]" />
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.2 }}
+              className="bg-[#1A1A1A] border border-[#8BABFF]/20 rounded-xl p-6 hover:border-[#8BABFF]/40 transition-all"
+            >
+              <div className="w-12 h-12 rounded-full bg-[#8BABFF]/10 flex items-center justify-center mb-4">
+                <Code className="w-6 h-6 text-[#8BABFF]" />
               </div>
               <h3 className="text-xl font-semibold text-white mb-2">ESC (Elastos Smart Chain)</h3>
               <p className="text-gray-400">
                 All governance logic, votes, and funding mechanisms are run via smart contracts on the Elastos Smart Chain.
               </p>
-            </div>
+            </motion.div>
 
-            <div className="bg-[#1A1A1A] border border-[#5C8EFF]/20 rounded-xl p-6 hover:border-[#5C8EFF]/40 transition-all">
-              <div className="w-12 h-12 rounded-full bg-[#5C8EFF]/10 flex items-center justify-center mb-4">
-                <CircleDollarSign className="w-6 h-6 text-[#5C8EFF]" />
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.3 }}
+              className="bg-[#1A1A1A] border border-[#F7921A]/20 rounded-xl p-6 hover:border-[#F7921A]/40 transition-all"
+            >
+              <div className="w-12 h-12 rounded-full bg-[#F7921A]/10 flex items-center justify-center mb-4">
+                <CircleDollarSign className="w-6 h-6 text-[#F7921A]" />
               </div>
               <h3 className="text-xl font-semibold text-white mb-2">ELA Token</h3>
               <p className="text-gray-400">
                 The native Elastos token is used for staking, voting, and DAO budgeting across the ecosystem.
               </p>
-            </div>
+            </motion.div>
           </div>
         </div>
+      </section>
 
-        {/* DAO Timeline Section */}
-        <div className="mt-20">
-          <div className="text-center mb-8">
-            <h2 className="text-3xl font-[200] text-white mb-4">From Cyber Republic to Elastos DAO</h2>
-            <p className="text-gray-300 max-w-3xl mx-auto">
-              The evolution of governance within the Elastos ecosystem
+      {/* Why It Matters */}
+      <section className="py-16 relative">
+        <div className="container mx-auto px-4">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="text-center mb-12"
+          >
+            <h2 className="text-3xl font-bold text-white mb-4">
+              Why It Matters
+            </h2>
+            <p className="text-lg text-white/70 max-w-3xl mx-auto">
+              The unique advantages of Elastos DAO governance
             </p>
-          </div>
-          <div className="mt-8">
-            {/* Timeline Component */}
-            <div className="relative pb-12">
-              <div className="container mx-auto px-6 flex flex-col items-start md:flex-row md:items-center">
-                <div className="flex flex-col w-full sticky md:top-36 lg:w-1/3 mt-2 md:mt-12 px-4">
-                  <p className="text-[#5C8EFF] uppercase tracking-loose">Timeline</p>
-                  <h2 className="text-3xl md:text-4xl font-[200] text-white mb-4">DAO Evolution</h2>
-                  <p className="text-sm md:text-base text-gray-300 mb-4">
-                    The Elastos governance model has evolved from a foundation-led initiative to a fully community-controlled decentralized autonomous organization.
-                  </p>
-                  <a 
-                    href="https://cyberrepublic.org"
-                    className="inline-flex px-4 py-2 bg-[#5C8EFF]/10 text-[#5C8EFF] rounded-full font-medium transition-all items-center gap-2 border border-[#5C8EFF]/50 mt-2 w-fit"
-                  >
-                    <span>Visit DAO Portal</span>
-                    <ArrowRight className="w-4 h-4" />
-                  </a>
+          </motion.div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
+            {whyItMatters.map((feature, index) => (
+              <motion.div
+                key={feature.title}
+                className={`bg-[#1A1A1A] border ${feature.border} rounded-xl overflow-hidden`}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: index * 0.1 }}
+                onMouseEnter={() => setHoveredFeature(index)}
+                onMouseLeave={() => setHoveredFeature(null)}
+              >
+                <div className="p-6">
+                  <div className="w-14 h-14 rounded-full bg-[#1E1E1E] flex items-center justify-center mb-4">
+                    {feature.icon}
+                  </div>
+                  <h3 className="text-white font-bold text-lg mb-2">{feature.title}</h3>
+                  <p className="text-gray-400 text-sm">{feature.description}</p>
                 </div>
-                <div className="ml-0 md:ml-12 lg:w-2/3 sticky">
-                  <div className="container mx-auto w-full h-full">
-                    <div className="relative wrap overflow-hidden p-4 md:py-10 md:px-0">
-                      <div className="border-2-2 absolute h-full border border-[#5C8EFF]/30 left-[36px] md:left-1/2"></div>
-                      {timelineData.map((item, index) => (
-                        <div key={index} className={`mb-8 flex justify-between items-center w-full ${index % 2 === 0 ? 'flex-row-reverse' : ''}`}>
-                          <div className="order-1 md:w-5/12"></div>
-                          <div className="z-20 flex items-center order-1 bg-[#5C8EFF] shadow-xl w-8 h-8 rounded-full">
-                            <h1 className="mx-auto font-semibold text-lg text-white">{index + 1}</h1>
-                          </div>
-                          <div className={`order-1 bg-[#1A1A1A] rounded-lg shadow-xl w-full md:w-5/12 px-6 py-4 border border-[#5C8EFF]/20`}>
-                            <h3 className="mb-3 font-bold text-white text-xl">{item.title}</h3>
-                            {item.content}
-                          </div>
-                        </div>
-                      ))}
+                <div 
+                  className={`h-1 bg-gradient-to-r ${feature.gradient} transition-all duration-500 ease-in-out`}
+                  style={{ 
+                    width: hoveredFeature === index ? '100%' : '0%',
+                    opacity: hoveredFeature === index ? 1 : 0
+                  }}
+                ></div>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Timeline Section */}
+      <section className="py-16 relative">
+        <div className="container mx-auto px-4">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="text-center mb-12"
+          >
+            <h2 className="text-3xl font-bold text-white mb-4">
+              From Cyber Republic to Elastos DAO
+            </h2>
+            <p className="text-lg text-white/70 max-w-3xl mx-auto">
+              A journey of decentralized governance evolution
+            </p>
+          </motion.div>
+
+          <div className="max-w-4xl mx-auto relative">
+            {/* Timeline line */}
+            <div className="absolute h-full w-1 bg-gradient-to-b from-[#F7921A]/30 via-[#8BABFF]/30 to-[#F7921A]/30 left-1/2 transform -translate-x-1/2 rounded-full"></div>
+
+            {/* Timeline events */}
+            <div className="space-y-12">
+              {timelineEvents.map((event, index) => (
+                <motion.div
+                  key={event.year}
+                  initial={{ opacity: 0, x: index % 2 === 0 ? -20 : 20 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: index * 0.1 }}
+                  className={`flex items-start relative ${index % 2 === 0 ? 'flex-row' : 'flex-row-reverse'}`}
+                >
+                  {/* Timeline dot */}
+                  <div className="absolute left-1/2 transform -translate-x-1/2 w-5 h-5 rounded-full bg-[#171717] border-2 border-[#F7921A] z-10"></div>
+
+                  {/* Content */}
+                  <div className={`w-1/2 ${index % 2 === 0 ? 'pr-10 text-right' : 'pl-10 text-left'}`}>
+                    <div className="bg-[#1A1A1A] rounded-xl p-5 border border-white/10">
+                      <div className="flex items-center mb-2 gap-2 text-[#F7921A]">
+                        {index % 2 === 1 && event.icon}
+                        <h3 className="text-xl font-bold">{event.year}</h3>
+                        {index % 2 === 0 && event.icon}
+                      </div>
+                      <h4 className="text-white font-medium mb-2">{event.title}</h4>
+                      <p className="text-gray-400 text-sm">{event.description}</p>
                     </div>
                   </div>
-                </div>
-              </div>
+
+                  {/* Empty div for spacing */}
+                  <div className="w-1/2"></div>
+                </motion.div>
+              ))}
             </div>
           </div>
         </div>
+      </section>
 
-        {/* DAO in Action Stats */}
-        <div className="w-full max-w-7xl mx-auto px-4 py-16">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl font-[200] text-white mb-4">DAO in Action</h2>
-            <p className="text-gray-300 max-w-3xl mx-auto">
-              Real-time metrics showing the impact of the Elastos governance ecosystem
+      {/* DAO in Action Stats */}
+      <section className="py-16 relative bg-gradient-to-b from-[#171717] via-[#1D1D1D] to-[#171717]">
+        <div className="container mx-auto px-4">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="text-center mb-12"
+          >
+            <h2 className="text-3xl font-bold text-white mb-4">
+              DAO in Action
+            </h2>
+            <p className="text-lg text-white/70 max-w-3xl mx-auto">
+              Real-time metrics of the Elastos governance ecosystem
             </p>
-          </div>
+          </motion.div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-            <div className="bg-[#1A1A1A] rounded-xl p-6 border border-[#5C8EFF]/20">
-              <div className="w-12 h-12 rounded-full bg-[#5C8EFF]/10 flex items-center justify-center mb-3">
-                <Wallet className="w-6 h-6 text-[#5C8EFF]" />
-              </div>
-              <h3 className="text-white text-sm mb-2">Treasury Balance</h3>
-              <p className="text-2xl font-bold text-[#5C8EFF]">1,245,000 ELA</p>
-            </div>
-
-            <div className="bg-[#1A1A1A] rounded-xl p-6 border border-[#5C8EFF]/20">
-              <div className="w-12 h-12 rounded-full bg-[#5C8EFF]/10 flex items-center justify-center mb-3">
-                <FileText className="w-6 h-6 text-[#5C8EFF]" />
-              </div>
-              <h3 className="text-white text-sm mb-2">Proposals Funded</h3>
-              <p className="text-2xl font-bold text-[#5C8EFF]">73</p>
-            </div>
-
-            <div className="bg-[#1A1A1A] rounded-xl p-6 border border-[#5C8EFF]/20">
-              <div className="w-12 h-12 rounded-full bg-[#5C8EFF]/10 flex items-center justify-center mb-3">
-                <Users className="w-6 h-6 text-[#5C8EFF]" />
-              </div>
-              <h3 className="text-white text-sm mb-2">Active Voters</h3>
-              <p className="text-2xl font-bold text-[#5C8EFF]">2,430</p>
-            </div>
-
-            <div className="bg-[#1A1A1A] rounded-xl p-6 border border-[#5C8EFF]/20">
-              <div className="w-12 h-12 rounded-full bg-[#5C8EFF]/10 flex items-center justify-center mb-3">
-                <CalendarDays className="w-6 h-6 text-[#5C8EFF]" />
-              </div>
-              <h3 className="text-white text-sm mb-2">Next CR Election</h3>
-              <p className="text-2xl font-bold text-[#5C8EFF]">June 2024</p>
-            </div>
-          </div>
-
-          <div className="mt-8 bg-[#1A1A1A] rounded-xl p-6 border border-[#5C8EFF]/20">
-            <h3 className="text-xl font-semibold text-white mb-4">Recent Projects Funded</h3>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-              <div className="flex items-center justify-between">
-                <div className="flex items-center gap-2">
-                  <span className="text-[#5C8EFF] w-6 h-6 rounded-full bg-[#5C8EFF]/10 flex items-center justify-center">1</span>
-                  <span className="text-gray-300">Elastos Essentials Wallet Upgrade</span>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.1 }}
+              className="grid grid-cols-1 sm:grid-cols-2 gap-6"
+            >
+              {/* Treasury Balance */}
+              <div className="bg-[#1A1A1A] rounded-xl p-6 border border-[#F7921A]/20">
+                <div className="w-12 h-12 rounded-full bg-[#F7921A]/10 flex items-center justify-center mb-3">
+                  <Wallet className="w-6 h-6 text-[#F7921A]" />
                 </div>
-                <a href="https://cyberrepublic.org/proposals/123" target="_blank" rel="noopener noreferrer" className="text-[#5C8EFF] hover:underline flex items-center">
-                  <ExternalLink className="w-4 h-4 ml-1" />
+                <h3 className="text-white text-sm mb-2">Treasury Balance</h3>
+                <p className="text-2xl font-bold text-[#F7921A]">{daoStats.treasuryBalance}</p>
+              </div>
+
+              {/* Proposals Funded */}
+              <div className="bg-[#1A1A1A] rounded-xl p-6 border border-[#8BABFF]/20">
+                <div className="w-12 h-12rounded-full bg-[#8BABFF]/10 flex items-center justify-center mb-3">
+                  <FileText className="w-6 h-6 text-[#8BABFF]" />
+                </div>
+                <h3 className="text-white text-sm mb-2">Proposals Funded</h3>
+                <p className="text-2xl font-bold text-[#8BABFF]">{daoStats.proposalsFunded}</p>
+              </div>
+
+              {/* Active Voters */}
+              <div className="bg-[#1A1A1A] rounded-xl p-6 border border-[#F7921A]/20">
+                <div className="w-12 h-12 rounded-full bg-[#F7921A]/10 flex items-center justify-center mb-3">
+                  <Users className="w-6 h-6 text-[#F7921A]" />
+                </div>
+                <h3 className="text-white text-sm mb-2">Active Voters</h3>
+                <p className="text-2xl font-bold text-[#F7921A]">{daoStats.activeVoters}</p>
+              </div>
+
+              {/* Next Election */}
+              <div className="bg-[#1A1A1A] rounded-xl p-6 border border-[#8BABFF]/20">
+                <div className="w-12 h-12 rounded-full bg-[#8BABFF]/10 flex items-center justify-center mb-3">
+                  <CalendarDays className="w-6 h-6 text-[#8BABFF]" />
+                </div>
+                <h3 className="text-white text-sm mb-2">Next CR Election</h3>
+                <p className="text-2xl font-bold text-[#8BABFF]">June 2024</p>
+              </div>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.2 }}
+              className="bg-[#1A1A1A] rounded-xl p-6 border border-white/10"
+            >
+              <h3 className="text-xl font-semibold text-white mb-4">Recent Projects Funded</h3>
+              <div className="space-y-4">
+                {daoStats.recentProjects.map((project, index) => (
+                  <div key={project.name} className="flex items-center justify-between">
+                    <div className="flex items-center gap-2">
+                      <span className="text-[#F7921A] w-6 h-6 rounded-full bg-[#F7921A]/10 flex items-center justify-center">
+                        {index + 1}
+                      </span>
+                      <span className="text-gray-300">{project.name}</span>
+                    </div>
+                    <a 
+                      href={project.link} 
+                      target="_blank" 
+                      rel="noopener noreferrer"
+                      className="text-[#8BABFF] hover:underline flex items-center"
+                    >
+                      <ExternalLink className="w-4 h-4 ml-1" />
+                    </a>
+                  </div>
+                ))}
+              </div>
+              <div className="mt-6">
+                <a
+                  href="https://cyberrepublic.org/proposals"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex px-3 py-2 bg-[rgba(92,142,255,0.10)] text-[#5C8EFF] rounded-full font-medium transition-all items-center gap-1 border border-[rgba(92,142,255,0.50)] text-sm"
+                >
+                  <span>View All Funded Projects</span>
+                  <BlueCircleArrow />
                 </a>
               </div>
-              <div className="flex items-center justify-between">
-                <div className="flex items-center gap-2">
-                  <span className="text-[#5C8EFF] w-6 h-6 rounded-full bg-[#5C8EFF]/10 flex items-center justify-center">2</span>
-                  <span className="text-gray-300">BeL2 Bitcoin DeFi Infrastructure</span>
-                </div>
-                <a href="https://cyberrepublic.org/proposals/456" target="_blank" rel="noopener noreferrer" className="text-[#5C8EFF] hover:underline flex items-center">
-                  <ExternalLink className="w-4 h-4 ml-1" />
-                </a>
-              </div>
-              <div className="flex items-center justify-between">
-                <div className="flex items-center gap-2">
-                  <span className="text-[#5C8EFF] w-6 h-6 rounded-full bg-[#5C8EFF]/10 flex items-center justify-center">3</span>
-                  <span className="text-gray-300">Web3 Education Platform</span>
-                </div>
-                <a href="https://cyberrepublic.org/proposals/789" target="_blank" rel="noopener noreferrer" className="text-[#5C8EFF] hover:underline flex items-center">
-                  <ExternalLink className="w-4 h-4 ml-1" />
-                </a>
-              </div>
-              <div className="flex items-center justify-between">
-                <div className="flex items-center gap-2">
-                  <span className="text-[#5C8EFF] w-6 h-6 rounded-full bg-[#5C8EFF]/10 flex items-center justify-center">4</span>
-                  <span className="text-gray-300">Elastos Africa Community Expansion</span>
-                </div>
-                <a href="https://cyberrepublic.org/proposals/101" target="_blank" rel="noopener noreferrer" className="text-[#5C8EFF] hover:underline flex items-center">
-                  <ExternalLink className="w-4 h-4 ml-1" />
-                </a>
-              </div>
-            </div>
-            <div className="mt-6 text-center">
-              <a
-                href="https://cyberrepublic.org/proposals"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex px-4 py-2 bg-[#5C8EFF]/10 text-[#5C8EFF] rounded-full font-medium transition-all items-center gap-2 border border-[#5C8EFF]/50"
-              >
-                <span>View All Funded Projects</span>
-                <ArrowRight className="w-4 h-4" />
-              </a>
-            </div>
+            </motion.div>
           </div>
         </div>
+      </section>
 
-        {/* Get Involved Section */}
-        <div className="w-full max-w-7xl mx-auto px-4 py-16">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl font-[200] text-white mb-4">How to Get Involved</h2>
-            <p className="text-gray-300 max-w-3xl mx-auto">
+      {/* How to Get Involved */}
+      <section className="py-16 relative">
+        <div className="container mx-auto px-4">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="text-center mb-12"
+          >
+            <h2 className="text-3xl font-bold text-white mb-4">
+              How to Get Involved
+            </h2>
+            <p className="text-lg text-white/70 max-w-3xl mx-auto">
               Join the community shaping the future of the decentralized internet
             </p>
-          </div>
+          </motion.div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div className="bg-[#1A1A1A] rounded-xl overflow-hidden border border-[#5C8EFF]/20">
-              <div className="p-4 bg-gradient-to-br from-[#5C8EFF] to-[#5C8EFF]/70 flex items-center gap-3">
-                <div className="w-12 h-12 rounded-full bg-black/20 flex items-center justify-center">
-                  <Vote className="w-10 h-10 text-white" />
-                </div>
-                <h3 className="text-xl font-bold text-white">Vote</h3>
-              </div>
-              <div className="p-6">
-                <ul className="space-y-3">
-                  <li className="flex items-start gap-2">
-                    <span className="w-5 h-5 rounded-full bg-[#5C8EFF]/10 text-[#5C8EFF] flex items-center justify-center flex-shrink-0 mt-0.5">1</span>
-                    <span className="text-gray-300 text-sm">Stake your ELA</span>
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <span className="w-5 h-5 rounded-full bg-[#5C8EFF]/10 text-[#5C8EFF] flex items-center justify-center flex-shrink-0 mt-0.5">2</span>
-                    <span className="text-gray-300 text-sm">Connect with your DID</span>
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <span className="w-5 h-5 rounded-full bg-[#5C8EFF]/10 text-[#5C8EFF] flex items-center justify-center flex-shrink-0 mt-0.5">3</span>
-                    <span className="text-gray-300 text-sm">Participate in Council elections and voting</span>
-                  </li>
-                </ul>
-                <div className="mt-6">
-                  <a
-                    href="https://cyberrepublic.org/council/election"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-flex px-3 py-2 bg-[#5C8EFF]/10 text-[#5C8EFF] rounded-full font-medium transition-all items-center justify-center gap-1 border border-[#5C8EFF]/50 text-sm w-full"
-                  >
-                    <span>How to Vote</span>
-                    <ArrowRight className="w-4 h-4" />
-                  </a>
-                </div>
-              </div>
-            </div>
-
-            <div className="bg-[#1A1A1A] rounded-xl overflow-hidden border border-[#5C8EFF]/20">
-              <div className="p-4 bg-gradient-to-br from-[#5C8EFF] to-[#5C8EFF]/70 flex items-center gap-3">
-                <div className="w-12 h-12 rounded-full bg-black/20 flex items-center justify-center">
-                  <FileText className="w-10 h-10 text-white" />
-                </div>
-                <h3 className="text-xl font-bold text-white">Submit a Proposal</h3>
-              </div>
-              <div className="p-6">
-                <ul className="space-y-3">
-                  <li className="flex items-start gap-2">
-                    <span className="w-5 h-5 rounded-full bg-[#5C8EFF]/10 text-[#5C8EFF] flex items-center justify-center flex-shrink-0 mt-0.5">1</span>
-                    <span className="text-gray-300 text-sm">Have an idea that benefits the Elastos ecosystem?</span>
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <span className="w-5 h-5 rounded-full bg-[#5C8EFF]/10 text-[#5C8EFF] flex items-center justify-center flex-shrink-0 mt-0.5">2</span>
-                    <span className="text-gray-300 text-sm">Write and submit a proposal through the DAO portal</span>
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <span className="w-5 h-5 rounded-full bg-[#5C8EFF]/10 text-[#5C8EFF] flex items-center justify-center flex-shrink-0 mt-0.5">3</span>
-                    <span className="text-gray-300 text-sm">If approved, receive funding and community support</span>
-                  </li>
-                </ul>
-                <div className="mt-6">
-                  <a
-                    href="https://cyberrepublic.org/proposals/new"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-flex px-3 py-2 bg-[#5C8EFF]/10 text-[#5C8EFF] rounded-full font-medium transition-all items-center justify-center gap-1 border border-[#5C8EFF]/50 text-sm w-full"
-                  >
-                    <span>Submit a Proposal</span>
-                    <ArrowRight className="w-4 h-4" />
-                  </a>
-                </div>
-              </div>
-            </div>
-
-            <div className="bg-[#1A1A1A] rounded-xl overflow-hidden border border-[#5C8EFF]/20">
-              <div className="p-4 bg-gradient-to-br from-[#5C8EFF] to-[#5C8EFF]/70 flex items-center gap-3">
-                <div className="w-12 h-12 rounded-full bg-black/20 flex items-center justify-center">
-                  <Users className="w-10 h-10 text-white" />
-                </div>
-                <h3 className="text-xl font-bold text-white">Run for Council</h3>
-              </div>
-              <div className="p-6">
-                <ul className="space-y-3">
-                  <li className="flex items-start gap-2">
-                    <span className="w-5 h-5 rounded-full bg-[#5C8EFF]/10 text-[#5C8EFF] flex items-center justify-center flex-shrink-0 mt-0.5">1</span>
-                    <span className="text-gray-300 text-sm">Stake 5,000 ELA as collateral</span>
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <span className="w-5 h-5 rounded-full bg-[#5C8EFF]/10 text-[#5C8EFF] flex items-center justify-center flex-shrink-0 mt-0.5">2</span>
-                    <span className="text-gray-300 text-sm">Share your vision and campaign</span>
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <span className="w-5 h-5 rounded-full bg-[#5C8EFF]/10 text-[#5C8EFF] flex items-center justify-center flex-shrink-0 mt-0.5">3</span>
-                    <span className="text-gray-300 text-sm">Earn a seat to shape the future of decentralized infrastructure</span>
-                  </li>
-                </ul>
-                <div className="mt-6">
-                  <a
-                    href="https://cyberrepublic.org/council/election"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-flex px-3 py-2 bg-[#5C8EFF]/10 text-[#5C8EFF] rounded-full font-medium transition-all items-center justify-center gap-1 border border-[#5C8EFF]/50 text-sm w-full"
-                  >
-                    <span>Run for Council</span>
-                    <ArrowRight className="w-4 h-4" />
-                  </a>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        {/* Image Gallery */}
-        <div className="mt-20 mb-20">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl font-[200] text-white mb-4">DAO Community</h2>
-            <p className="text-gray-300 max-w-3xl mx-auto">
-              A vibrant, global community working together to govern and grow the Elastos ecosystem
-            </p>
-          </div>
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
-            <ImageZoom
-              key="1"
-              src="/images/Roadmap/Cyber Republic DAO meetup.jpeg"
-              alt="Cyber Republic DAO meetup"
-              className="w-full h-[200px] object-cover"
-            />
-            <ImageZoom
-              key="2"
-              src="/images/Roadmap/Elastos in Couinstore event.jpeg"
-              alt="Elastos in Couinstore event"
-              className="w-full h-[200px] object-cover"
-            />
-            <ImageZoom
-              key="3"
-              src="/images/Roadmap/Elastos hosted a meetup in Hong Kong.jpeg"
-              alt="Elastos hosted a meetup in Hong Kong"
-              className="w-full h-[200px] object-cover"
-            />
-            <ImageZoom
-              key="4"
-              src="/images/Roadmap/The Node Effect event Singapore.jpeg"
-              alt="The Node Effect event Singapore"
-              className="w-full h-[200px] object-cover"
-            />
-            <ImageZoom
-              key="5"
-              src="/images/Roadmap/Rong Chen and Kevin Zhang hosted a meetup in Barcelona.jpeg"
-              alt="Rong Chen and Kevin Zhang hosted a meetup in Barcelona"
-              className="w-full h-[200px] object-cover"
-            />
-            <ImageZoom
-              key="6"
-              src="/images/Roadmap/Rong Chen and kevin Zhang hosted a meetup in London.jpeg"
-              alt="Rong Chen and kevin Zhang hosted a meetup in London"
-              className="w-full h-[200px] object-cover"
-            />
-            <ImageZoom
-              key="7"
-              src="/images/Roadmap/Elastos 1 Year.jpeg"
-              alt="Elastos 1 Year"
-              className="w-full h-[200px] object-cover"
-            />
-            <ImageZoom
-              key="8"
-              src="/images/Roadmap/Sunny Feng Han at Teamz Web Summit in Tokyo.jpeg"
-              alt="Sunny Feng Han at Teamz Web Summit in Tokyo"
-              className="w-full h-[200px] object-cover"
-            />
-          </div>
-        </div>
-
-        {/* Elastos Essentials Wallet Section */}
-        <section className="py-16 relative overflow-hidden">
-          <div className="absolute inset-0 bg-gradient-to-b from-white/[0.00] via-white/[0.02] to-white/[0.00] z-0"></div>
-
-          <div className="container mx-auto px-4 relative z-10">
-            <div className="max-w-6xl mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+            {getInvolved.map((item, index) => (
               <motion.div
+                key={item.title}
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                className="mb-8 text-center"
+                transition={{ delay: index * 0.1 }}
+                className="bg-[#1A1A1A] rounded-xl overflow-hidden border border-white/10"
               >
-                <h2 className="text-4xl font-[200] text-white mb-4">
-                  <span className="text-[#5C8EFF]">Essentials Wallet</span> Required for DAO Participation
-                </h2>
-                <p className="text-xl text-white/70 max-w-3xl mx-auto">
-                  The official wallet for DID creation, proposal submission, and governance voting
-                </p>
-              </motion.div>
-
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: 0.2 }}
-                className="rounded-3xl bg-gradient-to-br from-[#5C8EFF]/10 via-[#5C8EFF]/10 to-transparent p-10 border border-[#5C8EFF]/20 max-w-5xl mx-auto relative overflow-hidden"
-              >
-                {/* Background elements */}
-                <div className="absolute -bottom-20 -left-20 w-72 h-72 rounded-full bg-[#5C8EFF]/10 blur-[100px]"></div>
-
-                <div className="grid md:grid-cols-2 gap-10 items-center">
-                  <div className="flex justify-center">
-                    <img 
-                      src="/images/Essentials.png" 
-                      alt="Elastos Essentials" 
-                      className="w-full max-w-[350px] rounded-xl"
-                    />
+                <div className={`p-4 ${item.color} flex items-center gap-3`}>
+                  <div className="w-12 h-12 rounded-full bg-black/20 flex items-center justify-center">
+                    {item.icon}
                   </div>
-                  <div>
-                    <h3 className="text-2xl font-bold text-white mb-4">Essential for DAO Governance</h3>
-                    <div className="space-y-4 text-white/70">
-                      <p>Elastos Essentials is required for participating in the DAO. With the wallet, you can:</p>
-                      <ul className="space-y-2">
-                        <li className="flex items-start gap-2">
-                          <CheckCircle className="w-5 h-5 text-[#5C8EFF] mt-0.5 flex-shrink-0" />
-                          <span>Create your Decentralized ID (DID) needed for proposal submission</span>
-                        </li>
-                        <li className="flex items-start gap-2">
-                          <CheckCircle className="w-5 h-5 text-[#5C8EFF] mt-0.5 flex-shrink-0" />
-                          <span>Stake your ELA to vote on Council members to represent you annually</span>
-                        </li>
-                        <li className="flex items-start gap-2">
-                          <CheckCircle className="w-5 h-5 text-[#5C8EFF] mt-0.5 flex-shrink-0" />
-                          <span>Run for council by staking 5,000 ELA as collateral</span>
-                        </li>
-                        <li className="flex items-start gap-2">
-                          <CheckCircle className="w-5 h-5 text-[#5C8EFF] mt-0.5 flex-shrink-0" />
-                          <span>Access the DAO Portal directly through the built-in DApp browser</span>
-                        </li>
-                      </ul>
+                  <h3 className="text-xl font-bold text-white">{item.title}</h3>
+                </div>
+                <div className="p-6">
+                  <ul className="space-y-3">
+                    {item.steps.map((step, idx) => (
+                      <li key={idx} className="flex items-start gap-2">
+                        <span className="w-5 h-5 rounded-full bg-[#F7921A]/10 text-[#F7921A] flex items-center justify-center flex-shrink-0 mt-0.5">
+                          {idx + 1}
+                        </span>
+                        <span className="text-gray-300 text-sm">{step}</span>
+                      </li>
+                    ))}
+                  </ul>
+                  <div className="mt-6">
+                    {item.title === "Vote" && (
+                      <a
+                        href="https://cyberrepublic.org/council/election"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex px-3 py-2 bg-[rgba(246,146,26,0.10)] text-[#F6921A] rounded-full font-medium transition-all items-center justify-center gap-1 border border-[rgba(246,146,26,0.50)] text-sm"
+                      >
+                        <span>How to Vote</span>
+                        <CircleArrow />
+                      </a>
+                    )}
+                    {item.title === "Submit a Proposal" && (
+                      <a
+                        href="https://cyberrepublic.org/proposals/new"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex px-3 py-2 bg-[rgba(92,142,255,0.10)] text-[#5C8EFF] rounded-full font-medium transition-all items-center justify-center gap-1 border border-[rgba(92,142,255,0.50)] text-sm"
+                      >
+                        <span>Submit a Proposal</span>
+                        <BlueCircleArrow />
+                      </a>
+                    )}
+                    {item.title === "Run for Council" && (
+                      <a
+                        href="https://cyberrepublic.org/council/election"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex px-3 py-2 bg-[rgba(246,146,26,0.10)] text-[#F6921A] rounded-full font-medium transition-all items-center justify-center gap-1 border border-[rgba(246,146,26,0.50)] text-sm"
+                      >
+                        <span>Run for Council</span>
+                        <CircleArrow />
+                      </a>
+                    )}
+                  </div>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
 
-                      <div className="flex flex-wrap gap-4 pt-4">
-                        <a
-                          href="https://apps.apple.com/us/app/elastos-essentials/id1568931743"
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="inline-flex px-3 py-2 bg-[#5C8EFF]/10 text-[#5C8EFF] rounded-full font-medium transition-all items-center gap-2 border border-[#5C8EFF]/50 text-sm"
-                        >
-                          <span>App Store</span>
-                          <ArrowRight className="w-4 h-4" />
-                        </a>
-                        <a
-                          href="https://play.google.com/store/apps/details?id=io.web3essentials.app"
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="inline-flex px-3 py-2 bg-[#5C8EFF]/10 text-[#5C8EFF] rounded-full font-medium transition-all items-center gap-2 border border-[#5C8EFF]/50 text-sm"
-                        >
-                          <span>Google Play</span>
-                          <ArrowRight className="w-4 h-4" />
-                        </a>
-                        <a
-                          href="https://cyberrepublic.org/guides/essentials-wallet"
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="inline-flex px-3 py-2 bg-[#5C8EFF]/10 text-[#5C8EFF] rounded-full font-medium transition-all items-center gap-2 border border-[#5C8EFF]/50 text-sm"
-                        >
-                          <span>Setup Guide</span>
-                          <ArrowRight className="w-4 h-4" />
-                        </a>
-                      </div>
+      {/* Elastos Essentials Wallet Section */}
+      <section className="py-16 relative overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-b from-white/[0.00] via-white/[0.02] to-white/[0.00] z-0"></div>
+
+        <div className="container mx-auto px-4 relative z-10">
+          <div className="max-w-6xl mx-auto">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="mb-8 text-center"
+            >
+              <h2 className="text-4xl font-bold text-white mb-4">
+                <span className="text-[#F7921A]">Download</span>{" "}
+                <span className="text-[#8BABFF]">Essentials</span> Wallet to Participate
+              </h2>
+              <p className="text-xl text-white/70 max-w-3xl mx-auto">
+                Required for DAO voting, proposal submission, and governance participation with DID integration
+              </p>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.2 }}
+              className="rounded-3xl bg-gradient-to-br from-[#8BABFF]/10 via-[#8BABFF]/10 to-transparent p-10 border border-[#8BABFF]/20 max-w-5xl mx-auto relative overflow-hidden"
+            >
+              {/* Background elements */}
+              <div className="absolute -bottom-20 -left-20 w-72 h-72 rounded-full bg-[#8BABFF]/10 blur-[100px]"></div>
+
+              <div className="grid md:grid-cols-2 gap-10 items-center">
+                <div className="flex justify-center">
+                  <img 
+                    src="/images/Essentials.png" 
+                    alt="Elastos Essentials" 
+                    className="w-full max-w-[350px] rounded-xl"
+                    onError={(e) => {
+                      const target = e.target as HTMLImageElement;
+                      target.src = "https://via.placeholder.com/350x700?text=Elastos+Essentials";
+                    }}
+                  />
+                </div>
+                <div>
+                  <h3 className="text-2xl font-bold text-white mb-4">Essential for DAO Governance</h3>
+                  <div className="space-y-4 text-white/70">
+                    <p>Elastos Essentials is required for participating in the DAO. With the wallet, you can:</p>
+                    <ul className="space-y-2">
+                      <li className="flex items-start gap-2">
+                        <CheckCircle className="w-5 h-5 text-[#F7921A] mt-0.5 flex-shrink-0" />
+                        <span>Create your Decentralized ID (DID) needed for proposal submission</span>
+                      </li>
+                      <li className="flex items-start gap-2">
+                        <CheckCircle className="w-5 h-5 text-[#F7921A] mt-0.5 flex-shrink-0" />
+                        <span>Stake your ELA to vote on Council members to represent you annually</span>
+                      </li>
+                      <li className="flex items-start gap-2">
+                        <CheckCircle className="w-5 h-5 text-[#F7921A] mt-0.5 flex-shrink-0" />
+                        <span>Run for council by staking 5,000 ELA as collateral</span>
+                      </li>
+                      <li className="flex items-start gap-2">
+                        <CheckCircle className="w-5 h-5 text-[#F7921A] mt-0.5 flex-shrink-0" />
+                        <span>Access the DAO Portal directly through the built-in DApp browser</span>
+                      </li>
+                    </ul>
+
+                    <div className="flex flex-wrap gap-4 pt-4">
+                      <a
+                        href="https://apps.apple.com/us/app/elastos-essentials/id1568931743"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex px-3 py-2 bg-[rgba(92,142,255,0.10)] text-[#5C8EFF] rounded-full font-medium transition-all items-center gap-1 border border-[rgba(92,142,255,0.50)] text-sm"
+                      >
+                        <span>App Store</span>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 35 34" fill="none">
+                          <circle cx="17.333" cy="17" r="16.75" stroke="#5C8EFF" strokeOpacity="0.5" strokeWidth="0.5"/>
+                          <path d="M17.3338 22.9405L23.2741 17.0002L17.3338 11.0598L16.4162 11.9774L20.7628 16.324H10.8622V17.6763H20.7628L16.4162 22.0229L17.3338 22.9405Z" fill="#5C8EFF"/>
+                          <path d="M20.7628 17.6638H10.8747V16.3365H20.7628H20.7929L20.7716 16.3152L16.4338 11.9774L17.3338 11.0775L23.2564 17.0002L17.3338 22.9228L16.4338 22.0229L20.7716 17.6851L20.7929 17.6638H20.7628Z" stroke="#5C8EFF" strokeOpacity="0.5" strokeWidth="0.025"/>
+                        </svg>
+                      </a>
+                      <a
+                        href="https://play.google.com/store/apps/details?id=io.web3essentials.app"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex px-3 py-2 bg-[rgba(246,146,26,0.10)] text-[#F6921A] rounded-full font-medium transition-all items-center gap-1 border border-[rgba(246,146,26,0.50)] text-sm"
+                      >
+                        <span>Google Play</span>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 35 34" fill="none">
+                          <circle cx="17.333" cy="17" r="16.75" stroke="#F6921A" strokeOpacity="0.5" strokeWidth="0.5"/>
+                          <path d="M17.3338 22.9405L23.2741 17.0002L17.3338 11.0598L16.4162 11.9774L20.7628 16.324H10.8622V17.6763H20.7628L16.4162 22.0229L17.3338 22.9405Z" fill="#F6921A"/>
+                          <path d="M20.7628 17.6638H10.8747V16.3365H20.7628H20.7929L20.7716 16.3152L16.4338 11.9774L17.3338 11.0775L23.2564 17.0002L17.3338 22.9228L16.4338 22.0229L20.7716 17.6851L20.7929 17.6638H20.7628Z" stroke="#F6921A" strokeOpacity="0.5" strokeWidth="0.025"/>
+                        </svg>
+                      </a>
+                      <a
+                        href="https://cyberrepublic.org/guides/essentials-wallet"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex px-3 py-2 bg-[rgba(246,146,26,0.10)] text-[#F6921A] rounded-full font-medium transition-all items-center gap-1 border border-[rgba(246,146,26,0.50)] text-sm"
+                      >
+                        <span>Setup Guide</span>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 35 34" fill="none">
+                          <circle cx="17.333" cy="17" r="16.75" stroke="#F6921A" strokeOpacity="0.5" strokeWidth="0.5"/>
+                          <path d="M17.3338 22.9405L23.2741 17.0002L17.3338 11.0598L16.4162 11.9774L20.7628 16.324H10.8622V17.6763H20.7628L16.4162 22.0229L17.3338 22.9405Z" fill="#F6921A"/>
+                          <path d="M20.7628 17.6638H10.8747V16.3365H20.7628H20.7929L20.7716 16.3152L16.4338 11.9774L17.3338 11.0775L23.2564 17.0002L17.3338 22.9228L16.4338 22.0229L20.7716 17.6851L20.7929 17.6638H20.7628Z" stroke="#F6921A" strokeOpacity="0.5" strokeWidth="0.025"/>
+                        </svg>
+                      </a>
                     </div>
                   </div>
                 </div>
-              </motion.div>
-            </div>
+              </div>
+            </motion.div>
           </div>
-        </section>
+        </div>
+      </section>
 
-        {/* LogoCarouselDemo Section */}
-        <div className="mt-10">
+      {/* LogoCarouselDemo Section */}
+      <section className="py-16 relative">
+        <div className="container mx-auto px-4">
           <LogoCarouselDemo />
         </div>
+      </section>
 
-        {/* Footer */}
-        <StackedCircularFooter />
-      </div>
+      {/* Footer */}
+      <StackedCircularFooter />
     </div>
   );
-}
+};
+
+export default DaoPage;
