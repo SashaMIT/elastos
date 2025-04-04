@@ -23,10 +23,10 @@ export function TestimonialsSection({
   return (
     <section className={cn(
       "bg-background dark:bg-[#171717] text-foreground",
-      "py-0 sm:py-4 md:py-8 px-0",
+      "py-0 sm:py-4 md:py-8 px-4 md:px-6 lg:px-8",
       className
     )}>
-      <div className="mx-auto flex max-w-container flex-col items-center gap-4 text-center sm:gap-16">
+      <div className="container mx-auto flex max-w-6xl flex-col items-center gap-4 text-center sm:gap-16">
         <div className="relative flex w-full flex-col items-center justify-center overflow-hidden">
           <div className="group flex overflow-hidden p-2 [--gap:1rem] [gap:var(--gap)] flex-row [--duration:40s]">
             <div className="flex shrink-0 justify-around [gap:var(--gap)] animate-marquee flex-row group-hover:[animation-play-state:paused]">
