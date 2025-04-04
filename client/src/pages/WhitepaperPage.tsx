@@ -15,7 +15,7 @@ const WhitepaperPage = () => {
         {/* Full-width hero image with gradient overlay */}
         <div className="relative w-full h-[500px] overflow-hidden -mt-32">
           <img 
-            src="/images/Roadmap/Elastos Project Early Days 2017.jpeg" 
+            src="/images/Roadmap/Elastos 1 Year.jpeg" 
             alt="Elastos Documentation" 
             className="w-full h-full object-cover opacity-100"
           />
