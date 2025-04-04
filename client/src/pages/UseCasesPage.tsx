@@ -442,7 +442,7 @@ const UseCasesPage: React.FC = () => {
             ))}
           </div>
 
-          <div className="mt-20 p-8 bg-gradient-to-br from-[#5C8EFF]/10 to-[#F6921A]/10 rounded-2xl border border-[#5C8EFF]/30 text-center w-full">
+          <div className="mt-20 p-8 bg-gradient-to-br from-[#5C8EFF]/10 to-[#5C8EFF]/5 rounded-2xl border border-[#5C8EFF]/30 text-center w-full">
             <div className="py-10"> {/* Added padding here */}
               <div className="flex flex-col md:flex-row gap-6 items-center">
                 <div className="md:w-1/2 text-left">
