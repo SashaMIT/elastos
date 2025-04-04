@@ -9,6 +9,8 @@ export interface ImageZoomProps extends ImgHTMLAttributes<HTMLImageElement> {
   zoomInProps?: ImgHTMLAttributes<HTMLImageElement>
   zoomProps?: UncontrolledProps
   className?: string
+  width?: number
+  height?: number
 }
 
 export function ImageZoom({
