@@ -422,14 +422,14 @@ const DaoPage: React.FC = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.2 }}
-              className="bg-[#1A1A1A] border border-[#8BABFF]/20 rounded-xl p-6 hover:border-[#8BABFF]/40 transition-all"
+              className="bg-[#1A1A1A] border border-[#F7921A]/20 rounded-xl p-6 hover:border-[#F7921A]/40 transition-all"
             >
-              <div className="w-12 h-12 rounded-full bg-[#8BABFF]/10 flex items-center justify-center mb-4">
-                <Code className="w-6 h-6 text-[#8BABFF]" />
+              <div className="w-12 h-12 rounded-full bg-[#F7921A]/10 flex items-center justify-center mb-4">
+                <Shield className="w-6 h-6 text-[#F7921A]" />
               </div>
-              <h3 className="text-xl font-semibold text-white mb-2">ESC (Elastos Smart Chain)</h3>
+              <h3 className="text-xl font-semibold text-white mb-2">Mainchain (Secured by Bitcoin)</h3>
               <p className="text-gray-400">
-                All governance logic, votes, and funding mechanisms are run via smart contracts on the Elastos Smart Chain.
+                The core blockchain of Elastos is secured through merged mining with Bitcoin, providing unprecedented security to the entire ecosystem.
               </p>
             </motion.div>
 
