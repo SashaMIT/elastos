@@ -185,8 +185,8 @@ export default function RoadmapPage() {
           />
           <ImageZoom
             key="11"
-            src="/images/Roadmap/Jon and Fakhuil in StakingSummit2023.jpeg"
-            alt="Jon and Fakhuil in StakingSummit2023"
+            src="/images/Roadmap/Rong Pomp.png"
+            alt="Rong Pomp"
             className="w-full h-[200px] object-cover"
           />
           <ImageZoom
