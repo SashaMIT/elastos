@@ -51,7 +51,7 @@ export function ScalingSection() {
   return (
     <div className="w-full bg-background dark:bg-[#171717] text-foreground py-32">
       <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-center mb-12">
-        All-in-One Decentralized Infrastructure
+        Elastos SmartWeb Architecture
       </h2>
       <div className="container mx-auto px-4 lg:px-[180px] max-w-1xl">
         <div className="flex justify-center mb-16">
@@ -116,7 +116,7 @@ export function ScalingSection() {
                   <span className="px-4 py-1 bg-[#5C8EFF]/10 border border-[#5C8EFF]/30 text-white rounded-full text-xs font-medium">LIVE</span>
                 </div>
                 <p className="text-muted-foreground mb-6 max-w-xl">
-                  ELA, Secured by Bitcoin is the oil of the Elastos SmartWeb. Use your Bitcoin for DeFi without custodians or ever moving it off the Bitcoin mainchain.
+                  ELA, secured by Bitcoin is the oil of the Elastos SmartWeb. Use your Bitcoin for DeFi without custodians or ever moving it off the Bitcoin mainchain.
                 </p>
                 <div className="flex gap-4">
                   <button className="w-8 h-8 rounded-full border border-[#F6921A] bg-[#F6921A]/30 flex items-center justify-center transition-all hover:bg-[#F6921A]/50 hover:scale-110">

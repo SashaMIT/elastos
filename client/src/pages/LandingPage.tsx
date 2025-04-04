@@ -595,7 +595,7 @@ const LandingPage = () => {
         <div className="container mx-auto px-4 md:px-0 mb-0">
           <div className="flex flex-col md:flex-row items-center justify-between mb-0">
             <h3 className="text-xl md:text-2xl lg:text-3xl font-[400] leading-tight text-left text-black dark:text-white">
-              Join Our Community
+         Join the Movement
             </h3>
             <a 
               href="https://t.me/elastosgroup" 
