@@ -117,9 +117,9 @@ export function HeroSection() {
               alt="Elastos Smart Web"
               className="relative z-10 w-full h-auto rounded-lg shadow-xl dark:shadow-orange-500/20"
             />
-            <div className="absolute -bottom-4 -right-4 bg-white dark:bg-[#222222] p-2 rounded-lg shadow-lg z-20 flex flex-col md:flex-row items-center gap-2">
-              <img src="/images/Elastos New Logo_Kit-03.png" alt="ELA Logo" className="h-6 w-auto mb-1 md:mb-0" />
-              <span className="text-sm font-normal text-[#F6921A] text-center md:text-left">
+            <div className="absolute -bottom-4 -right-4 bg-white dark:bg-[#222222] p-2 rounded-lg shadow-lg z-20 flex items-center gap-2">
+              <img src="/images/Elastos New Logo_Kit-03.png" alt="ELA Logo" className="h-6 w-auto" />
+              <span className="text-sm font-normal text-[#F6921A]">
                 Queen ELA: Married to Bitcoin since 2018
               </span>
             </div>
