@@ -1,3 +1,4 @@
+
 import React, { useState, useEffect } from "react";
 import { Network, Lock, Wallet, Zap, Search, CheckCircle } from "lucide-react";
 import { motion } from "framer-motion";
@@ -343,7 +344,7 @@ export default function ElaUtilityPage() {
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 max-w-7xl mx-auto px-4">
           {/* Staking Component */}
-          <div className="min-h-[14rem] list-none">
+          <div className="group min-h-[14rem] list-none">
             <div className="relative h-full rounded-[1.25rem] p-2 md:rounded-[1.5rem] md:p-3">
               <GlowingEffect
                 spread={40}
@@ -354,6 +355,11 @@ export default function ElaUtilityPage() {
                 borderWidth={3}
               />
               <div className="relative flex h-full flex-col justify-between overflow-hidden rounded-xl bg-gradient-to-br from-[#5C8EFF]/[0.15] to-[#5C8EFF]/[0.03] p-6 shadow-sm dark:shadow-[0px_0px_27px_0px_rgba(45,45,45,0.3)]">
+                <div className="absolute -top-20 -right-20 w-64 h-64 rounded-full bg-[#5C8EFF]/5 blur-[80px]"></div>
+                <div className="absolute -bottom-20 -left-20 w-64 h-64 rounded-full bg-[#F7921A]/3 blur-[80px]"></div>
+                <div className="absolute -top-20 -right-20 w-64 h-64 rounded-full bg-[#5C8EFF]/3 blur-[80px] opacity-0 group-hover:opacity-50 transition-opacity duration-700"></div>
+                <div className="absolute -bottom-20 -left-20 w-64 h-64 rounded-full bg-[#5C8EFF]/3 blur-[80px] opacity-0 group-hover:opacity-50 transition-opacity duration-700"></div>
+              
                 <div className="flex flex-col md:flex-row gap-6 items-center relative z-10">
                   <div className="md:w-2/5 relative z-10">
                     <img 
@@ -398,9 +404,10 @@ export default function ElaUtilityPage() {
                 </div>
               </div>
             </div>
+          </div>
 
           {/* Governance Component */}
-          <div className="min-h-[14rem] list-none">
+          <div className="group min-h-[14rem] list-none">
             <div className="relative h-full rounded-[1.25rem] p-2 md:rounded-[1.5rem] md:p-3">
               <GlowingEffect
                 spread={40}
@@ -411,6 +418,11 @@ export default function ElaUtilityPage() {
                 borderWidth={3}
               />
               <div className="relative flex h-full flex-col justify-between overflow-hidden rounded-xl bg-gradient-to-br from-[#F7921A]/[0.15] to-[#F7921A]/[0.03] p-6 shadow-sm dark:shadow-[0px_0px_27px_0px_rgba(45,45,45,0.3)]">
+                <div className="absolute -top-20 -right-20 w-64 h-64 rounded-full bg-[#F7921A]/5 blur-[80px]"></div>
+                <div className="absolute -bottom-20 -left-20 w-64 h-64 rounded-full bg-[#5C8EFF]/3 blur-[80px]"></div>
+                <div className="absolute -top-20 -right-20 w-64 h-64 rounded-full bg-[#F7921A]/3 blur-[80px] opacity-0 group-hover:opacity-50 transition-opacity duration-700"></div>
+                <div className="absolute -bottom-20 -left-20 w-64 h-64 rounded-full bg-[#F7921A]/3 blur-[80px] opacity-0 group-hover:opacity-50 transition-opacity duration-700"></div>
+              
                 <div className="flex flex-col md:flex-row gap-6 items-center relative z-10">
                   <div className="md:w-2/5 relative z-10">
                     <img 
@@ -552,7 +564,6 @@ export default function ElaUtilityPage() {
           </div>
         </div>
       </section>
-
 
       <LogoCarouselDemo />
       <StackedCircularFooter />
