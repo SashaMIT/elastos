@@ -130,7 +130,7 @@ export default function ElaUtilityPage() {
 
   return (
     <>
-      <div className="container mx-auto px-4 pt-16 md:pt-24">
+      <div className="container mx-auto px-4">
         <SparklesPreview />
         <div className="text-center" id="text-effect-trigger">
           <TextGenerateEffect
