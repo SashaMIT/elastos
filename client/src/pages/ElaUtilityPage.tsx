@@ -483,84 +483,98 @@ export default function ElaUtilityPage() {
               </p>
             </motion.div>
 
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.2 }}
-              className="rounded-3xl bg-gradient-to-br from-[#F7921A]/10 via-[#8BABFF]/10 to-transparent p-10 border border-[#8BABFF]/20 w-full relative overflow-hidden"
-            >
-              {/* Background elements */}
-              <div className="absolute -top-20 -right-20 w-64 h-64 rounded-full bg-[#F7921A]/10 blur-[80px]"></div>
-              <div className="absolute -bottom-20 -left-20 w-72 h-72 rounded-full bg-[#8BABFF]/10 blur-[100px]"></div>
+            <div className="group min-h-[14rem]">
+              <div className="relative h-full rounded-[1.25rem] p-2 md:rounded-[1.5rem] md:p-3">
+                <GlowingEffect
+                  spread={40}
+                  glow={true}
+                  disabled={false}
+                  proximity={64}
+                  inactiveZone={0.01}
+                  borderWidth={3}
+                />
+                <motion.div
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: 0.2 }}
+                  className="relative h-full flex flex-col justify-between overflow-hidden rounded-xl bg-gradient-to-br from-[#5C8EFF]/[0.15] to-[#5C8EFF]/[0.03] p-10 shadow-sm dark:shadow-[0px_0px_27px_0px_rgba(45,45,45,0.3)]"
+                >
+                  {/* Background blur elements */}
+                  <div className="absolute -top-20 -right-20 w-64 h-64 rounded-full bg-[#5C8EFF]/5 blur-[80px]"></div>
+                  <div className="absolute -bottom-20 -left-20 w-72 h-72 rounded-full bg-[#F7921A]/3 blur-[100px]"></div>
+                  <div className="absolute -top-20 -right-20 w-64 h-64 rounded-full bg-[#5C8EFF]/3 blur-[80px] opacity-0 group-hover:opacity-50 transition-opacity duration-700"></div>
+                  <div className="absolute -bottom-20 -left-20 w-64 h-64 rounded-full bg-[#5C8EFF]/3 blur-[80px] opacity-0 group-hover:opacity-50 transition-opacity duration-700"></div>
 
-              <div className="grid md:grid-cols-2 gap-10 items-center">
-                <div className="flex justify-center">
-                  <img 
-                    src="/images/Essentials.png" 
-                    alt="Elastos Essentials" 
-                    className="w-full max-w-[350px] rounded-xl"
-                    onError={(e) => {
-                      const target = e.target as HTMLImageElement;
-                      target.src = "https://via.placeholder.com/350x700?text=Elastos+Essentials";
-                    }}
-                  />
-                </div>
-                <div>
-                  <h3 className="text-2xl font-bold text-white mb-4">The Complete Elastos Experience</h3>
-                  <div className="space-y-4 text-white/70">
-                    <p>Elastos Essentials is the native wallet and identity manager for the Elastos ecosystem. With Elastos Essentials, you get:</p>
-                    <ul className="space-y-2">
-                      <li className="flex items-start gap-2">
-                        <CheckCircle className="w-5 h-5 text-[#F7921A] mt-0.5 flex-shrink-0" />
-                        <span>Native support for all Elastos chains including Mainchain, ESC, and EID</span>
-                      </li>
-                      <li className="flex items-start gap-2">
-                        <CheckCircle className="w-5 h-5 text-[#F7921A] mt-0.5 flex-shrink-0" />
-                        <span>Integrated DID (Decentralized Identity) management</span>
-                      </li>
-                      <li className="flex items-start gap-2">
-                        <CheckCircle className="w-5 h-5 text-[#F7921A] mt-0.5 flex-shrink-0" />
-                        <span>Secure digital asset management with multi-chain support</span>
-                      </li>
-                      <li className="flex items-start gap-2">
-                        <CheckCircle className="w-5 h-5 text-[#F7921A] mt-0.5 flex-shrink-0" />
-                        <span>Built-in DApp browser and credential manager</span>
-                      </li>
-                    </ul>
+                  <div className="grid md:grid-cols-2 gap-10 items-center relative z-10">
+                    <div className="flex justify-center">
+                      <img 
+                        src="/images/Essentials.png" 
+                        alt="Elastos Essentials" 
+                        className="w-full max-w-[350px] rounded-xl"
+                        onError={(e) => {
+                          const target = e.target as HTMLImageElement;
+                          target.src = "https://via.placeholder.com/350x700?text=Elastos+Essentials";
+                        }}
+                      />
+                    </div>
+                    <div>
+                      <h3 className="text-2xl font-bold text-white mb-4">The Complete Elastos Experience</h3>
+                      <div className="space-y-4 text-white/70">
+                        <p>Elastos Essentials is the native wallet and identity manager for the Elastos ecosystem. With Elastos Essentials, you get:</p>
+                        <ul className="space-y-2">
+                          <li className="flex items-start gap-2">
+                            <CheckCircle className="w-5 h-5 text-[#5C8EFF] mt-0.5 flex-shrink-0" />
+                            <span>Native support for all Elastos chains including Mainchain, ESC, and EID</span>
+                          </li>
+                          <li className="flex items-start gap-2">
+                            <CheckCircle className="w-5 h-5 text-[#5C8EFF] mt-0.5 flex-shrink-0" />
+                            <span>Integrated DID (Decentralized Identity) management</span>
+                          </li>
+                          <li className="flex items-start gap-2">
+                            <CheckCircle className="w-5 h-5 text-[#5C8EFF] mt-0.5 flex-shrink-0" />
+                            <span>Secure digital asset management with multi-chain support</span>
+                          </li>
+                          <li className="flex items-start gap-2">
+                            <CheckCircle className="w-5 h-5 text-[#5C8EFF] mt-0.5 flex-shrink-0" />
+                            <span>Built-in DApp browser and credential manager</span>
+                          </li>
+                        </ul>
 
-                    <div className="flex flex-wrap gap-4 pt-4">
-                      <a
-                        href="https://apps.apple.com/us/app/elastos-essentials/id1568931743"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="inline-flex px-3 py-2 bg-[rgba(92,142,255,0.10)] text-[#5C8EFF] rounded-full font-medium transition-all items-center gap-1 border border-[rgba(92,142,255,0.50)] text-sm"
-                      >
-                        <span>App Store</span>
-                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 35 34" fill="none">
-                          <circle cx="17.333" cy="17" r="16.75" stroke="#5C8EFF" strokeOpacity="0.5" strokeWidth="0.5"/>
-                          <path d="M17.3338 22.9405L23.2741 17.0002L17.3338 11.0598L16.4162 11.9774L20.7628 16.324H10.8622V17.6763H20.7628L16.4162 22.0229L17.3338 22.9405Z" fill="#5C8EFF"/>
-                          <path d="M20.7628 17.6638H10.8747V16.3365H20.7628H20.7929L20.7716 16.3152L16.4338 11.9774L17.3338 11.0775L23.2564 17.0002L17.3338 22.9228L16.4338 22.0229L20.7716 17.6851L20.7929 17.6638H20.7628Z" stroke="#5C8EFF" strokeOpacity="0.5" strokeWidth="0.025"/>
-                        </svg>
-                      </a>
-                      <a
-                        href="https://play.google.com/store/apps/details?id=io.web3essentials.app"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="inline-flex px-3 py-2 bg-[rgba(246,146,26,0.10)] text-[#F6921A] rounded-full font-medium transition-all items-center gap-1 border border-[rgba(246,146,26,0.50)] text-sm"
-                      >
-                        <span>Google Play</span>
-                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 35 34" fill="none">
-                          <circle cx="17.333" cy="17" r="16.75" stroke="#F6921A" strokeOpacity="0.5" strokeWidth="0.5"/>
-                          <path d="M17.3338 22.9405L23.2741 17.0002L17.3338 11.0598L16.4162 11.9774L20.7628 16.324H10.8622V17.6763H20.7628L16.4162 22.0229L17.3338 22.9405Z" fill="#F6921A"/>
-                          <path d="M20.7628 17.6638H10.8747V16.3365H20.7628H20.7929L20.7716 16.3152L16.4338 11.9774L17.3338 11.0775L23.2564 17.0002L17.3338 22.9228L16.4338 22.0229L20.7716 17.6851L20.7929 17.6638H20.7628Z" stroke="#F6921A" strokeOpacity="0.5" strokeWidth="0.025"/>
-                        </svg>
-                      </a>
+                        <div className="flex flex-wrap gap-4 pt-4">
+                          <a
+                            href="https://apps.apple.com/us/app/elastos-essentials/id1568931743"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="inline-flex px-3 py-2 bg-[rgba(92,142,255,0.10)] text-[#5C8EFF] rounded-full font-medium transition-all items-center gap-1 border border-[rgba(92,142,255,0.50)] text-sm"
+                          >
+                            <span>App Store</span>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 35 34" fill="none">
+                              <circle cx="17.333" cy="17" r="16.75" stroke="#5C8EFF" strokeOpacity="0.5" strokeWidth="0.5"/>
+                              <path d="M17.3338 22.9405L23.2741 17.0002L17.3338 11.0598L16.4162 11.9774L20.7628 16.324H10.8622V17.6763H20.7628L16.4162 22.0229L17.3338 22.9405Z" fill="#5C8EFF"/>
+                              <path d="M20.7628 17.6638H10.8747V16.3365H20.7628H20.7929L20.7716 16.3152L16.4338 11.9774L17.3338 11.0775L23.2564 17.0002L17.3338 22.9228L16.4338 22.0229L20.7716 17.6851L20.7929 17.6638H20.7628Z" stroke="#5C8EFF" strokeOpacity="0.5" strokeWidth="0.025"/>
+                            </svg>
+                          </a>
+                          <a
+                            href="https://play.google.com/store/apps/details?id=io.web3essentials.app"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="inline-flex px-3 py-2 bg-[rgba(92,142,255,0.10)] text-[#5C8EFF] rounded-full font-medium transition-all items-center gap-1 border border-[rgba(92,142,255,0.50)] text-sm"
+                          >
+                            <span>Google Play</span>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 35 34" fill="none">
+                              <circle cx="17.333" cy="17" r="16.75" stroke="#5C8EFF" strokeOpacity="0.5" strokeWidth="0.5"/>
+                              <path d="M17.3338 22.9405L23.2741 17.0002L17.3338 11.0598L16.4162 11.9774L20.7628 16.324H10.8622V17.6763H20.7628L16.4162 22.0229L17.3338 22.9405Z" fill="#5C8EFF"/>
+                              <path d="M20.7628 17.6638H10.8747V16.3365H20.7628H20.7929L20.7716 16.3152L16.4338 11.9774L17.3338 11.0775L23.2564 17.0002L17.3338 22.9228L16.4338 22.0229L20.7716 17.6851L20.7929 17.6638H20.7628Z" stroke="#5C8EFF" strokeOpacity="0.5" strokeWidth="0.025"/>
+                            </svg>
+                          </a>
+                        </div>
+                      </div>
                     </div>
                   </div>
-                </div>
+                </motion.div>
               </div>
-            </motion.div>
+            </div>
           </div>
         </div>
       </section>
