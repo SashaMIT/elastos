@@ -227,7 +227,7 @@ const ecosystemFeatures = [
       <div className="w-full max-w-7xl mx-auto px-4 py-16 sm:px-6 lg:px-8">
         <div className="text-center mb-12">
           <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-6">
-            Elastos Explorer
+            Elastos <span className="text-[#5C8EFF]">Explorer</span>
           </h1>
           <p className="text-gray-400 max-w-2xl mx-auto text-sm sm:text-base md:text-lg">
             Discover the multi-chain structure of Elastos, where Bitcoin-secured blockchain technology combines with purpose-built sidechains to deliver a comprehensive Web3 infrastructure
@@ -288,7 +288,7 @@ const ecosystemFeatures = [
             viewport={{ once: true }}
             className="text-3xl font-bold text-white text-center mb-8"
           >
-            ELA Across Chains
+            ELA Across <span className="text-[#F7921A]">Chains</span>
           </motion.h2>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -341,7 +341,7 @@ const ecosystemFeatures = [
             viewport={{ once: true }}
             className="text-3xl font-bold text-white text-center mb-8"
           >
-            Ecosystem Features
+            Ecosystem <span className="text-[#5C8EFF]">Features</span>
           </motion.h2>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
