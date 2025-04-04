@@ -22,7 +22,7 @@ export function TestimonialsSection({
 }: TestimonialsSectionProps) {
   return (
     <section className={cn(
-      "bg-background dark:bg-[#171717] text-foreground",
+      "bg-background dark:bg-[#171717] text-foreground mt-10", 
       className
     )}>
       <div className="container mx-auto px-4 md:px-0">
