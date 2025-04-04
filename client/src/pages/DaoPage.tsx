@@ -62,7 +62,7 @@ const coreComponents = [
     description: "A 12-seat, community-elected council responsible for overseeing development, approving proposals, and distributing DAO funds.",
     details: [
       "Elected by ELA stakers",
-      "Must stake 5,000 ELA as collateral",
+      "5,000 ELA as collateral",
       "Annual elections",
       "Manages treasury",
       "Approves/rejects proposals",
@@ -78,7 +78,7 @@ const coreComponents = [
     description: "Any verified DID holder can submit ecosystem suggestions—ranging from tech development, marketing campaigns, dApps, or DAO upgrades.",
     details: [
       "Open to all DID holders",
-      "Technical & non-technical proposals",
+      "Universal suggestions",
       "Transparent review process",
       "Community feedback periods",
       "Smart contract-based execution",
