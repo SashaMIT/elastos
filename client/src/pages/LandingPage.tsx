@@ -651,8 +651,8 @@ const LandingPage = () => {
           <div className="grid grid-cols-3 md:grid-cols-12 gap-6">
             <ImageZoom
               key="1"
-              src="/images/Roadmap/Rong Chen and kevin Zhang hosted a meetup in London.jpeg"
-              alt="Rong Chen and Kevin Zhang hosted a meetup in London"
+              src="/images/Community/EoWgfLHXEAIpyQe.jpeg"
+              alt="Elastos Community Event"
               className="w-full aspect-square object-cover"
               loading="lazy"
               width={300}
@@ -687,8 +687,8 @@ const LandingPage = () => {
             />
             <ImageZoom
               key="5"
-              src="/images/Roadmap/Rong Pomp.png"
-              alt="Rong Chen with Pomp"
+              src="/images/Community/FmIGJV0XkA4B7wA.jpeg"
+              alt="Elastos Community Gathering"
               className="w-full aspect-square object-cover"
               loading="lazy"
               width={300}
@@ -705,7 +705,7 @@ const LandingPage = () => {
             />
             <ImageZoom
               key="7"
-              src="/images/Community/EiJX5nNVoAEe9pX.jpeg"
+              src="/images/Community/EyAPODsUUAAdPoz.jpeg"
               alt="Elastos Community Event"
               className="w-full aspect-square object-cover"
               loading="lazy"
@@ -813,8 +813,8 @@ const LandingPage = () => {
             />
             <ImageZoom
               key="19"
-              src="/images/Roadmap/Elastos 1 Year.jpeg"
-              alt="Elastos 1 Year"
+              src="/images/Community/F-Jr2ZIaQAAiRH4.jpeg"
+              alt="Elastos Community Gathering"
               className="w-full aspect-square object-cover"
               loading="lazy"
               width={300}
@@ -840,8 +840,8 @@ const LandingPage = () => {
             />
             <ImageZoom
               key="22"
-              src="/images/Roadmap/Elastos Members.jpeg"
-              alt="Elastos Members"
+              src="/images/Community/EiKLV1TU4AAR4OV.jpeg"
+              alt="Elastos Community Event"
               className="w-full aspect-square object-cover"
               loading="lazy"
               width={300}
