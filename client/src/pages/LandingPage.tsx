@@ -592,7 +592,7 @@ const LandingPage = () => {
         />
         
         {/* Community Image Grid */}
-        <div className="container mx-auto px-4 -mt-20">
+        <div className="container mx-auto px-4 -mt-8 md:-mt-20">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
             <ImageZoom
               key="1"
