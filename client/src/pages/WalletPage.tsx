@@ -150,14 +150,14 @@ const WalletPage: React.FC = () => {
                     borderWidth={3}
                   />
                 </div>
-                
+
                 <div className="relative h-full flex flex-col justify-between overflow-hidden rounded-xl bg-gradient-to-br from-[#5C8EFF]/[0.15] to-[#5C8EFF]/[0.03] p-6 shadow-sm">
                   {/* Background blur elements */}
                   <div className="absolute -top-20 -right-20 w-64 h-64 rounded-full bg-[#5C8EFF]/5 blur-[80px]"></div>
                   <div className="absolute -bottom-20 -left-20 w-72 h-72 rounded-full bg-[#F7921A]/3 blur-[100px]"></div>
                   <div className="absolute -top-20 -right-20 w-64 h-64 rounded-full bg-[#5C8EFF]/3 blur-[80px] opacity-0 group-hover:opacity-50 transition-opacity duration-700"></div>
                   <div className="absolute -bottom-20 -left-20 w-64 h-64 rounded-full bg-[#5C8EFF]/3 blur-[80px] opacity-0 group-hover:opacity-50 transition-opacity duration-700"></div>
-                  
+
                   <div className="relative z-10">
                     <div className="rounded-full bg-[#8BABFF]/10 p-4 w-16 h-16 flex items-center justify-center mb-5 transition-transform group-hover:scale-110 duration-300">
                       <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8 text-[#8BABFF]" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
@@ -192,14 +192,14 @@ const WalletPage: React.FC = () => {
                     borderWidth={3}
                   />
                 </div>
-                
+
                 <div className="relative h-full flex flex-col justify-between overflow-hidden rounded-xl bg-gradient-to-br from-[#5C8EFF]/[0.15] to-[#5C8EFF]/[0.03] p-6 shadow-sm">
                   {/* Background blur elements */}
                   <div className="absolute -top-20 -right-20 w-64 h-64 rounded-full bg-[#5C8EFF]/5 blur-[80px]"></div>
                   <div className="absolute -bottom-20 -left-20 w-72 h-72 rounded-full bg-[#F7921A]/3 blur-[100px]"></div>
                   <div className="absolute -top-20 -right-20 w-64 h-64 rounded-full bg-[#5C8EFF]/3 blur-[80px] opacity-0 group-hover:opacity-50 transition-opacity duration-700"></div>
                   <div className="absolute -bottom-20 -left-20 w-64 h-64 rounded-full bg-[#5C8EFF]/3 blur-[80px] opacity-0 group-hover:opacity-50 transition-opacity duration-700"></div>
-                  
+
                   <div className="relative z-10">
                     <div className="rounded-full bg-[#8BABFF]/10 p-4 w-16 h-16 flex items-center justify-center mb-5 transition-transform group-hover:scale-110 duration-300">
                       <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8 text-[#8BABFF]" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
@@ -234,14 +234,14 @@ const WalletPage: React.FC = () => {
                     borderWidth={3}
                   />
                 </div>
-                
+
                 <div className="relative h-full flex flex-col justify-between overflow-hidden rounded-xl bg-gradient-to-br from-[#5C8EFF]/[0.15] to-[#5C8EFF]/[0.03] p-6 shadow-sm">
                   {/* Background blur elements */}
                   <div className="absolute -top-20 -right-20 w-64 h-64 rounded-full bg-[#5C8EFF]/5 blur-[80px]"></div>
                   <div className="absolute -bottom-20 -left-20 w-72 h-72 rounded-full bg-[#F7921A]/3 blur-[100px]"></div>
                   <div className="absolute -top-20 -right-20 w-64 h-64 rounded-full bg-[#5C8EFF]/3 blur-[80px] opacity-0 group-hover:opacity-50 transition-opacity duration-700"></div>
                   <div className="absolute -bottom-20 -left-20 w-64 h-64 rounded-full bg-[#5C8EFF]/3 blur-[80px] opacity-0 group-hover:opacity-50 transition-opacity duration-700"></div>
-                  
+
                   <div className="relative z-10">
                     <div className="rounded-full bg-[#8BABFF]/10 p-4 w-16 h-16 flex items-center justify-center mb-5 transition-transform group-hover:scale-110 duration-300">
                       <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8 text-[#8BABFF]" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
@@ -279,14 +279,14 @@ const WalletPage: React.FC = () => {
                     borderWidth={3}
                   />
                 </div>
-                
+
                 <div className="relative h-full flex flex-col justify-between overflow-hidden rounded-xl bg-gradient-to-br from-[#5C8EFF]/[0.15] to-[#5C8EFF]/[0.03] p-6 shadow-sm">
                   {/* Background blur elements */}
                   <div className="absolute -top-20 -right-20 w-64 h-64 rounded-full bg-[#5C8EFF]/5 blur-[80px]"></div>
                   <div className="absolute -bottom-20 -left-20 w-72 h-72 rounded-full bg-[#F7921A]/3 blur-[100px]"></div>
                   <div className="absolute -top-20 -right-20 w-64 h-64 rounded-full bg-[#5C8EFF]/3 blur-[80px] opacity-0 group-hover:opacity-50 transition-opacity duration-700"></div>
                   <div className="absolute -bottom-20 -left-20 w-64 h-64 rounded-full bg-[#5C8EFF]/3 blur-[80px] opacity-0 group-hover:opacity-50 transition-opacity duration-700"></div>
-                  
+
                   <div className="relative z-10">
                     <div className="rounded-full bg-[#8BABFF]/10 p-4 w-16 h-16 flex items-center justify-center mb-5 transition-transform group-hover:scale-110 duration-300">
                       <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8 text-[#8BABFF]" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
@@ -323,14 +323,14 @@ const WalletPage: React.FC = () => {
                     borderWidth={3}
                   />
                 </div>
-                
+
                 <div className="relative h-full flex flex-col justify-between overflow-hidden rounded-xl bg-gradient-to-br from-[#5C8EFF]/[0.15] to-[#5C8EFF]/[0.03] p-6 shadow-sm">
                   {/* Background blur elements */}
                   <div className="absolute -top-20 -right-20 w-64 h-64 rounded-full bg-[#5C8EFF]/5 blur-[80px]"></div>
                   <div className="absolute -bottom-20 -left-20 w-72 h-72 rounded-full bg-[#F7921A]/3 blur-[100px]"></div>
                   <div className="absolute -top-20 -right-20 w-64 h-64 rounded-full bg-[#5C8EFF]/3 blur-[80px] opacity-0 group-hover:opacity-50 transition-opacity duration-700"></div>
                   <div className="absolute -bottom-20 -left-20 w-64 h-64 rounded-full bg-[#5C8EFF]/3 blur-[80px] opacity-0 group-hover:opacity-50 transition-opacity duration-700"></div>
-                  
+
                   <div className="relative z-10">
                     <div className="rounded-full bg-[#8BABFF]/10 p-4 w-16 h-16 flex items-center justify-center mb-5 transition-transform group-hover:scale-110 duration-300">
                       <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8 text-[#8BABFF]" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
@@ -367,14 +367,14 @@ const WalletPage: React.FC = () => {
                     borderWidth={3}
                   />
                 </div>
-                
+
                 <div className="relative h-full flex flex-col justify-between overflow-hidden rounded-xl bg-gradient-to-br from-[#5C8EFF]/[0.15] to-[#5C8EFF]/[0.03] p-6 shadow-sm">
                   {/* Background blur elements */}
                   <div className="absolute -top-20 -right-20 w-64 h-64 rounded-full bg-[#5C8EFF]/5 blur-[80px]"></div>
                   <div className="absolute -bottom-20 -left-20 w-72 h-72 rounded-full bg-[#F7921A]/3 blur-[100px]"></div>
                   <div className="absolute -top-20 -right-20 w-64 h-64 rounded-full bg-[#5C8EFF]/3 blur-[80px] opacity-0 group-hover:opacity-50 transition-opacity duration-700"></div>
                   <div className="absolute -bottom-20 -left-20 w-64 h-64 rounded-full bg-[#5C8EFF]/3 blur-[80px] opacity-0 group-hover:opacity-50 transition-opacity duration-700"></div>
-                  
+
                   <div className="relative z-10">
                     <div className="rounded-full bg-[#8BABFF]/10 p-4 w-16 h-16 flex items-center justify-center mb-5 transition-transform group-hover:scale-110 duration-300">
                       <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8 text-[#8BABFF]" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
@@ -433,7 +433,7 @@ const WalletPage: React.FC = () => {
                 transition={{ delay: 0.1 }}
                 className="rounded-xl bg-gradient-to-br from-[#8BABFF]/10 to-transparent border border-[#8BABFF]/20 p-8 hover:border-[#8BABFF]/30 transition-all shadow-lg shadow-[#8BABFF]/5"
               >
-                <div className="flex items-center gap-4 mb-6">
+                <div className="flex items-center gap4 mb-6">
                   <div className="w-12 h-12 rounded-xl bg-[#8BABFF]/10 flex items-center justify-center border border-[#8BABFF]/30">
                     <Code className="w-6 h-6 text-[#8BABFF]" />
                   </div>
