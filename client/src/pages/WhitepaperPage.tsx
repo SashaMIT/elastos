@@ -134,7 +134,7 @@ const WhitepaperPage = () => {
                   </ul>
                 </div>
               </CardContent>
-              <CardFooter className="pt-0">
+              <CardFooter className="pt-0 -mt-5">
                 <a href="/whitepapers/Elastos_Litepaper_2024.pdf" target="_blank" rel="noopener noreferrer">
                   <button className="px-3 py-2 bg-[rgba(92,142,255,0.10)] text-[#5C8EFF] rounded-full font-medium transition-all flex items-center gap-1 border border-[rgba(92,142,255,0.50)] text-sm">
                     <span>View</span>
@@ -187,7 +187,7 @@ const WhitepaperPage = () => {
                   </ul>
                 </div>
               </CardContent>
-              <CardFooter className="pt-0">
+              <CardFooter className="pt-0 -mt-5">
                 <a href="/whitepapers/Elastos_Technical_Docs.pdf" target="_blank" rel="noopener noreferrer">
                   <button className="px-3 py-2 bg-[rgba(246,146,26,0.10)] text-[#F6921A] rounded-full font-medium transition-all flex items-center gap-1 border border-[rgba(246,146,26,0.50)] text-sm">
                     <span>View</span>
