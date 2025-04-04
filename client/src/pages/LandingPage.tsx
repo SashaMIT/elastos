@@ -37,6 +37,7 @@ import { FeaturesCarousel } from "@/components/FeaturesCarousel";
 import { cn } from '@/lib/utils';
 import BlockTable from '@/components/BlockTable';
 import { Dots_v2 } from "@/components/ui/spinner"; // Import the spinner component
+import { RoundSpinner } from "@/components/ui/spinner"; // Import the RoundSpinner component
 
 
 interface FeatureCardProps {
@@ -378,7 +379,7 @@ const LandingPage = () => {
               <h3 className="text-lg font-medium mb-4">Current Price</h3>
               {isHashrateLoading ? (
                 <div className="flex flex-col items-center justify-center h-[120px]">
-                  <Dots_v2 />
+                  <RoundSpinner size="md" color="blue" />
                 </div>
               ) : (
                 <>
@@ -398,7 +399,7 @@ const LandingPage = () => {
               <h3 className="text-lg font-medium mb-4">Total Supply</h3>
               {isSupplyLoading ? (
                 <div className="flex flex-col items-center justify-center h-[120px]">
-                  <Dots_v2 />
+                  <RoundSpinner size="md" color="blue" />
                 </div>
               ) : (
                 <>
@@ -420,7 +421,7 @@ const LandingPage = () => {
               <h3 className="text-lg font-medium mb-4">Market Cap</h3>
               {isMarketCapLoading ? (
                 <div className="flex flex-col items-center justify-center h-[120px]">
-                  <Dots_v2 />
+                  <RoundSpinner size="md" color="blue" />
                 </div>
               ) : (
                 <>
@@ -442,7 +443,7 @@ const LandingPage = () => {
               <h3 className="text-lg font-medium mb-4">Current APR</h3>
               {!networkStats ? (
                 <div className="flex flex-col items-center justify-center h-[120px]">
-                  <Dots_v2 />
+                  <RoundSpinner size="md" color="blue" />
                 </div>
               ) : (
                 <>
@@ -479,7 +480,7 @@ const LandingPage = () => {
               <h3 className="text-lg font-medium mb-4">BTC Security</h3>
               {isHashrateLoading ? (
                 <div className="flex flex-col items-center justify-center h-[120px]">
-                  <Dots_v2 />
+                  <RoundSpinner size="md" color="blue" />
                 </div>
               ) : (
                 <>
@@ -498,7 +499,7 @@ const LandingPage = () => {
               <h3 className="text-lg font-medium mb-4">Latest Block By</h3>
               {!currentBlock ? (
                 <div className="flex flex-col items-center justify-center h-[120px]">
-                  <Dots_v2 />
+                  <RoundSpinner size="md" color="blue" />
                 </div>
               ) : (
                 <>
@@ -547,7 +548,7 @@ const LandingPage = () => {
               <h3 className="text-lg font-medium mb-4">Active Wallets</h3>
               {!networkStats ? (
                 <div className="flex flex-col items-center justify-center h-[120px]">
-                  <Dots_v2 />
+                  <RoundSpinner size="md" color="blue" />
                 </div>
               ) : (
                 <>
@@ -559,7 +560,7 @@ const LandingPage = () => {
                       onClick={() => window.open("https://ela.elastos.io/api/v1/data-statistics/", '_blank')}
                     >
                       <span>Verify</span>
-                      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 35 34" fill="none">
+                      <svg xmlns="http://"http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 35 34" fill="none">
                         <circle cx="17.333" cy="17" r="16.75" stroke="#5C8EFF" strokeOpacity="0.5" strokeWidth="0.5"/>
                         <path d="M17.3338 22.9405L23.2741 17.0002L17.3338 11.0598L16.4162 11.9774L20.7628 16.324H10.8622V17.6763H20.7628L16.4162 22.0229L17.3338 22.9405Z" fill="#5C8EFF"/>
                         <path d="M20.7628 17.6638H10.8747V16.3365H20.7628H20.7929L20.7716 16.3152L16.4338 11.9774L17.3338 11.0775L23.2564 17.0002L17.3338 22.9228L16.4338 22.0229L20.7716 17.6851L20.7929 17.6638H20.7628Z" stroke="#5C8EFF" strokeOpacity="0.5" strokeWidth="0.025"/>
