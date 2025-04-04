@@ -283,7 +283,7 @@ export default function ElaUtilityPage() {
           </div>
         </div>
 
-      
+
         <ScalingSection2 />
       </div>
 
@@ -492,7 +492,7 @@ export default function ElaUtilityPage() {
         </div>
       </section>
 
-      
+
       <LogoCarouselDemo />
       <StackedCircularFooter />
     </>

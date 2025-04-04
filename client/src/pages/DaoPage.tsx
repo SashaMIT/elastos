@@ -281,7 +281,7 @@ const DaoPage: React.FC = () => {
               transition={{ duration: 0.5 }}
             >
               <h1 className="text-4xl md:text-6xl font-bold text-white mb-6">
-                Elastos <span className="text-[#F7921A]">DAO</span>: Governance for the World Computer
+                Elastos DAO: Governance for the World Computer
               </h1>
               <p className="text-xl text-white/70 mb-8">
                 Community-powered governance for a truly decentralized internet.
@@ -324,7 +324,7 @@ const DaoPage: React.FC = () => {
             className="max-w-4xl mx-auto"
           >
             <h2 className="text-3xl font-bold text-white text-center mb-6">
-              What is <span className="text-[#F7921A]">Elastos DAO</span>?
+              What is Elastos DAO?
             </h2>
             <div className="bg-[#1A1A1A] rounded-xl p-8 border border-white/10 shadow-lg">
               <p className="text-white/80 text-lg leading-relaxed mb-6">
@@ -348,7 +348,7 @@ const DaoPage: React.FC = () => {
             className="text-center mb-12"
           >
             <h2 className="text-3xl font-bold text-white mb-4">
-              Core <span className="text-[#8BABFF]">Components</span>
+              Core Components
             </h2>
             <p className="text-lg text-white/70 max-w-3xl mx-auto">
               The foundation of Elastos' decentralized governance system
@@ -397,7 +397,7 @@ const DaoPage: React.FC = () => {
             className="text-center mb-12"
           >
             <h2 className="text-3xl font-bold text-white mb-4">
-              Powered by <span className="text-[#F7921A]">Elastos Technology</span>
+              Powered by Elastos Technology
             </h2>
             <p className="text-lg text-white/70 max-w-3xl mx-auto">
               Leveraging the full Elastos tech stack for secure, transparent governance
@@ -466,7 +466,7 @@ const DaoPage: React.FC = () => {
             className="text-center mb-12"
           >
             <h2 className="text-3xl font-bold text-white mb-4">
-              Why It <span className="text-[#8BABFF]">Matters</span>
+              Why It Matters
             </h2>
             <p className="text-lg text-white/70 max-w-3xl mx-auto">
               The unique advantages of Elastos DAO governance
@@ -515,7 +515,7 @@ const DaoPage: React.FC = () => {
             className="text-center mb-12"
           >
             <h2 className="text-3xl font-bold text-white mb-4">
-              From Cyber Republic to <span className="text-[#F7921A]">Elastos DAO</span>
+              From Cyber Republic to Elastos DAO
             </h2>
             <p className="text-lg text-white/70 max-w-3xl mx-auto">
               A journey of decentralized governance evolution
@@ -572,7 +572,7 @@ const DaoPage: React.FC = () => {
             className="text-center mb-12"
           >
             <h2 className="text-3xl font-bold text-white mb-4">
-              DAO in <span className="text-[#8BABFF]">Action</span>
+              DAO in Action
             </h2>
             <p className="text-lg text-white/70 max-w-3xl mx-auto">
               Real-time metrics of the Elastos governance ecosystem
@@ -678,7 +678,7 @@ const DaoPage: React.FC = () => {
             className="text-center mb-12"
           >
             <h2 className="text-3xl font-bold text-white mb-4">
-              How to Get <span className="text-[#F7921A]">Involved</span>
+              How to Get Involved
             </h2>
             <p className="text-lg text-white/70 max-w-3xl mx-auto">
               Join the community shaping the future of the decentralized internet

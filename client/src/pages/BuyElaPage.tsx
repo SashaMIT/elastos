@@ -243,7 +243,7 @@ const BuyElaPage = () => {
           </div>
 
           <div className="bg-green-50 dark:bg-[#171717] p-3 rounded-lg dark:text-white">
-            <h3 className="text-sm font-medium text-black-700 dark:text-white mb-2 flex items-center gap-2">
+            <h3 className="text-sm font-medium text-black-700 dark:text-white mb-2">
               <Star className="w-4 h-4 text-green-500" />
               Buy ELA
             </h3>
@@ -336,7 +336,7 @@ const BuyElaPage = () => {
             </motion.div>
 
             <div className="bg-white dark:bg-[#171717] rounded-lg border dark:border-gray-700 p-2 h-full">
-              <h3 className="text-sm font-medium mb-2 flex items-center gap-2 dark:text-white">
+              <h3 className="text-sm font-medium mb-2 dark:text-white">
                 <Shield className="h-4 w-4 text-blue-500" />
                 Security Integration
               </h3>

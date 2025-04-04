@@ -21,7 +21,7 @@ const WalletPage: React.FC = () => {
               viewport={{ once: true }}
               className="mb-8 text-center"
             >
-            
+
               <h2 className="text-4xl font-bold text-white mb-4">
                 Elastos Essentials Wallet
               </h2>
@@ -59,19 +59,19 @@ const WalletPage: React.FC = () => {
                     <p>Elastos Essentials is the native wallet and identity manager for the Elastos ecosystem. With Elastos Essentials, you get:</p>
                     <ul className="space-y-2">
                       <li className="flex items-start gap-2">
-                        <CheckCircle className="w-5 h-5 text-[#F7921A] mt-0.5 flex-shrink-0" />
+                        <CheckCircle className="w-5 h-5 text-white mt-0.5 flex-shrink-0" />
                         <span>Native support for all Elastos chains including Mainchain, ESC, and EID</span>
                       </li>
                       <li className="flex items-start gap-2">
-                        <CheckCircle className="w-5 h-5 text-[#F7921A] mt-0.5 flex-shrink-0" />
+                        <CheckCircle className="w-5 h-5 text-white mt-0.5 flex-shrink-0" />
                         <span>Integrated DID (Decentralized Identity) management</span>
                       </li>
                       <li className="flex items-start gap-2">
-                        <CheckCircle className="w-5 h-5 text-[#F7921A] mt-0.5 flex-shrink-0" />
+                        <CheckCircle className="w-5 h-5 text-white mt-0.5 flex-shrink-0" />
                         <span>Secure digital asset management with multi-chain support</span>
                       </li>
                       <li className="flex items-start gap-2">
-                        <CheckCircle className="w-5 h-5 text-[#F7921A] mt-0.5 flex-shrink-0" />
+                        <CheckCircle className="w-5 h-5 text-white mt-0.5 flex-shrink-0" />
                         <span>Built-in DApp browser and credential manager</span>
                       </li>
                     </ul>
@@ -278,7 +278,7 @@ const WalletPage: React.FC = () => {
               className="mb-16 text-center"
             >
               <h2 className="text-4xl font-bold text-white mb-6">
-                Setting Up <span className="text-[#8BABFF]">ESC & EID</span> on External Wallets
+                Setting Up ESC & EID on External Wallets
               </h2>
               <p className="text-xl text-white/70 max-w-3xl mx-auto">
                 Configure MetaMask or other compatible wallets to connect with Elastos networks
