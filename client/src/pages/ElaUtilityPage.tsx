@@ -343,9 +343,11 @@ export default function ElaUtilityPage() {
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 max-w-7xl mx-auto px-4">
           {/* Staking Component */}
-          <div className="bg-gradient-to-br from-[#5C8EFF]/5 to-transparent rounded-xl p-6 border border-[#5C8EFF]/20 transition-all hover:shadow-lg hover:border-[#5C8EFF]/40 relative overflow-hidden">
+          <div className="group bg-gradient-to-br from-[#5C8EFF]/5 to-transparent rounded-xl p-6 border border-[#5C8EFF]/20 transition-all hover:shadow-lg hover:border-[#5C8EFF]/40 relative overflow-hidden">
             <div className="absolute -top-20 -right-20 w-64 h-64 rounded-full bg-[#5C8EFF]/5 blur-[80px]"></div>
             <div className="absolute -bottom-20 -left-20 w-64 h-64 rounded-full bg-[#F7921A]/3 blur-[80px]"></div>
+            <div className="absolute -top-20 -right-20 w-64 h-64 rounded-full bg-[#5C8EFF]/3 blur-[80px] opacity-0 group-hover:opacity-50 transition-opacity duration-700"></div>
+            <div className="absolute -bottom-20 -left-20 w-64 h-64 rounded-full bg-[#5C8EFF]/3 blur-[80px] opacity-0 group-hover:opacity-50 transition-opacity duration-700"></div>
 
             <div className="flex flex-col md:flex-row gap-6 items-center">
               <div className="md:w-2/5 relative z-10">
@@ -392,9 +394,11 @@ export default function ElaUtilityPage() {
           </div>
 
           {/* Governance Component */}
-          <div className="bg-gradient-to-br from-[#F7921A]/5 to-transparent rounded-xl p-6 border border-[#F7921A]/20 transition-all hover:shadow-lg hover:border-[#F7921A]/40 relative overflow-hidden">
+          <div className="group bg-gradient-to-br from-[#F7921A]/5 to-transparent rounded-xl p-6 border border-[#F7921A]/20 transition-all hover:shadow-lg hover:border-[#F7921A]/40 relative overflow-hidden">
             <div className="absolute -top-20 -right-20 w-64 h-64 rounded-full bg-[#F7921A]/5 blur-[80px]"></div>
             <div className="absolute -bottom-20 -left-20 w-64 h-64 rounded-full bg-[#5C8EFF]/3 blur-[80px]"></div>
+            <div className="absolute -top-20 -right-20 w-64 h-64 rounded-full bg-[#F7921A]/3 blur-[80px] opacity-0 group-hover:opacity-50 transition-opacity duration-700"></div>
+            <div className="absolute -bottom-20 -left-20 w-64 h-64 rounded-full bg-[#F7921A]/3 blur-[80px] opacity-0 group-hover:opacity-50 transition-opacity duration-700"></div>
 
             <div className="flex flex-col md:flex-row gap-6 items-center">
               <div className="md:w-2/5 relative z-10">
