@@ -102,7 +102,7 @@ export default function RoadmapPage() {
         </div>
       </div>
 
-      <div className="container mx-auto px-4 pt-2 pb-8 bg-[#171717]">
+      <div className="container mx-auto px-4 pt-0 pb-8 bg-[#171717]">
         <ForwardRoadmap />
 
         <div className="w-full max-w-5xl mx-auto px-4 py-16 sm:px-6 lg:px-8">

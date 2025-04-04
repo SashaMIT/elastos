@@ -16,11 +16,11 @@ export function DetailedVisionSection() {
           className="text-lg text-gray-700 dark:text-gray-300 space-y-4"
         >
           <p>
-            Elastos is creating the World Computer—an open, programmable internet where users own their data, identity, and assets, powered by the most secure blockchain infrastructure in existence, Bitcoin.
+            Elastos is creating the SmartWeb—an open, programmable internet where users own their data, identity, and assets, powered by the most secure blockchain infrastructure in existence, Bitcoin.
           </p>
 
           <p>
-            This isn't just a blockchain or a smart contract platform. It's the missing layer of the internet: a complete re-architecture of how information, applications, and value move across the web. The World Computer integrates decentralized computation, identity, storage, and communication—all governed by its users, not corporations.
+            This isn't just a blockchain or a smart contract platform. It's the missing layer of the internet: a complete re-architecture of how information, applications, and value move across the web. The SmartWeb integrates decentralized computation, identity, storage, and communication—all governed by its users, not corporations.
           </p>
 
           <p>

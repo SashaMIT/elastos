@@ -5,7 +5,7 @@ export const ForwardRoadmap = () => {
   const milestones = [
     {
       year: '2024',
-      quarter: 'Q1-Q2 2024',
+      quarter: 'Q1-Q2 2025',
       items: [
         {
           title: 'Elastos 2.0 Launch',
