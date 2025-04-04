@@ -417,11 +417,11 @@ export default function ElaUtilityPage() {
                 inactiveZone={0.01}
                 borderWidth={3}
               />
-              <div className="relative flex h-full flex-col justify-between overflow-hidden rounded-xl bg-gradient-to-br from-[#F7921A]/[0.15] to-[#F7921A]/[0.03] p-6 shadow-sm dark:shadow-[0px_0px_27px_0px_rgba(45,45,45,0.3)]">
-                <div className="absolute -top-20 -right-20 w-64 h-64 rounded-full bg-[#F7921A]/5 blur-[80px]"></div>
-                <div className="absolute -bottom-20 -left-20 w-64 h-64 rounded-full bg-[#5C8EFF]/3 blur-[80px]"></div>
-                <div className="absolute -top-20 -right-20 w-64 h-64 rounded-full bg-[#F7921A]/3 blur-[80px] opacity-0 group-hover:opacity-50 transition-opacity duration-700"></div>
-                <div className="absolute -bottom-20 -left-20 w-64 h-64 rounded-full bg-[#F7921A]/3 blur-[80px] opacity-0 group-hover:opacity-50 transition-opacity duration-700"></div>
+              <div className="relative flex h-full flex-col justify-between overflow-hidden rounded-xl bg-gradient-to-br from-[#5C8EFF]/[0.15] to-[#5C8EFF]/[0.03] p-6 shadow-sm dark:shadow-[0px_0px_27px_0px_rgba(45,45,45,0.3)]">
+                <div className="absolute -top-20 -right-20 w-64 h-64 rounded-full bg-[#5C8EFF]/5 blur-[80px]"></div>
+                <div className="absolute -bottom-20 -left-20 w-64 h-64 rounded-full bg-[#F7921A]/3 blur-[80px]"></div>
+                <div className="absolute -top-20 -right-20 w-64 h-64 rounded-full bg-[#5C8EFF]/3 blur-[80px] opacity-0 group-hover:opacity-50 transition-opacity duration-700"></div>
+                <div className="absolute -bottom-20 -left-20 w-64 h-64 rounded-full bg-[#5C8EFF]/3 blur-[80px] opacity-0 group-hover:opacity-50 transition-opacity duration-700"></div>
               
                 <div className="flex flex-col md:flex-row gap-6 items-center relative z-10">
                   <div className="md:w-2/5 relative z-10">
@@ -438,21 +438,21 @@ export default function ElaUtilityPage() {
                     </p>
                     <div className="grid grid-cols-2 gap-3 mb-4">
                       <div className="bg-[#1A1A1A]/50 p-3 rounded-lg">
-                        <div className="text-[#F7921A] text-xl font-bold">73+</div>
+                        <div className="text-[#5C8EFF] text-xl font-bold">73+</div>
                         <div className="text-white/60 text-xs">Funded Proposals</div>
                       </div>
                       <div className="bg-[#1A1A1A]/50 p-3 rounded-lg">
-                        <div className="text-[#F7921A] text-xl font-bold">1.24M</div>
+                        <div className="text-[#5C8EFF] text-xl font-bold">1.24M</div>
                         <div className="text-white/60 text-xs">Treasury (ELA)</div>
                       </div>
                     </div>
 
-                    <a href="/dao" className="inline-flex px-3 py-2 bg-[rgba(246,146,26,0.10)] text-[#F6921A] rounded-full font-medium transition-all items-center gap-1 border border-[rgba(246,146,26,0.50)] text-sm">
+                    <a href="/dao" className="inline-flex px-3 py-2 bg-[rgba(92,142,255,0.10)] text-[#5C8EFF] rounded-full font-medium transition-all items-center gap-1 border border-[rgba(92,142,255,0.50)] text-sm">
                       <span>Explore DAO</span>
                       <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 35 34" fill="none">
-                        <circle cx="17.333" cy="17" r="16.75" stroke="#F6921A" strokeOpacity="0.5" strokeWidth="0.5"/>
-                        <path d="M17.3338 22.9405L23.2741 17.0002L17.3338 11.0598L16.4162 11.9774L20.7628 16.324H10.8622V17.6763H20.7628L16.4162 22.0229L17.3338 22.9405Z" fill="#F6921A"/>
-                        <path d="M20.7628 17.6638H10.8747V16.3365H20.7628H20.7929L20.7716 16.3152L16.4338 11.9774L17.3338 11.0775L23.2564 17.0002L17.3338 22.9228L16.4338 22.0229L20.7716 17.6851L20.7929 17.6638H20.7628Z" stroke="#F6921A" strokeOpacity="0.5" strokeWidth="0.025"/>
+                        <circle cx="17.333" cy="17" r="16.75" stroke="#5C8EFF" strokeOpacity="0.5" strokeWidth="0.5"/>
+                        <path d="M17.3338 22.9405L23.2741 17.0002L17.3338 11.0598L16.4162 11.9774L20.7628 16.324H10.8622V17.6763H20.7628L16.4162 22.0229L17.3338 22.9405Z" fill="#5C8EFF"/>
+                        <path d="M20.7628 17.6638H10.8747V16.3365H20.7628H20.7929L20.7716 16.3152L16.4338 11.9774L17.3338 11.0775L23.2564 17.0002L17.3338 22.9228L16.4338 22.0229L20.7716 17.6851L20.7929 17.6638H20.7628Z" stroke="#5C8EFF" strokeOpacity="0.5" strokeWidth="0.025"/>
                       </svg>
                     </a>
                   </div>
