@@ -343,51 +343,45 @@ export default function ElaUtilityPage() {
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 max-w-7xl mx-auto px-4">
           {/* Staking Component */}
-          <div className="group bg-gradient-to-br from-[#5C8EFF]/5 to-transparent rounded-xl p-6 border border-[#5C8EFF]/20 transition-all duration-500 hover:shadow-xl hover:border-[#5C8EFF]/60 relative overflow-hidden">
+          <div className="bg-gradient-to-br from-[#5C8EFF]/5 to-transparent rounded-xl p-6 border border-[#5C8EFF]/20 transition-all hover:shadow-lg hover:border-[#5C8EFF]/40 relative overflow-hidden">
             <div className="absolute -top-20 -right-20 w-64 h-64 rounded-full bg-[#5C8EFF]/5 blur-[80px]"></div>
             <div className="absolute -bottom-20 -left-20 w-64 h-64 rounded-full bg-[#F7921A]/3 blur-[80px]"></div>
-            <div className="absolute -top-20 -right-20 w-64 h-64 rounded-full bg-[#5C8EFF]/3 blur-[80px] opacity-0 group-hover:opacity-70 transition-all duration-700"></div>
-            <div className="absolute -bottom-20 -left-20 w-64 h-64 rounded-full bg-[#5C8EFF]/3 blur-[80px] opacity-0 group-hover:opacity-70 transition-all duration-700"></div>
-            <div className="absolute inset-0 bg-gradient-to-br from-[#5C8EFF]/3 to-transparent opacity-0 group-hover:opacity-30 transition-all duration-700 z-0"></div>
 
             <div className="flex flex-col md:flex-row gap-6 items-center">
               <div className="md:w-2/5 relative z-10">
-                <div className="relative transition-transform duration-500 group-hover:scale-105 group-hover:shadow-lg group-hover:shadow-[#5C8EFF]/20">
-                  <img 
-                    src="/images/Essentials.png" 
-                    alt="Elastos Staking" 
-                    className="w-full max-w-[180px] mx-auto rounded-xl shadow-lg"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-tr from-[#5C8EFF]/10 to-transparent opacity-0 group-hover:opacity-100 transition-all duration-500 rounded-xl"></div>
-                </div>
+                <img 
+                  src="/images/Essentials.png" 
+                  alt="Elastos Staking" 
+                  className="w-full max-w-[180px] mx-auto rounded-xl shadow-lg"
+                />
               </div>
               <div className="md:w-3/5 relative z-10">
-                <h3 className="text-2xl font-bold text-white mb-3 group-hover:text-[#5C8EFF]/90 transition-colors duration-300">Stake & Earn</h3>
-                <p className="text-white/70 text-sm mb-4 transition-opacity duration-300 group-hover:text-white/90">
+                <h3 className="text-2xl font-bold text-white mb-3">Stake & Earn</h3>
+                <p className="text-white/70 text-sm mb-4">
                   ELA staking offers a secure way to earn up to 3.29% APY while supporting the network's security and decentralization. It also grants voting rights in the DAO governance.
                 </p>
-                <div className="mb-5 transition-transform duration-500 group-hover:translate-x-1">
+                <div className="mb-5">
                   <div className="flex justify-between text-sm mb-1">
                     <span className="text-white/80">Current APY</span>
-                    <span className="text-[#5C8EFF] font-semibold group-hover:text-[#7ba9ff] transition-colors duration-300">3.29%</span>
+                    <span className="text-[#5C8EFF]">3.29%</span>
                   </div>
-                  <div className="w-full h-2 bg-[#1A1A1A] rounded-full overflow-hidden border border-[#1A1A1A] group-hover:border-[#5C8EFF]/20 transition-all duration-500">
-                    <div className="h-full bg-gradient-to-r from-[#5C8EFF] to-[#F7921A] rounded-full group-hover:animate-pulse" style={{ width: '32.9%' }}></div>
+                  <div className="w-full h-2 bg-[#1A1A1A] rounded-full overflow-hidden">
+                    <div className="h-full bg-gradient-to-r from-[#5C8EFF] to-[#F7921A] rounded-full" style={{ width: '32.9%' }}></div>
                   </div>
                 </div>
-                <div className="mb-5 transition-transform duration-500 group-hover:translate-x-1">
+                <div className="mb-5">
                   <div className="flex justify-between text-sm mb-1">
                     <span className="text-white/80">Network Staked</span>
-                    <span className="text-[#5C8EFF] font-semibold group-hover:text-[#7ba9ff] transition-colors duration-300">{networkStats?.stakedAmount ? formatNumber(networkStats.stakedAmount) : 'Loading...'} ELA</span>
+                    <span className="text-[#5C8EFF]">{networkStats?.stakedAmount ? formatNumber(networkStats.stakedAmount) : 'Loading...'} ELA</span>
                   </div>
-                  <div className="w-full h-2 bg-[#1A1A1A] rounded-full overflow-hidden border border-[#1A1A1A] group-hover:border-[#5C8EFF]/20 transition-all duration-500">
-                    <div className="h-full bg-gradient-to-r from-[#5C8EFF] to-[#F7921A] rounded-full group-hover:animate-pulse" style={{ width: `${((networkStats?.stakedAmount || 0) / (totalSupply || 1)) * 100}%` }}></div>
+                  <div className="w-full h-2 bg-[#1A1A1A] rounded-full overflow-hidden">
+                    <div className="h-full bg-gradient-to-r from-[#5C8EFF] to-[#F7921A] rounded-full" style={{ width: `${((networkStats?.stakedAmount || 0) / (totalSupply || 1)) * 100}%` }}></div>
                   </div>
                 </div>
 
-                <a href="https://staking.elastos.net/" target="_blank" rel="noopener noreferrer" className="inline-flex px-3 py-2 bg-[rgba(92,142,255,0.10)] text-[#5C8EFF] rounded-full font-medium transition-all items-center gap-1 border border-[rgba(92,142,255,0.50)] text-sm hover:bg-[rgba(92,142,255,0.18)] hover:shadow-md group-hover:shadow-[#5C8EFF]/15 group-hover:translate-x-1 duration-300">
+                <a href="https://staking.elastos.net/" target="_blank" rel="noopener noreferrer" className="inline-flex px-3 py-2 bg-[rgba(92,142,255,0.10)] text-[#5C8EFF] rounded-full font-medium transition-all items-center gap-1 border border-[rgba(92,142,255,0.50)] text-sm">
                   <span>Learn How to Stake</span>
-                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 35 34" fill="none" className="transition-transform duration-300 group-hover:translate-x-0.5">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 35 34" fill="none">
                     <circle cx="17.333" cy="17" r="16.75" stroke="#5C8EFF" strokeOpacity="0.5" strokeWidth="0.5"/>
                     <path d="M17.3338 22.9405L23.2741 17.0002L17.3338 11.0598L16.4162 11.9774L20.7628 16.324H10.8622V17.6763H20.7628L16.4162 22.0229L17.3338 22.9405Z" fill="#5C8EFF"/>
                     <path d="M20.7628 17.6638H10.8747V16.3365H20.7628H20.7929L20.7716 16.3152L16.4338 11.9774L17.3338 11.0775L23.2564 17.0002L17.3338 22.9228L16.4338 22.0229L20.7716 17.6851L20.7929 17.6638H20.7628Z" stroke="#5C8EFF" strokeOpacity="0.5" strokeWidth="0.025"/>
@@ -398,43 +392,37 @@ export default function ElaUtilityPage() {
           </div>
 
           {/* Governance Component */}
-          <div className="group bg-gradient-to-br from-[#F7921A]/5 to-transparent rounded-xl p-6 border border-[#F7921A]/20 transition-all duration-500 hover:shadow-xl hover:border-[#F7921A]/60 relative overflow-hidden">
+          <div className="bg-gradient-to-br from-[#F7921A]/5 to-transparent rounded-xl p-6 border border-[#F7921A]/20 transition-all hover:shadow-lg hover:border-[#F7921A]/40 relative overflow-hidden">
             <div className="absolute -top-20 -right-20 w-64 h-64 rounded-full bg-[#F7921A]/5 blur-[80px]"></div>
             <div className="absolute -bottom-20 -left-20 w-64 h-64 rounded-full bg-[#5C8EFF]/3 blur-[80px]"></div>
-            <div className="absolute -top-20 -right-20 w-64 h-64 rounded-full bg-[#F7921A]/3 blur-[80px] opacity-0 group-hover:opacity-70 transition-all duration-700"></div>
-            <div className="absolute -bottom-20 -left-20 w-64 h-64 rounded-full bg-[#F7921A]/3 blur-[80px] opacity-0 group-hover:opacity-70 transition-all duration-700"></div>
-            <div className="absolute inset-0 bg-gradient-to-br from-[#F7921A]/3 to-transparent opacity-0 group-hover:opacity-30 transition-all duration-700 z-0"></div>
 
             <div className="flex flex-col md:flex-row gap-6 items-center">
               <div className="md:w-2/5 relative z-10">
-                <div className="relative transition-transform duration-500 group-hover:scale-105 group-hover:shadow-lg group-hover:shadow-[#F7921A]/20">
-                  <img 
-                    src="/images/Ecosystem/Cyber Republic.png" 
-                    alt="Elastos DAO" 
-                    className="w-full max-w-[180px] mx-auto rounded-xl shadow-lg"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-tr from-[#F7921A]/10 to-transparent opacity-0 group-hover:opacity-100 transition-all duration-500 rounded-xl"></div>
-                </div>
+                <img 
+                  src="/images/Ecosystem/Cyber Republic.png" 
+                  alt="Elastos DAO" 
+                  className="w-full max-w-[180px] mx-auto rounded-xl shadow-lg"
+                />
               </div>
               <div className="md:w-3/5 relative z-10">
-                <h3 className="text-2xl font-bold text-white mb-3 group-hover:text-[#F7921A]/90 transition-colors duration-300">Shape the Future</h3>
-                <p className="text-white/70 text-sm mb-4 transition-opacity duration-300 group-hover:text-white/90">
+                <h3 className="text-2xl font-bold text-white mb-3">Shape the Future</h3>
+                <p className="text-white/70 text-sm mb-4">
                   Participate in Elastos DAO governance with your ELA tokens. Elect and run as a council member, and help determine the future direction of the Elastos.
                 </p>
-                <div className="grid grid-cols-2 gap-3 mb-4 transition-transform duration-500 group-hover:translate-x-1">
-                  <div className="bg-[#1A1A1A]/50 p-3 rounded-lg group-hover:bg-[#1A1A1A]/70 group-hover:shadow-inner transition-all duration-300 border border-transparent group-hover:border-[#F7921A]/20">
-                    <div className="text-[#F7921A] text-xl font-bold group-hover:text-[#fa9e3a] transition-colors duration-300">73+</div>
-                    <div className="text-white/60 text-xs group-hover:text-white/80 transition-colors duration-300">Funded Proposals</div>
+                <div className="grid grid-cols-2 gap-3 mb-4">
+                  <div className="bg-[#1A1A1A]/50 p-3 rounded-lg">
+                    <div className="text-[#F7921A] text-xl font-bold">73+</div>
+                    <div className="text-white/60 text-xs">Funded Proposals</div>
                   </div>
-                  <div className="bg-[#1A1A1A]/50 p-3 rounded-lg group-hover:bg-[#1A1A1A]/70 group-hover:shadow-inner transition-all duration-300 border border-transparent group-hover:border-[#F7921A]/20">
-                    <div className="text-[#F7921A] text-xl font-bold group-hover:text-[#fa9e3a] transition-colors duration-300">1.24M</div>
-                    <div className="text-white/60 text-xs group-hover:text-white/80 transition-colors duration-300">Treasury (ELA)</div>
+                  <div className="bg-[#1A1A1A]/50 p-3 rounded-lg">
+                    <div className="text-[#F7921A] text-xl font-bold">1.24M</div>
+                    <div className="text-white/60 text-xs">Treasury (ELA)</div>
                   </div>
                 </div>
 
-                <a href="/dao" className="inline-flex px-3 py-2 bg-[rgba(246,146,26,0.10)] text-[#F6921A] rounded-full font-medium transition-all items-center gap-1 border border-[rgba(246,146,26,0.50)] text-sm hover:bg-[rgba(246,146,26,0.18)] hover:shadow-md group-hover:shadow-[#F6921A]/15 group-hover:translate-x-1 duration-300">
+                <a href="/dao" className="inline-flex px-3 py-2 bg-[rgba(246,146,26,0.10)] text-[#F6921A] rounded-full font-medium transition-all items-center gap-1 border border-[rgba(246,146,26,0.50)] text-sm">
                   <span>Explore DAO</span>
-                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 35 34" fill="none" className="transition-transform duration-300 group-hover:translate-x-0.5">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 35 34" fill="none">
                     <circle cx="17.333" cy="17" r="16.75" stroke="#F6921A" strokeOpacity="0.5" strokeWidth="0.5"/>
                     <path d="M17.3338 22.9405L23.2741 17.0002L17.3338 11.0598L16.4162 11.9774L20.7628 16.324H10.8622V17.6763H20.7628L16.4162 22.0229L17.3338 22.9405Z" fill="#F6921A"/>
                     <path d="M20.7628 17.6638H10.8747V16.3365H20.7628H20.7929L20.7716 16.3152L16.4338 11.9774L17.3338 11.0775L23.2564 17.0002L17.3338 22.9228L16.4338 22.0229L20.7716 17.6851L20.7929 17.6638H20.7628Z" stroke="#F6921A" strokeOpacity="0.5" strokeWidth="0.025"/>
