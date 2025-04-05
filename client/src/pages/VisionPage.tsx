@@ -61,61 +61,11 @@ export function VisionPage() {
               <p className="text-lg dark:text-neutral-300">
                 Elastos is committed to creating a decentralized internet where users regain control of their digital identities and assets, free from corporate surveillance and exploitation.
               </p>
-              <div className="flex flex-wrap justify-center gap-4 mt-8">
-                <a 
-                  href="/ecosystem" 
-                  className="inline-flex px-4 py-2 bg-[rgba(92,142,255,0.05)] text-[#5C8EFF] rounded-full font-medium transition-all items-center gap-2 border border-[rgba(92,142,255,0.25)] hover:bg-[rgba(92,142,255,0.1)] hover:shadow-[0_0_15px_rgba(92,142,255,0.3)] shadow-[0_0_10px_rgba(92,142,255,0.2)]"
-                >
-                  <span>Explore Ecosystem</span>
-                  <div className="flex items-center justify-center rounded-full bg-[rgba(92,142,255,0.1)] border border-[rgba(92,142,255,0.25)]" style={{ width: '24px', height: '24px' }}>
-                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                      <path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="#5C8EFF" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                    </svg>
-                  </div>
-                </a>
-                <a 
-                  href="/team" 
-                  className="inline-flex px-4 py-2 bg-[rgba(92,142,255,0.05)] text-[#5C8EFF] rounded-full font-medium transition-all items-center gap-2 border border-[rgba(92,142,255,0.25)] hover:bg-[rgba(92,142,255,0.1)] hover:shadow-[0_0_15px_rgba(92,142,255,0.3)] shadow-[0_0_10px_rgba(92,142,255,0.2)]"
-                >
-                  <span>Meet the Entire Elastos Team</span>
-                  <div className="flex items-center justify-center rounded-full bg-[rgba(92,142,255,0.1)] border border-[rgba(92,142,255,0.25)]" style={{ width: '24px', height: '24px' }}>
-                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                      <path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="#5C8EFF" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                    </svg>
-                  </div>
-                </a>
-              </div>
             </div>
 
             {/* World Computer Banner */}
             <div className="mb-20 p-8 bg-[#171717] rounded-2xl border border-[#5C8EFF]/30">
               <WorldComputerBanner />
-            </div>
-
-            {/* Call to Action Buttons */}
-            <div className="flex flex-wrap justify-center gap-4 mb-16">
-              <a 
-                href="/explorer" 
-                className="inline-flex px-3 py-2 bg-[rgba(92,142,255,0.15)] text-white rounded-full font-[200] transition-all items-center gap-1 border border-[rgba(92,142,255,0.25)] text-sm"
-              >
-                <span>ESC Explorer</span>
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 35 34" fill="none">
-                  <circle cx="17.333" cy="17" r="16.75" stroke="#5C8EFF" strokeOpacity="0.25" strokeWidth="1.5"/>
-                  <path d="M17.3338 22.9405L23.2741 17.0002L17.3338 11.0598L16.4162 11.9774L20.7628 16.324H10.8622V17.6763H20.7628L16.4162 22.0229L17.3338 22.9405Z" fill="#5C8EFF"/>
-                  <path d="M20.7628 17.6638H10.8747V16.3365H20.7628H20.7929L20.7716 16.3152L16.4338 11.9774L17.3338 11.0775L23.2564 17.0002L17.3338 22.9228L16.4338 22.0229L20.7716 17.6851L20.7929 17.6638H20.7628Z" stroke="#5C8EFF" strokeOpacity="0.25" strokeWidth="1.5"/>
-                </svg>
-              </a>
-              <a 
-                href="/dao" 
-                className="inline-flex px-3 py-2 bg-[rgba(246,146,26,0.15)] text-white rounded-full font-[200] transition-all items-center gap-1 border border-[rgba(246,146,26,0.25)] text-sm"
-              >
-                <span>MC Explorer</span>
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 35 34" fill="none">
-                  <circle cx="17.333" cy="17" r="16.75" stroke="#F6921A" strokeOpacity="0.25" strokeWidth="1.5"/>
-                  <path d="M17.3338 22.9405L23.2741 17.0002L17.3338 11.0598L16.4162 11.9774L20.7628 16.324H10.8622V17.6763H20.7628L16.4162 22.0229L17.3338 22.9405Z" fill="#F6921A"/>
-                  <path d="M20.7628 17.6638H10.8747V16.3365H20.7628H20.7929L20.7716 16.3152L16.4338 11.9774L17.3338 11.0775L23.2564 17.0002L17.3338 22.9228L16.4338 22.0229L20.7716 17.6851L20.7929 17.6638H20.7628Z" stroke="#F6921A" strokeOpacity="0.25" strokeWidth="1.5"/>
-                </svg>
-              </a>
             </div>
 
             {/* Logo Carousel */}

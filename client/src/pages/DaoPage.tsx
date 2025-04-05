@@ -291,7 +291,7 @@ const DaoPage: React.FC = () => {
                   href="https://cyberrepublic.org"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex px-3 py-2 bg-[rgba(246,146,26,0.15)] text-white rounded-full font-[200] transition-all items-center gap-1 border border-[rgba(246,146,26,0.25)] text-sm"
+                  className="inline-flex px-3 py-2 bg-[rgba(246,146,26,0.10)] text-[#F6921A] rounded-full font-medium transition-all items-center gap-1 border border-[rgba(246,146,26,0.50)] text-sm"
                 >
                   <span>Visit DAO Portal</span>
                   <CircleArrow />
