@@ -71,8 +71,8 @@ export function WorldComputerBanner() {
           viewport={{ once: true }}
           className="space-y-2"
         >
-          <p className="text-xl font-semibold">Own your identity. Own your data. Own your internet.</p>
-          <p className="text-2xl font-bold text-[#F6921A]">Build on Elastos. Power the SmartWeb.</p>
+          <p className="text-xl font-[200]">Own your identity. Own your data. Own your internet.</p>
+          <p className="text-2xl font-[200] text-[#F6921A]">Build on Elastos. Power the SmartWeb.</p>
         </motion.div>
 
         <motion.div 
