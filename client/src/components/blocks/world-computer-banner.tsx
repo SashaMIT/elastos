@@ -10,7 +10,7 @@ export function WorldComputerBanner() {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
           viewport={{ once: true }}
-          className="text-3xl md:text-4xl font-bold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-[#F6921A] to-[#5C8EFF]"
+          className="text-3xl md:text-4xl font-[200] mb-6 bg-clip-text text-transparent bg-gradient-to-r from-[#F6921A] to-[#5C8EFF]"
         >
           A SmartWeb for Everyone
         </motion.h2>
@@ -20,7 +20,7 @@ export function WorldComputerBanner() {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.2 }}
           viewport={{ once: true }}
-          className="text-lg md:text-xl mb-8 text-gray-700 dark:text-gray-300"
+          className="text-lg md:text-xl mb-8 text-gray-700 dark:text-gray-300 font-[200]"
         >
           Elastos is more than an ecosystem—it's an internet built on open values:
         </motion.p>
@@ -59,7 +59,7 @@ export function WorldComputerBanner() {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.8 }}
           viewport={{ once: true }}
-          className="text-lg mb-10"
+          className="text-lg mb-10 font-[200]"
         >
           ELA is the oil of this machine—the single asset that <br></br>powers the SmartWeb economy, governance, and trust.
         </motion.p>
