@@ -61,7 +61,7 @@ export function WorldComputerBanner() {
           viewport={{ once: true }}
           className="text-lg mb-10"
         >
-          ELA is the oil of this machine—the single asset that powers the SmartWeb economy, governance, and trust.
+          ELA is the oil of this machine—the single asset that <br></br>powers the SmartWeb economy, governance, and trust.
         </motion.p>
 
         <motion.div 

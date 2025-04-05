@@ -49,7 +49,7 @@ export function VisionPage() {
         </div>
       </BackgroundCells>
 
-      <div className="w-full bg-white dark:bg-[#171717] py-16 font-sans">
+      <div className="w-full bg-white dark:bg-[#171717] py-0 font-sans">
         <div className="container mx-auto px-4">
           {/* Video Demo */}
           <div className="px-10 md:px-0 -mt-20">
@@ -57,7 +57,7 @@ export function VisionPage() {
           </div>
 
           {/* Feature with Advantages */}
-          <div className="mt-16">
+          <div className="mt-36">
             <Feature />
           </div>
 
@@ -69,8 +69,8 @@ export function VisionPage() {
 
 
           {/* Technology Stack */}
-          <div className="w-full mb-0 mt-20">
-            <h2 className="text-2xl md:text-3xl font-bold mb-8 text-center text-black dark:text-white">
+          <div className="w-full mb-0 mt-48">
+            <h2 className="text-2xl md:text-3xl font-bold mb-82 text-center text-black dark:text-white">
               Technology Stack
             </h2>
             <FeaturesSectionWithHoverEffects />
