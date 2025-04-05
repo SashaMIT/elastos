@@ -1,12 +1,11 @@
 import React, { useState } from 'react';
 import { cn } from '@/lib/utils';
 import { Button } from '@/components/ui/button';
-import { Card, CardHeader, CardTitle, CardDescription, CardContent, CardFooter } from '@/components/ui/card';
+import { Card } from '@/components/ui/card';
 import { ExternalLink } from 'lucide-react';
 import { Link } from 'wouter';
 import { Lens } from '@/components/ui/lens';
-import { Server, ChartBar } from "../components/icons";
-import { motion } from 'framer-motion';
+import { Server, ChartBar } from "../components/icons"; 
 
 const ecosystemProjects = [
   {
@@ -62,8 +61,8 @@ export function ScalingSection2() {
               onClick={() => setActiveTab('public')}
               className={cn(
                 "px-6 py-2 rounded-full transition-all",
-                activeTab === 'public'
-                  ? "bg-[#95B5FF] text-black"
+                activeTab === 'public' 
+                  ? "bg-[#95B5FF] text-black" 
                   : "bg-transparent text-white dark:text-white hover:scale-105 hover:shadow-inner"
               )}
             >
@@ -73,8 +72,8 @@ export function ScalingSection2() {
               onClick={() => setActiveTab('ecosystem')}
               className={cn(
                 "px-6 py-2 rounded-full transition-all",
-                activeTab === 'ecosystem'
-                  ? "bg-[#95B5FF] text-black"
+                activeTab === 'ecosystem' 
+                  ? "bg-[#95B5FF] text-black" 
                   : "bg-transparent text-white dark:text-white hover:scale-105 hover:shadow-inner"
               )}
             >
@@ -236,14 +235,14 @@ export function ScalingSection2() {
           <div>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               {ecosystemProjects.map((project) => (
-                <Card
+                <Card 
                   key={project.name}
                   className="border-0 shadow-none hover:shadow-none relative rounded-3xl overflow-hidden bg-white dark:bg-[#171717] p-8 cursor-pointer transition-all"
                   onClick={() => window.open(project.url, '_blank')}
                 >
                   <div className="relative z-10">
                     <Lens>
-                      <img
+                      <img 
                         src={project.image}
                         alt={project.name}
                         className="w-full h-48 object-cover rounded-2xl"
