@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect } from "react";
 import { Network, Lock, Wallet, Zap, Search, CheckCircle } from "lucide-react";
 import { motion } from "framer-motion";
@@ -360,7 +359,7 @@ export default function ElaUtilityPage() {
                 <div className="absolute -bottom-20 -left-20 w-64 h-64 rounded-full bg-[#F7921A]/3 blur-[80px]"></div>
                 <div className="absolute -top-20 -right-20 w-64 h-64 rounded-full bg-[#5C8EFF]/3 blur-[80px] opacity-0 group-hover:opacity-50 transition-opacity duration-700"></div>
                 <div className="absolute -bottom-20 -left-20 w-64 h-64 rounded-full bg-[#5C8EFF]/3 blur-[80px] opacity-0 group-hover:opacity-50 transition-opacity duration-700"></div>
-              
+
                 <div className="flex flex-col md:flex-row gap-6 items-center relative z-10">
                   <div className="md:w-2/5 relative z-10">
                     <img 
@@ -423,7 +422,7 @@ export default function ElaUtilityPage() {
                 <div className="absolute -bottom-20 -left-20 w-64 h-64 rounded-full bg-[#F7921A]/3 blur-[80px]"></div>
                 <div className="absolute -top-20 -right-20 w-64 h-64 rounded-full bg-[#5C8EFF]/3 blur-[80px] opacity-0 group-hover:opacity-50 transition-opacity duration-700"></div>
                 <div className="absolute -bottom-20 -left-20 w-64 h-64 rounded-full bg-[#5C8EFF]/3 blur-[80px] opacity-0 group-hover:opacity-50 transition-opacity duration-700"></div>
-              
+
                 <div className="flex flex-col md:flex-row gap-6 items-center relative z-10">
                   <div className="md:w-2/5 relative z-10">
                     <img 
