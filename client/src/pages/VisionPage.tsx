@@ -91,7 +91,7 @@ export function VisionPage() {
             <div className="mb-20 p-8 bg-[#171717] rounded-2xl border border-[#5C8EFF]/30">
               <WorldComputerBanner />
             </div>
-            
+
             {/* Call to Action Buttons */}
             <div className="flex flex-wrap justify-center gap-4 mb-16">
               <a 
