@@ -10,7 +10,7 @@ export function WorldComputerBanner() {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
           viewport={{ once: true }}
-          className="text-3xl md:text-4xl font-[200] mb-6 bg-clip-text text-transparent bg-gradient-to-r from-[#F6921A] to-[#5C8EFF]"
+          className="text-3xl md:text-4xl font-[200] mb-6 text-white"
         >
           A SmartWeb for Everyone
         </motion.h2>
