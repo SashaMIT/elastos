@@ -1,6 +1,50 @@
 import React, { useState } from 'react';
 import { cn } from '@/lib/utils';
-import { Link } from 'react-router-dom';
+import { Button } from '@/components/ui/button';
+import { Card } from '@/components/ui/card';
+import { ExternalLink } from 'lucide-react';
+import { Link } from 'wouter';
+import { Lens } from '@/components/ui/lens';
+import { Server, ChartBar } from "../components/icons"; 
+
+const ecosystemProjects = [
+  {
+    name: "Coinbase",
+    description: "Leading cryptocurrency exchange with easy ELA buying & trading options",
+    url: "https://www.coinbase.com/price/elastos",
+    image: "/images/Ecosystem/Coinbase.png"
+  },
+  {
+    name: "Uniswap",
+    description: "Decentralized exchange protocol for ELA and other ERC-20 token swaps",
+    url: "https://app.uniswap.org/",
+    image: "/images/Ecosystem/Uniswap.png"
+  },
+  {
+    name: "Crypto.com",
+    description: "Full-service crypto platform with ELA trading, cards, and more",
+    url: "https://crypto.com/",
+    image: "/images/Ecosystem/Crypto.png"
+  },
+  {
+    name: "Glide Finance",
+    description: "DEX for ERC-20 token trading on Elastos Smart Chain",
+    url: "https://glidefinance.io",
+    image: "/images/Ecosystem/Glide Finance Website.png"
+  },
+  {
+    name: "Gate.io",
+    description: "Professional crypto exchange with ELA trading pairs",
+    url: "https://www.gate.io/",
+    image: "/images/Ecosystem/Gate.png"
+  },
+  {
+    name: "KuCoin",
+    description: "Major crypto exchange offering ELA trading with multiple pairs",
+    url: "https://www.kucoin.com/",
+    image: "/images/Ecosystem/Kucoin.png"
+  }
+];
 
 export function ScalingSection2() {
   const [activeTab, setActiveTab] = useState('public');
@@ -38,90 +82,182 @@ export function ScalingSection2() {
           </div>
         </div>
 
-        {activeTab === 'public' && (
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
-            <div className="flex flex-col gap-4">
-              <div className="bg-gradient-to-br from-[#5C8EFF]/5 to-transparent border border-[#5C8EFF]/10 rounded-2xl p-6">
-                <h3 className="text-2xl font-bold mb-2 text-white">
-                  Secure & Decentralized
-                </h3>
-                <p className="text-gray-400 mb-4">
-                  ELA is secured by Bitcoin's massive hashpower through merge mining, making it one of the most secure networks in crypto.
-                </p>
-                <div className="flex items-center gap-4">
-                  <div className="w-16 h-16 flex items-center justify-center bg-[#5C8EFF]/10 rounded-full">
-                    <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8 text-[#5C8EFF]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
-                    </svg>
-                  </div>
-                  <div>
-                    <div className="text-sm text-gray-500">HASH RATE SECURITY</div>
-                    <div className="text-xl font-semibold text-white">60+ EH/s</div>
-                  </div>
-                </div>
+        {activeTab === 'public' ? (
+          <div className="space-y-32">
+            <div className="flex flex-col md:flex-row items-center justify-center gap-12">
+              <div className="w-48 h-48 relative">
+                <img src="/images/L2.png" alt="Elastos Mainchain" className="w-full h-full object-contain" />
               </div>
-
-              <div className="bg-gradient-to-br from-[#5C8EFF]/5 to-transparent border border-[#5C8EFF]/10 rounded-2xl p-6">
-                <h3 className="text-2xl font-bold mb-2 text-white">
-                  Elastic & Scalable
-                </h3>
-                <p className="text-gray-400 mb-4">
-                  ELA powers a multi-chain architecture that can scale to handle millions of transactions with specialized sidechains for different services.
+              <div className="flex-1">
+                <div className="flex items-center gap-3 mb-4">
+                  <h3 className="text-2xl font-bold font-sans">Bitcoin-Backed Protection & Reserve Asset</h3>
+                  <span className="px-4 py-1 bg-[#5C8EFF]/10 border border-[#5C8EFF]/30 text-white rounded-full text-xs font-medium">SECURITY</span>
+                </div>
+                <p className="text-muted-foreground mb-6 max-w-xl">
+                  <ul className="list-disc pl-5 mt-4 space-y-2 text-sm">
+                    <li>ELA is secured through merged mining with Bitcoin, leveraging Bitcoin's immense hash power.</li>
+                    <li>This makes Elastos one of the most secure blockchain networks in existence.</li>
+                    <li>Transactions are validated using Auxiliary Proof-of-Work (AuxPoW), combining Bitcoin's security with Elastos' efficiency.</li>
+                    <li>ELA acts as a reserve asset within the Elastos ecosystem, ensuring economic stability for decentralized applications and services.</li>
+                  </ul>
                 </p>
-                <div className="flex items-center gap-4">
-                  <div className="w-16 h-16 flex items-center justify-center bg-[#5C8EFF]/10 rounded-full">
-                    <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8 text-[#5C8EFF]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
+                <div className="flex gap-4">
+                  <button className="w-8 h-8 rounded-full border border-[#F6921A] bg-[#F6921A]/30 flex items-center justify-center transition-all hover:bg-[#F6921A]/50 hover:scale-110">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="#F6921A" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
                     </svg>
-                  </div>
-                  <div>
-                    <div className="text-sm text-gray-500">TPS CAPACITY</div>
-                    <div className="text-xl font-semibold text-white">Thousands</div>
-                  </div>
+                  </button>
                 </div>
               </div>
             </div>
 
-            <div className="flex flex-col gap-4">
-              <div className="bg-gradient-to-br from-[#5C8EFF]/5 to-transparent border border-[#5C8EFF]/10 rounded-2xl p-6">
-                <h3 className="text-2xl font-bold mb-2 text-white">
-                  Gas & Governance
-                </h3>
-                <p className="text-gray-400 mb-4">
-                  ELA powers transactions across all Elastos chains and gives holders voting rights in the decentralized governance system.
+            <div className="flex flex-col md:flex-row-reverse items-center justify-center gap-12">
+              <div className="w-48 h-48 relative">
+                <img src="/images/Bel2icon.png" alt="BeL2" className="w-full h-full object-contain" />
+              </div>
+              <div className="flex-1">
+                <div className="flex items-center gap-3 mb-4">
+                  <h3 className="text-2xl font-bold font-sans">Governance & Decentralization</h3>
+                  <span className="px-4 py-1 bg-[#5C8EFF]/10 border border-[#5C8EFF]/30 text-white rounded-full text-xs font-medium">VOTING</span>
+                </div>
+                <p className="text-muted-foreground mb-6 max-w-xl">
+                  <ul className="list-disc pl-5 mt-4 space-y-2 text-sm">
+                    <li>ELA is the governance token used in the Elastos DAO, Elastos' decentralized autonomous organization (DAO).</li>
+                    <li>ELA holders can vote on proposals, fund projects, and participate in decision-making.</li>
+                    <li>Anyone who wishes to become an elected council member must place 5,000 ELA down as collateral to participate in the yearly elections.</li>
+                    <li>This ensures that Elastos evolves based on community consensus rather than centralized control.</li>
+                  </ul>
                 </p>
-                <div className="flex items-center gap-4">
-                  <div className="w-16 h-16 flex items-center justify-center bg-[#5C8EFF]/10 rounded-full">
-                    <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8 text-[#5C8EFF]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M3 6l3 1m0 0l-3 9a5.002 5.002 0 006.001 0M6 7l3 9M6 7l6-2m6 2l3-1m-3 1l-3 9a5.002 5.002 0 006.001 0M18 7l3 9m-3-9l-6-2m0-2v2m0 16V5m0 16H9m3 0h3" />
+                <div className="flex gap-4">
+                  <button className="w-8 h-8 rounded-full border border-[#F6921A] bg-[#F6921A]/30 flex items-center justify-center transition-all hover:bg-[#F6921A]/50 hover:scale-110">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="#F6921A" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
                     </svg>
-                  </div>
-                  <div>
-                    <div className="text-sm text-gray-500">DAO TREASURY</div>
-                    <div className="text-xl font-semibold text-white">1.24M ELA</div>
-                  </div>
+                  </button>
                 </div>
               </div>
+            </div>
 
-              <div className="bg-gradient-to-br from-[#5C8EFF]/5 to-transparent border border-[#5C8EFF]/10 rounded-2xl p-6">
-                <h3 className="text-2xl font-bold mb-2 text-white">
-                  Limited Supply
-                </h3>
-                <p className="text-gray-400 mb-4">
-                  With a maximum supply of 28.2 million, ELA is a scarce digital asset with Bitcoin-like emission schedule and halvings.
+            <div className="flex flex-col md:flex-row items-center justify-center gap-12">
+              <div className="w-48 h-48 relative">
+                <img src="/images/Depin.png" alt="DePIN Network" className="w-full h-full object-contain" />
+              </div>
+              <div className="flex-1">
+                <div className="flex items-center gap-3 mb-4">
+                  <h3 className="text-2xl font-bold font-sans">Digital Identity & Ownership</h3>
+                  <span className="px-4 py-1 bg-[#5C8EFF]/10 border border-[#5C8EFF]/30 text-white rounded-full text-xs font-medium whitespace-nowrap">ACCOUNTING</span>
+                </div>
+                <p className="text-muted-foreground mb-6 max-w-xl">
+                  <ul className="list-disc pl-5 mt-4 space-y-2 text-sm">
+                    <li>ELA enables the creation and management of Decentralized IDs (DIDs), allowing users to own and control their digital identity.</li>
+                    <li>Every DID on Elastos is anchored on the blockchain, ensuring verifiable and tamper-proof credentials where ELA is the underlying gas fee.</li>
+                  </ul>
                 </p>
-                <div className="flex items-center gap-4">
-                  <div className="w-16 h-16 flex items-center justify-center bg-[#5C8EFF]/10 rounded-full">
-                    <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8 text-[#5C8EFF]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                <div className="flex gap-4">
+                  <button className="w-8 h-8 rounded-full border border-[#F6921A] bg-[#F6921A]/30 flex items-center justify-center transition-all hover:bg-[#F6921A]/50 hover:scale-110">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="#F6921A" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
                     </svg>
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            {/* Smart Web Services Section */}
+            <div className="grid grid-cols-1 lg:grid-cols-12 gap-4 items-center">
+              <div className="col-span-1 lg:col-span-7 order-1 lg:order-1">
+                <div className="h-full w-full flex flex-col items-start justify-center">
+                  <div className="flex items-center gap-3 mb-4">
+                    <h3 className="text-2xl font-bold font-sans">Fueling Transactions & dApps</h3>
+                    <span className="px-4 py-1 bg-[#5C8EFF]/10 border border-[#5C8EFF]/30 text-white rounded-full text-xs font-medium whitespace-nowrap">GAS</span>
                   </div>
-                  <div>
-                    <div className="text-sm text-gray-500">MAX SUPPLY</div>
-                    <div className="text-xl font-semibold text-white">28.2M ELA</div>
+                  <p className="text-muted-foreground mb-6 max-w-xl">
+                    <ul className="list-disc pl-5 mt-4 space-y-2 text-sm">
+                      <li>ELA is used for gas fees on Elastos Smart Contract Chain (ESC), an Ethereum-compatible sidechain that supports dApps and DeFi.</li>
+                      <li>Developers use ELA to deploy smart contracts and build decentralized applications (dApps).</li>
+                      <li>Transactions on the Elastos network (e.g., token transfers, DID registrations) require ELA as a network fee.</li>
+                      <li>Elastos is built to scale horizontally with multiple sidechains, such as ESC and DID, each with the ability to use ELA as gas for their economies.</li>
+                    </ul>
+                  </p>
+                  <div className="flex gap-4">
+                    <button className="w-8 h-8 rounded-full border border-[#F6921A] bg-[#F6921A]/30 flex items-center justify-center transition-all hover:bg-[#F6921A]/50 hover:scale-110">
+                      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="#F6921A" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                      </svg>
+                    </button>
                   </div>
                 </div>
               </div>
+              <div className="col-span-1 lg:col-span-5 order-2 lg:order-2 flex items-center justify-center">
+                <img
+                  src="/images/smart_web_services.png"
+                  alt="Smart Web Services"
+                  className="w-full h-auto max-w-md rounded-lg shadow-lg"
+                />
+              </div>
+            </div>
+
+            {/* Digital Economy Section */}
+            <div className="grid grid-cols-1 lg:grid-cols-12 gap-4 items-center">
+              <div className="col-span-1 lg:col-span-5 order-2 lg:order-1 flex items-center justify-center">
+                <img
+                  src="/images/digital_economy.png"
+                  alt="Digital Economy"
+                  className="w-full h-auto max-w-md rounded-lg shadow-lg"
+                />
+              </div>
+              <div className="col-span-1 lg:col-span-7 order-1 lg:order-2">
+                <div className="h-full w-full flex flex-col items-start justify-center">
+                  <div className="flex items-center gap-3 mb-4">
+                    <h3 className="text-2xl font-bold font-sans">Digital Asset Management</h3>
+                    <span className="px-4 py-1 bg-[#5C8EFF]/10 border border-[#5C8EFF]/30 text-white rounded-full text-xs font-medium whitespace-nowrap">TRADE</span>
+                  </div>
+                  <p className="text-muted-foreground mb-6 max-w-xl">
+                    <ul className="list-disc pl-5 mt-4 space-y-2 text-sm">
+                      <li>ELA can be used for peer-to-peer payments, digital asset purchases, and staking within the Elastos ecosystem.</li>
+                      <li>Users and businesses can tokenize assets, manage royalties, and trade digital content using Elastos-powered platforms like Elacity.</li>
+                      <li>ELA facilitates the ownership, trade, and monetization of digital assets without intermediaries.</li>
+                      <li>DeFi capabilities, including borrowing, lending, and staking, are enabled within the Elastos ecosystem, expanding ELA's use beyond transactions into financial services.</li>
+                    </ul>
+                  </p>
+                  <div className="flex gap-4">
+                    <button className="w-8 h-8 rounded-full border border-[#F6921A] bg-[#F6921A]/30 flex items-center justify-center transition-all hover:bg-[#F6921A]/50 hover:scale-110">
+                      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="#F6921A" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                      </svg>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        ) : (
+          <div>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              {ecosystemProjects.map((project) => (
+                <Card 
+                  key={project.name}
+                  className="border-0 shadow-none hover:shadow-none relative rounded-3xl overflow-hidden bg-white dark:bg-[#171717] p-8 cursor-pointer transition-all"
+                  onClick={() => window.open(project.url, '_blank')}
+                >
+                  <div className="relative z-10">
+                    <Lens>
+                      <img 
+                        src={project.image}
+                        alt={project.name}
+                        className="w-full h-48 object-cover rounded-2xl"
+                      />
+                    </Lens>
+                    <div className="mt-4">
+                      <h3 className="text-2xl font-bold font-sans text-gray-900 dark:text-white mb-4 flex items-center gap-2">
+                        {project.name}
+                        <ExternalLink className="w-5 h-5 flex-shrink-0" />
+                      </h3>
+                      <p className="text-gray-600 dark:text-neutral-200">{project.description}</p>
+                    </div>
+                  </div>
+                </Card>
+              ))}
             </div>
             <div className="mt-12 text-center">
               <Link href="/ecosystem" className="px-3 py-2 bg-[rgba(92,142,255,0.15)] text-white rounded-full font-[200] transition-all items-center gap-1 border border-[rgba(92,142,255,0.25)] text-sm inline-flex">
@@ -131,107 +267,8 @@ export function ScalingSection2() {
                   <path d="M17.3338 22.9405L23.2741 17.0002L17.3338 11.0598L16.4162 11.9774L20.7628 16.324H10.8622V17.6763H20.7628L16.4162 22.0229L17.3338 22.9405Z" fill="#5C8EFF"/>
                   <path d="M20.7628 17.6638H10.8747V16.3365H20.7628H20.7929L20.7716 16.3152L16.4338 11.9774L17.3338 11.0775L23.2564 17.0002L17.3338 22.9228L16.4338 22.0229L20.7716 17.6851L20.7929 17.6638H20.7628Z" stroke="#5C8EFF" strokeOpacity="0.25" strokeWidth="1.5"/>
                 </svg>
+                </div>
               </Link>
-            </div>
-          </div>
-        )}
-
-        {activeTab === 'ecosystem' && (
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
-            <div className="flex flex-col gap-4">
-              <div className="bg-gradient-to-br from-[#F7921A]/5 to-transparent border border-[#F7921A]/10 rounded-2xl p-6">
-                <h3 className="text-2xl font-bold mb-2 text-white">
-                  Centralized Exchanges
-                </h3>
-                <p className="text-gray-400 mb-4">
-                  Purchase ELA directly with fiat currency or other cryptocurrencies on trusted exchanges.
-                </p>
-                <div className="grid grid-cols-3 gap-3">
-                  <div className="flex flex-col items-center bg-[#1A1A1A]/80 p-2 rounded-lg">
-                    <img src="/images/Kucoin.png" alt="Kucoin" className="h-8 w-8 object-contain mb-1" />
-                    <span className="text-xs text-gray-400">KuCoin</span>
-                  </div>
-                  <div className="flex flex-col items-center bg-[#1A1A1A]/80 p-2 rounded-lg">
-                    <img src="/images/Gate.png" alt="Gate.io" className="h-8 w-8 object-contain mb-1" />
-                    <span className="text-xs text-gray-400">Gate.io</span>
-                  </div>
-                  <div className="flex flex-col items-center bg-[#1A1A1A]/80 p-2 rounded-lg">
-                    <img src="/images/HTX.png" alt="HTX" className="h-8 w-8 object-contain mb-1" />
-                    <span className="text-xs text-gray-400">HTX</span>
-                  </div>
-                </div>
-              </div>
-
-              <div className="bg-gradient-to-br from-[#F7921A]/5 to-transparent border border-[#F7921A]/10 rounded-2xl p-6">
-                <h3 className="text-2xl font-bold mb-2 text-white">
-                  Self-Custody Wallets
-                </h3>
-                <p className="text-gray-400 mb-4">
-                  Store and manage your ELA with full control using these secure wallet options.
-                </p>
-                <div className="flex items-center justify-between">
-                  <div className="flex flex-col items-center">
-                    <img src="/images/Essentials.png" alt="Essentials" className="h-12 w-12 object-contain mb-1 rounded-xl" />
-                    <span className="text-xs text-gray-400">Essentials</span>
-                  </div>
-                  <a href="https://elastos.info/essentials-the-super-wallet/" className="px-3 py-2 bg-[rgba(246,146,26,0.10)] text-[#F6921A] rounded-full transition-all flex items-center gap-1 border border-[rgba(246,146,26,0.50)] text-sm">
-                    <span>Download</span>
-                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
-                    </svg>
-                  </a>
-                </div>
-              </div>
-            </div>
-
-            <div className="flex flex-col gap-4">
-              <div className="bg-gradient-to-br from-[#F7921A]/5 to-transparent border border-[#F7921A]/10 rounded-2xl p-6">
-                <h3 className="text-2xl font-bold mb-2 text-white">
-                  Decentralized Exchanges
-                </h3>
-                <p className="text-gray-400 mb-4">
-                  Swap tokens directly without intermediaries on these decentralized platforms.
-                </p>
-                <div className="grid grid-cols-3 gap-3">
-                  <div className="flex flex-col items-center bg-[#1A1A1A]/80 p-2 rounded-lg">
-                    <img src="/images/glide.png" alt="Glide" className="h-8 w-8 object-contain mb-1" />
-                    <span className="text-xs text-gray-400">Glide</span>
-                  </div>
-                  <div className="flex flex-col items-center bg-[#1A1A1A]/80 p-2 rounded-lg">
-                    <img src="/images/chainge.png" alt="Chainge" className="h-8 w-8 object-contain mb-1" />
-                    <span className="text-xs text-gray-400">Chainge</span>
-                  </div>
-                  <div className="flex flex-col items-center bg-[#1A1A1A]/80 p-2 rounded-lg">
-                    <img src="/images/Uniswap.png" alt="Uniswap" className="h-8 w-8 object-contain mb-1" />
-                    <span className="text-xs text-gray-400">Uniswap</span>
-                  </div>
-                </div>
-              </div>
-
-              <div className="bg-gradient-to-br from-[#F7921A]/5 to-transparent border border-[#F7921A]/10 rounded-2xl p-6">
-                <h3 className="text-2xl font-bold mb-2 text-white">
-                  Use Your ELA
-                </h3>
-                <p className="text-gray-400 mb-4">
-                  Put your ELA to work in these DeFi protocols to earn passive income.
-                </p>
-                <div className="flex flex-col gap-2">
-                  <div className="flex justify-between items-center p-2 bg-[#1A1A1A]/80 rounded-lg">
-                    <div className="flex items-center gap-2">
-                      <img src="/images/Cyber Republic.png" alt="DAO Staking" className="h-8 w-8 rounded-full" />
-                      <span className="text-white">DAO Staking</span>
-                    </div>
-                    <div className="text-[#F6921A]">~3.29% APY</div>
-                  </div>
-                  <div className="flex justify-between items-center p-2 bg-[#1A1A1A]/80 rounded-lg">
-                    <div className="flex items-center gap-2">
-                      <img src="/images/glide.png" alt="Glide Finance" className="h-8 w-8 rounded-full" />
-                      <span className="text-white">Glide Pools</span>
-                    </div>
-                    <div className="text-[#F6921A]">Variable APY</div>
-                  </div>
-                </div>
-              </div>
             </div>
           </div>
         )}
