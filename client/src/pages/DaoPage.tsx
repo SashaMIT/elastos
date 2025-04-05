@@ -291,7 +291,7 @@ const DaoPage: React.FC = () => {
                   href="https://cyberrepublic.org"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex px-3 py-2 bg-[rgba(246,146,26,0.10)] text-[#F6921A] rounded-full font-medium transition-all items-center gap-1 border border-[rgba(246,146,26,0.50)] text-sm"
+                  className="inline-flex px-3 py-2 bg-[rgba(246,146,26,0.15)] text-white rounded-full font-[200] transition-all items-center gap-1 border border-[rgba(246,146,26,0.25)] text-sm"
                 >
                   <span>Visit DAO Portal</span>
                   <CircleArrow />
@@ -606,8 +606,7 @@ const DaoPage: React.FC = () => {
               <div className="bg-[#1A1A1A] rounded-xl p-6 border border-[#F7921A]/20">
                 <div className="w-12 h-12 rounded-full bg-[#F7921A]/10 flex items-center justify-center mb-3">
                   <Users className="w-6 h-6 text-[#F7921A]" />
-                </div>
-                <h3 className="text-white text-sm mb-2">Active Voters</h3>
+                </div<h3 className="text-white text-sm mb-2">Active Voters</h3>
                 <p className="text-2xl font-bold text-[#F7921A]">{daoStats.activeVoters}</p>
               </div>
 
