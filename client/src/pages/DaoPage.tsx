@@ -607,7 +607,7 @@ const DaoPage: React.FC = () => {
                 <div className="w-12 h-12 rounded-full bg-[#F7921A]/10 flex items-center justify-center mb-3">
                   <Users className="w-6 h-6 text-[#F7921A]" />
                 </div>
-                <h3 className="text-white text-sm mb-2">Active Voters</h3>
+                <h3 className="text-whitetext-sm mb-2">Active Voters</h3>
                 <p className="text-2xl font-bold text-[#F7921A]">{daoStats.activeVoters}</p>
               </div>
 
