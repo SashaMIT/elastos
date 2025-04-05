@@ -266,7 +266,7 @@ const ecosystemFeatures = [
                   className={`inline-flex px-3 py-2 ${
                     chain.name.includes("ESC") || chain.name.includes("EID") 
                       ? "bg-[rgba(92,142,255,0.15)] text-white border-[rgba(92,142,255,0.25)]" 
-                      : "bg-[rgba(246,146,26,0.10)] text-[#F6921A] border-[rgba(246,146,26,0.50)]"
+                      : "bg-[rgba(246,146,26,0.15)] text-white border-[rgba(246,146,26,0.25)]"
                   } rounded-full font-[200] transition-all items-center gap-1 border border-opacity-25 text-sm`}
                 >
                   <span>{chain.ctaText}</span>
