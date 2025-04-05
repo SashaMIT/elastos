@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { cn } from '@/lib/utils';
-import { Link } from 'react-router-dom';
+import { Link } from 'wouter';
 
 export function ScalingSection2() {
   const [activeTab, setActiveTab] = useState('public');
@@ -124,7 +124,7 @@ export function ScalingSection2() {
               </div>
             </div>
             <div className="mt-12 text-center">
-              <Link href="/ecosystem" className="px-3 py-2 bg-[rgba(92,142,255,0.15)] text-white rounded-full font-[200] transition-all items-center gap-1 border border-[rgba(92,142,255,0.25)] text-sm inline-flex">
+              <Link to="/ecosystem" className="px-3 py-2 bg-[rgba(92,142,255,0.15)] text-white rounded-full font-[200] transition-all items-center gap-1 border border-[rgba(92,142,255,0.25)] text-sm inline-flex">
                 <span>Explore</span>
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 35 34" fill="none">
                   <circle cx="17.333" cy="17" r="16.75" stroke="#5C8EFF" strokeOpacity="0.25" strokeWidth="1.5"/>
