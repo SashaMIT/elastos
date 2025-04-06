@@ -615,7 +615,7 @@ const DaoPage: React.FC = () => {
                   {
                     title: "Proposals Funded",
                     value: daoStats.proposalsFunded,
-                    icon: <FileText className="w-5 h-5 text-[#8BABFF]" />,
+                    icon: <FileText className="w-5h-5 text-[#8BABFF]" />,
                     color: "text-[#8BABFF]",                    bgColor: "bg-[#8BABFF]/10",
                     borderColor: "border-[#8BABFF]/20"
                   },
@@ -818,7 +818,7 @@ const DaoPage: React.FC = () => {
             >
               <h2 className="text-4xl font-bold text-white mb-4 font-[200]">
                 <span className="text-[#F7921A]">Download</span>{" "}
-                <span className="text-[#8BABFF]">Essentials</span> Wallet to Participate
+                Essentials</span> Wallet to Participate
               </h2>
               <p className="text-xl text-white/70 max-w-3xl mx-auto font-[200]">
                 Required for DAO voting, proposal submission, and governance participation with DID integration
