@@ -97,7 +97,7 @@ const SocialChannelsPage: React.FC = () => {
                 className="text-center mb-12"
               >
                 <h1 className="text-4xl sm:text-4xl md:text-5xl font-[200] text-white mb-6">
-                  Elastos Community <span className="text-[#5C8EFF]">Social Channels</span>
+                  Elastos Social Channels
                 </h1>
                 <p className="text-gray-300 max-w-2xl mx-auto text-md sm:text-base md:text-lg">
                   Connect with the global Elastos community through our official social media channels and stay updated on the latest developments.
@@ -109,7 +109,7 @@ const SocialChannelsPage: React.FC = () => {
       </div>
 
       {/* Social Channels Cards */}
-      <section className="pt-10 pb-16">
+      <section className="pt-0 pb-16">
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
             {socialChannels.map((channel, index) => (
