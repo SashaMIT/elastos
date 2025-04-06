@@ -111,39 +111,36 @@ const SocialChannelsPage: React.FC = () => {
       {/* Social Channels Cards */}
       <section className="pt-10 pb-16">
         <div className="container mx-auto px-4">
-          <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4 max-w-6xl mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
             {socialChannels.map((channel, index) => (
               <motion.div
                 key={channel.name}
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: 0.05 * index }}
-                className="rounded-lg bg-[#1E1E1E] p-3 border border-white/10 hover:border-white/20 transition-all duration-300 flex h-20"
+                transition={{ duration: 0.5, delay: 0.1 * index }}
+                className="rounded-xl bg-[#1E1E1E] p-6 border border-white/10 hover:border-white/20 transition-all duration-300 flex flex-col h-full"
               >
-                <div className="flex items-center">
-                  <div className="rounded-full bg-opacity-10 p-2 mr-3" style={{ backgroundColor: `${channel.bgColor}20` }}>
-                    <div className="h-6 w-6 flex items-center justify-center">
+                <div className="flex items-start gap-4 mb-4">
+                  <div className="rounded-full bg-opacity-10 p-2" style={{ backgroundColor: `${channel.bgColor}20` }}>
+                    <div className="h-8 w-8 flex items-center justify-center">
                       {channel.icon}
                     </div>
                   </div>
-                </div>
-                
-                <div className="flex flex-col justify-center flex-grow">
-                  <div className="flex items-center justify-between">
-                    <h3 className="text-base font-bold text-white">{channel.name}</h3>
-                    <span className="text-xs text-white/50 bg-black/20 px-2 py-0.5 rounded-full">{channel.subscribers}</span>
+                  <div>
+                    <h3 className="text-xl font-bold text-white">{channel.name}</h3>
+                    <p className="text-sm text-white/50">{channel.subscribers} members</p>
                   </div>
-                  <p className="text-xs text-white/70 line-clamp-1">{channel.description}</p>
                 </div>
-                
-                <div className="flex items-center ml-2">
+
+                <p className="text-white/70 mb-4 flex-grow">{channel.description}</p>
+
+                <div className="flex">
                   <VerifyButton 
                     href={channel.url}
                     color="blue"
-                    className="text-xs py-1 px-2"
                   >
-                    Visit
+                    Visit Channel
                   </VerifyButton>
                 </div>
               </motion.div>
