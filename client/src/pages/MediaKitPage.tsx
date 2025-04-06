@@ -66,7 +66,6 @@ export function MediaKitPage() {
                   disabled={downloading}
                   className="inline-flex px-3 py-2 bg-[rgba(246,146,26,0.15)] text-white rounded-full font-[200] transition-all items-center gap-2 border border-[rgba(246,146,26,0.25)] text-sm disabled:opacity-50"
                 >
-                  <Download className="h-5 w-5" />
                   <span>{downloading ? "Preparing Download..." : "Elastos Branding Guidelines"}</span>
                   <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 35 34" fill="none">
                     <circle cx="17.333" cy="17" r="16.75" stroke="#F6921A" strokeOpacity="0.25" strokeWidth="1.5"/>
@@ -80,7 +79,6 @@ export function MediaKitPage() {
                   rel="noopener noreferrer"
                   className="inline-flex px-3 py-2 bg-[rgba(92,142,255,0.15)] text-white rounded-full font-[200] transition-all items-center gap-2 border border-[rgba(92,142,255,0.25)] text-sm"
                 >
-                  <ExternalLink className="h-5 w-5" />
                   <span>Preview Elastos Logo Kit</span>
                   <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 35 34" fill="none">
                     <circle cx="17.333" cy="17" r="16.75" stroke="#5C8EFF" strokeOpacity="0.25" strokeWidth="1.5"/>
