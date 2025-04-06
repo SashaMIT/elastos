@@ -49,7 +49,7 @@ export function ScalingSection() {
   const [activeTab, setActiveTab] = useState('public');
 
   return (
-    <div className="w-full bg-background dark:bg-[#171717] text-foreground py-32">
+    <div className="w-full bg-background dark:bg-[#171717] text-foreground py-15">
       <h2 className="text-4xl md:text-5xl lg:text-6xl font-[200] text-center mb-12">
         Elastos SmartWeb Architecture
       </h2>

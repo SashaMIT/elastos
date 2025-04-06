@@ -362,7 +362,7 @@ const LandingPage = () => {
         </div>
 
 
-        <div className="container mx-auto mt-32 mb-16 text-center">
+        <div className="container mx-auto mt-2 mb-26 text-center">
           <div className="flex items-center justify-center gap-4 mb-12">
             <img 
               src="/images/Elastos New Logo_Kit-03.png" 
@@ -583,13 +583,16 @@ const LandingPage = () => {
       </div>
 
       {/* Spacer div to add more distance */}
-      <div className="py-32 md:py-24"></div>
+      <div className="py-5 md:py-5"></div>
 
       {/* News Section */}
       <div className="px-4 md:px-0">
         <NewsSection />
       </div>
 
+      {/* Spacer div to add more distance */}
+      <div className="py-5 md:py-5"></div>
+      
       {/* Testimonials Section */}
       <div className="w-full bg-background dark:bg-[#171717]">
         <div className="container mx-auto px-4 md:px-0 mb-0">
@@ -882,6 +885,11 @@ const LandingPage = () => {
         </div>
       </div>
 
+
+      {/* Spacer div to add more distance */}
+        <div className="py-12 md:py-12"></div>
+
+      
       {/* FAQ Section */}
       <div className="w-full py-0 bg-background dark:bg-[#171717]">
         <div className="container mx-auto px-4 md:px-0">
