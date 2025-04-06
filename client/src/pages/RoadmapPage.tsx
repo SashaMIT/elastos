@@ -106,31 +106,35 @@ export default function RoadmapPage() {
         </div>
 
         <div className="w-full px-4 py-16 sm:px-6 lg:px-8">
-          <div className="bg-gradient-to-br from-[#5C8EFF]/10 to-[#5C8EFF]/5 rounded-xl p-8 border border-[#5C8EFF]/30 relative w-full max-w-7xl mx-auto">
-            {/* Background blur elements */}
-            <div className="absolute -bottom-20 -left-20 w-72 h-72 rounded-full bg-[#8BABFF]/10 blur-[100px]"></div>
+            <div className="bg-gradient-to-br from-[#5C8EFF]/10 to-[#5C8EFF]/5 rounded-xl p-8 border border-[#5C8EFF]/30 relative w-full max-w-7xl mx-auto overflow-hidden">
+              {/* Background blur elements */}
+              <div className="absolute -bottom-20 -left-20 w-72 h-72 rounded-full bg-[#8BABFF]/10 blur-[100px]"></div>
 
-            <div className="flex flex-col md:flex-row gap-8 items-center relative z-10">
-              <div className="md:w-1/4 flex justify-center">
-                <img 
-                  src="/images/Rong Chen.png" 
-                  alt="Rong Chen, Elastos Founder" 
-                  className="w-48 h-48 object-cover rounded-full border-4 border-[#5C8EFF]/30"
-                />
-              </div>
-              <div className="md:w-3/4">
-                <blockquote className="italic text-lg text-gray-200 font-[200]">
-                  <span className="text-4xl text-[#5C8EFF]">"</span>
-                  I left Microsoft because I believed we needed to go deeper—down to the metal—not build on abstractions like C#. I wanted to design a true networked OS, not just software for a single machine. When I discovered blockchain, it felt like the missing piece. It gave us decentralized trust—something we couldn't build ourselves. Combine that with a peer-to-peer infrastructure, virtual machines, and a self-sovereign identity system, and you don't just get apps—you get an unstoppable, autonomous internet. This isn't just innovation. It's a new foundation.
-                  <span className="text-4xl text-[#5C8EFF]">"</span>
-                </blockquote>
-                <div className="mt-4 font-semibold text-[#5C8EFF] font-[200]">
-                  Rong Chen, Elastos Founder
+              <div className="flex flex-col md:flex-row gap-8 items-center relative z-10">
+                <div className="md:w-1/4 flex justify-center">
+                  <img 
+                    src="/images/Rong Chen.png" 
+                    alt="Rong Chen, Elastos Founder" 
+                    className="w-48 h-48 object-cover rounded-full border-4 border-[#5C8EFF]/30"
+                  />
+                </div>
+                <div className="md:w-3/4 relative">
+                  {/* Orb effect contained within the blockquote section */}
+                  <div className="absolute top-1/2 right-1/4 transform -translate-y-1/2 w-40 h-40 rounded-full bg-[#5C8EFF]/10 blur-[40px] animate-pulse"></div>
+                  <div className="absolute bottom-0 right-1/3 w-24 h-24 rounded-full bg-[#5C8EFF]/5 blur-[30px] animate-pulse" style={{ animationDelay: "0.5s" }}></div>
+
+                  <blockquote className="italic text-lg text-gray-200 font-[200] relative z-10">
+                    <span className="text-4xl text-[#5C8EFF]">"</span>
+                    I left Microsoft because I believed we needed to go deeper—down to the metal—not build on abstractions like C#. I wanted to design a true networked OS, not just software for a single machine. When I discovered blockchain, it felt like the missing piece. It gave us decentralized trust—something we couldn't build ourselves. Combine that with a peer-to-peer infrastructure, virtual machines, and a self-sovereign identity system, and you don't just get apps—you get an unstoppable, autonomous internet. This isn't just innovation. It's a new foundation.
+                    <span className="text-4xl text-[#5C8EFF]">"</span>
+                  </blockquote>
+                  <div className="mt-4 font-semibold text-[#5C8EFF] font-[200] relative z-10">
+                    Rong Chen, Elastos Founder
+                  </div>
                 </div>
               </div>
             </div>
           </div>
-        </div>
 
         <div className="mt-20">
           <Timeline timelineData={timelineData} />
