@@ -143,7 +143,7 @@ const SocialChannelsPage: React.FC = () => {
             </p>
           </motion.div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-6xl mx-auto">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -267,7 +267,7 @@ const SocialChannelsPage: React.FC = () => {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="max-w-4xl mx-auto bg-[#1E1E1E] rounded-2xl p-8 border border-white/10"
+            className="max-w-6xl mx-auto bg-[#1E1E1E] rounded-2xl p-8 border border-white/10"
           >
             <div className="flex items-center gap-4 mb-6">
               <div className="w-12 h-12 rounded-full bg-[#F6921A]/10 flex items-center justify-center border border-[#F6921A]/30">
