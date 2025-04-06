@@ -14,6 +14,7 @@ import EcosystemPage from './pages/EcosystemPage';
 import NewsPage from './pages/NewsPage'; 
 import FaqPage from './pages/FaqPage'; 
 import SocialChannelsPage from './pages/SocialChannelsPage';
+import MediaKitPage from './pages/MediaKitPage'; // Import the new page
 
 function App() {
   return (
@@ -30,6 +31,7 @@ function App() {
       <Route path="/faq" element={<FaqPage />} />
       <Route path="/whitepaper" element={<WhitepaperPage />} />
       <Route path="/social-channels" element={<SocialChannelsPage />} />
+      <Route path="/media-kit" element={<MediaKitPage />} /> {/* Added Media Kit route */}
     </Routes>
   );
 }
