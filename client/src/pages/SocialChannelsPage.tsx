@@ -102,7 +102,7 @@ const SocialChannelsPage: React.FC = () => {
                 <p className="text-gray-300 max-w-2xl mx-auto text-md sm:text-base md:text-lg">
                   Connect with the global Elastos community through our official social media channels and stay updated on the latest developments.
                 </p>
-              </div>
+              </motion.div>
           </div>
         </div>
       </div>
