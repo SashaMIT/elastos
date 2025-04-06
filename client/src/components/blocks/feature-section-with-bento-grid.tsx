@@ -107,7 +107,7 @@ const FeatureTitle = ({ children }: { children?: React.ReactNode }) => {
 
 const FeatureDescription = ({ children }: { children?: React.ReactNode }) => {
   return (
-    <p className="text-xs text-neutral-600 dark:text-neutral-300 font-[200]">
+    <p className="text-base text-neutral-600 dark:text-neutral-300 font-[200]">
       {children}
     </p>
   );
