@@ -406,7 +406,7 @@ export function BridgePage() {
                               </p>
 
                               {/* Step Screenshot */}
-                              <div className="rounded-lg border border-white/10 overflow-hidden mb-6 shadow-lg max-w-sm mx-auto md:max-w-[70%]">
+                              <div className="rounded-lg border border-white/10 overflow-hidden mb-6 shadow-lg max-w-sm mx-auto md:max-w-[49%]">
                                 <img 
                                   src={`/images/Bridge/${activeStepIndex + 1}.jpg`}
                                   alt={`Step ${activeStepIndex + 1} - ${nativeBridgeSteps[activeStepIndex].title}`}
