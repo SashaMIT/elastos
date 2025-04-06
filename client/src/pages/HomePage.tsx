@@ -18,6 +18,7 @@ import {
   TooltipProvider,
   TooltipTrigger,
 } from "@/components/ui/tooltip";
+import { StackedCircularFooter } from "@/components/ui/stacked-circular-footer";
 
 interface StatItem {
   label: string;
@@ -122,7 +123,7 @@ const stats: StatItem[] = [
               Please read this important disclaimer before proceeding
             </DialogDescription>
           </DialogHeader>
-          <div className="space-y-4 py-4 text-sm text-foreground dark:text-foreground">
+          <div className="space-y-4 py-4 text-sm text-foreground dark:text-foreground font-[200]">
             <p>
               The information provided on this website is for general informational purposes only and should not be considered as financial advice.
             </p>
@@ -155,7 +156,7 @@ const stats: StatItem[] = [
               className="bg-accent/10 p-2 sm:p-3 lg:p-4 rounded-lg space-y-1 sm:space-y-2 text-center mx-auto w-full flex flex-col items-center dark:bg-[#1a1a1a]"
             >
               <div className="flex items-center gap-1">
-                <div className="text-[10px] sm:text-xs lg:text-sm text-muted-foreground dark:text-white">
+                <div className="text-[10px] sm:text-xs lg:text-sm text-muted-foreground dark:text-white font-[200]">
                   {stat.label}
                 </div>
                 <TooltipProvider delayDuration={0}>
@@ -206,7 +207,7 @@ const stats: StatItem[] = [
               <div className="flex items-center justify-center w-full">
                 {stat.label.includes("Hashrate") ? (
                   <div className="flex items-center justify-center gap-2 sm:gap-4 w-full">
-                    <span className="text-xs sm:text-sm text-muted-foreground dark:text-white">{stat.value}</span>
+                    <span className="text-xs sm:text-sm text-muted-foreground dark:text-white font-[200]">{stat.value}</span>
                     <div className="w-16 sm:w-20 lg:w-24 h-1.5 sm:h-2 bg-green-200 dark:bg-green-700 rounded-full overflow-hidden">
                       <div 
                         className="h-full bg-green-500 dark:bg-green-500 rounded-full transition-all duration-500"
@@ -215,15 +216,15 @@ const stats: StatItem[] = [
                         }}
                       />
                     </div>
-                    <span className="text-xs sm:text-sm whitespace-nowrap text-black dark:text-white">
+                    <span className="text-xs sm:text-sm whitespace-nowrap text-black dark:text-white font-[200]">
                       {stat.label.includes("Bitcoin") ? "100%" : stat.subValue}
                     </span>
                   </div>
                 ) : (
                   <div className="flex items-center gap-2">
-                    <span className="font-semibold text-sm sm:text-lg text-black dark:text-white">{stat.value}</span>
+                    <span className="text-sm sm:text-lg text-black dark:text-white font-[200]">{stat.value}</span>
                     {stat.showChange && typeof stat.change === 'number' && (
-                      <span className={`flex items-center text-sm ${stat.change >= 0 ? 'text-green-600 dark:text-green-400' : 'text-red-600 dark:text-red-400'}`}>
+                      <span className={`flex items-center text-sm font-[200] ${stat.change >= 0 ? 'text-green-600 dark:text-green-400' : 'text-red-600 dark:text-red-400'}`}>
                         {stat.change >= 0 ? <ChevronUp className="w-4 h-4" /> : <ChevronDown className="w-4 h-4" />}
                         {Math.abs(stat.change)}%
                       </span>
@@ -235,6 +236,11 @@ const stats: StatItem[] = [
           ))}
         </div>
 
+      </div>
+      
+      {/* Footer */}
+      <div className="mt-12 w-full">
+        <StackedCircularFooter />
       </div>
     </div>
   );
