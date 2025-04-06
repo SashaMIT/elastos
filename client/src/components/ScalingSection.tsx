@@ -85,7 +85,7 @@ export function ScalingSection() {
           <div className="space-y-32">
             <div className="flex flex-col md:flex-row items-center justify-center gap-12">
               <div className="w-48 h-48 relative">
-                <img src="/images/L2.png" alt="Elastos Mainchain" className="w-full h-full object-contain" />
+                <img src="/images/Special FX Graphics/Glass Circles - #1.jpg" alt="Bitcoin-Grade Security" className="w-full h-full object-contain rounded-full" />
               </div>
               <div className="flex-1">
                 <div className="flex items-center gap-3 mb-4">
@@ -108,7 +108,7 @@ export function ScalingSection() {
 
             <div className="flex flex-col md:flex-row-reverse items-center justify-center gap-12">
               <div className="w-48 h-48 relative">
-                <img src="/images/Bel2icon.png" alt="BeL2" className="w-full h-full object-contain" />
+                <img src="/images/Special FX Graphics/Glass Circles - #2 2.jpg" alt="Financial Empowerment" className="w-full h-full object-contain rounded-full" />
               </div>
               <div className="flex-1">
                 <div className="flex items-center gap-3 mb-4">
@@ -130,7 +130,7 @@ export function ScalingSection() {
 
             <div className="flex flex-col md:flex-row items-center justify-center gap-12">
               <div className="w-48 h-48 relative">
-                <img src="/images/Depin.png" alt="DePIN Network" className="w-full h-full object-contain" />
+                <img src="/images/Special FX Graphics/Glass Circles - #3 2.jpg" alt="Digital Freedom and Ownership" className="w-full h-full object-contain rounded-full" />
               </div>
               <div className="flex-1">
                 <div className="flex items-center gap-3 mb-4">
