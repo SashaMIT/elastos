@@ -363,11 +363,11 @@ const LandingPage = () => {
 
 
         <div className="container mx-auto mt-32 mb-26 text-center">
-          <div className="flex items-center justify-center gap-4 mb-12">
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-12">
             <img 
               src="/images/Elastos New Logo_Kit-03.png" 
               alt="Elastos Logo" 
-              className="h-6 sm:h-8 w-auto"
+              className="h-8 w-auto mb-3 sm:mb-0"
             />
             <h2 className="text-2xl sm:text-xl md:text-3xl lg:text-4xl font-bold text-white">
               Queen ELA: Married to Bitcoin since 2018.
