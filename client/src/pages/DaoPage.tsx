@@ -738,16 +738,16 @@ const DaoPage: React.FC = () => {
                   whileHover={{ scale: 1.02 }}
                   className="p-3 sm:p-6 relative overflow-hidden group hover:bg-neutral-900 transition-colors duration-300"
                 >
-                  <div className="mb-6">
+                  <div className="mb-6 flex justify-center">
                     <div className={`w-12 h-12 rounded-full flex items-center justify-center ${
                       index % 2 === 0 ? 'bg-[#F7921A]/10' : 'bg-[#8BABFF]/10'
                     }`}>
-                      <div className="text-white w-6 h-6">
+                      <div className="text-white w-4 h-4">
                         {item.icon}
                       </div>
                     </div>
                   </div>
-                  <h3 className={`text-xl font-semibold mb-6 ${
+                  <h3 className={`text-xl font-semibold mb-6 text-center ${
                     index % 2 === 0 ? 'text-[#F7921A]' : 'text-[#8BABFF]'
                   } font-[200] `}>
                     {item.title}
