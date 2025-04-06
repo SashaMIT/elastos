@@ -324,18 +324,18 @@ const DaoPage: React.FC = () => {
 
       {/* What is Elastos DAO Section */}
       <section className="py-16 relative bg-[#171717]">
-        <div className="w-full px-4">
+        <div className="container mx-auto px-4">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="w-full"
+            className="max-w-4xl mx-auto"
           >
-            <h2 className="text-3xl font-[200] text-white text-center mb-6">
+            <h2 className="text-3xl font-bold text-white text-center mb-6">
               What is Elastos DAO?
             </h2>
             <div className="bg-[#1A1A1A] rounded-xl p-8 border border-white/10 shadow-lg">
-              <p className="text-white/80 text-lg leading-relaxed mb-6 font-[200]">
+              <p className="text-white/80 text-lg leading-relaxed mb-6">
                 Formerly known as the Cyber Republic, the Elastos DAO is the decentralized autonomous organization that governs the development, direction, and funding of the Elastos ecosystem. It puts ELA holders in control, letting them participate in elections, submit proposals, fund projects, and maintain ecosystem integrity—without corporate gatekeepers. Elastos DAO is not just governance for a blockchain—it is governance for a new internet.
               </p>
              
