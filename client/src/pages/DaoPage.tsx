@@ -59,7 +59,7 @@ const BlueCircleArrow = () => (
 const coreComponents = [
   {
     title: "CR Council",
-    icon: <Building2 className="w-10 h-10 text-[#8BABFF]" />,
+    icon: <Building2 className="w-6 h-6 text-[#8BABFF]" />,
     description: "A 12-seat, community-elected council responsible for overseeing development, approving proposals, and distributing DAO funds.",
     details: [
       "Elected by ELA stakers",
@@ -75,7 +75,7 @@ const coreComponents = [
   },
   {
     title: "Proposal System",
-    icon: <ScrollText className="w-10 h-10 text-[#8BABFF]" />,
+    icon: <ScrollText className="w-6 h-6 text-[#8BABFF]" />,
     description: "Any verified DID holder can submit ecosystem suggestions—ranging from tech development, marketing campaigns, dApps, or DAO upgrades.",
     details: [
       "Open to all DID holders",
@@ -91,7 +91,7 @@ const coreComponents = [
   },
   {
     title: "Elections",
-    icon: <Vote className="w-10 h-10 text-[#8BABFF]" />,
+    icon: <Vote className="w-6 h-6 text-[#8BABFF]" />,
     description: "Held annually. ELA holders vote using their staked tokens to elect trusted representatives to the council. Everything is on-chain and transparent.",
     details: [
       "Annual council elections",
@@ -107,7 +107,7 @@ const coreComponents = [
   },
   {
     title: "Treasury",
-    icon: <Coins className="w-10 h-10 text-[#8BABFF]" />,
+    icon: <Coins className="w-6 h-6 text-[#8BABFF]" />,
     description: "The Elastos DAO treasury is funded through a portion of ELA token inflation and ecosystem revenue. It supports community-led initiatives.",
     details: [
       "Transparent, on-chain funds",
@@ -383,7 +383,7 @@ const DaoPage: React.FC = () => {
                     transition={{ delay: index * 0.1 }}
                   >
                     <div className="mb-4">
-                      <div className="w-12 h-12 flex items-center justify-center rounded-full bg-[#1E1E1E]">
+                      <div className="w-8 h-8 flex items-center justify-center rounded-full bg-[#1E1E1E]">
                         {component.icon}
                       </div>
                     </div>
