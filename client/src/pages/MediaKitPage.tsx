@@ -96,12 +96,11 @@ export function MediaKitPage() {
         <div className="absolute bottom-1/3 -left-28 w-96 h-96 rounded-full bg-[#5C8EFF]/10 blur-[120px]"></div>
       </div>
       
-      <div className="container mx-auto px-4 py-16 relative z-10">
+      <div className="container mx-auto px-4 pt-2 pb-16 relative z-10">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.3 }}
-          className="mt-8"
         >
           <Tabs defaultValue="logos" className="w-full">
             <TabsList className="w-full max-w-md mx-auto mb-8 bg-black/20 p-1">
