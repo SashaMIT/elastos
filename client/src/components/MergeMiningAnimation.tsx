@@ -82,7 +82,8 @@ const MergeMiningAnimation = () => {
         activeColor: "bg-orange-100",
         textColor: "text-orange-600",
         iconColor: "text-orange-500",
-        darkBgColor: "dark:bg-[#252525]",
+        darkActiveColor: "dark:bg-orange-900/30",
+        darkTextColor: "dark:text-orange-400",
       },
       {
         icon: <Coins className="w-5 h-5" />,
@@ -90,7 +91,8 @@ const MergeMiningAnimation = () => {
         activeColor: "bg-blue-100",
         textColor: "text-blue-600",
         iconColor: "text-blue-500",
-        darkBgColor: "dark:bg-[#252525]",
+        darkActiveColor: "dark:bg-blue-900/30",
+        darkTextColor: "dark:text-blue-400",
       },
       {
         icon: <Zap className="w-5 h-5" />,
@@ -98,7 +100,8 @@ const MergeMiningAnimation = () => {
         activeColor: "bg-green-100",
         textColor: "text-green-600",
         iconColor: "text-green-500",
-        darkBgColor: "dark:bg-[#252525]",
+        darkActiveColor: "dark:bg-green-900/30",
+        darkTextColor: "dark:text-green-400",
       },
     ];
 
@@ -106,7 +109,7 @@ const MergeMiningAnimation = () => {
       <div
         className={`absolute bottom-1 sm:bottom-4 left-1/2 transform -translate-x-1/2 
                     bg-white/90 dark:bg-[#1a1a1a] p-2 sm:p-4 rounded-xl shadow-lg w-[90%] sm:w-3/4
-                    flex flex-col sm:flex-row justify-around gap-1 sm:gap-4 z-1`}
+                    flex flex-col sm:flex-row justify-around gap-1 sm:gap-4 z-1 font-[200]`}
       >
         {benefits.map((benefit, i) => (
           <div
@@ -114,13 +117,9 @@ const MergeMiningAnimation = () => {
             className={`flex items-center gap-2 p-1 mb-1 sm:mb-0 rounded-lg transition-all duration-500
                         ${
                           step === i
-                            ? (benefit.activeColor + " scale-110 dark:" + (
-                                benefit.iconColor === "text-orange-500" ? "bg-orange-900/50" : 
-                                benefit.iconColor === "text-blue-500" ? "bg-blue-900/50" : 
-                                "bg-green-900/50"
-                              ))
-                            : "scale-100"
-                        } ${benefit.darkBgColor}`}
+                            ? `${benefit.activeColor} scale-110 ${benefit.darkActiveColor}` 
+                            : "scale-100 dark:bg-[#252525]"
+                        }`}
           >
             <div
               className={`${step === i ? benefit.iconColor : "text-gray-400"} ${step === i ? benefit.darkTextColor : "dark:text-gray-400"}`}
@@ -128,7 +127,7 @@ const MergeMiningAnimation = () => {
               {benefit.icon}
             </div>
             <span
-              className={`text-xs sm:text-sm font-medium ${
+              className={`text-xs sm:text-sm ${
                 step === i ? benefit.textColor : "text-gray-500"
               } ${step === i ? benefit.darkTextColor : "dark:text-gray-400"}`}
             >
@@ -143,13 +142,13 @@ const MergeMiningAnimation = () => {
   return (
     <div className="w-full max-w-4xl p-0 sm:p-1 md:p-0 bg-white dark:bg-[#171717] relative z-0">
       {/* Heading */}
-      <h1 className="text-center text-base sm:text-lg md:text-2xl font-normal font-sans mt-4 mb-2 flex items-center justify-center gap-1 sm:gap-2 px-2 leading-snug text-black dark:text-white">
+      <h1 className="text-center text-base sm:text-lg md:text-2xl font-[200] font-sans mt-4 mb-2 flex items-center justify-center gap-1 sm:gap-2 px-2 leading-snug text-black dark:text-white">
         <img src="/images/Elastos New Logo_Kit-03.png" alt="ELA Logo" className="h-5 sm:h-6 md:h-7 w-auto object-contain shrink-0" />
         ELA: The Bitcoin-Secured BTCFi Asset
       </h1>
 
       {/* Descriptive Text */}
-      <p className="text-center text-sm sm:text-base mt-[10px] mb-0 relative z-50">
+      <p className="text-center text-sm sm:text-base mt-[10px] mb-0 relative z-50 font-[200]">
         By leveraging Bitcoin's unmatched hash rate, Elastos' ELA fulfills{' '}
         <Dialog open={isOpen} onOpenChange={setIsOpen}>
           <DialogTrigger asChild>
@@ -272,17 +271,17 @@ const MergeMiningAnimation = () => {
             <div className="flex items-center gap-1 sm:gap-3 mb-1 sm:mb-4">
               <Server className="text-[#F6921A] w-4 h-4 sm:w-8 sm:h-8" />
               <div>
-                <span className="font-bold text-sm sm:text-xl block text-[#F6921A]">
+                <span className="font-[200] text-sm sm:text-xl block text-[#F6921A]">
                   Bitcoin
                 </span>
-                <span className="text-xs sm:text-sm text-[#F6921A]">
+                <span className="text-xs sm:text-sm text-[#F6921A] font-[200]">
                   Miners
                 </span>
               </div>
             </div>
 
             <div className="flex items-center mt-4">
-              <div className="flex items-center gap-2 text-sm">
+              <div className="flex items-center gap-2 text-sm font-[200]">
                 <Coins className="w-5 h-5 text-[#F6921A]" />
                 <span className="text-[#F6921A]">BTC Rewards</span>
               </div>
@@ -296,17 +295,17 @@ const MergeMiningAnimation = () => {
             <div className="flex items-center gap-1 sm:gap-3 mb-1 sm:mb-4">
               <Shield className="text-[#5C8EFF] w-4 h-4 sm:w-8 sm:h-8" />
               <div>
-                <span className="font-bold text-sm sm:text-xl block text-[#5C8EFF]">
+                <span className="font-[200] text-sm sm:text-xl block text-[#5C8EFF]">
                   Elastos
                 </span>
-                <span className="text-xs sm:text-sm text-[#5C8EFF]">
+                <span className="text-xs sm:text-sm text-[#5C8EFF] font-[200]">
                   Merge Mining
                 </span>
               </div>
             </div>
 
             <div className="flex items-center mt-4">
-              <div className="flex items-center gap-2 text-sm">
+              <div className="flex items-center gap-2 text-sm font-[200]">
                 <Coins className="w-5 h-5 text-[#5C8EFF]" />
                 <span className="text-[#5C8EFF]">ELA Rewards</span>
               </div>
