@@ -129,32 +129,38 @@ export function BridgePage() {
   };
 
   return (
-    <div className="min-h-screen bg-[#141414] text-white pb-20">
-      {/* Gradient Background */}
-      <div className="absolute inset-0 z-0 pointer-events-none overflow-hidden">
-        <div className="absolute top-0 right-0 w-[500px] h-[500px] rounded-full bg-[#F7921A]/5 blur-[150px] opacity-30"></div>
-        <div className="absolute top-1/3 left-20 w-[400px] h-[400px] rounded-full bg-[#8BABFF]/10 blur-[130px] opacity-20"></div>
-        <div className="absolute bottom-0 left-0 w-[600px] h-[600px] rounded-full bg-[#F7921A]/5 blur-[180px] opacity-20"></div>
+    <div className="relative w-full font-[200] min-h-screen text-white">
+      {/* Full-width hero image with gradient overlay */}
+      <div className="relative w-full h-[500px] overflow-hidden -mt-16">
+        <img 
+          src="/images/Roadmap/Community crowd.png" 
+          alt="Elastos Bridge" 
+          className="w-full h-full object-cover opacity-100"
+        />
+        {/* Gradient overlay */}
+        <div className="absolute inset-0 bg-gradient-to-b from-black/10 via-[#171717]/80 to-[#171717]"></div>
+
+        {/* Hero content overlay */}
+        <div className="absolute inset-0 flex items-center justify-center">
+          <div className="container mx-auto px-4">
+            <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+              <div className="text-center mb-12">
+                <h1 className="text-4xl sm:text-4xl md:text-5xl font-[200] text-white mb-6 bg-clip-text text-transparent bg-gradient-to-r from-[#F7921A] to-[#8BABFF]">
+                  ELA Bridge Guide
+                </h1>
+                <p className="text-gray-300 max-w-2xl mx-auto text-md sm:text-base md:text-lg font-[200]">
+                  Learn how to seamlessly transfer your ELA between different Elastos chains and Ethereum.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
 
       {/* Main Content */}
-      <section className="relative pt-20 pb-8">
+      <section className="relative pb-8 bg-[#171717]">
         <div className="container mx-auto px-4 relative z-10">
           <div className="max-w-6xl mx-auto">
-            {/* Page Header */}
-            <motion.div 
-              className="mb-12 text-center"
-              initial={{ opacity: 0, y: -20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6 }}
-            >
-              <h1 className="text-5xl md:text-6xl font-bold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-[#F7921A] to-[#8BABFF]">
-                ELA Bridge Guide
-              </h1>
-              <p className="text-xl md:text-2xl text-white/80 max-w-3xl mx-auto leading-relaxed">
-                Learn how to seamlessly transfer your ELA between different Elastos chains and Ethereum.
-              </p>
-            </motion.div>
 
             {/* ELA Types Explanation */}
             <motion.div 
