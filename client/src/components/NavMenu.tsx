@@ -2,7 +2,7 @@
 
 import * as React from "react";
 import { Link } from "wouter";
-import { Home, Shield, Code, HelpCircle, MessageCircle, Newspaper, Menu as MenuIcon, Moon, Sun, LineChart, Coins, ShoppingCart, ScrollText, Target, FileText, Terminal, Github, Download, PiggyBank, FileCode2, BookOpen, Video, Database, Star, Wallet } from "lucide-react";
+import { Home, Shield, Code, HelpCircle, MessageCircle, Newspaper, Menu as MenuIcon, Moon, Sun, LineChart, Coins, ShoppingCart, ScrollText, Target, FileText, Terminal, Github, Download, PiggyBank, FileCode2, BookOpen, Video, Database, Star, Wallet, Repeat } from "lucide-react";
 import { SidebarMenu } from "@/components/ui/sidebar-menu";
 import { useTheme } from "@/hooks/useTheme";
 import {
