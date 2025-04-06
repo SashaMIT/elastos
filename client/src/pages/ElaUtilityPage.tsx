@@ -154,33 +154,33 @@ export default function ElaUtilityPage() {
           </div>
           
           <div className="relative">
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 xl:border rounded-xl shadow-lg dark:shadow-[0px_0px_20px_0px_rgba(92,142,255,0.1)] dark:border-neutral-800">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 xl:border rounded-md dark:border-neutral-800">
               {/* Stats Card */}
-              <div className="p-6 relative overflow-hidden group hover:bg-[rgba(92,142,255,0.05)] dark:hover:bg-[rgba(92,142,255,0.07)] transition-all duration-300 rounded-xl border-b md:border-r border-[rgba(92,142,255,0.2)] dark:border-neutral-800">
-                <div className="mb-4">
-                  <div className="w-14 h-14 flex items-center justify-center rounded-full bg-[rgba(92,142,255,0.15)]">
-                    <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 stroke-[1.5] text-[#5C8EFF]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <div className="p-3 sm:p-6 relative overflow-hidden group hover:bg-neutral-50 dark:hover:bg-neutral-900 transition-colors duration-300 border-b md:border-r dark:border-neutral-800">
+                <div className="mb-3">
+                  <div className="w-12 h-12 flex items-center justify-center rounded-full bg-[#24272f]">
+                    <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 stroke-[1.5] text-[#F6921A]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                       <path strokeLinecap="round" strokeLinejoin="round" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
                     </svg>
                   </div>
                 </div>
-                <h3 className="text-xl font-[200] mb-2 text-black dark:text-white">Network Stats</h3>
-                <div className="text-base text-neutral-600 dark:text-neutral-300 font-[200] mb-4">
+                <h3 className="text-lg font-[200] mb-1 text-black dark:text-white">Network Stats</h3>
+                <div className="text-base text-neutral-600 dark:text-neutral-300 font-[200] mb-3">
                   Track real-time metrics for Elastos blockchain performance and user adoption.
                 </div>
                 
-                <div className="flex flex-col gap-3 my-5 bg-[rgba(92,142,255,0.05)] dark:bg-[rgba(92,142,255,0.07)] p-4 rounded-lg">
+                <div className="flex flex-col gap-2 my-4">
                   <div className="flex justify-between items-center">
-                    <span className="text-base text-neutral-600 dark:text-neutral-400">Active Wallets</span>
-                    <span className="text-lg font-[200] text-black dark:text-white">{networkStats?.walletAddresses ? formatNumber(networkStats.walletAddresses) : 'Loading...'}</span>
+                    <span className="text-sm text-neutral-500 dark:text-neutral-400">Active Wallets</span>
+                    <span className="text-sm font-[200] text-black dark:text-white">{networkStats?.walletAddresses ? formatNumber(networkStats.walletAddresses) : 'Loading...'}</span>
                   </div>
                   <div className="flex justify-between items-center">
-                    <span className="text-base text-neutral-600 dark:text-neutral-400">Current Price</span>
-                    <span className="text-lg font-[200] text-[#5C8EFF] dark:text-[#5C8EFF]">${isHashrateLoading ? '...' : (hashrateData?.elaPrice?.toFixed(2) || '0.00')}</span>
+                    <span className="text-sm text-neutral-500 dark:text-neutral-400">Current Price</span>
+                    <span className="text-sm font-[200] text-black dark:text-white">${isHashrateLoading ? '...' : (hashrateData?.elaPrice?.toFixed(2) || '0.00')}</span>
                   </div>
                 </div>
                 
-                <a href="/stats" className="inline-flex px-4 py-2.5 bg-[rgba(92,142,255,0.15)] text-white rounded-full font-[200] transition-all items-center gap-2 border border-[rgba(92,142,255,0.25)] text-sm mt-2 hover:bg-[rgba(92,142,255,0.25)]">
+                <a href="/stats" className="inline-flex px-3 py-2 bg-[rgba(92,142,255,0.15)] text-white rounded-full font-[200] transition-all items-center gap-1 border border-[rgba(92,142,255,0.25)] text-sm mt-2">
                   <span>Learn More</span>
                   <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 35 34" fill="none">
                     <circle cx="17.333" cy="17" r="16.75" stroke="#5C8EFF" strokeOpacity="0.25" strokeWidth="1.5"/>
@@ -191,66 +191,66 @@ export default function ElaUtilityPage() {
               </div>
 
               {/* Security Card */}
-              <div className="p-6 relative overflow-hidden group hover:bg-[rgba(246,146,26,0.05)] dark:hover:bg-[rgba(246,146,26,0.07)] transition-all duration-300 rounded-xl border-b md:border-r border-[rgba(246,146,26,0.2)] dark:border-neutral-800">
-                <div className="mb-4">
-                  <div className="w-14 h-14 flex items-center justify-center rounded-full bg-[rgba(246,146,26,0.15)]">
-                    <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 stroke-[1.5] text-[#F6921A]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <div className="p-3 sm:p-6 relative overflow-hidden group hover:bg-neutral-50 dark:hover:bg-neutral-900 transition-colors duration-300 border-b md:border-r dark:border-neutral-800">
+                <div className="mb-3">
+                  <div className="w-12 h-12 flex items-center justify-center rounded-full bg-[#24272f]">
+                    <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 stroke-[1.5] text-[#F6921A]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                       <path strokeLinecap="round" strokeLinejoin="round" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
                     </svg>
                   </div>
                 </div>
-                <h3 className="text-xl font-[200] mb-2 text-black dark:text-white">Bitcoin-Level Security</h3>
-                <div className="text-base text-neutral-600 dark:text-neutral-300 font-[200] mb-4">
+                <h3 className="text-lg font-[200] mb-1 text-black dark:text-white">Bitcoin-Level Security</h3>
+                <div className="text-base text-neutral-600 dark:text-neutral-300 font-[200] mb-3">
                   Explore how ELA maintains Bitcoin-level security and protects your assets.
                 </div>
                 
-                <div className="flex flex-col gap-3 my-5 bg-[rgba(246,146,26,0.05)] dark:bg-[rgba(246,146,26,0.07)] p-4 rounded-lg">
+                <div className="flex flex-col gap-2 my-4">
                   <div className="flex justify-between items-center">
-                    <span className="text-base text-neutral-600 dark:text-neutral-400">Hashrate</span>
-                    <span className="text-lg font-[200] text-black dark:text-white">{isHashrateLoading ? '...' : `${(hashrateData?.elastosHashrate ?? 0).toFixed(2)} EH/s`}</span>
+                    <span className="text-sm text-neutral-500 dark:text-neutral-400">Hashrate</span>
+                    <span className="text-sm font-[200] text-black dark:text-white">{isHashrateLoading ? '...' : `${(hashrateData?.elastosHashrate ?? 0).toFixed(2)} EH/s`}</span>
                   </div>
                   <div className="flex justify-between items-center">
-                    <span className="text-base text-neutral-600 dark:text-neutral-400">BTC Security Share</span>
-                    <span className="text-lg font-[200] text-[#F6921A] dark:text-[#F6921A]">{isHashrateLoading ? '...' : `${((hashrateData?.elastosHashrate ?? 0) / (hashrateData?.bitcoinHashrate ?? 1) * 100).toFixed(2)}%`}</span>
+                    <span className="text-sm text-neutral-500 dark:text-neutral-400">BTC Security Share</span>
+                    <span className="text-sm font-[200] text-black dark:text-white">{isHashrateLoading ? '...' : `${((hashrateData?.elastosHashrate ?? 0) / (hashrateData?.bitcoinHashrate ?? 1) * 100).toFixed(2)}%`}</span>
                   </div>
                 </div>
                 
-                <a href="/security" className="inline-flex px-4 py-2.5 bg-[rgba(246,146,26,0.15)] text-white rounded-full font-[200] transition-all items-center gap-2 border border-[rgba(246,146,26,0.25)] text-sm mt-2 hover:bg-[rgba(246,146,26,0.25)]">
+                <a href="/security" className="inline-flex px-3 py-2 bg-[rgba(92,142,255,0.15)] text-white rounded-full font-[200] transition-all items-center gap-1 border border-[rgba(92,142,255,0.25)] text-sm mt-2">
                   <span>Learn More</span>
                   <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 35 34" fill="none">
-                    <circle cx="17.333" cy="17" r="16.75" stroke="#F6921A" strokeOpacity="0.25" strokeWidth="1.5"/>
-                    <path d="M17.3338 22.9405L23.2741 17.0002L17.3338 11.0598L16.4162 11.9774L20.7628 16.324H10.8622V17.6763H20.7628L16.4162 22.0229L17.3338 22.9405Z" fill="#F6921A"/>
-                    <path d="M20.7628 17.6638H10.8747V16.3365H20.7628H20.7929L20.7716 16.3152L16.4338 11.9774L17.3338 11.0775L23.2564 17.0002L17.3338 22.9228L16.4338 22.0229L20.7716 17.6851L20.7929 17.6638H20.7628Z" stroke="#F6921A" strokeOpacity="0.25" strokeWidth="1.5"/>
+                    <circle cx="17.333" cy="17" r="16.75" stroke="#5C8EFF" strokeOpacity="0.25" strokeWidth="1.5"/>
+                    <path d="M17.3338 22.9405L23.2741 17.0002L17.3338 11.0598L16.4162 11.9774L20.7628 16.324H10.8622V17.6763H20.7628L16.4162 22.0229L17.3338 22.9405Z" fill="#5C8EFF"/>
+                    <path d="M20.7628 17.6638H10.8747V16.3365H20.7628H20.7929L20.7716 16.3152L16.4338 11.9774L17.3338 11.0775L23.2564 17.0002L17.3338 22.9228L16.4338 22.0229L20.7716 17.6851L20.7929 17.6638H20.7628Z" stroke="#5C8EFF" strokeOpacity="0.25" strokeWidth="1.5"/>
                   </svg>
                 </a>
               </div>
 
               {/* Supply Card */}
-              <div className="p-6 relative overflow-hidden group hover:bg-[rgba(92,142,255,0.05)] dark:hover:bg-[rgba(92,142,255,0.07)] transition-all duration-300 rounded-xl border-b md:border-r border-[rgba(92,142,255,0.2)] dark:border-neutral-800">
-                <div className="mb-4">
-                  <div className="w-14 h-14 flex items-center justify-center rounded-full bg-[rgba(92,142,255,0.15)]">
-                    <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 stroke-[1.5] text-[#5C8EFF]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <div className="p-3 sm:p-6 relative overflow-hidden group hover:bg-neutral-50 dark:hover:bg-neutral-900 transition-colors duration-300 border-b md:border-r dark:border-neutral-800">
+                <div className="mb-3">
+                  <div className="w-12 h-12 flex items-center justify-center rounded-full bg-[#24272f]">
+                    <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 stroke-[1.5] text-[#F6921A]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                       <path strokeLinecap="round" strokeLinejoin="round" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
                     </svg>
                   </div>
                 </div>
-                <h3 className="text-xl font-[200] mb-2 text-black dark:text-white">Token Supply</h3>
-                <div className="text-base text-neutral-600 dark:text-neutral-300 font-[200] mb-4">
+                <h3 className="text-lg font-[200] mb-1 text-black dark:text-white">Token Supply</h3>
+                <div className="text-base text-neutral-600 dark:text-neutral-300 font-[200] mb-3">
                   Understand ELA's tokenomics, emission schedule, and circulation metrics.
                 </div>
                 
-                <div className="flex flex-col gap-3 my-5 bg-[rgba(92,142,255,0.05)] dark:bg-[rgba(92,142,255,0.07)] p-4 rounded-lg">
+                <div className="flex flex-col gap-2 my-4">
                   <div className="flex justify-between items-center">
-                    <span className="text-base text-neutral-600 dark:text-neutral-400">Circulating Supply</span>
-                    <span className="text-lg font-[200] text-[#5C8EFF] dark:text-[#5C8EFF]">{isSupplyLoading ? '...' : formatNumber(totalSupply)} ELA</span>
+                    <span className="text-sm text-neutral-500 dark:text-neutral-400">Circulating Supply</span>
+                    <span className="text-sm font-[200] text-black dark:text-white">{isSupplyLoading ? '...' : formatNumber(totalSupply)} ELA</span>
                   </div>
                   <div className="flex justify-between items-center">
-                    <span className="text-base text-neutral-600 dark:text-neutral-400">Max Supply</span>
-                    <span className="text-lg font-[200] text-black dark:text-white">28.2M ELA</span>
+                    <span className="text-sm text-neutral-500 dark:text-neutral-400">Max Supply</span>
+                    <span className="text-sm font-[200] text-black dark:text-white">28.2M ELA</span>
                   </div>
                 </div>
                 
-                <a href="/supply" className="inline-flex px-4 py-2.5 bg-[rgba(92,142,255,0.15)] text-white rounded-full font-[200] transition-all items-center gap-2 border border-[rgba(92,142,255,0.25)] text-sm mt-2 hover:bg-[rgba(92,142,255,0.25)]">
+                <a href="/supply" className="inline-flex px-3 py-2 bg-[rgba(92,142,255,0.15)] text-white rounded-full font-[200] transition-all items-center gap-1 border border-[rgba(92,142,255,0.25)] text-sm mt-2">
                   <span>Learn More</span>
                   <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 35 34" fill="none">
                     <circle cx="17.333" cy="17" r="16.75" stroke="#5C8EFF" strokeOpacity="0.25" strokeWidth="1.5"/>
@@ -261,36 +261,36 @@ export default function ElaUtilityPage() {
               </div>
 
               {/* Buy ELA Card */}
-              <div className="p-6 relative overflow-hidden group hover:bg-[rgba(246,146,26,0.05)] dark:hover:bg-[rgba(246,146,26,0.07)] transition-all duration-300 rounded-xl border-b md:border-none border-[rgba(246,146,26,0.2)] dark:border-neutral-800">
-                <div className="mb-4">
-                  <div className="w-14 h-14 flex items-center justify-center rounded-full bg-[rgba(246,146,26,0.15)]">
-                    <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 stroke-[1.5] text-[#F6921A]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <div className="p-3 sm:p-6 relative overflow-hidden group hover:bg-neutral-50 dark:hover:bg-neutral-900 transition-colors duration-300 border-b md:border-none dark:border-neutral-800">
+                <div className="mb-3">
+                  <div className="w-12 h-12 flex items-center justify-center rounded-full bg-[#24272f]">
+                    <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 stroke-[1.5] text-[#F6921A]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                       <path strokeLinecap="round" strokeLinejoin="round" d="M3 6l3 1m0 0l-3 9a5.002 5.002 0 006.001 0M6 7l3 9M6 7l6-2m6 2l3-1m-3 1l-3 9a5.002 5.002 0 006.001 0M18 7l3 9m-3-9l-6-2m0-2v2m0 16V5m0 16H9m3 0h3" />
                     </svg>
                   </div>
                 </div>
-                <h3 className="text-xl font-[200] mb-2 text-black dark:text-white">Markets & Exchanges</h3>
-                <div className="text-base text-neutral-600 dark:text-neutral-300 font-[200] mb-4">
+                <h3 className="text-lg font-[200] mb-1 text-black dark:text-white">Markets & Exchanges</h3>
+                <div className="text-base text-neutral-600 dark:text-neutral-300 font-[200] mb-3">
                   Get ELA on leading exchanges and decentralized platforms for easy access.
                 </div>
                 
-                <div className="flex flex-col gap-3 my-5 bg-[rgba(246,146,26,0.05)] dark:bg-[rgba(246,146,26,0.07)] p-4 rounded-lg">
+                <div className="flex flex-col gap-2 my-4">
                   <div className="flex justify-between items-center">
-                    <span className="text-base text-neutral-600 dark:text-neutral-400">Current Price</span>
-                    <span className="text-lg font-[200] text-[#F6921A] dark:text-[#F6921A]">${isHashrateLoading ? '...' : (hashrateData?.elaPrice?.toFixed(2) || '0.00')}</span>
+                    <span className="text-sm text-neutral-500 dark:text-neutral-400">Current Price</span>
+                    <span className="text-sm font-[200] text-black dark:text-white">${isHashrateLoading ? '...' : (hashrateData?.elaPrice?.toFixed(2) || '0.00')}</span>
                   </div>
                   <div className="flex justify-between items-center">
-                    <span className="text-base text-neutral-600 dark:text-neutral-400">Market Cap</span>
-                    <span className="text-lg font-[200] text-black dark:text-white">${isMarketCapLoading ? '...' : formatNumber(marketCapData?.elastosMarketCap)}</span>
+                    <span className="text-sm text-neutral-500 dark:text-neutral-400">Market Cap</span>
+                    <span className="text-sm font-[200] text-black dark:text-white">${isMarketCapLoading ? '...' : formatNumber(marketCapData?.elastosMarketCap)}</span>
                   </div>
                 </div>
                 
-                <a href="/buy-ela" className="inline-flex px-4 py-2.5 bg-[rgba(246,146,26,0.15)] text-white rounded-full font-[200] transition-all items-center gap-2 border border-[rgba(246,146,26,0.25)] text-sm mt-2 hover:bg-[rgba(246,146,26,0.25)]">
+                <a href="/buy-ela" className="inline-flex px-3 py-2 bg-[rgba(92,142,255,0.15)] text-white rounded-full font-[200] transition-all items-center gap-1 border border-[rgba(92,142,255,0.25)] text-sm mt-2">
                   <span>Learn More</span>
                   <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 35 34" fill="none">
-                    <circle cx="17.333" cy="17" r="16.75" stroke="#F6921A" strokeOpacity="0.25" strokeWidth="1.5"/>
-                    <path d="M17.3338 22.9405L23.2741 17.0002L17.3338 11.0598L16.4162 11.9774L20.7628 16.324H10.8622V17.6763H20.7628L16.4162 22.0229L17.3338 22.9405Z" fill="#F6921A"/>
-                    <path d="M20.7628 17.6638H10.8747V16.3365H20.7628H20.7929L20.7716 16.3152L16.4338 11.9774L17.3338 11.0775L23.2564 17.0002L17.3338 22.9228L16.4338 22.0229L20.7716 17.6851L20.7929 17.6638H20.7628Z" stroke="#F6921A" strokeOpacity="0.25" strokeWidth="1.5"/>
+                    <circle cx="17.333" cy="17" r="16.75" stroke="#5C8EFF" strokeOpacity="0.25" strokeWidth="1.5"/>
+                    <path d="M17.3338 22.9405L23.2741 17.0002L17.3338 11.0598L16.4162 11.9774L20.7628 16.324H10.8622V17.6763H20.7628L16.4162 22.0229L17.3338 22.9405Z" fill="#5C8EFF"/>
+                    <path d="M20.7628 17.6638H10.8747V16.3365H20.7628H20.7929L20.7716 16.3152L16.4338 11.9774L17.3338 11.0775L23.2564 17.0002L17.3338 22.9228L16.4338 22.0229L20.7716 17.6851L20.7929 17.6638H20.7628Z" stroke="#5C8EFF" strokeOpacity="0.25" strokeWidth="1.5"/>
                   </svg>
                 </a>
               </div>
