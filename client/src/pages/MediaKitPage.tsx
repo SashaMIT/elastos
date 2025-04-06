@@ -137,22 +137,11 @@ export function MediaKitPage() {
         </motion.div>
         
         <motion.footer
-          className="mt-20 pt-8 border-t border-zinc-800 text-center text-white/60"
+          className="mt-20 pt-8 border-t border-zinc-800 text-center text-white/60 fixed bottom-0 left-0 right-0 bg-[#171717] py-4"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 0.5, delay: 0.4 }}
         >
-          <p>© {new Date().getFullYear()} Elastos. All rights reserved.</p>
-          <p className="mt-2">
-            <a 
-              href="https://juniper-cost-88a.notion.site/1cd7b867328c804f8d5fe73b3f13d78c?v=1cd7b867328c8050a6af000cf4722377&pvs=4" 
-              target="_blank" 
-              rel="noopener noreferrer"
-              className="text-[#F6921A] hover:underline"
-            >
-              Preview Elastos Logo Kit
-            </a>
-          </p>
         </motion.footer>
       </div>
     </div>
