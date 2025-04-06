@@ -382,7 +382,7 @@ const LandingPage = () => {
                 </div>
               ) : (
                 <>
-                  <p className="text-2xl font-bold">${hashrateData?.elaPrice?.toFixed(2) || '0.00'}</p>
+                  <p className="text-2xl font-[200]">${hashrateData?.elaPrice?.toFixed(2) || '0.00'}</p>
                   <p className={`text-sm ${hashrateData?.elaPriceChange24h >= 0 ? 'text-green-500 dark:text-green-400' : 'text-red-500 dark:text-red-400'} mb-4`}>
                     {(hashrateData?.elaPriceChange24h >= 0 ? '+' : '') + (hashrateData?.elaPriceChange24h || 0).toFixed(2)}%
                   </p>
@@ -402,7 +402,7 @@ const LandingPage = () => {
                 </div>
               ) : (
                 <>
-                  <p className="text-2xl font-bold">28,199,999 ELA</p>
+                  <p className="text-2xl font-[200]">28,199,999 ELA</p>
                   <p className="text-sm text-gray-500 dark:text-gray-400 mt-1">91.31% mined</p>
                   <div className="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-1.5 mt-4">
                     <div className="bg-[#F6921A] h-1.5 rounded-full" style={{ width: '91.31%' }} />
@@ -424,7 +424,7 @@ const LandingPage = () => {
                 </div>
               ) : (
                 <>
-                  <p className="text-2xl font-bold">${formatNumber(marketCapData?.elastosMarketCap ?? 0)}</p>
+                  <p className="text-2xl font-[200]">${formatNumber(marketCapData?.elastosMarketCap ?? 0)}</p>
                   <p className="text-sm text-gray-500 dark:text-gray-400 mt-1">{((marketCapData?.marketCapRatio ?? 0) * 100).toFixed(4)}% of BTC</p>
                   <div className="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-1.5 mt-4">
                     <div className="bg-[#F6921A] h-1.5 rounded-full" style={{ width: `${((marketCapData?.marketCapRatio ?? 0) * 100)}%` }} />
@@ -446,7 +446,7 @@ const LandingPage = () => {
                 </div>
               ) : (
                 <>
-                  <p className="text-2xl font-bold">3.29%</p>
+                  <p className="text-2xl font-[200]">3.29%</p>
                   <p className="text-sm text-gray-500 dark:text-gray-400 mt-1">{(networkStats?.stakedAmount || 0).toLocaleString()} ELA staked</p>
                   <div className="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-1.5 mt-4">
                     <div 
@@ -483,7 +483,7 @@ const LandingPage = () => {
                 </div>
               ) : (
                 <>
-                  <p className="text-2xl font-bold">{((hashrateData?.elastosHashrate ?? 0) / (hashrateData?.bitcoinHashrate ?? 1) * 100).toFixed(2)}%</p>
+                  <p className="text-2xl font-[200]">{((hashrateData?.elastosHashrate ?? 0) / (hashrateData?.bitcoinHashrate ?? 1) * 100).toFixed(2)}%</p>
                   <p className="text-sm text-gray-500 dark:text-gray-400 mt-1">{Math.round(hashrateData?.elastosHashrate || 0)} EH/s of {Math.round(hashrateData?.bitcoinHashrate || 0)} EH/s</p>
                   <div className="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-1.5 mt-4">
                     <div className="bg-[#F6921A] h-1.5 rounded-full" style={{ width: `${((hashrateData?.elastosHashrate ?? 0) / (hashrateData?.bitcoinHashrate ?? 1) * 100)}%` }} />
@@ -502,7 +502,7 @@ const LandingPage = () => {
                 </div>
               ) : (
                 <>
-                  <p className="text-2xl font-bold">{currentBlock?.poolInfo?.poolName || 'Unknown'}</p>
+                  <p className="text-2xl font-[200]">{currentBlock?.poolInfo?.poolName || 'Unknown'}</p>
                   <p className="text-sm text-gray-500 dark:text-gray-400 mt-1">Mining Pool</p>
                   <div className="mt-4 pt-[2px] flex justify-center">
                     <button 
@@ -532,7 +532,7 @@ const LandingPage = () => {
             <div className="bg-[#ececec] dark:bg-[#5C8EFF]/[0.06] rounded-lg p-4 sm:p-6 shadow-sm">
               <h3 className="text-lg font-medium mb-4">Next 4 Year Halving</h3>
               {/* Halving info is static, no need for a loader */}
-              <p className="text-2xl font-bold">Dec 1, 2025</p>
+              <p className="text-2xl font-[200]">Dec 1, 2025</p>
               <p className="text-sm text-gray-500 dark:text-gray-400 mt-1">305d 17h 52m remaining</p>
               <div className="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-1.5 mt-4">
                 <div className="bg-[#F6921A] h-1.5 rounded-full" style={{ 
@@ -551,7 +551,7 @@ const LandingPage = () => {
                 </div>
               ) : (
                 <>
-                  <p className="text-2xl font-bold">{networkStats?.walletAddresses?.toLocaleString() || '0'}</p>
+                  <p className="text-2xl font-[200]">{networkStats?.walletAddresses?.toLocaleString() || '0'}</p>
                   <p className="text-sm text-gray-500 dark:text-gray-400 mt-1">Total Addresses</p>
                   <div className="mt-4 pt-[2px] flex justify-center">
                     <button 
