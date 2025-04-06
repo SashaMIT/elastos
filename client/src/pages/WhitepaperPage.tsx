@@ -207,8 +207,8 @@ const WhitepaperPage = () => {
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
               <Card className="overflow-hidden hover:shadow-lg transition-shadow duration-300 border border-gray-100 dark:border-gray-800">
                 <CardHeader className="pb-3 relative">
-                  <div className="flex items-center gap-3 justify-between">
-                    <div className="flex items-center gap-3">
+                  <span className="absolute top-5 right-5 px-4 py-1 bg-[#5C8EFF]/10 border border-[#5C8EFF]/30 text-white rounded-full text-xs font-medium whitespace-nowrap">Hashrate</span>
+                  <div className="flex items-center gap-3">
                     <div className="p-2 rounded-full bg-[#5C8EFF]/10 text-[#5C8EFF]">
                       <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                         <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
@@ -216,11 +216,9 @@ const WhitepaperPage = () => {
                       </svg>
                     </div>
                     <div>
-                        <CardTitle className="text-gray-800 dark:text-gray-200">Elastos Security</CardTitle>
-                        <CardDescription>Bitcoin-Backed Protection & Analytics</CardDescription>
-                      </div>
+                      <CardTitle className="text-gray-800 dark:text-gray-200">Elastos Security</CardTitle>
+                      <CardDescription>Bitcoin-Backed Protection & Analytics</CardDescription>
                     </div>
-                    <span className="px-4 py-1 bg-[#5C8EFF]/10 border border-[#5C8EFF]/30 text-white rounded-full text-xs font-medium whitespace-nowrap">Hashrate</span>
                   </div>
                 </CardHeader>
                 <CardContent>
@@ -245,8 +243,8 @@ const WhitepaperPage = () => {
 
               <Card className="overflow-hidden hover:shadow-lg transition-shadow duration-300 border border-gray-100 dark:border-gray-800">
                 <CardHeader className="pb-3 relative">
-                  <div className="flex items-center gap-3 justify-between">
-                    <div className="flex items-center gap-3">
+                  <span className="absolute top-5 right-5 px-4 py-1 bg-[#5C8EFF]/10 border border-[#5C8EFF]/30 text-white rounded-full text-xs font-medium whitespace-nowrap">Docs</span>
+                  <div className="flex items-center gap-3">
                     <div className="p-2 rounded-full bg-[#5C8EFF]/10 text-[#5C8EFF]">
                       <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                         <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path>
@@ -254,11 +252,9 @@ const WhitepaperPage = () => {
                       </svg>
                     </div>
                     <div>
-                        <CardTitle className="text-gray-800 dark:text-gray-200">Technical Documentation</CardTitle>
-                        <CardDescription>Developer Resources & APIs</CardDescription>
-                      </div>
+                      <CardTitle className="text-gray-800 dark:text-gray-200">Technical Documentation</CardTitle>
+                      <CardDescription>Developer Resources & APIs</CardDescription>
                     </div>
-                    <span className="px-4 py-1 bg-[#5C8EFF]/10 border border-[#5C8EFF]/30 text-white rounded-full text-xs font-medium whitespace-nowrap">Docs</span>
                   </div>
                 </CardHeader>
                 <CardContent>
@@ -282,8 +278,8 @@ const WhitepaperPage = () => {
 
               <Card className="overflow-hidden hover:shadow-lg transition-shadow duration-300 border border-gray-100 dark:border-gray-800">
                 <CardHeader className="pb-3 relative">
-                  <div className="flex items-center gap-3 justify-between">
-                    <div className="flex items-center gap-3">
+                  <span className="absolute top-5 right-5 px-4 py-1 bg-[#5C8EFF]/10 border border-[#5C8EFF]/30 text-white rounded-full text-xs font-medium whitespace-nowrap">Talk</span>
+                  <div className="flex items-center gap-3">
                     <div className="p-2 rounded-full bg-[#5C8EFF]/10 text-[#5C8EFF]">
                       <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                         <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
@@ -293,11 +289,9 @@ const WhitepaperPage = () => {
                       </svg>
                     </div>
                     <div>
-                        <CardTitle className="text-gray-800 dark:text-gray-200">Community Resources</CardTitle>
-                        <CardDescription>Connect with the Elastos community</CardDescription>
-                      </div>
+                      <CardTitle className="text-gray-800 dark:text-gray-200">Community Resources</CardTitle>
+                      <CardDescription>Connect with the Elastos community</CardDescription>
                     </div>
-                    <span className="px-4 py-1 bg-[#5C8EFF]/10 border border-[#5C8EFF]/30 text-white rounded-full text-xs font-medium whitespace-nowrap">Talk</span>
                   </div>
                 </CardHeader>
                 <CardContent>
