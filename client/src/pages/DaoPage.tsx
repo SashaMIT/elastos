@@ -300,7 +300,7 @@ const DaoPage: React.FC = () => {
                       href="https://cyberrepublic.org"
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="inline-flex px-3 py-2 bg-[rgba(246,146,26,0.10)] text-[#F6921A] rounded-full font-medium transition-all items-center gap-1 border border-[rgba(246,146,26,0.50)] text-sm"
+                      className="inline-flex px-3 py-2 bg-[rgba(246,146,26,0.10)] text-[#F6921A] rounded-full font-[200] transition-all items-center gap-1 border border-[rgba(246,146,26,0.50)] text-sm"
                     >
                       <span>Visit DAO Portal</span>
                       <CircleArrow />
@@ -309,7 +309,7 @@ const DaoPage: React.FC = () => {
                       href="https://cyberrepublic.org/proposals"
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="inline-flex px-3 py-2 bg-[rgba(92,142,255,0.10)] text-[#5C8EFF] rounded-full font-medium transition-all items-center gap-1 border border-[rgba(92,142,255,0.50)] text-sm"
+                      className="inline-flex px-3 py-2 bg-[rgba(92,142,255,0.10)] text-[#5C8EFF] rounded-full font-[200] transition-all items-center gap-1 border border-[rgba(92,142,255,0.50)] text-sm"
                     >
                       <span>View Current Proposals</span>
                       <BlueCircleArrow />
@@ -335,10 +335,10 @@ const DaoPage: React.FC = () => {
               What is Elastos DAO?
             </h2>
             <div className="bg-[#1A1A1A] rounded-xl p-8 border border-white/10 shadow-lg">
-              <p className="text-white/80 text-lg leading-relaxed mb-6">
+              <p className="text-white/80 text-lg leading-relaxed mb-6 font-[200]">
                 Formerly known as the Cyber Republic, the Elastos DAO is the decentralized autonomous organization that governs the development, direction, and funding of the Elastos ecosystem. It puts ELA holders in control, letting them participate in elections, submit proposals, fund projects, and maintain ecosystem integrity—without corporate gatekeepers. Elastos DAO is not just governance for a blockchain—it is governance for a new internet.
               </p>
-             
+
             </div>
           </motion.div>
         </div>
@@ -353,10 +353,10 @@ const DaoPage: React.FC = () => {
             viewport={{ once: true }}
             className="text-center mb-12"
           >
-            <h2 className="text-3xl font-bold text-white mb-4">
+            <h2 className="text-3xl font-bold text-white mb-4 font-[200]">
               Core Components
             </h2>
-            <p className="text-lg text-white/70 max-w-3xl mx-auto">
+            <p className="text-lg text-white/70 max-w-3xl mx-auto font-[200]">
               The foundation of Elastos' decentralized governance system
             </p>
           </motion.div>
@@ -385,17 +385,17 @@ const DaoPage: React.FC = () => {
                         {component.icon}
                       </div>
                     </div>
-                    <h3 className={`text-lg font-semibold mb-2 ${component.textColor}`}>
+                    <h3 className={`text-lg font-semibold mb-2 ${component.textColor} font-[200]`}>
                       {component.title}
                     </h3>
-                    <p className="text-neutral-300 text-sm mb-4">
+                    <p className="text-neutral-300 text-sm mb-4 font-[200]">
                       {component.description}
                     </p>
                     <div className="space-y-2 mb-4">
                       {component.details.slice(0, 3).map((detail, idx) => (
                         <div key={idx} className="flex items-center">
                           <CheckCircle className="w-4 h-4 text-green-400 mr-2 flex-shrink-0" />
-                          <span className="text-gray-300 text-xs">{detail}</span>
+                          <span className="text-gray-300 text-xs font-[200]">{detail}</span>
                         </div>
                       ))}
                     </div>
@@ -416,10 +416,10 @@ const DaoPage: React.FC = () => {
             viewport={{ once: true }}
             className="text-center mb-12"
           >
-            <h2 className="text-3xl font-bold text-white mb-4">
+            <h2 className="text-3xl font-bold text-white mb-4 font-[200]">
               Powered by Elastos Technology
             </h2>
-            <p className="text-lg text-white/70 max-w-3xl mx-auto">
+            <p className="text-lg text-white/70 max-w-3xl mx-auto font-[200]">
               Leveraging the full Elastos tech stack for secure, transparent governance
             </p>
           </motion.div>
@@ -453,20 +453,20 @@ const DaoPage: React.FC = () => {
                 )}
               >
                 <div className="opacity-0 group-hover:opacity-100 transition duration-200 absolute inset-0 h-full w-full bg-gradient-to-t from-[#F7921A]/10 to-transparent pointer-events-none" />
-                
+
                 <div className="mb-4 relative z-10 px-6 text-[#F7921A]">
                   {tech.icon}
                 </div>
-                <div className="text-lg font-bold mb-2 relative z-10 px-6 flex justify-between items-center">
+                <div className="text-lg font-bold mb-2 relative z-10 px-6 flex justify-between items-center font-[200]">
                   <div className="absolute left-0 inset-y-0 h-6 group-hover:h-8 w-1 rounded-tr-full rounded-br-full bg-neutral-700 group-hover:bg-[#F7921A] transition-all duration-200 origin-center" />
-                  <span className="group-hover:translate-x-2 transition duration-200 inline-block text-neutral-100 text-base">
+                  <span className="group-hover:translate-x-2 transition duration-200 inline-block text-neutral-100 text-base font-[200]">
                     {tech.title}
                   </span>
-                  <span className="px-3 py-1 bg-[#F7921A]/10 border border-[#F7921A]/30 text-white rounded-full text-xs font-medium whitespace-nowrap">
+                  <span className="px-3 py-1 bg-[#F7921A]/10 border border-[#F7921A]/30 text-white rounded-full text-xs font-medium whitespace-nowrap font-[200]">
                     {tech.tag}
                   </span>
                 </div>
-                <p className="text-sm text-neutral-300 relative z-10 px-6">
+                <p className="text-sm text-neutral-300 relative z-10 px-6 font-[200]">
                   {tech.description}
                 </p>
               </div>
@@ -484,10 +484,10 @@ const DaoPage: React.FC = () => {
             viewport={{ once: true }}
             className="text-center mb-12"
           >
-            <h2 className="text-3xl font-bold text-white mb-4">
+            <h2 className="text-3xl font-bold text-white mb-4 font-[200]">
               Why It Matters
             </h2>
-            <p className="text-lg text-white/70 max-w-3xl mx-auto">
+            <p className="text-lg text-white/70 max-w-3xl mx-auto font-[200]">
               The unique advantages of Elastos DAO governance
             </p>
           </motion.div>
@@ -512,13 +512,13 @@ const DaoPage: React.FC = () => {
                 <div className="mb-4 relative z-10 px-10 text-neutral-400">
                   {feature.icon}
                 </div>
-                <div className="text-lg font-bold mb-2 relative z-10 px-10 flex items-center">
+                <div className="text-lg font-bold mb-2 relative z-10 px-10 flex items-center font-[200]">
                   <div className="absolute left-0 inset-y-0 h-6 group-hover:h-8 w-1 rounded-tr-full rounded-br-full bg-neutral-700 group-hover:bg-[#F6921A] transition-all duration-200 origin-center" />
-                  <span className="group-hover:translate-x-2 transition duration-200 inline-block text-white">
+                  <span className="group-hover:translate-x-2 transition duration-200 inline-block text-white font-[200]">
                     {feature.title}
                   </span>
                 </div>
-                <p className="text-sm text-neutral-300 max-w-xs relative z-10 px-10">
+                <p className="text-sm text-neutral-300 max-w-xs relative z-10 px-10 font-[200]">
                   {feature.description}
                 </p>
               </div>
@@ -536,10 +536,10 @@ const DaoPage: React.FC = () => {
             viewport={{ once: true }}
             className="text-center mb-12"
           >
-            <h2 className="text-3xl font-bold text-white mb-4">
+            <h2 className="text-3xl font-bold text-white mb-4 font-[200]">
               From Cyber Republic to Elastos DAO
             </h2>
-            <p className="text-lg text-white/70 max-w-3xl mx-auto">
+            <p className="text-lg text-white/70 max-w-3xl mx-auto font-[200]">
               A journey of decentralized governance evolution
             </p>
           </motion.div>
@@ -565,12 +565,12 @@ const DaoPage: React.FC = () => {
                   >
                     <div className="flex items-center mb-3 gap-2 text-[#F7921A]">
                       {event.icon}
-                      <div className="text-lg font-bold">{event.year}</div>
+                      <div className="text-lg font-bold font-[200]">{event.year}</div>
                     </div>
-                    <h3 className="text-lg font-semibold mb-2 text-white">
+                    <h3 className="text-lg font-semibold mb-2 text-white font-[200]">
                       {event.title}
                     </h3>
-                    <p className="text-neutral-400 text-sm">
+                    <p className="text-neutral-400 text-sm font-[200]">
                       {event.description}
                     </p>
                     <div className="mt-4 w-16 h-1 bg-gradient-to-r from-[#F7921A]/30 to-transparent rounded-full"></div>
@@ -591,10 +591,10 @@ const DaoPage: React.FC = () => {
             viewport={{ once: true }}
             className="text-center mb-12"
           >
-            <h2 className="text-3xl font-bold text-white mb-4">
+            <h2 className="text-3xl font-bold text-white mb-4 font-[200]">
               DAO in Action
             </h2>
-            <p className="text-lg text-white/70 max-w-3xl mx-auto">
+            <p className="text-lg text-white/70 max-w-3xl mx-auto font-[200]">
               Real-time metrics of the Elastos governance ecosystem
             </p>
           </motion.div>
@@ -616,8 +616,7 @@ const DaoPage: React.FC = () => {
                     title: "Proposals Funded",
                     value: daoStats.proposalsFunded,
                     icon: <FileText className="w-5 h-5 text-[#8BABFF]" />,
-                    color: "text-[#8BABFF]",
-                    bgColor: "bg-[#8BABFF]/10",
+                    color: "text-[#8BABFF]",                    bgColor: "bg-[#8BABFF]/10",
                     borderColor: "border-[#8BABFF]/20"
                   },
                   {
@@ -650,8 +649,8 @@ const DaoPage: React.FC = () => {
                       <div className={`w-10 h-10 rounded-full ${stat.bgColor} flex items-center justify-center mb-3`}>
                         {stat.icon}
                       </div>
-                      <h3 className="text-white text-sm mb-1">{stat.title}</h3>
-                      <p className={`text-xl font-bold ${stat.color}`}>{stat.value}</p>
+                      <h3 className="text-white text-sm mb-1 font-[200]">{stat.title}</h3>
+                      <p className={`text-xl font-bold ${stat.color} font-[200]`}>{stat.value}</p>
                     </div>
                   </motion.div>
                 ))}
@@ -665,23 +664,23 @@ const DaoPage: React.FC = () => {
                 transition={{ delay: 0.2 }}
                 className="md:col-span-6 bg-[#1A1A1A] rounded-xl p-6 border border-white/10"
               >
-                <h3 className="text-xl font-semibold text-white mb-4">Recent Projects Funded</h3>
+                <h3 className="text-xl font-semibold text-white mb-4 font-[200]">Recent Projects Funded</h3>
                 <div className="space-y-3">
                   {daoStats.recentProjects.map((project, index) => (
                     <div key={project.name} className="group relative overflow-hidden">
                       <div className="absolute inset-0 bg-gradient-to-r from-[#F7921A]/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"></div>
                       <div className="flex items-center justify-between p-2 rounded-lg group-hover:bg-[#232323] transition-colors duration-300">
                         <div className="flex items-center gap-3">
-                          <span className={`text-[#F7921A] w-6 h-6 rounded-full bg-[#F7921A]/10 flex items-center justify-center group-hover:scale-110 transition-transform duration-300`}>
+                          <span className={`text-[#F7921A] w-6 h-6 rounded-full bg-[#F7921A]/10 flex items-center justify-center group-hover:scale-110 transition-transform duration-300 font-[200]`}>
                             {index + 1}
                           </span>
-                          <span className="text-gray-300 group-hover:text-white transition-colors duration-300">{project.name}</span>
+                          <span className="text-gray-300 group-hover:text-white transition-colors duration-300 font-[200]">{project.name}</span>
                         </div>
                         <a 
                           href={project.link} 
                           target="_blank" 
                           rel="noopener noreferrer"
-                          className="text-[#8BABFF] hover:text-[#5C8EFF] flex items-center transition-colors duration-300"
+                          className="text-[#8BABFF] hover:text-[#5C8EFF] flex items-center transition-colors duration-300 font-[200]"
                         >
                           <ExternalLink className="w-4 h-4 ml-1 group-hover:translate-x-1 transition-transform duration-300" />
                         </a>
@@ -694,7 +693,7 @@ const DaoPage: React.FC = () => {
                     href="https://cyberrepublic.org/proposals"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex px-3 py-2 bg-[rgba(92,142,255,0.10)] text-[#5C8EFF] rounded-full font-medium transition-all items-center gap-1 border border-[rgba(92,142,255,0.50)] text-sm"
+                    className="inline-flex px-3 py-2 bg-[rgba(92,142,255,0.10)] text-[#5C8EFF] rounded-full font-[200] transition-all items-center gap-1 border border-[rgba(92,142,255,0.50)] text-sm"
                   >
                     <span>View All Funded Projects</span>
                     <BlueCircleArrow />
@@ -715,10 +714,10 @@ const DaoPage: React.FC = () => {
             viewport={{ once: true }}
             className="text-center mb-12"
           >
-            <h2 className="text-3xl font-bold text-white mb-4">
+            <h2 className="text-3xl font-bold text-white mb-4 font-[200]">
               How to Get Involved
             </h2>
-            <p className="text-lg text-white/70 max-w-3xl mx-auto">
+            <p className="text-lg text-white/70 max-w-3xl mx-auto font-[200]">
               Join the community shaping the future of the decentralized internet
             </p>
           </motion.div>
@@ -748,7 +747,7 @@ const DaoPage: React.FC = () => {
                   </div>
                   <h3 className={`text-xl font-semibold mb-6 ${
                     index % 2 === 0 ? 'text-[#F7921A]' : 'text-[#8BABFF]'
-                  }`}>
+                  } font-[200] `}>
                     {item.title}
                   </h3>
                   <ul className="space-y-3 mb-6">
@@ -756,10 +755,10 @@ const DaoPage: React.FC = () => {
                       <li key={idx} className="flex items-start gap-2">
                         <span className={`w-5 h-5 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5 ${
                           index % 2 === 0 ? 'bg-[#F7921A]/10 text-[#F7921A]' : 'bg-[#8BABFF]/10 text-[#8BABFF]'
-                        }`}>
+                        } font-[200]`}>
                           {idx + 1}
                         </span>
-                        <span className="text-gray-300 text-sm">{step}</span>
+                        <span className="text-gray-300 text-sm font-[200]">{step}</span>
                       </li>
                     ))}
                   </ul>
@@ -769,7 +768,7 @@ const DaoPage: React.FC = () => {
                         href="https://cyberrepublic.org/council/election"
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="inline-flex px-3 py-2 bg-[rgba(246,146,26,0.10)] text-[#F6921A] rounded-full font-medium transition-all items-center justify-center gap-1 border border-[rgba(246,146,26,0.50)] text-sm"
+                        className="inline-flex px-3 py-2 bg-[rgba(246,146,26,0.10)] text-[#F6921A] rounded-full font-[200] transition-all items-center justify-center gap-1 border border-[rgba(246,146,26,0.50)] text-sm"
                       >
                         <span>How to Vote</span>
                         <CircleArrow />
@@ -780,7 +779,7 @@ const DaoPage: React.FC = () => {
                         href="https://cyberrepublic.org/proposals/new"
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="inline-flex px-3 py-2 bg-[rgba(92,142,255,0.10)] text-[#5C8EFF] rounded-full font-medium transition-all items-center justify-center gap-1 border border-[rgba(92,142,255,0.50)] text-sm"
+                        className="inline-flex px-3 py-2 bg-[rgba(92,142,255,0.10)] text-[#5C8EFF] rounded-full font-[200] transition-all items-center justify-center gap-1 border border-[rgba(92,142,255,0.50)] text-sm"
                       >
                         <span>Submit a Proposal</span>
                         <BlueCircleArrow />
@@ -791,7 +790,7 @@ const DaoPage: React.FC = () => {
                         href="https://cyberrepublic.org/council/election"
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="inline-flex px-3 py-2 bg-[rgba(246,146,26,0.10)] text-[#F6921A] rounded-full font-medium transition-all items-center justify-center gap-1 border border-[rgba(246,146,26,0.50)] text-sm"
+                        className="inline-flex px-3 py-2 bg-[rgba(246,146,26,0.10)] text-[#F6921A] rounded-full font-[200] transition-all items-center justify-center gap-1 border border-[rgba(246,146,26,0.50)] text-sm"
                       >
                         <span>Run for Council</span>
                         <CircleArrow />
@@ -817,11 +816,11 @@ const DaoPage: React.FC = () => {
               viewport={{ once: true }}
               className="mb-8 text-center"
             >
-              <h2 className="text-4xl font-bold text-white mb-4">
+              <h2 className="text-4xl font-bold text-white mb-4 font-[200]">
                 <span className="text-[#F7921A]">Download</span>{" "}
                 <span className="text-[#8BABFF]">Essentials</span> Wallet to Participate
               </h2>
-              <p className="text-xl text-white/70 max-w-3xl mx-auto">
+              <p className="text-xl text-white/70 max-w-3xl mx-auto font-[200]">
                 Required for DAO voting, proposal submission, and governance participation with DID integration
               </p>
             </motion.div>
@@ -849,25 +848,25 @@ const DaoPage: React.FC = () => {
                   />
                 </div>
                 <div>
-                  <h3 className="text-2xl font-bold text-white mb-4">Essential for DAO Governance</h3>
+                  <h3 className="text-2xl font-bold text-white mb-4 font-[200]">Essential for DAO Governance</h3>
                   <div className="space-y-4 text-white/70">
-                    <p>Elastos Essentials is required for participating in the DAO. With the wallet, you can:</p>
+                    <p className="font-[200]">Elastos Essentials is required for participating in the DAO. With the wallet, you can:</p>
                     <ul className="space-y-2">
                       <li className="flex items-start gap-2">
                         <CheckCircle className="w-5 h-5 text-[#F7921A] mt-0.5 flex-shrink-0" />
-                        <span>Create your Decentralized ID (DID) needed for proposal submission</span>
+                        <span className="font-[200]">Create your Decentralized ID (DID) needed for proposal submission</span>
                       </li>
                       <li className="flex items-start gap-2">
                         <CheckCircle className="w-5 h-5 text-[#F7921A] mt-0.5 flex-shrink-0" />
-                        <span>Stake your ELA to vote on Council members to represent you annually</span>
+                        <span className="font-[200]">Stake your ELA to vote on Council members to represent you annually</span>
                       </li>
                       <li className="flex items-start gap-2">
                         <CheckCircle className="w-5 h-5 text-[#F7921A] mt-0.5 flex-shrink-0" />
-                        <span>Run for council by staking 5,000 ELA as collateral</span>
+                        <span className="font-[200]">Run for council by staking 5,000 ELA as collateral</span>
                       </li>
                       <li className="flex items-start gap-2">
                         <CheckCircle className="w-5 h-5 text-[#F7921A] mt-0.5 flex-shrink-0" />
-                        <span>Access the DAO Portal directly through the built-in DApp browser</span>
+                        <span className="font-[200]">Access the DAO Portal directly through the built-in DApp browser</span>
                       </li>
                     </ul>
 
@@ -876,7 +875,7 @@ const DaoPage: React.FC = () => {
                         href="https://apps.apple.com/us/app/elastos-essentials/id1568931743"
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="inline-flex px-3 py-2 bg-[rgba(92,142,255,0.10)] text-[#5C8EFF] rounded-full font-medium transition-all items-center gap-1 border border-[rgba(92,142,255,0.50)] text-sm"
+                        className="inline-flex px-3 py-2 bg-[rgba(92,142,255,0.10)] text-[#5C8EFF] rounded-full font-[200] transition-all items-center gap-1 border border-[rgba(92,142,255,0.50)] text-sm"
                       >
                         <span>App Store</span>
                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 35 34" fill="none">
@@ -889,7 +888,7 @@ const DaoPage: React.FC = () => {
                         href="https://play.google.com/store/apps/details?id=io.web3essentials.app"
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="inline-flex px-3 py-2 bg-[rgba(246,146,26,0.10)] text-[#F6921A] rounded-full font-medium transition-all items-center gap-1 border border-[rgba(246,146,26,0.50)] text-sm"
+                        className="inline-flex px-3 py-2 bg-[rgba(246,146,26,0.10)] text-[#F6921A] rounded-full font-[200] transition-all items-center gap-1 border border-[rgba(246,146,26,0.50)] text-sm"
                       >
                         <span>Google Play</span>
                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 35 34" fill="none">
@@ -902,7 +901,7 @@ const DaoPage: React.FC = () => {
                         href="https://cyberrepublic.org/guides/essentials-wallet"
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="inline-flex px-3 py-2 bg-[rgba(246,146,26,0.10)] text-[#F6921A] rounded-full font-medium transition-all items-center gap-1 border border-[rgba(246,146,26,0.50)] text-sm"
+                        className="inline-flex px-3 py-2 bg-[rgba(246,146,26,0.10)] text-[#F6921A] rounded-full font-[200] transition-all items-center gap-1 border border-[rgba(246,146,26,0.50)] text-sm"
                       >
                         <span>Setup Guide</span>
                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 35 34" fill="none">
