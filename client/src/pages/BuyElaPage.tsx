@@ -292,15 +292,14 @@ const BuyElaPage = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.1 }}
-              className="bg-gradient-to-br from-[#F7921A]/10 via-[#8BABFF]/5 to-transparent rounded-xl p-6 border border-[#F7921A]/20"
-              style={{ minHeight: "400px" }}
+              className="bg-gradient-to-br from-[#F7921A]/10 via-[#8BABFF]/5 to-transparent rounded-xl p-6 border border-[#F7921A]/20 h-full"
             >
 
               <h3 className="text-xl font-bold text-white mb-2">Security & Supply Benefits</h3>
               <p className="text-sm text-white/70">
                 Bitcoin-level security with a fixed max supply of 28.22M tokens.
               </p>
-              <div className="grid gap-3 mt-4">
+              <div className="grid gap-3">
                 <div>
                   <h4 className="text-xs font-semibold mb-1">Security Leadership</h4>
                   <ul className="space-y-1">
@@ -336,36 +335,34 @@ const BuyElaPage = () => {
               </div>
             </motion.div>
 
-            <div className="bg-[#111] rounded-xl border border-gray-800 p-4" style={{ minHeight: "400px" }}>
-              <h3 className="text-sm font-medium mb-4 text-white flex items-center gap-2">
+            <div className="bg-white dark:bg-[#171717] rounded-lg border dark:border-gray-700 p-2 h-full">
+              <h3 className="text-sm font-medium mb-2 dark:text-white">
                 <Shield className="h-4 w-4 text-blue-500" />
                 Security Integration
               </h3>
-              <div style={{ height: "360px" }}>
-                <ResponsiveContainer width="100%" height="100%">
-                  <AreaChart data={realHashrateData}>
-                    <XAxis dataKey="year" tick={{fontSize: 10, fill: 'white'}} />
-                    <YAxis tick={{fontSize: 10, fill: 'white'}} />
-                    <RechartsTooltip contentStyle={{ backgroundColor: '#222', border: 'none' }} />
-                    <Area 
-                      type="monotone" 
-                      dataKey="btcHashrate" 
-                      stroke="#f59e0b" 
-                      fill="#f59e0b" 
-                      fillOpacity={0.2}
-                      name="Bitcoin Network"
-                    />
-                    <Area 
-                      type="monotone" 
-                      dataKey="hashrate" 
-                      stroke="#2563eb" 
-                      fill="#2563eb"
-                      fillOpacity={0.3}
-                      name="Elastos Security"
-                    />
-                  </AreaChart>
-                </ResponsiveContainer>
-              </div>
+              <ResponsiveContainer width="100%" height="90%">
+                <AreaChart data={realHashrateData}>
+                  <XAxis dataKey="year" tick={{fontSize: 10, fill: 'white'}} />
+                  <YAxis tick={{fontSize: 10, fill: 'white'}} />
+                  <RechartsTooltip />
+                  <Area 
+                    type="monotone" 
+                    dataKey="btcHashrate" 
+                    stroke="#f59e0b" 
+                    fill="#f59e0b" 
+                    fillOpacity={0.1}
+                    name="Bitcoin Network"
+                  />
+                  <Area 
+                    type="monotone" 
+                    dataKey="hashrate" 
+                    stroke="#2563eb" 
+                    fill="#2563eb"
+                    fillOpacity={0.2}
+                    name="Elastos Security"
+                  />
+                </AreaChart>
+              </ResponsiveContainer>
             </div>
           </div>
 
