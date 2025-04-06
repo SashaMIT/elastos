@@ -557,62 +557,54 @@ export function BridgePage() {
                             </p>
                           </div>
 
-                          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
-                            <div className="bg-white/5 rounded-xl border border-white/10 overflow-hidden">
-                              <div className="bg-gradient-to-r from-[#8BABFF]/20 to-transparent p-4 border-b border-white/10">
-                                <h4 className="font-[200] text-lg flex items-center">
+                          <div className="bg-white/5 rounded-xl border border-white/10 p-5 mb-8">
+                            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                              <div>
+                                <h4 className="font-[200] text-lg flex items-center mb-3">
                                   <ArrowDownCircle className="w-5 h-5 text-[#8BABFF] mr-2" />
                                   Minimum Requirements
                                 </h4>
-                              </div>
-                              <div className="p-5 space-y-4">
-                                <div className="flex items-center">
-                                  <div className="w-12 h-12 bg-[#8BABFF]/10 rounded-full flex items-center justify-center mr-4 flex-shrink-0">
-                                    <ArrowDown className="w-5 h-5 text-[#8BABFF]" />
-                                  </div>
-                                  <div className="bg-white/5 p-3 rounded-md border border-white/5 flex-1">
-                                    <div className="text-sm text-white/60 font-[200] mb-1">From ESC to ETH:</div>
-                                    <div className="text-xl font-[200]">Minimum of 1000 ELA</div>
+                                <div className="bg-white/5 p-3 rounded-md border border-white/5 mb-2">
+                                  <div className="flex items-center">
+                                    <ArrowDown className="w-4 h-4 text-[#8BABFF] mr-2" />
+                                    <span>
+                                      <span className="text-sm text-white/60 font-[200]">From ESC to ETH: </span>
+                                      <span className="font-[200]">Minimum of 1000 ELA</span>
+                                    </span>
                                   </div>
                                 </div>
-
-                                <div className="flex items-center">
-                                  <div className="w-12 h-12 bg-[#8BABFF]/10 rounded-full flex items-center justify-center mr-4 flex-shrink-0">
-                                    <ArrowUp className="w-5 h-5 text-[#8BABFF]" />
-                                  </div>
-                                  <div className="bg-white/5 p-3 rounded-md border border-white/5 flex-1">
-                                    <div className="text-sm text-white/60 font-[200] mb-1">From ETH to ESC:</div>
-                                    <div className="text-xl font-[200]">Minimum of 1 ELA</div>
+                                <div className="bg-white/5 p-3 rounded-md border border-white/5">
+                                  <div className="flex items-center">
+                                    <ArrowUp className="w-4 h-4 text-[#8BABFF] mr-2" />
+                                    <span>
+                                      <span className="text-sm text-white/60 font-[200]">From ETH to ESC: </span>
+                                      <span className="font-[200]">Minimum of 1 ELA</span>
+                                    </span>
                                   </div>
                                 </div>
                               </div>
-                            </div>
 
-                            <div className="bg-white/5 rounded-xl border border-white/10 overflow-hidden">
-                              <div className="bg-gradient-to-r from-[#8BABFF]/20 to-transparent p-4 border-b border-white/10">
-                                <h4 className="font-[200] text-lg flex items-center">
+                              <div>
+                                <h4 className="font-[200] text-lg flex items-center mb-3">
                                   <Clock className="w-5 h-5 text-[#8BABFF] mr-2" />
                                   Transaction Timing
                                 </h4>
-                              </div>
-                              <div className="p-5 space-y-4">
-                                <div className="flex items-center">
-                                  <div className="w-12 h-12 bg-[#8BABFF]/10 rounded-full flex items-center justify-center mr-4 flex-shrink-0">
-                                    <Clock className="w-5 h-5 text-[#8BABFF]" />
-                                  </div>
-                                  <div className="bg-white/5 p-3 rounded-md border border-white/5 flex-1">
-                                    <div className="text-sm text-white/60 font-[200] mb-1">Large Transactions:</div>
-                                    <div className="text-xl font-[200]">Up to 24 hours for $10,000+</div>
+                                <div className="bg-white/5 p-3 rounded-md border border-white/5 mb-2">
+                                  <div className="flex items-center">
+                                    <Clock className="w-4 h-4 text-[#8BABFF] mr-2" />
+                                    <span>
+                                      <span className="text-sm text-white/60 font-[200]">Large Transactions: </span>
+                                      <span className="font-[200]">Up to 24 hours for $10,000+</span>
+                                    </span>
                                   </div>
                                 </div>
-
-                                <div className="flex items-center">
-                                  <div className="w-12 h-12 bg-[#8BABFF]/10 rounded-full flex items-center justify-center mr-4 flex-shrink-0">
-                                    <Timer className="w-5 h-5 text-[#8BABFF]" />
-                                  </div>
-                                  <div className="bg-white/5 p-3 rounded-md border border-white/5 flex-1">
-                                    <div className="text-sm text-white/60 font-[200] mb-1">Standard Transactions:</div>
-                                    <div className="text-xl font-[200]">Minutes to hours for under $10,000</div>
+                                <div className="bg-white/5 p-3 rounded-md border border-white/5">
+                                  <div className="flex items-center">
+                                    <Timer className="w-4 h-4 text-[#8BABFF] mr-2" />
+                                    <span>
+                                      <span className="text-sm text-white/60 font-[200]">Standard Transactions: </span>
+                                      <span className="font-[200]">Minutes to hours for under $10,000</span>
+                                    </span>
                                   </div>
                                 </div>
                               </div>
