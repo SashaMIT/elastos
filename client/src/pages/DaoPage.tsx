@@ -818,7 +818,7 @@ const DaoPage: React.FC = () => {
             >
               <h2 className="text-4xl font-bold text-white mb-4 font-[200]">
                 <span className="text-[#F7921A]">Download</span>{" "}
-                Essentials</span> Wallet to Participate
+                Essentials Wallet to Participate
               </h2>
               <p className="text-xl text-white/70 max-w-3xl mx-auto font-[200]">
                 Required for DAO voting, proposal submission, and governance participation with DID integration
