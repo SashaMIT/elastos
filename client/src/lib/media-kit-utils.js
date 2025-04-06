@@ -38,26 +38,51 @@ export const logos = [
 
 export const colorPalettes = [
   {
-    id: "primary-colors",
-    name: "Primary Brand Colors",
-    description: "Official Elastos brand color palette",
+    id: "core-colors",
+    name: "Core Brand Colors",
+    description: "Primary Elastos brand colors",
     colors: [
-      { name: "Elastos Orange", hex: "#F6921A" },
-      { name: "Elastos Blue", hex: "#5C8EFF" },
-      { name: "Dark Background", hex: "#171717" },
-      { name: "Light Background", hex: "#FFFFFF" }
+      { name: "Black", hex: "#141414", rgb: "RGB 20 20 20" },
+      { name: "Orange", hex: "#F6921A", rgb: "RGB 246 146 26" },
+      { name: "Blue", hex: "#95B5FF", rgb: "RGB 149 181 255" },
+      { name: "White", hex: "#FFFFFF", rgb: "RGB 255 255 255" }
     ]
   },
   {
-    id: "secondary-colors",
-    name: "Secondary UI Colors",
-    description: "Supporting colors for UI elements",
+    id: "black-white-variations",
+    name: "Black & White Variations",
+    description: "Black and white color variations with different opacity levels",
     colors: [
-      { name: "Success Green", hex: "#4CAF50" },
-      { name: "Warning Yellow", hex: "#FFC107" },
-      { name: "Error Red", hex: "#F44336" },
-      { name: "Info Blue", hex: "#2196F3" },
-      { name: "Neutral Gray", hex: "#9E9E9E" }
+      { name: "Code: Black #1", hex: "#141414", rgb: "RGB 20 20 20" },
+      { name: "Code: White #1", hex: "#FFFFFF", rgb: "RGB 255 255 255" },
+      { name: "Code: White #2 (50%)", hex: "#FFFFFF", rgb: "RGB 255 255 255", opacity: "50%" },
+      { name: "Code: White #3 (20%)", hex: "#FFFFFF", rgb: "RGB 255 255 255", opacity: "20%" },
+      { name: "Code: White #4 (10%)", hex: "#FFFFFF", rgb: "RGB 255 255 255", opacity: "10%" },
+      { name: "Code: White #5 (5%)", hex: "#FFFFFF", rgb: "RGB 255 255 255", opacity: "5%" }
+    ]
+  },
+  {
+    id: "orange-variations",
+    name: "Orange Variations",
+    description: "Orange color variations with different opacity levels",
+    colors: [
+      { name: "Code: Orange #1", hex: "#F6921A", rgb: "RGB 246 146 26" },
+      { name: "Code: Orange #2 (50%)", hex: "#F6921A", rgb: "RGB 246 146 26", opacity: "50%" },
+      { name: "Code: Orange #3 (20%)", hex: "#F6921A", rgb: "RGB 246 146 26", opacity: "20%" },
+      { name: "Code: Orange #4 (10%)", hex: "#F6921A", rgb: "RGB 246 146 26", opacity: "10%" },
+      { name: "Code: Orange #5 (5%)", hex: "#F6921A", rgb: "RGB 246 146 26", opacity: "5%" }
+    ]
+  },
+  {
+    id: "blue-variations",
+    name: "Blue Variations",
+    description: "Blue color variations with different opacity levels",
+    colors: [
+      { name: "Code: Blue #1", hex: "#95B5FF", rgb: "RGB 149 181 255" },
+      { name: "Code: Blue #2 (50%)", hex: "#95B5FF", rgb: "RGB 149 181 255", opacity: "50%" },
+      { name: "Code: Blue #3 (20%)", hex: "#95B5FF", rgb: "RGB 149 181 255", opacity: "20%" },
+      { name: "Code: Blue #4 (10%)", hex: "#95B5FF", rgb: "RGB 149 181 255", opacity: "10%" },
+      { name: "Code: Blue #5 (5%)", hex: "#95B5FF", rgb: "RGB 149 181 255", opacity: "5%" }
     ]
   }
 ];
