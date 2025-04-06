@@ -387,7 +387,7 @@ const UseCasesPage: React.FC = () => {
             {/* Category filter */}
             <div className="flex flex-wrap justify-center gap-2 mb-8">
               <span
-                className={`px-4 py-2 ${!selectedCategory ? 'bg-[#F6921A]/10 border border-[#F6921A]/30' : 'bg-[#5C8EFF]/10 border border-[#5C8EFF]/30'} text-white rounded-full text-base font-medium cursor-pointer`}
+                className={`px-4 py-2 ${!selectedCategory ? 'bg-[#F6921A]/10 border border-[#F6921A]/30' : 'bg-[#5C8EFF]/10 border border-[#5C8EFF]/30'} text-white rounded-full text-base font-[200] cursor-pointer`}
                 onClick={() => setSelectedCategory(null)}
               >
                 All
@@ -395,7 +395,7 @@ const UseCasesPage: React.FC = () => {
               {categories.map(category => (
                 <span
                   key={category}
-                  className={`px-4 py-2 ${selectedCategory === category ? 'bg-[#F6921A]/10 border border-[#F6921A]/30' : 'bg-[#5C8EFF]/10 border border-[#5C8EFF]/30'} text-white rounded-full text-base font-medium cursor-pointer`}
+                  className={`px-4 py-2 ${selectedCategory === category ? 'bg-[#F6921A]/10 border border-[#F6921A]/30' : 'bg-[#5C8EFF]/10 border border-[#5C8EFF]/30'} text-white rounded-full text-base font-[200] cursor-pointer`}
                   onClick={() => setSelectedCategory(category)}
                 >
                   {category}
