@@ -5,25 +5,6 @@ import { Card } from '@/components/ui/card';
 import { ExternalLink } from 'lucide-react';
 import { Link } from 'wouter';
 import { Lens } from '@/components/ui/lens';
-// Direct references to the image files in the new location
-const glassCircle1 = '/images/Glass Circles - #1 2.png';
-const glassCircle2 = '/images/Glass Circles - #2 2.png';
-const glassCircle3 = '/images/Glass Circles - #3 2.png';
-const placeholderImage = '/images/placeholder-image.jpg';
-
-// Add timestamp to prevent caching
-const timestamp = Date.now();
-const glassCircle1WithCache = `${glassCircle1}?t=${timestamp}`;
-const glassCircle2WithCache = `${glassCircle2}?t=${timestamp}`;
-const glassCircle3WithCache = `${glassCircle3}?t=${timestamp}`;
-
-// Log image paths to help debug
-console.log("Image paths being used:", { 
-  glassCircle1, 
-  glassCircle2, 
-  glassCircle3 
-});
-
 
 const ecosystemProjects = [
   {
@@ -103,19 +84,8 @@ export function ScalingSection() {
         {activeTab === 'public' ? (
           <div className="space-y-32">
             <div className="flex flex-col md:flex-row items-center justify-center gap-12">
-              <div className="w-48 h-48 relative overflow-hidden rounded-full bg-gray-800">
-                <img 
-                  src={glassCircle1WithCache}
-                  alt="Bitcoin-Grade Security" 
-                  className="w-full h-full object-cover object-center" 
-                  onError={(e) => {
-                    console.error("Error loading image:", e.currentTarget.src);
-                    if (e.currentTarget) {
-                      e.currentTarget.onerror = null; // Prevent infinite error loops
-                      e.currentTarget.src = placeholderImage;
-                    }
-                  }}
-                />
+              <div className="w-48 h-48 relative">
+                <img src="/images/L2.png" alt="Elastos Mainchain" className="w-full h-full object-contain" />
               </div>
               <div className="flex-1">
                 <div className="flex items-center gap-3 mb-4">
@@ -123,7 +93,7 @@ export function ScalingSection() {
                   <span className="px-4 py-1 bg-[#5C8EFF]/10 border border-[#5C8EFF]/30 text-white rounded-full text-xs font-medium">LIVE</span>
                 </div>
                 <p className="text-muted-foreground mb-6 max-w-xl">
-                  We anchor our security to Bitcoin's proof-of-work hashpower and utilize multiple sidechains for specialized functions.
+                  We anchor our security to Bitcoin’s proof-of-work hashpower and utilize multiple sidechains for specialized functions.
 
                 </p>
                 <div className="flex gap-4">
@@ -137,19 +107,8 @@ export function ScalingSection() {
             </div>
 
             <div className="flex flex-col md:flex-row-reverse items-center justify-center gap-12">
-              <div className="w-48 h-48 relative overflow-hidden rounded-full bg-gray-800">
-                <img 
-                  src={glassCircle2WithCache}
-                  alt="Financial Empowerment" 
-                  className="w-full h-full object-cover object-center" 
-                  onError={(e) => {
-                    console.error("Error loading image:", e.currentTarget.src);
-                    if (e.currentTarget) {
-                      e.currentTarget.onerror = null; // Prevent infinite error loops
-                      e.currentTarget.src = placeholderImage;
-                    }
-                  }}
-                />
+              <div className="w-48 h-48 relative">
+                <img src="/images/Bel2icon.png" alt="BeL2" className="w-full h-full object-contain" />
               </div>
               <div className="flex-1">
                 <div className="flex items-center gap-3 mb-4">
@@ -170,19 +129,8 @@ export function ScalingSection() {
             </div>
 
             <div className="flex flex-col md:flex-row items-center justify-center gap-12">
-              <div className="w-48 h-48 relative overflow-hidden rounded-full bg-gray-800">
-                <img 
-                  src={glassCircle3WithCache}
-                  alt="Digital Freedom and Ownership" 
-                  className="w-full h-full object-cover object-center" 
-                  onError={(e) => {
-                    console.error("Error loading image:", e.currentTarget.src);
-                    if (e.currentTarget) {
-                      e.currentTarget.onerror = null; // Prevent infinite error loops
-                      e.currentTarget.src = placeholderImage;
-                    }
-                  }}
-                />
+              <div className="w-48 h-48 relative">
+                <img src="/images/Depin.png" alt="DePIN Network" className="w-full h-full object-contain" />
               </div>
               <div className="flex-1">
                 <div className="flex items-center gap-3 mb-4">
