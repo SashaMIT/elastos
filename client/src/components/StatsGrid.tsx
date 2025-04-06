@@ -38,9 +38,9 @@ export function StatsGrid() {
           <Flex>
             <Bitcoin className="w-6 h-6" />
             <div>
-              <Text>Total Supply Progress</Text>
-              <Metric>{Math.round(supplyProgress)}% Complete</Metric>
-              <Text className="mt-2">Target: {MAX_SUPPLY.toLocaleString()} ELA</Text>
+              <Text fontWeight="200">Total Supply Progress</Text>
+              <Metric fontWeight="200">{Math.round(supplyProgress)}% Complete</Metric>
+              <Text fontWeight="200" className="mt-2">Target: {MAX_SUPPLY.toLocaleString()} ELA</Text>
               <ProgressBar value={supplyProgress} className="mt-2" />
             </div>
           </Flex>
@@ -52,9 +52,9 @@ export function StatsGrid() {
           <Flex>
             <Shield className="w-6 h-6" />
             <div>
-              <Text>Bitcoin Security</Text>
-              <Metric>{btcSecurityPercent.toFixed(2)}% of BTC</Metric>
-              <Text className="mt-2">
+              <Text fontWeight="200">Bitcoin Security</Text>
+              <Metric fontWeight="200">{btcSecurityPercent.toFixed(2)}% of BTC</Metric>
+              <Text fontWeight="200" className="mt-2">
                 Protected by {formatHashrate(hashrateData?.elastosHashrate)} of {formatHashrate(hashrateData?.bitcoinHashrate)}
               </Text>
               <DonutChart
@@ -78,9 +78,9 @@ export function StatsGrid() {
           <Flex>
             <LineChart className="w-6 h-6" />
             <div>
-              <Text>Current APY</Text>
-              <Metric>3.29%</Metric>
-              <Text className="mt-2">Halving every 4 years until 2105</Text>
+              <Text fontWeight="200">Current APY</Text>
+              <Metric fontWeight="200">3.29%</Metric>
+              <Text fontWeight="200" className="mt-2">Halving every 4 years until 2105</Text>
               <AreaChart
                 className="mt-2 h-20"
                 data={[
@@ -106,9 +106,9 @@ export function StatsGrid() {
           <Flex>
             <Clock className="w-6 h-6" />
             <div>
-              <Text>Next Halving</Text>
-              <Metric>{format(NEXT_HALVING, 'MMM d, yyyy')}</Metric>
-              <Text className="mt-2">{differenceInDays(NEXT_HALVING, now)} days remaining</Text>
+              <Text fontWeight="200">Next Halving</Text>
+              <Metric fontWeight="200">{format(NEXT_HALVING, 'MMM d, yyyy')}</Metric>
+              <Text fontWeight="200" className="mt-2">{differenceInDays(NEXT_HALVING, now)} days remaining</Text>
               <ProgressBar value={halvingProgress} className="mt-2" />
             </div>
           </Flex>

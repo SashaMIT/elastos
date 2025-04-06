@@ -4,7 +4,7 @@ import { StackedCircularFooter } from "@/components/ui/stacked-circular-footer";
 
 function StatsPage() {
   return (
-    <div>
+    <div className="font-[200]">
       <div>
         <div>
           {/* ... existing content of StatsPage ... */}
