@@ -77,7 +77,7 @@ const BuyElaPage = () => {
 
   return (
     <div className="w-full h-full bg-white dark:bg-[#171717] p-4">
-      <Card className="max-w-4xl mx-auto dark:bg-[#171717] dark:text-white border-0">
+      <Card className="max-w-6xl mx-auto dark:bg-[#171717] dark:text-white border-0">
         <CardHeader className="p-3 dark:bg-[#171717]">
           <CardTitle className="flex items-center gap-2 text-base dark:text-white">
             <Shield className="w-5 h-5 text-blue-500 shrink-0" />
@@ -91,7 +91,7 @@ const BuyElaPage = () => {
         </CardHeader>
 
         <CardContent className="space-y-4 dark:bg-[#171717] dark:text-white">
-          <div className="grid grid-cols-4 gap-2">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
             <div className="bg-blue-50 dark:bg-[#222] p-2 rounded-lg text-center dark:text-white">
               <div className="flex items-center justify-center gap-1">
                 <Shield className="inline text-blue-500 h-4 w-4 mb-1" />
@@ -286,7 +286,7 @@ const BuyElaPage = () => {
             </div>
           </div>
 
-          <div className="grid md:grid-cols-2 gap-3">
+          <div className="grid md:grid-cols-2 gap-6">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
