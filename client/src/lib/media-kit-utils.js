@@ -1,4 +1,3 @@
-
 // Utility functions for the Media Kit
 
 export const cn = (...args) => {
@@ -27,11 +26,11 @@ export const logos = [
     id: "elastos-essentials",
     name: "Elastos Essentials",
     description: "Elastos Essentials wallet application logo",
-    preview: "/images/Essentials.png",
+    preview: "/images/Website Graphics/Elastos Essentials.png", // Updated image path
     downloadLink: "/logo-assets/Elastos-Essentials-Logo-Kit.zip",
     variants: {
       standard: {
-        png: "/images/Essentials.png"
+        png: "/images/Website Graphics/Elastos Essentials.png" // Updated image path
       }
     }
   }
