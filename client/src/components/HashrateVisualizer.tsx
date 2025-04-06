@@ -159,7 +159,7 @@ const HashrateVisualizer = () => {
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-6">
             <Dialog>
               <DialogTrigger asChild>
-                <Button variant="outline" className="w-full flex items-center gap-2 px-4 py-3 hover:bg-accent/50">
+                <Button variant="outline" className="w-full flex items-center gap-2 px-4 py-3 hover:bg-accent/50 font-[200]">
                   <Calculator className="w-5 h-5 text-[#F6921A]" />
                   What is Hashrate?
                 </Button>
@@ -198,7 +198,7 @@ const HashrateVisualizer = () => {
 
             <Dialog>
               <DialogTrigger asChild>
-                <Button variant="outline" className="w-full flex items-center gap-2 px-4 py-3 hover:bg-accent/50">
+                <Button variant="outline" className="w-full flex items-center gap-2 px-4 py-3 hover:bg-accent/50 font-[200]">
                   <Cpu className="w-5 h-5 text-[#F6921A]" />
                   What is EH/s?
                 </Button>
@@ -230,7 +230,7 @@ const HashrateVisualizer = () => {
 
             <Dialog>
               <DialogTrigger asChild>
-                <Button variant="outline" className="w-full flex items-center gap-2 px-4 py-3 hover:bg-accent/50">
+                <Button variant="outline" className="w-full flex items-center gap-2 px-4 py-3 hover:bg-accent/50 font-[200]">
                   <Network className="w-5 h-5 text-[#F6921A]" />
                   What is Merge Mining?
                 </Button>
@@ -287,7 +287,7 @@ const HashrateVisualizer = () => {
                         variant={selectedScale === key ? "default" : "outline"}
                         onClick={() => setSelectedScale(key)}
                         className={cn(
-                          "w-full gap-2 min-h-[2.5rem] px-2 py-1",
+                          "w-full gap-2 min-h-[2.5rem] px-2 py-1 font-[200]",
                           selectedScale === key && "shadow-lg"
                         )}
                       >
@@ -336,7 +336,7 @@ const HashrateVisualizer = () => {
                       <Tooltip>
                         <TooltipTrigger asChild>
                           <div className="space-y-1">
-                            <div className="font-bold text-lg flex items-center gap-2 text-white">
+                            <div className="font-[200] text-lg flex items-center gap-2 text-white">
                               Bitcoin Network
                               <TooltipProvider>
                                 <Tooltip>
@@ -349,7 +349,7 @@ const HashrateVisualizer = () => {
                                 </Tooltip>
                               </TooltipProvider>
                             </div>
-                            <div className="text-xl sm:text-2xl font-bold text-white">
+                            <div className="text-xl sm:text-2xl font-[200] text-white">
                               {formatNumber(calculateEquivalent(bitcoinHashrate, scales[selectedScale].base))} {scales[selectedScale].unit}
                             </div>
                             <div className="flex items-center gap-4">
@@ -382,7 +382,7 @@ const HashrateVisualizer = () => {
                       <Tooltip>
                         <TooltipTrigger asChild>
                           <div className="space-y-1">
-                            <div className="font-bold text-lg flex items-center gap-2 text-white">
+                            <div className="font-[200] text-lg flex items-center gap-2 text-white">
                               Elastos Network
                               <TooltipProvider>
                                 <Tooltip>
@@ -395,7 +395,7 @@ const HashrateVisualizer = () => {
                                 </Tooltip>
                               </TooltipProvider>
                             </div>
-                            <div className="text-xl sm:text-2xl font-bold text-white">
+                            <div className="text-xl sm:text-2xl font-[200] text-white">
                               {formatNumber(calculateEquivalent(elastosHashrate, scales[selectedScale].base))} {scales[selectedScale].unit}
                             </div>
                             <div className="flex items-center gap-4">
