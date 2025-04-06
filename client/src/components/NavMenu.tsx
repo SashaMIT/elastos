@@ -70,6 +70,14 @@ export function NavMenu() {
                         </div>
                       </NavigationMenuLink>
                     </Link>
+                    <Link href="/bridge">
+                      <NavigationMenuLink className={navigationMenuTriggerStyle()}>
+                        <div className="flex items-center gap-2">
+                          <Repeat className="h-4 w-4 text-[#94b5ff]" />
+                          <span>Bridge</span>
+                        </div>
+                      </NavigationMenuLink>
+                    </Link>
                     <Link href="/buy-ela">
                       <NavigationMenuLink className={navigationMenuTriggerStyle()}>
                         <div className="flex items-center gap-2">

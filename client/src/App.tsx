@@ -15,6 +15,7 @@ import NewsPage from './pages/NewsPage';
 import FaqPage from './pages/FaqPage'; 
 import SocialChannelsPage from './pages/SocialChannelsPage';
 import MediaKit from './pages/MediaKit'; // Import MediaKit wrapper component
+import Bridge from './pages/Bridge'; // Added import for Bridge page
 
 function App() {
   return (
@@ -32,6 +33,7 @@ function App() {
       <Route path="/whitepaper" element={<WhitepaperPage />} />
       <Route path="/social-channels" element={<SocialChannelsPage />} />
       <Route path="/media-kit" element={<MediaKit />} />
+      <Route path="/bridge" element={<Bridge />} /> {/* Added Bridge route */}
     </Routes>
   );
 }
