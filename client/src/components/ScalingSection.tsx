@@ -5,10 +5,10 @@ import { Card } from '@/components/ui/card';
 import { ExternalLink } from 'lucide-react';
 import { Link } from 'wouter';
 import { Lens } from '@/components/ui/lens';
-// Direct references to the image files
-const glassCircle1 = '/images/Special FX Graphics/Glass Circles - #1.jpg';
-const glassCircle2 = '/images/Special FX Graphics/Glass Circles - #2 2.jpg';
-const glassCircle3 = '/images/Special FX Graphics/Glass Circles - #3 2.jpg';
+// Direct references to the image files in the new location
+const glassCircle1 = '/images/Glass Circles - #1.jpg';
+const glassCircle2 = '/images/Glass Circles - #2 2.jpg';
+const glassCircle3 = '/images/Glass Circles - #3 2.jpg';
 const placeholderImage = '/images/placeholder-image.jpg';
 
 // Add timestamp to prevent caching
