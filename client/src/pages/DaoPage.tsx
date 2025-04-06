@@ -268,48 +268,58 @@ const DaoPage: React.FC = () => {
 
   return (
     <div className="min-h-screen bg-[#171717]">
-      {/* Hero Section */}
-      <section className="relative overflow-hidden py-20">
-        <div className="container mx-auto px-4 relative z-10">
-          <div className="max-w-4xl mx-auto text-center">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5 }}
-            >
-              <h1 className="text-4xl md:text-6xl font-bold text-white mb-6">
-                Elastos DAO: Governance for the World Computer
-              </h1>
-              <p className="text-xl text-white/70 mb-8">
-                Community-powered governance for a truly decentralized internet.
-              </p>
-              <p className="text-lg text-white/80 max-w-3xl mx-auto mb-10">
-                Elastos DAO is the on-chain, self-sovereign governance framework behind the Elastos ecosystem—where stakeholders shape the future of the World Computer through transparent proposals, voting, and funding.
-              </p>
-              <div className="flex flex-wrap justify-center gap-4">
-                <a
-                  href="https://cyberrepublic.org"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex px-3 py-2 bg-[rgba(246,146,26,0.10)] text-[#F6921A] rounded-full font-medium transition-all items-center gap-1 border border-[rgba(246,146,26,0.50)] text-sm"
+      {/* Full-width hero image with gradient overlay */}
+      <div className="relative w-full h-[500px] overflow-hidden -mt-16">
+        <img 
+          src="/images/Roadmap/Community crowd.png" 
+          alt="Elastos DAO" 
+          className="w-full h-full object-cover opacity-100"
+        />
+        {/* Gradient overlay */}
+        <div className="absolute inset-0 bg-gradient-to-b from-black/10 via-[#171717]/80 to-[#171717]"></div>
+
+        {/* Hero content overlay */}
+        <div className="absolute inset-0 flex items-center justify-center">
+          <div className="container mx-auto px-4">
+            <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+              <div className="text-center mb-12">
+                <motion.div
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.5 }}
                 >
-                  <span>Visit DAO Portal</span>
-                  <CircleArrow />
-                </a>
-                <a
-                  href="https://cyberrepublic.org/proposals"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex px-3 py-2 bg-[rgba(92,142,255,0.10)] text-[#5C8EFF] rounded-full font-medium transition-all items-center gap-1 border border-[rgba(92,142,255,0.50)] text-sm"
-                >
-                  <span>View Current Proposals</span>
-                  <BlueCircleArrow />
-                </a>
+                  <h1 className="text-4xl sm:text-4xl md:text-5xl font-[200] text-white mb-6">
+                    Elastos DAO: Governance for the World Computer
+                  </h1>
+                  <p className="text-gray-300 max-w-2xl mx-auto text-md sm:text-base md:text-lg font-[200]">
+                    Community-powered governance for a truly decentralized internet, where stakeholders shape the future through transparent proposals, voting, and funding.
+                  </p>
+                  <div className="flex flex-wrap justify-center gap-4 mt-8">
+                    <a
+                      href="https://cyberrepublic.org"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex px-3 py-2 bg-[rgba(246,146,26,0.10)] text-[#F6921A] rounded-full font-medium transition-all items-center gap-1 border border-[rgba(246,146,26,0.50)] text-sm"
+                    >
+                      <span>Visit DAO Portal</span>
+                      <CircleArrow />
+                    </a>
+                    <a
+                      href="https://cyberrepublic.org/proposals"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex px-3 py-2 bg-[rgba(92,142,255,0.10)] text-[#5C8EFF] rounded-full font-medium transition-all items-center gap-1 border border-[rgba(92,142,255,0.50)] text-sm"
+                    >
+                      <span>View Current Proposals</span>
+                      <BlueCircleArrow />
+                    </a>
+                  </div>
+                </motion.div>
               </div>
-            </motion.div>
+            </div>
           </div>
         </div>
-      </section>
+      </div>
 
       {/* What is Elastos DAO Section */}
       <section className="py-16 relative bg-[#171717]">
