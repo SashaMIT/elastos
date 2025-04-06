@@ -129,73 +129,67 @@ const SocialChannelsPage: React.FC = () => {
       </section>
 
       {/* Additional Resources Section */}
-      <section className="py-16 relative">
+      <section className="py-8 relative">
         <div className="container mx-auto px-4">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-center max-w-3xl mx-auto mb-12"
+            className="text-center max-w-3xl mx-auto mb-6"
           >
-            <h2 className="text-3xl font-bold text-white mb-4">Additional Community Resources</h2>
+            <h2 className="text-3xl font-bold text-white mb-2">Additional Community Resources</h2>
             <p className="text-white/70">
               In addition to our social media channels, Elastos offers various resources to help you stay connected and informed.
             </p>
           </motion.div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-6xl mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-4 max-w-6xl mx-auto">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.1 }}
-              className="bg-[#1E1E1E] rounded-xl p-6 border border-white/10 hover:border-white/20 transition-all"
+              className="bg-[#1E1E1E] rounded-xl p-4 border border-white/10 hover:border-white/20 transition-all"
             >
-              <div className="flex items-center gap-3 mb-4">
-                <div className="w-12 h-12 rounded-full bg-[#F6921A]/10 flex items-center justify-center">
-                  <Globe className="h-6 w-6 text-[#F6921A]" />
+              <div className="flex items-center gap-2 mb-3">
+                <div className="w-10 h-10 rounded-full bg-[#F6921A]/10 flex items-center justify-center">
+                  <Globe className="h-5 w-5 text-[#F6921A]" />
                 </div>
-                <h3 className="text-xl font-bold text-white">Subgroups</h3>
+                <h3 className="text-lg font-bold text-white">Subgroups</h3>
               </div>
 
-              <p className="text-white/70 mb-6">
+              <p className="text-white/70 text-sm mb-3">
                 Join specialized Elastos community subgroups to connect with others and get focused support.
               </p>
 
-              <div className="space-y-3">
-                <div>
-                  <a
-                    href="https://t.me/elastosgroup/1135570"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-[#F6921A] hover:underline text-sm flex items-center gap-1"
-                  >
-                    <Globe className="h-3.5 w-3.5" />
-                    <span>Help and Support</span>
-                  </a>
-                </div>
-                <div>
-                  <a
-                    href="https://t.me/elastosgroup/1186551"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-[#F6921A] hover:underline text-sm flex items-center gap-1"
-                  >
-                    <Globe className="h-3.5 w-3.5" />
-                    <span>Announcements</span>
-                  </a>
-                </div>
-                <div>
-                  <a 
-                    href="https://t.me/elastosgroup/1155782"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-[#F6921A] hover:underline text-sm flex items-center gap-1"
-                  >
-                    <Globe className="h-3.5 w-3.5" />
-                    <span>Elastos AMAs</span>
-                  </a>
-                </div>
+              <div className="flex flex-wrap gap-2">
+                <a
+                  href="https://t.me/elastosgroup/1135570"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-[#F6921A] hover:underline text-xs flex items-center gap-1 bg-[#F6921A]/5 px-2 py-1 rounded-md"
+                >
+                  <Globe className="h-3 w-3" />
+                  <span>Help and Support</span>
+                </a>
+                <a
+                  href="https://t.me/elastosgroup/1186551"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-[#F6921A] hover:underline text-xs flex items-center gap-1 bg-[#F6921A]/5 px-2 py-1 rounded-md"
+                >
+                  <Globe className="h-3 w-3" />
+                  <span>Announcements</span>
+                </a>
+                <a 
+                  href="https://t.me/elastosgroup/1155782"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-[#F6921A] hover:underline text-xs flex items-center gap-1 bg-[#F6921A]/5 px-2 py-1 rounded-md"
+                >
+                  <Globe className="h-3 w-3" />
+                  <span>Elastos AMAs</span>
+                </a>
               </div>
             </motion.div>
 
@@ -204,110 +198,99 @@ const SocialChannelsPage: React.FC = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.2 }}
-              className="bg-[#1E1E1E] rounded-xl p-6 border border-white/10 hover:border-white/20 transition-all"
+              className="bg-[#1E1E1E] rounded-xl p-4 border border-white/10 hover:border-white/20 transition-all"
             >
-              <div className="flex items-center gap-3 mb-4">
-                <div className="w-12 h-12 rounded-full bg-[#5C8EFF]/10 flex items-center justify-center">
-                  <Users className="h-6 w-6 text-[#5C8EFF]" />
+              <div className="flex items-center gap-2 mb-3">
+                <div className="w-10 h-10 rounded-full bg-[#5C8EFF]/10 flex items-center justify-center">
+                  <Users className="h-5 w-5 text-[#5C8EFF]" />
                 </div>
-                <h3 className="text-xl font-bold text-white">Developer Resources</h3>
+                <h3 className="text-lg font-bold text-white">Developer Resources</h3>
               </div>
 
-              <p className="text-white/70 mb-6">
+              <p className="text-white/70 text-sm mb-3">
                 Access technical documentation, SDKs, and developer communities to build on Elastos.
               </p>
 
-              <div className="space-y-3">
-                <div>
-                  <a
-                    href="https://elastos.dev"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-[#5C8EFF] hover:underline text-sm flex items-center gap-1"
-                  >
-                    <Globe className="h-3.5 w-3.5" />
-                    <span>Developer Portal</span>
-                  </a>
+              <div className="flex flex-wrap gap-2">
+                <a
+                  href="https://elastos.dev"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-[#5C8EFF] hover:underline text-xs flex items-center gap-1 bg-[#5C8EFF]/5 px-2 py-1 rounded-md"
+                >
+                  <Globe className="h-3 w-3" />
+                  <span>Developer Portal</span>
+                </a>
+                <a
+                  href="https://github.com/elastos"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-[#5C8EFF] hover:underline text-xs flex items-center gap-1 bg-[#5C8EFF]/5 px-2 py-1 rounded-md"
+                >
+                  <svg xmlns="http://www.w3.org/2000/svg" className="h-3 w-3" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                    <path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4" />
+                    <path d="M9 18c-4.51 2-5-2-7-2" />
+                  </svg>
+                  <span>GitHub</span>
+                </a>
+                <a
+                  href="https://t.me/elastosgroup/1141313"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-[#5C8EFF] hover:underline text-xs flex items-center gap-1 bg-[#5C8EFF]/5 px-2 py-1 rounded-md"
+                >
+                  <MessageCircle className="h-3 w-3" />
+                  <span>Promotion Hub</span>
+                </a>
+              </div>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.3 }}
+              className="bg-[#1E1E1E] rounded-xl p-4 border border-white/10 hover:border-white/20 transition-all"
+            >
+              <div className="flex items-center gap-2 mb-3">
+                <div className="w-10 h-10 rounded-full bg-[#F6921A]/10 flex items-center justify-center border border-[#F6921A]/30">
+                  <Shield className="h-5 w-5 text-[#F6921A]" />
                 </div>
-                <div>
-                  <a
-                    href="https://github.com/elastos"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-[#5C8EFF] hover:underline text-sm flex items-center gap-1"
-                  >
-                    <svg xmlns="http://www.w3.org/2000/svg" className="h-3.5 w-3.5" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                      <path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4" />
-                      <path d="M9 18c-4.51 2-5-2-7-2" />
+                <h3 className="text-lg font-bold text-white">Security Verification</h3>
+              </div>
+
+              <p className="text-white/70 text-sm mb-3">
+                Always verify you're connecting with official Elastos channels. Official channels will never ask for your private keys.
+              </p>
+
+              <div className="bg-black/20 rounded-lg p-3 border border-white/5">
+                <p className="text-[#F6921A] text-xs font-medium mb-2">Security Tips:</p>
+                <ul className="text-white/70 space-y-1 text-xs">
+                  <li className="flex items-start gap-1">
+                    <svg xmlns="http://www.w3.org/2000/svg" className="h-3.5 w-3.5 text-[#F6921A] flex-shrink-0 mt-0.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                      <path d="m9 12 2 2 4-4" />
+                      <path d="M12 3c-1.2 0-2.4.6-3 1.7A3.6 3.6 0 0 0 4.6 9c-1 .6-1.7 1.8-1.7 3s.7 2.4 1.7 3c-.3 1.2 0 2.5 1 3.4.8.8 2.1 1.2 3.3 1 .6 1 1.8 1.6 3 1.6s2.4-.6 3-1.7c1.2.3 2.5 0 3.4-1 .8-.8 1.2-2 1-3.3 1-.6 1.6-1.8 1.6-3s-.6-2.4-1.7-3c.3-1.2 0-2.5-1-3.4a3.7 3.7 0 0 0-3.3-1c-.6-1-1.8-1.6-3-1.6Z" />
                     </svg>
-                    <span>GitHub</span>
-                  </a>
-                </div>
-                <div>
-                  <a
-                    href="https://t.me/elastosgroup/1141313"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-[#5C8EFF] hover:underline text-sm flex items-center gap-1"
-                  >
-                    <MessageCircle className="h-3.5 w-3.5" />
-                    <span>Promotion Hub</span>
-                  </a>
-                </div>
+                    <span>Verify URLs and official Elastos branding</span>
+                  </li>
+                  <li className="flex items-start gap-1">
+                    <svg xmlns="http://www.w3.org/2000/svg" className="h-3.5 w-3.5 text-[#F6921A] flex-shrink-0 mt-0.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                      <path d="m9 12 2 2 4-4" />
+                      <path d="M12 3c-1.2 0-2.4.6-3 1.7A3.6 3.6 0 0 0 4.6 9c-1 .6-1.7 1.8-1.7 3s.7 2.4 1.7 3c-.3 1.2 0 2.5 1 3.4.8.8 2.1 1.2 3.3 1 .6 1 1.8 1.6 3 1.6s2.4-.6 3-1.7c1.2.3 2.5 0 3.4-1 .8-.8 1.2-2 1-3.3 1-.6 1.6-1.8 1.6-3s-.6-2.4-1.7-3c.3-1.2 0-2.5-1-3.4a3.7 3.7 0 0 0-3.3-1c-.6-1-1.8-1.6-3-1.6Z" />
+                    </svg>
+                    <span>Team never DMs first or asks for keys</span>
+                  </li>
+                  <li className="flex items-start gap-1">
+                    <svg xmlns="http://www.w3.org/2000/svg" className="h-3.5 w-3.5 text-[#F6921A] flex-shrink-0 mt-0.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                      <path d="m9 12 2 2 4-4" />
+                      <path d="M12 3c-1.2 0-2.4.6-3 1.7A3.6 3.6 0 0 0 4.6 9c-1 .6-1.7 1.8-1.7 3s.7 2.4 1.7 3c-.3 1.2 0 2.5 1 3.4.8.8 2.1 1.2 3.3 1 .6 1 1.8 1.6 3 1.6s2.4-.6 3-1.7c1.2.3 2.5 0 3.4-1 .8-.8 1.2-2 1-3.3 1-.6 1.6-1.8 1.6-3s-.6-2.4-1.7-3c.3-1.2 0-2.5-1-3.4a3.7 3.7 0 0 0-3.3-1c-.6-1-1.8-1.6-3-1.6Z" />
+                    </svg>
+                    <span>Beware of too-good-to-be-true offers</span>
+                  </li>
+                </ul>
               </div>
             </motion.div>
           </div>
-        </div>
-      </section>
-
-      {/* Official Channels & Trust */}
-      <section className="py-16 relative">
-        <div className="container mx-auto px-4">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="max-w-6xl mx-auto bg-[#1E1E1E] rounded-2xl p-8 border border-white/10"
-          >
-            <div className="flex items-center gap-4 mb-6">
-              <div className="w-12 h-12 rounded-full bg-[#F6921A]/10 flex items-center justify-center border border-[#F6921A]/30">
-                <Shield className="h-6 w-6 text-[#F6921A]" />
-              </div>
-              <h3 className="text-2xl font-bold text-white">Verify Official Channels</h3>
-            </div>
-
-            <p className="text-white/70 mb-6">
-              Always verify you're connecting with official Elastos channels to protect yourself from scams. 
-              Official channels are listed on this page and will never ask for your private keys or funds.
-            </p>
-
-            <div className="bg-black/20 rounded-lg p-4 border border-white/5">
-              <p className="text-[#F6921A] font-medium mb-2">Security Tips:</p>
-              <ul className="text-white/70 space-y-2 text-sm">
-                <li className="flex items-start gap-2">
-                  <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 text-[#F6921A] flex-shrink-0 mt-0.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                    <path d="m9 12 2 2 4-4" />
-                    <path d="M12 3c-1.2 0-2.4.6-3 1.7A3.6 3.6 0 0 0 4.6 9c-1 .6-1.7 1.8-1.7 3s.7 2.4 1.7 3c-.3 1.2 0 2.5 1 3.4.8.8 2.1 1.2 3.3 1 .6 1 1.8 1.6 3 1.6s2.4-.6 3-1.7c1.2.3 2.5 0 3.4-1 .8-.8 1.2-2 1-3.3 1-.6 1.6-1.8 1.6-3s-.6-2.4-1.7-3c.3-1.2 0-2.5-1-3.4a3.7 3.7 0 0 0-3.3-1c-.6-1-1.8-1.6-3-1.6Z" />
-                  </svg>
-                  <span>Always verify URLs and check for the official Elastos logo and branding.</span>
-                </li>
-                <li className="flex items-start gap-2">
-                  <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 text-[#F6921A] flex-shrink-0 mt-0.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                    <path d="m9 12 2 2 4-4" />
-                    <path d="M12 3c-1.2 0-2.4.6-3 1.7A3.6 3.6 0 0 0 4.6 9c-1 .6-1.7 1.8-1.7 3s.7 2.4 1.7 3c-.3 1.2 0 2.5 1 3.4.8.8 2.1 1.2 3.3 1 .6 1 1.8 1.6 3 1.6s2.4-.6 3-1.7c1.2.3 2.5 0 3.4-1 .8-.8 1.2-2 1-3.3 1-.6 1.6-1.8 1.6-3s-.6-2.4-1.7-3c.3-1.2 0-2.5-1-3.4a3.7 3.7 0 0 0-3.3-1c-.6-1-1.8-1.6-3-1.6Z" />
-                  </svg>
-                  <span>Official team members will never DM you first or ask for your private keys.</span>
-                </li>
-                <li className="flex items-start gap-2">
-                  <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 text-[#F6921A] flex-shrink-0 mt-0.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                    <path d="m9 12 2 2 4-4" />
-                    <path d="M12 3c-1.2 0-2.4.6-3 1.7A3.6 3.6 0 0 0 4.6 9c-1 .6-1.7 1.8-1.7 3s.7 2.4 1.7 3c-.3 1.2 0 2.5 1 3.4.8.8 2.1 1.2 3.3 1 .6 1 1.8 1.6 3 1.6s2.4-.6 3-1.7c1.2.3 2.5 0 3.4-1 .8-.8 1.2-2 1-3.3 1-.6 1.6-1.8 1.6-3s-.6-2.4-1.7-3c.3-1.2 0-2.5-1-3.4a3.7 3.7 0 0 0-3.3-1c-.6-1-1.8-1.6-3-1.6Z" />
-                  </svg>
-                  <span>Be suspicious of giveaways, airdrops or investment opportunities that seem too good to be true.</span>
-                </li>
-              </ul>
-            </div>
-          </motion.div>
         </div>
       </section>
 
