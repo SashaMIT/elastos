@@ -105,7 +105,7 @@ export function ScalingSection() {
             <div className="flex flex-col md:flex-row items-center justify-center gap-12">
               <div className="w-48 h-48 relative overflow-hidden rounded-full bg-gray-800">
                 <img 
-                  src={glassCircle1}
+                  src={glassCircle1WithCache}
                   alt="Bitcoin-Grade Security" 
                   className="w-full h-full object-cover object-center" 
                   onError={(e) => {
@@ -139,7 +139,7 @@ export function ScalingSection() {
             <div className="flex flex-col md:flex-row-reverse items-center justify-center gap-12">
               <div className="w-48 h-48 relative overflow-hidden rounded-full bg-gray-800">
                 <img 
-                  src={glassCircle2}
+                  src={glassCircle2WithCache}
                   alt="Financial Empowerment" 
                   className="w-full h-full object-cover object-center" 
                   onError={(e) => {
@@ -172,7 +172,7 @@ export function ScalingSection() {
             <div className="flex flex-col md:flex-row items-center justify-center gap-12">
               <div className="w-48 h-48 relative overflow-hidden rounded-full bg-gray-800">
                 <img 
-                  src={glassCircle3}
+                  src={glassCircle3WithCache}
                   alt="Digital Freedom and Ownership" 
                   className="w-full h-full object-cover object-center" 
                   onError={(e) => {
