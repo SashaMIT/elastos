@@ -287,7 +287,7 @@ const DaoPage: React.FC = () => {
                   Elastos DAO: Governance for the World Computer
                 </h1>
                 <p className="text-gray-300 max-w-2xl mx-auto text-md sm:text-base md:text-lg">
-                  Community-powered governance for a truly decentralized internet. Elastos DAO is the on-chain, self-sovereign governance framework behind the Elastos ecosystem.
+                  Community-powered governance for a truly decentralized internet. Elastos DAO is the on-chain, self-sovereign governance framework behind Elastos.
                 </p>
               </div>
               <div className="flex flex-wrap justify-center gap-4 mt-8">
