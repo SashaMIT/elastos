@@ -9,7 +9,7 @@ export const logos = [
   {
     id: "elastos-logo",
     name: "Elastos Logo",
-    description: "Official Elastos brand logo and icon in various formats for all uses",
+    description: "Elastos brand logo and icons in various formats",
     preview: "/images/Elastos Logo Dark - 1.png",
     downloadLink: "/logo-assets/Elastos-Logo-Icon-ALL-2025.zip",
     variants: {
