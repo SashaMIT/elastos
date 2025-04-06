@@ -340,11 +340,12 @@ const BuyElaPage = () => {
                 <Shield className="h-4 w-4 text-blue-500" />
                 Security Integration
               </h3>
-              <ResponsiveContainer width="100%" height="90%">
-                <AreaChart data={realHashrateData}>
-                  <XAxis dataKey="year" tick={{fontSize: 10, fill: 'white'}} />
-                  <YAxis tick={{fontSize: 10, fill: 'white'}} />
-                  <RechartsTooltip />
+              <div style={{ height: "320px" }}>
+                <ResponsiveContainer width="100%" height="100%">
+                  <AreaChart data={realHashrateData}>
+                    <XAxis dataKey="year" tick={{fontSize: 10, fill: 'white'}} />
+                    <YAxis tick={{fontSize: 10, fill: 'white'}} domain={[0, 800]} />
+                    <RechartsTooltip />
                   <Area 
                     type="monotone" 
                     dataKey="btcHashrate" 
@@ -363,6 +364,7 @@ const BuyElaPage = () => {
                   />
                 </AreaChart>
               </ResponsiveContainer>
+              </div>
             </div>
           </div>
 
