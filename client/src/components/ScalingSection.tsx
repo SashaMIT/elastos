@@ -114,10 +114,14 @@ export function ScalingSection() {
                     // Try without cache busting as fallback
                     e.currentTarget.src = glassCircle1;
                     // Add second error handler to try placeholder if original also fails
-                    e.currentTarget.onerror = () => {
-                      console.error("Fallback image also failed, using placeholder");
-                      e.currentTarget.src = placeholderImage;
-                    };
+                    if (e.currentTarget) {
+                      e.currentTarget.onerror = () => {
+                        console.error("Fallback image also failed, using placeholder");
+                        if (e.currentTarget) {
+                          e.currentTarget.src = placeholderImage;
+                        }
+                      };
+                    }
                   }}
                 />
               </div>
@@ -151,10 +155,14 @@ export function ScalingSection() {
                     // Try without cache busting as fallback
                     e.currentTarget.src = glassCircle2;
                     // Add second error handler to try placeholder if original also fails
-                    e.currentTarget.onerror = () => {
-                      console.error("Fallback image also failed, using placeholder");
-                      e.currentTarget.src = placeholderImage;
-                    };
+                    if (e.currentTarget) {
+                      e.currentTarget.onerror = () => {
+                        console.error("Fallback image also failed, using placeholder");
+                        if (e.currentTarget) {
+                          e.currentTarget.src = placeholderImage;
+                        }
+                      };
+                    }
                   }}
                 />
               </div>
@@ -187,10 +195,14 @@ export function ScalingSection() {
                     // Try without cache busting as fallback
                     e.currentTarget.src = glassCircle3;
                     // Add second error handler to try placeholder if original also fails
-                    e.currentTarget.onerror = () => {
-                      console.error("Fallback image also failed, using placeholder");
-                      e.currentTarget.src = placeholderImage;
-                    };
+                    if (e.currentTarget) {
+                      e.currentTarget.onerror = () => {
+                        console.error("Fallback image also failed, using placeholder");
+                        if (e.currentTarget) {
+                          e.currentTarget.src = placeholderImage;
+                        }
+                      };
+                    }
                   }}
                 />
               </div>
