@@ -6,9 +6,9 @@ import { ExternalLink } from 'lucide-react';
 import { Link } from 'wouter';
 import { Lens } from '@/components/ui/lens';
 // Direct references to the image files in the new location
-const glassCircle1 = '/images/Glass Circles - #1.jpg';
-const glassCircle2 = '/images/Glass Circles - #2 2.jpg';
-const glassCircle3 = '/images/Glass Circles - #3 2.jpg';
+const glassCircle1 = '/images/Glass Circles - #1 2.png';
+const glassCircle2 = '/images/Glass Circles - #2 2.png';
+const glassCircle3 = '/images/Glass Circles - #3 2.png';
 const placeholderImage = '/images/placeholder-image.jpg';
 
 // Add timestamp to prevent caching
