@@ -105,7 +105,7 @@ export function MediaKitPage() {
           transition={{ duration: 0.5, delay: 0.3 }}
         >
           <Tabs defaultValue="logos" className="w-full">
-            <div className="flex flex-wrap justify-center gap-2 mb-8">
+            <div className="flex flex-wrap justify-start gap-2 mb-8">
               <TabsList className="flex bg-transparent gap-2 p-0 border-none">
                 <TabsTrigger 
                   value="logos" 
