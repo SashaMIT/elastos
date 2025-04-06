@@ -32,7 +32,7 @@ export function WorldComputerBanner() {
             transition={{ duration: 0.4, delay: 0.4 }}
             viewport={{ once: true }}
           >
-            <span className="px-6 py-2 bg-[#5C8EFF]/10 border border-[#5C8EFF]/30 text-white rounded-full text-sm font-medium whitespace-nowrap">No centralized control.</span>
+            <span className="px-6 py-2 bg-[#5C8EFF]/10 border border-[#5C8EFF]/30 text-white rounded-full text-sm font-[200] whitespace-nowrap">No centralized control.</span>
           </motion.div>
 
           <motion.div 
@@ -41,7 +41,7 @@ export function WorldComputerBanner() {
             transition={{ duration: 0.4, delay: 0.5 }}
             viewport={{ once: true }}
           >
-            <span className="px-6 py-2 bg-[#5C8EFF]/10 border border-[#5C8EFF]/30 text-white rounded-full text-sm font-medium whitespace-nowrap">No surveillance capitalism.</span>
+            <span className="px-6 py-2 bg-[#5C8EFF]/10 border border-[#5C8EFF]/30 text-white rounded-full text-sm font-[200] whitespace-nowrap">No surveillance capitalism.</span>
           </motion.div>
 
           <motion.div 
@@ -50,7 +50,7 @@ export function WorldComputerBanner() {
             transition={{ duration: 0.4, delay: 0.6 }}
             viewport={{ once: true }}
           >
-            <span className="px-6 py-2 bg-[#5C8EFF]/10 border border-[#5C8EFF]/30 text-white rounded-full text-sm font-medium whitespace-nowrap">No compromise on security.</span>
+            <span className="px-6 py-2 bg-[#5C8EFF]/10 border border-[#5C8EFF]/30 text-white rounded-full text-sm font-[200] whitespace-nowrap">No compromise on security.</span>
           </motion.div>
         </div>
 

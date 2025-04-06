@@ -82,7 +82,7 @@ export function TextScramble({
   }, [children, duration, speed, characterSet, trigger, onScrambleComplete, currentPhraseIndex, phrases]);
 
   return (
-    <MotionComponent className={className} {...rest} fontWeight={200}>
+    <MotionComponent className={`${className} font-[200]`} {...rest} >
       {displayText}
     </MotionComponent>
   );

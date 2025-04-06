@@ -147,7 +147,7 @@ export function LogoCarouselDemo() {
       <div className="container mx-auto flex flex-col items-center justify-center gap-4 px-4 text-center md:gap-10">
         <div className="mx-auto flex max-w-[58rem] flex-col items-center space-y-4">
           {/* Plain h2 heading with text-black in light mode and white in dark mode */}
-          <h2 className="text-3xl font-normal font-sans sm:text-4xl md:text-4xl lg:text-4xl text-black dark:text-white">
+          <h2 className="text-3xl font-[200] font-sans sm:text-4xl md:text-4xl lg:text-4xl text-black dark:text-white">
             Own a piece of Elastos
           </h2>
         </div>
