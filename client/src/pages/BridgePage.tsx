@@ -19,7 +19,9 @@ import {
   ChevronUp,
   RefreshCw,
   Timer,
-  Shuffle
+  Shuffle,
+  Plus,
+  Minus
 } from "lucide-react";
 
 import {
@@ -1173,54 +1175,106 @@ export function BridgePage() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.6 }}
             >
-              <h2 className="text-2xl font-[200] mb-6">Frequently Asked Questions</h2>
+              <div className="w-full overflow-hidden bg-card dark:bg-[#171717] border-0 shadow-none mt-8" style={{ boxShadow: 'none' }}>
+                <div className="p-6 pl-0 pb-2">
+                  <div className="flex flex-row items-center justify-between mb-2">
+                    <h2 className="text-2xl md:text-3xl font-[400] text-foreground dark:text-foreground mb-0" style={{ fontWeight: 400 }}>Your Questions</h2>
+                  </div>
+                </div>
+                <div className="p-6 pl-0 pt-0">
+                  <Accordion type="single" collapsible className="w-full" defaultValue="item-1">
+                    <AccordionItem 
+                      value="item-1" 
+                      key="item-1" 
+                      className="py-2 border-b border-border dark:border-neutral-800"
+                    >
+                      <AccordionTrigger className="flex flex-1 items-center py-2 text-left text-[15px] font-[200] text-foreground dark:text-foreground [&>svg]:hidden">
+                        <span className="flex-grow pr-4">How long does bridging between native chains take?</span>
+                        <div className="flex-shrink-0 w-6 h-6 rounded-full border border-[#F6921A] flex items-center justify-center">
+                          <div className="w-4 h-4 text-[#F6921A]" data-state-icon>
+                            <Plus className="h-4 w-4" />
+                          </div>
+                        </div>
+                      </AccordionTrigger>
+                      <AccordionContent className="pb-2 text-muted-foreground dark:text-muted-foreground font-[200]">
+                        Bridging between Elastos native chains (Main Chain, Smart Chain, and Identity Chain) usually takes between 15 to 25 minutes. During this time, you might not see your funds on either chain, but they will appear once the process is complete.
+                      </AccordionContent>
+                    </AccordionItem>
 
-              <Accordion type="single" collapsible className="bg-white/5 border border-white/10 rounded-xl overflow-hidden">
-                <AccordionItem value="item-1" className="border-white/10">
-                  <AccordionTrigger className="px-6 py-4 hover:bg-white/5 font-[200]">
-                    How long does bridging between native chains take?
-                  </AccordionTrigger>
-                  <AccordionContent className="px-6 pb-4 text-white/70 font-[200]">
-                    Bridging between Elastos native chains (Main Chain, Smart Chain, and Identity Chain) usually takes between 15 to 25 minutes. During this time, you might not see your funds on either chain, but they will appear once the process is complete.
-                  </AccordionContent>
-                </AccordionItem>
+                    <AccordionItem 
+                      value="item-2" 
+                      key="item-2" 
+                      className="py-2 border-b border-border dark:border-neutral-800"
+                    >
+                      <AccordionTrigger className="flex flex-1 items-center py-2 text-left text-[15px] font-[200] text-foreground dark:text-foreground [&>svg]:hidden">
+                        <span className="flex-grow pr-4">What are the minimum amounts for bridging to ERC-20 ELA?</span>
+                        <div className="flex-shrink-0 w-6 h-6 rounded-full border border-[#F6921A] flex items-center justify-center">
+                          <div className="w-4 h-4 text-[#F6921A]" data-state-icon>
+                            <Plus className="h-4 w-4" />
+                          </div>
+                        </div>
+                      </AccordionTrigger>
+                      <AccordionContent className="pb-2 text-muted-foreground dark:text-muted-foreground font-[200]">
+                        When using the Shadow Token Bridge, you need a minimum of 1000 ELA to bridge from Elastos Smart Chain to Ethereum (ERC-20 ELA). For the reverse direction, from Ethereum to Elastos Smart Chain, the minimum is just 1 ELA.
+                      </AccordionContent>
+                    </AccordionItem>
 
-                <AccordionItem value="item-2" className="border-white/10">
-                  <AccordionTrigger className="px-6 py-4 hover:bg-white/5 font-[200]">
-                    What are the minimum amounts for bridging to ERC-20 ELA?
-                  </AccordionTrigger>
-                  <AccordionContent className="px-6 pb-4 text-white/70 font-[200]">
-                    When using the Shadow Token Bridge, you need a minimum of 1000 ELA to bridge from Elastos Smart Chain to Ethereum (ERC-20 ELA). For the reverse direction, from Ethereum to Elastos Smart Chain, the minimum is just 1 ELA.
-                  </AccordionContent>
-                </AccordionItem>
+                    <AccordionItem 
+                      value="item-3" 
+                      key="item-3" 
+                      className="py-2 border-b border-border dark:border-neutral-800"
+                    >
+                      <AccordionTrigger className="flex flex-1 items-center py-2 text-left text-[15px] font-[200] text-foreground dark:text-foreground [&>svg]:hidden">
+                        <span className="flex-grow pr-4">Why do I need ETH for bridging to Ethereum?</span>
+                        <div className="flex-shrink-0 w-6 h-6 rounded-full border border-[#F6921A] flex items-center justify-center">
+                          <div className="w-4 h-4 text-[#F6921A]" data-state-icon>
+                            <Plus className="h-4 w-4" />
+                          </div>
+                        </div>
+                      </AccordionTrigger>
+                      <AccordionContent className="pb-2 text-muted-foreground dark:text-muted-foreground font-[200]">
+                        When bridging to Ethereum, you need some ETH in your wallet to pay for the transaction fees (gas fees) on the Ethereum network. These fees vary based on network congestion and are required for any transaction on Ethereum.
+                      </AccordionContent>
+                    </AccordionItem>
 
-                <AccordionItem value="item-3" className="border-white/10">
-                  <AccordionTrigger className="px-6 py-4 hover:bg-white/5 font-[200]">
-                    Why do I need ETH for bridging to Ethereum?
-                  </AccordionTrigger>
-                  <AccordionContent className="px-6 pb-4 text-white/70 font-[200]">
-                    When bridging to Ethereum, you need some ETH in your wallet to pay for the transaction fees (gas fees) on the Ethereum network. These fees vary based on network congestion and are required for any transaction on Ethereum.
-                  </AccordionContent>
-                </AccordionItem>
+                    <AccordionItem 
+                      value="item-4" 
+                      key="item-4" 
+                      className="py-2 border-b border-border dark:border-neutral-800"
+                    >
+                      <AccordionTrigger className="flex flex-1 items-center py-2 text-left text-[15px] font-[200] text-foreground dark:text-foreground [&>svg]:hidden">
+                        <span className="flex-grow pr-4">Is ERC-20 ELA the same as native ELA?</span>
+                        <div className="flex-shrink-0 w-6 h-6 rounded-full border border-[#F6921A] flex items-center justify-center">
+                          <div className="w-4 h-4 text-[#F6921A]" data-state-icon>
+                            <Plus className="h-4 w-4" />
+                          </div>
+                        </div>
+                      </AccordionTrigger>
+                      <AccordionContent className="pb-2 text-muted-foreground dark:text-muted-foreground font-[200]">
+                        No, ERC-20 ELA is a bridge token that represents ELA on the Ethereum blockchain. It is not native to the Elastos ecosystem but allows ELA to be used within Ethereum's ecosystem. Native ELA exists on Elastos Main Chain, Smart Chain, and Identity Chain.
+                      </AccordionContent>
+                    </AccordionItem>
 
-                <AccordionItem value="item-4" className="border-white/10">
-                  <AccordionTrigger className="px-6 py-4 hover:bg-white/5 font-[200]">
-                    Is ERC-20 ELA the same as native ELA?
-                  </AccordionTrigger>
-                  <AccordionContent className="px-6 pb-4 text-white/70 font-[200]">
-                    No, ERC-20 ELA is a bridge token that represents ELA on the Ethereum blockchain. It is not native to the Elastos ecosystem but allows ELA to be used within Ethereum's ecosystem. Native ELA exists on Elastos Main Chain, Smart Chain, and Identity Chain.
-                  </AccordionContent>
-                </AccordionItem>
-
-                <AccordionItem value="item-5" className="border-white/10">
-                  <AccordionTrigger className="px-6 py-4 hover:bg-white/5 font-[200]">
-                    Which wallet should I use for bridging?
-                  </AccordionTrigger>
-                  <AccordionContent className="px-6 pb-4 text-white/70 font-[200]">
-                    The Elastos Essentials App is recommended for all bridging operations as it provides a seamless experience for managing ELA across different chains. It's available on both iOS and Android.
-                  </AccordionContent>
-                </AccordionItem>
-              </Accordion>
+                    <AccordionItem 
+                      value="item-5" 
+                      key="item-5" 
+                      className="py-2 border-b border-border dark:border-neutral-800"
+                    >
+                      <AccordionTrigger className="flex flex-1 items-center py-2 text-left text-[15px] font-[200] text-foreground dark:text-foreground [&>svg]:hidden">
+                        <span className="flex-grow pr-4">Which wallet should I use for bridging?</span>
+                        <div className="flex-shrink-0 w-6 h-6 rounded-full border border-[#F6921A] flex items-center justify-center">
+                          <div className="w-4 h-4 text-[#F6921A]" data-state-icon>
+                            <Plus className="h-4 w-4" />
+                          </div>
+                        </div>
+                      </AccordionTrigger>
+                      <AccordionContent className="pb-2 text-muted-foreground dark:text-muted-foreground font-[200]">
+                        The Elastos Essentials App is recommended for all bridging operations as it provides a seamless experience for managing ELA across different chains. It's available on both iOS and Android.
+                      </AccordionContent>
+                    </AccordionItem>
+                  </Accordion>
+                </div>
+              </div>
             </motion.div>
 
             {/* Additional Help Section */}
