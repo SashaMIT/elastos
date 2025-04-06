@@ -129,7 +129,7 @@ export function MediaKitPage() {
             </div>
             
             <TabsContent value="logos" className="space-y-8">
-              <div className="flex justify-center">
+              <div className="flex justify-start">
                 <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6 max-w-6xl">
                   {logos.map((logo) => (
                     <LogoCard key={logo.id} logo={logo} />
@@ -139,7 +139,7 @@ export function MediaKitPage() {
             </TabsContent>
             
             <TabsContent value="colors" className="space-y-8">
-              <div className="flex justify-center">
+              <div className="flex justify-start">
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-6xl">
                   {colorPalettes.map((palette) => (
                     <ColorPaletteCard key={palette.id} palette={palette} />
@@ -149,7 +149,7 @@ export function MediaKitPage() {
             </TabsContent>
             
             <TabsContent value="typography" className="space-y-8">
-              <div className="flex justify-center">
+              <div className="flex justify-start">
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-6xl">
                   {fonts.map((font) => (
                     <FontCard key={font.id} font={font} />
