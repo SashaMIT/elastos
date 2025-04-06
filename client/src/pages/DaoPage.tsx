@@ -199,6 +199,13 @@ const whyItMatters = [
     icon: <Building2 className="w-8 h-8 text-[#5C8EFF]" />,
     gradient: "from-emerald-500/10 via-green-500/5 to-transparent",
     border: "border-emerald-500/20"
+  },
+  {
+    title: "Legal Recognition",
+    description: "Registered as a DAO LLC in the Marshall Islands, providing legal protection and recognition for governance participants.",
+    icon: <FileText className="w-8 h-8 text-[#5C8EFF]" />,
+    gradient: "from-amber-500/10 via-yellow-500/5 to-transparent",
+    border: "border-amber-500/20"
   }
 ];
 
