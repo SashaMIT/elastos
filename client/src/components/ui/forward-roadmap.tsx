@@ -1,6 +1,4 @@
-
 import React from 'react';
-import { motion } from "framer-motion";
 
 export const ForwardRoadmap = () => {
   const milestones = [
@@ -69,44 +67,33 @@ export const ForwardRoadmap = () => {
       </div>
 
       <div className="relative max-w-7xl mx-auto pb-20 px-4 md:px-8 lg:px-10">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 relative">
+        <div className="flex flex-col md:flex-row gap-8 relative">
           {milestones.map((milestone, index) => (
-            <motion.div
-              key={index}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: 0.1 * index }}
-              className="rounded-xl bg-[#1E1E1E] p-6 border border-white/10 hover:border-white/20 transition-all duration-300 flex flex-col h-full"
-            >
-              <div className="flex items-start gap-4 mb-6">
-                <div className="rounded-full bg-[#5C8EFF]/10 p-2">
-                  <div className="h-8 w-8 flex items-center justify-center">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#5C8EFF" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                      <circle cx="12" cy="12" r="10"></circle>
-                      <polyline points="12 6 12 12 16 14"></polyline>
-                    </svg>
-                  </div>
-                </div>
-                <div>
-                  <h3 className="text-xl font-[200] text-white">{milestone.quarter}</h3>
-                  <p className="text-sm text-white/50 font-[200]">Development Phase</p>
-                </div>
-              </div>
+            <div key={index} className="flex-1 relative">
+              <div className="bg-gradient-to-br from-[#8BABFF]/10 to-[#8BABFF]/5 rounded-xl p-6 shadow-lg hover:shadow-xl transition-shadow duration-300 border border-[#8BABFF]/20 relative overflow-visible">
+                {/* Background blur elements */}
+                <div className="absolute -bottom-20 -left-20 w-72 h-72 rounded-full bg-[#8BABFF]/10 blur-[100px]"></div>
 
-              <div className="space-y-4 flex-grow">
-                {milestone.items.map((item, idx) => (
-                  <div key={idx} className="relative">
-                    <h4 className="font-[200] text-md mb-1 text-[#5C8EFF]">
-                      {item.title}
-                    </h4>
-                    <p className="text-sm text-white/70 font-[200]">
-                      {item.details}
-                    </p>
-                  </div>
-                ))}
+                <div className="absolute -top-3 left-1/2 transform -translate-x-1/2 w-6 h-6 rounded-full bg-gradient-to-r from-[#F6921A] to-[#95B5FF] shadow-md z-20" />
+                <div className="text-center mb-6 relative z-10">
+                  <h3 className="text-2xl font-bold bg-gradient-to-r from-[#8BABFF] to-[#8BABFF]/70 bg-clip-text text-transparent font-[200]">
+                    {milestone.quarter}
+                  </h3>
+                </div>
+                <div className="space-y-6 relative z-10">
+                  {milestone.items.map((item, idx) => (
+                    <div key={idx} className="relative">
+                      <h4 className="font-[200] text-lg mb-2 text-[#8BABFF]">
+                        {item.title}
+                      </h4>
+                      <p className="text-sm text-gray-600 dark:text-gray-300 font-[200]">
+                        {item.details}
+                      </p>
+                    </div>
+                  ))}
+                </div>
               </div>
-            </motion.div>
+            </div>
           ))}
         </div>
       </div>
