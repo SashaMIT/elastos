@@ -1,4 +1,3 @@
-
 import React from "react";
 import { Download } from "lucide-react";
 import { motion } from "framer-motion";
@@ -68,7 +67,7 @@ export const FontCard = ({ font }: FontProps) => {
               0123456789
             </p>
           </div>
-          
+
           <div className="space-y-3">
             {font.files.map((file, index) => (
               <div 
@@ -79,14 +78,18 @@ export const FontCard = ({ font }: FontProps) => {
                   <p className="font-medium text-white">{file.name}</p>
                   <p className="text-sm text-white/70">Weight: {file.weight}</p>
                 </div>
-                <Button 
-                  size="sm"
-                  variant="outline"
+                <button 
                   onClick={() => downloadFont(file.path, file.path.split('/').pop() || file.name)}
-                  className="border-[#5C8EFF] text-[#5C8EFF] hover:bg-[#5C8EFF]/10"
+                  className="inline-flex px-3 py-2 bg-[rgba(92,142,255,0.15)] text-white rounded-full font-[200] transition-all items-center gap-2 border border-[rgba(92,142,255,0.25)] text-sm"
                 >
-                  <Download className="w-4 h-4 mr-1" /> Download
-                </Button>
+                  <Download className="h-4 w-4" />
+                  <span>Download</span>
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 35 34" fill="none">
+                    <circle cx="17.333" cy="17" r="16.75" stroke="#5C8EFF" strokeOpacity="0.25" strokeWidth="1.5"/>
+                    <path d="M17.3338 22.9405L23.2741 17.0002L17.3338 11.0598L16.4162 11.9774L20.7628 16.324H10.8622V17.6763H20.7628L16.4162 22.0229L17.3338 22.9405Z" fill="#5C8EFF"/>
+                    <path d="M20.7628 17.6638H10.8747V16.3365H20.7628H20.7929L20.7716 16.3152L16.4338 11.9774L17.3338 11.0775L23.2564 17.0002L17.3338 22.9228L16.4338 22.0229L20.7716 17.6851L20.7929 17.6638H20.7628Z" stroke="#5C8EFF" strokeOpacity="0.25" strokeWidth="1.5"/>
+                  </svg>
+                </button>
               </div>
             ))}
           </div>
