@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { motion } from "framer-motion";
 import { 
@@ -13,8 +14,7 @@ import {
 } from "lucide-react";
 import { StackedCircularFooter } from "@/components/ui/stacked-circular-footer";
 import { LogoCarouselDemo } from "@/components/LogoCarouselDemo";
-
-
+import { VerifyButton } from "@/components/ui/verify-button";
 
 const SocialChannelsPage: React.FC = () => {
   const socialChannels = [
@@ -23,8 +23,7 @@ const SocialChannelsPage: React.FC = () => {
       description: "Follow for the latest news, announcements, and project updates.",
       url: "https://x.com/ElastosInfo",
       icon: <svg xmlns="http://www.w3.org/2000/svg" className="h-10 w-10 text-white" viewBox="0 0 24 24" fill="currentColor"><path d="M18.901 1.153h3.68l-8.04 9.19L24 22.846h-7.406l-5.8-7.584-6.638 7.584H.474l8.6-9.83L0 1.154h7.594l5.243 6.932ZM17.61 20.644h2.039L6.486 3.24H4.298Z"/></svg>,
-      bgColor: "from-[#1DA1F2]/10 to-transparent",
-      borderColor: "border-[#1DA1F2]/20",
+      bgColor: "#1DA1F2",
       subscribers: "60.3K",
       buttonStyle: "blue" as const,
     },
@@ -33,8 +32,7 @@ const SocialChannelsPage: React.FC = () => {
       description: "Join our global community for discussions and real-time updates.",
       url: "https://t.me/elastosgroup",
       icon: <svg xmlns="http://www.w3.org/2000/svg" className="h-10 w-10 text-white" viewBox="0 0 496 512" fill="white"><path d="M248 8C111 8 0 119 0 256s111 248 248 248 248-111 248-248S385 8 248 8zm121.8 169.9l-40.7 191.8c-3 13.6-11.1 16.9-22.4 10.5l-62-45.7-29.9 28.8c-3.3 3.3-6.1 6.1-12.5 6.1l4.4-63.1 114.9-103.8c5-4.4-1.1-6.9-7.7-2.5l-142 89.4-61.2-19.1c-13.3-4.2-13.6-13.3 2.8-19.7l239.1-92.2c11.1-4 20.8 2.7 17.2 19.5z"></path></svg>,
-      bgColor: "from-[#0088cc]/10 to-transparent",
-      borderColor: "border-[#0088cc]/20",
+      bgColor: "#0088cc",
       subscribers: "5,381",
       buttonStyle: "orange" as const,
     },
@@ -43,8 +41,7 @@ const SocialChannelsPage: React.FC = () => {
       description: "Developer-focused community with technical discussions and support channels.",
       url: "https://discord.com/invite/elastos",
       icon: <svg xmlns="http://www.w3.org/2000/svg" className="h-10 w-10 text-white" viewBox="0 0 127.14 96.36" fill="currentColor"><path d="M107.7,8.07A105.15,105.15,0,0,0,81.47,0a72.06,72.06,0,0,0-3.36,6.83A97.68,97.68,0,0,0,49,6.83,72.37,72.37,0,0,0,45.64,0,105.89,105.89,0,0,0,19.39,8.09C2.79,32.65-1.71,56.6.54,80.21h0A105.73,105.73,0,0,0,32.71,96.36,77.7,77.7,0,0,0,39.6,85.25a68.42,68.42,0,0,1-10.85-5.18c.91-.66,1.8-1.34,2.66-2a75.57,75.57,0,0,0,64.32,0c.87.71,1.76,1.39,2.66,2a68.68,68.68,0,0,1-10.87,5.19,77,77,0,0,0,6.89,11.1A105.25,105.25,0,0,0,126.6,80.22h0C129.24,52.84,122.09,29.11,107.7,8.07ZM42.45,65.69C36.18,65.69,31,60,31,53s5-12.74,11.43-12.74S54,46,53.89,53,48.84,65.69,42.45,65.69Zm42.24,0C78.41,65.69,73.25,60,73.25,53s5-12.74,11.44-12.74S96.23,46,96.12,53,91.08,65.69,84.69,65.69Z"/></svg>,
-      bgColor: "from-[#5865F2]/10 to-transparent",
-      borderColor: "border-[#5865F2]/20",
+      bgColor: "#5865F2",
       subscribers: "1,983",
       buttonStyle: "blue" as const,
     },
@@ -53,8 +50,7 @@ const SocialChannelsPage: React.FC = () => {
       description: "Community discussions, AMAs, and ecosystem updates.",
       url: "https://www.reddit.com/r/Elastos/",
       icon: <svg xmlns="http://www.w3.org/2000/svg" className="h-10 w-10 text-white" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0zm5.01 4.744c.688 0 1.25.561 1.25 1.249a1.25 1.25 0 0 1-2.498.056l-2.597-.547-.8 3.747c1.824.07 3.48.632 4.674 1.488.308-.309.73-.491 1.207-.491.968 0 1.754.786 1.754 1.754 0 .716-.435 1.333-1.01 1.614a3.111 3.111 0 0 1 .042.52c0 2.694-3.13 4.87-7.004 4.87-3.874 0-7.004-2.176-7.004-4.87 0-.183.015-.366.043-.534A1.748 1.748 0 0 1 4.028 12c0-.968.786-1.754 1.754-1.754.463 0 .898.196 1.207.49 1.207-.883 2.878-1.43 4.744-1.487l.885-4.182a.342.342 0 0 1 .14-.197.35.35 0 0 1 .238-.042l2.906.617a1.214 1.214 0 0 1 1.108-.701zM9.25 12C8.561 12 8 12.562 8 13.25c0 .687.561 1.248 1.25 1.248.687 0 1.248-.561 1.248-1.249 0-.688-.561-1.249-1.249-1.249zm5.5 0c-.687 0-1.248.561-1.248 1.25 0 .687.561 1.248 1.249 1.248.688 0 1.249-.561 1.249-1.249 0-.687-.562-1.249-1.25-1.249zm-5.466 3.99a.327.327 0 0 0-.231.094.33.33 0 0 0 0 .463c.842.842 2.484.913 2.961.913.477 0 2.105-.056 2.961-.913a.361.361 0 0 0 .029-.463.33.33 0 0 0-.464 0c-.547.533-1.684.73-2.512.73-.828 0-1.979-.196-2.512-.73a.326.326 0 0 0-.232-.095z"/></svg>,
-      bgColor: "from-[#FF4500]/10 to-transparent",
-      borderColor: "border-[#FF4500]/20",
+      bgColor: "#FF4500",
       subscribers: "9.5K",
       buttonStyle: "orange" as const,
     },
@@ -63,8 +59,7 @@ const SocialChannelsPage: React.FC = () => {
       description: "Video tutorials, interviews, project updates, and conference recordings.",
       url: "https://www.youtube.com/channel/UCy5AjgpQIQq3bv8oy_L5WTQ",
       icon: <svg xmlns="http://www.w3.org/2000/svg" className="h-10 w-10 text-white" viewBox="0 0 24 24" fill="currentColor"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>,
-      bgColor: "from-[#FF0000]/10 to-transparent",
-      borderColor: "border-[#FF0000]/20",
+      bgColor: "#FF0000",
       subscribers: "2.14K",
       buttonStyle: "blue" as const,
     },
@@ -73,8 +68,7 @@ const SocialChannelsPage: React.FC = () => {
       description: "Project updates and news for the broader blockchain community.",
       url: "https://www.facebook.com/elastosorg/",
       icon: <svg xmlns="http://www.w3.org/2000/svg" className="h-10 w-10 text-white" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>,
-      bgColor: "from-[#1877F2]/10 to-transparent",
-      borderColor: "border-[#1877F2]/20",
+      bgColor: "#1877F2",
       subscribers: "15K",
       buttonStyle: "orange" as const,
     },
@@ -84,8 +78,6 @@ const SocialChannelsPage: React.FC = () => {
     <div className="min-h-screen bg-[#171717]">
       {/* Hero Section */}
       <section className="relative py-20 overflow-hidden">
-        {/* Background elements removed */}
-
         <div className="container mx-auto px-4 relative z-10">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -106,10 +98,12 @@ const SocialChannelsPage: React.FC = () => {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: 0.1 * index }}
-                className={`rounded-xl bg-gradient-to-br from-[#F6921A]/10 via-[#5C8EFF]/10 to-transparent p-6 border border-white/10 hover:border-white/20 transition-all duration-300 flex flex-col h-full`}
+                className="rounded-xl bg-[#1E1E1E] p-6 border border-white/10 hover:border-white/20 transition-all duration-300 flex flex-col h-full"
               >
                 <div className="flex items-start gap-4 mb-4">
-                  {channel.icon}
+                  <div className="rounded-full bg-opacity-10 p-2" style={{ backgroundColor: `${channel.bgColor}20` }}>
+                    {channel.icon}
+                  </div>
                   <div>
                     <h3 className="text-xl font-bold text-white">{channel.name}</h3>
                     <p className="text-sm text-white/50">{channel.subscribers} members</p>
@@ -118,16 +112,12 @@ const SocialChannelsPage: React.FC = () => {
 
                 <p className="text-white/70 mb-4 flex-grow">{channel.description}</p>
 
-                <a 
-                  href={channel.url} 
-                  target="_blank" 
-                  rel="noopener noreferrer"
-                  className={`px-3 py-2 ${channel.buttonStyle === "blue" ? 'bg-[rgba(92,142,255,0.10)] text-[#5C8EFF] border border-[rgba(92,142,255,0.50)]' : 'bg-[rgba(246,146,26,0.10)] text-[#F6921A] border border-[rgba(246,146,26,0.50)]'} rounded-full font-medium transition-all flex items-center gap-1 text-sm inline-flex`}
-                  style={{ width: 'fit-content' }}
+                <VerifyButton 
+                  href={channel.url}
+                  color={channel.buttonStyle}
                 >
-                  <span>Visit Channel</span>
-                  <ArrowRight className="ml-2 h-4 w-4" />
-                </a>
+                  Visit Channel
+                </VerifyButton>
               </motion.div>
             ))}
           </div>
@@ -155,7 +145,7 @@ const SocialChannelsPage: React.FC = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.1 }}
-              className="bg-[#171717] rounded-xl p-6 border border-white/10 hover:border-white/20 transition-all"
+              className="bg-[#1E1E1E] rounded-xl p-6 border border-white/10 hover:border-white/20 transition-all"
             >
               <div className="flex items-center gap-3 mb-4">
                 <div className="w-12 h-12 rounded-full bg-[#F6921A]/10 flex items-center justify-center">
@@ -210,7 +200,7 @@ const SocialChannelsPage: React.FC = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.2 }}
-              className="bg-[#171717] rounded-xl p-6 border border-white/10 hover:border-white/20 transition-all"
+              className="bg-[#1E1E1E] rounded-xl p-6 border border-white/10 hover:border-white/20 transition-all"
             >
               <div className="flex items-center gap-3 mb-4">
                 <div className="w-12 h-12 rounded-full bg-[#5C8EFF]/10 flex items-center justify-center">
@@ -273,7 +263,7 @@ const SocialChannelsPage: React.FC = () => {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="max-w-4xl mx-auto bg-gradient-to-br from-[#F6921A]/10 via-[#5C8EFF]/10 to-transparent rounded-2xl p-8 border border-white/10"
+            className="max-w-4xl mx-auto bg-[#1E1E1E] rounded-2xl p-8 border border-white/10"
           >
             <div className="flex items-center gap-4 mb-6">
               <div className="w-12 h-12 rounded-full bg-[#F6921A]/10 flex items-center justify-center border border-[#F6921A]/30">
