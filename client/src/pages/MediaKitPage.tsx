@@ -105,11 +105,28 @@ export function MediaKitPage() {
           transition={{ duration: 0.5, delay: 0.3 }}
         >
           <Tabs defaultValue="logos" className="w-full">
-            <TabsList className="w-full max-w-md mx-auto mb-8 bg-black/20 p-1">
-              <TabsTrigger value="logos" className="data-[state=active]:bg-[#F6921A]">Logos</TabsTrigger>
-              <TabsTrigger value="colors" className="data-[state=active]:bg-[#F6921A]">Colors</TabsTrigger>
-              <TabsTrigger value="typography" className="data-[state=active]:bg-[#F6921A]">Typography</TabsTrigger>
-            </TabsList>
+            <div className="flex flex-wrap justify-center gap-2 mb-8">
+              <TabsList className="flex bg-transparent gap-2 p-0 border-none">
+                <TabsTrigger 
+                  value="logos" 
+                  className="px-4 py-2 data-[state=active]:bg-[#F6921A]/10 data-[state=active]:border-[#F6921A]/30 data-[state=inactive]:bg-[#5C8EFF]/10 data-[state=inactive]:border-[#5C8EFF]/30 text-white rounded-full text-base font-medium border"
+                >
+                  Logos
+                </TabsTrigger>
+                <TabsTrigger 
+                  value="colors" 
+                  className="px-4 py-2 data-[state=active]:bg-[#F6921A]/10 data-[state=active]:border-[#F6921A]/30 data-[state=inactive]:bg-[#5C8EFF]/10 data-[state=inactive]:border-[#5C8EFF]/30 text-white rounded-full text-base font-medium border"
+                >
+                  Colors
+                </TabsTrigger>
+                <TabsTrigger 
+                  value="typography" 
+                  className="px-4 py-2 data-[state=active]:bg-[#F6921A]/10 data-[state=active]:border-[#F6921A]/30 data-[state=inactive]:bg-[#5C8EFF]/10 data-[state=inactive]:border-[#5C8EFF]/30 text-white rounded-full text-base font-medium border"
+                >
+                  Typography
+                </TabsTrigger>
+              </TabsList>
+            </div>
             
             <TabsContent value="logos" className="space-y-8">
               <div className="flex justify-center">
