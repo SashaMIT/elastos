@@ -1,4 +1,3 @@
-
 import React, { useState } from "react";
 import { motion } from "framer-motion";
 import { 
@@ -60,13 +59,13 @@ export function BridgePage() {
   const [activeStepIndex, setActiveStepIndex] = useState(0);
   const [shadowStep, setShadowStep] = useState(0);
   const [expandedSection, setExpandedSection] = useState<string | null>("native");
-  
+
   const handleNextStep = () => {
     if (activeStepIndex < nativeBridgeSteps.length - 1) {
       setActiveStepIndex(prev => prev + 1);
     }
   };
-  
+
   const handlePrevStep = () => {
     if (activeStepIndex > 0) {
       setActiveStepIndex(prev => prev - 1);
@@ -173,7 +172,7 @@ export function BridgePage() {
                 <Info className="w-5 h-5 mr-2 text-[#F7921A]" />
                 Understanding ELA Token Types
               </h2>
-              
+
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div className="bg-white/5 rounded-lg p-5 border border-white/10">
                   <h3 className="text-xl font-medium mb-3 text-[#F7921A]">Native ELA</h3>
@@ -192,7 +191,7 @@ export function BridgePage() {
                     </li>
                   </ul>
                 </div>
-                
+
                 <div className="bg-white/5 rounded-lg p-5 border border-white/10">
                   <h3 className="text-xl font-medium mb-3 text-[#8BABFF]">ERC-20 ELA</h3>
                   <ul className="space-y-2">
@@ -206,13 +205,13 @@ export function BridgePage() {
                   </ul>
                 </div>
               </div>
-              
+
               <div className="mt-6 bg-white/5 p-6 rounded-lg border border-white/10">
                 <div className="flex items-start mb-4">
                   <Smartphone className="w-6 h-6 mr-3 text-[#F7921A] flex-shrink-0 mt-1" />
                   <p className="text-xl text-white/90 font-medium leading-relaxed">For all transactions, you will need the Elastos Essentials App, available on iOS and Android.</p>
                 </div>
-                
+
                 <div className="flex flex-wrap justify-center mt-4 gap-4">
                   <a
                     href="https://apps.apple.com/us/app/elastos-essentials/id1568931743"
@@ -223,7 +222,7 @@ export function BridgePage() {
                     <img src="/images/Bridge/apple-logo.svg" alt="App Store" className="w-5 h-5" />
                     <span className="text-white">App Store</span>
                   </a>
-                  
+
                   <a
                     href="https://play.google.com/store/apps/details?id=org.elastos.essentials.app"
                     target="_blank"
@@ -268,7 +267,7 @@ export function BridgePage() {
                     <ChevronDown className="w-5 h-5 text-white/60" />
                   )}
                 </motion.button>
-                
+
                 <motion.button
                   className={`flex items-center justify-between p-5 rounded-xl border transition-all duration-300 ${
                     expandedSection === "erc20" 
@@ -314,7 +313,7 @@ export function BridgePage() {
                     </div>
                     <h2 className="text-2xl font-semibold">Native Chain Bridging Guide</h2>
                   </div>
-                  
+
                   <div className="mb-6 bg-white/5 p-4 rounded-lg border border-white/10">
                     <h3 className="text-lg font-medium mb-2 flex items-center">
                       <Info className="w-5 h-5 mr-2 text-[#F7921A]" />
@@ -331,7 +330,7 @@ export function BridgePage() {
                       </li>
                     </ul>
                   </div>
-                  
+
                   {/* Interactive Steps Section */}
                   <div className="border border-white/10 rounded-xl overflow-hidden">
                     {/* Progress Bar */}
@@ -349,7 +348,7 @@ export function BridgePage() {
                         />
                       </div>
                     </div>
-                    
+
                     {/* Steps Display */}
                     <div className="p-6">
                       <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
@@ -381,7 +380,7 @@ export function BridgePage() {
                             ))}
                           </div>
                         </div>
-                        
+
                         {/* Active Step Details */}
                         <div className="md:col-span-2">
                           <motion.div
@@ -400,12 +399,12 @@ export function BridgePage() {
                                 {nativeBridgeSteps[activeStepIndex].title}
                               </h3>
                             </div>
-                            
+
                             <div className="mb-8">
                               <p className="text-white/80 mb-4">
                                 {nativeBridgeSteps[activeStepIndex].description}
                               </p>
-                              
+
                               {/* Step Screenshot */}
                               <div className="rounded-lg border border-white/10 overflow-hidden mb-6 shadow-lg max-w-sm mx-auto md:max-w-[70%]">
                                 <img 
@@ -414,7 +413,7 @@ export function BridgePage() {
                                   className="w-full h-auto object-contain"
                                 />
                               </div>
-                              
+
                               <div className="bg-white/5 p-4 rounded-lg border border-white/10">
                                 <h4 className="text-sm font-medium uppercase text-white/60 mb-2">Tips</h4>
                                 <ul className="space-y-2">
@@ -427,7 +426,7 @@ export function BridgePage() {
                                 </ul>
                               </div>
                             </div>
-                            
+
                             <div className="flex justify-between">
                               <button
                                 onClick={handlePrevStep}
@@ -441,7 +440,7 @@ export function BridgePage() {
                                 <ArrowRight className="w-4 h-4 mr-2 rotate-180" />
                                 Previous
                               </button>
-                              
+
                               <button
                                 onClick={handleNextStep}
                                 disabled={activeStepIndex === nativeBridgeSteps.length - 1}
@@ -460,7 +459,7 @@ export function BridgePage() {
                       </div>
                     </div>
                   </div>
-                  
+
                   <div className="mt-6 bg-white/5 p-4 rounded-lg border border-white/10 flex items-start">
                     <Info className="w-5 h-5 mr-3 text-white/60 flex-shrink-0 mt-1" />
                     <div>
@@ -489,14 +488,14 @@ export function BridgePage() {
                     </div>
                     <h2 className="text-2xl font-semibold">ERC-20 Bridging Guide</h2>
                   </div>
-                  
+
                   <div className="mb-6 bg-[#8BABFF]/10 p-4 rounded-lg border border-[#8BABFF]/20 flex items-start">
                     <AlertTriangle className="w-5 h-5 mr-3 text-red-500 flex-shrink-0 mt-1" />
                     <p className="text-white/90">
                       <span className="font-medium">Important:</span> Bridging here uses third-party services. Please bridge at your own risk.
                     </p>
                   </div>
-                  
+
                   <div className="mb-6 bg-white/5 p-4 rounded-lg border border-white/10">
                     <h3 className="text-lg font-medium mb-2 flex items-center">
                       <Info className="w-5 h-5 mr-2 text-[#8BABFF]" />
@@ -517,7 +516,7 @@ export function BridgePage() {
                       </li>
                     </ul>
                   </div>
-                  
+
                   <div className="mb-6">
                     <Tabs defaultValue="shadow">
                       <TabsList className="w-full mb-4 bg-white/5">
@@ -528,7 +527,7 @@ export function BridgePage() {
                           Chainge Finance Bridge
                         </TabsTrigger>
                       </TabsList>
-                      
+
                       <TabsContent value="shadow" className="border border-white/10 rounded-lg p-4">
                         <div className="space-y-4">
                           <div className="mb-4">
@@ -542,7 +541,7 @@ export function BridgePage() {
                               Use the Glide Finance bridge powered by Shadowtokens protocol to securely move assets between Elastos Smart Chain, Ethereum, BSC, and Heco chains with minimal fees.
                             </p>
                           </div>
-                          
+
                           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
                             <div className="bg-white/5 rounded-xl border border-white/10 overflow-hidden">
                               <div className="bg-gradient-to-r from-[#8BABFF]/20 to-transparent p-4 border-b border-white/10">
@@ -561,7 +560,7 @@ export function BridgePage() {
                                     <div className="text-xl font-semibold">Minimum of 1000 ELA</div>
                                   </div>
                                 </div>
-                                
+
                                 <div className="flex items-center">
                                   <div className="w-12 h-12 bg-[#8BABFF]/10 rounded-full flex items-center justify-center mr-4 flex-shrink-0">
                                     <ArrowUp className="w-5 h-5 text-[#8BABFF]" />
@@ -573,7 +572,7 @@ export function BridgePage() {
                                 </div>
                               </div>
                             </div>
-                            
+
                             <div className="bg-white/5 rounded-xl border border-white/10 overflow-hidden">
                               <div className="bg-gradient-to-r from-[#8BABFF]/20 to-transparent p-4 border-b border-white/10">
                                 <h4 className="font-semibold text-lg flex items-center">
@@ -591,7 +590,7 @@ export function BridgePage() {
                                     <div className="text-xl font-semibold">Up to 24 hours for $10,000+</div>
                                   </div>
                                 </div>
-                                
+
                                 <div className="flex items-center">
                                   <div className="w-12 h-12 bg-[#8BABFF]/10 rounded-full flex items-center justify-center mr-4 flex-shrink-0">
                                     <Timer className="w-5 h-5 text-[#8BABFF]" />
@@ -604,7 +603,7 @@ export function BridgePage() {
                               </div>
                             </div>
                           </div>
-                          
+
                           <div className="flex justify-center mb-6">
                             <a 
                               href="https://glidefinance.io/bridge" 
@@ -616,7 +615,7 @@ export function BridgePage() {
                               <ExternalLink className="w-5 h-5 ml-2" />
                             </a>
                           </div>
-                          
+
                           <div className="border border-white/10 rounded-xl overflow-hidden">
                             {/* Progress Bar */}
                             <div className="bg-white/5 p-4 border-b border-white/10">
@@ -631,12 +630,10 @@ export function BridgePage() {
                                 />
                               </div>
                             </div>
-                            
+
                             {/* Steps Display */}
                             <div className="p-6">
-                              <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-                                {/* Steps Sidebar */}
-                                <div className="md:border-r md:border-white/10 pr-6">
+                              <div className="grid grid-cols-1 md:grid-cols-3 gap-6"><div className="md:border-r md:border-white/10 pr-6">
                                   <h4 className="font-medium mb-4">All Steps</h4>
                                   <div className="space-y-2">
                                     {[
@@ -663,7 +660,7 @@ export function BridgePage() {
                                     ))}
                                   </div>
                                 </div>
-                                
+
                                 {/* Step Content */}
                                 <div className="col-span-2">
                                   {shadowStep === 0 && (
@@ -677,17 +674,17 @@ export function BridgePage() {
                                           <p className="text-white/60">Step 1 of 7</p>
                                         </div>
                                       </div>
-                                      
+
                                       <div className="mb-6">
                                         <div className="bg-white/5 rounded-lg border border-white/10 p-5 mb-4">
                                           <p className="text-base text-white/80 mb-4">
                                             First, select the networks you'd like to bridge to and from. One of the networks must be Elastos as the Glide bridge doesn't support bridging ETH → Heco or Heco → ETH.
                                           </p>
-                                          <div className="rounded-lg overflow-hidden border border-white/10 md:max-w-[70%] md:mx-auto">
+                                          <div className="rounded-lg overflow-hidden border border-white/10 md:max-w-[49%] md:mx-auto">
                                             <img src="/images/Bridge/glide-bridge-steps/step1.png" alt="Select networks" className="w-full" />
                                           </div>
                                         </div>
-                                        
+
                                         <div className="bg-[#8BABFF]/10 rounded-lg border border-[#8BABFF]/20 p-4">
                                           <h4 className="flex items-center text-[#8BABFF] font-medium mb-2">
                                             <Info className="w-4 h-4 mr-2" />
@@ -705,7 +702,7 @@ export function BridgePage() {
                                           </ul>
                                         </div>
                                       </div>
-                                      
+
                                       <div className="flex justify-end space-x-3 pt-4 border-t border-white/10">
                                         <button 
                                           onClick={() => setShadowStep(1)}
@@ -717,7 +714,7 @@ export function BridgePage() {
                                       </div>
                                     </div>
                                   )}
-                                  
+
                                   {shadowStep === 1 && (
                                     <div>
                                       <div className="flex items-start mb-5">
@@ -729,17 +726,17 @@ export function BridgePage() {
                                           <p className="text-white/60">Step 2 of 7</p>
                                         </div>
                                       </div>
-                                      
+
                                       <div className="mb-6">
                                         <div className="bg-white/5 rounded-lg border border-white/10 p-5 mb-4">
                                           <p className="text-base text-white/80 mb-4">
                                             Choose the token you wish to bridge. For this guide, we're selecting ELA.
                                           </p>
-                                          <div className="rounded-lg overflow-hidden border border-white/10 md:max-w-[70%] md:mx-auto">
+                                          <div className="rounded-lg overflow-hidden border border-white/10 md:max-w-[49%] md:mx-auto">
                                             <img src="/images/Bridge/glide-bridge-steps/step2.png" alt="Select ELA token" className="w-full" />
                                           </div>
                                         </div>
-                                        
+
                                         <div className="bg-[#8BABFF]/10 rounded-lg border border-[#8BABFF]/20 p-4">
                                           <h4 className="flex items-center text-[#8BABFF] font-medium mb-2">
                                             <Info className="w-4 h-4 mr-2" />
@@ -757,7 +754,7 @@ export function BridgePage() {
                                           </ul>
                                         </div>
                                       </div>
-                                      
+
                                       <div className="flex justify-between space-x-3 pt-4 border-t border-white/10">
                                         <button 
                                           onClick={() => setShadowStep(0)}
@@ -776,7 +773,7 @@ export function BridgePage() {
                                       </div>
                                     </div>
                                   )}
-                                  
+
                                   {shadowStep === 2 && (
                                     <div>
                                       <div className="flex items-start mb-5">
@@ -788,17 +785,17 @@ export function BridgePage() {
                                           <p className="text-white/60">Step 3 of 7</p>
                                         </div>
                                       </div>
-                                      
+
                                       <div className="mb-6">
                                         <div className="bg-white/5 rounded-lg border border-white/10 p-5 mb-4">
                                           <p className="text-base text-white/80 mb-4">
                                             Enter the amount of ELA you wish to bridge. Remember the minimum requirements from ESC to ETH is 1000 ELA.
                                           </p>
-                                          <div className="rounded-lg overflow-hidden border border-white/10 md:max-w-[70%] md:mx-auto">
+                                          <div className="rounded-lg overflow-hidden border border-white/10 md:max-w-[49%] md:mx-auto">
                                             <img src="/images/Bridge/glide-bridge-steps/step3.png" alt="Enter amount" className="w-full" />
                                           </div>
                                         </div>
-                                        
+
                                         <div className="bg-[#8BABFF]/10 rounded-lg border border-[#8BABFF]/20 p-4">
                                           <h4 className="flex items-center text-[#8BABFF] font-medium mb-2">
                                             <Info className="w-4 h-4 mr-2" />
@@ -820,7 +817,7 @@ export function BridgePage() {
                                           </ul>
                                         </div>
                                       </div>
-                                      
+
                                       <div className="flex justify-between space-x-3 pt-4 border-t border-white/10">
                                         <button 
                                           onClick={() => setShadowStep(1)}
@@ -839,7 +836,7 @@ export function BridgePage() {
                                       </div>
                                     </div>
                                   )}
-                                  
+
                                   {shadowStep === 3 && (
                                     <div>
                                       <div className="flex items-start mb-5">
@@ -851,17 +848,17 @@ export function BridgePage() {
                                           <p className="text-white/60">Step 4 of 7</p>
                                         </div>
                                       </div>
-                                      
+
                                       <div className="mb-6">
                                         <div className="bg-white/5 rounded-lg border border-white/10 p-5 mb-4">
                                           <p className="text-base text-white/80 mb-4">
                                             If this is your first time bridging this token, you'll need to enable it. Click the "Enable" button and confirm the transaction in your wallet.
                                           </p>
-                                          <div className="rounded-lg overflow-hidden border border-white/10 md:max-w-[70%] md:mx-auto">
+                                          <div className="rounded-lg overflow-hidden border border-white/10 md:max-w-[49%] md:mx-auto">
                                             <img src="/images/Bridge/glide-bridge-steps/step4.png" alt="Enable token" className="w-full" />
                                           </div>
                                         </div>
-                                        
+
                                         <div className="bg-[#8BABFF]/10 rounded-lg border border-[#8BABFF]/20 p-4">
                                           <h4 className="flex items-center text-[#8BABFF] font-medium mb-2">
                                             <Info className="w-4 h-4 mr-2" />
@@ -883,7 +880,7 @@ export function BridgePage() {
                                           </ul>
                                         </div>
                                       </div>
-                                      
+
                                       <div className="flex justify-between space-x-3 pt-4 border-t border-white/10">
                                         <button 
                                           onClick={() => setShadowStep(2)}
@@ -902,7 +899,7 @@ export function BridgePage() {
                                       </div>
                                     </div>
                                   )}
-                                  
+
                                   {shadowStep === 4 && (
                                     <div>
                                       <div className="flex items-start mb-5">
@@ -914,17 +911,17 @@ export function BridgePage() {
                                           <p className="text-white/60">Step 5 of 7</p>
                                         </div>
                                       </div>
-                                      
+
                                       <div className="mb-6">
                                         <div className="bg-white/5 rounded-lg border border-white/10 p-5 mb-4">
                                           <p className="text-base text-white/80 mb-4">
                                             Click the "Bridge" button to initiate the bridge transaction. You'll need to confirm this transaction in your wallet.
                                           </p>
-                                          <div className="rounded-lg overflow-hidden border border-white/10 md:max-w-[70%] md:mx-auto">
+                                          <div className="rounded-lg overflow-hidden border border-white/10 md:max-w-[49%] md:mx-auto">
                                             <img src="/images/Bridge/glide-bridge-steps/step5.png" alt="Bridge token" className="w-full" />
                                           </div>
                                         </div>
-                                        
+
                                         <div className="bg-[#8BABFF]/10 rounded-lg border border-[#8BABFF]/20 p-4">
                                           <h4 className="flex items-center text-[#8BABFF] font-medium mb-2">
                                             <AlertTriangle className="w-4 h-4 mr-2 text-red-500" />
@@ -946,7 +943,7 @@ export function BridgePage() {
                                           </ul>
                                         </div>
                                       </div>
-                                      
+
                                       <div className="flex justify-between space-x-3 pt-4 border-t border-white/10">
                                         <button 
                                           onClick={() => setShadowStep(3)}
@@ -965,7 +962,7 @@ export function BridgePage() {
                                       </div>
                                     </div>
                                   )}
-                                  
+
                                   {shadowStep === 5 && (
                                     <div>
                                       <div className="flex items-start mb-5">
@@ -977,17 +974,17 @@ export function BridgePage() {
                                           <p className="text-white/60">Step 6 of 7</p>
                                         </div>
                                       </div>
-                                      
+
                                       <div className="mb-6">
                                         <div className="bg-white/5 rounded-lg border border-white/10 p-5 mb-4">
                                           <p className="text-base text-white/80 mb-4">
                                             After your transaction is confirmed, you'll see it listed in your history. The tokens will arrive in your destination wallet once the bridge process is complete.
                                           </p>
-                                          <div className="rounded-lg overflow-hidden border border-white/10 md:max-w-[70%] md:mx-auto">
+                                          <div className="rounded-lg overflow-hidden border border-white/10 md:max-w-[49%] md:mx-auto">
                                             <img src="/images/Bridge/glide-bridge-steps/step6.png" alt="View bridged tokens" className="w-full" />
                                           </div>
                                         </div>
-                                        
+
                                         <div className="bg-[#8BABFF]/10 rounded-lg border border-[#8BABFF]/20 p-4">
                                           <h4 className="flex items-center text-[#8BABFF] font-medium mb-2">
                                             <Info className="w-4 h-4 mr-2" />
@@ -1005,7 +1002,7 @@ export function BridgePage() {
                                           </ul>
                                         </div>
                                       </div>
-                                      
+
                                       <div className="flex justify-between space-x-3 pt-4 border-t border-white/10">
                                         <button 
                                           onClick={() => setShadowStep(4)}
@@ -1024,7 +1021,7 @@ export function BridgePage() {
                                       </div>
                                     </div>
                                   )}
-                                  
+
                                   {shadowStep === 6 && (
                                     <div>
                                       <div className="flex items-start mb-5">
@@ -1036,17 +1033,17 @@ export function BridgePage() {
                                           <p className="text-white/60">Step 7 of 7</p>
                                         </div>
                                       </div>
-                                      
+
                                       <div className="mb-6">
                                         <div className="bg-white/5 rounded-lg border border-white/10 p-5 mb-4">
                                           <p className="text-base text-white/80 mb-4">
                                             Once the bridge process is complete, you'll see your tokens in your destination wallet. For ERC-20 tokens on Ethereum, you may need to add the token to your wallet to see the balance.
                                           </p>
-                                          <div className="rounded-lg overflow-hidden border border-white/10 md:max-w-[70%] md:mx-auto">
+                                          <div className="rounded-lg overflow-hidden border border-white/10 md:max-w-[49%] md:mx-auto">
                                             <img src="/images/Bridge/glide-bridge-steps/step7.png" alt="After bridging" className="w-full" />
                                           </div>
                                         </div>
-                                        
+
                                         <div className="bg-[#8BABFF]/10 rounded-lg border border-[#8BABFF]/20 p-4">
                                           <h4 className="flex items-center text-[#8BABFF] font-medium mb-2">
                                             <Info className="w-4 h-4 mr-2" />
@@ -1068,7 +1065,7 @@ export function BridgePage() {
                                           </ul>
                                         </div>
                                       </div>
-                                      
+
                                       <div className="flex justify-between space-x-3 pt-4 border-t border-white/10">
                                         <button 
                                           onClick={() => setShadowStep(5)}
@@ -1095,7 +1092,7 @@ export function BridgePage() {
                           </div>
                         </div>
                       </TabsContent>
-                      
+
                       <TabsContent value="change" className="border border-white/10 rounded-lg p-4">
                         <div className="space-y-6">
                           <div className="flex items-center justify-between">
@@ -1110,7 +1107,7 @@ export function BridgePage() {
                               </p>
                             </div>
                           </div>
-                          
+
                           <div className="rounded-xl overflow-hidden border border-white/10 shadow-lg">
                             <img 
                               src="/images/Bridge/chainge/chainge-interface.png" 
@@ -1118,7 +1115,7 @@ export function BridgePage() {
                               className="w-full object-cover"
                             />
                           </div>
-                          
+
                           <div className="bg-white/5 p-5 rounded-lg border border-white/10">
                             <h4 className="text-lg font-medium mb-4 flex items-center">
                               <Info className="w-5 h-5 mr-2 text-[#8BABFF]" />
@@ -1143,7 +1140,7 @@ export function BridgePage() {
                       </TabsContent>
                     </Tabs>
                   </div>
-                  
+
                   <div className="bg-white/5 p-4 rounded-lg border border-white/10 flex items-start">
                     <AlertTriangle className="w-5 h-5 mr-3 text-red-500 flex-shrink-0 mt-1" />
                     <div>
@@ -1165,7 +1162,7 @@ export function BridgePage() {
               transition={{ duration: 0.5, delay: 0.6 }}
             >
               <h2 className="text-2xl font-semibold mb-6">Frequently Asked Questions</h2>
-              
+
               <Accordion type="single" collapsible className="bg-white/5 border border-white/10 rounded-xl overflow-hidden">
                 <AccordionItem value="item-1" className="border-white/10">
                   <AccordionTrigger className="px-6 py-4 hover:bg-white/5">
@@ -1175,7 +1172,7 @@ export function BridgePage() {
                     Bridging between Elastos native chains (Main Chain, Smart Chain, and Identity Chain) usually takes between 15 to 25 minutes. During this time, you might not see your funds on either chain, but they will appear once the process is complete.
                   </AccordionContent>
                 </AccordionItem>
-                
+
                 <AccordionItem value="item-2" className="border-white/10">
                   <AccordionTrigger className="px-6 py-4 hover:bg-white/5">
                     What are the minimum amounts for bridging to ERC-20 ELA?
@@ -1184,7 +1181,7 @@ export function BridgePage() {
                     When using the Shadow Token Bridge, you need a minimum of 1000 ELA to bridge from Elastos Smart Chain to Ethereum (ERC-20 ELA). For the reverse direction, from Ethereum to Elastos Smart Chain, the minimum is just 1 ELA.
                   </AccordionContent>
                 </AccordionItem>
-                
+
                 <AccordionItem value="item-3" className="border-white/10">
                   <AccordionTrigger className="px-6 py-4 hover:bg-white/5">
                     Why do I need ETH for bridging to Ethereum?
@@ -1193,7 +1190,7 @@ export function BridgePage() {
                     When bridging to Ethereum, you need some ETH in your wallet to pay for the transaction fees (gas fees) on the Ethereum network. These fees vary based on network congestion and are required for any transaction on Ethereum.
                   </AccordionContent>
                 </AccordionItem>
-                
+
                 <AccordionItem value="item-4" className="border-white/10">
                   <AccordionTrigger className="px-6 py-4 hover:bg-white/5">
                     Is ERC-20 ELA the same as native ELA?
@@ -1202,7 +1199,7 @@ export function BridgePage() {
                     No, ERC-20 ELA is a bridge token that represents ELA on the Ethereum blockchain. It is not native to the Elastos ecosystem but allows ELA to be used within Ethereum's ecosystem. Native ELA exists on Elastos Main Chain, Smart Chain, and Identity Chain.
                   </AccordionContent>
                 </AccordionItem>
-                
+
                 <AccordionItem value="item-5" className="border-white/10">
                   <AccordionTrigger className="px-6 py-4 hover:bg-white/5">
                     Which wallet should I use for bridging?
@@ -1225,7 +1222,7 @@ export function BridgePage() {
               <p className="text-white/70 mb-6 max-w-2xl mx-auto">
                 If you have any questions or need additional assistance with bridging your ELA tokens, join the Elastos community channels for support.
               </p>
-              
+
               <div className="flex flex-wrap justify-center gap-4">
                 <a 
                   href="https://t.me/elastosgroup" 
@@ -1238,7 +1235,7 @@ export function BridgePage() {
                   </svg>
                   <span>Telegram Community</span>
                 </a>
-                
+
                 <a 
                   href="https://discord.gg/elastos" 
                   target="_blank" 
