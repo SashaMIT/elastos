@@ -280,10 +280,10 @@ const DaoPage: React.FC = () => {
         <div className="absolute inset-0 bg-gradient-to-b from-black/10 via-[#171717]/80 to-[#171717]"></div>
 
         {/* Hero content overlay */}
-        <div className="absolute inset-0 flex items-center justify-center">
+        <div className="absolute inset-0 flex items-center justify-center mt-20">
           <div className="container mx-auto px-4">
             <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-              <div className="text-center mb-12">
+              <div className="text-center mb-12 pt-16">
                 <motion.div
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
