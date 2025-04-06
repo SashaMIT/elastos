@@ -549,7 +549,7 @@ export function BridgePage() {
                               <span className="mr-2 font-[200]">Shadow Token Bridge via</span>
                               <a href="https://glidefinance.io/bridge" target="_blank" rel="noopener noreferrer" className="text-[#8BABFF] hover:underline flex items-center font-[200]">
                                 Glide Finance
-                              </<ExternalLink className="w-4 h-4 ml-1" />
+                                <ExternalLink className="w-4 h-4 ml-1" />
                               </a>
                             </h3>
                             <p className="text-white/80 mb-3 text-base leading-relaxed font-[200]">
