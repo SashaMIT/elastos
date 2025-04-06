@@ -168,14 +168,14 @@ export function BridgePage() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.2 }}
             >
-              <h2 className="text-2xl font-semibold mb-4 flex items-center">
+              <h2 className="text-2xl font-[200] mb-4 flex items-center">
                 <Info className="w-5 h-5 mr-2 text-[#F7921A]" />
                 Understanding ELA Token Types
               </h2>
 
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div className="bg-white/5 rounded-lg p-5 border border-white/10">
-                  <h3 className="text-xl font-medium mb-3 text-[#F7921A]">Native ELA</h3>
+                  <h3 className="text-xl font-[200] mb-3 text-[#F7921A]">Native ELA</h3>
                   <ul className="space-y-2">
                     <li className="flex items-start">
                       <span className="inline-block w-2 h-2 rounded-full bg-[#F7921A] mt-2 mr-2"></span>
@@ -193,7 +193,7 @@ export function BridgePage() {
                 </div>
 
                 <div className="bg-white/5 rounded-lg p-5 border border-white/10">
-                  <h3 className="text-xl font-medium mb-3 text-[#8BABFF]">ERC-20 ELA</h3>
+                  <h3 className="text-xl font-[200] mb-3 text-[#8BABFF]">ERC-20 ELA</h3>
                   <ul className="space-y-2">
                     <li className="flex items-start">
                       <span className="inline-block w-2 h-2 rounded-full bg-[#8BABFF] mt-2 mr-2"></span>
@@ -209,7 +209,7 @@ export function BridgePage() {
               <div className="mt-6 bg-white/5 p-6 rounded-lg border border-white/10">
                 <div className="flex items-start mb-4">
                   <Smartphone className="w-6 h-6 mr-3 text-[#F7921A] flex-shrink-0 mt-1" />
-                  <p className="text-xl text-white/90 font-medium leading-relaxed">For all transactions, you will need the Elastos Essentials App, available on iOS and Android.</p>
+                  <p className="text-xl text-white/90 font-[200] leading-relaxed">For all transactions, you will need the Elastos Essentials App, available on iOS and Android.</p>
                 </div>
 
                 <div className="flex flex-wrap justify-center mt-4 gap-4">
@@ -259,8 +259,8 @@ export function BridgePage() {
                       <Repeat className="w-6 h-6 text-[#F7921A]" />
                     </div>
                     <div className="text-left">
-                      <h3 className="font-semibold text-xl">Native ELA Chain Bridging</h3>
-                      <p className="text-base text-white/80">Between Elastos Main Chain, Smart Chain, and Identity Chain</p>
+                      <h3 className="font-[200] text-xl">Native ELA Chain Bridging</h3>
+                      <p className="text-base text-white/80 font-[200]">Between Elastos Main Chain, Smart Chain, and Identity Chain</p>
                     </div>
                   </div>
                   {expandedSection === "native" ? (
@@ -288,8 +288,8 @@ export function BridgePage() {
                       <Shield className="w-6 h-6 text-[#8BABFF]" />
                     </div>
                     <div className="text-left">
-                      <h3 className="font-semibold text-xl">ERC-20 Bridging</h3>
-                      <p className="text-base text-white/80">Between Elastos Smart Chain ELA and ERC-20 ELA</p>
+                      <h3 className="font-[200] text-xl">ERC-20 Bridging</h3>
+                      <p className="text-base text-white/80 font-[200]">Between Elastos Smart Chain ELA and ERC-20 ELA</p>
                     </div>
                   </div>
                   {expandedSection === "erc20" ? (
@@ -313,15 +313,15 @@ export function BridgePage() {
                     <div className="w-10 h-10 rounded-full bg-[#F7921A]/20 flex items-center justify-center mr-3">
                       <Repeat className="w-5 h-5 text-[#F7921A]" />
                     </div>
-                    <h2 className="text-2xl font-semibold">Native Chain Bridging Guide</h2>
+                    <h2 className="text-2xl font-[200]">Native Chain Bridging Guide</h2>
                   </div>
 
                   <div className="mb-6 bg-white/5 p-4 rounded-lg border border-white/10">
-                    <h3 className="text-lg font-medium mb-2 flex items-center">
+                    <h3 className="text-lg font-[200] mb-2 flex items-center">
                       <Info className="w-5 h-5 mr-2 text-[#F7921A]" />
                       What You Need:
                     </h3>
-                    <ul className="space-y-2 text-white/80">
+                    <ul className="space-y-2 text-white/80 font-[200]">
                       <li className="flex items-start">
                         <CheckCircle2 className="w-4 h-4 text-[#F7921A] mr-2 mt-1" />
                         <span>Elastos Essentials App (make sure you already have a wallet)</span>
@@ -338,8 +338,8 @@ export function BridgePage() {
                     {/* Progress Bar */}
                     <div className="bg-white/5 p-4 border-b border-white/10">
                       <div className="flex justify-between items-center mb-2">
-                        <h3 className="font-medium">Progress</h3>
-                        <span className="text-sm text-white/60">Step {activeStepIndex + 1} of {nativeBridgeSteps.length}</span>
+                        <h3 className="font-[200]">Progress</h3>
+                        <span className="text-sm text-white/60 font-[200]">Step {activeStepIndex + 1} of {nativeBridgeSteps.length}</span>
                       </div>
                       <div className="w-full bg-white/10 h-2 rounded-full overflow-hidden">
                         <motion.div 
@@ -356,7 +356,7 @@ export function BridgePage() {
                       <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
                         {/* Steps Sidebar */}
                         <div className="md:border-r md:border-white/10 pr-6">
-                          <h4 className="font-medium mb-4">All Steps</h4>
+                          <h4 className="font-[200] mb-4">All Steps</h4>
                           <div className="space-y-2">
                             {nativeBridgeSteps.map((step, index) => (
                               <button
@@ -375,7 +375,7 @@ export function BridgePage() {
                                 }`}>
                                   {index + 1}
                                 </div>
-                                <span className={index === activeStepIndex ? "font-medium" : "text-white/60"}>
+                                <span className={index === activeStepIndex ? "font-[200]" : "text-white/60 font-[200] "}>
                                   {step.title}
                                 </span>
                               </button>
@@ -399,13 +399,13 @@ export function BridgePage() {
                                   {nativeBridgeSteps[activeStepIndex].icon}
                                 </div>
                               </div>
-                              <h3 className="text-xl font-semibold">
+                              <h3 className="text-xl font-[200]">
                                 {nativeBridgeSteps[activeStepIndex].title}
                               </h3>
                             </div>
 
                             <div className="mb-8">
-                              <p className="text-white/80 mb-4">
+                              <p className="text-white/80 mb-4 font-[200]">
                                 {nativeBridgeSteps[activeStepIndex].description}
                               </p>
 
@@ -419,8 +419,8 @@ export function BridgePage() {
                               </div>
 
                               <div className="bg-white/5 p-4 rounded-lg border border-white/10">
-                                <h4 className="text-sm font-medium uppercase text-white/60 mb-2">Tips</h4>
-                                <ul className="space-y-2">
+                                <h4 className="text-sm font-[200] uppercase text-white/60 mb-2">Tips</h4>
+                                <ul className="space-y-2 font-[200]">
                                   {nativeBridgeSteps[activeStepIndex].tips.map((tip, i) => (
                                     <li key={i} className="flex items-start">
                                       <span className="inline-block w-1.5 h-1.5 rounded-full bg-[#F7921A] mt-2 mr-2"></span>
@@ -475,8 +475,8 @@ export function BridgePage() {
                   <div className="mt-6 bg-[#F7921A]/10 p-4 rounded-lg border border-[#F7921A]/30 flex items-start">
                     <Info className="w-5 h-5 mr-3 text-[#F7921A] flex-shrink-0 mt-1" />
                     <div>
-                      <h4 className="font-medium mb-1 text-[#F7921A]">Important Note</h4>
-                      <p className="text-base text-white/90 leading-relaxed">
+                      <h4 className="font-[200] mb-1 text-[#F7921A]">Important Note</h4>
+                      <p className="text-base text-white/90 font-[200] leading-relaxed">
                         The transaction will take 15 to 25 minutes. During this time, you might not see the funds on both chains. 
                         Don't worry—the funds will appear after the process is complete.
                       </p>
@@ -498,22 +498,22 @@ export function BridgePage() {
                     <div className="w-10 h-10 rounded-full bg-[#8BABFF]/20 flex items-center justify-center mr-3">
                       <Shield className="w-5 h-5 text-[#8BABFF]" />
                     </div>
-                    <h2 className="text-2xl font-semibold">ERC-20 Bridging Guide</h2>
+                    <h2 className="text-2xl font-[200]">ERC-20 Bridging Guide</h2>
                   </div>
 
                   <div className="mb-6 bg-[#8BABFF]/10 p-4 rounded-lg border border-[#8BABFF]/20 flex items-start">
                     <AlertTriangle className="w-5 h-5 mr-3 text-red-500 flex-shrink-0 mt-1" />
-                    <p className="text-white/90">
-                      <span className="font-medium">Important:</span> Bridging here uses third-party services. Please bridge at your own risk.
+                    <p className="text-white/90 font-[200]">
+                      <span className="font-[200]">Important:</span> Bridging here uses third-party services. Please bridge at your own risk.
                     </p>
                   </div>
 
                   <div className="mb-6 bg-white/5 p-4 rounded-lg border border-white/10">
-                    <h3 className="text-lg font-medium mb-2 flex items-center">
+                    <h3 className="text-lg font-[200] mb-2 flex items-center">
                       <Info className="w-5 h-5 mr-2 text-[#8BABFF]" />
                       What You Need:
                     </h3>
-                    <ul className="space-y-2 text-white/80">
+                    <ul className="space-y-2 text-white/80 font-[200]">
                       <li className="flex items-start">
                         <CheckCircle2 className="w-4 h-4 text-[#8BABFF] mr-2 mt-1" />
                         <span>Elastos Essentials App or Elastos Essentials Wallet</span>
@@ -532,10 +532,10 @@ export function BridgePage() {
                   <div className="mb-6">
                     <Tabs defaultValue="shadow">
                       <TabsList className="w-full mb-4 bg-white/5">
-                        <TabsTrigger value="shadow" className="flex-1 data-[state=active]:bg-[#8BABFF]/20 data-[state=active]:text-white">
+                        <TabsTrigger value="shadow" className="flex-1 data-[state=active]:bg-[#8BABFF]/20 data-[state=active]:text-white font-[200]">
                           Shadow Token Bridge via Glide Finance
                         </TabsTrigger>
-                        <TabsTrigger value="change" className="flex-1 data-[state=active]:bg-[#8BABFF]/20 data-[state=active]:text-white">
+                        <TabsTrigger value="change" className="flex-1 data-[state=active]:bg-[#8BABFF]/20 data-[state=active]:text-white font-[200]">
                           Chainge Finance Bridge
                         </TabsTrigger>
                       </TabsList>
@@ -543,13 +543,13 @@ export function BridgePage() {
                       <TabsContent value="shadow" className="border border-white/10 rounded-lg p-4">
                         <div className="space-y-4">
                           <div className="mb-4">
-                            <h3 className="text-xl font-semibold mb-3 flex items-center">
-                              <span className="mr-2">Shadow Token Bridge via</span>
-                              <a href="https://glidefinance.io/bridge" target="_blank" rel="noopener noreferrer" className="text-[#8BABFF] hover:underline flex items-center">
+                            <h3 className="text-xl font-[200] mb-3 flex items-center">
+                              <span className="mr-2 font-[200]">Shadow Token Bridge via</span>
+                              <a href="https://glidefinance.io/bridge" target="_blank" rel="noopener noreferrer" className="text-[#8BABFF] hover:underline flex items-center font-[200]">
                                 Glide Finance <ExternalLink className="w-4 h-4 ml-1" />
                               </a>
                             </h3>
-                            <p className="text-white/80 mb-3 text-base leading-relaxed">
+                            <p className="text-white/80 mb-3 text-base leading-relaxed font-[200]">
                               Use the Glide Finance bridge powered by Shadowtokens protocol to securely move assets between Elastos Smart Chain, Ethereum, BSC, and Heco chains with minimal fees.
                             </p>
                           </div>
@@ -557,7 +557,7 @@ export function BridgePage() {
                           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
                             <div className="bg-white/5 rounded-xl border border-white/10 overflow-hidden">
                               <div className="bg-gradient-to-r from-[#8BABFF]/20 to-transparent p-4 border-b border-white/10">
-                                <h4 className="font-semibold text-lg flex items-center">
+                                <h4 className="font-[200] text-lg flex items-center">
                                   <ArrowDownCircle className="w-5 h-5 text-[#8BABFF] mr-2" />
                                   Minimum Requirements
                                 </h4>
@@ -568,8 +568,8 @@ export function BridgePage() {
                                     <ArrowDown className="w-5 h-5 text-[#8BABFF]" />
                                   </div>
                                   <div className="bg-white/5 p-3 rounded-md border border-white/5 flex-1">
-                                    <div className="text-sm text-white/60 mb-1">From ESC to ETH:</div>
-                                    <div className="text-xl font-semibold">Minimum of 1000 ELA</div>
+                                    <div className="text-sm text-white/60 font-[200] mb-1">From ESC to ETH:</div>
+                                    <div className="text-xl font-[200]">Minimum of 1000 ELA</div>
                                   </div>
                                 </div>
 
@@ -578,8 +578,8 @@ export function BridgePage() {
                                     <ArrowUp className="w-5 h-5 text-[#8BABFF]" />
                                   </div>
                                   <div className="bg-white/5 p-3 rounded-md border border-white/5 flex-1">
-                                    <div className="text-sm text-white/60 mb-1">From ETH to ESC:</div>
-                                    <div className="text-xl font-semibold">Minimum of 1 ELA</div>
+                                    <div className="text-sm text-white/60 font-[200] mb-1">From ETH to ESC:</div>
+                                    <div className="text-xl font-[200]">Minimum of 1 ELA</div>
                                   </div>
                                 </div>
                               </div>
@@ -587,7 +587,7 @@ export function BridgePage() {
 
                             <div className="bg-white/5 rounded-xl border border-white/10 overflow-hidden">
                               <div className="bg-gradient-to-r from-[#8BABFF]/20 to-transparent p-4 border-b border-white/10">
-                                <h4 className="font-semibold text-lg flex items-center">
+                                <h4 className="font-[200] text-lg flex items-center">
                                   <Clock className="w-5 h-5 text-[#8BABFF] mr-2" />
                                   Transaction Timing
                                 </h4>
@@ -598,8 +598,8 @@ export function BridgePage() {
                                     <Clock className="w-5 h-5 text-[#8BABFF]" />
                                   </div>
                                   <div className="bg-white/5 p-3 rounded-md border border-white/5 flex-1">
-                                    <div className="text-sm text-white/60 mb-1">Large Transactions:</div>
-                                    <div className="text-xl font-semibold">Up to 24 hours for $10,000+</div>
+                                    <div className="text-sm text-white/60 font-[200] mb-1">Large Transactions:</div>
+                                    <div className="text-xl font-[200]">Up to 24 hours for $10,000+</div>
                                   </div>
                                 </div>
 
@@ -608,8 +608,8 @@ export function BridgePage() {
                                     <Timer className="w-5 h-5 text-[#8BABFF]" />
                                   </div>
                                   <div className="bg-white/5 p-3 rounded-md border border-white/5 flex-1">
-                                    <div className="text-sm text-white/60 mb-1">Standard Transactions:</div>
-                                    <div className="text-xl font-semibold">Minutes to hours for under $10,000</div>
+                                    <div className="text-sm text-white/60 font-[200] mb-1">Standard Transactions:</div>
+                                    <div className="text-xl font-[200]">Minutes to hours for under $10,000</div>
                                   </div>
                                 </div>
                               </div>
@@ -621,7 +621,7 @@ export function BridgePage() {
                               href="https://glidefinance.io/bridge" 
                               target="_blank" 
                               rel="noopener noreferrer" 
-                              className="flex items-center bg-[#8BABFF] hover:bg-[#8BABFF]/90 transition-colors text-black px-6 py-3 rounded-lg font-semibold text-lg"
+                              className="flex items-center bg-[#8BABFF] hover:bg-[#8BABFF]/90 transition-colors text-black px-6 py-3 rounded-lg font-[200] text-lg"
                             >
                               Open Glide Finance Bridge
                               <ExternalLink className="w-5 h-5 ml-2" />
@@ -632,8 +632,8 @@ export function BridgePage() {
                             {/* Progress Bar */}
                             <div className="bg-white/5 p-4 border-b border-white/10">
                               <div className="flex justify-between items-center mb-2">
-                                <h3 className="font-medium">Shadow Token Bridge via Glide Finance</h3>
-                                <span className="text-sm text-white/60">Step-by-step guide</span>
+                                <h3 className="font-[200]">Progress</h3>
+                                <span className="text-sm text-white/60 font-[200]">Step-by-step guide</span>
                               </div>
                               <div className="w-full bg-white/10 h-2 rounded-full overflow-hidden">
                                 <div 
@@ -646,7 +646,7 @@ export function BridgePage() {
                             {/* Steps Display */}
                             <div className="p-6">
                               <div className="grid grid-cols-1 md:grid-cols-3 gap-6"><div className="md:border-r md:border-white/10 pr-6">
-                                  <h4 className="font-medium mb-4">All Steps</h4>
+                                  <h4 className="font-[200] mb-4">All Steps</h4>
                                   <div className="space-y-2">
                                     {[
                                       "Select Networks",
@@ -667,7 +667,7 @@ export function BridgePage() {
                                         }`}
                                       >
                                         <div className="w-6 h-6 rounded-full bg-[#8BABFF]/30 flex items-center justify-center mr-3 text-xs text-[#8BABFF]">{index + 1}</div>
-                                        <span className="text-sm">{step}</span>
+                                        <span className="text-sm font-[200]">{step}</span>
                                       </button>
                                     ))}
                                   </div>
@@ -682,14 +682,14 @@ export function BridgePage() {
                                           <Shield className="w-5 h-5 text-[#8BABFF]" />
                                         </div>
                                         <div>
-                                          <h3 className="text-xl font-medium mb-1">Select Networks for Bridge Direction</h3>
-                                          <p className="text-white/60">Step 1 of 7</p>
+                                          <h3 className="text-xl font-[200] mb-1">Select Networks for Bridge Direction</h3>
+                                          <p className="text-white/60 font-[200]">Step 1 of 7</p>
                                         </div>
                                       </div>
 
                                       <div className="mb-6">
                                         <div className="bg-white/5 rounded-lg border border-white/10 p-5 mb-4">
-                                          <p className="text-base text-white/80 mb-4">
+                                          <p className="text-base text-white/80 mb-4 font-[200]">
                                             First, select the networks you'd like to bridge to and from. One of the networks must be Elastos as the Glide bridge doesn't support bridging ETH → Heco or Heco → ETH.
                                           </p>
                                           <div className="rounded-lg overflow-hidden border border-white/10 md:max-w-[35%] md:mx-auto">
@@ -698,11 +698,11 @@ export function BridgePage() {
                                         </div>
 
                                         <div className="bg-[#8BABFF]/10 rounded-lg border border-[#8BABFF]/20 p-4">
-                                          <h4 className="flex items-center text-[#8BABFF] font-medium mb-2">
+                                          <h4 className="flex items-center text-[#8BABFF] font-[200] mb-2">
                                             <Info className="w-4 h-4 mr-2" />
                                             Tips
                                           </h4>
-                                          <ul className="space-y-2 text-sm">
+                                          <ul className="space-y-2 text-sm font-[200]">
                                             <li className="flex items-start">
                                               <CheckCircle2 className="w-4 h-4 text-[#8BABFF] mr-2 mt-0.5" />
                                               <span>Make sure you're connected to the correct wallet address</span>
@@ -718,7 +718,7 @@ export function BridgePage() {
                                       <div className="flex justify-end space-x-3 pt-4 border-t border-white/10">
                                         <button 
                                           onClick={() => setShadowStep(1)}
-                                          className="flex items-center bg-gradient-to-r from-[#8BABFF] to-[#6495ED] hover:brightness-110 transition-all text-black px-4 py-2 rounded-lg font-medium"
+                                          className="flex items-center bg-gradient-to-r from-[#8BABFF] to-[#6495ED] hover:brightness-110 transition-all text-black px-4 py-2 rounded-lg font-[200]"
                                         >
                                           Next Step
                                           <ArrowRight className="w-4 h-4 ml-2" />
@@ -734,14 +734,14 @@ export function BridgePage() {
                                           <Shuffle className="w-5 h-5 text-[#8BABFF]" />
                                         </div>
                                         <div>
-                                          <h3 className="text-xl font-medium mb-1">Select Token to Bridge</h3>
-                                          <p className="text-white/60">Step 2 of 7</p>
+                                          <h3 className="text-xl font-[200] mb-1">Select Token to Bridge</h3>
+                                          <p className="text-white/60 font-[200]">Step 2 of 7</p>
                                         </div>
                                       </div>
 
                                       <div className="mb-6">
                                         <div className="bg-white/5 rounded-lg border border-white/10 p-5 mb-4">
-                                          <p className="text-base text-white/80 mb-4">
+                                          <p className="text-base text-white/80 mb-4 font-[200]">
                                             Choose the token you wish to bridge. For this guide, we're selecting ELA.
                                           </p>
                                           <div className="rounded-lg overflow-hidden border border-white/10 md:max-w-[35%] md:mx-auto">
@@ -750,11 +750,11 @@ export function BridgePage() {
                                         </div>
 
                                         <div className="bg-[#8BABFF]/10 rounded-lg border border-[#8BABFF]/20 p-4">
-                                          <h4 className="flex items-center text-[#8BABFF] font-medium mb-2">
+                                          <h4 className="flex items-center text-[#8BABFF] font-[200] mb-2">
                                             <Info className="w-4 h-4 mr-2" />
                                             Tips
                                           </h4>
-                                          <ul className="space-y-2 text-sm">
+                                          <ul className="space-y-2 text-sm font-[200]">
                                             <li className="flex items-start">
                                               <CheckCircle2 className="w-4 h-4 text-[#8BABFF] mr-2 mt-0.5" />
                                               <span>Search for "ELA" in the dropdown if it doesn't appear immediately</span>
@@ -770,14 +770,14 @@ export function BridgePage() {
                                       <div className="flex justify-between space-x-3 pt-4 border-t border-white/10">
                                         <button 
                                           onClick={() => setShadowStep(0)}
-                                          className="flex items-center bg-white/10 hover:bg-white/20 transition-all text-white px-4 py-2 rounded-lg font-medium"
+                                          className="flex items-center bg-white/10 hover:bg-white/20 transition-all text-white px-4 py-2 rounded-lg font-[200]"
                                         >
                                           <ArrowRight className="w-4 h-4 mr-2 rotate-180" />
                                           Previous
                                         </button>
                                         <button 
                                           onClick={() => setShadowStep(2)}
-                                          className="flex items-center bg-gradient-to-r from-[#8BABFF] to-[#6495ED] hover:brightness-110 transition-all text-black px-4 py-2 rounded-lg font-medium"
+                                          className="flex items-center bg-gradient-to-r from-[#8BABFF] to-[#6495ED] hover:brightness-110 transition-all text-black px-4 py-2 rounded-lg font-[200]"
                                         >
                                           Next Step
                                           <ArrowRight className="w-4 h-4 ml-2" />
@@ -793,14 +793,14 @@ export function BridgePage() {
                                           <ArrowDownCircle className="w-5 h-5 text-[#8BABFF]" />
                                         </div>
                                         <div>
-                                          <h3 className="text-xl font-medium mb-1">Enter the Amount to Bridge</h3>
-                                          <p className="text-white/60">Step 3 of 7</p>
+                                          <h3 className="text-xl font-[200] mb-1">Enter the Amount to Bridge</h3>
+                                          <p className="text-white/60 font-[200]">Step 3 of 7</p>
                                         </div>
                                       </div>
 
                                       <div className="mb-6">
                                         <div className="bg-white/5 rounded-lg border border-white/10 p-5 mb-4">
-                                          <p className="text-base text-white/80 mb-4">
+                                          <p className="text-base text-white/80 mb-4 font-[200]">
                                             Enter the amount of ELA you wish to bridge. Remember the minimum requirements from ESC to ETH is 1000 ELA.
                                           </p>
                                           <div className="rounded-lg overflow-hidden border border-white/10 md:max-w-[35%] md:mx-auto">
@@ -809,11 +809,11 @@ export function BridgePage() {
                                         </div>
 
                                         <div className="bg-[#8BABFF]/10 rounded-lg border border-[#8BABFF]/20 p-4">
-                                          <h4 className="flex items-center text-[#8BABFF] font-medium mb-2">
+                                          <h4 className="flex items-center text-[#8BABFF] font-[200] mb-2">
                                             <Info className="w-4 h-4 mr-2" />
                                             Important Information
                                           </h4>
-                                          <ul className="space-y-2 text-sm">
+                                          <ul className="space-y-2 text-sm font-[200]">
                                             <li className="flex items-start">
                                               <CheckCircle2 className="w-4 h-4 text-[#8BABFF] mr-2 mt-0.5" />
                                               <span>From ESC to ETH: Minimum is 1000 ELA</span>
@@ -833,14 +833,14 @@ export function BridgePage() {
                                       <div className="flex justify-between space-x-3 pt-4 border-t border-white/10">
                                         <button 
                                           onClick={() => setShadowStep(1)}
-                                          className="flex items-center bg-white/10 hover:bg-white/20 transition-all text-white px-4 py-2 rounded-lg font-medium"
+                                          className="flex items-center bg-white/10 hover:bg-white/20 transition-all text-white px-4 py-2 rounded-lg font-[200]"
                                         >
                                           <ArrowRight className="w-4 h-4 mr-2 rotate-180" />
                                           Previous
                                         </button>
                                         <button 
                                           onClick={() => setShadowStep(3)}
-                                          className="flex items-center bg-gradient-to-r from-[#8BABFF] to-[#6495ED] hover:brightness-110 transition-all text-black px-4 py-2 rounded-lg font-medium"
+                                          className="flex items-center bg-gradient-to-r from-[#8BABFF] to-[#6495ED] hover:brightness-110 transition-all text-black px-4 py-2 rounded-lg font-[200]"
                                         >
                                           Next Step
                                           <ArrowRight className="w-4 h-4 ml-2" />
@@ -856,14 +856,14 @@ export function BridgePage() {
                                           <RefreshCw className="w-5 h-5 text-[#8BABFF]" />
                                         </div>
                                         <div>
-                                          <h3 className="text-xl font-medium mb-1">Enable Token (If First Time)</h3>
-                                          <p className="text-white/60">Step 4 of 7</p>
+                                          <h3 className="text-xl font-[200] mb-1">Enable Token (If First Time)</h3>
+                                          <p className="text-white/60 font-[200]">Step 4 of 7</p>
                                         </div>
                                       </div>
 
                                       <div className="mb-6">
                                         <div className="bg-white/5 rounded-lg border border-white/10 p-5 mb-4">
-                                          <p className="text-base text-white/80 mb-4">
+                                          <p className="text-base text-white/80 mb-4 font-[200]">
                                             If this is your first time bridging this token, you'll need to enable it. Click the "Enable" button and confirm the transaction in your wallet.
                                           </p>
                                           <div className="rounded-lg overflow-hidden border border-white/10 md:max-w-[35%] md:mx-auto">
@@ -872,11 +872,11 @@ export function BridgePage() {
                                         </div>
 
                                         <div className="bg-[#8BABFF]/10 rounded-lg border border-[#8BABFF]/20 p-4">
-                                          <h4 className="flex items-center text-[#8BABFF] font-medium mb-2">
+                                          <h4 className="flex items-center text-[#8BABFF] font-[200] mb-2">
                                             <Info className="w-4 h-4 mr-2" />
                                             Tips
                                           </h4>
-                                          <ul className="space-y-2 text-sm">
+                                          <ul className="space-y-2 text-sm font-[200]">
                                             <li className="flex items-start">
                                               <CheckCircle2 className="w-4 h-4 text-[#8BABFF] mr-2 mt-0.5" />
                                               <span>This step allows the bridge contract to interact with your tokens</span>
@@ -896,14 +896,14 @@ export function BridgePage() {
                                       <div className="flex justify-between space-x-3 pt-4 border-t border-white/10">
                                         <button 
                                           onClick={() => setShadowStep(2)}
-                                          className="flex items-center bg-white/10 hover:bg-white/20 transition-all text-white px-4 py-2 rounded-lg font-medium"
+                                          className="flex items-center bg-white/10 hover:bg-white/20 transition-all text-white px-4 py-2 rounded-lg font-[200]"
                                         >
                                           <ArrowRight className="w-4 h-4 mr-2 rotate-180" />
                                           Previous
                                         </button>
                                         <button 
                                           onClick={() => setShadowStep(4)}
-                                          className="flex items-center bg-gradient-to-r from-[#8BABFF] to-[#6495ED] hover:brightness-110 transition-all text-black px-4 py-2 rounded-lg font-medium"
+                                          className="flex items-center bg-gradient-to-r from-[#8BABFF] to-[#6495ED] hover:brightness-110 transition-all text-black px-4 py-2 rounded-lg font-[200]"
                                         >
                                           Next Step
                                           <ArrowRight className="w-4 h-4 ml-2" />
@@ -919,14 +919,14 @@ export function BridgePage() {
                                           <Shield className="w-5 h-5 text-[#8BABFF]" />
                                         </div>
                                         <div>
-                                          <h3 className="text-xl font-medium mb-1">Bridge Your Token</h3>
-                                          <p className="text-white/60">Step 5 of 7</p>
+                                          <h3 className="text-xl font-[200] mb-1">Bridge Your Token</h3>
+                                          <p className="text-white/60 font-[200]">Step 5 of 7</p>
                                         </div>
                                       </div>
 
                                       <div className="mb-6">
                                         <div className="bg-white/5 rounded-lg border border-white/10 p-5 mb-4">
-                                          <p className="text-base text-white/80 mb-4">
+                                          <p className="text-base text-white/80 mb-4 font-[200]">
                                             Click the "Bridge" button to initiate the bridge transaction. You'll need to confirm this transaction in your wallet.
                                           </p>
                                           <div className="rounded-lg overflow-hidden border border-white/10 md:max-w-[35%] md:mx-auto">
@@ -935,11 +935,11 @@ export function BridgePage() {
                                         </div>
 
                                         <div className="bg-[#8BABFF]/10 rounded-lg border border-[#8BABFF]/20 p-4">
-                                          <h4 className="flex items-center text-[#8BABFF] font-medium mb-2">
+                                          <h4 className="flex items-center text-[#8BABFF] font-[200] mb-2">
                                             <AlertTriangle className="w-4 h-4 mr-2 text-red-500" />
                                             Important Notes
                                           </h4>
-                                          <ul className="space-y-2 text-sm">
+                                          <ul className="space-y-2 text-sm font-[200]">
                                             <li className="flex items-start">
                                               <CheckCircle2 className="w-4 h-4 text-[#8BABFF] mr-2 mt-0.5" />
                                               <span>Double-check all details before confirming the transaction</span>
@@ -959,14 +959,14 @@ export function BridgePage() {
                                       <div className="flex justify-between space-x-3 pt-4 border-t border-white/10">
                                         <button 
                                           onClick={() => setShadowStep(3)}
-                                          className="flex items-center bg-white/10 hover:bg-white/20 transition-all text-white px-4 py-2 rounded-lg font-medium"
+                                          className="flex items-center bg-white/10 hover:bg-white/20 transition-all text-white px-4 py-2 rounded-lg font-[200]"
                                         >
                                           <ArrowRight className="w-4 h-4 mr-2 rotate-180" />
                                           Previous
                                         </button>
                                         <button 
                                           onClick={() => setShadowStep(5)}
-                                          className="flex items-center bg-gradient-to-r from-[#8BABFF] to-[#6495ED] hover:brightness-110 transition-all text-black px-4 py-2 rounded-lg font-medium"
+                                          className="flex items-center bg-gradient-to-r from-[#8BABFF] to-[#6495ED] hover:brightness-110 transition-all text-black px-4 py-2 rounded-lg font-[200]"
                                         >
                                           Next Step
                                           <ArrowRight className="w-4 h-4 ml-2" />
@@ -982,14 +982,14 @@ export function BridgePage() {
                                           <WalletCards className="w-5 h-5 text-[#8BABFF]" />
                                         </div>
                                         <div>
-                                          <h3 className="text-xl font-medium mb-1">View Your Bridged Tokens</h3>
-                                          <p className="text-white/60">Step 6 of 7</p>
+                                          <h3 className="text-xl font-[200] mb-1">View Your Bridged Tokens</h3>
+                                          <p className="text-white/60 font-[200]">Step 6 of 7</p>
                                         </div>
                                       </div>
 
                                       <div className="mb-6">
                                         <div className="bg-white/5 rounded-lg border border-white/10 p-5 mb-4">
-                                          <p className="text-base text-white/80 mb-4">
+                                          <p className="text-base text-white/80 mb-4 font-[200]">
                                             After your transaction is confirmed, you'll see it listed in your history. The tokens will arrive in your destination wallet once the bridge process is complete.
                                           </p>
                                           <div className="rounded-lg overflow-hidden border border-white/10 md:max-w-[35%] md:mx-auto">
@@ -998,11 +998,11 @@ export function BridgePage() {
                                         </div>
 
                                         <div className="bg-[#8BABFF]/10 rounded-lg border border-[#8BABFF]/20 p-4">
-                                          <h4 className="flex items-center text-[#8BABFF] font-medium mb-2">
+                                          <h4 className="flex items-center text-[#8BABFF] font-[200] mb-2">
                                             <Info className="w-4 h-4 mr-2" />
                                             Tips
                                           </h4>
-                                          <ul className="space-y-2 text-sm">
+                                          <ul className="space-y-2 text-sm font-[200]">
                                             <li className="flex items-start">
                                               <CheckCircle2 className="w-4 h-4 text-[#8BABFF] mr-2 mt-0.5" />
                                               <span>The "History" tab shows all your past and pending transactions</span>
@@ -1018,14 +1018,14 @@ export function BridgePage() {
                                       <div className="flex justify-between space-x-3 pt-4 border-t border-white/10">
                                         <button 
                                           onClick={() => setShadowStep(4)}
-                                          className="flex items-center bg-white/10 hover:bg-white/20 transition-all text-white px-4 py-2 rounded-lg font-medium"
+                                          className="flex items-center bg-white/10 hover:bg-white/20 transition-all text-white px-4 py-2 rounded-lg font-[200]"
                                         >
                                           <ArrowRight className="w-4 h-4 mr-2 rotate-180" />
                                           Previous
                                         </button>
                                         <button 
                                           onClick={() => setShadowStep(6)}
-                                          className="flex items-center bg-gradient-to-r from-[#8BABFF] to-[#6495ED] hover:brightness-110 transition-all text-black px-4 py-2 rounded-lg font-medium"
+                                          className="flex items-center bg-gradient-to-r from-[#8BABFF] to-[#6495ED] hover:brightness-110 transition-all text-black px-4 py-2 rounded-lg font-[200]"
                                         >
                                           Next Step
                                           <ArrowRight className="w-4 h-4 ml-2" />
@@ -1041,14 +1041,14 @@ export function BridgePage() {
                                           <CheckCircle2 className="w-5 h-5 text-[#8BABFF]" />
                                         </div>
                                         <div>
-                                          <h3 className="text-xl font-medium mb-1">After Bridging</h3>
-                                          <p className="text-white/60">Step 7 of 7</p>
+                                          <h3 className="text-xl font-[200] mb-1">After Bridging</h3>
+                                          <p className="text-white/60 font-[200]">Step 7 of 7</p>
                                         </div>
                                       </div>
 
                                       <div className="mb-6">
                                         <div className="bg-white/5 rounded-lg border border-white/10 p-5 mb-4">
-                                          <p className="text-base text-white/80 mb-4">
+                                          <p className="text-base text-white/80 mb-4 font-[200]">
                                             Once the bridge process is complete, you'll see your tokens in your destination wallet. For ERC-20 tokens on Ethereum, you may need to add the token to your wallet to see the balance.
                                           </p>
                                           <div className="rounded-lg overflow-hidden border border-white/10 md:max-w-[35%] md:mx-auto">
@@ -1057,11 +1057,11 @@ export function BridgePage() {
                                         </div>
 
                                         <div className="bg-[#8BABFF]/10 rounded-lg border border-[#8BABFF]/20 p-4">
-                                          <h4 className="flex items-center text-[#8BABFF] font-medium mb-2">
+                                          <h4 className="flex items-center text-[#8BABFF] font-[200] mb-2">
                                             <Info className="w-4 h-4 mr-2" />
                                             Final Notes
                                           </h4>
-                                          <ul className="space-y-2 text-sm">
+                                          <ul className="space-y-2 text-sm font-[200]">
                                             <li className="flex items-start">
                                               <CheckCircle2 className="w-4 h-4 text-[#8BABFF] mr-2 mt-0.5" />
                                               <span>Larger transactions may take longer to complete</span>
@@ -1081,7 +1081,7 @@ export function BridgePage() {
                                       <div className="flex justify-between space-x-3 pt-4 border-t border-white/10">
                                         <button 
                                           onClick={() => setShadowStep(5)}
-                                          className="flex items-center bg-white/10 hover:bg-white/20 transition-all text-white px-4 py-2 rounded-lg font-medium"
+                                          className="flex items-center bg-white/10 hover:bg-white/20 transition-all text-white px-4 py-2 rounded-lg font-[200]"
                                         >
                                           <ArrowRight className="w-4 h-4 mr-2 rotate-180" />
                                           Previous
@@ -1090,7 +1090,7 @@ export function BridgePage() {
                                           href="https://glidefinance.io/bridge" 
                                           target="_blank" 
                                           rel="noopener noreferrer" 
-                                          className="flex items-center bg-gradient-to-r from-[#8BABFF] to-[#6495ED] hover:brightness-110 transition-all text-black px-4 py-2 rounded-lg font-medium"
+                                          className="flex items-center bg-gradient-to-r from-[#8BABFF] to-[#6495ED] hover:brightness-110 transition-all text-black px-4 py-2 rounded-lg font-[200]"
                                         >
                                           Go to Glide Bridge
                                           <ExternalLink className="w-4 h-4 ml-2" />
@@ -1109,12 +1109,12 @@ export function BridgePage() {
                         <div className="space-y-6">
                           <div className="flex items-center justify-between">
                             <div>
-                              <h3 className="text-xl font-semibold mb-2 flex items-center">
-                                <a href="https://chainge.finance" target="_blank" rel="noopener noreferrer" className="hover:underline flex items-center">
+                              <h3 className="text-xl font-[200] mb-2 flex items-center">
+                                <a href="https://chainge.finance" target="_blank" rel="noopener noreferrer" className="hover:underline flex items-center font-[200]">
                                   Chainge Finance Bridge <ExternalLink className="w-4 h-4 ml-1" />
                                 </a>
                               </h3>
-                              <p className="text-white/70">
+                              <p className="text-white/70 font-[200]">
                                 An alternative option for bridging your ELA tokens between chains
                               </p>
                             </div>
@@ -1129,11 +1129,11 @@ export function BridgePage() {
                           </div>
 
                           <div className="bg-white/5 p-5 rounded-lg border border-white/10">
-                            <h4 className="text-lg font-medium mb-4 flex items-center">
+                            <h4 className="text-lg font-[200] mb-4 flex items-center">
                               <Info className="w-5 h-5 mr-2 text-[#8BABFF]" />
                               About Chainge Finance
                             </h4>
-                            <p className="text-white/80 mb-4 leading-relaxed">
+                            <p className="text-white/80 mb-4 leading-relaxed font-[200]">
                               Chainge Finance provides a user-friendly cross-chain bridge that allows you to transfer ELA between Elastos Smart Chain and multiple other blockchains, including Ethereum. Their DCRM technology ensures secure and fast cross-chain transfers.
                             </p>
                             <div className="flex flex-wrap gap-4 mt-4">
@@ -1141,7 +1141,7 @@ export function BridgePage() {
                                 href="https://chainge.finance" 
                                 target="_blank" 
                                 rel="noopener noreferrer" 
-                                className="flex items-center bg-gradient-to-r from-[#8BABFF] to-[#6495ED] hover:brightness-110 transition-all text-black px-6 py-3 rounded-lg font-semibold"
+                                className="flex items-center bg-gradient-to-r from-[#8BABFF] to-[#6495ED] hover:brightness-110 transition-all text-black px-6 py-3 rounded-lg font-[200]"
                               >
                                 Go to Chainge Finance
                                 <ExternalLink className="w-4 h-4 ml-2" />
@@ -1156,8 +1156,8 @@ export function BridgePage() {
                   <div className="bg-white/5 p-4 rounded-lg border border-white/10 flex items-start">
                     <AlertTriangle className="w-5 h-5 mr-3 text-red-500 flex-shrink-0 mt-1" />
                     <div>
-                      <h4 className="font-medium">Use at Your Own Risk</h4>
-                      <p className="text-sm text-white/70">
+                      <h4 className="font-[200]">Use at Your Own Risk</h4>
+                      <p className="text-sm text-white/70 font-[200]">
                         Especially for ERC-20 bridging, third-party services are used. Make sure you understand the risks involved.
                       </p>
                     </div>
@@ -1173,50 +1173,50 @@ export function BridgePage() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.6 }}
             >
-              <h2 className="text-2xl font-semibold mb-6">Frequently Asked Questions</h2>
+              <h2 className="text-2xl font-[200] mb-6">Frequently Asked Questions</h2>
 
               <Accordion type="single" collapsible className="bg-white/5 border border-white/10 rounded-xl overflow-hidden">
                 <AccordionItem value="item-1" className="border-white/10">
-                  <AccordionTrigger className="px-6 py-4 hover:bg-white/5">
+                  <AccordionTrigger className="px-6 py-4 hover:bg-white/5 font-[200]">
                     How long does bridging between native chains take?
                   </AccordionTrigger>
-                  <AccordionContent className="px-6 pb-4 text-white/70">
+                  <AccordionContent className="px-6 pb-4 text-white/70 font-[200]">
                     Bridging between Elastos native chains (Main Chain, Smart Chain, and Identity Chain) usually takes between 15 to 25 minutes. During this time, you might not see your funds on either chain, but they will appear once the process is complete.
                   </AccordionContent>
                 </AccordionItem>
 
                 <AccordionItem value="item-2" className="border-white/10">
-                  <AccordionTrigger className="px-6 py-4 hover:bg-white/5">
+                  <AccordionTrigger className="px-6 py-4 hover:bg-white/5 font-[200]">
                     What are the minimum amounts for bridging to ERC-20 ELA?
                   </AccordionTrigger>
-                  <AccordionContent className="px-6 pb-4 text-white/70">
+                  <AccordionContent className="px-6 pb-4 text-white/70 font-[200]">
                     When using the Shadow Token Bridge, you need a minimum of 1000 ELA to bridge from Elastos Smart Chain to Ethereum (ERC-20 ELA). For the reverse direction, from Ethereum to Elastos Smart Chain, the minimum is just 1 ELA.
                   </AccordionContent>
                 </AccordionItem>
 
                 <AccordionItem value="item-3" className="border-white/10">
-                  <AccordionTrigger className="px-6 py-4 hover:bg-white/5">
+                  <AccordionTrigger className="px-6 py-4 hover:bg-white/5 font-[200]">
                     Why do I need ETH for bridging to Ethereum?
                   </AccordionTrigger>
-                  <AccordionContent className="px-6 pb-4 text-white/70">
+                  <AccordionContent className="px-6 pb-4 text-white/70 font-[200]">
                     When bridging to Ethereum, you need some ETH in your wallet to pay for the transaction fees (gas fees) on the Ethereum network. These fees vary based on network congestion and are required for any transaction on Ethereum.
                   </AccordionContent>
                 </AccordionItem>
 
                 <AccordionItem value="item-4" className="border-white/10">
-                  <AccordionTrigger className="px-6 py-4 hover:bg-white/5">
+                  <AccordionTrigger className="px-6 py-4 hover:bg-white/5 font-[200]">
                     Is ERC-20 ELA the same as native ELA?
                   </AccordionTrigger>
-                  <AccordionContent className="px-6 pb-4 text-white/70">
+                  <AccordionContent className="px-6 pb-4 text-white/70 font-[200]">
                     No, ERC-20 ELA is a bridge token that represents ELA on the Ethereum blockchain. It is not native to the Elastos ecosystem but allows ELA to be used within Ethereum's ecosystem. Native ELA exists on Elastos Main Chain, Smart Chain, and Identity Chain.
                   </AccordionContent>
                 </AccordionItem>
 
                 <AccordionItem value="item-5" className="border-white/10">
-                  <AccordionTrigger className="px-6 py-4 hover:bg-white/5">
+                  <AccordionTrigger className="px-6 py-4 hover:bg-white/5 font-[200]">
                     Which wallet should I use for bridging?
                   </AccordionTrigger>
-                  <AccordionContent className="px-6 pb-4 text-white/70">
+                  <AccordionContent className="px-6 pb-4 text-white/70 font-[200]">
                     The Elastos Essentials App is recommended for all bridging operations as it provides a seamless experience for managing ELA across different chains. It's available on both iOS and Android.
                   </AccordionContent>
                 </AccordionItem>
@@ -1230,8 +1230,8 @@ export function BridgePage() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.7 }}
             >
-              <h2 className="text-2xl font-semibold mb-2">Need More Help?</h2>
-              <p className="text-white/70 mb-6 max-w-2xl mx-auto">
+              <h2 className="text-2xl font-[200] mb-2">Need More Help?</h2>
+              <p className="text-white/70 mb-6 max-w-2xl mx-auto font-[200]">
                 If you have any questions or need additional assistance with bridging your ELA tokens, join the Elastos community channels for support.
               </p>
 
@@ -1240,7 +1240,7 @@ export function BridgePage() {
                   href="https://t.me/elastosgroup" 
                   target="_blank" 
                   rel="noopener noreferrer"
-                  className="inline-flex items-center px-6 py-3 bg-white/10 hover:bg-white/15 rounded-lg transition-all"
+                  className="inline-flex items-center px-6 py-3 bg-white/10 hover:bg-white/15 rounded-lg transition-all font-[200]"
                 >
                   <svg viewBox="0 0 24 24" className="w-5 h-5 mr-2 fill-current">
                     <path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.96 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z" />
@@ -1252,7 +1252,7 @@ export function BridgePage() {
                   href="https://discord.gg/elastos" 
                   target="_blank" 
                   rel="noopener noreferrer"
-                  className="inline-flex items-center px-6 py-3 bg-white/10 hover:bg-white/15 rounded-lg transition-all"
+                  className="inline-flex items-center px-6 py-3 bg-white/10 hover:bg-white/15 rounded-lg transition-all font-[200]"
                 >
                   <svg viewBox="0 0 24 24" className="w-5 h-5 mr-2 fill-current">
                     <path d="M20.317 4.3698a19.7913 19.7913 0 00-4.8851-1.5152.0741.0741 0 00-.0785.0371c-.211.3753-.4447.8648-.6083 1.2495-1.8447-.2762-3.68-.2762-5.4868 0-.1636-.3933-.4058-.8742-.6177-1.2495a.077.077 0 00-.0785-.037 19.7363 19.7363 0 00-4.8852 1.515.0699.0699 0 00-.0321.0277C.5334 9.0458-.319 13.5799.0992 18.0578a.0824.0824 0 00.0312.0561c2.0528 1.5076 4.0413 2.4228 5.9929 3.0294a.0777.0777 0 00.0842-.0276c.4616-.6304.8731-1.2952 1.226-1.9942a.076.076 0 00-.0416-.1057c-.6528-.2476-1.2743-.5495-1.8722-.8923a.077.077 0 01-.0076-.1277c.1258-.0943.2517-.1923.3718-.2914a.0743.0743 0 01.0776-.0105c3.9278 1.7933 8.18 1.7933 12.0614 0a.0739.0739 0 01.0785.0095c.1202.099.246.1981.3728.2924a.077.077 0 01-.0066.1276 12.2986 12.2986 0 01-1.873.8914.0766.0766 0 00-.0407.1067c.3604.698.7719 1.3628 1.225 1.9932a.076.076 0 00.0842.0286c1.961-.6067 3.9495-1.5219 6.0023-3.0294a.077.077 0 00.0313-.0552c.5004-5.177-.8382-9.6739-3.5485-13.6604a.061.061 0 00-.0312-.0286zM8.02 15.3312c-1.1825 0-2.1569-1.0857-2.1569-2.419 0-1.3332.9555-2.4189 2.157-2.4189 1.2108 0 2.1757 1.0952 2.1568 2.419 0 1.3332-.9555 2.4189-2.1569 2.4189zm7.9748 0c-1.1825 0-2.1569-1.0857-2.1569-2.419 0-1.3332.9554-2.4189 2.1569-2.4189 1.2108 0 2.1757 1.0952 2.1568 2.419 0 1.3332-.946 2.4189-2.1568 2.4189Z" />
