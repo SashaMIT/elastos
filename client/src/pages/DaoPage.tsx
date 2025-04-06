@@ -267,67 +267,73 @@ const DaoPage: React.FC = () => {
   const [hoveredFeature, setHoveredFeature] = useState<number | null>(null);
 
   return (
-    <div className="min-h-screen bg-[#171717] text-white">
-      {/* Hero Section with Image and Gradient Overlay */}
-      <div className="relative w-full h-[500px] overflow-hidden -mt-16">
-        <img 
-          src="/images/Roadmap/Community crowd.png" 
-          alt="Elastos DAO" 
-          className="w-full h-full object-cover opacity-100"
-        />
-        {/* Gradient overlay */}
-        <div className="absolute inset-0 bg-gradient-to-b from-black/10 via-[#171717]/80 to-[#171717]"></div>
-        
-        {/* Hero content overlay */}
-        <div className="absolute inset-0 flex items-center justify-center">
-          <div className="container mx-auto px-4">
-            <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-              <div className="text-center mb-12">
-                <h1 className="text-4xl sm:text-4xl md:text-5xl font-[200] text-white mb-6">
-                  Elastos DAO: Governance for the World Computer
-                </h1>
-                <p className="text-gray-300 max-w-2xl mx-auto text-md sm:text-base md:text-lg">
-                  Community-powered governance for a truly decentralized internet. Elastos DAO is the on-chain, self-sovereign governance framework behind Elastos.
-                </p>
-              </div>
-              <div className="flex flex-wrap justify-center gap-4 mt-8">
+    <div className="min-h-screen bg-[#171717]">
+      {/* Hero Section */}
+      <section className="relative overflow-hidden py-20">
+        <div className="container mx-auto px-4 relative z-10">
+          <div className="max-w-4xl mx-auto text-center">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5 }}
+            >
+              <h1 className="text-4xl md:text-6xl font-bold text-white mb-6">
+                Elastos DAO: Governance for the World Computer
+              </h1>
+              <p className="text-xl text-white/70 mb-8">
+                Community-powered governance for a truly decentralized internet.
+              </p>
+              <p className="text-lg text-white/80 max-w-3xl mx-auto mb-10">
+                Elastos DAO is the on-chain, self-sovereign governance framework behind the Elastos ecosystem—where stakeholders shape the future of the World Computer through transparent proposals, voting, and funding.
+              </p>
+              <div className="flex flex-wrap justify-center gap-4">
                 <a
                   href="https://cyberrepublic.org"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex px-3 py-2 bg-[rgba(246,146,26,0.15)] text-white rounded-full font-[200] transition-all items-center gap-2 border border-[rgba(246,146,26,0.25)] text-sm"
+                  className="inline-flex px-3 py-2 bg-[rgba(246,146,26,0.10)] text-[#F6921A] rounded-full font-medium transition-all items-center gap-1 border border-[rgba(246,146,26,0.50)] text-sm"
                 >
                   <span>Visit DAO Portal</span>
-                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 35 34" fill="none">
-                    <circle cx="17.333" cy="17" r="16.75" stroke="#F6921A" strokeOpacity="0.25" strokeWidth="1.5"/>
-                    <path d="M17.3338 22.9405L23.2741 17.0002L17.3338 11.0598L16.4162 11.9774L20.7628 16.324H10.8622V17.6763H20.7628L16.4162 22.0229L17.3338 22.9405Z" fill="#F6921A"/>
-                    <path d="M20.7628 17.6638H10.8747V16.3365H20.7628H20.7929L20.7716 16.3152L16.4338 11.9774L17.3338 11.0775L23.2564 17.0002L17.3338 22.9228L16.4338 22.0229L20.7716 17.6851L20.7929 17.6638H20.7628Z" stroke="#F6921A" strokeOpacity="0.25" strokeWidth="1.5"/>
-                  </svg>
+                  <CircleArrow />
                 </a>
                 <a
                   href="https://cyberrepublic.org/proposals"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex px-3 py-2 bg-[rgba(92,142,255,0.15)] text-white rounded-full font-[200] transition-all items-center gap-2 border border-[rgba(92,142,255,0.25)] text-sm"
+                  className="inline-flex px-3 py-2 bg-[rgba(92,142,255,0.10)] text-[#5C8EFF] rounded-full font-medium transition-all items-center gap-1 border border-[rgba(92,142,255,0.50)] text-sm"
                 >
                   <span>View Current Proposals</span>
-                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 35 34" fill="none">
-                    <circle cx="17.333" cy="17" r="16.75" stroke="#5C8EFF" strokeOpacity="0.25" strokeWidth="1.5"/>
-                    <path d="M17.3338 22.9405L23.2741 17.0002L17.3338 11.0598L16.4162 11.9774L20.7628 16.324H10.8622V17.6763H20.7628L16.4162 22.0229L17.3338 22.9405Z" fill="#5C8EFF"/>
-                    <path d="M20.7628 17.6638H10.8747V16.3365H20.7628H20.7929L20.7716 16.3152L16.4338 11.9774L17.3338 11.0775L23.2564 17.0002L17.3338 22.9228L16.4338 22.0229L20.7716 17.6851L20.7929 17.6638H20.7628Z" stroke="#5C8EFF" strokeOpacity="0.25" strokeWidth="1.5"/>
-                  </svg>
+                  <BlueCircleArrow />
                 </a>
               </div>
-            </div>
+            </motion.div>
           </div>
         </div>
-      </div>
-      
-      {/* Background glows */}
-      <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        <div className="absolute top-1/4 -right-28 w-96 h-96 rounded-full bg-[#F6921A]/10 blur-[120px]"></div>
-        <div className="absolute bottom-1/3 -left-28 w-96 h-96 rounded-full bg-[#5C8EFF]/10 blur-[120px]"></div>
-      </div>
+      </section>
+
+      {/* What is Elastos DAO Section */}
+      <section className="py-16 relative bg-[#171717]">
+        <div className="container mx-auto px-4">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="max-w-4xl mx-auto"
+          >
+            <h2 className="text-3xl font-bold text-white text-center mb-6">
+              What is Elastos DAO?
+            </h2>
+            <div className="bg-[#1A1A1A] rounded-xl p-8 border border-white/10 shadow-lg">
+              <p className="text-white/80 text-lg leading-relaxed mb-6">
+                Formerly known as the Cyber Republic, the Elastos DAO is the decentralized autonomous organization that governs the development, direction, and funding of the Elastos ecosystem. It puts ELA holders in control, letting them participate in elections, submit proposals, fund projects, and maintain ecosystem integrity—without corporate gatekeepers.
+              </p>
+              <p className="text-white/80 text-lg leading-relaxed font-medium italic">
+                Elastos DAO is not just governance for a blockchain—it is governance for a new internet.
+              </p>
+            </div>
+          </motion.div>
+        </div>
+      </section>
 
       {/* Core Components Section */}
       <section className="py-16 relative bg-[#171717]">
@@ -375,30 +381,6 @@ const DaoPage: React.FC = () => {
               </motion.div>
             ))}
           </div>
-        </div>
-      </section>
-      
-      {/* What is Elastos DAO Section */}
-      <section className="py-16 relative bg-[#171717]">
-        <div className="container mx-auto px-4">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="max-w-4xl mx-auto"
-          >
-            <h2 className="text-3xl font-bold text-white text-center mb-6">
-              What is Elastos DAO?
-            </h2>
-            <div className="bg-[#1A1A1A] rounded-xl p-8 border border-white/10 shadow-lg">
-              <p className="text-white/80 text-lg leading-relaxed mb-6">
-                Formerly known as the Cyber Republic, the Elastos DAO is the decentralized autonomous organization that governs the development, direction, and funding of the Elastos ecosystem. It puts ELA holders in control, letting them participate in elections, submit proposals, fund projects, and maintain ecosystem integrity—without corporate gatekeepers.
-              </p>
-              <p className="text-white/80 text-lg leading-relaxed font-medium italic">
-                Elastos DAO is not just governance for a blockchain—it is governance for a new internet.
-              </p>
-            </div>
-          </motion.div>
         </div>
       </section>
 
