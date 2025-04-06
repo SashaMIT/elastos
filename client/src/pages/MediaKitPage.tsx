@@ -8,6 +8,7 @@ import { LogoCard } from "@/components/media-kit/LogoCard";
 import { ColorPaletteCard } from "@/components/media-kit/ColorPaletteCard";
 import { FontCard } from "@/components/media-kit/FontCard";
 import { logos, colorPalettes, fonts } from "@/lib/media-kit-utils";
+import { StackedCircularFooter } from "@/components/ui/stacked-circular-footer";
 
 export function MediaKitPage() {
   const [downloading, setDownloading] = useState(false);
@@ -136,13 +137,9 @@ export function MediaKitPage() {
           </Tabs>
         </motion.div>
         
-        <motion.footer
-          className="mt-20 pt-8 border-t border-zinc-800 text-center text-white/60 fixed bottom-0 left-0 right-0 bg-[#171717] py-4"
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 0.5, delay: 0.4 }}
-        >
-        </motion.footer>
+        <div className="mt-20">
+          <StackedCircularFooter />
+        </div>
       </div>
     </div>
   );
