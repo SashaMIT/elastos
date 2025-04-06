@@ -165,77 +165,81 @@ export function BridgePage() {
 
             {/* ELA Types Explanation */}
             <motion.div
-              className="mb-12 bg-white/5 border border-white/10 rounded-xl p-6"
+              className="mb-12 bg-white/5 border border-white/10 rounded-xl p-5"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.2 }}
             >
-              <h2 className="text-2xl font-[200] mb-4 flex items-center">
-                <Info className="w-5 h-5 mr-2 text-[#F7921A]" />
+              <h2 className="text-lg font-[200] mb-3 flex items-center">
+                <Info className="w-4 h-4 mr-2 text-[#F7921A]" />
                 Understanding ELA Token Types
               </h2>
 
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <div className="bg-white/5 rounded-lg p-5 border border-white/10">
-                  <h3 className="text-xl font-[200] mb-3 text-[#F7921A]">Native ELA</h3>
-                  <ul className="space-y-2">
-                    <li className="flex items-start">
-                      <span className="inline-block w-2 h-2 rounded-full bg-[#F7921A] mt-2 mr-2"></span>
-                      <span className="text-base"><strong>Elastos Main Chain ELA</strong> - Layer 1 merged-mined chain</span>
-                    </li>
-                    <li className="flex items-start">
-                      <span className="inline-block w-2 h-2 rounded-full bg-[#F7921A] mt-2 mr-2"></span>
-                      <span className="text-base"><strong>Elastos Smart Chain (ESC) ELA</strong> - Layer 2 smart contract chain</span>
-                    </li>
-                    <li className="flex items-start">
-                      <span className="inline-block w-2 h-2 rounded-full bg-[#F7921A] mt-2 mr-2"></span>
-                      <span className="text-base"><strong>Elastos Identity Chain ELA</strong> - Layer 2 identity chain</span>
-                    </li>
-                  </ul>
+              <div className="grid grid-cols-1 lg:grid-cols-3 gap-4">
+                <div className="lg:col-span-2">
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
+                    <div className="bg-white/5 rounded-lg p-3 border border-white/10">
+                      <h3 className="text-base font-[200] mb-2 text-[#F7921A]">Native ELA</h3>
+                      <ul className="space-y-1 text-sm">
+                        <li className="flex items-start">
+                          <span className="inline-block w-1.5 h-1.5 rounded-full bg-[#F7921A] mt-1.5 mr-1.5 flex-shrink-0"></span>
+                          <span><strong>Elastos Main Chain ELA</strong> - Layer 1 merged-mined chain</span>
+                        </li>
+                        <li className="flex items-start">
+                          <span className="inline-block w-1.5 h-1.5 rounded-full bg-[#F7921A] mt-1.5 mr-1.5 flex-shrink-0"></span>
+                          <span><strong>Elastos Smart Chain (ESC) ELA</strong> - Layer 2 smart contract chain</span>
+                        </li>
+                        <li className="flex items-start">
+                          <span className="inline-block w-1.5 h-1.5 rounded-full bg-[#F7921A] mt-1.5 mr-1.5 flex-shrink-0"></span>
+                          <span><strong>Elastos Identity Chain ELA</strong> - Layer 2 identity chain</span>
+                        </li>
+                      </ul>
+                    </div>
+
+                    <div className="bg-white/5 rounded-lg p-3 border border-white/10">
+                      <h3 className="text-base font-[200] mb-2 text-[#8BABFF]">ERC-20 ELA</h3>
+                      <ul className="space-y-1 text-sm">
+                        <li className="flex items-start">
+                          <span className="inline-block w-1.5 h-1.5 rounded-full bg-[#8BABFF] mt-1.5 mr-1.5 flex-shrink-0"></span>
+                          <span><strong>ELA on Ethereum</strong> - ERC-20 version on Ethereum blockchain</span>
+                        </li>
+                        <li className="mt-1 text-white/70 italic text-xs">
+                          Note: ERC-20 ELA is a bridge token, not native to the Elastos ecosystem.
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
                 </div>
 
-                <div className="bg-white/5 rounded-lg p-5 border border-white/10">
-                  <h3 className="text-xl font-[200] mb-3 text-[#8BABFF]">ERC-20 ELA</h3>
-                  <ul className="space-y-2">
-                    <li className="flex items-start">
-                      <span className="inline-block w-2 h-2 rounded-full bg-[#8BABFF] mt-2 mr-2"></span>
-                      <span className="text-base"><strong>ELA on Ethereum</strong> - The ERC-20 version of ELA that runs on the Ethereum blockchain</span>
-                    </li>
-                    <li className="mt-4 text-white/70 italic text-base">
-                      Note: ERC-20 ELA is a bridge token, not native to the Elastos ecosystem.
-                    </li>
-                  </ul>
-                </div>
-              </div>
+                <div className="bg-white/5 rounded-lg p-3 border border-white/10">
+                  <div className="flex items-center mb-2">
+                    <Smartphone className="w-4 h-4 mr-2 text-[#F7921A] flex-shrink-0" />
+                    <p className="text-sm font-[200]">Elastos Essentials App required for all transactions</p>
+                  </div>
 
-              <div className="mt-6 bg-white/5 p-6 rounded-lg border border-white/10">
-                <div className="flex items-start mb-4">
-                  <Smartphone className="w-6 h-6 mr-3 text-[#F7921A] flex-shrink-0 mt-1" />
-                  <p className="text-xl text-white/90 font-[200] leading-relaxed">For all transactions, you will need the Elastos Essentials App, available on iOS and Android.</p>
-                </div>
+                  <div className="flex justify-center gap-3">
+                    <a
+                      href="https://apps.apple.com/us/app/elastos-essentials/id1568931743"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex items-center gap-1 px-3 py-1.5 bg-white/10 hover:bg-white/15 transition-colors rounded-lg border border-white/10 text-xs"
+                    >
+                      <img src="/images/Bridge/apple-logo.svg" alt="App Store" className="w-4 h-4" />
+                      <span className="text-white">App Store</span>
+                    </a>
 
-                <div className="flex flex-wrap justify-center mt-4 gap-4">
-                  <a
-                    href="https://apps.apple.com/us/app/elastos-essentials/id1568931743"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="flex items-center gap-2 px-4 py-2 bg-white/10 hover:bg-white/15 transition-colors rounded-lg border border-white/10"
-                  >
-                    <img src="/images/Bridge/apple-logo.svg" alt="App Store" className="w-5 h-5" />
-                    <span className="text-white">App Store</span>
-                  </a>
-
-                  <a
-                    href="https://play.google.com/store/apps/details?id=io.web3essentials.app"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="flex items-center gap-2 px-4 py-2 bg-white/10 hover:bg-white/15 transition-colors rounded-lg border border-white/10"
-                  >
-                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 512 512" fill="currentColor" className="w-5 h-5">
-                      <path d="M325.3 234.3L104.6 13l280.8 161.2-60.1 60.1zM47 0C34 6.8 25.3 19.2 25.3 35.3v441.3c0 16.1 8.7 28.5 21.7 35.3l256.6-256L47 0zm425.6 225.6l-58.9-34.1-65.7 64.5 65.7 64.5 60.1-34.1c18-14.3 18-46.5-1.2-60.8zM104.6 499l280.8-161.2-60.1-60.1L104.6 499z" />
-                    </svg>
-                    <span className="text-white">Google Play</span>
-                  </a>
+                    <a
+                      href="https://play.google.com/store/apps/details?id=io.web3essentials.app"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex items-center gap-1 px-3 py-1.5 bg-white/10 hover:bg-white/15 transition-colors rounded-lg border border-white/10 text-xs"
+                    >
+                      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 512 512" fill="currentColor" className="w-4 h-4">
+                        <path d="M325.3 234.3L104.6 13l280.8 161.2-60.1 60.1zM47 0C34 6.8 25.3 19.2 25.3 35.3v441.3c0 16.1 8.7 28.5 21.7 35.3l256.6-256L47 0zm425.6 225.6l-58.9-34.1-65.7 64.5 65.7 64.5 60.1-34.1c18-14.3 18-46.5-1.2-60.8zM104.6 499l280.8-161.2-60.1-60.1L104.6 499z" />
+                      </svg>
+                      <span className="text-white">Google Play</span>
+                    </a>
+                  </div>
                 </div>
               </div>
             </motion.div>
