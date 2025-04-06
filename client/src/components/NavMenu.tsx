@@ -307,14 +307,6 @@ export function NavMenu() {
                         </div>
                       </NavigationMenuLink>
                     </Link>
-                    <Link href="/media-kit">
-                      <NavigationMenuLink className={navigationMenuTriggerStyle()}>
-                        <div className="flex items-center gap-2">
-                          <Download className="h-4 w-4 text-[#94b5ff]" />
-                          <span className="text-white">Media Kit</span>
-                        </div>
-                      </NavigationMenuLink>
-                    </Link>
                   </div>
                   <div>
                     <h4 className="font-medium text-sm text-muted-foreground mb-2 px-2 text-[#94b5ff]">RESOURCES</h4>
@@ -323,6 +315,14 @@ export function NavMenu() {
                         <div className="flex items-center gap-2">
                           <Code className="h-4 w-4 text-[#94b5ff]" />
                           <span className="text-white">Decentralized Apps</span>
+                        </div>
+                      </NavigationMenuLink>
+                    </Link>
+                    <Link to="/media-kit">
+                      <NavigationMenuLink className={navigationMenuTriggerStyle()}>
+                        <div className="flex items-center gap-2">
+                          <Download className="h-4 w-4 text-[#94b5ff]" />
+                          <span className="text-white">Media Kit</span>
                         </div>
                       </NavigationMenuLink>
                     </Link>
