@@ -276,7 +276,7 @@ const DaoPage: React.FC = () => {
           className="w-full h-full object-cover opacity-100"
         />
         {/* Gradient overlay */}
-        <div className="absolute inset-0 bg-gradient-to-b from-black/10 via-[#171717]/80 to-[#171717]"></div>
+        <div className="absolute inset-0 bg-gradient-to-b from-black/5 via-[#171717]/90 to-[#171717] -mb-20"></div>
         
         {/* Hero content overlay */}
         <div className="absolute inset-0 flex items-end justify-center pb-16">
