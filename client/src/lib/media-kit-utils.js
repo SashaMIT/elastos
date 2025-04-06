@@ -9,7 +9,7 @@ export const logos = [
   {
     id: "elastos-logo",
     name: "Elastos Logo",
-    description: "Official Elastos brand logo and icon in various formats for all uses",
+    description: "Official Elastos brand logo in various formats",
     preview: "/images/Elastos Logo Dark - 1.png",
     downloadLink: "/logo-assets/Elastos-Logo-Icon-ALL-2025.zip",
     variants: {
@@ -20,6 +20,18 @@ export const logos = [
       dark: {
         png: "/images/Elastos Logo Dark - 1.png",
         svg: "/logo-assets/elastos-logo-dark.svg"
+      }
+    }
+  },
+  {
+    id: "elastos-icon",
+    name: "Elastos Icon",
+    description: "Elastos brand icon for app and social media usage",
+    preview: "/images/ElastOS 1.png",
+    downloadLink: "/logo-assets/Elastos-Logo-Icon-ALL-2025.zip",
+    variants: {
+      standard: {
+        png: "/images/ElastOS 1.png"
       }
     }
   },

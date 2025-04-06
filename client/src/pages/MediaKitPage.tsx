@@ -105,7 +105,7 @@ export function MediaKitPage() {
             </TabsList>
             
             <TabsContent value="logos" className="space-y-8">
-              <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6 mx-auto justify-center place-items-center">
+              <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6">
                 {logos.map((logo) => (
                   <LogoCard key={logo.id} logo={logo} />
                 ))}
@@ -113,7 +113,7 @@ export function MediaKitPage() {
             </TabsContent>
             
             <TabsContent value="colors" className="space-y-8">
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mx-auto justify-center place-items-center">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 {colorPalettes.map((palette) => (
                   <ColorPaletteCard key={palette.id} palette={palette} />
                 ))}
@@ -121,7 +121,7 @@ export function MediaKitPage() {
             </TabsContent>
             
             <TabsContent value="typography" className="space-y-8">
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mx-auto justify-center place-items-center">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 {fonts.map((font) => (
                   <FontCard key={font.id} font={font} />
                 ))}
