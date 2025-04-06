@@ -300,7 +300,7 @@ const WhitepaperPage = () => {
                   </p>
                 </CardContent>
                 <CardFooter>
-                  <Link to="/social-channels"> {/* Assuming '/social-channels' is the route */}
+                  <Link to="/social-channels">
                     <button className="px-3 py-2 bg-[rgba(92,142,255,0.15)] text-white rounded-full font-[200] transition-all flex items-center gap-1 border border-[rgba(92,142,255,0.25)] text-sm">
                       <span>Join Community</span>
                       <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 35 34" fill="none">
