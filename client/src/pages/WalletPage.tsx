@@ -54,25 +54,25 @@ const WalletPage: React.FC = () => {
                   />
                 </div>
                 <div>
-                  <h3 className="text-2xl font-[200] text-white mb-3">The Complete Elastos Experience</h3>
+                  <h3 className="text-2xl font-bold text-white mb-4">The Complete Elastos Experience</h3>
                   <div className="space-y-4 text-white/70">
-                    <p className="text-base font-[200]">Elastos Essentials is the native wallet and identity manager for the Elastos ecosystem. With Elastos Essentials, you get:</p>
+                    <p>Elastos Essentials is the native wallet and identity manager for the Elastos ecosystem. With Elastos Essentials, you get:</p>
                     <ul className="space-y-2">
                       <li className="flex items-start gap-2">
                         <CheckCircle className="w-5 h-5 text-white mt-0.5 flex-shrink-0" />
-                        <span className="text-base font-[200]">Native support for all Elastos chains including Mainchain, ESC, and EID</span>
+                        <span>Native support for all Elastos chains including Mainchain, ESC, and EID</span>
                       </li>
                       <li className="flex items-start gap-2">
                         <CheckCircle className="w-5 h-5 text-white mt-0.5 flex-shrink-0" />
-                        <span className="text-base font-[200]">Integrated DID (Decentralized Identity) management</span>
+                        <span>Integrated DID (Decentralized Identity) management</span>
                       </li>
                       <li className="flex items-start gap-2">
                         <CheckCircle className="w-5 h-5 text-white mt-0.5 flex-shrink-0" />
-                        <span className="text-base font-[200]">Secure digital asset management with multi-chain support</span>
+                        <span>Secure digital asset management with multi-chain support</span>
                       </li>
                       <li className="flex items-start gap-2">
                         <CheckCircle className="w-5 h-5 text-white mt-0.5 flex-shrink-0" />
-                        <span className="text-base font-[200]">Built-in DApp browser and credential manager</span>
+                        <span>Built-in DApp browser and credential manager</span>
                       </li>
                     </ul>
 
