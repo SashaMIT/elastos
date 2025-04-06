@@ -108,7 +108,7 @@ export function ScalingSection() {
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 items-center gap-12">
-              <div className="md:max-w-lg md:order-1 md:pl-6">
+              <div className="order-2 md:order-1 md:max-w-lg md:pl-6">
                 <div className="flex items-center gap-3 mb-4">
                   <h3 className="text-2xl font-bold font-sans">Financial Empowerment</h3>
                   <span className="px-4 py-1 bg-[#5C8EFF]/10 border border-[#5C8EFF]/30 text-white rounded-full text-xs font-medium">LIVE</span>
@@ -124,7 +124,7 @@ export function ScalingSection() {
                   </button>
                 </div>
               </div>
-              <div className="flex justify-center md:order-2">
+              <div className="order-1 md:order-2 flex justify-center">
                 <div className="w-64 h-64 relative">
                   <img src="/images/Glass Circles2.png" alt="BeL2" className="w-full h-full object-contain" />
                 </div>
