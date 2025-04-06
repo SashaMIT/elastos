@@ -30,10 +30,10 @@ export function VisionPage() {
         <div className="py-16 md:py-24">
           {/* Hero Section */}
           <div className="text-center max-w-3xl mx-auto mb-20">
-            <h1 className="font-bold text-6xl mb-8 text-black dark:text-white">
+            <h1 className="font-[200] text-6xl mb-8 text-black dark:text-white">
               <TextScramble phrases={taglines} />
             </h1>
-            <p className="text-lg text-gray-600 dark:text-gray-300 mb-8">
+            <p className="text-lg text-gray-600 dark:text-gray-300 mb-8 font-[200]">
               Elastos is building a new paradigm for the internet—a Web3 infrastructure that gives you true digital ownership and privacy, secured by Bitcoin.
             </p>
           </div>
@@ -56,10 +56,10 @@ export function VisionPage() {
 
             {/* Mission Statement */}
             <div className="max-w-4xl mx-auto text-center mb-16">
-              <h2 className="text-2xl md:text-3xl font-bold mb-4 text-black dark:text-white">
+              <h2 className="text-2xl md:text-3xl font-[200] mb-4 text-black dark:text-white">
                 Our Mission
               </h2>
-              <p className="text-lg dark:text-neutral-300">
+              <p className="text-lg dark:text-neutral-300 font-[200]">
                 Elastos is committed to creating a decentralized internet where users regain control of their digital identities and assets, free from corporate surveillance and exploitation.
               </p>
             </div>
@@ -71,7 +71,7 @@ export function VisionPage() {
 
             {/* Explorer Links */}
             <div className="mb-20 text-center">
-              <h2 className="text-2xl md:text-3xl font-bold mb-6 text-black dark:text-white">
+              <h2 className="text-2xl md:text-3xl font-[200] mb-6 text-black dark:text-white">
                 Explore the Elastos Ecosystem
               </h2>
               <div className="flex flex-wrap justify-center gap-4">
@@ -102,7 +102,7 @@ export function VisionPage() {
 
             {/* ELA Utility & Start Building */}
             <div className="mb-20 text-center">
-              <h2 className="text-2xl md:text-3xl font-bold mb-6 text-black dark:text-white">
+              <h2 className="text-2xl md:text-3xl font-[200] mb-6 text-black dark:text-white">
                 A SmartWeb for Everyone
               </h2>
               <div className="flex flex-wrap justify-center gap-4">
