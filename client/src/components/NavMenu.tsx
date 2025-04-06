@@ -43,7 +43,7 @@ export function NavMenu() {
           <NavigationMenu>
             <NavigationMenuList>
               <NavigationMenuItem>
-                <NavigationMenuTrigger className="text-sm bg-[#F6921A]/5 hover:bg-[#F6921A]/10 text-white border border-[#F6921A]/50 rounded-full px-4 [&>svg]:text-[#F6921A]/50">ELA</NavigationMenuTrigger>
+                <NavigationMenuTrigger className="text-sm font-[200] bg-[#F6921A]/5 hover:bg-[#F6921A]/10 text-white border border-[#F6921A]/50 rounded-full px-4 [&>svg]:text-[#F6921A]/50">ELA</NavigationMenuTrigger>
                 <NavigationMenuContent>
                   <div className="grid w-[200px] gap-1 p-2">
                     <Link href="/stats">
@@ -88,7 +88,7 @@ export function NavMenu() {
         <NavigationMenu className="hidden md:flex absolute left-[46.5%] top-1/2 -translate-x-1/2 -translate-y-1/2">
           <NavigationMenuList className="hidden md:flex gap-4 lg:gap-6 items-center justify-center w-[400px]">
             <NavigationMenuItem>
-              <NavigationMenuTrigger>Explore</NavigationMenuTrigger>
+              <NavigationMenuTrigger className="font-[200]">Explore</NavigationMenuTrigger>
               <NavigationMenuContent>
                 <div className="grid w-[400px] gap-1 p-2 md:w-[500px] md:grid-cols-2">
                   <div>
@@ -182,7 +182,7 @@ export function NavMenu() {
             </NavigationMenuItem>
 
             <NavigationMenuItem>
-              <NavigationMenuTrigger className="text-sm">
+              <NavigationMenuTrigger className="text-sm font-[200]">
                 Build
               </NavigationMenuTrigger>
               <NavigationMenuContent>
@@ -237,7 +237,7 @@ export function NavMenu() {
               </NavigationMenuContent>
             </NavigationMenuItem>
             <NavigationMenuItem>
-              <NavigationMenuTrigger className="text-sm">
+              <NavigationMenuTrigger className="text-sm font-[200]">
                 Insights
               </NavigationMenuTrigger>
               <NavigationMenuContent>
@@ -284,7 +284,7 @@ export function NavMenu() {
               </NavigationMenuContent>
             </NavigationMenuItem>
             <NavigationMenuItem>
-              <NavigationMenuTrigger className="text-sm">
+              <NavigationMenuTrigger className="text-sm font-[200]">
                 Connect
               </NavigationMenuTrigger>
               <NavigationMenuContent>
