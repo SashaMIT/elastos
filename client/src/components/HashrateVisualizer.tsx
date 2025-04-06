@@ -275,7 +275,7 @@ const HashrateVisualizer = () => {
           <div className="space-y-4">
             <div className="font-medium flex items-center gap-2">
               <Server className="w-5 h-5 text-[#F6921A]" />
-              Compare to everyday devices:
+              <span className="font-[200]">Compare to everyday devices:</span>
             </div>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-2 mb-6 px-1">

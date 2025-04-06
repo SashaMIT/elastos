@@ -324,7 +324,7 @@ const ELASupplyPage = () => {
           {/* Supply Chart */}
           <div className="bg-white dark:bg-[#171717] border dark:border-neutral-800 rounded-lg p-2 sm:p-4 w-full">
             <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 mb-4">
-              <h3 className="text-sm font-medium flex items-center gap-2">
+              <h3 className="text-sm font-[200] flex items-center gap-2">
                 <Database className="h-4 w-4 text-[#F6921A]" />
                 Supply Growth
               </h3>

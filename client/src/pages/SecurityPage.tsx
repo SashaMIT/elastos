@@ -29,9 +29,9 @@ const SecurityPage = () => {
       {isError ? (
         <Card className="max-w-4xl mx-auto dark:bg-[#151515] dark:border-neutral-800">
           <CardContent className="p-8 text-center">
-            <h2 className="text-2xl font-bold mb-4">Data Loading Issue</h2>
-            <p className="mb-4">We're having trouble fetching the security data at the moment.</p>
-            <p className="text-sm text-muted-foreground">
+            <h2 className="text-2xl font-[200] mb-4">Data Loading Issue</h2>
+            <p className="mb-4 font-[200]">We're having trouble fetching the security data at the moment.</p>
+            <p className="text-sm text-muted-foreground font-[200]">
               This could be due to API rate limits or temporary network issues.
             </p>
             <button 
