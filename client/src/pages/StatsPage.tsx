@@ -1,7 +1,7 @@
+
 import React from 'react';
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import { StackedCircularFooter } from "@/components/ui/stacked-circular-footer";
 import { StatsGrid } from "@/components/StatsGrid";
+import { StackedCircularFooter } from "@/components/ui/stacked-circular-footer";
 
 function StatsPage() {
   return (
@@ -10,9 +10,7 @@ function StatsPage() {
         <h1 className="text-3xl font-[200] mb-8 text-center">Elastos Network Statistics</h1>
         <StatsGrid />
       </div>
-      <div className="mt-12">
-        <StackedCircularFooter />
-      </div>
+      <StackedCircularFooter />
     </div>
   );
 }
