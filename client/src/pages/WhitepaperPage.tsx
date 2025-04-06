@@ -252,7 +252,7 @@ const WhitepaperPage = () => {
                       </svg>
                     </div>
                     <div>
-                      <CardTitle className="text-gray-800 dark:text-gray-200">Technical Documentation</CardTitle>
+                      <CardTitle className="text-gray-800 dark:text-gray-200">Technical Portal</CardTitle>
                       <CardDescription>Developer Resources & APIs</CardDescription>
                     </div>
                   </div>
