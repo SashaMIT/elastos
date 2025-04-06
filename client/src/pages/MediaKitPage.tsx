@@ -135,30 +135,13 @@ export function MediaKitPage() {
             </TabsContent>
           </Tabs>
         </motion.div>
-      </div>
-      
-      <div className="mt-20">
+        
         <motion.footer
-          className="py-8 border-t border-zinc-800 text-center text-white/60 bg-[#171717]"
+          className="mt-20 pt-8 border-t border-zinc-800 text-center text-white/60 fixed bottom-0 left-0 right-0 bg-[#171717] py-4"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 0.5, delay: 0.4 }}
         >
-          <div className="container mx-auto px-4">
-            <div className="flex justify-center items-center mb-4">
-              <img 
-                src="/images/Elastos Logo Dark - 1.png" 
-                alt="Elastos Logo" 
-                className="h-8" 
-              />
-            </div>
-            <div className="flex flex-wrap justify-center gap-4 mb-4">
-              <a href="https://elastos.info" className="text-white/70 hover:text-white">Home</a>
-              <a href="/vision" className="text-white/70 hover:text-white">Vision</a>
-              <a href="/security" className="text-white/70 hover:text-white">Security</a>
-              <a href="/social-channels" className="text-white/70 hover:text-white">Community</a>
-            </div>
-          </div>
         </motion.footer>
       </div>
     </div>
