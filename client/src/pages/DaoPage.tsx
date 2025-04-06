@@ -336,11 +336,9 @@ const DaoPage: React.FC = () => {
             </h2>
             <div className="bg-[#1A1A1A] rounded-xl p-8 border border-white/10 shadow-lg">
               <p className="text-white/80 text-lg leading-relaxed mb-6">
-                Formerly known as the Cyber Republic, the Elastos DAO is the decentralized autonomous organization that governs the development, direction, and funding of the Elastos ecosystem. It puts ELA holders in control, letting them participate in elections, submit proposals, fund projects, and maintain ecosystem integrity—without corporate gatekeepers.
+                Formerly known as the Cyber Republic, the Elastos DAO is the decentralized autonomous organization that governs the development, direction, and funding of the Elastos ecosystem. It puts ELA holders in control, letting them participate in elections, submit proposals, fund projects, and maintain ecosystem integrity—without corporate gatekeepers. Elastos DAO is not just governance for a blockchain—it is governance for a new internet.
               </p>
-              <p className="text-white/80 text-lg leading-relaxed font-medium italic">
-                Elastos DAO is not just governance for a blockchain—it is governance for a new internet.
-              </p>
+             
             </div>
           </motion.div>
         </div>
