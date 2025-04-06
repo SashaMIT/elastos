@@ -362,7 +362,7 @@ const LandingPage = () => {
         </div>
 
 
-        <div className="container mx-auto mt-2 mb-26 text-center">
+        <div className="container mx-auto mt-32 mb-26 text-center">
           <div className="flex items-center justify-center gap-4 mb-12">
             <img 
               src="/images/Elastos New Logo_Kit-03.png" 
