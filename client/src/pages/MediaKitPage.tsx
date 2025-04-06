@@ -52,7 +52,7 @@ export function MediaKitPage() {
             <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
               <div className="text-center mb-12">
                 <h1 className="text-4xl sm:text-4xl md:text-5xl font-[200] text-white mb-6">
-                  <span className="text-[#F6921A]">Elastos</span> Media Kit
+                  Elastos Media Kit
                 </h1>
                 <p className="text-gray-300 max-w-2xl mx-auto text-md sm:text-base md:text-lg">
                   Official brand assets, guidelines, and resources for the Elastos ecosystem.
@@ -96,7 +96,7 @@ export function MediaKitPage() {
         <div className="absolute bottom-1/3 -left-28 w-96 h-96 rounded-full bg-[#5C8EFF]/10 blur-[120px]"></div>
       </div>
       
-      <div className="container mx-auto px-4 pt-2 pb-16 relative z-10">
+      <div className="container mx-auto px-4 pt-0 pb-16 relative z-10">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
