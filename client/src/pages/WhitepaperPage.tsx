@@ -148,47 +148,46 @@ const WhitepaperPage = () => {
               </CardFooter>
             </Card>
 
-            {/* Technical Docs Card */}
+            {/* CoinTelegraph Report Card */}
             <Card className="overflow-hidden hover:shadow-lg transition-shadow duration-300 border border-gray-100 dark:border-gray-800">
               <div className="h-60 bg-gray-200 dark:bg-gray-700 relative overflow-hidden flex items-center justify-center">
                 <img 
-                  src="/images/whitepapers/tech-docs-cover.png" 
-                  alt="Elastos Technical Documentation Cover"
+                  src="/images/Roadmap/CoinTelegraph Report.png" 
+                  alt="CoinTelegraph Report Cover"
                   className="h-full object-contain"
                   onError={(e) => {
-                    e.currentTarget.src = "https://via.placeholder.com/400x200?text=Technical+Documentation";
+                    e.currentTarget.src = "https://via.placeholder.com/400x200?text=CoinTelegraph+Report";
                   }}
                 />
               </div>
               <CardHeader className="pb-3 relative">
                 <span className="absolute top-5 right-5 px-4 py-1 bg-[#5C8EFF]/10 border border-[#5C8EFF]/30 text-white rounded-full text-xs font-medium whitespace-nowrap">2025</span>
-                <CardTitle className="text-[#F6921A]">Technical Documentation</CardTitle>
-                <CardDescription>Developer Resources & API Reference</CardDescription>
+                <CardTitle className="text-[#F6921A]">CoinTelegraph Report</CardTitle>
+                <CardDescription>Bitcoin-Secured Architecture for Decentralized Finance</CardDescription>
               </CardHeader>
               <CardContent className="pt-0">
                 <div className="mb-3">
                   <p className="text-sm text-gray-600 dark:text-gray-400 mb-3">
-                    Comprehensive technical documentation for developers looking to build
-                    on the Elastos infrastructure, including APIs and code examples.
+                    Independent analysis of Elastos' role in BTCFi, combining Bitcoin's security with smart contract functionality and cross-chain DeFi.
                   </p>
                   <ul className="mt-4 text-sm text-gray-700 dark:text-gray-300 space-y-1">
                     <li className="flex items-start">
                       <span className="text-[#F6921A] mr-2">•</span>
-                      <span>API documentation and endpoints</span>
+                      <span>Merged mining with Bitcoin for network security</span>
                     </li>
                     <li className="flex items-start">
                       <span className="text-[#F6921A] mr-2">•</span>
-                      <span>Integration guides and examples</span>
+                      <span>Elastic Consensus for scalability and governance</span>
                     </li>
                     <li className="flex items-start">
                       <span className="text-[#F6921A] mr-2">•</span>
-                      <span>SDKs for major programming languages</span>
+                      <span>BTCFi use cases powered by BeL2 and zk-proofs</span>
                     </li>
                   </ul>
                 </div>
               </CardContent>
               <CardFooter className="pt-0 -mt-5">
-                <a href="/whitepapers/Elastos_Technical_Docs.pdf" target="_blank" rel="noopener noreferrer">
+                <a href="https://s3.cointelegraph.com/Elastos-Examining-a-Bitcoin-Secured-Framework-for-Decentralized-Finance-2025-Report.pdf" target="_blank" rel="noopener noreferrer">
                   <button className="px-3 py-2 bg-[rgba(246,146,26,0.15)] text-white rounded-full font-[200] transition-all flex items-center gap-1 border border-[rgba(246,146,26,0.25)] text-sm">
                     <span>View</span>
                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 35 34" fill="none">
