@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { motion } from "framer-motion";
+import { StackedCircularFooter } from "@/components/ui/stacked-circular-footer";
 import {
   ArrowDown,
   ArrowUp,
@@ -61,6 +62,11 @@ export function BridgePage() {
   const [activeStepIndex, setActiveStepIndex] = useState(0);
   const [shadowStep, setShadowStep] = useState(0);
   const [expandedSection, setExpandedSection] = useState<string | null>("native");
+
+  // Scroll to top when component mounts
+  React.useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
   const handleNextStep = () => {
     if (activeStepIndex < nativeBridgeSteps.length - 1) {
@@ -130,7 +136,7 @@ export function BridgePage() {
   };
 
   return (
-    <div className="relative w-full font-[200] min-h-screen text-white">
+    <div className="relative w-full font-[200] flex flex-col min-h-screen text-white">
       {/* Full-width hero image with gradient overlay */}
       <div className="relative w-full h-[500px] overflow-hidden -mt-16">
         <img
@@ -1347,6 +1353,13 @@ export function BridgePage() {
           </div>
         </div>
       </section>
+      
+      {/* Footer */}
+      <div className="mt-auto">
+        <div className="w-full">
+          <StackedCircularFooter />
+        </div>
+      </div>
     </div>
   );
 }
