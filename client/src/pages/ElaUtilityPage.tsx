@@ -60,38 +60,92 @@ const GridItem = ({ area, icon, title, description }: GridItemProps) => {
 
 function GlowingEffectDemo() {
   return (
-    <ul className="grid grid-cols-1 grid-rows-none gap-4 md:grid-cols-12 md:grid-rows-3 lg:gap-4 xl:max-h-[34rem] xl:grid-rows-2">
-      <GridItem
-        area="md:[grid-area:1/1/2/7] xl:[grid-area:1/1/2/5]"
-        icon={<Zap className="h-4 w-4 text-white" />}
-        title="A Token With Real Utility"
-        description="Unlike speculative tokens, ELA is a functional asset that powers an entire decentralized internet infrastructure."
-      />
-      <GridItem
-        area="md:[grid-area:1/7/2/13] xl:[grid-area:2/1/3/5]"
-        icon={<Lock className="h-4 w-4 text-white" />}
-        title="Strong Security Backing"
-        description="With Bitcoin merge-mining, ELA transactions benefit from the world's most secure blockchain network."
-      />
-      <GridItem
-        area="md:[grid-area:2/1/3/7] xl:[grid-area:1/5/3/8]"
-        icon={<Network className="h-4 w-4 text-white" />}
-        title="Decentralized, Not Corporate-Controlled"
-        description="ELA holders collectively shape the future of the Smart Web, ensuring no single entity controls the network."
-      />
-      <GridItem
-        area="md:[grid-area:2/7/3/13] xl:[grid-area:1/8/2/13]"
-        icon={<Wallet className="h-4 w-4 text-white" />}
-        title="Enabling the Digital Rights & DeFi Economy"
-        description="From identity to ownership, payments, and governance, ELA is the fuel of Web3's next evolution, supporting DeFi, swaps, lending, and the monetization of digital assets."
-      />
-      <GridItem
-        area="md:[grid-area:3/1/4/13] xl:[grid-area:2/8/3/13]"
-        icon={<Search className="h-4 w-4" />}
-        title="Fueling Interconnected Digital Economies"
-        description="ELA powers Elastos' sidechains as a unified gas asset, enabling scalable, interoperable digital economies across services and applications."
-      />
-    </ul>
+    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      <motion.div
+        initial={{ opacity: 0, y: 10 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ delay: 0.1 }}
+        whileHover={{ y: -5, transition: { duration: 0.2 } }}
+        className="bg-gradient-to-br from-[#8BABFF]/5 to-transparent rounded-xl p-6 border border-[#8BABFF]/10 flex flex-col h-full"
+      >
+        <div className="mb-4 w-10 h-10 rounded-full bg-[#5C8EFF]/10 flex items-center justify-center">
+          <Zap className="h-5 w-5 text-[#5C8EFF]" />
+        </div>
+        <h3 className="text-lg font-bold text-white mb-2">A Token With Real Utility</h3>
+        <p className="text-sm text-gray-400 mt-1 flex-grow">
+          Unlike speculative tokens, ELA is a functional asset that powers an entire decentralized internet infrastructure.
+        </p>
+      </motion.div>
+
+      <motion.div
+        initial={{ opacity: 0, y: 10 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ delay: 0.2 }}
+        whileHover={{ y: -5, transition: { duration: 0.2 } }}
+        className="bg-gradient-to-br from-[#8BABFF]/5 to-transparent rounded-xl p-6 border border-[#8BABFF]/10 flex flex-col h-full"
+      >
+        <div className="mb-4 w-10 h-10 rounded-full bg-[#5C8EFF]/10 flex items-center justify-center">
+          <Lock className="h-5 w-5 text-[#5C8EFF]" />
+        </div>
+        <h3 className="text-lg font-bold text-white mb-2">Strong Security Backing</h3>
+        <p className="text-sm text-gray-400 mt-1 flex-grow">
+          With Bitcoin merge-mining, ELA transactions benefit from the world's most secure blockchain network.
+        </p>
+      </motion.div>
+
+      <motion.div
+        initial={{ opacity: 0, y: 10 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ delay: 0.3 }}
+        whileHover={{ y: -5, transition: { duration: 0.2 } }}
+        className="bg-gradient-to-br from-[#8BABFF]/5 to-transparent rounded-xl p-6 border border-[#8BABFF]/10 flex flex-col h-full"
+      >
+        <div className="mb-4 w-10 h-10 rounded-full bg-[#5C8EFF]/10 flex items-center justify-center">
+          <Network className="h-5 w-5 text-[#5C8EFF]" />
+        </div>
+        <h3 className="text-lg font-bold text-white mb-2">Decentralized Control</h3>
+        <p className="text-sm text-gray-400 mt-1 flex-grow">
+          ELA holders collectively shape the future of the Smart Web, ensuring no single entity controls the network.
+        </p>
+      </motion.div>
+
+      <motion.div
+        initial={{ opacity: 0, y: 10 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ delay: 0.4 }}
+        whileHover={{ y: -5, transition: { duration: 0.2 } }}
+        className="bg-gradient-to-br from-[#8BABFF]/5 to-transparent rounded-xl p-6 border border-[#8BABFF]/10 flex flex-col h-full"
+      >
+        <div className="mb-4 w-10 h-10 rounded-full bg-[#5C8EFF]/10 flex items-center justify-center">
+          <Wallet className="h-5 w-5 text-[#5C8EFF]" />
+        </div>
+        <h3 className="text-lg font-bold text-white mb-2">Digital Rights & DeFi Economy</h3>
+        <p className="text-sm text-gray-400 mt-1 flex-grow">
+          From identity to ownership, payments, and governance, ELA is the fuel of Web3's next evolution.
+        </p>
+      </motion.div>
+
+      <motion.div
+        initial={{ opacity: 0, y: 10 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ delay: 0.5 }}
+        whileHover={{ y: -5, transition: { duration: 0.2 } }}
+        className="bg-gradient-to-br from-[#8BABFF]/5 to-transparent rounded-xl p-6 border border-[#8BABFF]/10 flex flex-col h-full"
+      >
+        <div className="mb-4 w-10 h-10 rounded-full bg-[#5C8EFF]/10 flex items-center justify-center">
+          <Search className="h-5 w-5 text-[#5C8EFF]" />
+        </div>
+        <h3 className="text-lg font-bold text-white mb-2">Interconnected Digital Economies</h3>
+        <p className="text-sm text-gray-400 mt-1 flex-grow">
+          ELA powers Elastos' sidechains as a unified gas asset, enabling scalable, interoperable digital economies.
+        </p>
+      </motion.div>
+    </div>
   );
 }
 
