@@ -152,7 +152,7 @@ export default function BridgePage() {
                 ELA Bridge Guide
               </h1>
               <p className="text-xl md:text-2xl text-white/80 max-w-3xl mx-auto leading-relaxed">
-                Learn how to seamlessly transfer your ELA between different Elastos chains and Ethereum.
+                Learn how to easily transfer your ELA between different Elastos chains and Ethereum.
               </p>
             </motion.div>
 

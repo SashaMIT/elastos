@@ -149,7 +149,7 @@ export function BridgePage() {
                   ELA Bridge Guide
                 </h1>
                 <p className="text-gray-300 max-w-2xl mx-auto text-md sm:text-base md:text-lg font-[200]">
-                  Learn how to seamlessly transfer your ELA between different Elastos chains and Ethereum.
+                  Learn how to easily transfer your ELA between different blockchains.
                 </p>
               </div>
             </div>
@@ -180,15 +180,15 @@ export function BridgePage() {
                   <ul className="space-y-2">
                     <li className="flex items-start">
                       <span className="inline-block w-2 h-2 rounded-full bg-[#F7921A] mt-2 mr-2"></span>
-                      <span className="text-base"><strong>Elastos Main Chain ELA</strong> - The original Layer 1 coin</span>
+                      <span className="text-base"><strong>Elastos Main Chain ELA</strong> - Layer 1 merged-mined chain</span>
                     </li>
                     <li className="flex items-start">
                       <span className="inline-block w-2 h-2 rounded-full bg-[#F7921A] mt-2 mr-2"></span>
-                      <span className="text-base"><strong>Elastos Smart Chain ELA</strong> - ELA on the Layer 2 smart contract chain</span>
+                      <span className="text-base"><strong>Elastos Smart Chain (ESC) ELA</strong> - Layer 2 smart contract chain</span>
                     </li>
                     <li className="flex items-start">
                       <span className="inline-block w-2 h-2 rounded-full bg-[#F7921A] mt-2 mr-2"></span>
-                      <span className="text-base"><strong>Elastos Identity Chain ELA</strong> - ELA on the Layer 2 identity chain</span>
+                      <span className="text-base"><strong>Elastos Identity Chain ELA</strong> - Layer 2 identity chain</span>
                     </li>
                   </ul>
                 </div>
@@ -258,7 +258,7 @@ export function BridgePage() {
                       <Repeat className="w-6 h-6 text-[#F7921A]" />
                     </div>
                     <div className="text-left">
-                      <h3 className="font-semibold text-xl">Native Chain Bridging</h3>
+                      <h3 className="font-semibold text-xl">Native ELA Chain Bridging</h3>
                       <p className="text-base text-white/80">Between Elastos Main Chain, Smart Chain, and Identity Chain</p>
                     </div>
                   </div>
