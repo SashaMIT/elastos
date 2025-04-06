@@ -300,7 +300,7 @@ const WhitepaperPage = () => {
                   </p>
                 </CardContent>
                 <CardFooter>
-                  <a href="https://elastos.info/community/" target="_blank" rel="noopener noreferrer">
+                  <Link to="/social-channels"> {/* Assuming '/social-channels' is the route */}
                     <button className="px-3 py-2 bg-[rgba(92,142,255,0.15)] text-white rounded-full font-[200] transition-all flex items-center gap-1 border border-[rgba(92,142,255,0.25)] text-sm">
                       <span>Join Community</span>
                       <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 35 34" fill="none">
@@ -309,7 +309,7 @@ const WhitepaperPage = () => {
                         <path d="M20.7628 17.6638H10.8747V16.3365H20.7628H20.7929L20.7716 16.3152L16.4338 11.9774L17.3338 11.0775L23.2564 17.0002L17.3338 22.9228L16.4338 22.0229L20.7716 17.6851L20.7929 17.6638H20.7628Z" stroke="#5C8EFF" strokeOpacity="0.25" strokeWidth="1.5"/>
                       </svg>
                     </button>
-                  </a>
+                  </Link>
                 </CardFooter>
               </Card>
             </div>
