@@ -374,7 +374,7 @@ const LandingPage = () => {
             </h2>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-5xl mx-auto">
-            <div className="bg-[#ececec] dark:bg-[#5C8EFF]/[0.06] rounded-lg p-4 sm:p-6 shadow-sm">
+            <div className="bg-[#ececec] dark:bg-[#5C8EFF]/[0.06] rounded-lg p-3 sm:p-6 shadow-sm">
               <h3 className="text-lg font-medium mb-4">Current Price</h3>
               {isHashrateLoading ? (
                 <div className="flex flex-col items-center justify-center h-[120px]">
@@ -394,7 +394,7 @@ const LandingPage = () => {
               )}
             </div>
 
-            <div className="bg-[#ececec] dark:bg-[#5C8EFF]/[0.06] rounded-lg p-4 sm:p-6 shadow-sm">
+            <div className="bg-[#ececec] dark:bg-[#5C8EFF]/[0.06] rounded-lg p-3 sm:p-6 shadow-sm">
               <h3 className="text-lg font-medium mb-4">Total Supply</h3>
               {isSupplyLoading ? (
                 <div className="flex flex-col items-center justify-center h-[120px]">
@@ -416,7 +416,7 @@ const LandingPage = () => {
 
 
 
-            <div className="bg-[#ececec] dark:bg-[#5C8EFF]/[0.06] rounded-lg p-4 sm:p-6 shadow-sm">
+            <div className="bg-[#ececec] dark:bg-[#5C8EFF]/[0.06] rounded-lg p-3 sm:p-6 shadow-sm">
               <h3 className="text-lg font-medium mb-4">Market Cap</h3>
               {isMarketCapLoading ? (
                 <div className="flex flex-col items-center justify-center h-[120px]">
@@ -438,7 +438,7 @@ const LandingPage = () => {
 
 
 
-            <div className="bg-[#ececec] dark:bg-[#5C8EFF]/[0.06] rounded-lg p-4 sm:p-6 shadow-sm">
+            <div className="bg-[#ececec] dark:bg-[#5C8EFF]/[0.06] rounded-lg p-3 sm:p-6 shadow-sm">
               <h3 className="text-lg font-medium mb-4">Current APR</h3>
               {!networkStats ? (
                 <div className="flex flex-col items-center justify-center h-[120px]">
@@ -475,7 +475,7 @@ const LandingPage = () => {
 
 
 
-            <div className="bg-[#ececec] dark:bg-[#5C8EFF]/[0.06] rounded-lg p-4 sm:p-6 shadow-sm">
+            <div className="bg-[#ececec] dark:bg-[#5C8EFF]/[0.06] rounded-lg p-3 sm:p-6 shadow-sm">
               <h3 className="text-lg font-medium mb-4">BTC Security</h3>
               {isHashrateLoading ? (
                 <div className="flex flex-col items-center justify-center h-[120px]">
@@ -494,7 +494,7 @@ const LandingPage = () => {
             </div>
 
 
-            <div className="bg-[#ececec] dark:bg-[#5C8EFF]/[0.06] rounded-lg p-4 sm:p-6 shadow-sm">
+            <div className="bg-[#ececec] dark:bg-[#5C8EFF]/[0.06] rounded-lg p-3 sm:p-6 shadow-sm">
               <h3 className="text-lg font-medium mb-4">Latest Block By</h3>
               {!currentBlock ? (
                 <div className="flex flex-col items-center justify-center h-[120px]">
@@ -529,7 +529,7 @@ const LandingPage = () => {
 
 
 
-            <div className="bg-[#ececec] dark:bg-[#5C8EFF]/[0.06] rounded-lg p-4 sm:p-6 shadow-sm">
+            <div className="bg-[#ececec] dark:bg-[#5C8EFF]/[0.06] rounded-lg p-3 sm:p-6 shadow-sm">
               <h3 className="text-lg font-medium mb-4">Next 4 Year Halving</h3>
               {/* Halving info is static, no need for a loader */}
               <p className="text-xl sm:text-2xl font-[200]">Dec 1, 2025</p>
@@ -543,7 +543,7 @@ const LandingPage = () => {
             </div>
 
 
-            <div className="bg-[#ececec] dark:bg-[#5C8EFF]/[0.06] rounded-lg p-4 sm:p-6 shadow-sm">
+            <div className="bg-[#ececec] dark:bg-[#5C8EFF]/[0.06] rounded-lg p-3 sm:p-6 shadow-sm">
               <h3 className="text-lg font-medium mb-4">Active Wallets</h3>
               {!networkStats ? (
                 <div className="flex flex-col items-center justify-center h-[120px]">
@@ -559,8 +559,7 @@ const LandingPage = () => {
                       onClick={() => window.open("https://ela.elastos.io/api/v1/data-statistics/", '_blank')}
                     >
                       <span>Verify</span>
-                      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 35 34" fill="none">
-                        <circle cx="17.333" cy="17" r="16.75" stroke="#5C8EFF" strokeOpacity="0.25" strokeWidth="1.5"/>
+                      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 35 34" fill="none"><circle cx="17.333" cy="17" r="16.75" stroke="#5C8EFF" strokeOpacity="0.25" strokeWidth="1.5"/>
                         <path d="M17.3338 22.9405L23.2741 17.0002L17.3338 11.0598L16.4162 11.9774L20.7628 16.324H10.8622V17.6763H20.7628L16.4162 22.0229L17.3338 22.9405Z" fill="#5C8EFF"/>
                         <path d="M20.7628 17.6638H10.8747V16.3365H20.7628H20.7929L20.7716 16.3152L16.4338 11.9774L17.3338 11.0775L23.2564 17.0002L17.3338 22.9228L16.4338 22.0229L20.7716 17.6851L20.7929 17.6638H20.7628Z" stroke="#5C8EFF" strokeOpacity="0.25" strokeWidth="1.5"/>
                       </svg>
