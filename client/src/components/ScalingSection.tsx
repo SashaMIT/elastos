@@ -84,8 +84,8 @@ export function ScalingSection() {
         {activeTab === 'public' ? (
           <div className="space-y-32">
             <div className="grid grid-cols-1 md:grid-cols-2 items-center gap-12">
-              <div className="flex justify-center md:justify-end">
-                <div className="w-48 h-48 relative">
+              <div className="flex justify-center">
+                <div className="w-64 h-64 relative">
                   <img src="/images/Glass Circles1.png" alt="Elastos Mainchain" className="w-full h-full object-contain" />
                 </div>
               </div>
@@ -124,16 +124,16 @@ export function ScalingSection() {
                   </button>
                 </div>
               </div>
-              <div className="flex justify-center md:justify-start md:order-2">
-                <div className="w-48 h-48 relative">
+              <div className="flex justify-center md:order-2">
+                <div className="w-64 h-64 relative">
                   <img src="/images/Glass Circles2.png" alt="BeL2" className="w-full h-full object-contain" />
                 </div>
               </div>
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 items-center gap-12">
-              <div className="flex justify-center md:justify-end">
-                <div className="w-48 h-48 relative">
+              <div className="flex justify-center">
+                <div className="w-64 h-64 relative">
                   <img src="/images/Glass Circles3.png" alt="DePIN Network" className="w-full h-full object-contain" />
                 </div>
               </div>
