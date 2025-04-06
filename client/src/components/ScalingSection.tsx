@@ -5,10 +5,11 @@ import { Card } from '@/components/ui/card';
 import { ExternalLink } from 'lucide-react';
 import { Link } from 'wouter';
 import { Lens } from '@/components/ui/lens';
-import glassCircle1 from '@/images/Special FX Graphics/Glass Circles - #1.jpg';
-import glassCircle2 from '@/images/Special FX Graphics/Glass Circles - #2 2.jpg';
-import glassCircle3 from '@/images/Special FX Graphics/Glass Circles - #3 2.jpg';
-import placeholderImage from '@/images/placeholder-image.jpg';
+// Use public paths directly since these are in the public directory
+const glassCircle1 = '/images/Special FX Graphics/Glass Circles - #1.jpg';
+const glassCircle2 = '/images/Special FX Graphics/Glass Circles - #2 2.jpg';
+const glassCircle3 = '/images/Special FX Graphics/Glass Circles - #3 2.jpg';
+const placeholderImage = '/images/placeholder-image.jpg';
 
 
 const ecosystemProjects = [
