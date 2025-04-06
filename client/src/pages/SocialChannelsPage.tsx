@@ -86,14 +86,14 @@ const SocialChannelsPage: React.FC = () => {
         <div className="absolute inset-0 bg-gradient-to-b from-black/10 via-[#171717]/80 to-[#171717]"></div>
 
         {/* Hero content overlay */}
-        <div className="absolute inset-0 flex items-center justify-center">
+        <div className="absolute inset-0 flex items-center justify-center mt-20">
           <div className="container mx-auto px-4">
             <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5 }}
-                className="text-center mb-6"
+                className="text-center mb-6 pt-16"
               >
                 <h1 className="text-4xl sm:text-4xl md:text-5xl font-[200] text-white mb-4">
                   Elastos Community <span className="text-[#5C8EFF]">Social Channels</span>
