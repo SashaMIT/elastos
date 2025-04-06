@@ -116,7 +116,7 @@ const StatCard = ({ title, value, progress, gaugeValue, countdown, circular, sub
   return (
     <Card className={cn("p-3 sm:p-6", {"dark:bg-[#5C8EFF]/[0.06]": true})}>
       <h3 className="text-lg font-medium mb-2">{title}</h3>
-      <div className="text-2xl font-bold">{value}</div>
+      <div className="text-xl sm:text-2xl font-bold">{value}</div>
       {subValue && <div className="text-sm text-muted-foreground">{subValue}</div>}
       {progress !== undefined && !circular && <div className="h-2 rounded-full bg-gray-200 mt-2">
                   <div className={`h-full rounded-full bg-[#F6921A]`} style={{ width: `${progress}%` }} />
@@ -382,7 +382,7 @@ const LandingPage = () => {
                 </div>
               ) : (
                 <>
-                  <p className="text-2xl font-[200]">${hashrateData?.elaPrice?.toFixed(2) || '0.00'}</p>
+                  <p className="text-xl sm:text-2xl font-[200]">${hashrateData?.elaPrice?.toFixed(2) || '0.00'}</p>
                   <p className={`text-sm ${hashrateData?.elaPriceChange24h >= 0 ? 'text-green-500 dark:text-green-400' : 'text-red-500 dark:text-red-400'} mb-4`}>
                     {(hashrateData?.elaPriceChange24h >= 0 ? '+' : '') + (hashrateData?.elaPriceChange24h || 0).toFixed(2)}%
                   </p>
@@ -402,7 +402,7 @@ const LandingPage = () => {
                 </div>
               ) : (
                 <>
-                  <p className="text-2xl font-[200]">28,199,999 ELA</p>
+                  <p className="text-xl sm:text-2xl font-[200]">28,199,999 ELA</p>
                   <p className="text-sm text-gray-500 dark:text-gray-400 mt-1">91.31% mined</p>
                   <div className="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-1.5 mt-4">
                     <div className="bg-[#F6921A] h-1.5 rounded-full" style={{ width: '91.31%' }} />
@@ -424,7 +424,7 @@ const LandingPage = () => {
                 </div>
               ) : (
                 <>
-                  <p className="text-2xl font-[200]">${formatNumber(marketCapData?.elastosMarketCap ?? 0)}</p>
+                  <p className="text-xl sm:text-2xl font-[200]">${formatNumber(marketCapData?.elastosMarketCap ?? 0)}</p>
                   <p className="text-sm text-gray-500 dark:text-gray-400 mt-1">{((marketCapData?.marketCapRatio ?? 0) * 100).toFixed(4)}% of BTC</p>
                   <div className="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-1.5 mt-4">
                     <div className="bg-[#F6921A] h-1.5 rounded-full" style={{ width: `${((marketCapData?.marketCapRatio ?? 0) * 100)}%` }} />
@@ -446,7 +446,7 @@ const LandingPage = () => {
                 </div>
               ) : (
                 <>
-                  <p className="text-2xl font-[200]">3.29%</p>
+                  <p className="text-xl sm:text-2xl font-[200]">3.29%</p>
                   <p className="text-sm text-gray-500 dark:text-gray-400 mt-1">{(networkStats?.stakedAmount || 0).toLocaleString()} ELA staked</p>
                   <div className="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-1.5 mt-4">
                     <div 
@@ -483,7 +483,7 @@ const LandingPage = () => {
                 </div>
               ) : (
                 <>
-                  <p className="text-2xl font-[200]">{((hashrateData?.elastosHashrate ?? 0) / (hashrateData?.bitcoinHashrate ?? 1) * 100).toFixed(2)}%</p>
+                  <p className="text-xl sm:text-2xl font-[200]">{((hashrateData?.elastosHashrate ?? 0) / (hashrateData?.bitcoinHashrate ?? 1) * 100).toFixed(2)}%</p>
                   <p className="text-sm text-gray-500 dark:text-gray-400 mt-1">{Math.round(hashrateData?.elastosHashrate || 0)} EH/s of {Math.round(hashrateData?.bitcoinHashrate || 0)} EH/s</p>
                   <div className="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-1.5 mt-4">
                     <div className="bg-[#F6921A] h-1.5 rounded-full" style={{ width: `${((hashrateData?.elastosHashrate ?? 0) / (hashrateData?.bitcoinHashrate ?? 1) * 100)}%` }} />
@@ -502,7 +502,7 @@ const LandingPage = () => {
                 </div>
               ) : (
                 <>
-                  <p className="text-2xl font-[200]">{currentBlock?.poolInfo?.poolName || 'Unknown'}</p>
+                  <p className="text-xl sm:text-2xl font-[200]">{currentBlock?.poolInfo?.poolName || 'Unknown'}</p>
                   <p className="text-sm text-gray-500 dark:text-gray-400 mt-1">Mining Pool</p>
                   <div className="mt-4 pt-[2px] flex justify-center">
                     <button 
@@ -532,7 +532,7 @@ const LandingPage = () => {
             <div className="bg-[#ececec] dark:bg-[#5C8EFF]/[0.06] rounded-lg p-4 sm:p-6 shadow-sm">
               <h3 className="text-lg font-medium mb-4">Next 4 Year Halving</h3>
               {/* Halving info is static, no need for a loader */}
-              <p className="text-2xl font-[200]">Dec 1, 2025</p>
+              <p className="text-xl sm:text-2xl font-[200]">Dec 1, 2025</p>
               <p className="text-sm text-gray-500 dark:text-gray-400 mt-1">305d 17h 52m remaining</p>
               <div className="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-1.5 mt-4">
                 <div className="bg-[#F6921A] h-1.5 rounded-full" style={{ 
@@ -551,7 +551,7 @@ const LandingPage = () => {
                 </div>
               ) : (
                 <>
-                  <p className="text-2xl font-[200]">{networkStats?.walletAddresses?.toLocaleString() || '0'}</p>
+                  <p className="text-xl sm:text-2xl font-[200]">{networkStats?.walletAddresses?.toLocaleString() || '0'}</p>
                   <p className="text-sm text-gray-500 dark:text-gray-400 mt-1">Total Addresses</p>
                   <div className="mt-4 pt-[2px] flex justify-center">
                     <button 
@@ -572,10 +572,10 @@ const LandingPage = () => {
           </div>
 
         </div>
-        
+
         {/* Add spacing before LogoCarouselDemo */}
         <div className="py-6 md:py-6"></div>
-        
+
         <LogoCarouselDemo />
       </div>
 
@@ -589,7 +589,7 @@ const LandingPage = () => {
 
       {/* Spacer div to add more distance */}
       <div className="py-5 md:py-5"></div>
-      
+
       {/* Testimonials Section */}
       <div className="w-full bg-background dark:bg-[#171717]">
         <div className="container mx-auto px-4 md:px-0 mb-0">
@@ -886,7 +886,7 @@ const LandingPage = () => {
       {/* Spacer div to add more distance */}
         <div className="py-12 md:py-12"></div>
 
-      
+
       {/* FAQ Section */}
       <div className="w-full py-0 bg-background dark:bg-[#171717]">
         <div className="container mx-auto px-4 md:px-0">
