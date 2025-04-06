@@ -572,13 +572,6 @@ const LandingPage = () => {
           </div>
 
         </div>
-
-
-
-
-
-
-
         <LogoCarouselDemo />
       </div>
 
