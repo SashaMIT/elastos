@@ -278,18 +278,22 @@ const HashrateVisualizer = () => {
               Compare to everyday devices:
             </div>
 
-            <div className="flex flex-wrap justify-center gap-2 mb-6">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-2 mb-6 px-1">
               {(Object.entries(scales) as [ScaleType, Scale][]).map(([key, { icon, unit, explanation }]) => (
                 <TooltipProvider key={key} delayDuration={0}>
                   <Tooltip>
                     <TooltipTrigger asChild>
-                      <span
+                      <Button
+                        variant={selectedScale === key ? "default" : "outline"}
                         onClick={() => setSelectedScale(key)}
-                        className={`px-4 py-2 ${selectedScale === key ? 'bg-[#F6921A]/10 border border-[#F6921A]/30' : 'bg-[#5C8EFF]/10 border border-[#5C8EFF]/30'} text-white rounded-full text-base font-[200] cursor-pointer flex items-center gap-2 transition-all hover:bg-opacity-20`}
+                        className={cn(
+                          "w-full gap-2 min-h-[2.5rem] px-2 py-1",
+                          selectedScale === key && "shadow-lg"
+                        )}
                       >
                         <span>{scales[key].icon}</span>
-                        <span className="truncate">{scales[key].buttonText || unit}</span>
-                      </span>
+                        <span className="text-sm truncate">{scales[key].buttonText || unit}</span>
+                      </Button>
                     </TooltipTrigger>
                     <TooltipContent side="top" className="p-3 touch-auto">
                       <div className="text-sm space-y-2">
