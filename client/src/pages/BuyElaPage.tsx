@@ -222,7 +222,7 @@ const BuyElaPage = () => {
                 <ExternalLink size={12} />
               </a>
               <a
-                href="https://download.elastos.io/app/elastos-essentials/Essentials.apk"
+                href="https://play.google.com/store/apps/details?id=io.web3essentials.app"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-1 px-4 py-1 bg-[#5C8EFF]/10 border border-[#5C8EFF]/30 text-white rounded-full text-xs font-medium whitespace-nowrap transition-colors hover:bg-[#5C8EFF]/20"
