@@ -13,7 +13,7 @@ export function DetailedVisionSection() {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.2 }}
           viewport={{ once: true }}
-          className="text-lg text-gray-700 dark:text-gray-300 space-y-4"
+          className="text-lg text-gray-700 dark:text-gray-300 space-y-4 font-[200]"
         >
           <p>
             Elastos is creating the SmartWeb—an open, programmable internet where users own their data, identity, and assets, powered by the most secure blockchain infrastructure in existence, Bitcoin.

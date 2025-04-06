@@ -1,4 +1,3 @@
-
 import React from "react";
 import { motion } from "framer-motion";
 
@@ -20,6 +19,14 @@ export function FeatureCards() {
 
   return (
     <div className="py-12">
+      <div className="text-center max-w-3xl mx-auto mb-16">
+        <h2 className="text-3xl md:text-4xl font-[200] mb-6 bg-clip-text text-transparent bg-gradient-to-r from-white to-gray-300 dark:from-white dark:to-gray-500">
+          Key Features of the Elastos Ecosystem
+        </h2>
+        <p className="text-gray-600 dark:text-gray-400 font-[200]">
+          Discover the unique capabilities that make Elastos a transformative platform
+        </p>
+      </div>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           {features.map((feature, idx) => (

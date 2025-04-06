@@ -55,7 +55,7 @@ export function FeaturesSectionWithBentoGrid() {
   return (
     <div className="relative z-20 py-8 max-w-7xl mx-auto">
       <div className="text-center mb-6">
-        <h2 className="text-2xl md:text-3xl font-bold text-black dark:text-white">
+        <h2 className="text-2xl md:text-3xl font-[200] text-black dark:text-white">
           Core Purpose
         </h2>
       </div>
@@ -99,7 +99,7 @@ const FeatureCard = ({
 
 const FeatureTitle = ({ children }: { children?: React.ReactNode }) => {
   return (
-    <h3 className="text-lg font-semibold mb-1 text-black dark:text-white">
+    <h3 className="text-lg font-[200] mb-1 text-black dark:text-white">
       {children}
     </h3>
   );
@@ -107,7 +107,7 @@ const FeatureTitle = ({ children }: { children?: React.ReactNode }) => {
 
 const FeatureDescription = ({ children }: { children?: React.ReactNode }) => {
   return (
-    <p className="text-xs text-neutral-600 dark:text-neutral-300">
+    <p className="text-xs text-neutral-600 dark:text-neutral-300 font-[200]">
       {children}
     </p>
   );

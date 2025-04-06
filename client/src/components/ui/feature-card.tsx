@@ -17,8 +17,8 @@ export function FeatureCard({ title, description, className, ...props }: Feature
       {...props}
     >
       <div className="flex flex-col gap-4">
-        <h3 className="text-xl font-semibold text-white">{title}</h3>
-        <p className="text-sm text-zinc-400">{description}</p>
+        <h3 className="text-xl font-[200] text-white">{title}</h3>
+        <p className="text-sm font-[200] text-zinc-400">{description}</p>
       </div>
       <ArrowRight className="absolute bottom-6 right-6 h-6 w-6 text-zinc-400 transition-transform group-hover:translate-x-1" />
     </Card>
