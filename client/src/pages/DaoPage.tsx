@@ -805,22 +805,21 @@ const DaoPage: React.FC = () => {
       </section>
 
       {/* Elastos Essentials Wallet Section */}
-      <section className="py-16 relative overflow-hidden bg-[#171717]">
-        <div className="absolute inset-0 bg-[#171717] z-0"></div>
+      <section className="py-16 relative overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-b from-white/[0.00] via-white/[0.02] to-white/[0.00] z-0"></div>
 
         <div className="container mx-auto px-4 relative z-10">
-          <div className="max-w-6xl mx-auto">
+          <div className="w-full">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               className="mb-8 text-center"
             >
-              <h2 className="text-4xl font-bold text-white mb-4 font-[200]">
-                <span className="text-[#F7921A]">Download</span>{" "}
-                Essentials Wallet to Participate
+              <h2 className="text-4xl font-bold text-white mb-4">
+                Elastos Essentials Wallet
               </h2>
-              <p className="text-xl text-white/70 max-w-3xl mx-auto font-[200]">
+              <p className="text-xl text-white/70 max-w-3xl mx-auto">
                 Required for DAO voting, proposal submission, and governance participation with DID integration
               </p>
             </motion.div>
@@ -830,9 +829,10 @@ const DaoPage: React.FC = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.2 }}
-              className="rounded-3xl bg-gradient-to-br from-[#8BABFF]/10 via-[#8BABFF]/10 to-transparent p-10 border border-[#8BABFF]/20 max-w-5xl mx-auto relative overflow-hidden"
+              className="rounded-3xl bg-gradient-to-br from-[#F7921A]/10 via-[#8BABFF]/10 to-transparent p-10 border border-[#8BABFF]/20 w-full mx-auto relative overflow-hidden"
             >
               {/* Background elements */}
+              <div className="absolute -top-20 -right-20 w-64 h-64 rounded-full bg-[#F7921A]/10 blur-[80px]"></div>
               <div className="absolute -bottom-20 -left-20 w-72 h-72 rounded-full bg-[#8BABFF]/10 blur-[100px]"></div>
 
               <div className="grid md:grid-cols-2 gap-10 items-center">
@@ -848,25 +848,25 @@ const DaoPage: React.FC = () => {
                   />
                 </div>
                 <div>
-                  <h3 className="text-2xl font-bold text-white mb-4 font-[200]">Essential for DAO Governance</h3>
+                  <h3 className="text-2xl font-[200] text-white mb-3">Essential for DAO Governance</h3>
                   <div className="space-y-4 text-white/70">
-                    <p className="font-[200]">Elastos Essentials is required for participating in the DAO. With the wallet, you can:</p>
+                    <p className="text-base font-[200]">Elastos Essentials is required for participating in the DAO. With the wallet, you can:</p>
                     <ul className="space-y-2">
                       <li className="flex items-start gap-2">
-                        <CheckCircle className="w-5 h-5 text-[#F7921A] mt-0.5 flex-shrink-0" />
-                        <span className="font-[200]">Create your Decentralized ID (DID) needed for proposal submission</span>
+                        <CheckCircle className="w-5 h-5 text-[#5C8EFF] mt-0.5 flex-shrink-0" />
+                        <span className="text-base font-[200]">Create your Decentralized ID (DID) needed for proposal submission</span>
                       </li>
                       <li className="flex items-start gap-2">
-                        <CheckCircle className="w-5 h-5 text-[#F7921A] mt-0.5 flex-shrink-0" />
-                        <span className="font-[200]">Stake your ELA to vote on Council members to represent you annually</span>
+                        <CheckCircle className="w-5 h-5 text-[#5C8EFF] mt-0.5 flex-shrink-0" />
+                        <span className="text-base font-[200]">Stake your ELA to vote on Council members to represent you annually</span>
                       </li>
                       <li className="flex items-start gap-2">
-                        <CheckCircle className="w-5 h-5 text-[#F7921A] mt-0.5 flex-shrink-0" />
-                        <span className="font-[200]">Run for council by staking 5,000 ELA as collateral</span>
+                        <CheckCircle className="w-5 h-5 text-[#5C8EFF] mt-0.5 flex-shrink-0" />
+                        <span className="text-base font-[200]">Run for council by staking 5,000 ELA as collateral</span>
                       </li>
                       <li className="flex items-start gap-2">
-                        <CheckCircle className="w-5 h-5 text-[#F7921A] mt-0.5 flex-shrink-0" />
-                        <span className="font-[200]">Access the DAO Portal directly through the built-in DApp browser</span>
+                        <CheckCircle className="w-5 h-5 text-[#5C8EFF] mt-0.5 flex-shrink-0" />
+                        <span className="text-base font-[200]">Access the DAO Portal directly through the built-in DApp browser</span>
                       </li>
                     </ul>
 
@@ -875,39 +875,26 @@ const DaoPage: React.FC = () => {
                         href="https://apps.apple.com/us/app/elastos-essentials/id1568931743"
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="inline-flex px-3 py-2 bg-[rgba(92,142,255,0.10)] text-[#5C8EFF] rounded-full font-[200] transition-all items-center gap-1 border border-[rgba(92,142,255,0.50)] text-sm"
+                        className="inline-flex px-3 py-2 bg-[rgba(92,142,255,0.15)] text-white rounded-full font-[200] transition-all items-center gap-1 border border-[rgba(92,142,255,0.25)] text-sm"
                       >
                         <span>App Store</span>
                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 35 34" fill="none">
-                          <circle cx="17.333" cy="17" r="16.75" stroke="#5C8EFF" strokeOpacity="0.5" strokeWidth="0.5"/>
+                          <circle cx="17.333" cy="17" r="16.75" stroke="#5C8EFF" strokeOpacity="0.25" strokeWidth="1.5"/>
                           <path d="M17.3338 22.9405L23.2741 17.0002L17.3338 11.0598L16.4162 11.9774L20.7628 16.324H10.8622V17.6763H20.7628L16.4162 22.0229L17.3338 22.9405Z" fill="#5C8EFF"/>
-                          <path d="M20.7628 17.6638H10.8747V16.3365H20.7628H20.7929L20.7716 16.3152L16.4338 11.9774L17.3338 11.0775L23.2564 17.0002L17.3338 22.9228L16.4338 22.0229L20.7716 17.6851L20.7929 17.6638H20.7628Z" stroke="#5C8EFF" strokeOpacity="0.5" strokeWidth="0.025"/>
+                          <path d="M20.7628 17.6638H10.8747V16.3365H20.7628H20.7929L20.7716 16.3152L16.4338 11.9774L17.3338 11.0775L23.2564 17.0002L17.3338 22.9228L16.4338 22.0229L20.7716 17.6851L20.7929 17.6638H20.7628Z" stroke="#5C8EFF" strokeOpacity="0.25" strokeWidth="1.5"/>
                         </svg>
                       </a>
                       <a
                         href="https://play.google.com/store/apps/details?id=io.web3essentials.app"
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="inline-flex px-3 py-2 bg-[rgba(246,146,26,0.10)] text-[#F6921A] rounded-full font-[200] transition-all items-center gap-1 border border-[rgba(246,146,26,0.50)] text-sm"
+                        className="inline-flex px-3 py-2 bg-[rgba(246,146,26,0.15)] text-white rounded-full font-[200] transition-all items-center gap-1 border border-[rgba(246,146,26,0.25)] text-sm"
                       >
                         <span>Google Play</span>
                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 35 34" fill="none">
-                          <circle cx="17.333" cy="17" r="16.75" stroke="#F6921A" strokeOpacity="0.5" strokeWidth="0.5"/>
+                          <circle cx="17.333" cy="17" r="16.75" stroke="#F6921A" strokeOpacity="0.25" strokeWidth="1.5"/>
                           <path d="M17.3338 22.9405L23.2741 17.0002L17.3338 11.0598L16.4162 11.9774L20.7628 16.324H10.8622V17.6763H20.7628L16.4162 22.0229L17.3338 22.9405Z" fill="#F6921A"/>
-                          <path d="M20.7628 17.6638H10.8747V16.3365H20.7628H20.7929L20.7716 16.3152L16.4338 11.9774L17.3338 11.0775L23.2564 17.0002L17.3338 22.9228L16.4338 22.0229L20.7716 17.6851L20.7929 17.6638H20.7628Z" stroke="#F6921A" strokeOpacity="0.5" strokeWidth="0.025"/>
-                        </svg>
-                      </a>
-                      <a
-                        href="https://cyberrepublic.org/guides/essentials-wallet"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="inline-flex px-3 py-2 bg-[rgba(246,146,26,0.10)] text-[#F6921A] rounded-full font-[200] transition-all items-center gap-1 border border-[rgba(246,146,26,0.50)] text-sm"
-                      >
-                        <span>Setup Guide</span>
-                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 35 34" fill="none">
-                          <circle cx="17.333" cy="17" r="16.75" stroke="#F6921A" strokeOpacity="0.5" strokeWidth="0.5"/>
-                          <path d="M17.3338 22.9405L23.2741 17.0002L17.3338 11.0598L16.4162 11.9774L20.7628 16.324H10.8622V17.6763H20.7628L16.4162 22.0229L17.3338 22.9405Z" fill="#F6921A"/>
-                          <path d="M20.7628 17.6638H10.8747V16.3365H20.7628H20.7929L20.7716 16.3152L16.4338 11.9774L17.3338 11.0775L23.2564 17.0002L17.3338 22.9228L16.4338 22.0229L20.7716 17.6851L20.7929 17.6638H20.7628Z" stroke="#F6921A" strokeOpacity="0.5" strokeWidth="0.025"/>
+                          <path d="M20.7628 17.6638H10.8747V16.3365H20.7628H20.7929L20.7716 16.3152L16.4338 11.9774L17.3338 11.0775L23.2564 17.0002L17.3338 22.9228L16.4338 22.0229L20.7716 17.6851L20.7929 17.6638H20.7628Z" stroke="#F6921A" strokeOpacity="0.25" strokeWidth="1.5"/>
                         </svg>
                       </a>
                     </div>
