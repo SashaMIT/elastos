@@ -5,14 +5,24 @@ import { Card } from '@/components/ui/card';
 import { ExternalLink } from 'lucide-react';
 import { Link } from 'wouter';
 import { Lens } from '@/components/ui/lens';
-// Use public paths directly since these are in the public directory
-const glassCircle1 = '/images/Special FX Graphics/Glass Circles - #1.jpg';
-const glassCircle2 = '/images/Special FX Graphics/Glass Circles - #2 2.jpg';
-const glassCircle3 = '/images/Special FX Graphics/Glass Circles - #3 2.jpg';
+// Use URL-encoded paths for images with spaces and special characters
+const glassCircle1 = '/images/Special%20FX%20Graphics/Glass%20Circles%20-%20%231.jpg';
+const glassCircle2 = '/images/Special%20FX%20Graphics/Glass%20Circles%20-%20%232%202.jpg';
+const glassCircle3 = '/images/Special%20FX%20Graphics/Glass%20Circles%20-%20%233%202.jpg';
 const placeholderImage = '/images/placeholder-image.jpg';
 
+// Add timestamp to prevent caching
+const timestamp = Date.now();
+const glassCircle1WithCache = `${glassCircle1}?t=${timestamp}`;
+const glassCircle2WithCache = `${glassCircle2}?t=${timestamp}`;
+const glassCircle3WithCache = `${glassCircle3}?t=${timestamp}`;
+
 // Log image paths to help debug
-console.log("Image paths:", { glassCircle1, glassCircle2, glassCircle3 });
+console.log("Image paths (with cache busting):", { 
+  glassCircle1WithCache, 
+  glassCircle2WithCache, 
+  glassCircle3WithCache 
+});
 
 
 const ecosystemProjects = [
@@ -95,13 +105,19 @@ export function ScalingSection() {
             <div className="flex flex-col md:flex-row items-center justify-center gap-12">
               <div className="w-48 h-48 relative overflow-hidden rounded-full bg-gray-800">
                 <img 
-                  src={glassCircle1}
+                  src={glassCircle1WithCache}
                   alt="Bitcoin-Grade Security" 
                   className="w-full h-full object-cover object-center" 
                   onError={(e) => {
                     console.error("Error loading image:", e.currentTarget.src);
                     console.error("Image load error details:", e);
-                    e.currentTarget.src = placeholderImage;
+                    // Try without cache busting as fallback
+                    e.currentTarget.src = glassCircle1;
+                    // Add second error handler to try placeholder if original also fails
+                    e.currentTarget.onerror = () => {
+                      console.error("Fallback image also failed, using placeholder");
+                      e.currentTarget.src = placeholderImage;
+                    };
                   }}
                 />
               </div>
@@ -127,12 +143,18 @@ export function ScalingSection() {
             <div className="flex flex-col md:flex-row-reverse items-center justify-center gap-12">
               <div className="w-48 h-48 relative overflow-hidden rounded-full bg-gray-800">
                 <img 
-                  src={glassCircle2}
+                  src={glassCircle2WithCache}
                   alt="Financial Empowerment" 
                   className="w-full h-full object-cover object-center" 
                   onError={(e) => {
-                    console.log("Error loading image:", e.currentTarget.src);
-                    e.currentTarget.src = placeholderImage;
+                    console.error("Error loading image:", e.currentTarget.src);
+                    // Try without cache busting as fallback
+                    e.currentTarget.src = glassCircle2;
+                    // Add second error handler to try placeholder if original also fails
+                    e.currentTarget.onerror = () => {
+                      console.error("Fallback image also failed, using placeholder");
+                      e.currentTarget.src = placeholderImage;
+                    };
                   }}
                 />
               </div>
@@ -157,12 +179,18 @@ export function ScalingSection() {
             <div className="flex flex-col md:flex-row items-center justify-center gap-12">
               <div className="w-48 h-48 relative overflow-hidden rounded-full bg-gray-800">
                 <img 
-                  src={glassCircle3}
+                  src={glassCircle3WithCache}
                   alt="Digital Freedom and Ownership" 
                   className="w-full h-full object-cover object-center" 
                   onError={(e) => {
-                    console.log("Error loading image:", e.currentTarget.src);
-                    e.currentTarget.src = placeholderImage;
+                    console.error("Error loading image:", e.currentTarget.src);
+                    // Try without cache busting as fallback
+                    e.currentTarget.src = glassCircle3;
+                    // Add second error handler to try placeholder if original also fails
+                    e.currentTarget.onerror = () => {
+                      console.error("Fallback image also failed, using placeholder");
+                      e.currentTarget.src = placeholderImage;
+                    };
                   }}
                 />
               </div>
