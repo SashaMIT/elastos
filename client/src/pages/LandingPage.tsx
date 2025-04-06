@@ -572,6 +572,10 @@ const LandingPage = () => {
           </div>
 
         </div>
+        
+        {/* Add spacing before LogoCarouselDemo */}
+        <div className="py-12 md:py-6"></div>
+        
         <LogoCarouselDemo />
       </div>
 
