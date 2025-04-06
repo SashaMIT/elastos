@@ -350,10 +350,10 @@ const HashrateVisualizer = () => {
                               </TooltipProvider>
                             </div>
                             <div className="text-xl sm:text-2xl font-[200] text-white">
-                              {formatNumber(calculateEquivalent(bitcoinHashrate, scales[selectedScale].base))} {scales[selectedScale].unit}
+                              <span className="font-bold">{formatNumber(calculateEquivalent(bitcoinHashrate, scales[selectedScale].base))}</span> {scales[selectedScale].unit}
                             </div>
                             <div className="flex items-center gap-4">
-                              <span className="text-sm text-white">{bitcoinHashrate.toFixed(2)} EH/s</span>
+                              <span className="text-sm text-white font-bold">{bitcoinHashrate.toFixed(2)} EH/s</span>
                               <div className="w-24 h-2 bg-green-200 rounded-full overflow-hidden">
                                 <div className="h-full w-full bg-green-500 rounded-full" />
                               </div>
@@ -396,10 +396,10 @@ const HashrateVisualizer = () => {
                               </TooltipProvider>
                             </div>
                             <div className="text-xl sm:text-2xl font-[200] text-white">
-                              {formatNumber(calculateEquivalent(elastosHashrate, scales[selectedScale].base))} {scales[selectedScale].unit}
+                              <span className="font-bold">{formatNumber(calculateEquivalent(elastosHashrate, scales[selectedScale].base))}</span> {scales[selectedScale].unit}
                             </div>
                             <div className="flex items-center gap-4">
-                              <span className="text-sm text-white">{elastosHashrate.toFixed(2)} EH/s</span>
+                              <span className="text-sm text-white font-bold">{elastosHashrate.toFixed(2)} EH/s</span>
                               <div className="w-24 h-2 bg-green-200 rounded-full overflow-hidden">
                                 <div 
                                   className="h-full bg-green-500 rounded-full transition-all duration-500"
