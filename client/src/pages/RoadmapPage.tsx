@@ -91,7 +91,7 @@ export default function RoadmapPage() {
                 <h1 className="text-4xl sm:text-4xl md:text-5xl font-[200] text-white mb-6">
                   Elastos Roadmap
                 </h1>
-                <p className="text-gray-300 max-w-2xl mx-auto text-md sm:text-base md:text-lg font-[200]">
+                <p className="text-gray-300 max-w-2xl mx-auto text-md sm:text-base md:text-lg font-[200] mb-6">
                   Explore the Elastos roadmap—an evolving vision for the World Computer, driven by community governance, decentralized innovation, and a commitment to digital sovereignty.
                 </p>
               </div>
@@ -101,7 +101,9 @@ export default function RoadmapPage() {
       </div>
 
       <div className="container mx-auto px-4 pt-0 pb-8 bg-[#171717]">
-        <ForwardRoadmap />
+        <div className="-mt-20 relative z-10">
+          <ForwardRoadmap />
+        </div>
 
         <div className="w-full px-4 py-16 sm:px-6 lg:px-8">
           <div className="bg-gradient-to-br from-[#5C8EFF]/10 to-[#5C8EFF]/5 rounded-xl p-8 border border-[#5C8EFF]/30 relative w-full max-w-7xl mx-auto">
