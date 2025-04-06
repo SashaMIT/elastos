@@ -91,7 +91,7 @@ export function VisionPage() {
                   />
                 </div>
                 <div className="md:w-3/4">
-                  <blockquote className="italic text-lg text-gray-200 font-[200]">
+                  <blockquote className="italic text-lg text-gray-200">
                     <span className="text-4xl text-[#5C8EFF]">"</span>
                     The Internet today is owned by cartels. If Amazon goes down, all my ebooks vanish—that's not ownership. What we're building with Elastos is a World Computer: a decentralized internet that runs code, not just shares files. It's an operating system for the network, not just a blockchain. We give users decentralized IDs so companies like Facebook can't impersonate them or control access. You own your data, your identity, your apps—and no one can shut them down. We don't need another OS. This is the last one. That's why it's called Elastos.
                     <span className="text-4xl text-[#5C8EFF]">"</span>
