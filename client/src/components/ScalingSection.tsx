@@ -18,10 +18,10 @@ const glassCircle2WithCache = `${glassCircle2}?t=${timestamp}`;
 const glassCircle3WithCache = `${glassCircle3}?t=${timestamp}`;
 
 // Log image paths to help debug
-console.log("Image paths (with cache busting):", { 
-  glassCircle1WithCache, 
-  glassCircle2WithCache, 
-  glassCircle3WithCache 
+console.log("Image paths being used:", { 
+  glassCircle1, 
+  glassCircle2, 
+  glassCircle3 
 });
 
 
@@ -105,22 +105,15 @@ export function ScalingSection() {
             <div className="flex flex-col md:flex-row items-center justify-center gap-12">
               <div className="w-48 h-48 relative overflow-hidden rounded-full bg-gray-800">
                 <img 
-                  src={glassCircle1WithCache}
+                  src={glassCircle1}
                   alt="Bitcoin-Grade Security" 
                   className="w-full h-full object-cover object-center" 
                   onError={(e) => {
                     console.error("Error loading image:", e.currentTarget.src);
-                    // Safe approach - store current target reference
-                    const imgElement = e.currentTarget;
-                    // Try without cache busting as fallback
-                    imgElement.src = glassCircle1;
-                    // Add second error handler to try placeholder if original also fails
-                    imgElement.onerror = () => {
-                      console.error("Fallback image also failed, using placeholder");
-                      imgElement.src = placeholderImage;
-                      // Remove error handler to prevent infinite loops
-                      imgElement.onerror = null;
-                    };
+                    if (e.currentTarget) {
+                      e.currentTarget.onerror = null; // Prevent infinite error loops
+                      e.currentTarget.src = placeholderImage;
+                    }
                   }}
                 />
               </div>
@@ -146,22 +139,15 @@ export function ScalingSection() {
             <div className="flex flex-col md:flex-row-reverse items-center justify-center gap-12">
               <div className="w-48 h-48 relative overflow-hidden rounded-full bg-gray-800">
                 <img 
-                  src={glassCircle2WithCache}
+                  src={glassCircle2}
                   alt="Financial Empowerment" 
                   className="w-full h-full object-cover object-center" 
                   onError={(e) => {
                     console.error("Error loading image:", e.currentTarget.src);
-                    // Safe approach - store current target reference
-                    const imgElement = e.currentTarget;
-                    // Try without cache busting as fallback
-                    imgElement.src = glassCircle2;
-                    // Add second error handler to try placeholder if original also fails
-                    imgElement.onerror = () => {
-                      console.error("Fallback image also failed, using placeholder");
-                      imgElement.src = placeholderImage;
-                      // Remove error handler to prevent infinite loops
-                      imgElement.onerror = null;
-                    };
+                    if (e.currentTarget) {
+                      e.currentTarget.onerror = null; // Prevent infinite error loops
+                      e.currentTarget.src = placeholderImage;
+                    }
                   }}
                 />
               </div>
@@ -186,22 +172,15 @@ export function ScalingSection() {
             <div className="flex flex-col md:flex-row items-center justify-center gap-12">
               <div className="w-48 h-48 relative overflow-hidden rounded-full bg-gray-800">
                 <img 
-                  src={glassCircle3WithCache}
+                  src={glassCircle3}
                   alt="Digital Freedom and Ownership" 
                   className="w-full h-full object-cover object-center" 
                   onError={(e) => {
                     console.error("Error loading image:", e.currentTarget.src);
-                    // Safe approach - store current target reference
-                    const imgElement = e.currentTarget;
-                    // Try without cache busting as fallback
-                    imgElement.src = glassCircle3;
-                    // Add second error handler to try placeholder if original also fails
-                    imgElement.onerror = () => {
-                      console.error("Fallback image also failed, using placeholder");
-                      imgElement.src = placeholderImage;
-                      // Remove error handler to prevent infinite loops
-                      imgElement.onerror = null;
-                    };
+                    if (e.currentTarget) {
+                      e.currentTarget.onerror = null; // Prevent infinite error loops
+                      e.currentTarget.src = placeholderImage;
+                    }
                   }}
                 />
               </div>
