@@ -17,12 +17,12 @@ export function MediaKitPage() {
     
     try {
       // Direct download of the branding guidelines
-      const response = await fetch("/logo-assets/Brand-Guidelines-Elastos.zip");
+      const response = await fetch("/logo-assets/Elastos-Brand-Guidelines.pdf");
       const blob = await response.blob();
       const url = window.URL.createObjectURL(blob);
       const a = document.createElement('a');
       a.href = url;
-      a.download = "Brand-Guidelines-Elastos.zip";
+      a.download = "Elastos-Brand-Guidelines.pdf";
       document.body.appendChild(a);
       a.click();
       document.body.removeChild(a);
