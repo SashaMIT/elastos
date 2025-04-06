@@ -93,7 +93,7 @@ export default function RoadmapPage() {
                 <h1 className="text-4xl sm:text-4xl md:text-5xl font-[200] text-white mb-6">
                   Elastos Roadmap
                 </h1>
-                <p className="text-gray-300 max-w-2xl mx-auto text-md sm:text-base md:text-lg">
+                <p className="text-gray-300 max-w-2xl mx-auto text-md sm:text-base md:text-lg font-[200]">
                   Explore the Elastos roadmap—an evolving vision for the World Computer, driven by community governance, decentralized innovation, and a commitment to digital sovereignty.
                 </p>
               </div>
@@ -119,7 +119,7 @@ export default function RoadmapPage() {
                 />
               </div>
               <div className="md:w-3/4">
-                <blockquote className="italic text-lg text-gray-200">
+                <blockquote className="italic text-lg text-gray-200 font-[200]">
                   <span className="text-4xl text-[#5C8EFF]">"</span>
                   I left Microsoft because I believed we needed to go deeper—down to the metal—not build on abstractions like C#. I wanted to design a true networked OS, not just software for a single machine. When I discovered blockchain, it felt like the missing piece. It gave us decentralized trust—something we couldn't build ourselves. Combine that with a peer-to-peer infrastructure, virtual machines, and a self-sovereign identity system, and you don't just get apps—you get an unstoppable, autonomous internet. This isn't just innovation. It's a new foundation.
                   <span className="text-4xl text-[#5C8EFF]">"</span>
