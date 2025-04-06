@@ -460,11 +460,11 @@ export function BridgePage() {
                     </div>
                   </div>
 
-                  <div className="mt-6 bg-white/5 p-4 rounded-lg border border-white/10 flex items-start">
-                    <Info className="w-5 h-5 mr-3 text-white/60 flex-shrink-0 mt-1" />
+                  <div className="mt-6 bg-[#F7921A]/10 p-4 rounded-lg border border-[#F7921A]/30 flex items-start">
+                    <Info className="w-5 h-5 mr-3 text-[#F7921A] flex-shrink-0 mt-1" />
                     <div>
-                      <h4 className="font-medium mb-1">Important Note</h4>
-                      <p className="text-base text-white/80 leading-relaxed">
+                      <h4 className="font-medium mb-1 text-[#F7921A]">Important Note</h4>
+                      <p className="text-base text-white/90 leading-relaxed">
                         The transaction will take 15 to 25 minutes. During this time, you might not see the funds on both chains. 
                         Don't worry—the funds will appear after the process is complete.
                       </p>
