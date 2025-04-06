@@ -151,7 +151,7 @@ const ELASupplyPage = () => {
       <Card className="w-full overflow-hidden dark:bg-[#171717] dark:border-neutral-800">
         <CardHeader className="p-3">
           <CardTitle className="flex items-center gap-2 text-base">
-            <Heart className="w-5 h-5 text-blue-500 shrink-0" />
+            <Heart className="w-5 h-5 text-[#95B5FF] shrink-0" />
             <div className="flex flex-col">
               <span>ELA Supply Journey</span>
               <span className="text-sm font-normal text-muted-foreground">
@@ -167,7 +167,7 @@ const ELASupplyPage = () => {
             <div className="w-full bg-blue-50 dark:bg-[#171717] p-2 sm:p-3 rounded-lg dark:border dark:border-neutral-800">
               <div className="flex items-center justify-center w-full gap-2 sm:gap-3">
                 <div className="flex flex-col items-center">
-                  <Coins className="text-blue-500 h-5 w-5 mb-1" />
+                  <Coins className="text-[#95B5FF] h-5 w-5 mb-1" />
                   <TooltipProvider delayDuration={0}>
                     <Tooltip>
                       <TooltipTrigger>
@@ -209,7 +209,7 @@ const ELASupplyPage = () => {
             <div className="w-full bg-green-50 dark:bg-[#171717] p-2 sm:p-3 rounded-lg dark:border dark:border-neutral-800">
               <div className="flex items-center justify-center w-full gap-2 sm:gap-3">
                 <div className="flex flex-col items-center">
-                  <Database className="text-green-500 h-5 w-5 mb-1" />
+                  <Database className="text-[#F6921A] h-5 w-5 mb-1" />
                   <TooltipProvider delayDuration={0}>
                     <Tooltip>
                       <TooltipTrigger>
@@ -311,7 +311,7 @@ const ELASupplyPage = () => {
             </div>
             <div className="w-full bg-accent/20 dark:bg-neutral-800 rounded-full h-3">
               <div
-                className="bg-blue-500 h-3 rounded-full transition-all duration-500"
+                className="bg-[#F6921A] h-3 rounded-full transition-all duration-500"
                 style={{ width: `${(currentSupply / 28199999) * 100}%` }}
               />
             </div>
@@ -325,13 +325,13 @@ const ELASupplyPage = () => {
           <div className="bg-white dark:bg-[#171717] border dark:border-neutral-800 rounded-lg p-2 sm:p-4 w-full">
             <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 mb-4">
               <h3 className="text-sm font-medium flex items-center gap-2">
-                <Database className="h-4 w-4 text-blue-500" />
+                <Database className="h-4 w-4 text-[#F6921A]" />
                 Supply Growth
               </h3>
               <div className="flex flex-col w-full gap-4">
                 <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4 w-full">
                   <div className="flex items-center gap-2 w-full sm:w-auto">
-                    <Focus className="h-4 w-4 text-[#5C8EFF] shrink-0" />
+                    <Focus className="h-4 w-4 text-[#95B5FF] shrink-0" />
                     <TooltipProvider delayDuration={0}>
                       <Tooltip>
                         <TooltipTrigger>
@@ -375,7 +375,7 @@ const ELASupplyPage = () => {
                   onClick={() => setShowData(!showData)}
                   className="text-xs flex items-center gap-2 whitespace-nowrap"
                 >
-                  <Table className="h-4 w-4 text-green-500" />
+                  <Table className="h-4 w-4 text-[#F6921A]" />
                   {showData ? 'Hide Details' : 'Show Details'}
                 </Button>
               </div>
@@ -410,9 +410,9 @@ const ELASupplyPage = () => {
                     name="Smooth Growth"
                     type="monotone"
                     dataKey="supply"
-                    stroke="#0ea5e9"
+                    stroke="#95B5FF"
                     strokeWidth={2}
-                    dot={{ fill: '#0ea5e9', r: 4 }}
+                    dot={{ fill: '#95B5FF', r: 4 }}
                     isAnimationActive={true}
                     animationDuration={2000}
                   />
@@ -420,7 +420,7 @@ const ELASupplyPage = () => {
                     name="Step Growth"
                     type="stepAfter"
                     dataKey="supply"
-                    stroke="#10b981"
+                    stroke="#F6921A"
                     strokeWidth={2}
                     dot={false}
                     isAnimationActive={true}
