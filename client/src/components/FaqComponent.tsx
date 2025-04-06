@@ -83,7 +83,7 @@ const FaqComponent: React.FC<FaqComponentProps> = ({ className = "", showButtons
               key={item.id} 
               className="py-2 border-b border-border dark:border-neutral-800"
             >
-              <AccordionTrigger className="flex flex-1 items-center py-2 text-left text-[15px] font-semibold text-foreground dark:text-foreground [&>svg]:hidden">
+              <AccordionTrigger className="flex flex-1 items-center py-2 text-left text-[15px] font-[200] text-foreground dark:text-foreground [&>svg]:hidden">
                 <span className="flex-grow pr-4">{item.title}</span>
                 <div className="flex-shrink-0 w-6 h-6 rounded-full border border-[#F6921A] flex items-center justify-center">
                   <div className="w-4 h-4 text-[#F6921A]" data-state-icon>
