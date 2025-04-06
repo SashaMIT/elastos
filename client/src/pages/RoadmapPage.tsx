@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Timeline } from "@/components/ui/timeline";
 import { ImageZoom } from "@/components/ui/zoomable-image";
@@ -11,7 +10,7 @@ export default function RoadmapPage() {
     {
       title: "2000-2006",
       content: (
-        <div className="text-sm text-neutral-800 dark:text-neutral-200">
+        <div className="text-sm text-neutral-800 dark:text-neutral-200 font-[200]">
           <p className="mb-4"><strong>May 2000:</strong> Rong Chen returns to China and founds Kortide to develop the Elastos operating system.</p>
           <p className="mb-4"><strong>2003:</strong> The first-generation Elastos OS (Hexin) was completed, making Rong Chen the first in China to develop a homegrown operating system. This achievement gained high-level recognition, including a meeting with President Hu Jintao in 2003, and earned Rong a place among China's top software influencers that year.</p>
           <p className="mb-4"><strong>2006:</strong> Elastos 2.0 finished - a smartphone OS in C++.</p>
@@ -21,7 +20,7 @@ export default function RoadmapPage() {
     {
       title: "2009-2013",
       content: (
-        <div className="text-sm text-neutral-800 dark:text-neutral-200">
+        <div className="text-sm text-neutral-800 dark:text-neutral-200 font-[200]">
           <p className="mb-4"><strong>2009:</strong> China Unicom adopts Elastos middleware.</p>
           <p className="mb-4"><strong>2013:</strong> Foxconn invests ¥200 million RMB (~$31M USD).</p>
         </div>
@@ -30,7 +29,7 @@ export default function RoadmapPage() {
     {
       title: "2017-2018",
       content: (
-        <div className="text-sm text-neutral-800 dark:text-neutral-200">
+        <div className="text-sm text-neutral-800 dark:text-neutral-200 font-[200]">
           <p className="mb-4"><strong>June 2017:</strong> Elastos Foundation established in Singapore as a new entity to drive the project's development with blockchain at its core.</p>
           <p className="mb-4"><strong>Dec 2017:</strong> First public blockchain launch - Elastos's blockchain went live, launching its main chain and the native token ELA.</p>
           <p className="mb-4"><strong>Jan 2018:</strong> ICO raises $94M USD to fund the ecosystem's growth.</p>
@@ -42,7 +41,7 @@ export default function RoadmapPage() {
     {
       title: "2019-2020: Infrastructure Growth",
       content: (
-        <div className="text-sm text-neutral-800 dark:text-neutral-200">
+        <div className="text-sm text-neutral-800 dark:text-neutral-200 font-[200]">
           <p className="mb-4"><strong>2019:</strong> Launch of ESC sidechain and Elastos Hive</p>
           <p className="mb-4"><strong>2019:</strong> First Cyber Republic Council DAO elections</p>
           <p className="mb-4"><strong>2020:</strong> W3C-compliant DID Sidechain activation</p>
@@ -53,7 +52,7 @@ export default function RoadmapPage() {
     {
       title: "2021-2022: Advanced Features",
       content: (
-        <div className="text-sm text-neutral-800 dark:text-neutral-200">
+        <div className="text-sm text-neutral-800 dark:text-neutral-200 font-[200]">
           <p className="mb-4"><strong>2021:</strong> Hive 2.0 launch with independent nodes</p>
           <p className="mb-4"><strong>2021:</strong> DID 2.0 with advanced features</p>
           <p className="mb-4"><strong>2021:</strong> Complete transition to community governance</p>
@@ -63,7 +62,7 @@ export default function RoadmapPage() {
     {
       title: "2023-Present: Innovation & Integration",
       content: (
-        <div className="text-sm text-neutral-800 dark:text-neutral-200">
+        <div className="text-sm text-neutral-800 dark:text-neutral-200 font-[200]">
           <p className="mb-4"><strong>2023:</strong> Active Proxy Service for Elastos Carrier</p>
           <p className="mb-4"><strong>2023:</strong> Elacity launch for digital rights management</p>
           <p className="mb-4"><strong>2024:</strong> Bitcoin Elastos Layer-2 (BeL2) development</p>
@@ -74,7 +73,7 @@ export default function RoadmapPage() {
   ];
 
   return (
-    <div className="relative w-full">
+    <div className="relative w-full font-[200]"> {/* Added font-weight here */}
       {/* Full-width hero image with gradient overlay */}
       <div className="relative w-full h-[500px] overflow-hidden -mt-16">
         <img 
@@ -84,7 +83,7 @@ export default function RoadmapPage() {
         />
         {/* Gradient overlay */}
         <div className="absolute inset-0 bg-gradient-to-b from-black/10 via-[#171717]/80 to-[#171717]"></div>
-        
+
         {/* Hero content overlay */}
         <div className="absolute inset-0 flex items-center justify-center">
           <div className="container mx-auto px-4">
@@ -109,7 +108,7 @@ export default function RoadmapPage() {
           <div className="bg-gradient-to-br from-[#5C8EFF]/10 to-[#5C8EFF]/5 rounded-xl p-8 border border-[#5C8EFF]/30 relative w-full max-w-7xl mx-auto">
             {/* Background blur elements */}
             <div className="absolute -bottom-20 -left-20 w-72 h-72 rounded-full bg-[#8BABFF]/10 blur-[100px]"></div>
-            
+
             <div className="flex flex-col md:flex-row gap-8 items-center relative z-10">
               <div className="md:w-1/4 flex justify-center">
                 <img 
@@ -124,19 +123,19 @@ export default function RoadmapPage() {
                   I left Microsoft because I believed we needed to go deeper—down to the metal—not build on abstractions like C#. I wanted to design a true networked OS, not just software for a single machine. When I discovered blockchain, it felt like the missing piece. It gave us decentralized trust—something we couldn't build ourselves. Combine that with a peer-to-peer infrastructure, virtual machines, and a self-sovereign identity system, and you don't just get apps—you get an unstoppable, autonomous internet. This isn't just innovation. It's a new foundation.
                   <span className="text-4xl text-[#5C8EFF]">"</span>
                 </blockquote>
-                <div className="mt-4 font-semibold text-[#5C8EFF]">
+                <div className="mt-4 font-semibold text-[#5C8EFF] font-[200]"> {/*Added font-weight here*/}
                   Rong Chen, Elastos Founder
                 </div>
               </div>
             </div>
           </div>
         </div>
-        
+
         <div className="mt-20">
           <Timeline timelineData={timelineData} />
         </div>
 
-        <div className="mt-20 mb-20">
+        <div className="mt-20 mb-20 font-[200]"> {/*Added font-weight here*/}
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
             <ImageZoom
               key="1"
@@ -238,10 +237,10 @@ export default function RoadmapPage() {
         </div>
 
         {/* LogoCarouselDemo Section */}
-        <div className="mt-10">
+        <div className="mt-10 font-[200]"> {/*Added font-weight here*/}
           <LogoCarouselDemo />
         </div>
-        
+
         {/* Footer */}
         <StackedCircularFooter />
       </div>
