@@ -286,7 +286,7 @@ const BuyElaPage = () => {
             </div>
           </div>
 
-          <div className="grid md:grid-cols-2 gap-6">
+          <div className="grid md:grid-cols-2 gap-6 h-full">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -340,7 +340,7 @@ const BuyElaPage = () => {
                 <Shield className="h-4 w-4 text-blue-500" />
                 Security Integration
               </h3>
-              <ResponsiveContainer width="100%" height="90%">
+              <ResponsiveContainer width="100%" height="100%">
                 <AreaChart data={realHashrateData}>
                   <XAxis dataKey="year" tick={{fontSize: 10, fill: 'white'}} />
                   <YAxis tick={{fontSize: 10, fill: 'white'}} />
