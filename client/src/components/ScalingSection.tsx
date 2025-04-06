@@ -83,18 +83,19 @@ export function ScalingSection() {
 
         {activeTab === 'public' ? (
           <div className="space-y-32">
-            <div className="flex flex-col md:flex-row items-center justify-center gap-12">
-              <div className="w-48 h-48 relative">
-                <img src="/images/Glass Circles1.png" alt="Elastos Mainchain" className="w-full h-full object-contain" />
+            <div className="grid grid-cols-1 md:grid-cols-2 items-center gap-12">
+              <div className="flex justify-center md:justify-end">
+                <div className="w-48 h-48 relative">
+                  <img src="/images/Glass Circles1.png" alt="Elastos Mainchain" className="w-full h-full object-contain" />
+                </div>
               </div>
-              <div className="flex-1">
+              <div className="md:max-w-lg">
                 <div className="flex items-center gap-3 mb-4">
                   <h3 className="text-2xl font-bold font-sans">Bitcoin-Grade Security</h3>
                   <span className="px-4 py-1 bg-[#5C8EFF]/10 border border-[#5C8EFF]/30 text-white rounded-full text-xs font-medium">LIVE</span>
                 </div>
-                <p className="text-muted-foreground mb-6 max-w-xl">
-                  We anchor our security to Bitcoin’s proof-of-work hashpower and utilize multiple sidechains for specialized functions.
-
+                <p className="text-muted-foreground mb-6">
+                  We anchor our security to Bitcoin's proof-of-work hashpower and utilize multiple sidechains for specialized functions.
                 </p>
                 <div className="flex gap-4">
                   <button className="w-8 h-8 rounded-full border border-[#F6921A] bg-[#F6921A]/30 flex items-center justify-center transition-all hover:bg-[#F6921A]/50 hover:scale-110">
@@ -106,16 +107,13 @@ export function ScalingSection() {
               </div>
             </div>
 
-            <div className="flex flex-col md:flex-row-reverse items-center justify-center gap-12">
-              <div className="w-48 h-48 relative">
-                <img src="/images/Glass Circles2.png" alt="BeL2" className="w-full h-full object-contain" />
-              </div>
-              <div className="flex-1">
+            <div className="grid grid-cols-1 md:grid-cols-2 items-center gap-12">
+              <div className="md:max-w-lg md:order-1 md:pl-6">
                 <div className="flex items-center gap-3 mb-4">
                   <h3 className="text-2xl font-bold font-sans">Financial Empowerment</h3>
                   <span className="px-4 py-1 bg-[#5C8EFF]/10 border border-[#5C8EFF]/30 text-white rounded-full text-xs font-medium">LIVE</span>
                 </div>
-                <p className="text-muted-foreground mb-6 max-w-xl">
+                <p className="text-muted-foreground mb-6">
                   ELA, secured by Bitcoin is the oil of the Elastos SmartWeb. Use your Bitcoin for DeFi without custodians or ever moving it off the Bitcoin mainchain.
                 </p>
                 <div className="flex gap-4">
@@ -126,18 +124,25 @@ export function ScalingSection() {
                   </button>
                 </div>
               </div>
+              <div className="flex justify-center md:justify-start md:order-2">
+                <div className="w-48 h-48 relative">
+                  <img src="/images/Glass Circles2.png" alt="BeL2" className="w-full h-full object-contain" />
+                </div>
+              </div>
             </div>
 
-            <div className="flex flex-col md:flex-row items-center justify-center gap-12">
-              <div className="w-48 h-48 relative">
-                <img src="/images/Glass Circles3.png" alt="DePIN Network" className="w-full h-full object-contain" />
+            <div className="grid grid-cols-1 md:grid-cols-2 items-center gap-12">
+              <div className="flex justify-center md:justify-end">
+                <div className="w-48 h-48 relative">
+                  <img src="/images/Glass Circles3.png" alt="DePIN Network" className="w-full h-full object-contain" />
+                </div>
               </div>
-              <div className="flex-1">
+              <div className="md:max-w-lg">
                 <div className="flex items-center gap-3 mb-4">
                   <h3 className="text-2xl font-bold font-sans">Digital Freedom and Ownership</h3>
                   <span className="px-4 py-1 bg-[#5C8EFF]/10 border border-[#5C8EFF]/30 text-white rounded-full text-xs font-medium whitespace-nowrap">IN PROGRESS</span>
                 </div>
-                <p className="text-muted-foreground mb-6 max-w-xl">
+                <p className="text-muted-foreground mb-6">
                   Combining blockchain, decentralized identity, and secure off-chain data storage and networking, Elastos is your gateway to owning your digital life.
                 </p>
                 <div className="flex gap-4">
