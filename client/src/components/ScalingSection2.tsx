@@ -85,8 +85,8 @@ export function ScalingSection2() {
         {activeTab === 'public' ? (
           <div className="space-y-32">
             <div className="flex flex-col md:flex-row items-center justify-center gap-12">
-              <div className="w-48 h-48 relative">
-                <img src="/images/L2.png" alt="Elastos Mainchain" className="w-full h-full object-contain" />
+              <div className="w-64 h-64 relative">
+                <img src="/images/Glass Circles4.png" alt="Elastos Mainchain" className="w-full h-full object-contain" />
               </div>
               <div className="flex-1">
                 <div className="flex items-center gap-3 mb-4">
@@ -112,8 +112,8 @@ export function ScalingSection2() {
             </div>
 
             <div className="flex flex-col md:flex-row-reverse items-center justify-center gap-12">
-              <div className="w-48 h-48 relative">
-                <img src="/images/Bel2icon.png" alt="BeL2" className="w-full h-full object-contain" />
+              <div className="w-64 h-64 relative">
+                <img src="/images/Glass Circles5.png" alt="Governance & Decentralization" className="w-full h-full object-contain" />
               </div>
               <div className="flex-1">
                 <div className="flex items-center gap-3 mb-4">
@@ -139,8 +139,8 @@ export function ScalingSection2() {
             </div>
 
             <div className="flex flex-col md:flex-row items-center justify-center gap-12">
-              <div className="w-48 h-48 relative">
-                <img src="/images/Depin.png" alt="DePIN Network" className="w-full h-full object-contain" />
+              <div className="w-64 h-64 relative">
+                <img src="/images/Glass Circles6.png" alt="Digital Identity & Ownership" className="w-full h-full object-contain" />
               </div>
               <div className="flex-1">
                 <div className="flex items-center gap-3 mb-4">
@@ -189,22 +189,26 @@ export function ScalingSection2() {
                 </div>
               </div>
               <div className="col-span-1 lg:col-span-5 order-2 lg:order-2 flex items-center justify-center">
-                <img
-                  src="/images/smart_web_services.png"
-                  alt="Smart Web Services"
-                  className="w-full h-auto max-w-md rounded-lg shadow-lg"
-                />
+                <div className="w-64 h-64 relative">
+                  <img
+                    src="/images/Glass Circles7.png"
+                    alt="Fueling Transactions & dApps"
+                    className="w-full h-full object-contain"
+                  />
+                </div>
               </div>
             </div>
 
             {/* Digital Economy Section */}
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-4 items-center">
               <div className="col-span-1 lg:col-span-5 order-2 lg:order-1 flex items-center justify-center">
-                <img
-                  src="/images/digital_economy.png"
-                  alt="Digital Economy"
-                  className="w-full h-auto max-w-md rounded-lg shadow-lg"
-                />
+                <div className="w-64 h-64 relative">
+                  <img
+                    src="/images/Glass Circles8.png"
+                    alt="Digital Asset Management"
+                    className="w-full h-full object-contain"
+                  />
+                </div>
               </div>
               <div className="col-span-1 lg:col-span-7 order-1 lg:order-2">
                 <div className="h-full w-full flex flex-col items-start justify-center">
