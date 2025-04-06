@@ -18,7 +18,7 @@ const features = [
   },
   {
     title: "BeL2. Unlocking Bitcoins Value with Native Bitcoin DeFi using ELA-backed Nodes.",
-    buttonText: "Explore",
+    buttonText: "Learn More",
     video: "/videos/BeL2Team.mp4"
   },
   {
@@ -28,7 +28,7 @@ const features = [
   },
   {
     title: "Cyber Republic: Our community-governed DAO, powered by merged-mined ELA.",
-    buttonText: "Explore",
+    buttonText: "Learn More",
     video: "/videos/CyberRepublicTeam.mp4"
   },
 ];
