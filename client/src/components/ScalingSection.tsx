@@ -5,6 +5,11 @@ import { Card } from '@/components/ui/card';
 import { ExternalLink } from 'lucide-react';
 import { Link } from 'wouter';
 import { Lens } from '@/components/ui/lens';
+import glassCircle1 from '@/images/Special FX Graphics/Glass Circles - #1.jpg';
+import glassCircle2 from '@/images/Special FX Graphics/Glass Circles - #2 2.jpg';
+import glassCircle3 from '@/images/Special FX Graphics/Glass Circles - #3 2.jpg';
+import placeholderImage from '@/images/placeholder-image.jpg';
+
 
 const ecosystemProjects = [
   {
@@ -85,7 +90,15 @@ export function ScalingSection() {
           <div className="space-y-32">
             <div className="flex flex-col md:flex-row items-center justify-center gap-12">
               <div className="w-48 h-48 relative overflow-hidden rounded-full bg-gray-800">
-                <img src="/images/Special FX Graphics/Glass Circles - #1.jpg" alt="Bitcoin-Grade Security" className="w-full h-full object-cover object-center" />
+                <img 
+                  src={glassCircle1}
+                  alt="Bitcoin-Grade Security" 
+                  className="w-full h-full object-cover object-center" 
+                  onError={(e) => {
+                    console.log("Error loading image:", e.currentTarget.src);
+                    e.currentTarget.src = placeholderImage;
+                  }}
+                />
               </div>
               <div className="flex-1">
                 <div className="flex items-center gap-3 mb-4">
@@ -93,7 +106,7 @@ export function ScalingSection() {
                   <span className="px-4 py-1 bg-[#5C8EFF]/10 border border-[#5C8EFF]/30 text-white rounded-full text-xs font-medium">LIVE</span>
                 </div>
                 <p className="text-muted-foreground mb-6 max-w-xl">
-                  We anchor our security to Bitcoin’s proof-of-work hashpower and utilize multiple sidechains for specialized functions.
+                  We anchor our security to Bitcoin's proof-of-work hashpower and utilize multiple sidechains for specialized functions.
 
                 </p>
                 <div className="flex gap-4">
@@ -108,7 +121,15 @@ export function ScalingSection() {
 
             <div className="flex flex-col md:flex-row-reverse items-center justify-center gap-12">
               <div className="w-48 h-48 relative overflow-hidden rounded-full bg-gray-800">
-                <img src="/images/Special FX Graphics/Glass Circles - #2 2.jpg" alt="Financial Empowerment" className="w-full h-full object-cover object-center" />
+                <img 
+                  src={glassCircle2}
+                  alt="Financial Empowerment" 
+                  className="w-full h-full object-cover object-center" 
+                  onError={(e) => {
+                    console.log("Error loading image:", e.currentTarget.src);
+                    e.currentTarget.src = placeholderImage;
+                  }}
+                />
               </div>
               <div className="flex-1">
                 <div className="flex items-center gap-3 mb-4">
@@ -130,7 +151,15 @@ export function ScalingSection() {
 
             <div className="flex flex-col md:flex-row items-center justify-center gap-12">
               <div className="w-48 h-48 relative overflow-hidden rounded-full bg-gray-800">
-                <img src="/images/Special FX Graphics/Glass Circles - #3 2.jpg" alt="Digital Freedom and Ownership" className="w-full h-full object-cover object-center" />
+                <img 
+                  src={glassCircle3}
+                  alt="Digital Freedom and Ownership" 
+                  className="w-full h-full object-cover object-center" 
+                  onError={(e) => {
+                    console.log("Error loading image:", e.currentTarget.src);
+                    e.currentTarget.src = placeholderImage;
+                  }}
+                />
               </div>
               <div className="flex-1">
                 <div className="flex items-center gap-3 mb-4">
