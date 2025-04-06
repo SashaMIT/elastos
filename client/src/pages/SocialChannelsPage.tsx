@@ -76,27 +76,47 @@ const SocialChannelsPage: React.FC = () => {
 
   return (
     <div className="min-h-screen bg-[#171717]">
-      {/* Hero Section */}
-      <section className="relative py-20 overflow-hidden">
-        <div className="container mx-auto px-4 relative z-10">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5 }}
-            className="text-center max-w-3xl mx-auto mb-16"
-          >
-            <h1 className="text-4xl md:text-5xl font-bold text-white mb-6">Elastos Community <span className="text-[#5C8EFF]">Social Channels</span></h1>
-            <p className="text-white/70 text-lg">
-              Connect with the global Elastos community through our official social media channels and stay updated on the latest developments.
-            </p>
-          </motion.div>
+      {/* Hero Section with Image and Gradient Overlay */}
+      <div className="relative w-full h-[500px] overflow-hidden -mt-16">
+        <img 
+          src="/images/Roadmap/Community crowd.png" 
+          alt="Elastos Community" 
+          className="w-full h-full object-cover opacity-100"
+        />
+        {/* Gradient overlay */}
+        <div className="absolute inset-0 bg-gradient-to-b from-black/10 via-[#171717]/80 to-[#171717]"></div>
+        
+        {/* Hero content overlay */}
+        <div className="absolute inset-0 flex items-center justify-center">
+          <div className="container mx-auto px-4">
+            <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5 }}
+                className="text-center mb-12"
+              >
+                <h1 className="text-4xl sm:text-4xl md:text-5xl font-[200] text-white mb-6">
+                  Elastos Community <span className="text-[#5C8EFF]">Social Channels</span>
+                </h1>
+                <p className="text-gray-300 max-w-2xl mx-auto text-md sm:text-base md:text-lg">
+                  Connect with the global Elastos community through our official social media channels and stay updated on the latest developments.
+                </p>
+              </div>
+          </div>
+        </div>
+      </div>
 
+      {/* Social Channels Cards */}
+      <section className="pt-10 pb-16">
+        <div className="container mx-auto px-4">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
             {socialChannels.map((channel, index) => (
               <motion.div
                 key={channel.name}
                 initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: 0.1 * index }}
                 className="rounded-xl bg-[#1E1E1E] p-6 border border-white/10 hover:border-white/20 transition-all duration-300 flex flex-col h-full"
               >
