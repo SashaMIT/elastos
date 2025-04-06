@@ -235,7 +235,7 @@ const getInvolved = [
     steps: [
       "Stake your ELA",
       "Connect with your DID",
-      "Participate in Council elections and voting"
+      "Participate in elections and voting"
     ],
     color: "bg-gradient-to-br from-[#F7921A] to-[#F7921A]/70",
     borderColor: "border-[#F7921A]/20"
@@ -244,9 +244,9 @@ const getInvolved = [
     title: "Submit a Proposal",
     icon: <FileText className="w-10 h-10 text-white" />,
     steps: [
-      "Have an idea that benefits the Elastos ecosystem?",
-      "Write and submit a proposal through the DAO portal",
-      "If approved, receive funding and community support"
+      "Have an idea that benefits Elastos?",
+      "Write and submit a suggestion",
+      "If approved, receive support"
     ],
     color: "bg-gradient-to-br from-[#8BABFF] to-[#8BABFF]/70",
     borderColor: "border-[#8BABFF]/20"
@@ -257,7 +257,7 @@ const getInvolved = [
     steps: [
       "Stake 5,000 ELA as collateral",
       "Share your vision and campaign",
-      "Earn a seat to shape the future of decentralized infrastructure"
+      "Earn a seat to shape the future"
     ],
     color: "bg-gradient-to-br from-[#F7921A] to-[#F7921A]/70",
     borderColor: "border-[#F7921A]/20"
