@@ -31,7 +31,7 @@ function App() {
       <Route path="/faq" element={<FaqPage />} />
       <Route path="/whitepaper" element={<WhitepaperPage />} />
       <Route path="/social-channels" element={<SocialChannelsPage />} />
-      <Route path="/media-kit" element={<MediaKitPage />} /> {/* Use MediaKitPage component */}
+      <Route path="/media-kit" element={<MediaKit />} /> {/* Updated to use MediaKit component */}
     </Routes>
   );
 }
