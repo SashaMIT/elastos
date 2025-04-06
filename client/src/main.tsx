@@ -3,6 +3,7 @@ import WhitepaperPage from './pages/WhitepaperPage';
 import Explorer from './pages/Explorer'; 
 import Dao from './pages/Dao'; // Added import for Dao page
 import SocialChannelsPage from './pages/SocialChannelsPage';
+import MediaKit from './pages/MediaKit'; // Import MediaKit component
 
 import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
@@ -56,7 +57,8 @@ function Router() {
           <Route path="/whitepaper" component={WhitepaperPage} /> 
           <Route path="/explorer" component={Explorer} /> 
           <Route path="/dao" component={Dao} /> {/* Added Dao route */}
-          <Route path="/social-channels" component={SocialChannelsPage} /> {/* Added SocialChannelsPage route */}
+          <Route path="/social-channels" component={SocialChannelsPage} />
+          <Route path="/media-kit" component={MediaKit} /> {/* Added MediaKit route */}
           <Route>404 Page Not Found</Route>
         </Switch>
       </Suspense>

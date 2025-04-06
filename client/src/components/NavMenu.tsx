@@ -318,7 +318,7 @@ export function NavMenu() {
                         </div>
                       </NavigationMenuLink>
                     </Link>
-                    <Link href="/media-kit">
+                    <Link to="/media-kit">
                       <NavigationMenuLink className={navigationMenuTriggerStyle()}>
                         <div className="flex items-center gap-2">
                           <Download className="h-4 w-4 text-[#94b5ff]" />
