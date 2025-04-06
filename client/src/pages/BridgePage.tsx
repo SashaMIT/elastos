@@ -687,7 +687,7 @@ export function BridgePage() {
                                           <p className="text-base text-white/80 mb-4 font-[200]">
                                             First, select the networks you'd like to bridge to and from. One of the networks must be Elastos as the Glide bridge doesn't support bridging ETH → Heco or Heco → ETH.
                                           </p>
-                                          <div className="rounded-lg overflow-hidden border border-white/10 md:max-w-[35%] md:mx-auto">
+                                          <div className="rounded-lg overflow-hidden border border-white/10 md:max-w-[52%] md:mx-auto">
                                             <img src="/images/Bridge/step1.png" alt="Select networks" className="w-full" />
                                           </div>
                                         </div>
@@ -743,7 +743,7 @@ export function BridgePage() {
                                           <p className="text-base text-white/80 mb-4 font-[200]">
                                             Choose the token you wish to bridge. For this guide, we're selecting ELA.
                                           </p>
-                                          <div className="rounded-lg overflow-hidden border border-white/10 md:max-w-[35%] md:mx-auto">
+                                          <div className="rounded-lg overflow-hidden border border-white/10 md:max-w-[52%] md:mx-auto">
                                             <img src="/images/Bridge/step2.png" alt="Select ELA token" className="w-full" />
                                           </div>
                                         </div>
@@ -810,7 +810,7 @@ export function BridgePage() {
                                           <p className="text-base text-white/80 mb-4 font-[200]">
                                             Enter the amount of ELA you wish to bridge. Remember the minimum requirements from ESC to ETH is 1000 ELA.
                                           </p>
-                                          <div className="rounded-lg overflow-hidden border border-white/10 md:max-w-[35%] md:mx-auto">
+                                          <div className="rounded-lg overflow-hidden border border-white/10 md:max-w-[52%] md:mx-auto">
                                             <img src="/images/Bridge/step3.png" alt="Enter amount" className="w-full" />
                                           </div>
                                         </div>
@@ -881,9 +881,6 @@ export function BridgePage() {
                                           <p className="text-base text-white/80 mb-4 font-[200]">
                                             If this is your first time bridging this token, you'll need to enable it. Click the "Enable" button and confirm the transaction in your wallet.
                                           </p>
-                                          <div className="rounded-lg overflow-hidden border border-white/10 md:max-w-[35%] md:mx-auto">
-                                            <img src="/images/Bridge/glide-bridge-steps/step4.png" alt="Enable token" className="w-full" />
-                                          </div>
                                         </div>
 
                                         <div className="bg-[#8BABFF]/10 rounded-lg border border-[#8BABFF]/20 p-4">
@@ -953,9 +950,6 @@ export function BridgePage() {
                                           <p className="text-base text-white/80 mb-4 font-[200]">
                                             Click the "Bridge" button to initiate the bridge transaction. You'll need to confirm this transaction in your wallet.
                                           </p>
-                                          <div className="rounded-lg overflow-hidden border border-white/10 md:max-w-[35%] md:mx-auto">
-                                            <img src="/images/Bridge/glide-bridge-steps/step5.png" alt="Bridge token" className="w-full" />
-                                          </div>
                                         </div>
 
                                         <div className="bg-[#8BABFF]/10 rounded-lg border border-[#8BABFF]/20 p-4">
@@ -1024,9 +1018,6 @@ export function BridgePage() {
                                           <p className="text-base text-white/80 mb-4 font-[200]">
                                             After your transaction is confirmed, you'll see it listed in your history. The tokens will arrive in your destination wallet once the bridge process is complete.
                                           </p>
-                                          <div className="rounded-lg overflow-hidden border border-white/10 md:max-w-[35%] md:mx-auto">
-                                            <img src="/images/Bridge/glide-bridge-steps/step6.png" alt="View bridged tokens" className="w-full" />
-                                          </div>
                                         </div>
 
                                         <div className="bg-[#8BABFF]/10 rounded-lg border border-[#8BABFF]/20 p-4">
@@ -1091,9 +1082,6 @@ export function BridgePage() {
                                           <p className="text-base text-white/80 mb-4 font-[200]">
                                             Once the bridge process is complete, you'll see your tokens in your destination wallet. For ERC-20 tokens on Ethereum, you may need to add the token to your wallet to see the balance.
                                           </p>
-                                          <div className="rounded-lg overflow-hidden border border-white/10 md:max-w-[35%] md:mx-auto">
-                                            <img src="/images/Bridge/glide-bridge-steps/step7.png" alt="After bridging" className="w-full" />
-                                          </div>
                                         </div>
 
                                         <div className="bg-[#8BABFF]/10 rounded-lg border border-[#8BABFF]/20 p-4">
