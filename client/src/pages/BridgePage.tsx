@@ -81,7 +81,7 @@ export function BridgePage() {
         "Make sure you already have a wallet set up",
         "Check which network you are on by looking at the top right of the screen"
       ],
-      icon: <Smartphone className="w-10 h-10" />
+      icon: <Smartphone className="w-8 h-8" />
     },
     {
       title: "View Your Wallet Details",
@@ -90,13 +90,13 @@ export function BridgePage() {
         "Verify you have enough ELA to transfer",
         "Confirm which chain your ELA is currently on"
       ],
-      icon: <WalletCards className="w-10 h-10" />
+      icon: <WalletCards className="w-8 h-8" />
     },
     {
       title: "Start a Transfer",
       description: "Tap on your ELA balance for the specific chain.",
       tips: [],
-      icon: <Repeat className="w-10 h-10" />
+      icon: <Repeat className="w-8 h-8" />
     },
     {
       title: "Set Up the Transfer",
@@ -105,7 +105,7 @@ export function BridgePage() {
         "The transfer option is specifically for cross-chain transfers",
         "Regular send options won't bridge between chains"
       ],
-      icon: <Layers className="w-10 h-10" />
+      icon: <Layers className="w-8 h-8" />
     },
     {
       title: "Enter Amount & Confirm",
@@ -115,7 +115,7 @@ export function BridgePage() {
         "To send to your own wallet: Leave the address as is",
         "To send to another address: Tap 'Use a custom destination address' and enter the new address"
       ],
-      icon: <CheckCircle2 className="w-10 h-10" />
+      icon: <CheckCircle2 className="w-8 h-8" />
     }
   ];
 
@@ -394,8 +394,10 @@ export function BridgePage() {
                             className="h-full"
                           >
                             <div className="flex items-center mb-4">
-                              <div className="w-12 h-12 rounded-full bg-[#F7921A]/20 flex items-center justify-center mr-4">
-                                {nativeBridgeSteps[activeStepIndex].icon}
+                              <div className="w-9 h-9 rounded-full bg-[#F7921A]/20 flex items-center justify-center mr-3">
+                                <div className="scale-75">
+                                  {nativeBridgeSteps[activeStepIndex].icon}
+                                </div>
                               </div>
                               <h3 className="text-xl font-semibold">
                                 {nativeBridgeSteps[activeStepIndex].title}
