@@ -1,17 +1,17 @@
 import React, { useState } from "react";
 import { motion } from "framer-motion";
-import { 
-  ArrowDown, 
+import {
+  ArrowDown,
   ArrowUp,
   ArrowDownCircle,
-  ArrowRight, 
-  CheckCircle2, 
-  Info, 
-  Layers, 
-  Repeat, 
-  Shield, 
-  Smartphone, 
-  WalletCards, 
+  ArrowRight,
+  CheckCircle2,
+  Info,
+  Layers,
+  Repeat,
+  Shield,
+  Smartphone,
+  WalletCards,
   ExternalLink,
   AlertTriangle,
   Clock,
@@ -133,9 +133,9 @@ export function BridgePage() {
     <div className="relative w-full font-[200] min-h-screen text-white">
       {/* Full-width hero image with gradient overlay */}
       <div className="relative w-full h-[500px] overflow-hidden -mt-16">
-        <img 
-          src="/images/Roadmap/Community crowd.png" 
-          alt="Elastos Bridge" 
+        <img
+          src="/images/Roadmap/Community crowd.png"
+          alt="Elastos Bridge"
           className="w-full h-full object-cover opacity-100"
         />
         {/* Gradient overlay */}
@@ -164,7 +164,7 @@ export function BridgePage() {
           <div className="max-w-6xl mx-auto">
 
             {/* ELA Types Explanation */}
-            <motion.div 
+            <motion.div
               className="mb-12 bg-white/5 border border-white/10 rounded-xl p-6"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
@@ -232,7 +232,7 @@ export function BridgePage() {
                     className="flex items-center gap-2 px-4 py-2 bg-white/10 hover:bg-white/15 transition-colors rounded-lg border border-white/10"
                   >
                     <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 512 512" fill="currentColor" className="w-5 h-5">
-                      <path d="M325.3 234.3L104.6 13l280.8 161.2-60.1 60.1zM47 0C34 6.8 25.3 19.2 25.3 35.3v441.3c0 16.1 8.7 28.5 21.7 35.3l256.6-256L47 0zm425.6 225.6l-58.9-34.1-65.7 64.5 65.7 64.5 60.1-34.1c18-14.3 18-46.5-1.2-60.8zM104.6 499l280.8-161.2-60.1-60.1L104.6 499z"/>
+                      <path d="M325.3 234.3L104.6 13l280.8 161.2-60.1 60.1zM47 0C34 6.8 25.3 19.2 25.3 35.3v441.3c0 16.1 8.7 28.5 21.7 35.3l256.6-256L47 0zm425.6 225.6l-58.9-34.1-65.7 64.5 65.7 64.5 60.1-34.1c18-14.3 18-46.5-1.2-60.8zM104.6 499l280.8-161.2-60.1-60.1L104.6 499z" />
                     </svg>
                     <span className="text-white">Google Play</span>
                   </a>
@@ -245,8 +245,8 @@ export function BridgePage() {
               <div className="flex flex-col md:flex-row gap-4 mb-6">
                 <motion.button
                   className={`flex items-center justify-between p-5 rounded-xl border transition-all duration-300 ${
-                    expandedSection === "native" 
-                      ? "bg-gradient-to-r from-[#F7921A]/20 to-[#F7921A]/10 border-[#F7921A]/30" 
+                    expandedSection === "native"
+                      ? "bg-gradient-to-r from-[#F7921A]/20 to-[#F7921A]/10 border-[#F7921A]/30"
                       : "bg-white/5 border-white/10 hover:bg-white/10"
                   } flex-1`}
                   onClick={() => handleSectionToggle("native")}
@@ -274,8 +274,8 @@ export function BridgePage() {
 
                 <motion.button
                   className={`flex items-center justify-between p-5 rounded-xl border transition-all duration-300 ${
-                    expandedSection === "erc20" 
-                      ? "bg-gradient-to-r from-[#8BABFF]/20 to-[#8BABFF]/10 border-[#8BABFF]/30" 
+                    expandedSection === "erc20"
+                      ? "bg-gradient-to-r from-[#8BABFF]/20 to-[#8BABFF]/10 border-[#8BABFF]/30"
                       : "bg-white/5 border-white/10 hover:bg-white/10"
                   } flex-1`}
                   onClick={() => handleSectionToggle("erc20")}
@@ -304,7 +304,7 @@ export function BridgePage() {
 
               {/* Native Chain Bridging Section */}
               {expandedSection === "native" && (
-                <motion.div 
+                <motion.div
                   className="bg-white/5 border border-white/10 rounded-xl p-6 mb-8"
                   initial={{ opacity: 0, height: 0 }}
                   animate={{ opacity: 1, height: "auto" }}
@@ -344,7 +344,7 @@ export function BridgePage() {
                         <span className="text-sm text-white/60 font-[200]">Step {activeStepIndex + 1} of {nativeBridgeSteps.length}</span>
                       </div>
                       <div className="w-full bg-white/10 h-2 rounded-full overflow-hidden">
-                        <motion.div 
+                        <motion.div
                           className="h-full bg-gradient-to-r from-[#F7921A] to-[#8BABFF]"
                           initial={{ width: `${(activeStepIndex / (nativeBridgeSteps.length - 1)) * 100}%` }}
                           animate={{ width: `${(activeStepIndex / (nativeBridgeSteps.length - 1)) * 100}%` }}
@@ -365,14 +365,14 @@ export function BridgePage() {
                                 key={index}
                                 onClick={() => setActiveStepIndex(index)}
                                 className={`w-full text-left p-3 rounded-lg transition-all duration-300 flex items-center ${
-                                  index === activeStepIndex 
-                                    ? "bg-[#F7921A]/20 border border-[#F7921A]/30" 
+                                  index === activeStepIndex
+                                    ? "bg-[#F7921A]/20 border border-[#F7921A]/30"
                                     : "hover:bg-white/5"
                                 }`}
                               >
                                 <div className={`w-8 h-8 flex items-center justify-center rounded-full mr-3 ${
-                                  index === activeStepIndex 
-                                    ? "bg-[#F7921A]/30 text-[#F7921A]" 
+                                  index === activeStepIndex
+                                    ? "bg-[#F7921A]/30 text-[#F7921A]"
                                     : "bg-white/10 text-white/60"
                                 }`}>
                                   {index + 1}
@@ -413,7 +413,7 @@ export function BridgePage() {
 
                               {/* Step Screenshot */}
                               <div className="rounded-lg border border-white/10 overflow-hidden mb-6 shadow-lg max-w-sm mx-auto md:max-w-[35%]">
-                                <img 
+                                <img
                                   src={`/images/Bridge/${activeStepIndex + 1}.jpg`}
                                   alt={`Step ${activeStepIndex + 1} - ${nativeBridgeSteps[activeStepIndex].title}`}
                                   className="w-full h-auto object-contain"
@@ -440,13 +440,13 @@ export function BridgePage() {
                                 className={`inline-flex px-3 py-2 items-center gap-1 rounded-full font-[200] transition-all text-sm ${
                                   activeStepIndex === 0
                                     ? "bg-white/5 text-white/40 cursor-not-allowed"
-                                    : "bg-[rgba(246,146,26,0.15)] text-white border border-[rgba(246,146,26,0.25)] hover:bg-[rgba(246,146,26,0.25)]"
+                                    : "bg-[rgba(92,142,255,0.15)] text-white border border-[rgba(92,142,255,0.25)] hover:bg-[rgba(92,142,255,0.25)]"
                                 }`}
                               >
                                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 35 34" fill="none" className="rotate-180">
-                                  <circle cx="17.333" cy="17" r="16.75" stroke="#F6921A" strokeOpacity="0.25" strokeWidth="1.5"/>
-                                  <path d="M17.3338 22.9405L23.2741 17.0002L17.3338 11.0598L16.4162 11.9774L20.7628 16.324H10.8622V17.6763H20.7628L16.4162 22.0229L17.3338 22.9405Z" fill="#F6921A"/>
-                                  <path d="M20.7628 17.6638H10.8747V16.3365H20.7628H20.7929L20.7716 16.3152L16.4338 11.9774L17.3338 11.0775L23.2564 17.0002L17.3338 22.9228L16.4338 22.0229L20.7716 17.6851L20.7929 17.6638H20.7628Z" stroke="#F6921A" strokeOpacity="0.25" strokeWidth="1.5"/>
+                                  <circle cx="17.333" cy="17" r="16.75" stroke="#5C8EFF" strokeOpacity="0.25" strokeWidth="1.5" />
+                                  <path d="M17.3338 22.9405L23.2741 17.0002L17.3338 11.0598L16.4162 11.9774L20.7628 16.324H10.8622V17.6763H20.7628L16.4162 22.0229L17.3338 22.9405Z" fill="#5C8EFF" />
+                                  <path d="M20.7628 17.6638H10.8747V16.3365H20.7628H20.7929L20.7716 16.3152L16.4338 11.9774L17.3338 11.0775L23.2564 17.0002L17.3338 22.9228L16.4338 22.0229L20.7716 17.6851L20.7929 17.6638H20.7628Z" stroke="#5C8EFF" strokeOpacity="0.25" strokeWidth="1.5" />
                                 </svg>
                                 <span>Previous</span>
                               </button>
@@ -457,14 +457,14 @@ export function BridgePage() {
                                 className={`inline-flex px-3 py-2 items-center gap-1 rounded-full font-[200] transition-all text-sm ${
                                   activeStepIndex === nativeBridgeSteps.length - 1
                                     ? "bg-white/5 text-white/40 cursor-not-allowed"
-                                    : "bg-[rgba(246,146,26,0.15)] text-white border border-[rgba(246,146,26,0.25)] hover:bg-[rgba(246,146,26,0.25)]"
+                                    : "bg-[rgba(92,142,255,0.15)] text-white border border-[rgba(92,142,255,0.25)] hover:bg-[rgba(92,142,255,0.25)]"
                                 }`}
                               >
                                 <span>Next</span>
                                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 35 34" fill="none">
-                                  <circle cx="17.333" cy="17" r="16.75" stroke="#F6921A" strokeOpacity="0.25" strokeWidth="1.5"/>
-                                  <path d="M17.3338 22.9405L23.2741 17.0002L17.3338 11.0598L16.4162 11.9774L20.7628 16.324H10.8622V17.6763H20.7628L16.4162 22.0229L17.3338 22.9405Z" fill="#F6921A"/>
-                                  <path d="M20.7628 17.6638H10.8747V16.3365H20.7628H20.7929L20.7716 16.3152L16.4338 11.9774L17.3338 11.0775L23.2564 17.0002L17.3338 22.9228L16.4338 22.0229L20.7716 17.6851L20.7929 17.6638H20.7628Z" stroke="#F6921A" strokeOpacity="0.25" strokeWidth="1.5"/>
+                                  <circle cx="17.333" cy="17" r="16.75" stroke="#5C8EFF" strokeOpacity="0.25" strokeWidth="1.5" />
+                                  <path d="M17.3338 22.9405L23.2741 17.0002L17.3338 11.0598L16.4162 11.9774L20.7628 16.324H10.8622V17.6763H20.7628L16.4162 22.0229L17.3338 22.9405Z" fill="#5C8EFF" />
+                                  <path d="M20.7628 17.6638H10.8747V16.3365H20.7628H20.7929L20.7716 16.3152L16.4338 11.9774L17.3338 11.0775L23.2564 17.0002L17.3338 22.9228L16.4338 22.0229L20.7716 17.6851L20.7929 17.6638H20.7628Z" stroke="#5C8EFF" strokeOpacity="0.25" strokeWidth="1.5" />
                                 </svg>
                               </button>
                             </div>
@@ -479,7 +479,7 @@ export function BridgePage() {
                     <div>
                       <h4 className="font-[200] mb-1 text-[#F7921A]">Important Note</h4>
                       <p className="text-base text-white/90 font-[200] leading-relaxed">
-                        The transaction will take 15 to 25 minutes. During this time, you might not see the funds on both chains. 
+                        The transaction will take 15 to 25 minutes. During this time, you might not see the funds on both chains.
                         Don't worry—the funds will appear after the process is complete.
                       </p>
                     </div>
@@ -489,7 +489,7 @@ export function BridgePage() {
 
               {/* ERC-20 Bridging Section */}
               {expandedSection === "erc20" && (
-                <motion.div 
+                <motion.div
                   className="bg-white/5 border border-white/10 rounded-xl p-6 mb-8"
                   initial={{ opacity: 0, height: 0 }}
                   animate={{ opacity: 1, height: "auto" }}
@@ -548,7 +548,8 @@ export function BridgePage() {
                             <h3 className="text-xl font-[200] mb-3 flex items-center">
                               <span className="mr-2 font-[200]">Shadow Token Bridge via</span>
                               <a href="https://glidefinance.io/bridge" target="_blank" rel="noopener noreferrer" className="text-[#8BABFF] hover:underline flex items-center font-[200]">
-                                Glide Finance <ExternalLink className="w-4 h-4 ml-1" />
+                                Glide Finance
+                              </<ExternalLink className="w-4 h-4 ml-1" />
                               </a>
                             </h3>
                             <p className="text-white/80 mb-3 text-base leading-relaxed font-[200]">
@@ -619,14 +620,13 @@ export function BridgePage() {
                           </div>
 
                           <div className="flex justify-center mb-6">
-                            <a 
-                              href="https://glidefinance.io/bridge" 
-                              target="_blank" 
-                              rel="noopener noreferrer" 
-                              className="flex items-center bg-[#8BABFF] hover:bg-[#8BABFF]/90 transition-colors text-black px-6 py-3 rounded-lg font-[200] text-lg"
+                            <a
+                              href="https://glidefinance.io/bridge"
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className="inline-flex px-3 py-2 bg-[rgba(92,142,255,0.15)] text-white rounded-full font-[200] transition-all items-center gap-1 border border-[rgba(92,142,255,0.25)] text-sm"
                             >
                               Open Glide Finance Bridge
-                              <ExternalLink className="w-5 h-5 ml-2" />
                             </a>
                           </div>
 
@@ -638,16 +638,17 @@ export function BridgePage() {
                                 <span className="text-sm text-white/60 font-[200]">Step-by-step guide</span>
                               </div>
                               <div className="w-full bg-white/10 h-2 rounded-full overflow-hidden">
-                                <div 
-                                  className="h-full bg-gradient-to-r from-[#8BABFF] to-[#6495ED]" 
-                                  style={{ width: `${(shadowStep + 1) * 100 / 7}%` }} 
+                                <div
+                                  className="h-full bg-gradient-to-r from-[#8BABFF] to-[#6495ED]"
+                                  style={{ width: `${(shadowStep + 1) * 100 / 7}%` }}
                                 />
                               </div>
                             </div>
 
                             {/* Steps Display */}
                             <div className="p-6">
-                              <div className="grid grid-cols-1 md:grid-cols-3 gap-6"><div className="md:border-r md:border-white/10 pr-6">
+                              <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+                                <div className="md:border-r md:border-white/10 pr-6">
                                   <h4 className="font-[200] mb-4">All Steps</h4>
                                   <div className="space-y-2">
                                     {[
@@ -663,8 +664,8 @@ export function BridgePage() {
                                         key={index}
                                         onClick={() => setShadowStep(index)}
                                         className={`w-full text-left p-3 rounded-lg transition-all duration-300 flex items-center ${
-                                          index === shadowStep 
-                                            ? "bg-[#8BABFF]/20 border border-[#8BABFF]/30" 
+                                          index === shadowStep
+                                            ? "bg-[#8BABFF]/20 border border-[#8BABFF]/30"
                                             : "hover:bg-white/5"
                                         }`}
                                       >
@@ -718,12 +719,16 @@ export function BridgePage() {
                                       </div>
 
                                       <div className="flex justify-end space-x-3 pt-4 border-t border-white/10">
-                                        <button 
+                                        <button
                                           onClick={() => setShadowStep(1)}
-                                          className="flex items-center bg-gradient-to-r from-[#8BABFF] to-[#6495ED] hover:brightness-110 transition-all text-black px-4 py-2 rounded-lg font-[200]"
+                                          className="inline-flex px-3 py-2 bg-[rgba(92,142,255,0.15)] text-white rounded-full font-[200] transition-all items-center gap-1 border border-[rgba(92,142,255,0.25)] text-sm"
                                         >
-                                          Next Step
-                                          <ArrowRight className="w-4 h-4 ml-2" />
+                                          <span>Next Step</span>
+                                          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 35 34" fill="none">
+                                            <circle cx="17.333" cy="17" r="16.75" stroke="#5C8EFF" strokeOpacity="0.25" strokeWidth="1.5" />
+                                            <path d="M17.3338 22.9405L23.2741 17.0002L17.3338 11.0598L16.4162 11.9774L20.7628 16.324H10.8622V17.6763H20.7628L16.4162 22.0229L17.3338 22.9405Z" fill="#5C8EFF" />
+                                            <path d="M20.7628 17.6638H10.8747V16.3365H20.7628H20.7929L20.7716 16.3152L16.4338 11.9774L17.3338 11.0775L23.2564 17.0002L17.3338 22.9228L16.4338 22.0229L20.7716 17.6851L20.7929 17.6638H20.7628Z" stroke="#5C8EFF" strokeOpacity="0.25" strokeWidth="1.5" />
+                                          </svg>
                                         </button>
                                       </div>
                                     </div>
@@ -770,19 +775,27 @@ export function BridgePage() {
                                       </div>
 
                                       <div className="flex justify-between space-x-3 pt-4 border-t border-white/10">
-                                        <button 
+                                        <button
                                           onClick={() => setShadowStep(0)}
-                                          className="flex items-center bg-white/10 hover:bg-white/20 transition-all text-white px-4 py-2 rounded-lg font-[200]"
+                                          className="inline-flex px-3 py-2 bg-[rgba(92,142,255,0.15)] text-white rounded-full font-[200] transition-all items-center gap-1 border border-[rgba(92,142,255,0.25)] text-sm"
                                         >
-                                          <ArrowRight className="w-4 h-4 mr-2 rotate-180" />
-                                          Previous
+                                          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 35 34" fill="none" className="rotate-180">
+                                            <circle cx="17.333" cy="17" r="16.75" stroke="#5C8EFF" strokeOpacity="0.25" strokeWidth="1.5" />
+                                            <path d="M17.3338 22.9405L23.2741 17.0002L17.3338 11.0598L16.4162 11.9774L20.7628 16.324H10.8622V17.6763H20.7628L16.4162 22.0229L17.3338 22.9405Z" fill="#5C8EFF" />
+                                            <path d="M20.7628 17.6638H10.8747V16.3365H20.7628H20.7929L20.7716 16.3152L16.4338 11.9774L17.3338 11.0775L23.2564 17.0002L17.3338 22.9228L16.4338 22.0229L20.7716 17.6851L20.7929 17.6638H20.7628Z" stroke="#5C8EFF" strokeOpacity="0.25" strokeWidth="1.5" />
+                                          </svg>
+                                          <span>Previous</span>
                                         </button>
-                                        <button 
+                                        <button
                                           onClick={() => setShadowStep(2)}
-                                          className="flex items-center bg-gradient-to-r from-[#8BABFF] to-[#6495ED] hover:brightness-110 transition-all text-black px-4 py-2 rounded-lg font-[200]"
+                                          className="inline-flex px-3 py-2 bg-[rgba(92,142,255,0.15)] text-white rounded-full font-[200] transition-all items-center gap-1 border border-[rgba(92,142,255,0.25)] text-sm"
                                         >
-                                          Next Step
-                                          <ArrowRight className="w-4 h-4 ml-2" />
+                                          <span>Next Step</span>
+                                          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 35 34" fill="none">
+                                            <circle cx="17.333" cy="17" r="16.75" stroke="#5C8EFF" strokeOpacity="0.25" strokeWidth="1.5" />
+                                            <path d="M17.3338 22.9405L23.2741 17.0002L17.3338 11.0598L16.4162 11.9774L20.7628 16.324H10.8622V17.6763H20.7628L16.4162 22.0229L17.3338 22.9405Z" fill="#5C8EFF" />
+                                            <path d="M20.7628 17.6638H10.8747V16.3365H20.7628H20.7929L20.7716 16.3152L16.4338 11.9774L17.3338 11.0775L23.2564 17.0002L17.3338 22.9228L16.4338 22.0229L20.7716 17.6851L20.7929 17.6638H20.7628Z" stroke="#5C8EFF" strokeOpacity="0.25" strokeWidth="1.5" />
+                                          </svg>
                                         </button>
                                       </div>
                                     </div>
@@ -833,19 +846,27 @@ export function BridgePage() {
                                       </div>
 
                                       <div className="flex justify-between space-x-3 pt-4 border-t border-white/10">
-                                        <button 
+                                        <button
                                           onClick={() => setShadowStep(1)}
-                                          className="flex items-center bg-white/10 hover:bg-white/20 transition-all text-white px-4 py-2 rounded-lg font-[200]"
+                                          className="inline-flex px-3 py-2 bg-[rgba(92,142,255,0.15)] text-white rounded-full font-[200] transition-all items-center gap-1 border border-[rgba(92,142,255,0.25)] text-sm"
                                         >
-                                          <ArrowRight className="w-4 h-4 mr-2 rotate-180" />
-                                          Previous
+                                          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 35 34" fill="none" className="rotate-180">
+                                            <circle cx="17.333" cy="17" r="16.75" stroke="#5C8EFF" strokeOpacity="0.25" strokeWidth="1.5" />
+                                            <path d="M17.3338 22.9405L23.2741 17.0002L17.3338 11.0598L16.4162 11.9774L20.7628 16.324H10.8622V17.6763H20.7628L16.4162 22.0229L17.3338 22.9405Z" fill="#5C8EFF" />
+                                            <path d="M20.7628 17.6638H10.8747V16.3365H20.7628H20.7929L20.7716 16.3152L16.4338 11.9774L17.3338 11.0775L23.2564 17.0002L17.3338 22.9228L16.4338 22.0229L20.7716 17.6851L20.7929 17.6638H20.7628Z" stroke="#5C8EFF" strokeOpacity="0.25" strokeWidth="1.5" />
+                                          </svg>
+                                          <span>Previous</span>
                                         </button>
-                                        <button 
+                                        <button
                                           onClick={() => setShadowStep(3)}
-                                          className="flex items-center bg-gradient-to-r from-[#8BABFF] to-[#6495ED] hover:brightness-110 transition-all text-black px-4 py-2 rounded-lg font-[200]"
+                                          className="inline-flex px-3 py-2 bg-[rgba(92,142,255,0.15)] text-white rounded-full font-[200] transition-all items-center gap-1 border border-[rgba(92,142,255,0.25)] text-sm"
                                         >
-                                          Next Step
-                                          <ArrowRight className="w-4 h-4 ml-2" />
+                                          <span>Next Step</span>
+                                          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 35 34" fill="none">
+                                            <circle cx="17.333" cy="17" r="16.75" stroke="#5C8EFF" strokeOpacity="0.25" strokeWidth="1.5" />
+                                            <path d="M17.3338 22.9405L23.2741 17.0002L17.3338 11.0598L16.4162 11.9774L20.7628 16.324H10.8622V17.6763H20.7628L16.4162 22.0229L17.3338 22.9405Z" fill="#5C8EFF" />
+                                            <path d="M20.7628 17.6638H10.8747V16.3365H20.7628H20.7929L20.7716 16.3152L16.4338 11.9774L17.3338 11.0775L23.2564 17.0002L17.3338 22.9228L16.4338 22.0229L20.7716 17.6851L20.7929 17.6638H20.7628Z" stroke="#5C8EFF" strokeOpacity="0.25" strokeWidth="1.5" />
+                                          </svg>
                                         </button>
                                       </div>
                                     </div>
@@ -896,19 +917,27 @@ export function BridgePage() {
                                       </div>
 
                                       <div className="flex justify-between space-x-3 pt-4 border-t border-white/10">
-                                        <button 
+                                        <button
                                           onClick={() => setShadowStep(2)}
-                                          className="flex items-center bg-white/10 hover:bg-white/20 transition-all text-white px-4 py-2 rounded-lg font-[200]"
+                                          className="inline-flex px-3 py-2 bg-[rgba(92,142,255,0.15)] text-white rounded-full font-[200] transition-all items-center gap-1 border border-[rgba(92,142,255,0.25)] text-sm"
                                         >
-                                          <ArrowRight className="w-4 h-4 mr-2 rotate-180" />
-                                          Previous
+                                          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 35 34" fill="none" className="rotate-180">
+                                            <circle cx="17.333" cy="17" r="16.75" stroke="#5C8EFF" strokeOpacity="0.25" strokeWidth="1.5" />
+                                            <path d="M17.3338 22.9405L23.2741 17.0002L17.3338 11.0598L16.4162 11.9774L20.7628 16.324H10.8622V17.6763H20.7628L16.4162 22.0229L17.3338 22.9405Z" fill="#5C8EFF" />
+                                            <path d="M20.7628 17.6638H10.8747V16.3365H20.7628H20.7929L20.7716 16.3152L16.4338 11.9774L17.3338 11.075L23.2564 17.0002L17.3338 22.9228L16.4338 22.0229L20.7716 17.6851L20.7929 17.6638H20.7628Z" stroke="#5C8EFF" strokeOpacity="0.25" strokeWidth="1.5" />
+                                          </svg>
+                                          <span>Previous</span>
                                         </button>
-                                        <button 
+                                        <button
                                           onClick={() => setShadowStep(4)}
-                                          className="flex items-center bg-gradient-to-r from-[#8BABFF] to-[#6495ED] hover:brightness-110 transition-all text-black px-4 py-2 rounded-lg font-[200]"
+                                          className="inline-flex px-3 py-2 bg-[rgba(92,142,255,0.15)] text-white rounded-full font-[200] transition-all items-center gap-1 border border-[rgba(92,142,255,0.25)] text-sm"
                                         >
-                                          Next Step
-                                          <ArrowRight className="w-4 h-4 ml-2" />
+                                          <span>Next Step</span>
+                                          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 35 34" fill="none">
+                                            <circle cx="17.333" cy="17" r="16.75" stroke="#5C8EFF" strokeOpacity="0.25" strokeWidth="1.5" />
+                                            <path d="M17.3338 22.9405L23.2741 17.0002L17.3338 11.0598L16.4162 11.9774L20.7628 16.324H10.8622V17.6763H20.7628L16.4162 22.0229L17.3338 22.9405Z" fill="#5C8EFF" />
+                                            <path d="M20.7628 17.6638H10.8747V16.3365H20.7628H20.7929L20.7716 16.3152L16.4338 11.9774L17.3338 11.0775L23.2564 17.0002L17.3338 22.9228L16.4338 22.0229L20.7716 17.6851L20.7929 17.6638H20.7628Z" stroke="#5C8EFF" strokeOpacity="0.25" strokeWidth="1.5" />
+                                          </svg>
                                         </button>
                                       </div>
                                     </div>
@@ -959,19 +988,27 @@ export function BridgePage() {
                                       </div>
 
                                       <div className="flex justify-between space-x-3 pt-4 border-t border-white/10">
-                                        <button 
+                                        <button
                                           onClick={() => setShadowStep(3)}
-                                          className="flex items-center bg-white/10 hover:bg-white/20 transition-all text-white px-4 py-2 rounded-lg font-[200]"
+                                          className="inline-flex px-3 py-2 bg-[rgba(92,142,255,0.15)] text-white rounded-full font-[200] transition-all items-center gap-1 border border-[rgba(92,142,255,0.25)] text-sm"
                                         >
-                                          <ArrowRight className="w-4 h-4 mr-2 rotate-180" />
-                                          Previous
+                                          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 35 34" fill="none" className="rotate-180">
+                                            <circle cx="17.333" cy="17" r="16.75" stroke="#5C8EFF" strokeOpacity="0.25" strokeWidth="1.5" />
+                                            <path d="M17.3338 22.9405L23.2741 17.0002L17.3338 11.0598L16.4162 11.9774L20.7628 16.324H10.8622V17.6763H20.7628L16.4162 22.0229L17.3338 22.9405Z" fill="#5C8EFF" />
+                                            <path d="M20.7628 17.6638H10.8747V16.3365H20.7628H20.7929L20.7716 16.3152L16.4338 11.9774L17.3338 11.0775L23.2564 17.0002L17.3338 22.9228L16.4338 22.0229L20.7716 17.6851L20.7929 17.6638H20.7628Z" stroke="#5C8EFF" strokeOpacity="0.25" strokeWidth="1.5" />
+                                          </svg>
+                                          <span>Previous</span>
                                         </button>
-                                        <button 
+                                        <button
                                           onClick={() => setShadowStep(5)}
-                                          className="flex items-center bg-gradient-to-r from-[#8BABFF] to-[#6495ED] hover:brightness-110 transition-all text-black px-4 py-2 rounded-lg font-[200]"
+                                          className="inline-flex px-3 py-2 bg-[rgba(92,142,255,0.15)] text-white rounded-full font-[200] transition-all items-center gap-1 border border-[rgba(92,142,255,0.25)] text-sm"
                                         >
-                                          Next Step
-                                          <ArrowRight className="w-4 h-4 ml-2" />
+                                          <span>Next Step</span>
+                                          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 35 34" fill="none">
+                                            <circle cx="17.333" cy="17" r="16.75" stroke="#5C8EFF" strokeOpacity="0.25" strokeWidth="1.5" />
+                                            <path d="M17.3338 22.9405L23.2741 17.0002L17.3338 11.0598L16.4162 11.9774L20.7628 16.324H10.8622V17.6763H20.7628L16.4162 22.0229L17.3338 22.9405Z" fill="#5C8EFF" />
+                                            <path d="M20.7628 17.6638H10.8747V16.3365H20.7628H20.7929L20.7716 16.3152L16.4338 11.9774L17.3338 11.0775L23.2564 17.0002L17.3338 22.9228L16.4338 22.0229L20.7716 17.6851L20.7929 17.6638H20.7628Z" stroke="#5C8EFF" strokeOpacity="0.25" strokeWidth="1.5" />
+                                          </svg>
                                         </button>
                                       </div>
                                     </div>
@@ -1018,19 +1055,27 @@ export function BridgePage() {
                                       </div>
 
                                       <div className="flex justify-between space-x-3 pt-4 border-t border-white/10">
-                                        <button 
+                                        <button
                                           onClick={() => setShadowStep(4)}
-                                          className="flex items-center bg-white/10 hover:bg-white/20 transition-all text-white px-4 py-2 rounded-lg font-[200]"
+                                          className="inline-flex px-3 py-2 bg-[rgba(92,142,255,0.15)] text-white rounded-full font-[200] transition-all items-center gap-1 border border-[rgba(92,142,255,0.25)] text-sm"
                                         >
-                                          <ArrowRight className="w-4 h-4 mr-2 rotate-180" />
-                                          Previous
+                                          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 35 34" fill="none" className="rotate-180">
+                                            <circle cx="17.333" cy="17" r="16.75" stroke="#5C8EFF" strokeOpacity="0.25" strokeWidth="1.5" />
+                                            <path d="M17.3338 22.9405L23.2741 17.0002L17.3338 11.0598L16.4162 11.9774L20.7628 16.324H10.8622V17.6763H20.7628L16.4162 22.0229L17.3338 22.9405Z" fill="#5C8EFF" />
+                                            <path d="M20.7628 17.6638H10.8747V16.3365H20.7628H20.7929L20.7716 16.3152L16.4338 11.9774L17.3338 11.0775L23.2564 17.0002L17.3338 22.9228L16.4338 22.0229L20.7716 17.6851L20.7929 17.6638H20.7628Z" stroke="#5C8EFF" strokeOpacity="0.25" strokeWidth="1.5" />
+                                          </svg>
+                                          <span>Previous</span>
                                         </button>
-                                        <button 
+                                        <button
                                           onClick={() => setShadowStep(6)}
-                                          className="flex items-center bg-gradient-to-r from-[#8BABFF] to-[#6495ED] hover:brightness-110 transition-all text-black px-4 py-2 rounded-lg font-[200]"
+                                          className="inline-flex px-3 py-2 bg-[rgba(92,142,255,0.15)] text-white rounded-full font-[200] transition-all items-center gap-1 border border-[rgba(92,142,255,0.25)] text-sm"
                                         >
-                                          Next Step
-                                          <ArrowRight className="w-4 h-4 ml-2" />
+                                          <span>Next Step</span>
+                                          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 35 34" fill="none">
+                                            <circle cx="17.333" cy="17" r="16.75" stroke="#5C8EFF" strokeOpacity="0.25" strokeWidth="1.5" />
+                                            <path d="M17.3338 22.9405L23.2741 17.0002L17.3338 11.0598L16.4162 11.9774L20.7628 16.324H10.8622V17.6763H20.7628L16.4162 22.0229L17.3338 22.9405Z" fill="#5C8EFF" />
+                                            <path d="M20.7628 17.6638H10.8747V16.3365H20.7628H20.7929L20.7716 16.3152L16.4338 11.9774L17.3338 11.0775L23.2564 17.0002L17.3338 22.9228L16.4338 22.0229L20.7716 17.6851L20.7929 17.6638H20.7628Z" stroke="#5C8EFF" strokeOpacity="0.25" strokeWidth="1.5" />
+                                          </svg>
                                         </button>
                                       </div>
                                     </div>
@@ -1081,21 +1126,24 @@ export function BridgePage() {
                                       </div>
 
                                       <div className="flex justify-between space-x-3 pt-4 border-t border-white/10">
-                                        <button 
+                                        <button
                                           onClick={() => setShadowStep(5)}
-                                          className="flex items-center bg-white/10 hover:bg-white/20 transition-all text-white px-4 py-2 rounded-lg font-[200]"
+                                          className="inline-flex px-3 py-2 bg-[rgba(92,142,255,0.15)] text-white rounded-full font-[200] transition-all items-center gap-1 border border-[rgba(92,142,255,0.25)] text-sm"
                                         >
-                                          <ArrowRight className="w-4 h-4 mr-2 rotate-180" />
-                                          Previous
+                                          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 35 34" fill="none" className="rotate-180">
+                                            <circle cx="17.333" cy="17" r="16.75" stroke="#5C8EFF" strokeOpacity="0.25" strokeWidth="1.5" />
+                                            <path d="M17.3338 22.9405L23.2741 17.0002L17.3338 11.0598L16.4162 11.9774L20.7628 16.324H10.8622V17.6763H20.7628L16.4162 22.0229L17.3338 22.9405Z" fill="#5C8EFF" />
+                                            <path d="M20.7628 17.6638H10.8747V16.3365H20.7628H20.7929L20.7716 16.3152L16.4338 11.9774L17.3338 11.0775L23.2564 17.0002L17.3338 22.9228L16.4338 22.0229L20.7716 17.6851L20.7929 17.6638H20.7628Z" stroke="#5C8EFF" strokeOpacity="0.25" strokeWidth="1.5" />
+                                          </svg>
+                                          <span>Previous</span>
                                         </button>
-                                        <a 
-                                          href="https://glidefinance.io/bridge" 
-                                          target="_blank" 
-                                          rel="noopener noreferrer" 
-                                          className="flex items-center bg-gradient-to-r from-[#8BABFF] to-[#6495ED] hover:brightness-110 transition-all text-black px-4 py-2 rounded-lg font-[200]"
+                                        <a
+                                          href="https://glidefinance.io/bridge"
+                                          target="_blank"
+                                          rel="noopener noreferrer"
+                                          className="inline-flex px-3 py-2 bg-[rgba(92,142,255,0.15)] text-white rounded-full font-[200] transition-all items-center gap-1 border border-[rgba(92,142,255,0.25)] text-sm"
                                         >
                                           Go to Glide Bridge
-                                          <ExternalLink className="w-4 h-4 ml-2" />
                                         </a>
                                       </div>
                                     </div>
@@ -1113,7 +1161,8 @@ export function BridgePage() {
                             <div>
                               <h3 className="text-xl font-[200] mb-2 flex items-center">
                                 <a href="https://chainge.finance" target="_blank" rel="noopener noreferrer" className="hover:underline flex items-center font-[200]">
-                                  Chainge Finance Bridge <ExternalLink className="w-4 h-4 ml-1" />
+                                  Chainge Finance Bridge
+                                  <ExternalLink className="w-4 h-4 ml-1" />
                                 </a>
                               </h3>
                               <p className="text-white/70 font-[200]">
@@ -1123,9 +1172,9 @@ export function BridgePage() {
                           </div>
 
                           <div className="rounded-xl overflow-hidden border border-white/10 shadow-lg">
-                            <img 
-                              src="/images/Bridge/chainge/chainge-interface.png" 
-                              alt="Chainge Finance Interface" 
+                            <img
+                              src="/images/Bridge/chainge/chainge-interface.png"
+                              alt="Chainge Finance Interface"
                               className="w-full object-cover"
                             />
                           </div>
@@ -1139,14 +1188,13 @@ export function BridgePage() {
                               Chainge Finance provides a user-friendly cross-chain bridge that allows you to transfer ELA between Elastos Smart Chain and multiple other blockchains, including Ethereum. Their DCRM technology ensures secure and fast cross-chain transfers.
                             </p>
                             <div className="flex flex-wrap gap-4 mt-4">
-                              <a 
-                                href="https://chainge.finance" 
-                                target="_blank" 
-                                rel="noopener noreferrer" 
-                                className="flex items-center bg-gradient-to-r from-[#8BABFF] to-[#6495ED] hover:brightness-110 transition-all text-black px-6 py-3 rounded-lg font-[200]"
+                              <a
+                                href="https://chainge.finance"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="inline-flex px-3 py-2 bg-[rgba(92,142,255,0.15)] text-white rounded-full font-[200] transition-all items-center gap-1 border border-[rgba(92,142,255,0.25)] text-sm"
                               >
                                 Go to Chainge Finance
-                                <ExternalLink className="w-4 h-4 ml-2" />
                               </a>
                             </div>
                           </div>
@@ -1169,7 +1217,7 @@ export function BridgePage() {
             </div>
 
             {/* FAQ Section */}
-            <motion.div 
+            <motion.div
               className="mb-12"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
@@ -1183,9 +1231,9 @@ export function BridgePage() {
                 </div>
                 <div className="p-6 pl-0 pt-0">
                   <Accordion type="single" collapsible className="w-full" defaultValue="item-1">
-                    <AccordionItem 
-                      value="item-1" 
-                      key="item-1" 
+                    <AccordionItem
+                      value="item-1"
+                      key="item-1"
                       className="py-2 border-b border-border dark:border-neutral-800"
                     >
                       <AccordionTrigger className="flex flex-1 items-center py-2 text-left text-[15px] font-[200] text-foreground dark:text-foreground [&>svg]:hidden">
@@ -1201,9 +1249,9 @@ export function BridgePage() {
                       </AccordionContent>
                     </AccordionItem>
 
-                    <AccordionItem 
-                      value="item-2" 
-                      key="item-2" 
+                    <AccordionItem
+                      value="item-2"
+                      key="item-2"
                       className="py-2 border-b border-border dark:border-neutral-800"
                     >
                       <AccordionTrigger className="flex flex-1 items-center py-2 text-left text-[15px] font-[200] text-foreground dark:text-foreground [&>svg]:hidden">
@@ -1219,9 +1267,9 @@ export function BridgePage() {
                       </AccordionContent>
                     </AccordionItem>
 
-                    <AccordionItem 
-                      value="item-3" 
-                      key="item-3" 
+                    <AccordionItem
+                      value="item-3"
+                      key="item-3"
                       className="py-2 border-b border-border dark:border-neutral-800"
                     >
                       <AccordionTrigger className="flex flex-1 items-center py-2 text-left text-[15px] font-[200] text-foreground dark:text-foreground [&>svg]:hidden">
@@ -1237,9 +1285,9 @@ export function BridgePage() {
                       </AccordionContent>
                     </AccordionItem>
 
-                    <AccordionItem 
-                      value="item-4" 
-                      key="item-4" 
+                    <AccordionItem
+                      value="item-4"
+                      key="item-4"
                       className="py-2 border-b border-border dark:border-neutral-800"
                     >
                       <AccordionTrigger className="flex flex-1 items-center py-2 text-left text-[15px] font-[200] text-foreground dark:text-foreground [&>svg]:hidden">
@@ -1255,9 +1303,9 @@ export function BridgePage() {
                       </AccordionContent>
                     </AccordionItem>
 
-                    <AccordionItem 
-                      value="item-5" 
-                      key="item-5" 
+                    <AccordionItem
+                      value="item-5"
+                      key="item-5"
                       className="py-2 border-b border-border dark:border-neutral-800"
                     >
                       <AccordionTrigger className="flex flex-1 items-center py-2 text-left text-[15px] font-[200] text-foreground dark:text-foreground [&>svg]:hidden">
@@ -1278,7 +1326,7 @@ export function BridgePage() {
             </motion.div>
 
             {/* Additional Help Section */}
-            <motion.div 
+            <motion.div
               className="bg-gradient-to-r from-[#F7921A]/20 to-[#8BABFF]/20 border border-white/10 rounded-xl p-6 text-center"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
@@ -1290,9 +1338,9 @@ export function BridgePage() {
               </p>
 
               <div className="flex flex-wrap justify-center gap-4">
-                <a 
-                  href="https://t.me/elastosgroup" 
-                  target="_blank" 
+                <a
+                  href="https://t.me/elastosgroup"
+                  target="_blank"
                   rel="noopener noreferrer"
                   className="inline-flex items-center px-6 py-3 bg-white/10 hover:bg-white/15 rounded-lg transition-all font-[200]"
                 >
@@ -1302,9 +1350,9 @@ export function BridgePage() {
                   <span>Telegram Community</span>
                 </a>
 
-                <a 
-                  href="https://discord.gg/elastos" 
-                  target="_blank" 
+                <a
+                  href="https://discord.gg/elastos"
+                  target="_blank"
                   rel="noopener noreferrer"
                   className="inline-flex items-center px-6 py-3 bg-white/10 hover:bg-white/15 rounded-lg transition-all font-[200]"
                 >
