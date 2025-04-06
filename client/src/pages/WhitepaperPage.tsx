@@ -57,7 +57,7 @@ const WhitepaperPage = () => {
               </div>
               <CardHeader className="pb-3 relative">
                 <span className="absolute top-5 right-5 px-4 py-1 bg-[#5C8EFF]/10 border border-[#5C8EFF]/30 text-white rounded-full text-xs font-medium whitespace-nowrap">2018</span>
-                <CardTitle className="text-[#F6921A]">Elastos Whitepaper</CardTitle>
+                <CardTitle className="text-white">Elastos Whitepaper</CardTitle>
                 <CardDescription>Original Vision & Technical Architecture</CardDescription>
               </CardHeader>
               <CardContent className="pt-0">
@@ -110,7 +110,7 @@ const WhitepaperPage = () => {
               </div>
               <CardHeader className="pb-3 relative">
                 <span className="absolute top-5 right-5 px-4 py-1 bg-[#5C8EFF]/10 border border-[#5C8EFF]/30 text-white rounded-full text-xs font-medium whitespace-nowrap">2025</span>
-                <CardTitle className="text-[#F6921A]">Elastos Litepaper</CardTitle>
+                <CardTitle className="text-white">Elastos Litepaper</CardTitle>
                 <CardDescription>Current Ecosystem Overview & Roadmap</CardDescription>
               </CardHeader>
               <CardContent className="pt-0">
@@ -162,7 +162,7 @@ const WhitepaperPage = () => {
               </div>
               <CardHeader className="pb-3 relative">
                 <span className="absolute top-5 right-5 px-4 py-1 bg-[#5C8EFF]/10 border border-[#5C8EFF]/30 text-white rounded-full text-xs font-medium whitespace-nowrap">2025</span>
-                <CardTitle className="text-[#F6921A]">CoinTelegraph Report</CardTitle>
+                <CardTitle className="text-white">CoinTelegraph Report</CardTitle>
                 <CardDescription>Bitcoin-Secured Architecture for DeFi</CardDescription>
               </CardHeader>
               <CardContent className="pt-0">
