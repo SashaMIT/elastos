@@ -223,7 +223,7 @@ const WhitepaperPage = () => {
                 </CardHeader>
                 <CardContent>
                   <p className="text-sm text-gray-600 dark:text-gray-400 mb-3">
-                    Explore how Elastos achieves unprecedented blockchain security through Bitcoin merge-mining, providing robust protection for all network transactions and assets.
+                    Explore how Elastos achieves unprecedented blockchain security through Bitcoin merge-mining.
                   </p>
 
                 </CardContent>
