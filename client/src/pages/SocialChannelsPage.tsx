@@ -98,7 +98,7 @@ const SocialChannelsPage: React.FC = () => {
                 <h1 className="text-4xl sm:text-4xl md:text-5xl font-[200] text-white mb-4">
                   Elastos Community Social Channels
                 </h1>
-                <p className="text-gray-300 max-w-2xl mx-auto text-md sm:text-base md:text-lg">
+                <p className="text-gray-300 max-w-2xl mx-auto text-md sm:text-base md:text-lg font-[200]">
                   Connect with the global Elastos community through our official social media channels and stay updated on the latest developments.
                 </p>
               </motion.div>
@@ -127,12 +127,12 @@ const SocialChannelsPage: React.FC = () => {
                     </div>
                   </div>
                   <div>
-                    <h3 className="text-xl font-bold text-white">{channel.name}</h3>
-                    <p className="text-sm text-white/50">{channel.subscribers} members</p>
+                    <h3 className="text-xl font-[200] text-white">{channel.name}</h3>
+                    <p className="text-sm text-white/50 font-[200]">{channel.subscribers} members</p>
                   </div>
                 </div>
 
-                <p className="text-white/70 mb-4 flex-grow">{channel.description}</p>
+                <p className="text-white/70 mb-4 flex-grow font-[200]">{channel.description}</p>
 
                 <div className="flex">
                   <VerifyButton 
@@ -157,8 +157,8 @@ const SocialChannelsPage: React.FC = () => {
             viewport={{ once: true }}
             className="text-center max-w-3xl mx-auto mb-6"
           >
-            <h2 className="text-3xl font-bold text-white mb-2">Additional Community Resources</h2>
-            <p className="text-white/70">
+            <h2 className="text-3xl font-[200] text-white mb-2">Additional Community Resources</h2>
+            <p className="text-white/70 font-[200]">
               In addition to our social media channels, Elastos offers various resources to help you stay connected and informed.
             </p>
           </motion.div>
@@ -175,10 +175,10 @@ const SocialChannelsPage: React.FC = () => {
                 <div className="w-10 h-10 rounded-full bg-[#F6921A]/10 flex items-center justify-center">
                   <Globe className="h-5 w-5 text-[#F6921A]" />
                 </div>
-                <h3 className="text-lg font-bold text-white">Subgroups</h3>
+                <h3 className="text-lg font-[200] text-white">Subgroups</h3>
               </div>
 
-              <p className="text-white/70 text-sm mb-3">
+              <p className="text-white/70 text-sm mb-3 font-[200]">
                 Join specialized Elastos community subgroups to connect with others and get focused support.
               </p>
 
@@ -224,10 +224,10 @@ const SocialChannelsPage: React.FC = () => {
                 <div className="w-10 h-10 rounded-full bg-[#5C8EFF]/10 flex items-center justify-center">
                   <Users className="h-5 w-5 text-[#5C8EFF]" />
                 </div>
-                <h3 className="text-lg font-bold text-white">Developer Resources</h3>
+                <h3 className="text-lg font-[200] text-white">Developer Resources</h3>
               </div>
 
-              <p className="text-white/70 text-sm mb-3">
+              <p className="text-white/70 text-sm mb-3 font-[200]">
                 Access technical documentation, SDKs, and developer communities to build on Elastos.
               </p>
 
@@ -276,16 +276,16 @@ const SocialChannelsPage: React.FC = () => {
                 <div className="w-10 h-10 rounded-full bg-[#F6921A]/10 flex items-center justify-center border border-[#F6921A]/30">
                   <Shield className="h-5 w-5 text-[#F6921A]" />
                 </div>
-                <h3 className="text-lg font-bold text-white">Security Verification</h3>
+                <h3 className="text-lg font-[200] text-white">Security Verification</h3>
               </div>
 
-              <p className="text-white/70 text-sm mb-3">
+              <p className="text-white/70 text-sm mb-3 font-[200]">
                 Always verify you're connecting with official Elastos channels. Official channels will never ask for your private keys.
               </p>
 
               <div className="bg-black/20 rounded-lg p-3 border border-white/5">
-                <p className="text-[#F6921A] text-xs font-medium mb-2">Security Tips:</p>
-                <ul className="text-white/70 space-y-1 text-xs">
+                <p className="text-[#F6921A] text-xs font-[200] mb-2">Security Tips:</p>
+                <ul className="text-white/70 space-y-1 text-xs font-[200]">
                   <li className="flex items-start gap-1">
                     <svg xmlns="http://www.w3.org/2000/svg" className="h-3.5 w-3.5 text-[#F6921A] flex-shrink-0 mt-0.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                       <path d="m9 12 2 2 4-4" />
