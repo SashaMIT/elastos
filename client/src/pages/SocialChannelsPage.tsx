@@ -103,6 +103,7 @@ const SocialChannelsPage: React.FC = () => {
                   Connect with the global Elastos community through our official social media channels and stay updated on the latest developments.
                 </p>
               </motion.div>
+            </div>
           </div>
         </div>
       </div>
