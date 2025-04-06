@@ -284,7 +284,7 @@ const LandingPage = () => {
             <h1 className="text-xl sm:text-3xl md:text-3xl lg:text-4xl font-bold text-center mb-4 px-2">
               Own Your Digital Life, Secured by Bitcoin.
             </h1>
-            <p className="text-base sm:text-lg md:text-lg lg:text-xl text-center mb-8 text-white max-w-[90vw] md:max-w-none px-2 font-medium">
+            <p className="text-base sm:text-lg md:text-lg lg:text-xl text-center mb-8 text-white max-w-[90vw] md:max-w-none px-2 font-[200]">
               Elastos puts you in control of your identity, data, and digital assets.
             </p>
             <div className="flex gap-4">
