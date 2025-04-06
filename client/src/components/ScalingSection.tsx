@@ -11,6 +11,9 @@ const glassCircle2 = '/images/Special FX Graphics/Glass Circles - #2 2.jpg';
 const glassCircle3 = '/images/Special FX Graphics/Glass Circles - #3 2.jpg';
 const placeholderImage = '/images/placeholder-image.jpg';
 
+// Log image paths to help debug
+console.log("Image paths:", { glassCircle1, glassCircle2, glassCircle3 });
+
 
 const ecosystemProjects = [
   {
@@ -96,7 +99,8 @@ export function ScalingSection() {
                   alt="Bitcoin-Grade Security" 
                   className="w-full h-full object-cover object-center" 
                   onError={(e) => {
-                    console.log("Error loading image:", e.currentTarget.src);
+                    console.error("Error loading image:", e.currentTarget.src);
+                    console.error("Image load error details:", e);
                     e.currentTarget.src = placeholderImage;
                   }}
                 />
