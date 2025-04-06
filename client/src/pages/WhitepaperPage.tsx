@@ -217,7 +217,7 @@ const WhitepaperPage = () => {
                     </div>
                     <div>
                         <CardTitle className="text-gray-800 dark:text-gray-200">Elastos Security</CardTitle>
-                        <CardDescription>Bitcoin-Backed Protection & Analytics</CardDescription>
+                        <CardDescription>Bitcoin-Backed Protection</CardDescription>
                       </div>
                     </div>
                     <span className="px-4 py-1 bg-[#5C8EFF]/10 border border-[#5C8EFF]/30 text-white rounded-full text-xs font-medium whitespace-nowrap">Hashrate</span>
@@ -225,7 +225,7 @@ const WhitepaperPage = () => {
                 </CardHeader>
                 <CardContent>
                   <p className="text-sm text-gray-600 dark:text-gray-400 mb-3">
-                    Explore how Elastos achieves unprecedented blockchain security through Bitcoin merge-mining.
+                    Explore how Elastos achieves unprecedented blockchain security through Bitcoin merge-mining for transactions and assets.
                   </p>
 
                 </CardContent>
@@ -254,7 +254,7 @@ const WhitepaperPage = () => {
                       </svg>
                     </div>
                     <div>
-                        <CardTitle className="text-gray-800 dark:text-gray-200">Technical Documentation</CardTitle>
+                        <CardTitle className="text-gray-800 dark:text-gray-200">Technical Portal</CardTitle>
                         <CardDescription>Developer Resources & APIs</CardDescription>
                       </div>
                     </div>
@@ -294,7 +294,7 @@ const WhitepaperPage = () => {
                     </div>
                     <div>
                         <CardTitle className="text-gray-800 dark:text-gray-200">Community Resources</CardTitle>
-                        <CardDescription>Connect with the Elastos community</CardDescription>
+                        <CardDescription>Connect with the community</CardDescription>
                       </div>
                     </div>
                     <span className="px-4 py-1 bg-[#5C8EFF]/10 border border-[#5C8EFF]/30 text-white rounded-full text-xs font-medium whitespace-nowrap">Talk</span>
