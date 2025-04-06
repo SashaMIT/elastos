@@ -51,7 +51,7 @@ const HashrateVisualizer = () => {
       unit: "Frontier Supercomputers",
       buttonText: "Supercomputers",
       base: 1_500_000_000_000,
-      icon: <Monitor className="w-5 h-5 text-orange-500" />,
+      icon: <Monitor className="w-5 h-5 text-[#F6921A]" />,
       explanation: "Compared to Frontier, the world's fastest supercomputer (1.5 EH/s theoretical peak)",
       details: [
         "Frontier: 1.5 EH/s theoretical peak performance",
@@ -63,7 +63,7 @@ const HashrateVisualizer = () => {
       unit: "Large data centers",
       buttonText: "Data Centers",
       base: 500_000_000_000,
-      icon: <Building2 className="w-5 h-5 text-green-500" />,
+      icon: <Building2 className="w-5 h-5 text-[#F6921A]" />,
       explanation: "Based on data center with 1000 servers with multiple GPUs",
       details: [
         "1 EH/s = 1,000,000,000,000 MH/s",
@@ -75,7 +75,7 @@ const HashrateVisualizer = () => {
       unit: "High-end gaming PCs",
       buttonText: "Gaming PCs",
       base: 160_000_000,
-      icon: <Laptop className="w-5 h-5 text-purple-500" />,
+      icon: <Laptop className="w-5 h-5 text-[#F6921A]" />,
       explanation: "Based on RTX 4090 (~140 MH/s) + CPU (~20 MH/s) for SHA-256",
       details: [
         "1 EH/s = 1,000,000,000,000 MH/s",
@@ -87,7 +87,7 @@ const HashrateVisualizer = () => {
       unit: "iPhone calculations",
       buttonText: "iPhones",
       base: 15_000_000,
-      icon: <Smartphone className="w-5 h-5 text-blue-500" />,
+      icon: <Smartphone className="w-5 h-5 text-[#F6921A]" />,
       explanation: "Based on iPhone CPU performing SHA-256 hashes at ~15 MH/s",
       details: [
         "1 EH/s = 1,000,000,000,000 MH/s",
@@ -147,7 +147,7 @@ const HashrateVisualizer = () => {
     <Card className="w-full max-w-3xl mx-auto bg-background/95 dark:bg-[#171717] backdrop-blur-sm border-0 dark:border-0">
       <CardHeader className="p-4 sm:p-6 space-y-2">
         <CardTitle className="flex items-start gap-2 text-lg sm:text-xl">
-          <Zap className="w-5 h-5 sm:w-6 sm:h-6 text-yellow-500 shrink-0 mt-1" />
+          <Zap className="w-5 h-5 sm:w-6 sm:h-6 text-[#F6921A] shrink-0 mt-1" />
           <span className="leading-tight">
             Bitcoin and Elastos Network Computing Power
           </span>
@@ -160,7 +160,7 @@ const HashrateVisualizer = () => {
             <Dialog>
               <DialogTrigger asChild>
                 <Button variant="outline" className="w-full flex items-center gap-2 px-4 py-3 hover:bg-accent/50">
-                  <Calculator className="w-5 h-5 text-blue-500" />
+                  <Calculator className="w-5 h-5 text-[#F6921A]" />
                   What is Hashrate?
                 </Button>
               </DialogTrigger>
@@ -199,7 +199,7 @@ const HashrateVisualizer = () => {
             <Dialog>
               <DialogTrigger asChild>
                 <Button variant="outline" className="w-full flex items-center gap-2 px-4 py-3 hover:bg-accent/50">
-                  <Cpu className="w-5 h-5 text-purple-500" />
+                  <Cpu className="w-5 h-5 text-[#F6921A]" />
                   What is EH/s?
                 </Button>
               </DialogTrigger>
@@ -231,7 +231,7 @@ const HashrateVisualizer = () => {
             <Dialog>
               <DialogTrigger asChild>
                 <Button variant="outline" className="w-full flex items-center gap-2 px-4 py-3 hover:bg-accent/50">
-                  <Network className="w-5 h-5 text-green-500" />
+                  <Network className="w-5 h-5 text-[#F6921A]" />
                   What is Merge Mining?
                 </Button>
               </DialogTrigger>
@@ -274,7 +274,7 @@ const HashrateVisualizer = () => {
 
           <div className="space-y-4">
             <div className="font-medium flex items-center gap-2">
-              <Server className="w-5 h-5 text-blue-500" />
+              <Server className="w-5 h-5 text-[#F6921A]" />
               Compare to everyday devices:
             </div>
 

@@ -36,7 +36,7 @@ const SecurityPage = () => {
             </p>
             <button 
               onClick={() => window.location.reload()} 
-              className="mt-6 px-4 py-2 bg-primary text-white rounded-full"
+              className="mt-6 px-4 py-2 bg-[#F6921A] hover:bg-[#F6921A]/90 text-white rounded-full"
             >
               Refresh Page
             </button>
@@ -45,7 +45,7 @@ const SecurityPage = () => {
       ) : isLoading ? (
         <div className="flex justify-center items-center h-[70vh]">
           <div className="text-center">
-            <Dots_v2 className="mx-auto mb-4" />
+            <div className="mx-auto mb-4 w-12 h-12 rounded-full border-4 border-[#F6921A]/30 border-t-[#F6921A] animate-spin"></div>
             <p className="text-muted-foreground">Loading security data...</p>
           </div>
         </div>
