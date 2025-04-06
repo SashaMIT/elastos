@@ -105,26 +105,32 @@ export function MediaKitPage() {
             </TabsList>
             
             <TabsContent value="logos" className="space-y-8">
-              <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6">
-                {logos.map((logo) => (
-                  <LogoCard key={logo.id} logo={logo} />
-                ))}
+              <div className="flex justify-center">
+                <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6 max-w-6xl">
+                  {logos.map((logo) => (
+                    <LogoCard key={logo.id} logo={logo} />
+                  ))}
+                </div>
               </div>
             </TabsContent>
             
             <TabsContent value="colors" className="space-y-8">
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                {colorPalettes.map((palette) => (
-                  <ColorPaletteCard key={palette.id} palette={palette} />
-                ))}
+              <div className="flex justify-center">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-6xl">
+                  {colorPalettes.map((palette) => (
+                    <ColorPaletteCard key={palette.id} palette={palette} />
+                  ))}
+                </div>
               </div>
             </TabsContent>
             
             <TabsContent value="typography" className="space-y-8">
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                {fonts.map((font) => (
-                  <FontCard key={font.id} font={font} />
-                ))}
+              <div className="flex justify-center">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-6xl">
+                  {fonts.map((font) => (
+                    <FontCard key={font.id} font={font} />
+                  ))}
+                </div>
               </div>
             </TabsContent>
           </Tabs>
