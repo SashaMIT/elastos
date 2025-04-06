@@ -71,7 +71,6 @@ export const LogoCard = ({ logo }: LogoProps) => {
             onClick={handleDownload}
             className="inline-flex px-3 py-2 bg-[rgba(246,146,26,0.15)] text-white rounded-full font-[200] transition-all items-center gap-2 border border-[rgba(246,146,26,0.25)] text-sm"
           >
-            <Download className="h-4 w-4" />
             <span>Download Logo Kit</span>
             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 35 34" fill="none">
               <circle cx="17.333" cy="17" r="16.75" stroke="#F6921A" strokeOpacity="0.25" strokeWidth="1.5"/>

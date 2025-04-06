@@ -82,7 +82,6 @@ export const FontCard = ({ font }: FontProps) => {
                   onClick={() => downloadFont(file.path, file.path.split('/').pop() || file.name)}
                   className="inline-flex px-3 py-2 bg-[rgba(92,142,255,0.15)] text-white rounded-full font-[200] transition-all items-center gap-2 border border-[rgba(92,142,255,0.25)] text-sm"
                 >
-                  <Download className="h-4 w-4" />
                   <span>Download</span>
                   <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 35 34" fill="none">
                     <circle cx="17.333" cy="17" r="16.75" stroke="#5C8EFF" strokeOpacity="0.25" strokeWidth="1.5"/>
