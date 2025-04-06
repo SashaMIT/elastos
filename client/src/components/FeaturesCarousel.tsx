@@ -98,7 +98,7 @@ export function FeaturesCarousel() {
                     <div className="flex-grow" />
                     <div className="flex flex-col sm:flex-row justify-between items-center gap-4">
                       <h2 className="text-sm sm:text-xl md:text-2xl lg:text-3xl font-bold max-w-full sm:max-w-[70%] text-center sm:text-left">{feature.title}</h2>
-                      <button className="px-3 py-2 bg-[#21293a] text-white rounded-full font-[200] transition-all items-center gap-1 border border-[rgba(92,142,255,0.25)] text-sm">
+                      <button className="px-4 py-2 bg-[#21293a] text-white rounded-full font-[200] transition-all flex flex-row items-center gap-2 border border-[rgba(92,142,255,0.25)] text-sm min-w-[130px]">
                         <span>{feature.buttonText}</span>
                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 35 34" fill="none">
                           <circle cx="17.333" cy="17" r="16.75" stroke="#5C8EFF" strokeOpacity="0.25" strokeWidth="1.5"/>

@@ -290,7 +290,7 @@ const LandingPage = () => {
             <div className="flex gap-4">
               <a 
                 href="/vision"
-                className="inline-flex px-3 py-2 bg-[#21293a] text-white rounded-full font-[200] transition-all items-center gap-1 border border-[rgba(92,142,255,0.25)] text-sm"
+                className="inline-flex px-4 py-2 bg-[#21293a] text-white rounded-full font-[200] transition-all items-center gap-2 border border-[rgba(92,142,255,0.25)] text-sm min-w-[130px]"
               >
                 <span>Learn More</span>
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 35 34" fill="none">

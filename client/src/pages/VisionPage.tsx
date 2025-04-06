@@ -77,7 +77,7 @@ export function VisionPage() {
               <div className="flex flex-wrap justify-center gap-4">
                 <a
                   href="/explorer"
-                  className="inline-flex px-3 py-2 bg-[rgba(92,142,255,0.15)] text-white rounded-full font-[200] transition-all items-center gap-1 border border-[rgba(92,142,255,0.25)] text-sm"
+                  className="inline-flex px-4 py-2 bg-[rgba(92,142,255,0.15)] text-white rounded-full font-[200] transition-all items-center gap-2 border border-[rgba(92,142,255,0.25)] text-sm min-w-[130px]"
                 >
                   <span>ESC Explorer</span>
                   <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 35 34" fill="none">
@@ -88,7 +88,7 @@ export function VisionPage() {
                 </a>
                 <a
                   href="/dao"
-                  className="inline-flex px-3 py-2 bg-[rgba(246,146,26,0.15)] text-white rounded-full font-[200] transition-all items-center gap-1 border border-[rgba(246,146,26,0.25)] text-sm"
+                  className="inline-flex px-4 py-2 bg-[rgba(246,146,26,0.15)] text-white rounded-full font-[200] transition-all items-center gap-2 border border-[rgba(246,146,26,0.25)] text-sm min-w-[130px]"
                 >
                   <span>MC Explorer</span>
                   <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 35 34" fill="none">
@@ -99,7 +99,7 @@ export function VisionPage() {
                 </a>
               </div>
             </div>
-            
+
             {/* ELA Utility & Start Building */}
             <div className="mb-20 text-center">
               <h2 className="text-2xl md:text-3xl font-bold mb-6 text-black dark:text-white">
@@ -108,7 +108,7 @@ export function VisionPage() {
               <div className="flex flex-wrap justify-center gap-4">
                 <a
                   href="/ela-utility"
-                  className="inline-flex px-3 py-2 bg-[rgba(92,142,255,0.15)] text-white rounded-full font-[200] transition-all items-center gap-1 border border-[rgba(92,142,255,0.25)] text-sm"
+                  className="inline-flex px-4 py-2 bg-[rgba(92,142,255,0.15)] text-white rounded-full font-[200] transition-all items-center gap-2 border border-[rgba(92,142,255,0.25)] text-sm min-w-[130px]"
                 >
                   <span>ELA Utility</span>
                   <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 35 34" fill="none">
@@ -121,7 +121,7 @@ export function VisionPage() {
                   href="https://elastos.dev/"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex px-3 py-2 bg-[rgba(246,146,26,0.15)] text-white rounded-full font-[200] transition-all items-center gap-1 border border-[rgba(246,146,26,0.25)] text-sm"
+                  className="inline-flex px-4 py-2 bg-[rgba(246,146,26,0.15)] text-white rounded-full font-[200] transition-all items-center gap-2 border border-[rgba(246,146,26,0.25)] text-sm min-w-[130px]"
                 >
                   <span>Start Building</span>
                   <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 35 34" fill="none">
