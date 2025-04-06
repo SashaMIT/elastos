@@ -329,7 +329,7 @@ const DaoPage: React.FC = () => {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="max-w-4xl mx-auto"
+            className="max-w-6xl mx-auto"
           >
             <h2 className="text-3xl font-bold text-white text-center mb-6">
               What is Elastos DAO?
