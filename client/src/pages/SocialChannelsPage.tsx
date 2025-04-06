@@ -112,12 +112,14 @@ const SocialChannelsPage: React.FC = () => {
 
                 <p className="text-white/70 mb-4 flex-grow">{channel.description}</p>
 
-                <VerifyButton 
-                  href={channel.url}
-                  color={channel.buttonStyle}
-                >
-                  Visit Channel
-                </VerifyButton>
+                <div className="flex">
+                  <VerifyButton 
+                    href={channel.url}
+                    color={channel.buttonStyle}
+                  >
+                    Visit Channel
+                  </VerifyButton>
+                </div>
               </motion.div>
             ))}
           </div>
