@@ -119,140 +119,160 @@ const WalletPage: React.FC = () => {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-center mb-12"
+            className="text-center mb-8"
           >
-            <h2 className="text-4xl font-bold text-white mb-3">
+            <h2 className="text-3xl font-[200] text-white mb-3">
               Features that give you control
             </h2>
-            <p className="text-xl text-white/70">
+            <p className="text-lg text-white/70 font-[200]">
               Your gateway to Web3.
             </p>
           </motion.div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-7xl mx-auto">
-            {/* Digital Asset and Staking Support */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.1 }}
-              className="bg-gradient-to-br from-[#8BABFF]/10 via-[#8BABFF]/5 to-transparent rounded-xl p-6 border border-[#8BABFF]/20 h-full"
-            >
-              <div className="rounded-full bg-[#8BABFF]/10 p-4 w-16 h-16 flex items-center justify-center mb-5">
-                <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8 text-[#8BABFF]" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                  <path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6" />
-                </svg>
+          <div className="relative max-w-7xl mx-auto">
+            <div className="grid grid-cols-1 md:grid-cols-6 lg:grid-cols-6 xl:border rounded-md dark:border-neutral-800">
+              {/* Digital Asset and Staking Support */}
+              <div className="p-3 sm:p-6 relative overflow-hidden group hover:bg-neutral-900 transition-colors duration-300 col-span-1 md:col-span-2 lg:col-span-2 border-b md:border-r dark:border-neutral-800">
+                <motion.div
+                  whileHover={{ scale: 1.03 }}
+                  className="flex flex-col h-full"
+                >
+                  <div className="mb-3">
+                    <div className="w-12 h-12 flex items-center justify-center rounded-full bg-[#24272f]">
+                      <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 stroke-[1.5] text-[#F6921A]" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                        <path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6" />
+                      </svg>
+                    </div>
+                  </div>
+                  <h3 className="text-lg font-[200] mb-1 text-white">
+                    Digital Assets and Staking
+                  </h3>
+                  <p className="text-base text-neutral-300 font-[200]">
+                    Manage assets and stake tokens across Elastos and multiple blockchains.
+                  </p>
+                </motion.div>
               </div>
-              <h3 className="text-2xl font-bold text-white mb-3">Digital Assets and Staking</h3>
-              <p className="text-white/70">
-                Manage assets and stake tokens across Elastos and multiple blockchains.
-              </p>
-            </motion.div>
 
-            {/* Decentralized ID (DID) */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.2 }}
-              className="bg-gradient-to-br from-[#8BABFF]/10 via-[#8BABFF]/5 to-transparent rounded-xl p-6 border border-[#8BABFF]/20 h-full"
-            >
-              <div className="rounded-full bg-[#8BABFF]/10 p-4 w-16 h-16 flex items-center justify-center mb-5">
-                <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8 text-[#8BABFF]" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                  <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
-                </svg>
+              {/* Decentralized ID (DID) */}
+              <div className="p-3 sm:p-6 relative overflow-hidden group hover:bg-neutral-900 transition-colors duration-300 col-span-1 md:col-span-2 lg:col-span-2 border-b md:border-r dark:border-neutral-800">
+                <motion.div
+                  whileHover={{ scale: 1.03 }}
+                  className="flex flex-col h-full"
+                >
+                  <div className="mb-3">
+                    <div className="w-12 h-12 flex items-center justify-center rounded-full bg-[#24272f]">
+                      <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 stroke-[1.5] text-[#F6921A]" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                        <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+                      </svg>
+                    </div>
+                  </div>
+                  <h3 className="text-lg font-[200] mb-1 text-white">
+                    Decentralized ID (DID)
+                  </h3>
+                  <p className="text-base text-neutral-300 font-[200]">
+                    Create self-sovereign digital identities to control your online presence.
+                  </p>
+                </motion.div>
               </div>
-              <h3 className="text-2xl font-bold text-white mb-3">Decentralized ID (DID)</h3>
-              <p className="text-white/70">
-                Create self-sovereign digital identities to control your online presence.
-              </p>
-            </motion.div>
 
-            {/* Contacts */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.3 }}
-              className="bg-gradient-to-br from-[#8BABFF]/10 via-[#8BABFF]/5 to-transparent rounded-xl p-6 border border-[#8BABFF]/20 h-full"
-            >
-              <div className="rounded-full bg-[#8BABFF]/10 p-4 w-16 h-16 flex items-center justify-center mb-5">
-                <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8 text-[#8BABFF]" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                  <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
-                  <circle cx="9" cy="7" r="4" />
-                  <path d="M23 21v-2a4 4 0 0 0-3-3.87" />
-                  <path d="M16 3.13a4 4 0 0 1 0 7.75" />
-                </svg>
+              {/* Contacts */}
+              <div className="p-3 sm:p-6 relative overflow-hidden group hover:bg-neutral-900 transition-colors duration-300 col-span-1 md:col-span-2 lg:col-span-2 border-b dark:border-neutral-800">
+                <motion.div
+                  whileHover={{ scale: 1.03 }}
+                  className="flex flex-col h-full"
+                >
+                  <div className="mb-3">
+                    <div className="w-12 h-12 flex items-center justify-center rounded-full bg-[#24272f]">
+                      <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 stroke-[1.5] text-[#F6921A]" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                        <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
+                        <circle cx="9" cy="7" r="4" />
+                        <path d="M23 21v-2a4 4 0 0 0-3-3.87" />
+                        <path d="M16 3.13a4 4 0 0 1 0 7.75" />
+                      </svg>
+                    </div>
+                  </div>
+                  <h3 className="text-lg font-[200] mb-1 text-white">
+                    Contacts
+                  </h3>
+                  <p className="text-base text-neutral-300 font-[200]">
+                    Connect via verified DIDs from Elastos' identity ledger.
+                  </p>
+                </motion.div>
               </div>
-              <h3 className="text-2xl font-bold text-white mb-3">Contacts</h3>
-              <p className="text-white/70">
-                Connect via verified DIDs from Elastos' identity ledger.
-              </p>
-            </motion.div>
 
-            {/* Decentralized Applications */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.4 }}
-              className="bg-gradient-to-br from-[#8BABFF]/10 via-[#8BABFF]/5 to-transparent rounded-xl p-6 border border-[#8BABFF]/20 h-full"
-            >
-              <div className="rounded-full bg-[#8BABFF]/10 p-4 w-16 h-16 flex items-center justify-center mb-5">
-                <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8 text-[#8BABFF]" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                  <rect x="2" y="3" width="20" height="14" rx="2" ry="2" />
-                  <line x1="8" y1="21" x2="16" y2="21" />
-                  <line x1="12" y1="17" x2="12" y2="21" />
-                </svg>
+              {/* Decentralized Applications */}
+              <div className="p-3 sm:p-6 relative overflow-hidden group hover:bg-neutral-900 transition-colors duration-300 col-span-1 md:col-span-2 lg:col-span-2 border-b md:border-r dark:border-neutral-800">
+                <motion.div
+                  whileHover={{ scale: 1.03 }}
+                  className="flex flex-col h-full"
+                >
+                  <div className="mb-3">
+                    <div className="w-12 h-12 flex items-center justify-center rounded-full bg-[#24272f]">
+                      <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 stroke-[1.5] text-[#F6921A]" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                        <rect x="2" y="3" width="20" height="14" rx="2" ry="2" />
+                        <line x1="8" y1="21" x2="16" y2="21" />
+                        <line x1="12" y1="17" x2="12" y2="21" />
+                      </svg>
+                    </div>
+                  </div>
+                  <h3 className="text-lg font-[200] mb-1 text-white">
+                    Decentralized Applications
+                  </h3>
+                  <p className="text-base text-neutral-300 font-[200]">
+                    Access social, NFT, and other Elastos ecosystem dApps through a unified gateway.
+                  </p>
+                </motion.div>
               </div>
-              <h3 className="text-2xl font-bold text-white mb-3">Decentralized Applications</h3>
-              <p className="text-white/70">
-                Access social, NFT, and other Elastos ecosystem dApps through a unified gateway.
-              </p>
-            </motion.div>
 
-            {/* Decentralized Storage */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.5 }}
-              className="bg-gradient-to-br from-[#8BABFF]/10 via-[#8BABFF]/5 to-transparent rounded-xl p-6 border border-[#8BABFF]/20 h-full"
-            >
-              <div className="rounded-full bg-[#8BABFF]/10 p-4 w-16 h-16 flex items-center justify-center mb-5">
-                <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8 text-[#8BABFF]" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                  <path d="M2 20h20" />
-                  <path d="M5 20V7a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1v13" />
-                  <path d="M13 20V4a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1v16" />
-                </svg>
+              {/* Decentralized Storage */}
+              <div className="p-3 sm:p-6 relative overflow-hidden group hover:bg-neutral-900 transition-colors duration-300 col-span-1 md:col-span-2 lg:col-span-2 border-b md:border-r dark:border-neutral-800">
+                <motion.div
+                  whileHover={{ scale: 1.03 }}
+                  className="flex flex-col h-full"
+                >
+                  <div className="mb-3">
+                    <div className="w-12 h-12 flex items-center justify-center rounded-full bg-[#24272f]">
+                      <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 stroke-[1.5] text-[#F6921A]" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                        <path d="M2 20h20" />
+                        <path d="M5 20V7a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1v13" />
+                        <path d="M13 20V4a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1v16" />
+                      </svg>
+                    </div>
+                  </div>
+                  <h3 className="text-lg font-[200] mb-1 text-white">
+                    Decentralized Storage
+                  </h3>
+                  <p className="text-base text-neutral-300 font-[200]">
+                    Store data in DID-secured Hive vaults with complete user control.
+                  </p>
+                </motion.div>
               </div>
-              <h3 className="text-2xl font-bold text-white mb-3">Decentralized Storage</h3>
-              <p className="text-white/70">
-                Store data in DID-secured Hive vaults with complete user control.
-              </p>
-            </motion.div>
 
-            {/* Secure Communication */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.6 }}
-              className="bg-gradient-to-br from-[#8BABFF]/10 via-[#8BABFF]/5 to-transparent rounded-xl p-6 border border-[#8BABFF]/20 h-full"
-            >
-              <div className="rounded-full bg-[#8BABFF]/10 p-4 w-16 h-16 flex items-center justify-center mb-5">
-                <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8 text-[#8BABFF]" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                  <path d="M11 17.25a.25.25 0 1 1-.25.25.25.25 0 0 1 .25-.25" />
-                  <path d="M16 21h-2a2 2 0 0 1-2-2v-6a2 2 0 0 1 2-2h2" />
-                  <path d="M14 7V5c0-2.8-2.2-5-5-5S4 2.2 4 5v2" />
-                  <rect x="4" y="7" width="16" height="14" rx="2" />
-                </svg>
+              {/* Secure Communication */}
+              <div className="p-3 sm:p-6 relative overflow-hidden group hover:bg-neutral-900 transition-colors duration-300 col-span-1 md:col-span-2 lg:col-span-2 border-b md:border-none dark:border-neutral-800">
+                <motion.div
+                  whileHover={{ scale: 1.03 }}
+                  className="flex flex-col h-full"
+                >
+                  <div className="mb-3">
+                    <div className="w-12 h-12 flex items-center justify-center rounded-full bg-[#24272f]">
+                      <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 stroke-[1.5] text-[#F6921A]" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                        <path d="M11 17.25a.25.25 0 1 1-.25.25.25.25 0 0 1 .25-.25" />
+                        <path d="M16 21h-2a2 2 0 0 1-2-2v-6a2 2 0 0 1 2-2h2" />
+                        <path d="M14 7V5c0-2.8-2.2-5-5-5S4 2.2 4 5v2" />
+                        <rect x="4" y="7" width="16" height="14" rx="2" />
+                      </svg>
+                    </div>
+                  </div>
+                  <h3 className="text-lg font-[200] mb-1 text-white">
+                    Secure Communication
+                  </h3>
+                  <p className="text-base text-neutral-300 font-[200]">
+                    Exchange end-to-end encrypted messages via Carrier's P2P network.
+                  </p>
+                </motion.div>
               </div>
-              <h3 className="text-2xl font-bold text-white mb-3">Secure Communication</h3>
-              <p className="text-white/70">
-                Exchange end-to-end encrypted messages via Carrier's P2P network.
-              </p>
-            </motion.div>
+            </div>
           </div>
         </div>
       </section>
