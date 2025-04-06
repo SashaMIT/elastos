@@ -224,12 +224,15 @@ export function BridgePage() {
                   </a>
 
                   <a
-                    href="https://play.google.com/store/apps/details?id=org.elastos.essentials.app"
+                    href="https://play.google.com/store/apps/details?id=io.web3essentials.app"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="flex items-center gap-2 px-4 py-2 bg-white/10 hover:bg-white/15 transition-colors rounded-lg border border-white/10"
                   >
-                    <img src="/images/Bridge/google-play.svg" alt="Google Play" className="w-5 h-5" />
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-5 h-5">
+                      <path d="m3 3 7.07 16.97 2.51-7.39 7.39-2.51L3 3z"></path>
+                      <path d="m13 13 6 6"></path>
+                    </svg>
                     <span className="text-white">Google Play</span>
                   </a>
                 </div>
