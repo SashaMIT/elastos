@@ -25,7 +25,7 @@ const BuyElaPage = () => {
     { year: '2018', hashrate: 22, btcHashrate: 101, percentage: "21.8%" },
     { year: '2020', hashrate: 120, btcHashrate: 250, percentage: "48%" },
     { year: '2022', hashrate: 240, btcHashrate: 450, percentage: "53.3%" },
-    { year: '2024', hashrate: elastosHashrate, btcHashrate: bitcoinHashrate, percentage: ((elastosHashrate/bitcoinHashrate) * 100).toFixed(1) + "%" }
+    { year: '2025', hashrate: elastosHashrate, btcHashrate: bitcoinHashrate, percentage: ((elastosHashrate/bitcoinHashrate) * 100).toFixed(1) + "%" }
   ];
 
   const exchanges = {
@@ -336,9 +336,9 @@ const BuyElaPage = () => {
             </motion.div>
 
             <div className="bg-white dark:bg-[#171717] rounded-lg border dark:border-gray-700 p-2 h-full">
-              <h3 className="text-sm font-medium mb-2 dark:text-white">
+              <h3 className="text-sm font-medium mb-2 dark:text-white flex items-center gap-2">
                 <Shield className="h-4 w-4 text-blue-500" />
-                Security Integration
+                <span>Security Integration</span>
               </h3>
               <div style={{ height: "320px" }}>
                 <ResponsiveContainer width="100%" height="100%">
