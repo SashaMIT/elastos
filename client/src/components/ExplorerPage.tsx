@@ -480,7 +480,6 @@ const ecosystemFeatures = [
           </div>
         </div>
       </div>
-      </div>
 
       {/* Footer */}
       <StackedCircularFooter />
