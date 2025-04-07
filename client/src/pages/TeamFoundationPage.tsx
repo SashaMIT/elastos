@@ -1,16 +1,26 @@
-
 import { motion } from "framer-motion";
-import { ArrowRight, Github, Globe, Linkedin, Mail, Twitter } from "lucide-react";
+import { ArrowRight, ChevronDown, ChevronUp, Github, Globe, Linkedin, Mail, Twitter } from "lucide-react";
 import { ScrollToTop } from "@/components/ScrollToTop";
 import { StackedCircularFooter } from "@/components/ui/stacked-circular-footer";
+import { useState } from "react";
 
 export default function TeamFoundationPage() {
+  const [expandedBios, setExpandedBios] = useState<{[key: number]: boolean}>({});
+
+  const toggleBio = (index: number) => {
+    setExpandedBios(prev => ({
+      ...prev,
+      [index]: !prev[index]
+    }));
+  };
+
   const keyContributors = [
     {
       name: "Rong Chen",
-      role: "Founder & Chief Architect",
+      role: "Founder & Visionary",
       image: "/images/Rong Chen.png",
-      bio: "Rong Chen is the visionary behind Elastos. With over 30 years of operating systems development experience, including 18 years at Microsoft, Rong has dedicated his career to creating a safer and more decentralized internet architecture. As the first Chinese employee at Microsoft Research, he conceived the idea of a network operating system to secure internet applications, which ultimately evolved into Elastos.",
+      bioShort: "Rong Chen is the visionary behind Elastos. With over 30 years of operating systems development experience, including 18 years at Microsoft, Rong has dedicated his career to creating a safer and more decentralized internet architecture. As the first Chinese employee at Microsoft Research, he conceived the idea of a network operating system to secure internet applications, which ultimately evolved into Elastos.",
+      bioLong: "Rong Chen was among the top students of the post-Cultural Revolution \"Class of '77\" in China, gaining admission to Tsinghua University where he became one of the first software engineering graduates in the country. He later attended the Institute of Computing Technology at the Chinese Academy of Sciences and pursued graduate studies in the United States. In the mid-1980s, Rong studied operating systems at the University of Illinois at Urbana-Champaign and worked at the National Center for Supercomputing Applications (NCSA), contributing to projects that helped lay groundwork for the first web browser, Mosaic.\n\nIn 1992, Rong became the first Chinese employee at Microsoft Research, focusing on operating system design. There he conceived the idea of a network operating system – \"the network is the computer\" – to solve internet security issues by running applications in a secure sandbox, an early vision that presaged Elastos. His concept was initially prototyped as Microsoft's .NET project, but after it was not adopted, Rong left Microsoft in 2000 to pursue his vision independently.\n\nHe founded a company called Kortide in 2000 to develop his \"internet OS\" idea. Over the next decade, he persisted in building this platform and securing support. Notably, in 2013 Rong secured a $31 million investment from Foxconn to advance Elastos development. In 2016, he successfully integrated blockchain technology into the Elastos operating system framework, enabling a \"truly decentralized internet infrastructure\" for secure data ownership.\n\nRong formally launched Elastos as a blockchain-powered internet project in 2017, becoming Co-Founder and Chairman of the Elastos Foundation. He is the primary architect of Elastos' vision of a \"Smart Web\" – a decentralized internet where users own their data and digital assets. Under his leadership, the Elastos project achieved milestones such as introducing merged mining with Bitcoin in 2018 to secure the network, and releasing a suite of core products including Elastos runtime, carrier, and decentralized ID.",
       links: [
         { icon: <Twitter className="w-4 h-4" />, url: "https://x.com/chen2rong2" }
       ]
@@ -19,7 +29,8 @@ export default function TeamFoundationPage() {
       name: "Sunny Feng Han",
       role: "Co-Founder",
       image: "/images/Sunny.jpeg",
-      bio: "Dr. Sunny Feng Han is a co-founder of Elastos with a Ph.D. in Physics from Tsinghua University. He played a crucial role in translating Rong Chen's technical vision into a viable project. Sunny served on the first Cyber Republic Council, where he helped implement critical governance changes including token burning, new tokenomics, and improved transparency. As an educator, Sunny founded the MIT Blockchain Pillar and has lectured on blockchain at Tsinghua University.",
+      bioShort: "Dr. Sunny Feng Han is a co-founder of Elastos with a Ph.D. in Physics from Tsinghua University. He played a crucial role in translating Rong Chen's technical vision into a viable project. Sunny served on the first Cyber Republic Council, where he helped implement critical governance changes including token burning, new tokenomics, and improved transparency. As an educator, Sunny founded the MIT Blockchain Pillar and has lectured on blockchain at Tsinghua University.",
+      bioLong: "Sunny Feng Han (often known simply as Feng Han) earned a Ph.D. in Physics from Tsinghua University and later became a visiting scholar and research associate at Columbia University in the United States. Sunny has been active in the blockchain education space as the founder of the MIT Blockchain Pillar initiative and has lectured on blockchain at Tsinghua University's graduate courses. He also served as an advisor at Huawei's Central Research Institute, reflecting his influence in tech circles.\n\nSunny was instrumental in translating Rong Chen's technical vision into a viable project and community. He joined Rong as co-founder around 2017 to help launch Elastos, leveraging his academic and industry connections to promote the project globally. Within the Elastos Foundation's early leadership, Sunny was one of three initial Board Directors alongside Rong Chen and Yipeng Su.\n\nIn the community-driven Cyber Republic, Sunny took on a direct governance role: he ran for and was elected to the first Cyber Republic Council (2020), and served as a council member in its inaugural year. During that first year, he and fellow councilors tackled major issues for the ecosystem. Sunny highlights three key achievements of the council's first term: the burning of over 13 million ELA tokens to address community concerns about token oversupply, adoption of a new tokenomics model with a capped supply and Bitcoin-like halving schedule, and significantly improving the transparency of the Elastos Foundation's asset management. These moves, driven by Sunny and the council, strengthened community trust and aligned Elastos' economic model with decentralized principles.\n\nSunny has also been active in fostering partnerships: for example, in 2019 he partnered with industry figures (such as a Tencent Cloud VP and World Bank security architect) to launch a \"data capitalization\" initiative, which led to the incubation of CreDA, a decentralized credit oracle project in the Elastos ecosystem. After serving on the CR Council for the 2020–2021 term (and being re-elected for 2021–2022), Sunny stepped back from daily operations but continues to support Elastos as an advisor and thought leader.",
       links: [
         { icon: <Twitter className="w-4 h-4" />, url: "https://x.com/SunnyFengHan" }
       ]
@@ -28,43 +39,9 @@ export default function TeamFoundationPage() {
       name: "Yipeng Su",
       role: "Chief Architect",
       image: "/images/Community/Yipeng.jpg",
-      bio: "Yipeng Su joined Elastos in 2017 as Chief Architect and was instrumental in the project's early development. With over 20 years of experience in software and internet industries, Yipeng led both technical strategy and early operations at Elastos. He was the chief initiator of the Cyber Republic concept for community governance and helped develop the CR consensus. Yipeng has continued to shape the technical direction of Elastos, including proposing the Bonded Proof of Stake enhancement.",
+      bioShort: "Yipeng Su joined Elastos in 2017 as Chief Architect and was instrumental in the project's early development. With over 20 years of experience in software and internet industries, Yipeng led both technical strategy and early operations at Elastos. He was the chief initiator of the Cyber Republic concept for community governance and helped develop the CR consensus. Yipeng has continued to shape the technical direction of Elastos, including proposing the Bonded Proof of Stake enhancement.",
+      bioLong: "Yipeng Su is the Chief Architect of Elastos and was part of the project's founding team. He has over 20 years of experience in software and internet industries. Yipeng joined the Elastos initiative on August 1, 2017, soon after the project's formal start, and played a crucial role in its early development. Prior to Elastos, he worked in senior technical roles in IT and development.\n\nAs Chief Architect, Yipeng Su led the overall technical strategy and architecture of the Elastos smart web. In the first year of the project (2017–2018), Yipeng not only oversaw engineering teams but also managed day-to-day operations of the founding team, helping run the token sale and launch the main chain (Elastos' mainnet launched in December 2017, with ELA token listing on exchanges by early 2018).\n\nHe was essentially Rong Chen's right-hand in the foundation, coordinating across technical and non-technical domains. Yipeng is credited with helping Elastos explore a decentralized operational model from the start – notably, Elastos did not appoint a traditional CEO in 2017, instead entrusting leadership to a team approach which Yipeng helped facilitate.\n\nYipeng Su was the chief initiator of the Cyber Republic (CR) concept, which is Elastos' community governance framework. When the Elastos Foundation set up the CR Interim Council in August 2018, Yipeng resigned from the Foundation's Board of Directors to serve on this council and drive decentralization. He served on the Interim CR Council (2018–2020) as the representative of the founding team/Elastos Foundation. In this role, he helped oversee the creation of the CR consensus (CRC) whitepaper and governance processes.\n\nYipeng's influence is seen in key technical proposals as well – for example, in late 2021 he proposed the concept of Bonded Proof of Stake (BPoS) to enhance Elastos' consensus security, which was adopted to complement Elastos' hybrid consensus. Internally, Yipeng has been described as a \"libero\" – moving across the field to wherever needed – engaging with core engineers on technical direction and with community contributors to gather feedback. His ability to wear both engineering and leadership hats has been fundamental to Elastos' development.",
       links: []
-    }
-  ];
-
-  const coreDevelopmentTeams = [
-    {
-      name: "BeL2 Team",
-      description: "The BeL2 team is focused on developing a Layer 2 scaling solution that enhances Elastos' throughput while leveraging Bitcoin's security model. Their work includes implementing the latest in zk-rollup technology with an Ethereum-compatible virtual machine.",
-      videoSrc: "/videos/BeL2Team.mp4",
-      links: [
-        { text: "BeL2 Website", url: "https://bel2.org" }
-      ]
-    },
-    {
-      name: "Elastos Essentials Team",
-      description: "The Essentials team develops the core wallet and identity management application for the Elastos ecosystem. They focus on creating a seamless user experience for managing digital assets, identities, and credentials across the Elastos network.",
-      videoSrc: "/videos/EssentialsTeam.mp4",
-      links: [
-        { text: "Essentials Download", url: "/wallet" }
-      ]
-    },
-    {
-      name: "Cyber Republic Team",
-      description: "The Cyber Republic team manages the decentralized governance system of Elastos. They build tools and infrastructure to enable community voting, proposal management, and treasury allocation through the Elastos DAO framework.",
-      videoSrc: "/videos/CyberRepublicTeam.mp4",
-      links: [
-        { text: "Cyber Republic Website", url: "/dao" }
-      ]
-    },
-    {
-      name: "Elacity Team",
-      description: "The Elacity team focuses on NFT marketplace development and content distribution on the Elastos network. They are building infrastructure for digital asset ownership and management in the Web3 space.",
-      videoSrc: "/videos/ElacityTeam.mp4",
-      links: [
-        { text: "Elacity Website", url: "https://labs.ela.city" }
-      ]
     }
   ];
 
@@ -103,7 +80,7 @@ export default function TeamFoundationPage() {
       <section className="py-20 relative overflow-hidden">
         <div className="absolute -top-40 -right-40 w-80 h-80 bg-[#5C8EFF]/10 rounded-full filter blur-[120px]"></div>
         <div className="absolute -bottom-20 -left-40 w-80 h-80 bg-[#F6921A]/10 rounded-full filter blur-[120px]"></div>
-        
+
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="max-w-3xl mx-auto text-center mb-16">
             <h2 className="text-3xl font-[200] mb-6 text-black dark:text-white">Building a New Internet</h2>
@@ -148,8 +125,19 @@ export default function TeamFoundationPage() {
                   <div className="w-full md:w-4/5 p-6">
                     <h3 className="text-xl font-[200] text-black dark:text-white mb-1">{member.name}</h3>
                     <p className="text-[#5C8EFF] text-sm mb-4">{member.role}</p>
-                    <p className="text-gray-600 dark:text-gray-400 text-sm font-[200] mb-4">{member.bio}</p>
-                    
+                    <div>
+                      {expandedBios[index] ? (
+                        <>
+                          <p className="text-gray-600 dark:text-gray-400 text-sm font-[200] mb-4">{member.bioLong}</p>
+                          <button onClick={() => toggleBio(index)} className="text-blue-500 hover:text-blue-700 text-sm">Show Less <ChevronUp className="inline-block w-4 h-4 ml-1"/></button>
+                        </>
+                      ) : (
+                        <>
+                          <p className="text-gray-600 dark:text-gray-400 text-sm font-[200] mb-4">{member.bioShort}</p>
+                          <button onClick={() => toggleBio(index)} className="text-blue-500 hover:text-blue-700 text-sm">Show More <ChevronDown className="inline-block w-4 h-4 ml-1"/></button>
+                        </>
+                      )}
+                    </div>
                     <div className="flex space-x-3">
                       {member.links.map((link, linkIndex) => (
                         <a 
@@ -190,7 +178,7 @@ export default function TeamFoundationPage() {
                 <div className={`order-2 ${index % 2 === 0 ? 'lg:order-1' : 'lg:order-2'}`}>
                   <h3 className="text-2xl font-[200] mb-4 text-black dark:text-white">{team.name}</h3>
                   <p className="text-gray-600 dark:text-gray-400 font-[200] mb-6">{team.description}</p>
-                  
+
                   <div className="flex flex-wrap gap-4">
                     {team.links.map((link, linkIndex) => (
                       <a
@@ -210,7 +198,7 @@ export default function TeamFoundationPage() {
                     ))}
                   </div>
                 </div>
-                
+
                 <div className={`order-1 ${index % 2 === 0 ? 'lg:order-2' : 'lg:order-1'}`}>
                   <div className="rounded-xl overflow-hidden shadow-lg border border-gray-200 dark:border-gray-800">
                     <video 
@@ -231,9 +219,9 @@ export default function TeamFoundationPage() {
         </div>
       </section>
 
-      
 
-      
+
+
 
       {/* Footer */}
       <StackedCircularFooter />
