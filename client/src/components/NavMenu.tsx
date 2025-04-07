@@ -205,14 +205,6 @@ export function NavMenu() {
                         </div>
                       </NavigationMenuLink>
                     </a>
-                    <a href="https://github.com/elastos" target="_blank" rel="noopener noreferrer">
-                      <NavigationMenuLink className={navigationMenuTriggerStyle()}>
-                        <div className="flex items-center gap-2">
-                          <Github className="h-4 w-4 text-[#94b5ff]" />
-                          <span>Github</span>
-                        </div>
-                      </NavigationMenuLink>
-                    </a>
                     <a href="https://elastos.dev/sdk/welcome/" target="_blank" rel="noopener noreferrer">
                       <NavigationMenuLink className={navigationMenuTriggerStyle()}>
                         <div className="flex items-center gap-2">
