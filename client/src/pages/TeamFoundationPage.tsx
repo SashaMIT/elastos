@@ -113,7 +113,7 @@ export default function TeamFoundationPage() {
       </div>
 
       {/* Vision Section */}
-      <section className="py-20 relative overflow-hidden">
+      <section className="py-16 relative overflow-hidden">
         <div className="absolute -top-40 -right-40 w-80 h-80 bg-[#5C8EFF]/10 rounded-full filter blur-[120px]"></div>
         <div className="absolute -bottom-20 -left-40 w-80 h-80 bg-[#F6921A]/10 rounded-full filter blur-[120px]"></div>
 
