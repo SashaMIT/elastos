@@ -191,15 +191,22 @@ export function AnnouncementsPage() {
     }
   };
 
-  // Extract unique categories from news items
+  // Extract unique categories from news items, excluding "News" category
   const allCategories = [...Array.from(new Set(
     newsItems.flatMap(item => item.categories || [])
-  ))];
+  ))].filter(category => category !== "News");
 
   // Filter news items by selected category
   const filteredNews = selectedCategory === null 
     ? newsItems 
     : newsItems.filter(item => item.categories?.includes(selectedCategory));
+
+  // Clean news items of unwanted image source text
+  filteredNews.forEach(item => {
+    if (item.description && item.description.includes('src="https://')) {
+      item.description = item.description.replace(/<img.*?>/g, '');
+    }
+  });
 
   // Format date helper function
   const formatDate = (dateString: string): string => {
@@ -320,7 +327,7 @@ export function AnnouncementsPage() {
 
                   <CardContent className="p-6 flex-grow">
                     <div className="flex items-center gap-2 text-xs text-gray-500 dark:text-gray-400 mb-3">
-                      {item.categories && item.categories[0] && (
+                      {item.categories && item.categories.length > 0 && item.categories[0] !== "News" && (
                         <span className="bg-[rgba(246,146,26,0.15)] text-[#F6921A] px-2 py-1 rounded-full">
                           {item.categories[0]}
                         </span>
@@ -340,7 +347,7 @@ export function AnnouncementsPage() {
                     </h2>
 
                     <p className="text-gray-600 dark:text-gray-400 mb-4 line-clamp-3">
-                      {item.description}
+                      {item.description.replace(/<[^>]*>/g, '')}
                     </p>
                   </CardContent>
 
