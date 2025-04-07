@@ -194,7 +194,7 @@ export function VisionPage() {
 
             <div className="flex justify-center mb-12 gap-4">
               <a
-                href="#"
+                href="/team-foundation"
                 className="inline-flex px-3 py-2 bg-[rgba(92,142,255,0.15)] text-white rounded-full font-[200] transition-all items-center gap-1 border border-[rgba(92,142,255,0.25)] text-sm"
               >
                 <span>Meet the Entire Elastos Team</span>
