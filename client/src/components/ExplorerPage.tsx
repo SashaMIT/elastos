@@ -6,7 +6,7 @@ import { SiteFooter } from "@/components/SiteFooter";
 import { ScrollArea } from "@/components/ui/scroll-area";
 import { StackedCircularFooter } from "@/components/ui/stacked-circular-footer";
 
-export default function ExplorerPage() {
+export function ExplorerPage() {
   const [activeTab, setActiveTab] = useState('blocks');
 
   return (
