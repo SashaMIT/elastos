@@ -84,87 +84,111 @@ export function ScalingSection2() {
 
         {activeTab === 'public' ? (
           <div className="space-y-32">
-            <div className="flex flex-col md:flex-row items-center justify-center gap-12">
-              <div className="w-64 h-64 relative">
-                <img src="/images/Glass Circles4.png" alt="Elastos Mainchain" className="w-full h-full object-contain" />
-              </div>
-              <div className="flex-1">
-                <div className="flex items-center gap-3 mb-4">
-                  <h3 className="text-2xl font-bold font-sans">Bitcoin-Backed Protection & Reserve Asset</h3>
-                  <span className="px-4 py-1 bg-[#5C8EFF]/10 border border-[#5C8EFF]/30 text-white rounded-full text-xs font-medium">SECURITY</span>
-                </div>
-                <p className="text-muted-foreground mb-6 max-w-xl">
-                  <ul className="list-disc pl-5 mt-4 space-y-2 text-sm">
-                    <li>ELA is secured through merged mining with Bitcoin, leveraging Bitcoin's immense hash power.</li>
-                    <li>This makes Elastos one of the most secure blockchain networks in existence.</li>
-                    <li>Transactions are validated using Auxiliary Proof-of-Work (AuxPoW), combining Bitcoin's security with Elastos' efficiency.</li>
-                    <li>ELA acts as a reserve asset within the Elastos ecosystem, ensuring economic stability for decentralized applications and services.</li>
-                  </ul>
-                </p>
-                <div className="flex gap-4">
-                  <Link href="/stats">
-                    <button className="w-8 h-8 rounded-full border border-[#F6921A] bg-[#F6921A]/30 flex items-center justify-center transition-all hover:bg-[#F6921A]/50 hover:scale-110">
-                      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="#F6921A" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                      </svg>
-                    </button>
-                  </Link>
+            <div className="grid grid-cols-1 lg:grid-cols-12 gap-4 items-center">
+              <div className="col-span-1 lg:col-span-5 order-1 lg:order-1 flex items-center justify-center">
+                <div className="w-64 h-64 relative">
+                  <img
+                    src="/images/Glass Circles4.png"
+                    alt="Elastos Mainchain"
+                    className="w-full h-full object-contain"
+                  />
                 </div>
               </div>
-            </div>
-
-            <div className="flex flex-col md:flex-row-reverse items-center justify-center gap-12">
-              <div className="w-64 h-64 relative">
-                <img src="/images/Glass Circles5.png" alt="Governance & Decentralization" className="w-full h-full object-contain" />
-              </div>
-              <div className="flex-1">
-                <div className="flex items-center gap-3 mb-4">
-                  <h3 className="text-2xl font-bold font-sans">Governance & Decentralization</h3>
-                  <span className="px-4 py-1 bg-[#5C8EFF]/10 border border-[#5C8EFF]/30 text-white rounded-full text-xs font-medium">VOTING</span>
-                </div>
-                <p className="text-muted-foreground mb-6 max-w-xl">
-                  <ul className="list-disc pl-5 mt-4 space-y-2 text-sm">
-                    <li>ELA is the governance token used in the Elastos DAO, Elastos' decentralized autonomous organization (DAO).</li>
-                    <li>ELA holders can vote on proposals, fund projects, and participate in decision-making.</li>
-                    <li>Anyone who wishes to become an elected council member must place 5,000 ELA down as collateral to participate in the yearly elections.</li>
-                    <li>This ensures that Elastos evolves based on community consensus rather than centralized control.</li>
-                  </ul>
-                </p>
-                <div className="flex gap-4">
-                  <Link href="/dao">
-                    <button className="w-8 h-8 rounded-full border border-[#F6921A] bg-[#F6921A]/30 flex items-center justify-center transition-all hover:bg-[#F6921A]/50 hover:scale-110">
-                      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="#F6921A" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                      </svg>
-                    </button>
-                  </Link>
+              <div className="col-span-1 lg:col-span-7 order-2 lg:order-2">
+                <div className="h-full w-full flex flex-col items-start justify-center">
+                  <div className="flex items-center gap-3 mb-4">
+                    <h3 className="text-2xl font-bold font-sans">Bitcoin-Backed Protection & Reserve Asset</h3>
+                    <span className="px-4 py-1 bg-[#5C8EFF]/10 border border-[#5C8EFF]/30 text-white rounded-full text-xs font-medium">SECURITY</span>
+                  </div>
+                  <p className="text-muted-foreground mb-6 max-w-xl">
+                    <ul className="list-disc pl-5 mt-4 space-y-2 text-sm">
+                      <li>ELA is secured through merged mining with Bitcoin, leveraging Bitcoin's immense hash power.</li>
+                      <li>This makes Elastos one of the most secure blockchain networks in existence.</li>
+                      <li>Transactions are validated using Auxiliary Proof-of-Work (AuxPoW), combining Bitcoin's security with Elastos' efficiency.</li>
+                      <li>ELA acts as a reserve asset within the Elastos ecosystem, ensuring economic stability for decentralized applications and services.</li>
+                    </ul>
+                  </p>
+                  <div className="flex gap-4">
+                    <Link href="/stats">
+                      <button className="w-8 h-8 rounded-full border border-[#F6921A] bg-[#F6921A]/30 flex items-center justify-center transition-all hover:bg-[#F6921A]/50 hover:scale-110">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="#F6921A" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                        </svg>
+                      </button>
+                    </Link>
+                  </div>
                 </div>
               </div>
             </div>
 
-            <div className="flex flex-col md:flex-row items-center justify-center gap-12">
-              <div className="w-64 h-64 relative">
-                <img src="/images/Glass Circles6.png" alt="Digital Identity & Ownership" className="w-full h-full object-contain" />
-              </div>
-              <div className="flex-1">
-                <div className="flex items-center gap-3 mb-4">
-                  <h3 className="text-2xl font-bold font-sans">Digital Identity & Ownership</h3>
-                  <span className="px-4 py-1 bg-[#5C8EFF]/10 border border-[#5C8EFF]/30 text-white rounded-full text-xs font-medium whitespace-nowrap">ACCOUNTING</span>
+            <div className="grid grid-cols-1 lg:grid-cols-12 gap-4 items-center">
+              <div className="col-span-1 lg:col-span-5 order-1 lg:order-2 flex items-center justify-center">
+                <div className="w-64 h-64 relative">
+                  <img
+                    src="/images/Glass Circles5.png"
+                    alt="Governance & Decentralization"
+                    className="w-full h-full object-contain"
+                  />
                 </div>
-                <p className="text-muted-foreground mb-6 max-w-xl">
-                  <ul className="list-disc pl-5 mt-4 space-y-2 text-sm">
-                    <li>ELA enables the creation and management of Decentralized IDs (DIDs), allowing users to own and control their digital identity.</li>
-                    <li>Every DID on Elastos is anchored on the blockchain, ensuring verifiable and tamper-proof credentials where ELA is the underlying gas fee.</li>
-                  </ul>
-                </p>
-                <div className="flex gap-4">
-                  <Link href="/vision">
-                    <button className="w-8 h-8 rounded-full border border-[#F6921A] bg-[#F6921A]/30 flex items-center justify-center transition-all hover:bg-[#F6921A]/50 hover:scale-110">
-                      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="#F6921A" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                      </svg>
-                    </button>
-                  </Link>
+              </div>
+              <div className="col-span-1 lg:col-span-7 order-2 lg:order-1">
+                <div className="h-full w-full flex flex-col items-start justify-center">
+                  <div className="flex items-center gap-3 mb-4">
+                    <h3 className="text-2xl font-bold font-sans">Governance & Decentralization</h3>
+                    <span className="px-4 py-1 bg-[#5C8EFF]/10 border border-[#5C8EFF]/30 text-white rounded-full text-xs font-medium">VOTING</span>
+                  </div>
+                  <p className="text-muted-foreground mb-6 max-w-xl">
+                    <ul className="list-disc pl-5 mt-4 space-y-2 text-sm">
+                      <li>ELA is the governance token used in the Elastos DAO, Elastos' decentralized autonomous organization (DAO).</li>
+                      <li>ELA holders can vote on proposals, fund projects, and participate in decision-making.</li>
+                      <li>Anyone who wishes to become an elected council member must place 5,000 ELA down as collateral to participate in the yearly elections.</li>
+                      <li>This ensures that Elastos evolves based on community consensus rather than centralized control.</li>
+                    </ul>
+                  </p>
+                  <div className="flex gap-4">
+                    <Link href="/dao">
+                      <button className="w-8 h-8 rounded-full border border-[#F6921A] bg-[#F6921A]/30 flex items-center justify-center transition-all hover:bg-[#F6921A]/50 hover:scale-110">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="#F6921A" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                        </svg>
+                      </button>
+                    </Link>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div className="grid grid-cols-1 lg:grid-cols-12 gap-4 items-center">
+              <div className="col-span-1 lg:col-span-5 order-1 lg:order-1 flex items-center justify-center">
+                <div className="w-64 h-64 relative">
+                  <img
+                    src="/images/Glass Circles6.png"
+                    alt="Digital Identity & Ownership"
+                    className="w-full h-full object-contain"
+                  />
+                </div>
+              </div>
+              <div className="col-span-1 lg:col-span-7 order-2 lg:order-2">
+                <div className="h-full w-full flex flex-col items-start justify-center">
+                  <div className="flex items-center gap-3 mb-4">
+                    <h3 className="text-2xl font-bold font-sans">Digital Identity & Ownership</h3>
+                    <span className="px-4 py-1 bg-[#5C8EFF]/10 border border-[#5C8EFF]/30 text-white rounded-full text-xs font-medium whitespace-nowrap">ACCOUNTING</span>
+                  </div>
+                  <p className="text-muted-foreground mb-6 max-w-xl">
+                    <ul className="list-disc pl-5 mt-4 space-y-2 text-sm">
+                      <li>ELA enables the creation and management of Decentralized IDs (DIDs), allowing users to own and control their digital identity.</li>
+                      <li>Every DID on Elastos is anchored on the blockchain, ensuring verifiable and tamper-proof credentials where ELA is the underlying gas fee.</li>
+                    </ul>
+                  </p>
+                  <div className="flex gap-4">
+                    <Link href="/vision">
+                      <button className="w-8 h-8 rounded-full border border-[#F6921A] bg-[#F6921A]/30 flex items-center justify-center transition-all hover:bg-[#F6921A]/50 hover:scale-110">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="#F6921A" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                        </svg>
+                      </button>
+                    </Link>
+                  </div>
                 </div>
               </div>
             </div>
