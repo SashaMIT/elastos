@@ -613,43 +613,75 @@ const LandingPage = () => {
           testimonials={[
             {
               author: {
-                name: "Alex Johnson",
-                handle: "Web3 Developer",
-                avatar: "https://i.pravatar.cc/150?img=1"
+                name: "Igor",
+                handle: "DAO Council Member",
+                avatar: "/images/Testimonials/Igor.jpg"
               },
-              text: "Building on Elastos provides the security of Bitcoin with the flexibility I need for my dApps. The multi-chain architecture is a game-changer for scalability."
+              text: "Elastos spoke to me as a vision of the internet where privacy, security, and data ownership aren't optional features, but the foundation...",
+              fullText: "Elastos spoke to me as a vision of the internet where privacy, security, and data ownership aren't optional features, but the foundation. It's through this journey that I've come to believe the future of AI belongs to local models running on personal devices, beyond the reach of centralized power. Elastos isn't just enabling this, it's actively building it, and I'm proud to be part of it as an Elastos DAO member."
             },
             {
               author: {
-                name: "Sarah Chen",
-                handle: "DeFi Enthusiast",
-                avatar: "https://i.pravatar.cc/150?img=5"
+                name: "Fake Fake",
+                handle: "Community Member",
+                avatar: "/images/Testimonials/Fake Fake.jpg"
               },
-              text: "I've been staking ELA for over a year and the experience has been seamless. The APR is competitive and knowing it's secured by Bitcoin's hashpower gives me peace of mind."
+              text: "I joined Elastos in 2018, inspired by its powerful vision of a truly decentralized internet. Watching it now returning to its roots with the World Computer...",
+              fullText: "I joined Elastos in 2018, inspired by its powerful vision of a truly decentralized internet. Watching it now returning to its roots with the World Computer reignites my excitement. Together with Elacity and BeL2, it's unlocking the tools we need to truly own our digital lives. I believe in building a better, user-owned web—and Elastos is leading the way."
             },
             {
               author: {
-                name: "Mike Peters",
-                handle: "dApp Creator",
-                avatar: "https://i.pravatar.cc/150?img=3"
+                name: "Hayley",
+                handle: "BPoS Node Validator",
+                avatar: "/images/Testimonials/Hayley.jpg"
               },
-              text: "The Elastos ecosystem provides all the tools I need to build truly decentralized applications where users own their data. The community support has been incredible."
+              text: "I first noticed Elastos on GitHub, and was blown away by their extensive work building a decentralised internet OS where I could control my data and assets...",
+              fullText: "I first noticed Elastos on GitHub, and was blown away by their extensive work building a decentralised internet OS where I could control my data and assets. Now it's even bigger! With Elacity, BeL2, DIDs, carrier and storage. The 'World Computer' idea is around the corner and it's so ridiculously exciting! I totally adore the Elastos community too, some of the most passionate, friendly and welcoming people."
             },
             {
               author: {
-                name: "Elena Rodriguez",
-                handle: "Crypto Analyst",
-                avatar: "https://i.pravatar.cc/150?img=4"
+                name: "Crypto Shmate",
+                handle: "Community Member",
+                avatar: "/images/Testimonials/Crypto Shmate.jpg"
               },
-              text: "Elastos is one of the few blockchain projects that delivers on the promise of a decentralized internet. Its merge-mining with Bitcoin is brilliant for security."
+              text: "The idea of a new age of internet intrigued me. The background of the founders instilled confidence, and the innovation thus far has kept me...",
+              fullText: "The idea of a new age of internet intrigued me. The background of the founders instilled confidence, and the innovation thus far has kept me. Elastos will forever be a project I stick behind. A small dive will show you why it stands out from the rest."
             },
             {
               author: {
-                name: "David Kim",
-                handle: "CR Council Member",
-                avatar: "https://i.pravatar.cc/150?img=8"
+                name: "BigP",
+                handle: "BPoS Node Validator",
+                avatar: "/images/Testimonials/BigP.jpg"
               },
-              text: "The Cyber Republic DAO gives the community real governance power. It's a model for how decentralized organizations should operate."
+              text: "Like many others, back in 2017, I was captivated by the infamous Blockchain Brad interview with Elastos founder Rong Chen. As a libertarian at heart...",
+              fullText: "Like many others, back in 2017, I was captivated by the infamous Blockchain Brad interview with Elastos founder Rong Chen. As a libertarian at heart, the concept of a decentralized internet completely blew my mind. I believe that owning your own data is essential to any truly free society. Ever since, I've been hooked on Elastos and genuinely excited about what the future holds."
+            },
+            {
+              author: {
+                name: "Stephan",
+                handle: "Community Member",
+                avatar: "/images/Testimonials/Stephan.jpg"
+              },
+              text: "The continuous progress of the Elastos team initially drew me in, while their real Web 3.0 vision and innovative tech like BeL2 truly captivated me...",
+              fullText: "The continuous progress of the Elastos team initially drew me in, while their real Web 3.0 vision and innovative tech like BeL2 truly captivated me. It reshaped how I see crypto—not just as assets, but as a foundation for digital freedom and ownership. Elastos changed my perspective completely."
+            },
+            {
+              author: {
+                name: "Yagami",
+                handle: "Community Member",
+                avatar: "/images/Testimonials/Yagami.jpg"
+              },
+              text: "After researching over 500 projects, I made a bold decision to go all in on Elastos. Only this project can achieve true Web3.",
+              fullText: "After researching over 500 projects, I made a bold decision to go all in on Elastos. Only this project can achieve true Web3."
+            },
+            {
+              author: {
+                name: "Yew",
+                handle: "BPoS Node Validator",
+                avatar: "/images/Testimonials/Yew.jpg"
+              },
+              text: "Sasha's passion towards Elacity, Rong's vision of the World Computer and Sunny's goal in building BeL2 will attract literally anyone to be excited and invested in Elastos.",
+              fullText: "Sasha's passion towards Elacity, Rong's vision of the World Computer and Sunny's goal in building BeL2 will attract literally anyone to be excited and invested in Elastos."
             }
           ]}
         />
