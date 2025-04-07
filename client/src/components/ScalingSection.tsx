@@ -98,11 +98,13 @@ export function ScalingSection() {
                   We anchor our security to Bitcoin's proof-of-work hashpower and utilize multiple sidechains for specialized functions.
                 </p>
                 <div className="flex gap-4">
-                  <button className="w-8 h-8 rounded-full border border-[#F6921A] bg-[#F6921A]/30 flex items-center justify-center transition-all hover:bg-[#F6921A]/50 hover:scale-110">
-                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                      <path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="#F6921A" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                    </svg>
-                  </button>
+                  <Link href="/stats">
+                    <button className="w-8 h-8 rounded-full border border-[#F6921A] bg-[#F6921A]/30 flex items-center justify-center transition-all hover:bg-[#F6921A]/50 hover:scale-110">
+                      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="#F6921A" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                      </svg>
+                    </button>
+                  </Link>
                 </div>
               </div>
             </div>
@@ -117,11 +119,13 @@ export function ScalingSection() {
                   ELA, secured by Bitcoin is the oil of the Elastos SmartWeb. Use your Bitcoin for DeFi without custodians or ever moving it off the Bitcoin mainchain.
                 </p>
                 <div className="flex gap-4">
-                  <button className="w-8 h-8 rounded-full border border-[#F6921A] bg-[#F6921A]/30 flex items-center justify-center transition-all hover:bg-[#F6921A]/50 hover:scale-110">
-                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                      <path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="#F6921A" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                    </svg>
-                  </button>
+                  <Link href="/ela-utility">
+                    <button className="w-8 h-8 rounded-full border border-[#F6921A] bg-[#F6921A]/30 flex items-center justify-center transition-all hover:bg-[#F6921A]/50 hover:scale-110">
+                      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="#F6921A" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                      </svg>
+                    </button>
+                  </Link>
                 </div>
               </div>
               <div className="order-1 md:order-2 flex justify-center">
@@ -146,11 +150,13 @@ export function ScalingSection() {
                   Combining blockchain, decentralized identity, and secure off-chain data storage and networking, Elastos is your gateway to owning your digital life.
                 </p>
                 <div className="flex gap-4">
-                  <button className="w-8 h-8 rounded-full border border-[#F6921A] bg-[#F6921A]/30 flex items-center justify-center transition-all hover:bg-[#F6921A]/50 hover:scale-110">
-                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                      <path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="#F6921A" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                    </svg>
-                  </button>
+                  <Link href="/vision">
+                    <button className="w-8 h-8 rounded-full border border-[#F6921A] bg-[#F6921A]/30 flex items-center justify-center transition-all hover:bg-[#F6921A]/50 hover:scale-110">
+                      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="#F6921A" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                      </svg>
+                    </button>
+                  </Link>
                 </div>
               </div>
             </div>
