@@ -25,16 +25,16 @@ export const ForwardRoadmap = () => {
       quarter: 'Q3-Q4 2025',
       items: [
         {
-          title: 'Cross-Chain Bridge',
-          details: 'Improved interoperability with major blockchain networks'
+          title: 'BeL2 Infrastructure Upgrades',
+          details: 'Working to finalize the protocol with stake ELA, earn BTC model and commercial application support'
         },
         {
           title: 'Developer Tools Expansion',
           details: 'New SDKs and comprehensive documentation for developers'
         },
         {
-          title: 'ESC Protocol Upgrade',
-          details: 'Enhanced throughput and reduced transaction costs'
+          title: 'World Computer Support',
+          details: 'Integrating Login and DePin connectivity'
         }
       ]
     },
