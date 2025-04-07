@@ -267,7 +267,7 @@ export function AnnouncementsPage() {
       </div>
 
       {/* Category filters */}
-      <div className="w-full max-w-7xl mx-auto px-4 mb-10 sm:px-6 lg:px-8">
+      <div className="w-full max-w-7xl mx-auto px-4 mb-6 -mt-4 sm:px-6 lg:px-8">
         <div className="flex flex-wrap justify-center gap-2">
           {allCategories.filter(category => category !== "All").map((category, index) => (
             <motion.button
@@ -311,7 +311,7 @@ export function AnnouncementsPage() {
 
       {/* News grid */}
       {!loading && (
-        <div className="w-full max-w-7xl mx-auto px-4 pb-20 sm:px-6 lg:px-8">
+        <div className="w-full max-w-7xl mx-auto px-4 pb-12 -mt-8 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {filteredNews.map((item, index) => (
               <motion.div
