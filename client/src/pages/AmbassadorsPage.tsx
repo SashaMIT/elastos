@@ -9,41 +9,51 @@ export default function AmbassadorsPage() {
     <div className="min-h-screen bg-white dark:bg-[#171717] relative">
       <ScrollToTop />
       
-      {/* Coming Soon Overlay - Enhanced Glass Effect */}
-      <div className="fixed inset-0 z-50 bg-black/60 backdrop-blur-xl flex items-center justify-center">
-        {/* Content being worked on (blurred in background) */}
-        <div className="absolute inset-0 opacity-20 overflow-hidden">
-          <div className="w-full h-full bg-[#171717]/30"></div>
+      {/* Coming Soon Overlay - Reduced Blur Effect */}
+      <div className="fixed inset-0 z-50 bg-black/40 backdrop-blur-md flex items-center justify-center">
+        {/* Content being worked on (more visible in background) */}
+        <div className="absolute inset-0 opacity-40 overflow-hidden">
+          <div className="w-full h-full bg-[#171717]/20"></div>
         </div>
         
-        <div className="bg-[#212121]/80 backdrop-blur-lg p-12 rounded-xl border border-[#5C8EFF]/40 max-w-2xl text-center relative overflow-hidden shadow-xl">
-          {/* Background glow effects */}
-          <div className="absolute -top-20 -right-20 w-72 h-72 rounded-full bg-[#F6921A]/15 blur-[80px]"></div>
-          <div className="absolute -bottom-20 -left-20 w-80 h-80 rounded-full bg-[#5C8EFF]/15 blur-[100px]"></div>
+        <div className="bg-[#212121]/70 backdrop-blur-md p-10 md:p-12 rounded-2xl border border-[#5C8EFF]/30 max-w-2xl text-center relative overflow-hidden shadow-2xl">
+          {/* Enhanced gradient background */}
+          <div className="absolute inset-0 bg-gradient-to-br from-[#212121]/90 via-[#212121]/80 to-[#212121]/60 z-0"></div>
+          
+          {/* Background glow effects - softer */}
+          <div className="absolute -top-20 -right-20 w-72 h-72 rounded-full bg-[#F6921A]/10 blur-[80px]"></div>
+          <div className="absolute -bottom-20 -left-20 w-80 h-80 rounded-full bg-[#5C8EFF]/10 blur-[100px]"></div>
+          
+          {/* Decorative elements */}
+          <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-[#5C8EFF]/30 to-transparent"></div>
           
           <div className="relative">
-            <span className="absolute -top-12 left-1/2 -translate-x-1/2 bg-[#F6921A]/90 text-white text-xs px-3 py-1 rounded-full uppercase tracking-wider font-medium">Under Development</span>
+            <span className="absolute -top-12 left-1/2 -translate-x-1/2 bg-[#F6921A]/80 text-white text-xs px-4 py-1.5 rounded-full uppercase tracking-wider font-medium shadow-lg">Under Development</span>
           </div>
           <h2 className="text-4xl md:text-5xl font-[200] text-white mb-6 relative z-10">Ambassador Program</h2>
-          <div className="w-20 h-1 bg-gradient-to-r from-[#F6921A] to-[#5C8EFF] mx-auto mb-6"></div>
-          <p className="text-gray-200 text-xl mb-8 relative z-10 font-medium tracking-wide">Coming Soon</p>
-          <p className="text-gray-300 mb-8 relative z-10">
+          <div className="w-24 h-1 bg-gradient-to-r from-[#F6921A] to-[#5C8EFF] mx-auto mb-8 opacity-80"></div>
+          <p className="text-gray-100 text-xl mb-6 relative z-10 font-medium tracking-wide">Coming Soon</p>
+          <p className="text-gray-200 mb-10 relative z-10 max-w-xl mx-auto">
             We're currently building our ambassador program to help spread the Elastos vision worldwide. 
             Check back soon for details on how to participate and make a difference in the Elastos ecosystem.
           </p>
+          
           <a 
             href="/"
-            className="inline-flex px-5 py-3 bg-[rgba(92,142,255,0.10)] text-[#5C8EFF] rounded-full font-medium transition-all items-center gap-2 border border-[rgba(92,142,255,0.50)] hover:bg-[rgba(92,142,255,0.20)] hover:scale-105 relative z-10 group shadow-lg shadow-[#5C8EFF]/5"
+            className="inline-flex px-6 py-3 bg-[rgba(92,142,255,0.15)] text-[#5C8EFF] rounded-full font-medium transition-all items-center gap-2 border border-[rgba(92,142,255,0.40)] hover:bg-[rgba(92,142,255,0.25)] hover:scale-105 relative z-10 group shadow-lg"
           >
             <ArrowLeft className="h-4 w-4 group-hover:-translate-x-1 transition-transform" />
             <span>Return to Home</span>
           </a>
           
-          {/* Subtle animated dot to draw attention */}
+          {/* Enhanced animated elements */}
           <div className="absolute bottom-6 right-6 flex items-center justify-center">
             <div className="w-2 h-2 bg-[#F6921A] rounded-full animate-ping opacity-70"></div>
             <div className="w-3 h-3 bg-[#F6921A]/30 rounded-full absolute blur-sm"></div>
           </div>
+          
+          {/* Additional subtle decoration */}
+          <div className="absolute bottom-0 right-0 w-32 h-32 border-r border-b border-[#5C8EFF]/10 rounded-tl-3xl"></div>
         </div>
       </div>
 
