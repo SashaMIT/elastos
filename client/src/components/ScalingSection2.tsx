@@ -195,7 +195,16 @@ export function ScalingSection2() {
 
             {/* Smart Web Services Section */}
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-4 items-center">
-              <div className="col-span-1 lg:col-span-7 order-1 lg:order-1">
+              <div className="col-span-1 lg:col-span-5 order-1 lg:order-2 flex items-center justify-center">
+                <div className="w-64 h-64 relative">
+                  <img
+                    src="/images/Glass Circles7.png"
+                    alt="Fueling Transactions & dApps"
+                    className="w-full h-full object-contain"
+                  />
+                </div>
+              </div>
+              <div className="col-span-1 lg:col-span-7 order-2 lg:order-1">
                 <div className="h-full w-full flex flex-col items-start justify-center">
                   <div className="flex items-center gap-3 mb-4">
                     <h3 className="text-2xl font-bold font-sans">Fueling Transactions & dApps</h3>
@@ -220,20 +229,11 @@ export function ScalingSection2() {
                   </div>
                 </div>
               </div>
-              <div className="col-span-1 lg:col-span-5 order-2 lg:order-2 flex items-center justify-center">
-                <div className="w-64 h-64 relative">
-                  <img
-                    src="/images/Glass Circles7.png"
-                    alt="Fueling Transactions & dApps"
-                    className="w-full h-full object-contain"
-                  />
-                </div>
-              </div>
             </div>
 
             {/* Digital Economy Section */}
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-4 items-center">
-              <div className="col-span-1 lg:col-span-5 order-2 lg:order-1 flex items-center justify-center">
+              <div className="col-span-1 lg:col-span-5 order-1 lg:order-1 flex items-center justify-center">
                 <div className="w-64 h-64 relative">
                   <img
                     src="/images/Glass Circles8.png"
@@ -242,7 +242,7 @@ export function ScalingSection2() {
                   />
                 </div>
               </div>
-              <div className="col-span-1 lg:col-span-7 order-1 lg:order-2">
+              <div className="col-span-1 lg:col-span-7 order-2 lg:order-2">
                 <div className="h-full w-full flex flex-col items-start justify-center">
                   <div className="flex items-center gap-3 mb-4">
                     <h3 className="text-2xl font-bold font-sans">Digital Asset Management</h3>
