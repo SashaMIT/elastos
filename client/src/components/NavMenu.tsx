@@ -2,7 +2,7 @@
 
 import * as React from "react";
 import { Link } from "wouter";
-import { Home, Shield, Code, HelpCircle, MessageCircle, Newspaper, Menu as MenuIcon, Moon, Sun, LineChart, Coins, ShoppingCart, ScrollText, Target, FileText, Terminal, Github, Download, PiggyBank, FileCode2, BookOpen, Video, Database, Star, Wallet, Repeat, Bell } from "lucide-react";
+import { Home, Shield, Code, HelpCircle, MessageCircle, Newspaper, Menu as MenuIcon, Moon, Sun, LineChart, Coins, ShoppingCart, ScrollText, Target, FileText, Terminal, Github, Download, PiggyBank, FileCode2, BookOpen, Video, Database, Star, Wallet, Repeat, Bell, Users } from "lucide-react";
 import { SidebarMenu } from "@/components/ui/sidebar-menu";
 import { useTheme } from "@/hooks/useTheme";
 import {
@@ -279,11 +279,11 @@ export function NavMenu() {
                         </div>
                       </NavigationMenuLink>
                     </Link>
-                    <Link href="/knowledge-base">
+                    <Link href="/team-foundation">
                       <NavigationMenuLink className={navigationMenuTriggerStyle()}>
                         <div className="flex items-center gap-2">
-                          <Database className="h-4 w-4 text-[#94b5ff]" />
-                          <span>Knowledge Base</span>
+                          <Users className="h-4 w-4 text-[#94b5ff]" />
+                          <span>Team Foundation</span>
                         </div>
                       </NavigationMenuLink>
                     </Link>

@@ -7,6 +7,7 @@ import MediaKit from './pages/MediaKit'; // Import MediaKit component
 import Bridge from './pages/Bridge'; // Import Bridge component
 import AnnouncementsPage from './pages/AnnouncementsPage'; // Import AnnouncementsPage component
 import AmbassadorsPage from './pages/AmbassadorsPage'; // Import AmbassadorsPage component
+import TeamFoundationPage from './pages/TeamFoundationPage'; // Import TeamFoundationPage component
 
 import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
@@ -65,6 +66,7 @@ function Router() {
           <Route path="/bridge" component={Bridge} /> {/* Added Bridge route */}
           <Route path="/announcements" component={AnnouncementsPage} /> {/* Added Announcements route */}
           <Route path="/ambassador-program" component={AmbassadorsPage} /> {/* Added Ambassadors route */}
+          <Route path="/team-foundation" component={TeamFoundationPage} /> {/* Added Team Foundation route */}
           <Route>404 Page Not Found</Route>
         </Switch>
       </Suspense>
