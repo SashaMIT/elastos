@@ -44,7 +44,7 @@ const GridItem = ({ area, icon, title, description }: GridItemProps) => {
               <h3 className="pt-0.5 text-lg leading-[1.25rem] font-normal font-telegraf-ultralight text-white tracking-wide mb-4 md:text-xl md:leading-[1.5rem] text-balance">
                 {title}
               </h3>
-              <h2 className="font-normal font-telegraf-ultralight text-white/90 leading-relaxed tracking-wide text-xs md:text-sm">
+              <h2 className="font-normal font-telegraf-ultralight text-white/90 leading-relaxed tracking-wide text-base">
                 {description}
               </h2>
             </div>
