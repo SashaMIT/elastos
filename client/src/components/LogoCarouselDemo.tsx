@@ -12,6 +12,7 @@ export function LogoCarouselDemo() {
     {
       name: "Glide",
       id: 9,
+      url: "https://glidefinance.io/swap",
       img: () => (
         <img
           src="/images/glide.png"
@@ -26,6 +27,7 @@ export function LogoCarouselDemo() {
     {
       name: "Kucoin",
       id: 2,
+      url: "https://www.kucoin.com/trade/ELA-USDT?rcode=e21sNJ",
       img: () => (
         <img
           src="/images/Kucoin.png"
@@ -37,6 +39,7 @@ export function LogoCarouselDemo() {
     {
       name: "Coinbase",
       id: 1,
+      url: "https://www.coinbase.com/en-gb/advanced-trade/spot/ELA-USD",
       img: () => (
         <>
           {/* Light mode image */}
@@ -61,6 +64,7 @@ export function LogoCarouselDemo() {
     {
       name: "Gateio",
       id: 3,
+      url: "https://www.gate.io/trade/ELA_USDT?ref=3018394",
       img: () => (
         <img
           src="/images/Gateio.png"
@@ -72,6 +76,7 @@ export function LogoCarouselDemo() {
     {
       name: "Huobi",
       id: 4,
+      url: "https://www.huobi.com/en-us/trade/ELA_USDT",
       img: () => (
         <>
           {/* Light mode image */}
@@ -92,6 +97,7 @@ export function LogoCarouselDemo() {
     {
       name: "BitGet",
       id: 5,
+      url: "https://www.bitget.com/spot/ELAUSDT/?channelCode=42xn&vipCode=sq59&languageType=0",
       img: () => (
         <img
           src="/images/BitGet.png"
@@ -103,6 +109,7 @@ export function LogoCarouselDemo() {
     {
       name: "Crypto",
       id: 6,
+      url: "https://crypto.com/exchange/trade/ELA_USD",
       img: () => (
         <>
           {/* Light mode image */}
@@ -123,6 +130,7 @@ export function LogoCarouselDemo() {
     {
       name: "Uniswap",
       id: 7,
+      url: "https://app.uniswap.org/#/swap?outputCurrency=0xe6fd75ff38adca4b97fbcd938c86070c3dabd5b9",
       img: () => (
         <img
           src="/images/Uniswap.png"
@@ -134,6 +142,7 @@ export function LogoCarouselDemo() {
     {
       name: "Chainge",
       id: 8,
+      url: "https://dapp.chainge.finance/",
       img: () => (
         <img
           src="/images/chainge.png"

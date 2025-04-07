@@ -1,4 +1,3 @@
-
 "use client"
 
 import React, {
@@ -12,9 +11,10 @@ import { AnimatePresence, motion } from "framer-motion"
 import { useTheme } from "@/hooks/useTheme"
 
 interface Logo {
+  id: number | string
   name: string
-  id: number
-  img: React.ComponentType<any>
+  url?: string
+  img: () => React.ReactNode
 }
 
 interface LogoColumnProps {
