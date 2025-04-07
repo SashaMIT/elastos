@@ -16,8 +16,7 @@ import {
   Database,
   Share2,
   Boxes,
-  LifeBuoy,
-  BookOpen
+  LifeBuoy
 } from "lucide-react";
 import { Link } from "wouter";
 import {
@@ -97,10 +96,6 @@ export const SidebarMenu = () => {
               <Link href="/stats" className="py-2 hover:text-primary flex items-center gap-2">
                 <Database className="h-4 w-4 text-[#94b5ff]" />
                 <span>Stats</span>
-              </Link>
-              <Link href="/announcements" className="py-2 hover:text-primary flex items-center gap-2">
-                <BookOpen className="h-4 w-4 text-[#94b5ff]" />
-                <span>Announcements</span>
               </Link>
 
               <h4 className="font-medium text-sm text-[#94b5ff] mb-2 mt-4">DEVELOPERS</h4>

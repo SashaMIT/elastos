@@ -1,110 +1,115 @@
-# Elastos Announcements Page
+# Elastos Bridge Page Standalone Component
 
-This package contains all the essential files required to recreate the Elastos Announcements page in another React application.
+This standalone component provides an interactive guide for bridging Elastos (ELA) tokens between different chains. It can be easily integrated into any React project.
 
-## Contents
+## Features
 
-1. `announcements.tsx` - The main React component for the Announcements page
-2. `routes.js` - Server-side routes for fetching news and blog data
+- Interactive step-by-step guide for bridging ELA tokens
+- Support for both native chain bridging and ERC-20 bridging
+- Detailed instructions with progress tracking
+- Responsive design for all device sizes
+- Built with React, TypeScript, and Tailwind CSS
+- Includes all necessary images and assets
 
-## Dependencies
+## Installation
 
-### Frontend Dependencies:
-- React
-- TanStack React Query
-- Framer Motion
-- Lucide React (for icons)
-- Wouter (for routing)
-- Tailwind CSS
-- Shadcn UI components (specifically the Carousel component)
+1. Extract this ZIP file to your project
+2. Install the required dependencies:
 
-### Backend Dependencies:
-- Express.js
-- RSS Parser
-
-## Setup Instructions
-
-### Step 1: Set Up a New React Project
-If you don't already have a React project:
 ```bash
-npx create-next-app my-elastos-site
-# or
-npx create-react-app my-elastos-site
+npm install framer-motion lucide-react clsx tailwind-merge class-variance-authority
 ```
 
-### Step 2: Install Required Dependencies
+If you don't already have Tailwind CSS set up:
+
 ```bash
-# Frontend dependencies
-npm install @tanstack/react-query framer-motion lucide-react wouter
-
-# Backend dependencies
-npm install express rss-parser
+npm install -D tailwindcss postcss autoprefixer
+npx tailwindcss init -p
 ```
 
-### Step 3: Set Up UI Components
-If using Shadcn UI:
-```bash
-# Install shadcn/ui
-npx shadcn-ui@latest init
-# Add carousel component
-npx shadcn-ui@latest add carousel
+3. Configure your Tailwind CSS by adding to your `tailwind.config.js`:
+
+```js
+/** @type {import('tailwindcss').Config} */
+module.exports = {
+  content: [
+    // Add your existing content paths
+    "./src/**/*.{js,ts,jsx,tsx}",
+  ],
+  theme: {
+    extend: {},
+  },
+  plugins: [],
+}
 ```
 
-### Step 4: Copy Files to Your Project
-1. Copy `announcements.tsx` to your pages directory
-2. Copy `routes.js` to your server directory
-3. Update the import paths in `announcements.tsx` to match your project structure
+4. Add the Tailwind directives to your CSS:
 
-### Step 5: Implement the Backend Routes
-In your Express server file:
-```javascript
-const express = require('express');
-const registerAnnouncementsRoutes = require('./routes');
-
-const app = express();
-
-// Register the announcements routes
-registerAnnouncementsRoutes(app);
-
-// Start the server
-app.listen(3000, () => {
-  console.log('Server running on port 3000');
-});
+```css
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 ```
 
-### Step 6: Add the Page to Your Router
-Add the Announcements page to your router:
+## Usage
+
+### Option 1: Use as a Full Page
+
+Import the `BridgePage` component directly:
+
 ```jsx
-// For wouter
-import { Route, Switch } from 'wouter';
-import AnnouncementsPage from './pages/announcements';
+import BridgePage from './path/to/BridgePage';
 
 function App() {
+  return <BridgePage />;
+}
+```
+
+### Option 2: Include as a Section
+
+Embed the component within your existing page:
+
+```jsx
+import BridgePage from './path/to/BridgePage';
+
+function YourPage() {
   return (
-    <Switch>
-      <Route path="/announcements" component={AnnouncementsPage} />
-      {/* Other routes */}
-    </Switch>
+    <div>
+      <h1>Your Page Title</h1>
+      <BridgePage />
+      <footer>Your Footer</footer>
+    </div>
   );
 }
 ```
 
-## RSS Feed URLs
+## Included Assets
 
-- Blog Posts: `https://rss.app/feeds/COQSFdAgMY8p4SOz.xml`
-- News Items: `https://rss.app/feeds/tQGWZNuxHC69yKOm.xml`
+This package already includes all necessary assets in the public directory:
+
+- `/apple-logo.svg` - Apple logo icon
+- `/google-play.svg` - Google Play logo icon
+- `/bridge-step1.jpg` through `/bridge-step5.jpg` - Screenshots for native bridging steps
+- `/glide-bridge-steps/step1.png` through `/glide-bridge-steps/step7.png` - Screenshots for Shadow Token bridge
+- `/chainge/chainge-interface.png` - Screenshot for Chainge Finance interface
+- Elastos logo files and additional branding assets
 
 ## Customization
 
-You can customize the appearance by:
+You can customize the following aspects of the bridge page:
 
-1. Changing the colors in the component (look for color values like `#F7921A` and `#8BABFF`)
-2. Modifying the responsive breakpoints in the grid layouts
-3. Updating the RSS feed URLs in the backend routes
+1. Colors - The component uses `#F7921A` (orange) and `#8BABFF` (blue) as primary colors
+2. Content - Edit the text and descriptions in the BridgePage.tsx file
+3. Steps - Update the step instructions and tips to match your specific requirements
+4. Images - Replace the step images with your own screenshots
 
-## Branding Colors
 
-Elastos uses the following main colors:
-- Primary Orange: `#F7921A`
-- Blue Accent: `#8BABFF`
-- Dark Background: `#141414`
+## Support
+
+For questions or issues:
+- Discord: https://discord.gg/dqB88b4H5K
+- Telegram: https://t.me/elastosbridgesupport
+
+## Credits
+
+This Bridge page was developed for the Elastos cryptocurrency ecosystem.
