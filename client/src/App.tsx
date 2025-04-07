@@ -16,7 +16,8 @@ import FaqPage from './pages/FaqPage';
 import SocialChannelsPage from './pages/SocialChannelsPage';
 import MediaKit from './pages/MediaKit'; // Import MediaKit wrapper component
 import Bridge from './pages/Bridge'; // Added import for Bridge page
-import AnnouncementsPage from './pages/AnnouncementsPage'; // Import Announcements page
+import AnnouncementsPage from './pages/AnnouncementsPage'; // Added import for Announcements page
+
 
 function App() {
   return (

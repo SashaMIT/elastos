@@ -2,7 +2,7 @@
 
 import * as React from "react";
 import { Link } from "wouter";
-import { Home, Shield, Code, HelpCircle, MessageCircle, Newspaper, Menu as MenuIcon, Moon, Sun, LineChart, Coins, ShoppingCart, ScrollText, Target, FileText, Terminal, Github, Download, PiggyBank, FileCode2, BookOpen, Video, Database, Star, Wallet, Repeat, Megaphone } from "lucide-react";
+import { Home, Shield, Code, HelpCircle, MessageCircle, Newspaper, Menu as MenuIcon, Moon, Sun, LineChart, Coins, ShoppingCart, ScrollText, Target, FileText, Terminal, Github, Download, PiggyBank, FileCode2, BookOpen, Video, Database, Star, Wallet, Repeat } from "lucide-react";
 import { SidebarMenu } from "@/components/ui/sidebar-menu";
 import { useTheme } from "@/hooks/useTheme";
 import {
@@ -245,35 +245,37 @@ export function NavMenu() {
               </NavigationMenuContent>
             </NavigationMenuItem>
             <NavigationMenuItem>
-              <NavigationMenuTrigger className="font-[200]">Insights</NavigationMenuTrigger>
+              <NavigationMenuTrigger className="text-sm font-[200]">
+                Insights
+              </NavigationMenuTrigger>
               <NavigationMenuContent>
                 <div className="grid w-[400px] gap-1 p-2 md:w-[500px] md:grid-cols-2">
                   <div>
-                    <h4 className="font-medium text-sm text-muted-foreground mb-2 px-2 text-[#94b5ff]">NEWS & UPDATES</h4>
+                    <h4 className="font-medium text-sm text-muted-foreground mb-2 px-2 text-[#94b5ff]">UPDATES</h4>
                     <Link to="/announcements">
                       <NavigationMenuLink className={navigationMenuTriggerStyle()}>
                         <div className="flex items-center gap-2">
-                          <Megaphone className="h-4 w-4 text-[#94b5ff]" />
+                          <BookOpen className="h-4 w-4 text-[#94b5ff]" />
                           <span>Announcements</span>
                         </div>
                       </NavigationMenuLink>
                     </Link>
-                    <Link to="/news">
+                    <Link href="/blogs-news">
                       <NavigationMenuLink className={navigationMenuTriggerStyle()}>
                         <div className="flex items-center gap-2">
-                          <Newspaper className="h-4 w-4 text-[#94b5ff]" />
-                          <span>News</span>
+                          <BookOpen className="h-4 w-4 text-[#94b5ff]" />
+                          <span>Blogs & News</span>
                         </div>
                       </NavigationMenuLink>
                     </Link>
                   </div>
                   <div>
-                    <h4 className="font-medium text-sm text-muted-foreground mb-2 px-2 text-[#94b5ff]">RESOURCES</h4>
-                    <Link to="/media-kit">
+                    <h4 className="font-medium text-sm text-muted-foreground mb-2 px-2 text-[#94b5ff]">LEARNING</h4>
+                    <Link href="/videos-tutorials">
                       <NavigationMenuLink className={navigationMenuTriggerStyle()}>
                         <div className="flex items-center gap-2">
-                          <Download className="h-4 w-4 text-[#94b5ff]" />
-                          <span>Media Kit</span>
+                          <Video className="h-4 w-4 text-[#94b5ff]" />
+                          <span>Videos & Tutorials</span>
                         </div>
                       </NavigationMenuLink>
                     </Link>

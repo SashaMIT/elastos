@@ -2,7 +2,7 @@
 import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { useQuery } from "@tanstack/react-query";
-import { Link } from "react-router-dom";
+import { Link } from "wouter";
 import { 
   Calendar, 
   ChevronLeft, 
@@ -12,7 +12,10 @@ import {
   RefreshCw,
   Search,
   X,
+  TrendingUp,
   Star,
+  Tag,
+  BarChart,
   BookOpen,
   ArrowRight,
   User

@@ -1,12 +1,15 @@
 
 import React from 'react';
-import { Layout } from '@/components/Layout';
 import ElastosAnnouncementsPage from '@/components/ElastosAnnouncementsPage';
+import { StackedCircularFooter } from "@/components/ui/stacked-circular-footer";
+import { ScrollToTop } from "@/components/ScrollToTop";
 
 export default function AnnouncementsPage() {
   return (
-    <Layout>
+    <div className="min-h-screen bg-[#141414]">
+      <ScrollToTop />
       <ElastosAnnouncementsPage />
-    </Layout>
+      <StackedCircularFooter />
+    </div>
   );
 }
