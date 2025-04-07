@@ -16,7 +16,7 @@ export default function AmbassadorsPage() {
           <div className="w-full h-full bg-[#171717]/20"></div>
         </div>
         
-        <div className="bg-[#212121]/70 backdrop-blur-md p-12 md:p-14 rounded-2xl border border-[#5C8EFF]/30 max-w-2xl text-center relative overflow-hidden shadow-2xl">
+        <div className="bg-[#212121]/70 backdrop-blur-md p-10 md:p-12 rounded-2xl border border-[#5C8EFF]/30 max-w-2xl text-center relative overflow-hidden shadow-2xl">
           {/* Enhanced gradient background */}
           <div className="absolute inset-0 bg-gradient-to-br from-[#212121]/90 via-[#212121]/80 to-[#212121]/60 z-0"></div>
           
@@ -27,20 +27,20 @@ export default function AmbassadorsPage() {
           {/* Decorative elements */}
           <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-[#5C8EFF]/30 to-transparent"></div>
           
-          <div className="relative mb-8">
+          <div className="relative">
             <span className="absolute -top-12 left-1/2 -translate-x-1/2 bg-[#F6921A]/80 text-white text-xs px-4 py-1.5 rounded-full uppercase tracking-wider font-medium shadow-lg">Under Development</span>
           </div>
-          <h2 className="text-4xl md:text-5xl font-[200] text-white mb-8 relative z-10">Ambassador Program</h2>
-          <div className="w-24 h-1 bg-gradient-to-r from-[#F6921A] to-[#5C8EFF] mx-auto mb-10 opacity-80"></div>
-          <p className="text-gray-100 text-xl mb-8 relative z-10 font-medium tracking-wide">Coming Soon</p>
-          <p className="text-gray-200 mb-14 relative z-10 max-w-xl mx-auto">
+          <h2 className="text-4xl md:text-5xl font-[200] text-white mb-6 relative z-10">Ambassador Program</h2>
+          <div className="w-24 h-1 bg-gradient-to-r from-[#F6921A] to-[#5C8EFF] mx-auto mb-8 opacity-80"></div>
+          <p className="text-gray-100 text-xl mb-6 relative z-10 font-medium tracking-wide">Coming Soon</p>
+          <p className="text-gray-200 mb-10 relative z-10 max-w-xl mx-auto">
             We're currently building our ambassador program to help spread the Elastos vision worldwide. 
             Check back soon for details on how to participate and make a difference in the Elastos ecosystem.
           </p>
           
           <a 
             href="/"
-            className="inline-flex px-8 py-4 bg-[rgba(92,142,255,0.15)] text-[#5C8EFF] rounded-full font-medium transition-all items-center gap-3 border border-[rgba(92,142,255,0.40)] hover:bg-[rgba(92,142,255,0.25)] hover:scale-105 relative z-10 group shadow-lg"
+            className="inline-flex px-6 py-3 bg-[rgba(92,142,255,0.15)] text-[#5C8EFF] rounded-full font-medium transition-all items-center gap-2 border border-[rgba(92,142,255,0.40)] hover:bg-[rgba(92,142,255,0.25)] hover:scale-105 relative z-10 group shadow-lg"
           >
             <ArrowLeft className="h-4 w-4 group-hover:-translate-x-1 transition-transform" />
             <span>Return to Home</span>
