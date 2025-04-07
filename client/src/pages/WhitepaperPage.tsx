@@ -7,7 +7,6 @@ import React from "react";
 import { SEO } from "@/components/SEO";
 import { LogoCarouselDemo } from "@/components/LogoCarouselDemo";
 import { StackedCircularFooter } from "@/components/ui/stacked-circular-footer";
-import Breadcrumbs from "@/components/Breadcrumbs"; // Added Breadcrumbs import
 
 const WhitepaperPage = () => {
   return (
@@ -43,9 +42,6 @@ const WhitepaperPage = () => {
         </div>
 
         <div className="container mx-auto px-4 py-6 bg-[#171717]">
-          <div className="container mx-auto pt-20"> {/* Added container for breadcrumbs */}
-            <Breadcrumbs /> {/* Added Breadcrumbs component */}
-          </div>
           {/* Documents Grid */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-16">
             {/* Whitepaper Card */}

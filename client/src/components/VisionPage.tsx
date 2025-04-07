@@ -2,7 +2,6 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { CheckCircle } from "lucide-react";
-import Breadcrumbs from "@/components/Breadcrumbs";
 import { FeaturesSectionWithHoverEffects } from "@/components/blocks/feature-section-with-hover-effects";
 import { FeaturesSectionWithBentoGrid } from "@/components/blocks/feature-section-with-bento-grid";
 import { FeaturesSectionWithTechStack } from "@/components/blocks/feature-section-with-tech-stack";
@@ -43,9 +42,6 @@ export function VisionPage() {
         ogImage="/images/Elastosbanner.jpg"
         canonicalUrl="/vision"
       />
-      <div className="container mx-auto pt-20">
-        <Breadcrumbs />
-      </div>
       <BackgroundCells className="bg-slate-950 h-[50vh] -mt-6 pt-0">
         <div className="container mx-auto px-4 relative z-10">
           <motion.div

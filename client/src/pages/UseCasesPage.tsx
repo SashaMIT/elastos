@@ -9,8 +9,6 @@ import { Layout } from "@/components/Layout";
 import { CodeBlock } from "@/components/ui/code-block";
 import { UseCaseModal } from "@/components/UseCaseModal";
 import { SEO } from "@/components/SEO";
-import Breadcrumbs from "@/components/Breadcrumbs"; // Added Breadcrumbs import
-
 
 interface UseCase {
   id: number;
@@ -373,9 +371,6 @@ const UseCasesPage: React.FC = () => {
         canonicalUrl="/use-cases"
       />
       <Layout>
-        <div className="container mx-auto pt-20"> {/* Added container for breadcrumbs */}
-          <Breadcrumbs /> {/* Added Breadcrumbs component */}
-        </div>
         <div className="w-full relative">
           <BackgroundCells className="bg-slate-950 h-[50vh] -mt-60 pt-0">
             <div className="relative flex flex-col items-center justify-center h-full text-center" style={{ zIndex: 5 }}>
@@ -519,16 +514,3 @@ export default function App() {
 };
 
 export default UseCasesPage;
-
-// Placeholder Breadcrumbs component
-const Breadcrumbs = () => {
-  return (
-    <nav className="bg-gray-100 p-4 rounded-lg shadow-md">
-      <ul className="flex space-x-4">
-        <li><a href="/" className="text-blue-500 hover:underline">Home</a></li>
-        <li><span className="text-gray-500">/</span></li>
-        <li><a href="/use-cases" className="text-blue-500 hover:underline">Use Cases</a></li>
-      </ul>
-    </nav>
-  );
-};

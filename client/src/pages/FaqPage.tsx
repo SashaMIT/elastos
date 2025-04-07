@@ -5,7 +5,6 @@ import { StackedCircularFooter } from "@/components/ui/stacked-circular-footer";
 import { LogoCarouselDemo } from "@/components/LogoCarouselDemo";
 import SEO from "@/components/SEO"; // Assuming SEO component exists
 import StructuredData from "@/components/StructuredData"; // Assuming StructuredData component exists
-import Breadcrumbs from "@/components/Breadcrumbs";
 
 
 const FaqPage = () => {
@@ -82,7 +81,6 @@ const FaqPage = () => {
                 ]
               }}
             />
-            <Breadcrumbs />
             <FaqComponent />
           </div>
 

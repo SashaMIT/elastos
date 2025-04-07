@@ -38,7 +38,6 @@ import { FeaturesCarousel } from "@/components/FeaturesCarousel";
 import { cn } from '@/lib/utils';
 import BlockTable from '@/components/BlockTable';
 import { Dots_v2, Spinner, RoundSpinner } from "@/components/ui/spinner"; // Import spinner components
-import Breadcrumbs from "@/components/Breadcrumbs"; // Added import for Breadcrumbs
 
 
 interface FeatureCardProps {
@@ -259,30 +258,94 @@ const LandingPage = () => {
     }
   ];
 
-  // SEO component for the homepage
-  const landingSEO = (
-    <SEO 
-      title="Elastos | The SmartWeb Powered by Bitcoin"
-      description="Elastos is building a new internet infrastructure that gives users full control over their digital lives through blockchain security, decentralized identity, and data ownership."
-      keywords="Elastos, blockchain, SmartWeb, decentralized internet, Bitcoin security, digital ownership, Web3"
-      ogImage="/images/Elastosbanner.jpg"
-      canonicalUrl="/"
-    />
-  );
-
-  // Show breadcrumbs only if not on home page (for reused components)
-  const showBreadcrumbs = window.location.pathname !== "/";
-
   return (
     <div className="flex flex-col gap- w-full">
-      <div className="min-h-screen">
-        {landingSEO}
-        {showBreadcrumbs && (
-          <div className="container mx-auto pt-20">
-            <Breadcrumbs />
+      <SEO 
+        title="Elastos - Web3 Infrastructure Secured by Bitcoin"
+        description="Elastos is building a decentralized internet infrastructure that gives you true digital ownership and privacy, secured by Bitcoin."
+        keywords="Elastos, blockchain, bitcoin, Web3, digital ownership, merged mining, decentralized identity, ELA"
+        ogImage="/images/Elastosbanner.jpg"
+        canonicalUrl="/"
+      />
+
+      {/* Hero Section */}
+      <div className="w-full px-2 mt-[-20px]">
+        <div className="relative w-full h-[700px] overflow-hidden rounded-3xl">
+          {/* Video Background */}
+          <video
+            className="absolute inset-0 w-full h-full object-cover"
+            autoPlay
+            loop
+            muted
+            playsInline
+            preload="none"
+            poster="/images/Hero image.png"
+          >
+            <source src="/videos/Elastos Hero Video2.mp4" type="video/mp4" />
+          </video>
+
+          {/* Overlay for better text readability */}
+          <div className="absolute inset-0 bg-black/30"></div>
+
+          {/* Content */}
+          <div className="relative z-10 flex flex-col items-center justify-center h-full text-white p-4 sm:p-8">
+            <h1 className="text-xl sm:text-3xl md:text-3xl lg:text-4xl font-bold text-center mb-4 px-2">
+              Own Your Digital Life, Secured by Bitcoin.
+            </h1>
+            <p className="text-base sm:text-lg md:text-lg lg:text-xl text-center mb-8 text-white max-w-[90vw] md:max-w-none px-2 font-[200]">
+              Elastos puts you in control of your identity, data, and digital assets.
+            </p>
+            <div className="flex gap-4">
+              <a 
+                href="/vision"
+                className="inline-flex px-4 py-2 bg-[#21293a] text-white rounded-full font-[200] transition-all items-center gap-2 border border-[rgba(92,142,255,0.25)] text-sm min-w-[130px]"
+              >
+                <span>Learn More</span>
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 35 34" fill="none">
+                  <circle cx="17.333" cy="17" r="16.75" stroke="#5C8EFF" strokeOpacity="0.25" strokeWidth="1.5"/>
+                  <path d="M17.3338 22.9405L23.2741 17.0002L17.3338 11.0598L16.4162 11.9774L20.7628 16.324H10.8622V17.6763H20.7628L16.4162 22.0229L17.3338 22.9405Z" fill="#5C8EFF"/>
+                  <path d="M20.7628 17.6638H10.8747V16.3365H20.7628H20.7929L20.7716 16.3152L16.4338 11.9774L17.3338 11.0775L23.2564 17.0002L17.3338 22.9228L16.4338 22.0229L20.7716 17.6851L20.7929 17.6638H20.7628Z" stroke="#5C8EFF" strokeOpacity="0.25" strokeWidth="1.5"/>
+                </svg>
+              </a>
+            </div>
+
+            {/* Learn More Modal */}
+            <Dialog open={isLearnMoreOpen} onOpenChange={setIsLearnMoreOpen}>
+              <DialogContent className="sm:max-w-5xl max-h-[80vh] overflow-y-auto bg-background border-none shadow-lg p-0">
+                <div className="absolute right-4 top-4 z-50">
+                  <button 
+                    onClick={() => setIsLearnMoreOpen(false)}
+                    className="rounded-full w-8 h-8 inline-flex items-center justify-center border border-input bg-background hover:bg-accent hover:text-accent-foreground"
+                  >
+                    <X className="h-4 w-4" />
+                  </button>
+                </div>
+                <div className="text-xs text-muted-foreground absolute right-14 top-4 hidden sm:block">Click image to view full size</div>
+                <DialogHeader className="p-6 pb-2">
+                  <DialogTitle className="text-xl sm:text-2xl font-bold">Elastos: The Internet of the Future</DialogTitle>
+                </DialogHeader>
+                <div className="p-6 pt-2">
+                  <div className="flex flex-col md:flex-row md:items-center gap-6">
+                    <div className="flex-1 flex items-center justify-center overflow-hidden">
+                      <img 
+                        src="/images/Elastos Architecture.png" 
+                        alt="Elastos Architecture" 
+                        className="w-full h-auto rounded-lg shadow-md cursor-pointer transition-transform hover:scale-[1.02]"
+                        style={{ maxWidth: "100%", maxHeight: "60vh", objectFit: "contain" }}
+                        onClick={() => window.open("/images/Elastos Architecture.png", "_blank")}
+                      />
+                    </div>
+                    <div className="flex-1 flex flex-col justify-center max-w-2xl md:max-w-none">
+                      <p className="text-sm sm:text-base text-muted-foreground">
+                        Elastos re-decentralizes the internet by giving individuals true control over their data and identity. It leverages Bitcoin-level security and financial interoperability, a flexible multi-chain architecture, and DAO governance, alongside decentralized computing, storage, and peer-to-peer networking. Powered by the ELA token, it enables developers to build secure, transparent, and user-centric decentralized applications.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </DialogContent>
+            </Dialog>
           </div>
-        )}
-        <HeroScrollDemo />
+        </div>
       </div>
       <div
         className="w-screen py-0 relative"
@@ -521,7 +584,7 @@ const LandingPage = () => {
 
       {/* Spacer div to add more distance */}
       <div className="py-10 md:py-10"></div>
-
+      
       {/* News Section */}
       <div className="px-4 md:px-0">
         <NewsSection />
