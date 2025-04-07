@@ -316,6 +316,13 @@ const MergeMiningAnimation = () => {
         {/* Benefits */}
         <Benefits />
       </div>
+      <div className="text-center" id="text-effect-trigger">
+          <TextGenerateEffect
+            words="ELA is the native digital asset that fuels Elastos, providing security, governance, and utility across the World Computer. Merged-mined with Bitcoin, there will only ever be 28,219,999 total by 2105."
+            className="font-[200] font-telegraf-ultralight sm:text-base mt-[10px] mb-0 relative z-50"
+            mobileTextSize="text-[8px]"
+          />
+        </div>
     </div>
   );
 };
