@@ -5,170 +5,137 @@ import { LogoCarousel } from "@/components/ui/logo-carousel";
 import { useTheme } from "@/hooks/useTheme";
 
 export function LogoCarouselDemo() {
-  const { theme } = useTheme();
-
-  // Define logos array inside the component so it updates on each render.
-  const logos = [
-    {
-      name: "Glide",
-      id: 9,
-      url: "https://glidefinance.io/swap",
-      img: () => (
-        <img
-          src="/images/glide.png"
-          alt="Glide - Decentralized Exchange"
-          loading="lazy"
-          width="120"
-          height="36"
-          className="h-9 w-auto object-contain hover:opacity-80 transition-opacity cursor-pointer"
-        />
-      ),
-    },
-    {
-      name: "Kucoin",
-      id: 2,
-      url: "https://www.kucoin.com/trade/ELA-USDT?rcode=e21sNJ",
-      img: () => (
-        <img
-          src="/images/Kucoin.png"
-          alt="Kucoin - Crypto Exchange"
-          className="h-9 w-auto object-contain hover:opacity-80 transition-opacity cursor-pointer"
-        />
-      ),
-    },
-    {
-      name: "Coinbase",
-      id: 1,
-      url: "https://www.coinbase.com/en-gb/advanced-trade/spot/ELA-USD",
-      img: () => (
-        <>
-          {/* Light mode image */}
-          <img
-            src="/images/Coinbase.png"
-            alt="Coinbase - Cryptocurrency Exchange"
-            width="140"
-            height="28"
-            className="block dark:hidden h-7 w-auto object-contain hover:opacity-80 transition-opacity cursor-pointer"
-          />
-          {/* Dark mode image */}
-          <img
-            src="/images/Coinbase-w.png"
-            alt="Coinbase - Cryptocurrency Exchange"
-            width="140"
-            height="28"
-            className="hidden dark:block h-7 w-auto object-contain hover:opacity-80 transition-opacity cursor-pointer"
-          />
-        </>
-      ),
-    },
-    {
-      name: "Gateio",
-      id: 3,
-      url: "https://www.gate.io/trade/ELA_USDT?ref=3018394",
-      img: () => (
-        <img
-          src="/images/Gateio.png"
-          alt="Gate.io - Cryptocurrency Trading Platform"
-          className="h-9 w-auto object-contain hover:opacity-80 transition-opacity cursor-pointer"
-        />
-      ),
-    },
-    {
-      name: "Huobi",
-      id: 4,
-      url: "https://www.huobi.com/en-us/trade/ELA_USDT",
-      img: () => (
-        <>
-          {/* Light mode image */}
-          <img
-            src="/images/Huobi.png"
-            alt="Huobi Light"
-            className="block dark:hidden h-9 w-auto object-contain hover:opacity-80 transition-opacity cursor-pointer"
-          />
-          {/* Dark mode image */}
-          <img
-            src="/images/Huobi-w.png"
-            alt="Huobi Dark"
-            className="hidden dark:block h-9 w-auto object-contain hover:opacity-80 transition-opacity cursor-pointer"
-          />
-        </>
-      ),
-    },
-    {
-      name: "BitGet",
-      id: 5,
-      url: "https://www.bitget.com/spot/ELAUSDT/?channelCode=42xn&vipCode=sq59&languageType=0",
-      img: () => (
-        <img
-          src="/images/BitGet.png"
-          alt="BitGet"
-          className="h-9 w-auto object-contain hover:opacity-80 transition-opacity cursor-pointer"
-        />
-      ),
-    },
-    {
-      name: "Crypto",
-      id: 6,
-      url: "https://crypto.com/exchange/trade/ELA_USD",
-      img: () => (
-        <>
-          {/* Light mode image */}
-          <img
-            src="/images/Crypto.png"
-            alt="Crypto Light"
-            className="block dark:hidden h-9 w-auto object-contain hover:opacity-80 transition-opacity cursor-pointer"
-          />
-          {/* Dark mode image */}
-          <img
-            src="/images/Crypto-w.png"
-            alt="Crypto Dark"
-            className="hidden dark:block h-9 w-auto object-contain hover:opacity-80 transition-opacity cursor-pointer"
-          />
-        </>
-      ),
-    },
-    {
-      name: "Uniswap",
-      id: 7,
-      url: "https://app.uniswap.org/#/swap?outputCurrency=0xe6fd75ff38adca4b97fbcd938c86070c3dabd5b9",
-      img: () => (
-        <img
-          src="/images/Uniswap.png"
-          alt="Uniswap"
-          className="h-9 w-auto object-contain hover:opacity-80 transition-opacity cursor-pointer"
-        />
-      ),
-    },
-    {
-      name: "Chainge",
-      id: 8,
-      url: "https://dapp.chainge.finance/",
-      img: () => (
-        <img
-          src="/images/chainge.png"
-          alt="Chainge"
-          className="h-9 w-auto object-contain hover:opacity-80 transition-opacity cursor-pointer"
-        />
-      ),
-    },
-  ];
-
   const handleLogoClick = (url: string) => {
-    window.open(url, "_blank", "noopener,noreferrer");
+    window.open(url, '_blank');
   };
 
+  const exchangeLogos = [
+    {
+      id: 1,
+      name: "Coinbase",
+      url: "https://www.coinbase.com/price/elastos",
+      img: () => (
+        <img 
+          src="/images/Coinbase.png" 
+          alt="Coinbase" 
+          className="h-8 object-contain dark:hidden" 
+        />
+      )
+    },
+    {
+      id: 2,
+      name: "Kucoin",
+      url: "https://www.kucoin.com/trade/ELA-USDT",
+      img: () => (
+        <img 
+          src="/images/Kucoin.png" 
+          alt="Kucoin" 
+          className="h-8 object-contain" 
+        />
+      )
+    },
+    {
+      id: 3,
+      name: "Gate.io",
+      url: "https://www.gate.io/trade/ELA_USDT",
+      img: () => (
+        <img 
+          src="/images/Gateio.png" 
+          alt="Gate.io" 
+          className="h-8 object-contain" 
+        />
+      )
+    },
+    {
+      id: 4,
+      name: "Huobi/HTX",
+      url: "https://www.htx.com/en-us/trade/ela_usdt",
+      img: () => (
+        <img 
+          src="/images/HTX.png" 
+          alt="HTX" 
+          className="h-8 object-contain" 
+        />
+      )
+    },
+    {
+      id: 5,
+      name: "BitGet",
+      url: "https://www.bitget.com/spot/ELAUSDT",
+      img: () => (
+        <img 
+          src="/images/BitGet.png" 
+          alt="BitGet" 
+          className="h-8 object-contain" 
+        />
+      )
+    },
+    {
+      id: 6,
+      name: "Uniswap",
+      url: "https://app.uniswap.org/tokens/ethereum/0xe6fd75ff38adca4b97FBCD938c86b98772431867",
+      img: () => (
+        <img 
+          src="/images/Uniswap.png" 
+          alt="Uniswap" 
+          className="h-8 object-contain" 
+        />
+      )
+    },
+    {
+      id: 7,
+      name: "Chainge Finance",
+      url: "https://app.chainge.finance/",
+      img: () => (
+        <img 
+          src="/images/chainge.png" 
+          alt="Chainge Finance" 
+          className="h-8 object-contain" 
+        />
+      )
+    },
+    {
+      id: 8,
+      name: "Crypto.com",
+      url: "https://crypto.com/price/elastos",
+      img: () => (
+        <img 
+          src="/images/Crypto.png" 
+          alt="Crypto.com" 
+          className="h-8 object-contain dark:hidden" 
+        />
+      )
+    },
+    {
+      id: 9,
+      name: "Glide Finance",
+      url: "https://glidefinance.io/",
+      img: () => (
+        <img 
+          src="/images/glide.png" 
+          alt="Glide Finance" 
+          className="h-8 object-contain" 
+        />
+      )
+    }
+  ];
+
   return (
-    <div className="w-full py-0 md:py-0 dark:bg-[#171717]">
-      <div className="container mx-auto flex flex-col items-center justify-center gap-4 px-4 text-center md:gap-10">
-        <div className="mx-auto flex max-w-[58rem] flex-col items-center space-y-4">
-          {/* Plain h2 heading with text-black in light mode and white in dark mode */}
-          <h2 className="text-3xl font-[200] font-sans sm:text-4xl md:text-4xl lg:text-4xl text-black dark:text-white">
-            Own a piece of Elastos
+    <div className="py-12 relative overflow-hidden bg-black/20 dark:bg-white/5 rounded-2xl">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
+        <div className="text-center mb-10">
+          <h2 className="text-2xl md:text-3xl font-bold mb-4 text-black dark:text-white">
+            Available on Top Exchanges
           </h2>
+          <p className="text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
+            Trade ELA on leading cryptocurrency exchanges
+          </p>
         </div>
-        <div className="flex w-full max-w-5xl justify-center">
-          <LogoCarousel logos={logos} columnCount={3} onLogoClick={handleLogoClick} />
-        </div>
+        <LogoCarousel 
+          logos={exchangeLogos} 
+          columnCount={6} 
+          onLogoClick={handleLogoClick}
+        />
       </div>
     </div>
   );

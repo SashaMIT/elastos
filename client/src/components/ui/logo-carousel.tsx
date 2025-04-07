@@ -175,7 +175,7 @@ interface LogoCarouselProps {
   logos: Logo[]
 }
 
-export function LogoCarousel2({ columnCount = 2, logos }: LogoCarouselProps) {
+function LogoCarousel2({ columnCount = 2, logos }: LogoCarouselProps) {
   const [logoSets, setLogoSets] = useState<Logo[][]>([])
   const [currentTime, setCurrentTime] = useState(0)
 
