@@ -175,8 +175,8 @@ export default function ElaUtilityPage() {
                     <span className="text-sm font-[200] text-black dark:text-white">{networkStats?.walletAddresses ? formatNumber(networkStats.walletAddresses) : 'Loading...'}</span>
                   </div>
                   <div className="flex justify-between items-center">
-                    <span className="text-sm text-neutral-500 dark:text-neutral-400">Current Price</span>
-                    <span className="text-sm font-[200] text-black dark:text-white">${isHashrateLoading ? '...' : (hashrateData?.elaPrice?.toFixed(2) || '0.00')}</span>
+                    <span className="text-sm text-neutral-500 dark:text-neutral-400">Current APY</span>
+                    <span className="text-sm font-[200] text-black dark:text-white">3.29%</span>
                   </div>
                 </div>
 
@@ -348,7 +348,7 @@ export default function ElaUtilityPage() {
                       <span className="font-[200] text-black dark:text-[#5C8EFF]">3.29%</span>
                     </div>
                     <div className="w-full h-2 bg-neutral-200 dark:bg-[#1A1A1A] rounded-full overflow-hidden">
-                      <div className="h-full bg-gradient-to-r from-[#5C8EFF] to-[#F6921A] rounded-full" style={{ width: '32.9%' }}></div>
+                      <div className="h-full bg-gradient-to-r from-[#5C8EFF] to-[#F6921A] rounded-full" style={{ width: '32.9%' }}div>
                     </div>
                   </div>
 
