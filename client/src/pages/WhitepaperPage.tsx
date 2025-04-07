@@ -204,120 +204,112 @@ const WhitepaperPage = () => {
           {/* Additional Resources Section */}
           <div className="mb-16">
             <h2 className="text-2xl font-bold mb-8 text-center">Additional Resources</h2>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-              <Card className="overflow-hidden hover:shadow-lg transition-shadow duration-300 border border-gray-100 dark:border-gray-800">
-                <CardHeader className="pb-3 relative">
-                  <div className="flex items-center gap-3 justify-between">
-                    <div className="flex items-center gap-3">
-                    <div className="p-2 rounded-full bg-[#5C8EFF]/10 text-[#5C8EFF]">
-                      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                        <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
-                        <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
-                      </svg>
-                    </div>
-                    <div>
-                        <CardTitle className="text-gray-800 dark:text-gray-200">Elastos Security</CardTitle>
-                        <CardDescription>Bitcoin-Backed Protection</CardDescription>
+            <div className="relative">
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-6 xl:border rounded-md dark:border-neutral-800">
+                {/* Security Card */}
+                <div className="p-3 sm:p-6 relative overflow-hidden group hover:bg-neutral-50 dark:hover:bg-neutral-900 transition-colors duration-300 border-b md:border-r dark:border-neutral-800">
+                  <div className="flex flex-col h-full">
+                    <div className="mb-3 flex items-center justify-between">
+                      <div className="w-12 h-12 flex items-center justify-center rounded-full bg-[#24272f]">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#5C8EFF" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                          <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
+                          <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+                        </svg>
                       </div>
+                      <span className="px-4 py-1 bg-[#5C8EFF]/10 border border-[#5C8EFF]/30 text-white rounded-full text-xs font-medium whitespace-nowrap">Hashrate</span>
                     </div>
-                    <span className="px-4 py-1 bg-[#5C8EFF]/10 border border-[#5C8EFF]/30 text-white rounded-full text-xs font-medium whitespace-nowrap">Hashrate</span>
-                  </div>
-                </CardHeader>
-                <CardContent>
-                  <p className="text-sm text-gray-600 dark:text-gray-400 mb-3">
-                    Explore how Elastos achieves unprecedented blockchain security through Bitcoin merge-mining for transactions and assets.
-                  </p>
-
-                </CardContent>
-                <CardFooter>
-                  <a href="/security" target="_blank" rel="noopener noreferrer">
-                    <button className="px-3 py-2 bg-[rgba(92,142,255,0.15)] text-white rounded-full font-[200] transition-all flex items-center gap-1 border border-[rgba(92,142,255,0.25)] text-sm">
-                      <span>View Stats</span>
-                      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 35 34" fill="none">
-                        <circle cx="17.333" cy="17" r="16.75" stroke="#5C8EFF" strokeOpacity="0.25" strokeWidth="1.5"/>
-                        <path d="M17.3338 22.9405L23.2741 17.0002L17.3338 11.0598L16.4162 11.9774L20.7628 16.324H10.8622V17.6763H20.7628L16.4162 22.0229L17.3338 22.9405Z" fill="#5C8EFF"/>
-                        <path d="M20.7628 17.6638H10.8747V16.3365H20.7628H20.7929L20.7716 16.3152L16.4338 11.9774L17.3338 11.0775L23.2564 17.0002L17.3338 22.9228L16.4338 22.0229L20.7716 17.6851L20.7929 17.6638H20.7628Z" stroke="#5C8EFF" strokeOpacity="0.25" strokeWidth="1.5"/>
-                      </svg>
-                    </button>
-                  </a>
-                </CardFooter>
-              </Card>
-
-              <Card className="overflow-hidden hover:shadow-lg transition-shadow duration-300 border border-gray-100 dark:border-gray-800">
-                <CardHeader className="pb-3 relative">
-                  <div className="flex items-center gap-3 justify-between">
-                    <div className="flex items-center gap-3">
-                    <div className="p-2 rounded-full bg-[#5C8EFF]/10 text-[#5C8EFF]">
-                      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                        <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path>
-                        <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path>
-                      </svg>
-                    </div>
+                    <h3 className="text-lg font-[200] mb-1 text-black dark:text-white">Elastos Security</h3>
+                    <p className="text-sm text-neutral-600 dark:text-neutral-300 font-[200] mb-4">
+                      Bitcoin-Backed Protection
+                    </p>
+                    <p className="text-sm text-gray-600 dark:text-gray-400 mb-6 flex-grow">
+                      Explore how Elastos achieves unprecedented blockchain security through Bitcoin merge-mining for transactions and assets.
+                    </p>
                     <div>
-                        <CardTitle className="text-gray-800 dark:text-gray-200">Technical Portal</CardTitle>
-                        <CardDescription>Developer Resources & APIs</CardDescription>
-                      </div>
+                      <a href="/security" target="_blank" rel="noopener noreferrer">
+                        <button className="px-3 py-2 bg-[rgba(92,142,255,0.15)] text-white rounded-full font-[200] transition-all flex items-center gap-1 border border-[rgba(92,142,255,0.25)] text-sm">
+                          <span>View Stats</span>
+                          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 35 34" fill="none">
+                            <circle cx="17.333" cy="17" r="16.75" stroke="#5C8EFF" strokeOpacity="0.25" strokeWidth="1.5"/>
+                            <path d="M17.3338 22.9405L23.2741 17.0002L17.3338 11.0598L16.4162 11.9774L20.7628 16.324H10.8622V17.6763H20.7628L16.4162 22.0229L17.3338 22.9405Z" fill="#5C8EFF"/>
+                            <path d="M20.7628 17.6638H10.8747V16.3365H20.7628H20.7929L20.7716 16.3152L16.4338 11.9774L17.3338 11.0775L23.2564 17.0002L17.3338 22.9228L16.4338 22.0229L20.7716 17.6851L20.7929 17.6638H20.7628Z" stroke="#5C8EFF" strokeOpacity="0.25" strokeWidth="1.5"/>
+                          </svg>
+                        </button>
+                      </a>
                     </div>
-                    <span className="px-4 py-1 bg-[#5C8EFF]/10 border border-[#5C8EFF]/30 text-white rounded-full text-xs font-medium whitespace-nowrap">Docs</span>
                   </div>
-                </CardHeader>
-                <CardContent>
-                  <p className="text-sm text-gray-600 dark:text-gray-400">
-                    Access comprehensive technical documentation for developers building on Elastos, including APIs, SDKs, and integration guides.
-                  </p>
-                </CardContent>
-                <CardFooter>
-                  <a href="https://elastos.dev/docs/" target="_blank" rel="noopener noreferrer">
-                    <button className="px-3 py-2 bg-[rgba(92,142,255,0.15)] text-white rounded-full font-[200] transition-all flex items-center gap-1 border border-[rgba(92,142,255,0.25)] text-sm">
-                      <span>View Documentation</span>
-                      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 35 34" fill="none">
-                        <circle cx="17.333" cy="17" r="16.75" stroke="#5C8EFF" strokeOpacity="0.25" strokeWidth="1.5"/>
-                        <path d="M17.3338 22.9405L23.2741 17.0002L17.3338 11.0598L16.4162 11.9774L20.7628 16.324H10.8622V17.6763H20.7628L16.4162 22.0229L17.3338 22.9405Z" fill="#5C8EFF"/>
-                        <path d="M20.7628 17.6638H10.8747V16.3365H20.7628H20.7929L20.7716 16.3152L16.4338 11.9774L17.3338 11.0775L23.2564 17.0002L17.3338 22.9228L16.4338 22.0229L20.7716 17.6851L20.7929 17.6638H20.7628Z" stroke="#5C8EFF" strokeOpacity="0.25" strokeWidth="1.5"/>
-                      </svg>
-                    </button>
-                  </a>
-                </CardFooter>
-              </Card>
+                </div>
 
-              <Card className="overflow-hidden hover:shadow-lg transition-shadow duration-300 border border-gray-100 dark:border-gray-800">
-                <CardHeader className="pb-3 relative">
-                  <div className="flex items-center gap-3 justify-between">
-                    <div className="flex items-center gap-3">
-                    <div className="p-2 rounded-full bg-[#5C8EFF]/10 text-[#5C8EFF]">
-                      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                        <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
-                        <circle cx="9" cy="7" r="4"></circle>
-                        <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
-                        <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
-                      </svg>
-                    </div>
-                    <div>
-                        <CardTitle className="text-gray-800 dark:text-gray-200">Community Resources</CardTitle>
-                        <CardDescription>Connect with the community</CardDescription>
+                {/* Technical Portal Card */}
+                <div className="p-3 sm:p-6 relative overflow-hidden group hover:bg-neutral-50 dark:hover:bg-neutral-900 transition-colors duration-300 border-b md:border-r dark:border-neutral-800">
+                  <div className="flex flex-col h-full">
+                    <div className="mb-3 flex items-center justify-between">
+                      <div className="w-12 h-12 flex items-center justify-center rounded-full bg-[#24272f]">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#5C8EFF" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                          <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path>
+                          <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path>
+                        </svg>
                       </div>
+                      <span className="px-4 py-1 bg-[#5C8EFF]/10 border border-[#5C8EFF]/30 text-white rounded-full text-xs font-medium whitespace-nowrap">Docs</span>
                     </div>
-                    <span className="px-4 py-1 bg-[#5C8EFF]/10 border border-[#5C8EFF]/30 text-white rounded-full text-xs font-medium whitespace-nowrap">Talk</span>
+                    <h3 className="text-lg font-[200] mb-1 text-black dark:text-white">Technical Portal</h3>
+                    <p className="text-sm text-neutral-600 dark:text-neutral-300 font-[200] mb-4">
+                      Developer Resources & APIs
+                    </p>
+                    <p className="text-sm text-gray-600 dark:text-gray-400 mb-6 flex-grow">
+                      Access comprehensive technical documentation for developers building on Elastos, including APIs, SDKs, and integration guides.
+                    </p>
+                    <div>
+                      <a href="https://elastos.dev/docs/" target="_blank" rel="noopener noreferrer">
+                        <button className="px-3 py-2 bg-[rgba(92,142,255,0.15)] text-white rounded-full font-[200] transition-all flex items-center gap-1 border border-[rgba(92,142,255,0.25)] text-sm">
+                          <span>View Documentation</span>
+                          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 35 34" fill="none">
+                            <circle cx="17.333" cy="17" r="16.75" stroke="#5C8EFF" strokeOpacity="0.25" strokeWidth="1.5"/>
+                            <path d="M17.3338 22.9405L23.2741 17.0002L17.3338 11.0598L16.4162 11.9774L20.7628 16.324H10.8622V17.6763H20.7628L16.4162 22.0229L17.3338 22.9405Z" fill="#5C8EFF"/>
+                            <path d="M20.7628 17.6638H10.8747V16.3365H20.7628H20.7929L20.7716 16.3152L16.4338 11.9774L17.3338 11.0775L23.2564 17.0002L17.3338 22.9228L16.4338 22.0229L20.7716 17.6851L20.7929 17.6638H20.7628Z" stroke="#5C8EFF" strokeOpacity="0.25" strokeWidth="1.5"/>
+                          </svg>
+                        </button>
+                      </a>
+                    </div>
                   </div>
-                </CardHeader>
-                <CardContent>
-                  <p className="text-sm text-gray-600 dark:text-gray-400">
-                    Join forums, chat channels, and social media groups to connect with other Elastos enthusiasts, developers, and team members.
-                  </p>
-                </CardContent>
-                <CardFooter>
-                  <a href="https://elastos.info/community/" target="_blank" rel="noopener noreferrer">
-                    <button className="px-3 py-2 bg-[rgba(92,142,255,0.15)] text-white rounded-full font-[200] transition-all flex items-center gap-1 border border-[rgba(92,142,255,0.25)] text-sm">
-                      <span>Join Community</span>
-                      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 35 34" fill="none">
-                        <circle cx="17.333" cy="17" r="16.75" stroke="#5C8EFF" strokeOpacity="0.25" strokeWidth="1.5"/>
-                        <path d="M17.3338 22.9405L23.2741 17.0002L17.3338 11.0598L16.4162 11.9774L20.7628 16.324H10.8622V17.6763H20.7628L16.4162 22.0229L17.3338 22.9405Z" fill="#5C8EFF"/>
-                        <path d="M20.7628 17.6638H10.8747V16.3365H20.7628H20.7929L20.7716 16.3152L16.4338 11.9774L17.3338 11.0775L23.2564 17.0002L17.3338 22.9228L16.4338 22.0229L20.7716 17.6851L20.7929 17.6638H20.7628Z" stroke="#5C8EFF" strokeOpacity="0.25" strokeWidth="1.5"/>
-                      </svg>
-                    </button>
-                  </a>
-                </CardFooter>
-              </Card>
+                </div>
+
+                {/* Community Resources Card */}
+                <div className="p-3 sm:p-6 relative overflow-hidden group hover:bg-neutral-50 dark:hover:bg-neutral-900 transition-colors duration-300 border-b md:border-none dark:border-neutral-800">
+                  <div className="flex flex-col h-full">
+                    <div className="mb-3 flex items-center justify-between">
+                      <div className="w-12 h-12 flex items-center justify-center rounded-full bg-[#24272f]">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#5C8EFF" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                          <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                          <circle cx="9" cy="7" r="4"></circle>
+                          <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+                          <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+                        </svg>
+                      </div>
+                      <span className="px-4 py-1 bg-[#5C8EFF]/10 border border-[#5C8EFF]/30 text-white rounded-full text-xs font-medium whitespace-nowrap">Talk</span>
+                    </div>
+                    <h3 className="text-lg font-[200] mb-1 text-black dark:text-white">Community Resources</h3>
+                    <p className="text-sm text-neutral-600 dark:text-neutral-300 font-[200] mb-4">
+                      Connect with the community
+                    </p>
+                    <p className="text-sm text-gray-600 dark:text-gray-400 mb-6 flex-grow">
+                      Join forums, chat channels, and social media groups to connect with other Elastos enthusiasts, developers, and team members.
+                    </p>
+                    <div>
+                      <a href="https://elastos.info/community/" target="_blank" rel="noopener noreferrer">
+                        <button className="px-3 py-2 bg-[rgba(92,142,255,0.15)] text-white rounded-full font-[200] transition-all flex items-center gap-1 border border-[rgba(92,142,255,0.25)] text-sm">
+                          <span>Join Community</span>
+                          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 35 34" fill="none">
+                            <circle cx="17.333" cy="17" r="16.75" stroke="#5C8EFF" strokeOpacity="0.25" strokeWidth="1.5"/>
+                            <path d="M17.3338 22.9405L23.2741 17.0002L17.3338 11.0598L16.4162 11.9774L20.7628 16.324H10.8622V17.6763H20.7628L16.4162 22.0229L17.3338 22.9405Z" fill="#5C8EFF"/>
+                            <path d="M20.7628 17.6638H10.8747V16.3365H20.7628H20.7929L20.7716 16.3152L16.4338 11.9774L17.3338 11.0775L23.2564 17.0002L17.3338 22.9228L16.4338 22.0229L20.7716 17.6851L20.7929 17.6638H20.7628Z" stroke="#5C8EFF" strokeOpacity="0.25" strokeWidth="1.5"/>
+                          </svg>
+                        </button>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
