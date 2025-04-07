@@ -75,7 +75,16 @@ export function TestimonialsSection({
       {/* Modal for full testimonial text */}
       <Dialog open={!!selectedTestimonial} onOpenChange={(open) => !open && setSelectedTestimonial(null)}>
         <DialogContent className="sm:max-w-md bg-gradient-to-b from-[#171717] to-[#1F1F1F] border border-[#5C8EFF]/25 shadow-[0_0_15px_rgba(92,142,255,0.15)]">
-          <DialogHeader>
+          <DialogHeader className="relative">
+            <button 
+              onClick={() => setSelectedTestimonial(null)}
+              className="absolute top-0 right-0 p-2 rounded-full bg-[#5C8EFF]/10 border border-[#5C8EFF]/30 hover:bg-[#5C8EFF]/20 transition-colors"
+            >
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-white">
+                <path d="M18 6 6 18"></path>
+                <path d="m6 6 12 12"></path>
+              </svg>
+            </button>
             <DialogTitle className="flex items-center gap-4">
               <img 
                 src={selectedTestimonial?.author.avatar} 
@@ -84,14 +93,14 @@ export function TestimonialsSection({
               />
               <div className="flex flex-col items-start">
                 <span className="text-white font-[200] text-lg">{selectedTestimonial?.author.name}</span>
-                <span className="text-sm bg-[#5C8EFF]/10 border border-[#5C8EFF]/30 text-white rounded-full text-xs font-medium px-2 py-0.5 mt-1">{selectedTestimonial?.author.handle}</span>
+                <span className="px-4 py-1 bg-[#5C8EFF]/10 border border-[#5C8EFF]/30 text-white rounded-full text-xs font-medium whitespace-nowrap mt-1">{selectedTestimonial?.author.handle}</span>
               </div>
             </DialogTitle>
           </DialogHeader>
           <DialogDescription className="text-base text-gray-300 pt-4 font-[200] leading-relaxed">
             {selectedTestimonial?.fullText || selectedTestimonial?.text}
           </DialogDescription>
-          <div className="absolute top-3 right-3 opacity-30">
+          <div className="absolute bottom-4 right-4 opacity-30">
             <img 
               src="/images/Elastos Icon - 2.svg" 
               alt="Elastos Logo" 
