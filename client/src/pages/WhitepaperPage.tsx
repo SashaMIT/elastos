@@ -12,7 +12,7 @@ const WhitepaperPage = () => {
     <Layout>
       <div className="relative w-full">
         {/* Full-width hero image with gradient overlay */}
-        <div className="relative w-full h-[350px] overflow-hidden -mt-20">
+        <div className="relative w-full h-[500px] overflow-hidden -mt-32">
           <img 
             src="/images/Roadmap/Elastos 1 Year.jpeg" 
             alt="Elastos Documentation" 
@@ -25,11 +25,11 @@ const WhitepaperPage = () => {
           <div className="absolute inset-0 flex items-center justify-center">
             <div className="container mx-auto px-4">
               <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div className="text-center mb-4 pt-10">
-                  <h1 className="text-4xl sm:text-4xl md:text-5xl font-[200] text-white mb-3">
+                <div className="text-center mb-12">
+                  <h1 className="text-4xl sm:text-4xl md:text-5xl font-bold text-white mb-6">
                     Elastos Documentation
                   </h1>
-                  <p className="text-gray-300 max-w-2xl mx-auto text-md sm:text-base md:text-lg font-[200]">
+                  <p className="text-gray-300 max-w-2xl mx-auto text-md sm:text-base md:text-lg">
                     Explore the technical documentation, whitepapers, and litepapers that define the Elastos ecosystem.
                     These documents serve as the foundation for understanding how Elastos is building the modern internet
                     infrastructure secured by Bitcoin.
@@ -40,7 +40,7 @@ const WhitepaperPage = () => {
           </div>
         </div>
 
-        <div className="container mx-auto px-4 py-8 bg-[#171717]">
+        <div className="container mx-auto px-4 py-12 bg-[#171717]">
           {/* Documents Grid */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-16">
             {/* Whitepaper Card */}
