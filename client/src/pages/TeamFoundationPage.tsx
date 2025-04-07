@@ -2,6 +2,7 @@ import { motion } from "framer-motion";
 import { ArrowRight, ChevronDown, ChevronUp, Github, Globe, Linkedin, Mail, Twitter } from "lucide-react";
 import { ScrollToTop } from "@/components/ScrollToTop";
 import { StackedCircularFooter } from "@/components/ui/stacked-circular-footer";
+import { LogoCarouselDemo } from "@/components/LogoCarouselDemo";
 import { useState } from "react";
 
 export default function TeamFoundationPage() {
@@ -172,10 +173,10 @@ export default function TeamFoundationPage() {
                               <p key={i} className="mb-3">{paragraph}</p>
                             ))}
                           </div>
-                          <div className="text-center mt-4">
+                          <div className="flex justify-end mt-4">
                             <button 
                               onClick={() => toggleBio(index)} 
-                              className="text-blue-500 hover:text-blue-700 text-sm bg-blue-50 dark:bg-blue-900/20 px-3 py-1.5 rounded-full inline-flex items-center"
+                              className="text-[#F6921A] hover:text-[#F6921A]/80 text-sm bg-[#F6921A]/10 dark:bg-[#F6921A]/20 px-3 py-1.5 rounded-full inline-flex items-center"
                             >
                               Show Less <ChevronUp className="w-4 h-4 ml-1"/>
                             </button>
@@ -184,10 +185,10 @@ export default function TeamFoundationPage() {
                       ) : (
                         <>
                           <p className="text-gray-600 dark:text-gray-400 text-sm font-[200] mb-4">{member.bioShort}</p>
-                          <div className="text-center mt-4">
+                          <div className="flex justify-end mt-4">
                             <button 
                               onClick={() => toggleBio(index)} 
-                              className="text-blue-500 hover:text-blue-700 text-sm bg-blue-50 dark:bg-blue-900/20 px-3 py-1.5 rounded-full inline-flex items-center"
+                              className="text-[#F6921A] hover:text-[#F6921A]/80 text-sm bg-[#F6921A]/10 dark:bg-[#F6921A]/20 px-3 py-1.5 rounded-full inline-flex items-center"
                             >
                               Show More <ChevronDown className="w-4 h-4 ml-1"/>
                             </button>
@@ -279,6 +280,21 @@ export default function TeamFoundationPage() {
 
 
 
+
+      {/* Logo Carousel Section */}
+      <section className="py-16 bg-white dark:bg-[#171717]">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="max-w-3xl mx-auto text-center mb-12">
+            <h2 className="text-3xl font-[200] mb-6 text-black dark:text-white">Partners & Exchanges</h2>
+            <p className="text-gray-600 dark:text-gray-400 font-[200]">
+              Elastos has built strong partnerships with various organizations and is available on leading exchanges
+            </p>
+          </div>
+          
+          {/* Import and add LogoCarouselDemo */}
+          <LogoCarouselDemo />
+        </div>
+      </section>
 
       {/* Footer */}
       <StackedCircularFooter />
