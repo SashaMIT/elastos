@@ -10,7 +10,7 @@ export default function AmbassadorsPage() {
       <ScrollToTop />
       
       {/* Coming Soon Overlay - Reduced Blur Effect */}
-      <div className="fixed inset-0 z-50 bg-black/40 backdrop-blur-md flex items-center justify-center">
+      <div className="fixed inset-0 z-50 bg-black/10 backdrop-blur-md flex items-center justify-center">
         {/* Content being worked on (more visible in background) */}
         <div className="absolute inset-0 opacity-40 overflow-hidden">
           <div className="w-full h-full bg-[#171717]/20"></div>
