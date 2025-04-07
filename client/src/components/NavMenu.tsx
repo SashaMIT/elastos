@@ -232,14 +232,14 @@ export function NavMenu() {
                         </div>
                       </NavigationMenuLink>
                     </Link>
-                    <Link href="/submit-proposal">
+                    <a href="https://www.cyberrepublic.org/funding" target="_blank" rel="noopener noreferrer">
                       <NavigationMenuLink className={navigationMenuTriggerStyle()}>
                         <div className="flex items-center gap-2">
-                          <FileCode2 className="h-4 w-4 text-[#94b5ff]" />
-                          <span>How to Submit a Proposal</span>
+                          <FileText className="h-4 w-4 text-[#94b5ff]" />
+                          <span>Submit a Proposal</span>
                         </div>
                       </NavigationMenuLink>
-                    </Link>
+                    </a>
                   </div>
                 </div>
               </NavigationMenuContent>
