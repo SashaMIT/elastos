@@ -12,8 +12,7 @@ export default function TeamFoundationPage() {
       image: "/images/Rong Chen.png",
       bio: "Rong Chen is the visionary behind Elastos. With over 30 years of operating systems development experience, including 18 years at Microsoft, Rong has dedicated his career to creating a safer and more decentralized internet architecture. As the first Chinese employee at Microsoft Research, he conceived the idea of a network operating system to secure internet applications, which ultimately evolved into Elastos.",
       links: [
-        { icon: <Twitter className="w-4 h-4" />, url: "https://twitter.com/rongchen" },
-        { icon: <Globe className="w-4 h-4" />, url: "https://elastos.info" }
+        { icon: <Twitter className="w-4 h-4" />, url: "https://x.com/chen2rong2" }
       ]
     },
     {
@@ -22,8 +21,7 @@ export default function TeamFoundationPage() {
       image: "/images/Sunny.jpeg",
       bio: "Dr. Sunny Feng Han is a co-founder of Elastos with a Ph.D. in Physics from Tsinghua University. He played a crucial role in translating Rong Chen's technical vision into a viable project. Sunny served on the first Cyber Republic Council, where he helped implement critical governance changes including token burning, new tokenomics, and improved transparency. As an educator, Sunny founded the MIT Blockchain Pillar and has lectured on blockchain at Tsinghua University.",
       links: [
-        { icon: <Twitter className="w-4 h-4" />, url: "https://twitter.com/sunnyhanfeng" },
-        { icon: <Linkedin className="w-4 h-4" />, url: "https://linkedin.com/in/sunnyhanfeng" }
+        { icon: <Twitter className="w-4 h-4" />, url: "https://x.com/SunnyFengHan" }
       ]
     },
     {
@@ -31,10 +29,7 @@ export default function TeamFoundationPage() {
       role: "Chief Architect",
       image: "/images/Community/Yipeng.jpg",
       bio: "Yipeng Su joined Elastos in 2017 as Chief Architect and was instrumental in the project's early development. With over 20 years of experience in software and internet industries, Yipeng led both technical strategy and early operations at Elastos. He was the chief initiator of the Cyber Republic concept for community governance and helped develop the CR consensus. Yipeng has continued to shape the technical direction of Elastos, including proposing the Bonded Proof of Stake enhancement.",
-      links: [
-        { icon: <Github className="w-4 h-4" />, url: "https://github.com/elastos" },
-        { icon: <Mail className="w-4 h-4" />, url: "mailto:tech@elastos.org" }
-      ]
+      links: []
     }
   ];
 
@@ -44,8 +39,7 @@ export default function TeamFoundationPage() {
       description: "The BeL2 team is focused on developing a Layer 2 scaling solution that enhances Elastos' throughput while leveraging Bitcoin's security model. Their work includes implementing the latest in zk-rollup technology with an Ethereum-compatible virtual machine.",
       videoSrc: "/videos/BeL2Team.mp4",
       links: [
-        { text: "BeL2 Website", url: "https://bel2.io" },
-        { text: "GitHub", url: "https://github.com/elastos" }
+        { text: "BeL2 Website", url: "https://bel2.org" }
       ]
     },
     {
@@ -53,8 +47,7 @@ export default function TeamFoundationPage() {
       description: "The Essentials team develops the core wallet and identity management application for the Elastos ecosystem. They focus on creating a seamless user experience for managing digital assets, identities, and credentials across the Elastos network.",
       videoSrc: "/videos/EssentialsTeam.mp4",
       links: [
-        { text: "Essentials Download", url: "https://elastos.info/essentials" },
-        { text: "GitHub", url: "https://github.com/elastos" }
+        { text: "Essentials Download", url: "/wallet" }
       ]
     },
     {
@@ -62,8 +55,7 @@ export default function TeamFoundationPage() {
       description: "The Cyber Republic team manages the decentralized governance system of Elastos. They build tools and infrastructure to enable community voting, proposal management, and treasury allocation through the Elastos DAO framework.",
       videoSrc: "/videos/CyberRepublicTeam.mp4",
       links: [
-        { text: "Cyber Republic Website", url: "https://www.cyberrepublic.org" },
-        { text: "GitHub", url: "https://github.com/elastos" }
+        { text: "Cyber Republic Website", url: "/dao" }
       ]
     },
     {
@@ -71,8 +63,7 @@ export default function TeamFoundationPage() {
       description: "The Elacity team focuses on NFT marketplace development and content distribution on the Elastos network. They are building infrastructure for digital asset ownership and management in the Web3 space.",
       videoSrc: "/videos/ElacityTeam.mp4",
       links: [
-        { text: "Elacity Website", url: "https://elacity.io" },
-        { text: "GitHub", url: "https://github.com/elastos" }
+        { text: "Elacity Website", url: "https://labs.ela.city" }
       ]
     }
   ];
@@ -205,12 +196,16 @@ export default function TeamFoundationPage() {
                       <a
                         key={linkIndex}
                         href={link.url}
-                        target="_blank"
+                        target={link.url.startsWith('/') ? "_self" : "_blank"}
                         rel="noopener noreferrer"
-                        className="inline-flex px-4 py-2 bg-[rgba(92,142,255,0.10)] text-[#5C8EFF] rounded-full font-medium transition-all items-center gap-2 border border-[rgba(92,142,255,0.30)] hover:bg-[rgba(92,142,255,0.15)]"
+                        className="inline-flex px-3 py-2 bg-[rgba(92,142,255,0.15)] text-white rounded-full font-[200] transition-all items-center gap-1 border border-[rgba(92,142,255,0.25)] text-sm"
                       >
                         <span>{link.text}</span>
-                        <ArrowRight className="h-4 w-4" />
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 35 34" fill="none">
+                          <circle cx="17.333" cy="17" r="16.75" stroke="#5C8EFF" strokeOpacity="0.25" strokeWidth="1.5"/>
+                          <path d="M17.3338 22.9405L23.2741 17.0002L17.3338 11.0598L16.4162 11.9774L20.7628 16.324H10.8622V17.6763H20.7628L16.4162 22.0229L17.3338 22.9405Z" fill="#5C8EFF"/>
+                          <path d="M20.7628 17.6638H10.8747V16.3365H20.7628H20.7929L20.7716 16.3152L16.4338 11.9774L17.3338 11.0775L23.2564 17.0002L17.3338 22.9228L16.4338 22.0229L20.7716 17.6851L20.7929 17.6638H20.7628Z" stroke="#5C8EFF" strokeOpacity="0.25" strokeWidth="1.5"/>
+                        </svg>
                       </a>
                     ))}
                   </div>
