@@ -1,0 +1,13 @@
+
+
+<script>
+  // Add error handling for chunk loading failures
+  window.addEventListener('error', function(e) {
+    if (e.target.tagName === 'SCRIPT' && e.target.src.includes('chunk-')) {
+      console.error('Failed to load chunk. Attempting to reload in 2 seconds...');
+      setTimeout(() => {
+        window.location.reload();
+      }, 2000);
+    }
+  }, true);
+</script>
