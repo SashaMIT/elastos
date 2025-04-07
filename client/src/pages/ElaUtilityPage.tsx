@@ -13,6 +13,7 @@ import { LogoCarouselDemo } from "@/components/LogoCarouselDemo";
 import { useHashrateData } from "@/hooks/useHashrateData";
 import { useMarketCapData } from "@/hooks/useMarketCapData"; // Added import
 import { useElaSupply } from "@/hooks/useElaSupply"; // Added import
+import { Dots_v2 } from "@/components/ui/spinner"; // Import Dots_v2 spinner component
 
 
 interface GridItemProps {
