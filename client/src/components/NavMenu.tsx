@@ -263,14 +263,14 @@ export function NavMenu() {
                   </div>
                   <div>
                     <h4 className="font-medium text-sm text-muted-foreground mb-2 px-2 text-[#94b5ff]">LEARNING</h4>
-                    <Link href="/videos-tutorials">
+                    <a href="https://www.youtube.com/@elastosinfo" target="_blank" rel="noopener noreferrer">
                       <NavigationMenuLink className={navigationMenuTriggerStyle()}>
                         <div className="flex items-center gap-2">
                           <Video className="h-4 w-4 text-[#94b5ff]" />
                           <span>Videos & Tutorials</span>
                         </div>
                       </NavigationMenuLink>
-                    </Link>
+                    </a>
                     <Link href="/team-foundation">
                       <NavigationMenuLink className={navigationMenuTriggerStyle()}>
                         <div className="flex items-center gap-2">
