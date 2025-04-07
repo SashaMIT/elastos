@@ -1,3 +1,4 @@
+
 "use client"
 
 import React, {
@@ -9,69 +10,6 @@ import React, {
 } from "react"
 import { AnimatePresence, motion } from "framer-motion"
 import { useTheme } from "@/hooks/useTheme"
-import Marquee from "react-fast-marquee";
-
-interface Logo {
-  id: number;
-  name: string;
-  url?: string;
-  img: () => React.ReactNode;
-}
-
-interface LogoCarouselProps {
-  logos: Logo[];
-  columnCount?: number;
-  onLogoClick?: (url: string) => void;
-}
-
-export function LogoCarousel({
-  logos,
-  columnCount = 5,
-  onLogoClick
-}: LogoCarouselProps) {
-  // Calculate rows
-  const rows = Math.ceil(logos.length / columnCount);
-
-  // Prepare the rows of logos
-  const logoRows = Array.from({ length: rows }, (_, rowIndex) => 
-    logos.slice(rowIndex * columnCount, (rowIndex + 1) * columnCount)
-  );
-
-  const handleClick = (logo: Logo) => {
-    if (logo.url && onLogoClick) {
-      onLogoClick(logo.url);
-    }
-  };
-
-  return (
-    <div className="w-full h-auto flex flex-col gap-6">
-      {logoRows.map((row, rowIndex) => (
-        <Marquee
-          key={rowIndex}
-          gradient={false}
-          speed={30}
-          direction={rowIndex % 2 === 0 ? "left" : "right"}
-          className="rounded-lg py-4"
-        >
-          <div className="flex items-center gap-16 px-8">
-            {row.map((logo) => (
-              <div
-                key={logo.id}
-                className="mx-8 flex items-center justify-center"
-                onClick={() => handleClick(logo)}
-                style={{ cursor: logo.url ? 'pointer' : 'default' }}
-              >
-                <div className="flex h-10 min-w-[160px] items-center justify-center">
-                  {logo.img()}
-                </div>
-              </div>
-            ))}
-          </div>
-        </Marquee>
-      ))}
-    </div>
-  );
-}
 
 interface Logo {
   name: string
@@ -175,7 +113,7 @@ interface LogoCarouselProps {
   logos: Logo[]
 }
 
-function LogoCarousel2({ columnCount = 2, logos }: LogoCarouselProps) {
+export function LogoCarousel({ columnCount = 2, logos }: LogoCarouselProps) {
   const [logoSets, setLogoSets] = useState<Logo[][]>([])
   const [currentTime, setCurrentTime] = useState(0)
 
@@ -207,4 +145,4 @@ function LogoCarousel2({ columnCount = 2, logos }: LogoCarouselProps) {
   )
 }
 
-export { LogoColumn, LogoCarousel2 }
+export { LogoColumn }
