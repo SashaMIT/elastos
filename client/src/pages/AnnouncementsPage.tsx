@@ -338,7 +338,7 @@ export function AnnouncementsPage() {
                     />
                   </div>
 
-                  <CardContent className="p-6 flex-grow">
+                  <CardContent className="p-6 pb-2 flex-grow">
                     <div className="flex items-center gap-2 text-xs text-gray-500 dark:text-gray-400 mb-3">
                       {item.categories && item.categories.length > 0 && item.categories[0] !== "News" && (
                         <span className="bg-[rgba(246,146,26,0.15)] text-[#F6921A] px-2 py-1 rounded-full">
@@ -359,12 +359,12 @@ export function AnnouncementsPage() {
                       {item.title}
                     </h2>
 
-                    <p className="text-gray-600 dark:text-gray-400 mb-4 line-clamp-3">
+                    <p className="text-gray-600 dark:text-gray-400 mb-2 line-clamp-3">
                       {item.description.replace(/<[^>]*>/g, '')}
                     </p>
                   </CardContent>
 
-                  <CardFooter className="p-6 pt-0">
+                  <CardFooter className="px-6 py-3">
                     <a 
                       href={item.link} 
                       target="_blank"
