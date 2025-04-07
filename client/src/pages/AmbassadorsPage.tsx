@@ -28,7 +28,6 @@ export default function AmbassadorsPage() {
           <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-[#5C8EFF]/30 to-transparent"></div>
           
           <div className="relative">
-            <span className="absolute -top-12 left-1/2 -translate-x-1/2 bg-[#F6921A]/80 text-white text-xs px-4 py-1.5 rounded-full uppercase tracking-wider font-medium shadow-lg">Under Development</span>
           </div>
           <h2 className="text-4xl md:text-5xl font-[200] text-white mb-6 relative z-10">Ambassador Program</h2>
           <div className="w-24 h-1 bg-gradient-to-r from-[#F6921A] to-[#5C8EFF] mx-auto mb-8 opacity-80"></div>
