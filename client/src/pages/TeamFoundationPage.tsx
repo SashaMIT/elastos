@@ -151,11 +151,11 @@ export default function TeamFoundationPage() {
                 whileHover={{ y: -5 }}
               >
                 <div className="flex flex-col md:flex-row">
-                  <div className="w-full md:w-1/5 h-40 md:h-auto overflow-hidden">
+                  <div className="w-full md:w-1/5 h-64 md:h-auto overflow-hidden">
                     <img 
                       src={member.image} 
                       alt={member.name} 
-                      className="w-full h-full object-cover"
+                      className="w-full h-full object-contain md:object-cover"
                     />
                   </div>
                   <div className="w-full md:w-4/5 p-6">
