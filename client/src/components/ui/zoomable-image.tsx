@@ -49,19 +49,23 @@ export function ImageZoom({
         ),
         ...zoomInProps,
         src: props.src,
+        alt: alt
       }}
     >
       {children ?? (
-        <OptimizedImage
-          className={cn(
-            "cursor-zoom-in rounded-md transition-all",
-            className
-          )}
-          format={format}
-          aspectRatio={aspectRatio}
-          alt={alt}
-          {...props}
-        />
+        <div className="cursor-zoom-in">
+          <OptimizedImage
+            className={cn(
+              "rounded-md transition-all",
+              className
+            )}
+            format={format}
+            aspectRatio={aspectRatio}
+            alt={alt}
+            blurEffect={true}
+            {...props}
+          />
+        </div>
       )}
     </Zoom>
   )
