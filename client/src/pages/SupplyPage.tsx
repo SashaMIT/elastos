@@ -369,15 +369,13 @@ const ELASupplyPage = () => {
                     />
                   </div>
                 </div>
-                <Button
-                  variant="outline"
-                  size="sm"
+                <button
                   onClick={() => setShowData(!showData)}
-                  className="text-xs flex items-center gap-2 whitespace-nowrap"
+                  className="inline-flex px-3 py-2 bg-[rgba(246,146,26,0.10)] text-[#F6921A] rounded-full font-[200] transition-all items-center gap-1 border border-[rgba(246,146,26,0.50)] text-sm"
                 >
                   <Table className="h-4 w-4 text-[#F6921A]" />
-                  {showData ? 'Hide Details' : 'Show Details'}
-                </Button>
+                  <span>{showData ? 'Hide Details' : 'Show Details'}</span>
+                </button>
               </div>
             </div>
             <div style={{ width: '100%', height: 300 }} className="sm:h-[400px] touch-pan-y touch-action-pan-y select-none transition-transform duration-300 ease-in-out">
