@@ -12,6 +12,7 @@ import { useHashrateData } from '../hooks/useHashrateData';
 import { AreaChart, Area, XAxis, YAxis, Tooltip as RechartsTooltip, ResponsiveContainer } from 'recharts';
 import { StackedCircularFooter } from "@/components/ui/stacked-circular-footer";
 import { SEO } from "@/components/SEO";
+import Breadcrumbs from "@/components/Breadcrumbs"; // Added import for Breadcrumbs
 
 const BuyElaPage = () => {
   const { data: hashrateData } = useHashrateData();
@@ -85,6 +86,9 @@ const BuyElaPage = () => {
         ogImage="/images/Elastosbanner.jpg"
         canonicalUrl="/buy-ela"
       />
+      <div className="container mx-auto pt-20"> {/* Added container for breadcrumbs */}
+        <Breadcrumbs /> {/* Added Breadcrumbs component */}
+      </div>
       <Card className="max-w-6xl mx-auto dark:bg-[#171717] dark:text-white border-0">
         <CardHeader className="p-3 dark:bg-[#171717]">
           <CardTitle className="flex items-center gap-2 text-base dark:text-white">

@@ -1,10 +1,11 @@
-import React, { useState } from 'react';
+import React, { useState } from "react";
 import { Card } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Lens } from "@/components/ui/lens";
 import { ExternalLink, Share2, Terminal, Wallet, Image, Building2 } from 'lucide-react';
 import { motion } from "framer-motion";
 import { SEO } from "@/components/SEO";
+import Breadcrumbs from "@/components/Breadcrumbs";
 
 type Project = {
   name: string;
@@ -474,12 +475,15 @@ export default function EcosystemPage() {
   return (
     <div className="min-h-screen bg-white dark:bg-[#171717] text-black dark:text-white">
       <SEO 
-        title="Elastos Ecosystem | Web3 Projects & Partners"
-        description="Explore the growing ecosystem of projects, applications, and partners building on Elastos technology to create a better internet."
-        keywords="Elastos ecosystem, dApps, blockchain projects, Elacity, BeL2, Elastos partners, Web3"
+        title="Elastos Ecosystem | Projects & Partners"
+        description="Explore the growing Elastos ecosystem of projects, partners, and applications building on the Elastos blockchain."
+        keywords="Elastos ecosystem, blockchain projects, blockchain applications, decentralized applications, dApps"
         ogImage="/images/Elastosbanner.jpg"
         canonicalUrl="/ecosystem"
       />
+      <div className="container mx-auto pt-20">
+        <Breadcrumbs />
+      </div>
       <div className="flex flex-col lg:flex-row">
         {/* Mobile Category Selector */}
         <div className="lg:hidden p-4 pt-4 overflow-x-auto">

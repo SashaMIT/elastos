@@ -6,6 +6,10 @@ import { Dots_v2 } from "@/components/ui/spinner";
 import { StackedCircularFooter } from "@/components/ui/stacked-circular-footer";
 import SEO from '@/components/SEO'; // Import the SEO component
 
+// Placeholder Breadcrumbs component
+const Breadcrumbs = () => <nav>Placeholder Breadcrumbs</nav>;
+
+
 const SecurityPage = () => {
   const { data: hashrateData, isLoading, error } = useHashrateData();
   const [isError, setIsError] = useState(false);
@@ -34,6 +38,9 @@ const SecurityPage = () => {
         ogImage="/images/Security.png"
         canonicalUrl="/security"
       /> {/* Added SEO component here */}
+      <div className="container mx-auto pt-20"> {/* Added breadcrumbs container */}
+        <Breadcrumbs /> {/* Added Breadcrumbs component */}
+      </div>
       {isError ? (
         <Card className="max-w-4xl mx-auto dark:bg-[#151515] dark:border-neutral-800">
           <CardContent className="p-8 text-center">
