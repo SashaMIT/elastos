@@ -245,50 +245,39 @@ export function NavMenu() {
               </NavigationMenuContent>
             </NavigationMenuItem>
             <NavigationMenuItem>
-              <NavigationMenuTrigger className="hover:text-[#F6921A] transition-all font-[200]">Insights</NavigationMenuTrigger>
+              <NavigationMenuTrigger className="font-[200]">Insights</NavigationMenuTrigger>
               <NavigationMenuContent>
-                <div className="p-4 md:w-[400px] lg:w-[500px] lg:grid-cols-2">
-                  <Link to="/announcements">
-                    <NavigationMenuLink asChild>
-                      <div className="grid gap-3 p-4 items-start rounded-md hover:bg-gray-100 dark:hover:bg-[#232323] transition-colors select-none group">
-                        <div className="flex items-center gap-2 transition-colors">
-                          <Megaphone className="h-4 w-4 text-gray-500 group-hover:text-[#F6921A] dark:text-white/50 transition-all" />
-                          <div className="text-sm font-[200] group-hover:text-[#F6921A] transition-all">Announcements</div>
+                <div className="grid w-[400px] gap-1 p-2 md:w-[500px] md:grid-cols-2">
+                  <div>
+                    <h4 className="font-medium text-sm text-muted-foreground mb-2 px-2 text-[#94b5ff]">NEWS & UPDATES</h4>
+                    <Link to="/announcements">
+                      <NavigationMenuLink className={navigationMenuTriggerStyle()}>
+                        <div className="flex items-center gap-2">
+                          <Megaphone className="h-4 w-4 text-[#94b5ff]" />
+                          <span>Announcements</span>
                         </div>
-                        <div className="text-xs text-gray-400 dark:text-gray-400 font-[200] transition-all">
-                          Latest announcements and updates from Elastos
+                      </NavigationMenuLink>
+                    </Link>
+                    <Link to="/news">
+                      <NavigationMenuLink className={navigationMenuTriggerStyle()}>
+                        <div className="flex items-center gap-2">
+                          <Newspaper className="h-4 w-4 text-[#94b5ff]" />
+                          <span>News</span>
                         </div>
-                      </div>
-                    </NavigationMenuLink>
-                  </Link>
-
-                  <Link to="/news">
-                    <NavigationMenuLink asChild>
-                      <div className="grid gap-3 p-4 items-start rounded-md hover:bg-gray-100 dark:hover:bg-[#232323] transition-colors select-none group">
-                        <div className="flex items-center gap-2 transition-colors">
-                          <Newspaper className="h-4 w-4 text-gray-500 group-hover:text-[#F6921A] dark:text-white/50 transition-all" />
-                          <div className="text-sm font-[200] group-hover:text-[#F6921A] transition-all">News</div>
+                      </NavigationMenuLink>
+                    </Link>
+                  </div>
+                  <div>
+                    <h4 className="font-medium text-sm text-muted-foreground mb-2 px-2 text-[#94b5ff]">RESOURCES</h4>
+                    <Link to="/media-kit">
+                      <NavigationMenuLink className={navigationMenuTriggerStyle()}>
+                        <div className="flex items-center gap-2">
+                          <Download className="h-4 w-4 text-[#94b5ff]" />
+                          <span>Media Kit</span>
                         </div>
-                        <div className="text-xs text-gray-400 dark:text-gray-400 font-[200] transition-all">
-                          Latest news and updates about Elastos
-                        </div>
-                      </div>
-                    </NavigationMenuLink>
-                  </Link>
-
-                  <Link to="/media-kit">
-                    <NavigationMenuLink asChild>
-                      <div className="grid gap-3 p-4 items-start rounded-md hover:bg-gray-100 dark:hover:bg-[#232323] transition-colors select-none group">
-                        <div className="flex items-center gap-2 transition-colors">
-                          <Download className="h-4 w-4 text-gray-500 group-hover:text-[#F6921A] dark:text-white/50 transition-all" />
-                          <div className="text-sm font-[200] group-hover:text-[#F6921A] transition-all">Media Kit</div>
-                        </div>
-                        <div className="text-xs text-gray-400 dark:text-gray-400 font-[200] transition-all">
-                          Branding guidelines, logos, and assets
-                        </div>
-                      </div>
-                    </NavigationMenuLink>
-                  </Link>
+                      </NavigationMenuLink>
+                    </Link>
+                  </div>
                 </div>
               </NavigationMenuContent>
             </NavigationMenuItem>
