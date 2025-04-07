@@ -15,8 +15,10 @@ export function LogoCarouselDemo() {
       img: () => (
         <img
           src="/images/glide.png"
-          alt="Glide"
+          alt="Glide - Decentralized Exchange"
           loading="lazy"
+          width="120"
+          height="36"
           className="h-9 w-auto object-contain hover:opacity-80 transition-opacity cursor-pointer"
         />
       ),
@@ -27,7 +29,7 @@ export function LogoCarouselDemo() {
       img: () => (
         <img
           src="/images/Kucoin.png"
-          alt="Kucoin"
+          alt="Kucoin - Crypto Exchange"
           className="h-9 w-auto object-contain hover:opacity-80 transition-opacity cursor-pointer"
         />
       ),
@@ -40,13 +42,17 @@ export function LogoCarouselDemo() {
           {/* Light mode image */}
           <img
             src="/images/Coinbase.png"
-            alt="Coinbase Light"
+            alt="Coinbase - Cryptocurrency Exchange"
+            width="140"
+            height="28"
             className="block dark:hidden h-7 w-auto object-contain hover:opacity-80 transition-opacity cursor-pointer"
           />
           {/* Dark mode image */}
           <img
             src="/images/Coinbase-w.png"
-            alt="Coinbase Dark"
+            alt="Coinbase - Cryptocurrency Exchange"
+            width="140"
+            height="28"
             className="hidden dark:block h-7 w-auto object-contain hover:opacity-80 transition-opacity cursor-pointer"
           />
         </>
@@ -58,7 +64,7 @@ export function LogoCarouselDemo() {
       img: () => (
         <img
           src="/images/Gateio.png"
-          alt="Gate.io"
+          alt="Gate.io - Cryptocurrency Trading Platform"
           className="h-9 w-auto object-contain hover:opacity-80 transition-opacity cursor-pointer"
         />
       ),

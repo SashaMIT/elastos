@@ -1,0 +1,10 @@
+
+User-agent: *
+Allow: /
+
+# Disallow sensitive or utility pages if needed
+# Disallow: /admin/
+# Disallow: /private/
+
+# Sitemap location
+Sitemap: https://elastos.org/sitemap.xml
