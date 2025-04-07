@@ -136,7 +136,7 @@ export default function TeamFoundationPage() {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 gap-8 max-w-4xl mx-auto">
             {keyContributors.map((member, index) => (
               <motion.div
                 key={index}
