@@ -233,15 +233,10 @@
     --chart-4: 280 65% 60%;
     --chart-5: 340 75% 55%
   }
-  /* Ensure proper mode colors are applied */
+  /* Ensure light mode is properly applied */
   :root:not(.dark) {
     background-color: #ffffff;
     color: black;
-  }
-  
-  :root.dark {
-    background-color: #171717;
-    color: white;
   }
 }
 
