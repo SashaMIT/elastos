@@ -5,6 +5,7 @@ import Dao from './pages/Dao'; // Added import for Dao page
 import SocialChannelsPage from './pages/SocialChannelsPage';
 import MediaKit from './pages/MediaKit'; // Import MediaKit component
 import Bridge from './pages/Bridge'; // Import Bridge component
+import AnnouncementsPage from './pages/AnnouncementsPage'; // Import AnnouncementsPage component
 
 import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
@@ -61,6 +62,7 @@ function Router() {
           <Route path="/social-channels" component={SocialChannelsPage} />
           <Route path="/media-kit" component={MediaKit} /> {/* Added MediaKit route */}
           <Route path="/bridge" component={Bridge} /> {/* Added Bridge route */}
+          <Route path="/announcements" component={AnnouncementsPage} /> {/* Added Announcements route */}
           <Route>404 Page Not Found</Route>
         </Switch>
       </Suspense>
