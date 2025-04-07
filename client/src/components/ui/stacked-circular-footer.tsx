@@ -19,7 +19,7 @@ export function StackedCircularFooter() {
             <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6 w-full max-w-5xl">
               {/* Explore Section */}
               <div>
-                <h3 className="font-semibold mb-4">Explore</h3>
+                <h3 className="font-semibold mb-4 text-[#F6921A]">Explore</h3>
                 <div className="flex flex-col gap-2">
                   <Link href="/vision" className="hover:text-primary">Our Vision</Link>
                   <Link href="/roadmap" className="hover:text-primary">Roadmap</Link>
@@ -30,7 +30,7 @@ export function StackedCircularFooter() {
               
               {/* Ecosystem Section */}
               <div>
-                <h3 className="font-semibold mb-4">Ecosystem</h3>
+                <h3 className="font-semibold mb-4 text-[#F6921A]">Ecosystem</h3>
                 <div className="flex flex-col gap-2">
                   <Link href="/use-cases" className="hover:text-primary">Use Cases</Link>
                   <Link href="/ecosystem" className="hover:text-primary">Ecosystem</Link>
@@ -41,7 +41,7 @@ export function StackedCircularFooter() {
               
               {/* Network Section */}
               <div>
-                <h3 className="font-semibold mb-4">Network</h3>
+                <h3 className="font-semibold mb-4 text-[#F6921A]">Network</h3>
                 <div className="flex flex-col gap-2">
                   <Link href="/wallet" className="hover:text-primary">Wallet</Link>
                   <a href="https://staking.elastos.net/" target="_blank" rel="noopener noreferrer" className="hover:text-primary">Staking & Nodes</a>
@@ -52,7 +52,7 @@ export function StackedCircularFooter() {
               
               {/* Resources Section */}
               <div>
-                <h3 className="font-semibold mb-4">Resources</h3>
+                <h3 className="font-semibold mb-4 text-[#F6921A]">Resources</h3>
                 <div className="flex flex-col gap-2">
                   <Link href="/security" className="hover:text-primary">Security</Link>
                   <Link href="/supply" className="hover:text-primary">Supply</Link>
@@ -63,7 +63,7 @@ export function StackedCircularFooter() {
               
               {/* Build Section */}
               <div>
-                <h3 className="font-semibold mb-4">Build</h3>
+                <h3 className="font-semibold mb-4 text-[#F6921A]">Build</h3>
                 <div className="flex flex-col gap-2">
                   <a href="https://elastos.dev/" target="_blank" rel="noopener noreferrer" className="hover:text-primary">Developer Portal</a>
                   <a href="https://elastos.dev/sdk/welcome/" target="_blank" rel="noopener noreferrer" className="hover:text-primary">SDKs & Tools</a>
@@ -74,7 +74,7 @@ export function StackedCircularFooter() {
               
               {/* Connect Section */}
               <div>
-                <h3 className="font-semibold mb-4">Connect</h3>
+                <h3 className="font-semibold mb-4 text-[#F6921A]">Connect</h3>
                 <div className="flex flex-col gap-2">
                   <Link href="/social-channels" className="hover:text-primary">Social Channels</Link>
                   <Link href="/ambassador-program" className="hover:text-primary">Ambassador Program</Link>
