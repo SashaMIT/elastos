@@ -807,8 +807,8 @@ const LandingPage = () => {
             />
             <ImageZoom
               key="12"
-              src="/images/Roadmap/Cyber Republic DAO meetup.jpeg"
-              alt="Cyber Republic DAO meetup"
+              src="/images/Community/Sunny Vitalik.jpeg"
+              alt="Sunny with Vitalik Buterin"
               className="w-full aspect-square object-cover"
               loading="lazy"
               width={300}
