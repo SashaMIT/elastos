@@ -288,8 +288,7 @@ const HashrateVisualizer = () => {
                         onClick={() => setSelectedScale(key)}
                         className={cn(
                           "w-full gap-2 min-h-[2.5rem] px-2 py-1 font-[200]",
-                          selectedScale === key && "shadow-lg",
-                          selectedScale === key && "bg-[#333333] text-white" // Dark branded color
+                          selectedScale === key && "shadow-lg"
                         )}
                       >
                         <span>{scales[key].icon}</span>
