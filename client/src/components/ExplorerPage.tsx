@@ -224,7 +224,7 @@ const ecosystemFeatures = [
   return (
     <div className="min-h-screen bg-[#171717] overflow-hidden">
       {/* Hero Section with Image and Gradient Overlay */}
-      <div className="relative w-full h-[350px] overflow-hidden -mt-20">
+      <div className="relative w-full h-[350px] overflow-hidden mt-0 -mt-16">
         <img 
           src="/images/Roadmap/Community crowd.png" 
           alt="Elastos Explorer" 
@@ -452,7 +452,7 @@ const ecosystemFeatures = [
                   href="https://esc.elastos.io/"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex px-3 py-2 bg-[rgba(92,142,255,0.10)] text-[#5C8EFF] rounded-full font-medium transition-all items-center gap-1 border border-[rgba(92,142,255,0.50)] text-sm"
+                  className="inline-flex px-3 py-2 bg-[rgba(92,14255,0.10)] text-[#5C8EFF] rounded-full font-medium transition-all items-center gap-1 border border-[rgba(92,142,255,0.50)] text-sm"
                 >
                   <span>ESC Explorer</span>
                   <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 35 34" fill="none">
