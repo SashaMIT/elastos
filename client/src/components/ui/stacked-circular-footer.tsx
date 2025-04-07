@@ -78,8 +78,8 @@ export function StackedCircularFooter() {
                 <div className="flex flex-col gap-2">
                   <Link href="/social-channels" className="hover:text-primary">Social Channels</Link>
                   <Link href="/media-kit" className="hover:text-primary">Media Kit</Link>
-                  <Link href="/contact-us" className="hover:text-primary">Contact Us</Link>
-                  <Link href="/blogs-news" className="hover:text-primary">Blogs & News</Link>
+                  <a href="https://contact.elastos.net" target="_blank" rel="noopener noreferrer" className="hover:text-primary">Contact Us</a>
+                  <a href="https://blog.elastos.net" target="_blank" rel="noopener noreferrer" className="hover:text-primary">Blogs & News</a>
                 </div>
               </div>
             </div>

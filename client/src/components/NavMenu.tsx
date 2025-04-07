@@ -252,14 +252,14 @@ export function NavMenu() {
                         </div>
                       </NavigationMenuLink>
                     </Link>
-                    <Link href="/blogs-news">
+                    <a href="https://blog.elastos.net" target="_blank" rel="noopener noreferrer">
                       <NavigationMenuLink className={navigationMenuTriggerStyle()}>
                         <div className="flex items-center gap-2">
                           <BookOpen className="h-4 w-4 text-[#94b5ff]" />
                           <span>Blogs & News</span>
                         </div>
                       </NavigationMenuLink>
-                    </Link>
+                    </a>
                   </div>
                   <div>
                     <h4 className="font-medium text-sm text-muted-foreground mb-2 px-2 text-[#94b5ff]">LEARNING</h4>
@@ -318,14 +318,14 @@ export function NavMenu() {
                         </div>
                       </NavigationMenuLink>
                     </Link>
-                    <Link href="/contact-us">
+                    <a href="https://contact.elastos.net" target="_blank" rel="noopener noreferrer">
                       <NavigationMenuLink className={navigationMenuTriggerStyle()}>
                         <div className="flex items-center gap-2">
                           <HelpCircle className="h-4 w-4 text-[#94b5ff]" />
                           <span className="text-white">Contact Us</span>
                         </div>
                       </NavigationMenuLink>
-                    </Link>
+                    </a>
                   </div>
                 </div>
               </NavigationMenuContent>

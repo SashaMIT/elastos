@@ -129,10 +129,10 @@ export const SidebarMenu = () => {
                 <Bell className="h-4 w-4 text-[#94b5ff]" />
                 <span>Announcements</span>
               </Link>
-              <Link href="/blogs-news" className="py-2 hover:text-[#F6921A] flex items-center gap-2 text-white">
+              <a href="https://blog.elastos.net" target="_blank" rel="noopener noreferrer" className="py-2 hover:text-[#F6921A] flex items-center gap-2 text-white">
                 <BookOpen className="h-4 w-4 text-[#94b5ff]" />
                 <span>Blogs & News</span>
-              </Link>
+              </a>
 
               <h4 className="font-medium text-sm text-[#94b5ff] mb-2 mt-4">LEARNING</h4>
               <a href="https://www.youtube.com/@elastosinfo" target="_blank" rel="noopener noreferrer" className="py-2 hover:text-[#F6921A] flex items-center gap-2 text-white">
@@ -166,10 +166,10 @@ export const SidebarMenu = () => {
                 <Download className="h-4 w-4 text-[#94b5ff]" />
                 <span>Media Kit</span>
               </Link>
-              <Link href="/contact-us" className="py-2 hover:text-[#F6921A] flex items-center gap-2 text-white">
+              <a href="https://contact.elastos.net" target="_blank" rel="noopener noreferrer" className="py-2 hover:text-[#F6921A] flex items-center gap-2 text-white">
                 <HelpCircle className="h-4 w-4 text-[#94b5ff]" />
                 <span>Contact Us</span>
-              </Link>
+              </a>
             </div>
           </AccordionContent>
         </AccordionItem>
