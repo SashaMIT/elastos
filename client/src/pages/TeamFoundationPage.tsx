@@ -284,14 +284,6 @@ export default function TeamFoundationPage() {
       {/* Logo Carousel Section */}
       <section className="py-16 bg-white dark:bg-[#171717]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="max-w-3xl mx-auto text-center mb-12">
-            <h2 className="text-3xl font-[200] mb-6 text-black dark:text-white">Partners & Exchanges</h2>
-            <p className="text-gray-600 dark:text-gray-400 font-[200]">
-              Elastos has built strong partnerships with various organizations and is available on leading exchanges
-            </p>
-          </div>
-          
-          {/* Import and add LogoCarouselDemo */}
           <LogoCarouselDemo />
         </div>
       </section>
