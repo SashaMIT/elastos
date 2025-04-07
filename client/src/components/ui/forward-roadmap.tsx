@@ -7,16 +7,16 @@ export const ForwardRoadmap = () => {
       quarter: 'Q1-Q2 2025',
       items: [
         {
-          title: 'Elastos 2.0 Launch',
-          details: 'Complete infrastructure upgrade with enhanced security and scalability features'
+          title: 'Elastos 2.0 Launch with BeL2 Arbiter Launch',
+          details: 'Bitcoin Elastos Layer 2 Arbiter nodes to support Native Bitcoin DeFi with ELA staking'
         },
         {
-          title: 'DID 2.0 Integration',
-          details: 'Advanced decentralized identity system with improved verification mechanisms'
+          title: 'Ecosystem dApps',
+          details: 'Launch of Elacity v3 Marketplace for digital asset trading in audio and video markets'
         },
         {
-          title: 'Smart Contract Updates',
-          details: 'Implementation of new contract standards and optimization protocols'
+          title: 'World Computer Support',
+          details: 'Integrating Login and DePin connectivity'
         }
       ]
     },
