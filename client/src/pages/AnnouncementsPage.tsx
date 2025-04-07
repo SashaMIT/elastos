@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { StackedCircularFooter } from "@/components/ui/stacked-circular-footer";
@@ -24,7 +23,7 @@ export function AnnouncementsPage() {
   const [loading, setLoading] = useState<boolean>(true);
   const [error, setError] = useState<string | null>(null);
   const [selectedCategory, setSelectedCategory] = useState<string | null>("All");
-  
+
   useEffect(() => {
     fetchNews();
   }, []);
@@ -37,30 +36,30 @@ export function AnnouncementsPage() {
         "https://api.allorigins.win/get?url=" + 
         encodeURIComponent("https://rss.app/feeds/tQGWZNuxHC69yKOm.xml")
       );
-      
+
       if (!response.ok) {
         throw new Error("Failed to fetch news");
       }
-      
+
       const data = await response.json();
-      
+
       if (!data.contents) {
         throw new Error("Invalid RSS feed data");
       }
-      
+
       // Parse the XML content
       const parser = new DOMParser();
       const xmlDoc = parser.parseFromString(data.contents, "text/xml");
-      
+
       const items = xmlDoc.querySelectorAll("item");
       const parsedItems: NewsItem[] = [];
-      
+
       items.forEach((item) => {
         const title = item.querySelector("title")?.textContent || "";
         const link = item.querySelector("link")?.textContent || "";
         const pubDate = item.querySelector("pubDate")?.textContent || "";
         const description = item.querySelector("description")?.textContent || "";
-        
+
         // Get enclosure (image) if available
         let enclosure;
         const enclosureElement = item.querySelector("enclosure");
@@ -70,7 +69,7 @@ export function AnnouncementsPage() {
             type: enclosureElement.getAttribute("type") || "",
           };
         }
-        
+
         // Try to get categories
         const categoryElements = item.querySelectorAll("category");
         const categories: string[] = [];
@@ -79,11 +78,34 @@ export function AnnouncementsPage() {
             categories.push(cat.textContent);
           }
         });
-        
+
         // Try to get content
         const content = item.querySelector("content\\:encoded")?.textContent || 
                        item.querySelector("content")?.textContent || "";
-        
+
+        // Try to extract image from content or description if no enclosure
+        if (!enclosure || !enclosure.url) {
+          // Check content first
+          const mediaMatch = content.match(/<img.*?src=["'](.*?)["']/i);
+
+          // If not found in content, check description
+          const descMediaMatch = !mediaMatch ? description.match(/<img.*?src=["'](.*?)["']/i) : null;
+
+          if (mediaMatch && mediaMatch[1]) {
+            enclosure = {
+              url: mediaMatch[1],
+              type: "image/jpeg" // Assume image type
+            };
+            console.log(`Extracted image from content: ${mediaMatch[1]}`);
+          } else if (descMediaMatch && descMediaMatch[1]) {
+            enclosure = {
+              url: descMediaMatch[1],
+              type: "image/jpeg"
+            };
+            console.log(`Extracted image from description: ${descMediaMatch[1]}`);
+          }
+        }
+
         parsedItems.push({
           title,
           link,
@@ -93,14 +115,17 @@ export function AnnouncementsPage() {
           content,
           categories: categories.length > 0 ? categories : ["News"]
         });
+
+        // Log each processed item
+        console.log(`Processed item: ${title} - Image: ${enclosure?.url || 'None'}`);
       });
-      
+
       setNewsItems(parsedItems);
       setError(null);
     } catch (err) {
       console.error("Error fetching news:", err);
       setError("Failed to load news. Please try again later.");
-      
+
       // If RSS feed fails, add some fallback items from the screenshot
       const fallbackItems = [
         {
@@ -108,38 +133,58 @@ export function AnnouncementsPage() {
           link: "#",
           pubDate: "January 30, 2024",
           description: "Elastos secures $20 million from Rollman Management to expand Bitcoin-based DeFi and Web3 infrastructure.",
-          categories: ["Investment", "DeFi"]
+          categories: ["Investment", "DeFi"],
+          enclosure: {
+            url: "/images/Elastosvideoimage.png",
+            type: "image/png"
+          }
         },
         {
           title: "Bitcoin DeFi project Elastos closes $20M investment round",
           link: "#",
           pubDate: "January 30, 2024",
           description: "Web3 infrastructure provider Elastos has closed a $20-million investment round as part of a broader push to expand Bitcoin-based DeFi.",
-          categories: ["Investment", "DeFi"]
+          categories: ["Investment", "DeFi"],
+          enclosure: {
+            url: "/images/Elastos New Logo_Kit-01.png",
+            type: "image/png"
+          }
         },
         {
           title: "Elastos Secures $20M Funding to Scale Its Native Bitcoin Protocol",
           link: "#",
           pubDate: "January 30, 2024",
           description: "The financing comes from the private investment company Rollman Management.",
-          categories: ["Funding", "Protocol"]
+          categories: ["Funding", "Protocol"],
+          enclosure: {
+            url: "/images/BeL2.png",
+            type: "image/png"
+          }
         },
         {
           title: "Elastos Bitcoin DeFi Secures $20M Funding for Expansion",
           link: "#",
           pubDate: "January 30, 2024",
           description: "Elastos Bitcoin DeFi secures $20M funding to scale BeL2, enabling BTC holders to collateralize Bitcoin-backed stablecoins.",
-          categories: ["Funding", "DeFi"]
+          categories: ["Funding", "DeFi"],
+          enclosure: {
+            url: "/images/Roadmap/CoinTelegraph Report.png",
+            type: "image/png"
+          }
         },
         {
           title: "Elastos raises $20 million to enhance DeFi on Bitcoin",
           link: "#",
           pubDate: "January 30, 2024",
           description: "Elastos has obtained $20 million to develop BeL2, a protocol that aims to integrate DeFi services on the Bitcoin network.",
-          categories: ["Funding", "DeFi"]
+          categories: ["Funding", "DeFi"],
+          enclosure: {
+            url: "/images/Ecosystem/BeL2 Lending dapp.png",
+            type: "image/png"
+          }
         }
       ];
-      
+
       setNewsItems(fallbackItems);
     } finally {
       setLoading(false);
@@ -150,12 +195,12 @@ export function AnnouncementsPage() {
   const allCategories = ["All", ...Array.from(new Set(
     newsItems.flatMap(item => item.categories || [])
   ))];
-  
+
   // Filter news items by selected category
   const filteredNews = selectedCategory === "All" 
     ? newsItems 
     : newsItems.filter(item => item.categories?.includes(selectedCategory));
-  
+
   // Format date helper function
   const formatDate = (dateString: string): string => {
     try {
@@ -169,7 +214,7 @@ export function AnnouncementsPage() {
       return dateString; // Return original if parsing fails
     }
   };
-  
+
   // Extract reading time (3-5 min based on description length)
   const getReadingTime = (description: string): string => {
     const words = description.split(' ').length;
@@ -258,16 +303,20 @@ export function AnnouncementsPage() {
               >
                 <Card className="h-full flex flex-col bg-white dark:bg-neutral-900 rounded-xl shadow-sm border border-gray-200 dark:border-neutral-800">
                   {/* Card image */}
-                  {item.enclosure?.url && item.enclosure.type.startsWith('image/') && (
-                    <div className="relative h-48 w-full overflow-hidden rounded-t-xl">
-                      <img 
-                        src={item.enclosure.url} 
-                        alt={item.title}
-                        className="h-full w-full object-cover transition-all hover:scale-105"
-                      />
-                    </div>
-                  )}
-                  
+                  <div className="relative h-48 w-full overflow-hidden rounded-t-xl">
+                    <img 
+                      src={item.enclosure?.url || '/images/Elastos New Logo_Kit-03.png'} 
+                      alt={item.title}
+                      className="h-full w-full object-cover transition-all hover:scale-105"
+                      onError={(e) => {
+                        // If image fails to load, replace with default image
+                        const target = e.target as HTMLImageElement;
+                        target.onerror = null; // Prevent infinite loop
+                        target.src = '/images/Elastos New Logo_Kit-03.png';
+                      }}
+                    />
+                  </div>
+
                   <CardContent className="p-6 flex-grow">
                     <div className="flex items-center gap-2 text-xs text-gray-500 dark:text-gray-400 mb-3">
                       {item.categories && item.categories[0] && (
@@ -293,7 +342,7 @@ export function AnnouncementsPage() {
                       {item.description}
                     </p>
                   </CardContent>
-                  
+
                   <CardFooter className="p-6 pt-0">
                     <a 
                       href={item.link} 
