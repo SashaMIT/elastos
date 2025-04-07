@@ -20,6 +20,8 @@ import { Toaster } from "@/components/ui/toaster";
 import Layout from "./components/Layout";
 import { lazy, Suspense } from "react";
 import { Spinner } from "@/components/ui/spinner";
+import { preloadResources } from './lib/preload'; // Added import for preloadResources
+
 
 const LandingPage = lazy(() => import("./pages/LandingPage"));
 const HomePage = lazy(() => import("./pages/HomePage"));
@@ -77,6 +79,9 @@ function Router() {
 import { monitorConnection } from "./lib/utils";
 
 monitorConnection();
+
+// Preload critical resources
+preloadResources();
 
 createRoot(document.getElementById("root")!).render(
   <StrictMode>
