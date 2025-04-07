@@ -333,26 +333,3 @@ const WhitepaperPage = () => {
 };
 
 export default WhitepaperPage;
-
-// Added a simple Breadcrumbs component (replace with your actual implementation)
-const Breadcrumbs = () => {
-  return (
-    <nav className="flex" aria-label="Breadcrumb">
-      <ol className="inline-flex items-center space-x-1 md:space-x-3">
-        <li className="inline-flex items-center">
-          <Link to="/" className="text-gray-700 hover:text-blue-600">
-            Home
-          </Link>
-        </li>
-        <li>
-          <div className="flex items-center">
-            <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 text-gray-400" viewBox="0 0 20 20" fill="currentColor">
-              <path fillRule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clipRule="evenodd" />
-            </svg>
-            <span className="ml-1 text-gray-500">Whitepaper</span>
-          </div>
-        </li>
-      </ol>
-    </nav>
-  );
-};
