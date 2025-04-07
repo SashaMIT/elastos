@@ -109,7 +109,7 @@ const elaTokens = [
   {
     network: "Elastos Mainchain",
     tokenType: "Native coin",
-    description: "A UTXO-model chain in which ELA coins are used to pay transaction fees, stake, register a validator, and participate in governance. The mainchain is the trust zone for the ecosystem on account of it being secured by Bitcoin.",
+    description: "A Bitcoin-secured UTXO chain where ELA powers fees, staking, validator registration, and governance — with the mainchain as Elastos' trust zone.",
     decimals: 8,
     chainId: "Mainchain",
     explorerUrl: "https://blockchain.elastos.io/",
