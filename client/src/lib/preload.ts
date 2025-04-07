@@ -1,4 +1,6 @@
 
+import { preloadImage } from './imageUtils';
+
 /**
  * Utility function to preload components or assets
  */
@@ -25,4 +27,34 @@ export const preloadRoute = (route: string) => {
   if (routeMap[route]) {
     preloadComponent(routeMap[route]);
   }
+  
+  // Preload key images based on route
+  const routeImages: Record<string, string[]> = {
+    '/': ['/images/Elastosbanner.jpg', '/images/Hero image.png', '/images/Elastos Vision World Computer.png'],
+    '/vision': ['/images/Elastos Vision World Computer.png', '/images/Rong Chen.png', '/images/Sunny.jpeg'],
+    '/security': ['/images/Security.png'],
+    // Add more routes and their key images as needed
+  };
+  
+  if (routeImages[route]) {
+    routeImages[route].forEach(imgSrc => {
+      preloadImage(imgSrc, { format: 'webp', quality: 80 });
+    });
+  }
+};
+
+/**
+ * Preload important site images
+ */
+export const preloadCriticalImages = () => {
+  const criticalImages = [
+    '/images/Elastosbanner.jpg',
+    '/images/Elastos Logo Light - 1.png',
+    '/images/Elastos Logo Dark - 1.png',
+    '/images/placeholder-image.jpg'
+  ];
+  
+  criticalImages.forEach(src => {
+    preloadImage(src, { format: 'webp', quality: 90 });
+  });
 };

@@ -2,6 +2,8 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { CheckCircle } from "lucide-react";
+import { OptimizedImage } from "@/components/ui/optimized-image";
+import { OptimizedBackground } from "@/components/ui/optimized-background";
 import { FeaturesSectionWithHoverEffects } from "@/components/blocks/feature-section-with-hover-effects";
 import { FeaturesSectionWithBentoGrid } from "@/components/blocks/feature-section-with-bento-grid";
 import { FeaturesSectionWithTechStack } from "@/components/blocks/feature-section-with-tech-stack";
@@ -91,10 +93,16 @@ export function VisionPage() {
 
               <div className="flex flex-col md:flex-row gap-8 items-center relative z-10">
                 <div className="md:w-1/4 flex justify-center">
-                  <img 
+                  <OptimizedImage 
                     src="/images/Rong Chen.png" 
                     alt="Rong Chen, Elastos Founder" 
-                    className="w-48 h-48 object-cover rounded-full border-4 border-[#5C8EFF]/30"
+                    className="w-48 h-48 rounded-full border-4 border-[#5C8EFF]/30"
+                    aspectRatio="aspect-square"
+                    format="webp"
+                    quality={90}
+                    blurEffect={true}
+                    width={192}
+                    height={192}
                   />
                 </div>
                 <div className="md:w-3/4">
@@ -147,10 +155,16 @@ export function VisionPage() {
                 className="bg-gradient-to-br from-[#8BABFF]/10 via-[#8BABFF]/5 to-transparent rounded-xl p-6 border border-[#8BABFF]/20 h-full flex flex-col"
               >
                 <div className="flex flex-col sm:flex-row gap-6 items-center sm:items-start">
-                  <img 
+                  <OptimizedImage 
                     src="/images/Rong Chen.png" 
                     alt="Rong Chen" 
-                    className="w-32 h-32 rounded-full object-cover border-2 border-[#8BABFF]/30"
+                    className="w-32 h-32 rounded-full border-2 border-[#8BABFF]/30"
+                    aspectRatio="aspect-square"
+                    format="webp"
+                    quality={90}
+                    blurEffect={true}
+                    width={128}
+                    height={128}
                   />
                   <div>
                     <h3 className="text-xl font-bold text-black dark:text-white mb-1">Rong Chen</h3>
@@ -177,10 +191,16 @@ export function VisionPage() {
                 className="bg-gradient-to-br from-[#8BABFF]/10 via-[#8BABFF]/5 to-transparent rounded-xl p-6 border border-[#8BABFF]/20 h-full flex flex-col"
               >
                 <div className="flex flex-col sm:flex-row gap-6 items-center sm:items-start">
-                  <img 
+                  <OptimizedImage 
                     src="/images/Sunny.jpeg" 
                     alt="Sunny Feng Han" 
-                    className="w-32 h-32 rounded-full object-cover border-2 border-[#8BABFF]/30"
+                    className="w-32 h-32 rounded-full border-2 border-[#8BABFF]/30"
+                    aspectRatio="aspect-square"
+                    format="webp"
+                    quality={90}
+                    blurEffect={true}
+                    width={128}
+                    height={128}
                   />
                   <div>
                     <h3 className="text-xl font-bold text-black dark:text-white mb-1">Sunny Feng Han</h3>
@@ -414,14 +434,16 @@ export function VisionPage() {
 
                   <div className="grid md:grid-cols-2 gap-10 items-center">
                     <div className="flex justify-center">
-                      <img 
+                      <OptimizedImage 
                         src="/images/Essentials.png" 
                         alt="Elastos Essentials" 
                         className="w-full max-w-[350px] rounded-xl"
-                        onError={(e) => {
-                          const target = e.target as HTMLImageElement;
-                          target.src = "https://via.placeholder.com/350x700?text=Elastos+Essentials";
-                        }}
+                        aspectRatio="aspect-auto"
+                        format="webp"
+                        quality={85}
+                        blurEffect={true}
+                        fallback="https://via.placeholder.com/350x700?text=Elastos+Essentials"
+                        width={350}
                       />
                     </div>
                     <div>
