@@ -159,7 +159,7 @@ const HashrateVisualizer = () => {
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-6">
             <Dialog>
               <DialogTrigger asChild>
-                <Button variant="outline" className="w-full flex items-center gap-2 px-4 py-3 hover:bg-accent/50 font-[200]">
+                <Button variant="outline" className="w-full flex items-center gap-2 px-4 py-3 hover:bg-accent/50 font-[200] bg-[rgba(246,146,26,0.10)] text-[#F6921A] border border-[rgba(246,146,26,0.50)]">
                   <Calculator className="w-5 h-5 text-[#F6921A]" />
                   What is Hashrate?
                 </Button>
@@ -198,7 +198,7 @@ const HashrateVisualizer = () => {
 
             <Dialog>
               <DialogTrigger asChild>
-                <Button variant="outline" className="w-full flex items-center gap-2 px-4 py-3 hover:bg-accent/50 font-[200]">
+                <Button variant="outline" className="w-full flex items-center gap-2 px-4 py-3 hover:bg-accent/50 font-[200] bg-[rgba(246,146,26,0.10)] text-[#F6921A] border border-[rgba(246,146,26,0.50)]">
                   <Cpu className="w-5 h-5 text-[#F6921A]" />
                   What is EH/s?
                 </Button>
@@ -230,7 +230,7 @@ const HashrateVisualizer = () => {
 
             <Dialog>
               <DialogTrigger asChild>
-                <Button variant="outline" className="w-full flex items-center gap-2 px-4 py-3 hover:bg-accent/50 font-[200]">
+                <Button variant="outline" className="w-full flex items-center gap-2 px-4 py-3 hover:bg-accent/50 font-[200] bg-[rgba(246,146,26,0.10)] text-[#F6921A] border border-[rgba(246,146,26,0.50)]">
                   <Network className="w-5 h-5 text-[#F6921A]" />
                   What is Merge Mining?
                 </Button>
