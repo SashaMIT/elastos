@@ -286,54 +286,54 @@ const ecosystemFeatures = [
 
         {/* ELA Across Chains */}
         <div className="mb-20">
-          <motion.h2
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="text-3xl font-bold text-white text-center mb-8"
-          >
-            ELA Across Chains
-          </motion.h2>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {elaTokens.map((token, index) => (
-              <motion.div
-                key={token.network}
-                className="bg-[#1A1A1A] border border-white/10 rounded-xl overflow-hidden"
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: index * 0.1 }}
-              >
-                <div className="p-5">
-                  <div className="flex items-center mb-4">
-                    <div className={`w-10 h-10 rounded-full ${token.iconBg} flex items-center justify-center mr-3 ${token.borderColor}`}>
-                      {token.icon}
+          <div className="text-center mb-6">
+            <h2 className="text-2xl md:text-3xl font-[200] text-white">
+              ELA Across Chains
+            </h2>
+          </div>
+          
+          <div className="relative">
+            <div className="grid grid-cols-1 md:grid-cols-4 lg:grid-cols-4 gap-4 border border-neutral-800 rounded-md">
+              {elaTokens.map((token, index) => (
+                <motion.div
+                  key={token.network}
+                  whileHover={{ scale: 1.03 }}
+                  className={`p-3 sm:p-6 relative overflow-hidden group hover:bg-neutral-900 transition-colors duration-300 ${
+                    index < elaTokens.length - 1 && index !== 3 ? 'border-b md:border-r border-neutral-800' : 'border-b border-neutral-800'
+                  }`}
+                >
+                  <div className="flex flex-col h-full">
+                    <div className="mb-3">
+                      <div className="w-12 h-12 flex items-center justify-center rounded-full bg-[#24272f]">
+                        {token.icon}
+                      </div>
                     </div>
-                    <div>
-                      <h3 className="text-white font-medium">{token.network}</h3>
-                      <p className="text-gray-400 text-sm">{token.tokenType}</p>
+                    <h3 className="text-lg font-[200] mb-1 text-white">
+                      {token.network}
+                      <span className="text-sm text-gray-400 ml-2">{token.tokenType}</span>
+                    </h3>
+                    <p className="text-base text-neutral-300 font-[200] mb-3">
+                      {token.description}
+                    </p>
+                    <div className="flex items-center justify-between text-xs text-gray-500 mb-3">
+                      <span>Decimals: {token.decimals}</span>
+                      <span>Chain ID: {token.chainId}</span>
+                    </div>
+                    <div className="mt-auto">
+                      <a
+                        href={token.explorerUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center gap-1 text-[#F6921A] hover:underline"
+                      >
+                        <span className="text-sm">View on Explorer</span>
+                        <LinkIcon className="w-3 h-3" />
+                      </a>
                     </div>
                   </div>
-                  <p className="text-gray-400 text-sm mb-4">{token.description}</p>
-                  <div className="flex items-center justify-between text-xs text-gray-500">
-                    <span>Decimals: {token.decimals}</span>
-                    <span>Chain ID: {token.chainId}</span>
-                  </div>
-                  <div className="mt-4 flex justify-end">
-                    <a
-                      href={token.explorerUrl}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="inline-flex items-center gap-1 text-[#5C8EFF] hover:underline"
-                    >
-                      <span className="text-sm">View on Explorer</span>
-                      <LinkIcon className="w-3 h-3" />
-                    </a>
-                  </div>
-                </div>
-              </motion.div>
-            ))}
+                </motion.div>
+              ))}
+            </div>
           </div>
         </div>
 
