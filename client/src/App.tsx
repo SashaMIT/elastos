@@ -36,7 +36,7 @@ function App() {
       <Route path="/social-channels" element={<SocialChannelsPage />} />
       <Route path="/media-kit" element={<MediaKit />} />
       <Route path="/bridge" element={<Bridge />} /> {/* Added Bridge route */}
-      <Route path="/announcements" element={<AnnouncementsPage />} />
+      <Route path="/announcements" element={<AnnouncementsPage />} /> {/* Added Announcements route */}
     </Routes>
   );
 }
