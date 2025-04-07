@@ -22,7 +22,7 @@ export function AnnouncementsPage() {
   const [newsItems, setNewsItems] = useState<NewsItem[]>([]);
   const [loading, setLoading] = useState<boolean>(true);
   const [error, setError] = useState<string | null>(null);
-  const [selectedCategory, setSelectedCategory] = useState<string | null>("All");
+  const [selectedCategory, setSelectedCategory] = useState<string | null>(null);
 
   useEffect(() => {
     fetchNews();
@@ -192,12 +192,12 @@ export function AnnouncementsPage() {
   };
 
   // Extract unique categories from news items
-  const allCategories = ["All", ...Array.from(new Set(
+  const allCategories = [...Array.from(new Set(
     newsItems.flatMap(item => item.categories || [])
   ))];
 
   // Filter news items by selected category
-  const filteredNews = selectedCategory === "All" 
+  const filteredNews = selectedCategory === null 
     ? newsItems 
     : newsItems.filter(item => item.categories?.includes(selectedCategory));
 
@@ -249,7 +249,7 @@ export function AnnouncementsPage() {
       {/* Category filters */}
       <div className="w-full max-w-7xl mx-auto px-4 mb-10 sm:px-6 lg:px-8">
         <div className="flex flex-wrap justify-center gap-2">
-          {allCategories.map((category, index) => (
+          {allCategories.filter(category => category !== "All").map((category, index) => (
             <motion.button
               key={category}
               className={`px-4 py-1.5 rounded-full text-sm font-medium transition-all ${
@@ -313,6 +313,7 @@ export function AnnouncementsPage() {
                         const target = e.target as HTMLImageElement;
                         target.onerror = null; // Prevent infinite loop
                         target.src = '/images/Elastos New Logo_Kit-03.png';
+                        console.log("Image failed to load, using fallback:", item.title);
                       }}
                     />
                   </div>
