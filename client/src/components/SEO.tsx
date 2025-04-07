@@ -1,47 +1,50 @@
-import React, { memo } from 'react';
+
+import React from 'react';
 import { Helmet } from 'react-helmet';
 
 interface SEOProps {
   title?: string;
   description?: string;
-  image?: string;
-  url?: string;
+  keywords?: string;
+  ogImage?: string;
+  ogType?: string;
+  canonicalUrl?: string;
 }
 
-// Memoize the component to avoid unnecessary re-renders
-const SEO: React.FC<SEOProps> = memo(({
+export const SEO: React.FC<SEOProps> = ({
   title = "Elastos - Web3 Infrastructure Secured by Bitcoin",
   description = "Elastos is building a decentralized internet infrastructure that gives you true digital ownership and privacy, secured by Bitcoin.",
-  image = "/images/Elastosbanner.jpg",
-  url,
+  keywords = "Elastos, blockchain, bitcoin, Web3, digital ownership, merged mining, decentralized identity, ELA",
+  ogImage = "/images/Elastosbanner.jpg",
+  ogType = "website",
+  canonicalUrl,
 }) => {
   const siteUrl = "https://elastos.org";
-  const fullUrl = url ? `${siteUrl}${url}` : siteUrl;
-
+  const fullUrl = canonicalUrl ? `${siteUrl}${canonicalUrl}` : siteUrl;
+  
   return (
     <Helmet>
       {/* Basic Meta Tags */}
       <title>{title}</title>
       <meta name="description" content={description} />
-
+      <meta name="keywords" content={keywords} />
+      
       {/* Open Graph / Facebook */}
-      <meta property="og:type" content="website" />
+      <meta property="og:type" content={ogType} />
       <meta property="og:url" content={fullUrl} />
       <meta property="og:title" content={title} />
       <meta property="og:description" content={description} />
-      <meta property="og:image" content={`${siteUrl}${image}`} />
-
+      <meta property="og:image" content={`${siteUrl}${ogImage}`} />
+      
       {/* Twitter */}
       <meta property="twitter:card" content="summary_large_image" />
       <meta property="twitter:url" content={fullUrl} />
       <meta property="twitter:title" content={title} />
       <meta property="twitter:description" content={description} />
-      <meta property="twitter:image" content={`${siteUrl}${image}`} />
-
+      <meta property="twitter:image" content={`${siteUrl}${ogImage}`} />
+      
       {/* Canonical URL */}
-      {url && <link rel="canonical" href={fullUrl} />}
+      {canonicalUrl && <link rel="canonical" href={fullUrl} />}
     </Helmet>
   );
-});
-
-export default SEO;
+};
