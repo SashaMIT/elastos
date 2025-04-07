@@ -30,10 +30,10 @@ const WalletPage: React.FC = () => {
                 className="text-center mb-6 pt-16"
               >
                 <h1 className="text-4xl sm:text-4xl md:text-5xl font-[200] text-white mb-4">
-                  Elastos Wallets
+                  Elastos Essentials Wallet
                 </h1>
                 <p className="text-gray-300 max-w-2xl mx-auto text-md sm:text-base md:text-lg font-[200]">
-                  Secure your digital assets with the official Elastos wallets and connect with the entire Elastos ecosystem
+                  Experience the official Elastos wallet with native support for the entire Elastos ecosystem
                 </p>
               </motion.div>
             </div>
@@ -47,21 +47,6 @@ const WalletPage: React.FC = () => {
 
         <div className="container mx-auto px-4 relative z-10">
           <div className="w-full">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              className="mb-8 text-center"
-            >
-
-              <h2 className="text-4xl font-bold text-white mb-4">
-                Elastos Essentials Wallet
-              </h2>
-              <p className="text-xl text-white/70 max-w-3xl mx-auto">
-                Experience the official Elastos wallet with native support for the entire Elastos ecosystem
-              </p>
-            </motion.div>
-
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
