@@ -139,7 +139,7 @@ export function VisionPage() {
                   </button>
                 </Link>
               </div>
-            </motion.div>n.div>
+            </motion.div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-6xl mx-auto mb-10">
               {/* Rong Chen */}
