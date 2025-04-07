@@ -4,7 +4,7 @@ import { useHashrateData } from '@/hooks/useHashrateData';
 import { Card, CardContent } from '@/components/ui/card';
 import { Dots_v2 } from "@/components/ui/spinner";
 import { StackedCircularFooter } from "@/components/ui/stacked-circular-footer";
-import { SEO } from '@/components/SEO'; // Import the SEO component
+import SEO from '@/components/SEO'; // Import the SEO component
 
 const SecurityPage = () => {
   const { data: hashrateData, isLoading, error } = useHashrateData();

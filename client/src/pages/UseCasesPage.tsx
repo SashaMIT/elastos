@@ -8,7 +8,7 @@ import { LogoCarouselDemo } from "@/components/LogoCarouselDemo";
 import { Layout } from "@/components/Layout";
 import { CodeBlock } from "@/components/ui/code-block";
 import { UseCaseModal } from "@/components/UseCaseModal";
-import { SEO } from "@/components/SEO";
+import SEO from "@/components/SEO";
 
 interface UseCase {
   id: number;

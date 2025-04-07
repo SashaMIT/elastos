@@ -3,7 +3,7 @@ import FaqComponent from "@/components/FaqComponent";
 import { CenteredSpinner } from "@/components/ui/centered-spinner";
 import { StackedCircularFooter } from "@/components/ui/stacked-circular-footer";
 import { LogoCarouselDemo } from "@/components/LogoCarouselDemo";
-import { SEO } from "@/components/SEO"; // Import SEO as a named export
+import SEO from "@/components/SEO"; // Import SEO as a default export
 import { StructuredData } from "@/components/StructuredData"; // Using named import for StructuredData
 
 
