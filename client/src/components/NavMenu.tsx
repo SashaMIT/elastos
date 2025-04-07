@@ -2,7 +2,7 @@
 
 import * as React from "react";
 import { Link } from "wouter";
-import { Home, Shield, Code, HelpCircle, MessageCircle, Newspaper, Menu as MenuIcon, Moon, Sun, LineChart, Coins, ShoppingCart, ScrollText, Target, FileText, Terminal, Github, Download, PiggyBank, FileCode2, BookOpen, Video, Database, Star, Wallet, Repeat } from "lucide-react";
+import { Home, Shield, Code, HelpCircle, MessageCircle, Newspaper, Menu as MenuIcon, Moon, Sun, LineChart, Coins, ShoppingCart, ScrollText, Target, FileText, Terminal, Github, Download, PiggyBank, FileCode2, BookOpen, Video, Database, Star, Wallet, Repeat, Bell } from "lucide-react";
 import { SidebarMenu } from "@/components/ui/sidebar-menu";
 import { useTheme } from "@/hooks/useTheme";
 import {
@@ -255,7 +255,7 @@ export function NavMenu() {
                     <Link to="/announcements">
                       <NavigationMenuLink className={navigationMenuTriggerStyle()}>
                         <div className="flex items-center gap-2">
-                          <BookOpen className="h-4 w-4 text-[#94b5ff]" />
+                          <Bell className="h-4 w-4 text-[#94b5ff]" />
                           <span>Announcements</span>
                         </div>
                       </NavigationMenuLink>
@@ -365,6 +365,55 @@ export function WhitepaperPage() {
       <h1>Elastos Whitepaper and Litepaper</h1>
       <p>This page will eventually contain links to the original 2018 whitepaper, the latest litepaper, and any supporting documentation.</p>
       {/* Add links to actual whitepaper and litepaper documents here */}
+    </div>
+  );
+}
+
+// New AnnouncementsPage component
+import { useState, useEffect } from 'react';
+
+export function AnnouncementsPage() {
+  const [newsItems, setNewsItems] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
+
+  useEffect(() => {
+    const fetchNews = async () => {
+      try {
+        const response = await fetch('https://api.rss2json.com/v1/api.json?rss_url=https://rss.app/feeds/tQGWZNuxHC69yKOm.xml');
+        if (!response.ok) {
+          throw new Error(`HTTP error! status: ${response.status}`);
+        }
+        const data = await response.json();
+        setNewsItems(data.items);
+      } catch (error) {
+        setError(error);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchNews();
+  }, []);
+
+  if (loading) {
+    return <p>Loading...</p>;
+  }
+
+  if (error) {
+    return <p>Error: {error.message}</p>;
+  }
+
+  return (
+    <div>
+      <h1>Announcements</h1>
+      {newsItems.map((item, index) => (
+        <div key={index} className="card p-4 m-2 border border-gray-300 rounded-lg shadow-md">
+          <h2>{item.title}</h2>
+          <p>{item.description}</p>
+          <a href={item.link} target="_blank" rel="noopener noreferrer">Read More</a>
+        </div>
+      ))}
     </div>
   );
 }

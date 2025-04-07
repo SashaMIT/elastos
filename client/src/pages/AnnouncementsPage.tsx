@@ -1,77 +1,181 @@
-import React from "react";
+
+import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { StackedCircularFooter } from "@/components/ui/stacked-circular-footer";
 import { ScrollToTop } from "@/components/ScrollToTop";
-import { CalendarDays, ChevronRight, Clock, ExternalLink } from "lucide-react";
+import { Calendar, CalendarDays, ChevronRight, Clock, ExternalLink, Loader2 } from "lucide-react";
+import { Card, CardContent, CardFooter } from "@/components/ui/card";
 
-// Sample announcement data - in a real application, this would come from an API
-const announcements = [
-  {
-    id: 1,
-    title: "Integration with Arbitrary Message Bridge (AMB) by BeL2",
-    date: "June 15, 2024",
-    category: "Technology",
-    summary: "Elastos is excited to announce the integration with BeL2's Arbitrary Message Bridge, enhancing cross-chain communication capabilities.",
-    content: "The Elastos ecosystem is taking a significant step forward with the integration of the Arbitrary Message Bridge (AMB) developed by BeL2. This technology will enable seamless communication between Elastos sidechains and the Bitcoin mainnet, opening up new possibilities for decentralized applications and services.",
-    readMoreLink: "#",
-    timeToRead: "3 min"
-  },
-  {
-    id: 2,
-    title: "Elastos to Participate in Bitcoin 2024 Conference",
-    date: "May 28, 2024",
-    category: "Event",
-    summary: "The Elastos team will be attending and presenting at the upcoming Bitcoin 2024 Conference in Nashville.",
-    content: "We're thrilled to announce that Elastos will have a significant presence at the Bitcoin 2024 Conference in Nashville. Our team will be showcasing the latest developments in Bitcoin-backed infrastructure and demonstrating how Elastos sidechains benefit from Bitcoin's security through merged mining.",
-    readMoreLink: "#",
-    timeToRead: "2 min"
-  },
-  {
-    id: 3,
-    title: "ELA Staking Program Updates",
-    date: "May 10, 2024",
-    category: "Finance",
-    summary: "Important updates to the ELA staking program including new rewards structure and delegation options.",
-    content: "We are pleased to announce several important updates to the ELA staking program. Starting June 1, the rewards structure will be optimized to provide better incentives for long-term stakers, and new delegation options will be available to make staking more accessible for all ELA holders.",
-    readMoreLink: "#",
-    timeToRead: "4 min"
-  },
-  {
-    id: 4,
-    title: "Community Call: Upcoming Elastos Roadmap",
-    date: "April 25, 2024",
-    category: "Community",
-    summary: "Join us for a community call to discuss the upcoming Elastos roadmap and development plans.",
-    content: "The Elastos team cordially invites all community members to join our upcoming community call where we'll discuss the Elastos roadmap for the remainder of 2024 and beyond. The call will feature presentations from core developers and project leads, followed by a Q&A session.",
-    readMoreLink: "#",
-    timeToRead: "1 min"
-  },
-  {
-    id: 5,
-    title: "New Partnership with Major DeFi Protocol",
-    date: "April 15, 2024",
-    category: "Partnership",
-    summary: "Elastos has formed a strategic partnership with a major DeFi protocol to expand financial services on ESC.",
-    content: "We're excited to announce a strategic partnership between Elastos and a major DeFi protocol (to be revealed soon). This collaboration will significantly expand the financial services available on the Elastos Smart Contract Chain (ESC), bringing innovative lending, borrowing, and yield farming options to the ecosystem.",
-    readMoreLink: "#",
-    timeToRead: "3 min"
-  }
-];
-
-// Filter function for announcements
-const getAnnouncementsByCategory = (category: string | null) => {
-  if (!category || category === "All") {
-    return announcements;
-  }
-  return announcements.filter(announcement => announcement.category === category);
-};
+interface NewsItem {
+  title: string;
+  link: string;
+  pubDate: string;
+  description: string;
+  enclosure?: {
+    url: string;
+    type: string;
+  };
+  content?: string;
+  categories?: string[];
+}
 
 export function AnnouncementsPage() {
-  const [selectedCategory, setSelectedCategory] = React.useState<string | null>("All");
-  const filteredAnnouncements = getAnnouncementsByCategory(selectedCategory);
+  const [newsItems, setNewsItems] = useState<NewsItem[]>([]);
+  const [loading, setLoading] = useState<boolean>(true);
+  const [error, setError] = useState<string | null>(null);
+  const [selectedCategory, setSelectedCategory] = useState<string | null>("All");
+  
+  useEffect(() => {
+    fetchNews();
+  }, []);
 
-  // Available categories
-  const categories = ["All", ...Array.from(new Set(announcements.map(a => a.category)))];
+  const fetchNews = async () => {
+    setLoading(true);
+    try {
+      // Using a CORS proxy to handle the cross-origin request
+      const response = await fetch(
+        "https://api.allorigins.win/get?url=" + 
+        encodeURIComponent("https://rss.app/feeds/tQGWZNuxHC69yKOm.xml")
+      );
+      
+      if (!response.ok) {
+        throw new Error("Failed to fetch news");
+      }
+      
+      const data = await response.json();
+      
+      if (!data.contents) {
+        throw new Error("Invalid RSS feed data");
+      }
+      
+      // Parse the XML content
+      const parser = new DOMParser();
+      const xmlDoc = parser.parseFromString(data.contents, "text/xml");
+      
+      const items = xmlDoc.querySelectorAll("item");
+      const parsedItems: NewsItem[] = [];
+      
+      items.forEach((item) => {
+        const title = item.querySelector("title")?.textContent || "";
+        const link = item.querySelector("link")?.textContent || "";
+        const pubDate = item.querySelector("pubDate")?.textContent || "";
+        const description = item.querySelector("description")?.textContent || "";
+        
+        // Get enclosure (image) if available
+        let enclosure;
+        const enclosureElement = item.querySelector("enclosure");
+        if (enclosureElement) {
+          enclosure = {
+            url: enclosureElement.getAttribute("url") || "",
+            type: enclosureElement.getAttribute("type") || "",
+          };
+        }
+        
+        // Try to get categories
+        const categoryElements = item.querySelectorAll("category");
+        const categories: string[] = [];
+        categoryElements.forEach((cat) => {
+          if (cat.textContent) {
+            categories.push(cat.textContent);
+          }
+        });
+        
+        // Try to get content
+        const content = item.querySelector("content\\:encoded")?.textContent || 
+                       item.querySelector("content")?.textContent || "";
+        
+        parsedItems.push({
+          title,
+          link,
+          pubDate,
+          description,
+          enclosure,
+          content,
+          categories: categories.length > 0 ? categories : ["News"]
+        });
+      });
+      
+      setNewsItems(parsedItems);
+      setError(null);
+    } catch (err) {
+      console.error("Error fetching news:", err);
+      setError("Failed to load news. Please try again later.");
+      
+      // If RSS feed fails, add some fallback items from the screenshot
+      const fallbackItems = [
+        {
+          title: "Elastos secures $20 million investment to expand Bitcoin DeFi ecosystem",
+          link: "#",
+          pubDate: "January 30, 2024",
+          description: "Elastos secures $20 million from Rollman Management to expand Bitcoin-based DeFi and Web3 infrastructure.",
+          categories: ["Investment", "DeFi"]
+        },
+        {
+          title: "Bitcoin DeFi project Elastos closes $20M investment round",
+          link: "#",
+          pubDate: "January 30, 2024",
+          description: "Web3 infrastructure provider Elastos has closed a $20-million investment round as part of a broader push to expand Bitcoin-based DeFi.",
+          categories: ["Investment", "DeFi"]
+        },
+        {
+          title: "Elastos Secures $20M Funding to Scale Its Native Bitcoin Protocol",
+          link: "#",
+          pubDate: "January 30, 2024",
+          description: "The financing comes from the private investment company Rollman Management.",
+          categories: ["Funding", "Protocol"]
+        },
+        {
+          title: "Elastos Bitcoin DeFi Secures $20M Funding for Expansion",
+          link: "#",
+          pubDate: "January 30, 2024",
+          description: "Elastos Bitcoin DeFi secures $20M funding to scale BeL2, enabling BTC holders to collateralize Bitcoin-backed stablecoins.",
+          categories: ["Funding", "DeFi"]
+        },
+        {
+          title: "Elastos raises $20 million to enhance DeFi on Bitcoin",
+          link: "#",
+          pubDate: "January 30, 2024",
+          description: "Elastos has obtained $20 million to develop BeL2, a protocol that aims to integrate DeFi services on the Bitcoin network.",
+          categories: ["Funding", "DeFi"]
+        }
+      ];
+      
+      setNewsItems(fallbackItems);
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  // Extract unique categories from news items
+  const allCategories = ["All", ...Array.from(new Set(
+    newsItems.flatMap(item => item.categories || [])
+  ))];
+  
+  // Filter news items by selected category
+  const filteredNews = selectedCategory === "All" 
+    ? newsItems 
+    : newsItems.filter(item => item.categories?.includes(selectedCategory));
+  
+  // Format date helper function
+  const formatDate = (dateString: string): string => {
+    try {
+      const date = new Date(dateString);
+      return date.toLocaleDateString('en-US', {
+        year: 'numeric',
+        month: 'long',
+        day: 'numeric'
+      });
+    } catch (e) {
+      return dateString; // Return original if parsing fails
+    }
+  };
+  
+  // Extract reading time (3-5 min based on description length)
+  const getReadingTime = (description: string): string => {
+    const words = description.split(' ').length;
+    const minutes = Math.max(1, Math.min(5, Math.ceil(words / 200)));
+    return `${minutes} min`;
+  };
 
   return (
     <div className="min-h-screen bg-white dark:bg-[#171717]">
@@ -100,7 +204,7 @@ export function AnnouncementsPage() {
       {/* Category filters */}
       <div className="w-full max-w-7xl mx-auto px-4 mb-10 sm:px-6 lg:px-8">
         <div className="flex flex-wrap justify-center gap-2">
-          {categories.map((category, index) => (
+          {allCategories.map((category, index) => (
             <motion.button
               key={category}
               className={`px-4 py-1.5 rounded-full text-sm font-medium transition-all ${
@@ -119,55 +223,97 @@ export function AnnouncementsPage() {
         </div>
       </div>
 
-      {/* Announcements grid */}
-      <div className="w-full max-w-7xl mx-auto px-4 pb-20 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 gap-8">
-          {filteredAnnouncements.map((announcement, index) => (
-            <motion.div
-              key={announcement.id}
-              className="bg-white dark:bg-neutral-900 rounded-xl shadow-sm border border-gray-200 dark:border-neutral-800 overflow-hidden"
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.4, delay: 0.2 + index * 0.1 }}
-            >
-              <div className="p-6">
-                <div className="flex items-center gap-2 text-xs text-gray-500 dark:text-gray-400 mb-3">
-                  <span className="bg-[rgba(246,146,26,0.15)] text-[#F6921A] px-2 py-1 rounded-full">
-                    {announcement.category}
-                  </span>
-                  <div className="flex items-center">
-                    <CalendarDays className="w-3 h-3 mr-1" />
-                    {announcement.date}
-                  </div>
-                  <div className="flex items-center">
-                    <Clock className="w-3 h-3 mr-1" />
-                    {announcement.timeToRead} read
-                  </div>
-                </div>
-
-                <h2 className="text-xl font-semibold mb-3 text-black dark:text-white">
-                  {announcement.title}
-                </h2>
-
-                <p className="text-gray-600 dark:text-gray-400 mb-4">
-                  {announcement.content}
-                </p>
-
-                <a 
-                  href={announcement.readMoreLink} 
-                  className="inline-flex items-center text-[#F6921A] hover:underline"
-                >
-                  <span>Read more</span>
-                  <ChevronRight className="w-4 h-4 ml-1" />
-                </a>
-              </div>
-            </motion.div>
-          ))}
+      {/* Loading state */}
+      {loading && (
+        <div className="w-full max-w-7xl mx-auto px-4 py-20 text-center">
+          <Loader2 className="h-8 w-8 animate-spin mx-auto text-[#F6921A]" />
+          <p className="mt-4 text-gray-500 dark:text-gray-400">Loading latest announcements...</p>
         </div>
-      </div>
+      )}
 
-      {/* No announcements state */}
-      {filteredAnnouncements.length === 0 && (
+      {/* Error state */}
+      {error && !loading && (
+        <div className="w-full max-w-7xl mx-auto px-4 py-10 text-center">
+          <p className="text-red-500 dark:text-red-400">{error}</p>
+          <button 
+            onClick={fetchNews}
+            className="mt-4 px-4 py-2 bg-[#F6921A] text-white rounded-md hover:bg-[#E68200]"
+          >
+            Try Again
+          </button>
+        </div>
+      )}
+
+      {/* News grid */}
+      {!loading && (
+        <div className="w-full max-w-7xl mx-auto px-4 pb-20 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {filteredNews.map((item, index) => (
+              <motion.div
+                key={`${item.title}-${index}`}
+                className="h-full"
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.4, delay: 0.2 + index * 0.1 }}
+              >
+                <Card className="h-full flex flex-col bg-white dark:bg-neutral-900 rounded-xl shadow-sm border border-gray-200 dark:border-neutral-800">
+                  {/* Card image */}
+                  {item.enclosure?.url && item.enclosure.type.startsWith('image/') && (
+                    <div className="relative h-48 w-full overflow-hidden rounded-t-xl">
+                      <img 
+                        src={item.enclosure.url} 
+                        alt={item.title}
+                        className="h-full w-full object-cover transition-all hover:scale-105"
+                      />
+                    </div>
+                  )}
+                  
+                  <CardContent className="p-6 flex-grow">
+                    <div className="flex items-center gap-2 text-xs text-gray-500 dark:text-gray-400 mb-3">
+                      {item.categories && item.categories[0] && (
+                        <span className="bg-[rgba(246,146,26,0.15)] text-[#F6921A] px-2 py-1 rounded-full">
+                          {item.categories[0]}
+                        </span>
+                      )}
+                      <div className="flex items-center">
+                        <CalendarDays className="w-3 h-3 mr-1" />
+                        {formatDate(item.pubDate)}
+                      </div>
+                      <div className="flex items-center">
+                        <Clock className="w-3 h-3 mr-1" />
+                        {getReadingTime(item.description)} read
+                      </div>
+                    </div>
+
+                    <h2 className="text-xl font-semibold mb-3 text-black dark:text-white line-clamp-2">
+                      {item.title}
+                    </h2>
+
+                    <p className="text-gray-600 dark:text-gray-400 mb-4 line-clamp-3">
+                      {item.description}
+                    </p>
+                  </CardContent>
+                  
+                  <CardFooter className="p-6 pt-0">
+                    <a 
+                      href={item.link} 
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center text-[#F6921A] hover:underline"
+                    >
+                      <span>Read more</span>
+                      <ChevronRight className="w-4 h-4 ml-1" />
+                    </a>
+                  </CardFooter>
+                </Card>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      )}
+
+      {/* No news state */}
+      {!loading && filteredNews.length === 0 && (
         <div className="text-center py-20">
           <p className="text-gray-500 dark:text-gray-400">No announcements found for this category.</p>
         </div>
