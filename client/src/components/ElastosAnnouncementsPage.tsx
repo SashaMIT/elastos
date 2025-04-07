@@ -18,7 +18,8 @@ import {
   BarChart,
   BookOpen,
   ArrowRight,
-  User
+  User,
+  Megaphone
 } from "lucide-react";
 
 import {
