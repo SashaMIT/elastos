@@ -4,7 +4,6 @@
 import { type ImgHTMLAttributes } from "react"
 import Zoom, { type UncontrolledProps } from "react-medium-image-zoom"
 import { cn } from "@/lib/utils"
-import { OptimizedImage } from "./optimized-image"
 
 export interface ImageZoomProps extends ImgHTMLAttributes<HTMLImageElement> {
   zoomInProps?: ImgHTMLAttributes<HTMLImageElement>
@@ -12,9 +11,6 @@ export interface ImageZoomProps extends ImgHTMLAttributes<HTMLImageElement> {
   className?: string
   width?: number
   height?: number
-  format?: 'square' | 'video' | 'portrait' | 'landscape' | 'auto'
-  aspectRatio?: string
-  alt: string
 }
 
 export function ImageZoom({
@@ -22,9 +18,6 @@ export function ImageZoom({
   zoomProps,
   className,
   children,
-  format,
-  aspectRatio,
-  alt = "Zoomable image",
   ...props
 }: ImageZoomProps) {
   return (
@@ -49,23 +42,16 @@ export function ImageZoom({
         ),
         ...zoomInProps,
         src: props.src,
-        alt: alt
       }}
     >
       {children ?? (
-        <div className="cursor-zoom-in">
-          <OptimizedImage
-            className={cn(
-              "rounded-md transition-all",
-              className
-            )}
-            format={format}
-            aspectRatio={aspectRatio}
-            alt={alt}
-            blurEffect={true}
-            {...props}
-          />
-        </div>
+        <img
+          className={cn(
+            "cursor-zoom-in rounded-md transition-all",
+            className
+          )}
+          {...props}
+        />
       )}
     </Zoom>
   )

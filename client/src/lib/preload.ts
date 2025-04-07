@@ -1,30 +1,28 @@
 
 /**
- * Preloads critical images to improve initial page load experience
+ * Utility function to preload components or assets
  */
-
-export const preloadCriticalImages = () => {
-  const criticalImages = [
-    '/images/Elastosbanner.jpg',
-    '/images/Essentials.png',
-    '/images/Rong Chen.png',
-    '/images/placeholder-image.jpg',
-    '/images/Elastos Logo Light - 1.png',
-    '/images/Elastos Logo Dark - 1.png',
-  ];
-
-  const preloadImage = (src: string) => {
-    const link = document.createElement('link');
-    link.rel = 'preload';
-    link.as = 'image';
-    link.href = src;
-    document.head.appendChild(link);
-  };
-
-  criticalImages.forEach(preloadImage);
+export const preloadComponent = (importFn: () => Promise<any>) => {
+  // Start loading the component in the background
+  const promise = importFn();
+  return () => promise;
 };
 
-export const preloadResources = () => {
-  // Preload critical images
-  preloadCriticalImages();
+/**
+ * Utility function to preload routes based on user navigation patterns
+ */
+export const preloadRoute = (route: string) => {
+  // Map routes to their respective import functions
+  const routeMap: Record<string, () => Promise<any>> = {
+    '/': () => import('../pages/LandingPage'),
+    '/security': () => import('../pages/SecurityPage'),
+    '/vision': () => import('../pages/VisionPage'),
+    '/buy-ela': () => import('../pages/BuyElaPage'),
+    // Add other routes as needed
+  };
+
+  // If the route exists in our map, preload it
+  if (routeMap[route]) {
+    preloadComponent(routeMap[route]);
+  }
 };
