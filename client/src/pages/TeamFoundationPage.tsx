@@ -29,7 +29,7 @@ export default function TeamFoundationPage() {
     {
       name: "Yipeng Su",
       role: "Chief Architect",
-      image: "/images/Roadmap/Rong Chen and Kevin Zhang hosted a meetup in Barcelona.jpeg",
+      image: "/images/Community/Yipeng.jpg",
       bio: "Yipeng Su joined Elastos in 2017 as Chief Architect and was instrumental in the project's early development. With over 20 years of experience in software and internet industries, Yipeng led both technical strategy and early operations at Elastos. He was the chief initiator of the Cyber Republic concept for community governance and helped develop the CR consensus. Yipeng has continued to shape the technical direction of Elastos, including proposing the Bonded Proof of Stake enhancement.",
       links: [
         { icon: <Github className="w-4 h-4" />, url: "https://github.com/elastos" },
