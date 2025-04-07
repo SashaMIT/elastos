@@ -148,7 +148,7 @@ const MergeMiningAnimation = () => {
       </h1>
 
       {/* Descriptive Text */}
-      <p className="text-center text-sm sm:text-base mt-[10px] mb-0 relative z-50 font-[200]">
+      <p className="text-center text-xs sm:text-base mt-[10px] mb-0 relative z-50 font-[200]">
         By leveraging Bitcoin's unmatched hash rate, Elastos' ELA fulfills{' '}
         <Dialog open={isOpen} onOpenChange={setIsOpen}>
           <DialogTrigger asChild>
