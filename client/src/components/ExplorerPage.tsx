@@ -6,7 +6,7 @@ import {
   TabsList,
   TabsTrigger,
 } from "@/components/ui/tabs";
-import { BlockTable } from "./BlockTable";
+import BlockTable from "./BlockTable";
 import { NetworkSphere } from "./NetworkSphere";
 import { BlockVisualizer } from "./BlockVisualizer";
 import { MergeMiningViz } from "./MergeMiningViz";
