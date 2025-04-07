@@ -164,7 +164,9 @@ export default function TeamFoundationPage() {
                   </div>
                   <div className="w-full md:w-4/5 p-6">
                     <h3 className="text-xl font-[200] text-black dark:text-white mb-1">{member.name}</h3>
-                    <p className="text-[#5C8EFF] text-sm mb-4">{member.role}</p>
+                    <span className="px-4 py-1 bg-[#5C8EFF]/10 border border-[#5C8EFF]/30 text-white rounded-full text-xs font-medium whitespace-nowrap mb-4 inline-block">
+                      {member.role}
+                    </span>
                     <div>
                       {expandedBios[index] ? (
                         <>
