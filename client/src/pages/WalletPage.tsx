@@ -12,7 +12,7 @@ const WalletPage: React.FC = () => {
       {/* Hero Section with Image and Gradient Overlay */}
       <div className="relative w-full h-[350px] overflow-hidden -mt-16">
         <img 
-          src="/images/Roadmap/Community crowd.png" 
+          src="/images/Community/EEQmb19UYAApxrk.jpeg" 
           alt="Elastos Wallets" 
           className="w-full h-full object-cover opacity-100"
         />
