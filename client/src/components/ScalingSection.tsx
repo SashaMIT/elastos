@@ -85,7 +85,7 @@ export function ScalingSection() {
           <div className="space-y-20">
             <div className="grid grid-cols-1 md:grid-cols-2 items-center gap-12">
               <div className="flex justify-center">
-                <div className="w-64 h-64 md:w-64 md:h-64 lg:w-72 lg:h-72 xl:w-80 xl:h-80 relative">
+                <div className="w-60 h-60 md:w-60 md:h-60 lg:w-68 lg:h-68 xl:w-76 xl:h-76 relative">
                   <img src="/images/Glass Circles1.png" alt="Elastos Mainchain" className="w-full h-full object-contain" />
                 </div>
               </div>
@@ -129,7 +129,7 @@ export function ScalingSection() {
                 </div>
               </div>
               <div className="order-1 md:order-2 flex justify-center">
-                <div className="w-64 h-64 md:w-64 md:h-64 lg:w-72 lg:h-72 xl:w-80 xl:h-80 relative">
+                <div className="w-60 h-60 md:w-60 md:h-60 lg:w-68 lg:h-68 xl:w-76 xl:h-76 relative">
                   <img src="/images/Glass Circles2.png" alt="BeL2" className="w-full h-full object-contain" />
                 </div>
               </div>
@@ -137,7 +137,7 @@ export function ScalingSection() {
 
             <div className="grid grid-cols-1 md:grid-cols-2 items-center gap-12">
               <div className="flex justify-center">
-                <div className="w-64 h-64 md:w-64 md:h-64 lg:w-72 lg:h-72 xl:w-80 xl:h-80 relative">
+                <div className="w-60 h-60 md:w-60 md:h-60 lg:w-68 lg:h-68 xl:w-76 xl:h-76 relative">
                   <img src="/images/Glass Circles3.png" alt="DePIN Network" className="w-full h-full object-contain" />
                 </div>
               </div>
