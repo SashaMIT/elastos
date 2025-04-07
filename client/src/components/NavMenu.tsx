@@ -279,14 +279,6 @@ export function NavMenu() {
                         </div>
                       </NavigationMenuLink>
                     </Link>
-                    <Link href="/knowledge-base">
-                      <NavigationMenuLink className={navigationMenuTriggerStyle()}>
-                        <div className="flex items-center gap-2">
-                          <Database className="h-4 w-4 text-[#94b5ff]" />
-                          <span>Knowledge Base</span>
-                        </div>
-                      </NavigationMenuLink>
-                    </Link>
                   </div>
                 </div>
               </NavigationMenuContent>
