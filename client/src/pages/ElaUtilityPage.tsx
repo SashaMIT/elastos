@@ -335,14 +335,14 @@ export default function ElaUtilityPage() {
                   className="w-24 h-24 object-cover rounded-lg"
                 />
                 <div className="flex-1">
-                  <p className="text-neutral-600 dark:text-neutral-300 font-[200] text-sm mb-3">
+                  <p className="text-neutral-600 dark:text-neutral-300 font-[200] text-base mb-3">
                     ELA staking offers a secure way to earn up to 3.29% APY while supporting the network's security and decentralization.
                   </p>
                 </div>
               </div>
               
               <div className="mb-4">
-                <div className="flex justify-between text-sm mb-1">
+                <div className="flex justify-between text-base mb-1">
                   <span className="text-neutral-500 dark:text-neutral-400">Current APY</span>
                   <span className="font-[200] text-black dark:text-[#5C8EFF]">3.29%</span>
                 </div>
@@ -352,7 +352,7 @@ export default function ElaUtilityPage() {
               </div>
               
               <div className="mb-5">
-                <div className="flex justify-between text-sm mb-1">
+                <div className="flex justify-between text-base mb-1">
                   <span className="text-neutral-500 dark:text-neutral-400">Security Power</span>
                   <span className="font-[200] text-black dark:text-[#5C8EFF]">{isHashrateLoading ? '...' : `${((hashrateData?.elastosHashrate ?? 0) / (hashrateData?.bitcoinHashrate ?? 1) * 100).toFixed(2)}%`}</span>
                 </div>
@@ -392,7 +392,7 @@ export default function ElaUtilityPage() {
                   className="w-24 h-24 object-cover rounded-lg"
                 />
                 <div className="flex-1">
-                  <p className="text-neutral-600 dark:text-neutral-300 font-[200] text-sm mb-3">
+                  <p className="text-neutral-600 dark:text-neutral-300 font-[200] text-base mb-3">
                     Participate in Elastos DAO governance with your ELA tokens. Elect council members and help determine the future direction.
                   </p>
                 </div>
@@ -401,11 +401,11 @@ export default function ElaUtilityPage() {
               <div className="grid grid-cols-2 gap-3 mb-5">
                 <div className="bg-neutral-100 dark:bg-[#1A1A1A]/50 p-3 rounded-lg">
                   <div className="text-[#F6921A] dark:text-[#5C8EFF] text-xl font-bold">73+</div>
-                  <div className="text-neutral-500 dark:text-white/60 text-xs">Funded Proposals</div>
+                  <div className="text-neutral-500 dark:text-white/60 text-sm">Funded Proposals</div>
                 </div>
                 <div className="bg-neutral-100 dark:bg-[#1A1A1A]/50 p-3 rounded-lg">
                   <div className="text-[#F6921A] dark:text-[#5C8EFF] text-xl font-bold">1.24M</div>
-                  <div className="text-neutral-500 dark:text-white/60 text-xs">Treasury (ELA)</div>
+                  <div className="text-neutral-500 dark:text-white/60 text-sm">Treasury (ELA)</div>
                 </div>
               </div>
               
