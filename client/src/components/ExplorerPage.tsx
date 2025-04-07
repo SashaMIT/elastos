@@ -224,7 +224,7 @@ const ecosystemFeatures = [
   return (
     <div className="min-h-screen bg-[#171717] overflow-hidden">
       {/* Hero Section with Image and Gradient Overlay */}
-      <div className="relative w-full h-[350px] overflow-hidden -mt-32">
+      <div className="relative w-full h-[350px] overflow-hidden -mt-20">
         <img 
           src="/images/Roadmap/Community crowd.png" 
           alt="Elastos Explorer" 
