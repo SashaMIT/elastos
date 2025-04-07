@@ -233,24 +233,37 @@ export function AnnouncementsPage() {
     <div className="min-h-screen bg-white dark:bg-[#171717]">
       <ScrollToTop />
 
-      {/* Hero section */}
-      <div className="w-full max-w-7xl mx-auto px-4 pt-24 pb-16 sm:px-6 lg:px-8">
-        <motion.h1 
-          className="text-3xl sm:text-4xl md:text-5xl font-bold text-black dark:text-white mb-6 text-center"
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5 }}
-        >
-          Announcements
-        </motion.h1>
-        <motion.p 
-          className="text-gray-600 dark:text-gray-400 max-w-2xl mx-auto text-sm sm:text-base md:text-lg text-center"
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, delay: 0.1 }}
-        >
-          Stay up to date with the latest news, updates, and events from the Elastos ecosystem
-        </motion.p>
+      {/* Hero Section with Image and Gradient Overlay */}
+      <div className="relative w-full h-[500px] overflow-hidden -mt-16">
+        <img 
+          src="/images/Roadmap/Community crowd.png" 
+          alt="Elastos Announcements" 
+          className="w-full h-full object-cover opacity-100"
+        />
+        {/* Gradient overlay */}
+        <div className="absolute inset-0 bg-gradient-to-b from-black/10 via-[#171717]/80 to-[#171717]"></div>
+        
+        {/* Hero content overlay */}
+        <div className="absolute inset-0 flex items-center justify-center">
+          <div className="container mx-auto px-4">
+            <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+              <div className="text-center mb-12">
+                <h1 className="text-4xl sm:text-4xl md:text-5xl font-[200] text-white mb-6">
+                  Announcements
+                </h1>
+                <p className="text-gray-300 max-w-2xl mx-auto text-md sm:text-base md:text-lg">
+                  Stay up to date with the latest news, updates, and events from the Elastos ecosystem
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      {/* Background glows */}
+      <div className="absolute inset-0 overflow-hidden pointer-events-none">
+        <div className="absolute top-1/4 -right-28 w-96 h-96 rounded-full bg-[#F6921A]/10 blur-[120px]"></div>
+        <div className="absolute bottom-1/3 -left-28 w-96 h-96 rounded-full bg-[#5C8EFF]/10 blur-[120px]"></div>
       </div>
 
       {/* Category filters */}
