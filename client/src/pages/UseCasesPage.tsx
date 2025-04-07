@@ -40,7 +40,7 @@ const UseCasesPage: React.FC = () => {
       id: 1,
       title: "Digital Identity Management",
       description: "Self-sovereign identity solutions powered by Elastos DID allow users to control their personal data, authorize access, and maintain privacy across web interactions.",
-      image: "https://placehold.co/600x400/2a2a2a/FFFFFF?text=Digital+Identity+Management",
+      image: "/images/usecases/Digital Identity Management 2.jpg",
       category: "Identity",
       link: "https://elastos.info/did/",
       modalContent: `<b>Digital Identity Management</b>
@@ -68,7 +68,7 @@ const UseCasesPage: React.FC = () => {
       id: 2,
       title: "Data Marketplaces",
       description: "Decentralized platforms where users can monetize their data by setting permissions and prices, creating a fair data economy where individuals benefit from their digital footprints.",
-      image: "https://placehold.co/600x400/2a2a2a/FFFFFF?text=Data+Marketplaces",
+      image: "/images/usecases/Data Marketplaces 2.jpg",
       category: "Data",
       link: "#",
       modalContent: `<b>Data Marketplaces</b>
@@ -96,7 +96,7 @@ const UseCasesPage: React.FC = () => {
       id: 3,
       title: "NFT Platforms",
       description: "Marketplaces for creating, buying, and selling NFTs with verifiable authenticity, true ownership, and royalty structures that benefit creators across secondary sales.",
-      image: "https://placehold.co/600x400/2a2a2a/FFFFFF?text=NFT+Platforms",
+      image: "/images/usecases/NFT Platforms 2.jpg",
       category: "Assets",
       link: "https://elacity.io",
       modalContent: `<b>NFT Platforms</b>
@@ -124,7 +124,7 @@ const UseCasesPage: React.FC = () => {
       id: 4,
       title: "Decentralized Social Media",
       description: "Social platforms built on user-owned identity and content, offering censorship-resistance, data portability, and direct monetization without relying on advertising or algorithms.",
-      image: "/images/usecases/usecase-default.jpg",
+      image: "/images/usecases/Decentralized Social Media 3.jpg",
       category: "Social",
       link: "#",
       modalContent: `<b>Decentralized Social Media</b>
@@ -151,7 +151,7 @@ const UseCasesPage: React.FC = () => {
       id: 7,
       title: "Secure IoT Networks",
       description: "IoT devices with verifiable identities that can securely communicate, share data, and perform micropayments without centralized servers or vulnerability to network attacks.",
-      image: "/images/usecases/usecase-default.jpg",
+      image: "/images/usecases/Secure loT Networks 3.jpg",
       category: "IoT",
       link: "#",
       modalContent: `<b>Secure IoT Networks</b>
@@ -178,7 +178,7 @@ const UseCasesPage: React.FC = () => {
       id: 8,
       title: "Decentralized Governance",
       description: "DAO frameworks for community-led decision making, with transparent voting mechanisms secured by Elastos DID for authentication and verification of participants.",
-      image: "/images/usecases/usecase-default.jpg",
+      image: "/images/usecases/Decentralized Governance 3.jpg",
       category: "Governance",
       link: "https://www.cyberrepublic.org",
       modalContent: `<b>Decentralized Governance</b>
@@ -205,7 +205,7 @@ const UseCasesPage: React.FC = () => {
       id: 9,
       title: "Verifiable Credentials",
       description: "Issue and verify digital credentials for education, professional certifications, and identity documents without relying on centralized authorities.",
-      image: "/images/usecases/usecase-default.jpg",
+      image: "/images/usecases/Verifiable Credentials 2.jpg",
       category: "Identity",
       link: "#",
       modalContent: `<b>Verifiable Credentials</b>
@@ -232,7 +232,7 @@ const UseCasesPage: React.FC = () => {
       id: 10,
       title: "Digital Content Marketplace",
       description: "Platforms for creators to distribute digital content directly to consumers with verifiable ownership, built-in royalty mechanisms, and protection against unauthorized copying.",
-      image: "/images/usecases/usecase-default.jpg",
+      image: "/images/usecases/Digital Content Marketplace 2.jpg",
       category: "Content",
       link: "#",
       modalContent: `<b>Digital Content Marketplace</b>
@@ -260,7 +260,7 @@ const UseCasesPage: React.FC = () => {
       id: 11,
       title: "Decentralized Storage Solutions",
       description: "Secure, encrypted storage networks where users maintain ownership of their data while benefiting from distributed redundancy and access control.",
-      image: "/images/usecases/usecase-default.jpg",
+      image: "/images/usecases/Decentralized Storage Solutions 2.jpg",
       category: "Storage",
       link: "#",
       modalContent: `<b>Decentralized Storage Solutions</b>
@@ -288,7 +288,7 @@ const UseCasesPage: React.FC = () => {
       id: 12,
       title: "Supply Chain Tracking",
       description: "End-to-end visibility in supply chains with immutable records of product journeys, enabling verification of authenticity, origin, and handling conditions.",
-      image: "/images/usecases/usecase-default.jpg",
+      image: "/images/usecases/Supply Chain Tracking 2.jpg",
       category: "Enterprise",
       link: "#",
       modalContent: `<b>Supply Chain Tracking</b>
@@ -316,7 +316,7 @@ const UseCasesPage: React.FC = () => {
       id: 6,
       title: "Decentralized Finance",
       description: "Financial applications that operate without centralized intermediaries, offering transparent and permissionless access to financial services.",
-      image: "/images/usecases/usecase-default.jpg",
+      image: "/images/usecases/Decentralized Finance 2.jpg",
       category: "Finance",
       link: "#",
       modalContent: `<b>Decentralized Finance</b>
