@@ -108,7 +108,7 @@ export function StackedCircularFooter() {
             <a href="https://www.facebook.com/elastos" target="_blank" rel="noopener noreferrer">
               <Button variant="outline" size="icon" className="rounded-full">
                 <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4" viewBox="0 0 24 24" fill="currentColor">
-                  <path d="M22.675 0H1.325C.593 0 0 .593 0 1.325v21.351C0 23.407.593 24 1.325 24h10.458v-9h-3.335v-4.76h3.335v-2.51c0-3.407 1.767-5.323 6.084-5.323 4.256 0 6.06 1.916 6.06 5.323v2.51h-3.335v4.76h3.335v9h-11.026C.593 24 0 23.407 0 21.351V1.325C0 .593.593 0 1.325 0h21.35z"/>
+                  <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
                 </svg>
                 <span className="sr-only">Facebook</span>
               </Button>
@@ -116,7 +116,7 @@ export function StackedCircularFooter() {
             <a href="https://www.linkedin.com/company/elastos/" target="_blank" rel="noopener noreferrer">
               <Button variant="outline" size="icon" className="rounded-full">
                 <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4" viewBox="0 0 24 24" fill="currentColor">
-                  <path d="M19 0H5C2.239 0 0 2.239 0 5v14c0 2.761 2.239 5 5 5h14c2.761 0 5-2.239 5-5V5c0-2.761-2.239-5-5-5zm-11 19h-3v-9h3v9zm14.293-9.293c1.083 0 1.958.775 1.958 1.716v5.591c0 1.002-.875 1.716-1.958 1.716h-3v-9h3v-2.293c0-.621-.167-1.13-.483-1.528-.317-.397-.757-.663-1.28-.772h-3v9h-3v-9h-3c-.522 0-.965.352-1.28.772-.316.398-.483.907-.483 1.528v2.293h-3v9h3v-5.591c0-.941.875-1.716 1.958-1.716h3z"/>
+                  <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
                 </svg>
                 <span className="sr-only">LinkedIn</span>
               </Button>
