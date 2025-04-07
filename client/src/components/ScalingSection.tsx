@@ -82,7 +82,7 @@ export function ScalingSection() {
         </div>
 
         {activeTab === 'public' ? (
-          <div className="space-y-32">
+          <div className="space-y-20">
             <div className="grid grid-cols-1 md:grid-cols-2 items-center gap-12">
               <div className="flex justify-center">
                 <div className="w-64 h-64 md:w-64 md:h-64 lg:w-72 lg:h-72 xl:w-80 xl:h-80 relative">
