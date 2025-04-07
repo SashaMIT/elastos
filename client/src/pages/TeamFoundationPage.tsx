@@ -5,12 +5,12 @@ import { ScrollToTop } from "@/components/ScrollToTop";
 import { StackedCircularFooter } from "@/components/ui/stacked-circular-footer";
 
 export default function TeamFoundationPage() {
-  const teamMembers = [
+  const keyContributors = [
     {
       name: "Rong Chen",
       role: "Founder & Chief Architect",
       image: "/images/Rong Chen.png",
-      bio: "Rong Chen is the founder and visionary behind Elastos. With over 30 years of experience in operating systems development, including 18 years at Microsoft, Rong has dedicated his career to creating a safer and more decentralized internet architecture.",
+      bio: "Rong Chen is the visionary behind Elastos. With over 30 years of operating systems development experience, including 18 years at Microsoft, Rong has dedicated his career to creating a safer and more decentralized internet architecture. As the first Chinese employee at Microsoft Research, he conceived the idea of a network operating system to secure internet applications, which ultimately evolved into Elastos.",
       links: [
         { icon: <Twitter className="w-4 h-4" />, url: "https://twitter.com/rongchen" },
         { icon: <Globe className="w-4 h-4" />, url: "https://elastos.info" }
@@ -20,20 +20,20 @@ export default function TeamFoundationPage() {
       name: "Sunny Feng Han",
       role: "Co-Founder",
       image: "/images/Sunny.jpeg",
-      bio: "Dr. Sunny Feng Han is a co-founder of Elastos and an economist specializing in the integration of blockchain with traditional industries. He holds a PhD in Economics and has authored several books on blockchain technology.",
+      bio: "Dr. Sunny Feng Han is a co-founder of Elastos with a Ph.D. in Physics from Tsinghua University. He played a crucial role in translating Rong Chen's technical vision into a viable project. Sunny served on the first Cyber Republic Council, where he helped implement critical governance changes including token burning, new tokenomics, and improved transparency. As an educator, Sunny founded the MIT Blockchain Pillar and has lectured on blockchain at Tsinghua University.",
       links: [
         { icon: <Twitter className="w-4 h-4" />, url: "https://twitter.com/sunnyhanfeng" },
         { icon: <Linkedin className="w-4 h-4" />, url: "https://linkedin.com/in/sunnyhanfeng" }
       ]
     },
     {
-      name: "Kevin Zhang",
-      role: "Chief Technology Officer",
+      name: "Yipeng Su",
+      role: "Chief Architect",
       image: "/images/Roadmap/Rong Chen and Kevin Zhang hosted a meetup in Barcelona.jpeg",
-      bio: "Kevin Zhang leads the technical development of Elastos. With extensive experience in blockchain architecture and distributed systems, Kevin has been instrumental in designing Elastos' multi-chain structure and merge-mining implementation.",
+      bio: "Yipeng Su joined Elastos in 2017 as Chief Architect and was instrumental in the project's early development. With over 20 years of experience in software and internet industries, Yipeng led both technical strategy and early operations at Elastos. He was the chief initiator of the Cyber Republic concept for community governance and helped develop the CR consensus. Yipeng has continued to shape the technical direction of Elastos, including proposing the Bonded Proof of Stake enhancement.",
       links: [
         { icon: <Github className="w-4 h-4" />, url: "https://github.com/elastos" },
-        { icon: <Mail className="w-4 h-4" />, url: "mailto:kevin@elastos.org" }
+        { icon: <Mail className="w-4 h-4" />, url: "mailto:tech@elastos.org" }
       ]
     },
     {
@@ -95,7 +95,7 @@ export default function TeamFoundationPage() {
       <div className="relative w-full h-[500px] overflow-hidden -mt-16">
         <img 
           src="/images/Community/Div4TBUWsAYmcEq.jpeg" 
-          alt="Elastos Team Foundation" 
+          alt="Elastos Team" 
           className="w-full h-full object-cover opacity-80"
         />
         {/* Gradient overlay */}
@@ -107,10 +107,10 @@ export default function TeamFoundationPage() {
             <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
               <div className="text-center mb-12">
                 <h1 className="text-4xl sm:text-5xl md:text-6xl font-[200] text-white mb-6">
-                  Team Foundation
+                  Key Contributors
                 </h1>
                 <p className="text-gray-300 max-w-2xl mx-auto text-md sm:text-base md:text-lg font-[200]">
-                  The visionaries and builders behind the Elastos ecosystem
+                  The visionaries and builders who have been pivotal in shaping Elastos
                 </p>
               </div>
             </div>
@@ -118,36 +118,36 @@ export default function TeamFoundationPage() {
         </div>
       </div>
 
-      {/* Team Vision Section */}
+      {/* Vision Section */}
       <section className="py-20 relative overflow-hidden">
         <div className="absolute -top-40 -right-40 w-80 h-80 bg-[#5C8EFF]/10 rounded-full filter blur-[120px]"></div>
         <div className="absolute -bottom-20 -left-40 w-80 h-80 bg-[#F6921A]/10 rounded-full filter blur-[120px]"></div>
         
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="max-w-3xl mx-auto text-center mb-16">
-            <h2 className="text-3xl font-[200] mb-6 text-black dark:text-white">Our Foundation</h2>
+            <h2 className="text-3xl font-[200] mb-6 text-black dark:text-white">Building a New Internet</h2>
             <p className="text-gray-600 dark:text-gray-400 font-[200] mb-8">
-              The Elastos Foundation comprises a diverse group of technologists, researchers, and business leaders committed to creating a more secure, private, and user-centric internet. Our team members come from backgrounds in operating systems, distributed computing, blockchain technology, and digital rights management.
+              Since its inception, Elastos has been driven by visionary individuals committed to creating a more secure, private, and user-centric internet. These key contributors come from diverse backgrounds in operating systems development, distributed computing, blockchain technology, and digital rights management.
             </p>
             <p className="text-gray-600 dark:text-gray-400 font-[200]">
-              Together, we're building the infrastructure for a new internet where users own their data, digital assets, and identities. Our foundation supports the development of the Elastos ecosystem through research, development funding, and community building initiatives.
+              Together, they're building the infrastructure for a new internet where users own their data, digital assets, and identities. Their combined expertise spans decades of experience in both traditional technology and cutting-edge blockchain development.
             </p>
           </div>
         </div>
       </section>
 
-      {/* Leadership Section */}
+      {/* Key Contributors Section */}
       <section className="py-20 bg-gray-50 dark:bg-[#1A1A1A]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-3xl mx-auto text-center mb-16">
-            <h2 className="text-3xl font-[200] mb-6 text-black dark:text-white">Leadership</h2>
+            <h2 className="text-3xl font-[200] mb-6 text-black dark:text-white">Key Contributors</h2>
             <p className="text-gray-600 dark:text-gray-400 font-[200]">
-              Meet the individuals guiding the vision and development of Elastos
+              Meet the individuals who have guided the vision and development of Elastos
             </p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {teamMembers.map((member, index) => (
+            {keyContributors.map((member, index) => (
               <motion.div
                 key={index}
                 className="bg-white dark:bg-[#212121] rounded-xl shadow-sm overflow-hidden"
@@ -249,9 +249,9 @@ export default function TeamFoundationPage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="bg-gradient-to-br from-[#5C8EFF]/10 to-[#F6921A]/10 rounded-2xl p-8 sm:p-12 border border-[#5C8EFF]/30">
             <div className="max-w-3xl mx-auto text-center">
-              <h2 className="text-3xl font-[200] mb-6 text-black dark:text-white">Join Our Team</h2>
+              <h2 className="text-3xl font-[200] mb-6 text-black dark:text-white">Contribute to Elastos</h2>
               <p className="text-gray-600 dark:text-gray-400 font-[200] mb-8">
-                We're always looking for talented individuals who are passionate about creating a better, more secure internet. If you're interested in contributing to the Elastos ecosystem, check out our open positions or contribute to our open-source projects.
+                Elastos is a community-driven project that welcomes talented individuals who are passionate about creating a better, more secure internet. If you're interested in contributing to the Elastos ecosystem, check out the open-source projects or join the community.
               </p>
               
               <div className="flex flex-wrap justify-center gap-4">
