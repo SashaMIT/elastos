@@ -3,7 +3,6 @@ import { motion } from "framer-motion";
 import { ArrowRight, Github, Globe, Linkedin, Mail, Twitter } from "lucide-react";
 import { ScrollToTop } from "@/components/ScrollToTop";
 import { StackedCircularFooter } from "@/components/ui/stacked-circular-footer";
-import { LogoCarouselDemo } from "@/components/LogoCarouselDemo";
 
 export default function TeamFoundationPage() {
   const keyContributors = [
@@ -234,22 +233,7 @@ export default function TeamFoundationPage() {
 
       
 
-      {/* Logo Carousel Section */}
-      <section className="py-20">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="max-w-3xl mx-auto text-center mb-16">
-            <h2 className="text-3xl font-[200] mb-6 text-black dark:text-white">Our Partners</h2>
-            <p className="text-gray-600 dark:text-gray-400 font-[200]">
-              Partnering with leading organizations to build the future of the internet
-            </p>
-          </div>
-          
-          {/* Import the LogoCarouselDemo component */}
-          <div className="mt-10">
-            <LogoCarouselDemo />
-          </div>
-        </div>
-      </section>
+      
 
       {/* Footer */}
       <StackedCircularFooter />
