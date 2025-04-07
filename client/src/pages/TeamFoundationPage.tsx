@@ -14,7 +14,7 @@ export default function TeamFoundationPage() {
       [index]: !prev[index]
     }));
   };
-  
+
   const coreDevelopmentTeams = [
     {
       name: "BeL2 Team",
@@ -124,10 +124,10 @@ export default function TeamFoundationPage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="max-w-3xl mx-auto text-center mb-16">
             <h2 className="text-3xl font-[200] mb-6 text-black dark:text-white">Building a New Internet</h2>
-            <p className="text-gray-600 dark:text-gray-400 font-[200] mb-8">
+            <p className="text-gray-600 dark:text-gray-400 text-base font-[200] mb-8">
               Since its inception, Elastos has been driven by visionary individuals committed to creating a more secure, private, and user-centric internet. These key contributors come from diverse backgrounds in operating systems development, distributed computing, blockchain technology, and digital rights management.
             </p>
-            <p className="text-gray-600 dark:text-gray-400 font-[200]">
+            <p className="text-gray-600 dark:text-gray-400 text-base font-[200]">
               Together, they're building the infrastructure for a new internet where users own their data, digital assets, and identities. Their combined expertise spans decades of experience in both traditional technology and cutting-edge blockchain development.
             </p>
           </div>
@@ -139,7 +139,7 @@ export default function TeamFoundationPage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-3xl mx-auto text-center mb-16">
             <h2 className="text-3xl font-[200] mb-6 text-black dark:text-white">Key Contributors</h2>
-            <p className="text-gray-600 dark:text-gray-400 font-[200]">
+            <p className="text-gray-600 dark:text-gray-400 text-base font-[200]">
               Meet the individuals who have guided the vision and development of Elastos
             </p>
           </div>
@@ -176,7 +176,7 @@ export default function TeamFoundationPage() {
                           <div className="flex justify-end mt-4">
                             <button 
                               onClick={() => toggleBio(index)} 
-                              className="text-[#F6921A] hover:text-[#F6921A]/80 text-sm bg-[#F6921A]/10 dark:bg-[#F6921A]/20 px-3 py-1.5 rounded-full inline-flex items-center"
+                              className="text-[#F6921A] hover:text-[#F6921A]/80 text-base bg-[#F6921A]/10 dark:bg-[#F6921A]/20 px-3 py-1.5 rounded-full inline-flex items-center"
                             >
                               Show Less <ChevronUp className="w-4 h-4 ml-1"/>
                             </button>
@@ -188,7 +188,7 @@ export default function TeamFoundationPage() {
                           <div className="flex justify-end mt-4">
                             <button 
                               onClick={() => toggleBio(index)} 
-                              className="text-[#F6921A] hover:text-[#F6921A]/80 text-sm bg-[#F6921A]/10 dark:bg-[#F6921A]/20 px-3 py-1.5 rounded-full inline-flex items-center"
+                              className="text-[#F6921A] hover:text-[#F6921A]/80 text-base bg-[#F6921A]/10 dark:bg-[#F6921A]/20 px-3 py-1.5 rounded-full inline-flex items-center"
                             >
                               Show More <ChevronDown className="w-4 h-4 ml-1"/>
                             </button>
@@ -222,7 +222,7 @@ export default function TeamFoundationPage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-3xl mx-auto text-center mb-16">
             <h2 className="text-3xl font-[200] mb-6 text-black dark:text-white">Core Contributers</h2>
-            <p className="text-gray-600 dark:text-gray-400 font-[200]">
+            <p className="text-gray-600 dark:text-gray-400 text-base font-[200]">
               Specialized teams focusing on different aspects of the Elastos ecosystem
             </p>
           </div>
@@ -235,7 +235,7 @@ export default function TeamFoundationPage() {
               >
                 <div className={`order-2 ${index % 2 === 0 ? 'lg:order-1' : 'lg:order-2'}`}>
                   <h3 className="text-2xl font-[200] mb-4 text-black dark:text-white">{team.name}</h3>
-                  <p className="text-gray-600 dark:text-gray-400 font-[200] mb-6">{team.description}</p>
+                  <p className="text-gray-600 dark:text-gray-400 text-base font-[200] mb-6">{team.description}</p>
 
                   <div className="flex flex-wrap gap-4">
                     {team.links.map((link, linkIndex) => (
