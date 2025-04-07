@@ -353,8 +353,8 @@ export default function ElaUtilityPage() {
               
               <div className="mb-5">
                 <div className="flex justify-between text-sm mb-1">
-                  <span className="text-neutral-500 dark:text-neutral-400">Network Staked</span>
-                  <span className="font-[200] text-black dark:text-[#5C8EFF]">{networkStats?.stakedAmount ? formatNumber(networkStats.stakedAmount) : 'Loading...'} ELA</span>
+                  <span className="text-neutral-500 dark:text-neutral-400">Staking Participation</span>
+                  <span className="font-[200] text-black dark:text-[#5C8EFF]">{((networkStats?.stakedAmount || 0) / (totalSupply || 1) * 100).toFixed(2)}%</span>
                 </div>
                 <div className="w-full h-2 bg-neutral-200 dark:bg-[#1A1A1A] rounded-full overflow-hidden">
                   <div className="h-full bg-gradient-to-r from-[#5C8EFF] to-[#F6921A] rounded-full" style={{ width: `${((networkStats?.stakedAmount || 0) / (totalSupply || 1)) * 100}%` }}></div>
