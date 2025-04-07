@@ -35,16 +35,6 @@ export default function TeamFoundationPage() {
         { icon: <Github className="w-4 h-4" />, url: "https://github.com/elastos" },
         { icon: <Mail className="w-4 h-4" />, url: "mailto:tech@elastos.org" }
       ]
-    },
-    {
-      name: "Sash Mukherjee",
-      role: "BeL2 Development Lead",
-      image: "/images/Roadmap/Sash as speaker in Bitcoin2024.jpeg",
-      bio: "Sash leads the development of BeL2, Elastos' Layer 2 scaling solution. With a background in computer science and distributed systems, Sash is focused on enhancing Elastos' scalability while maintaining security and decentralization.",
-      links: [
-        { icon: <Twitter className="w-4 h-4" />, url: "https://twitter.com/sashmukherjee" },
-        { icon: <Github className="w-4 h-4" />, url: "https://github.com/elastos" }
-      ]
     }
   ];
 
@@ -136,7 +126,7 @@ export default function TeamFoundationPage() {
         </div>
       </section>
 
-      {/* Key Contributors Section */}
+      {/* Key Contributors Section - Horizontal Layout */}
       <section className="py-20 bg-gray-50 dark:bg-[#1A1A1A]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-3xl mx-auto text-center mb-16">
@@ -146,7 +136,7 @@ export default function TeamFoundationPage() {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
             {keyContributors.map((member, index) => (
               <motion.div
                 key={index}
