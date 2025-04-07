@@ -622,6 +622,15 @@ const LandingPage = () => {
             },
             {
               author: {
+                name: "Sash Mitchell",
+                handle: "Elacity Founder",
+                avatar: "/images/Testimonials/Sash.jpeg"
+              },
+              text: "Elastos is a powerful vehicle for data ownership and digital participation. In the physical world, we're becoming liabilities with the rise of AI, robotics and automation...",
+              fullText: "Elastos is a powerful vehicle for data ownership and digital participation. In the physical world, we're becoming liabilities with the rise of AI, robotics and automation. In the digital world, we're constant assets, yet the value we create rarely comes back to us. Elastos is building tools for a fairer digital future and anyone can join the community and own a piece of the network with ELA. Im very grateful for the amazing people and experiences I've found through Elastos."
+            },
+            {
+              author: {
                 name: "Fake Fake",
                 handle: "Community Member",
                 avatar: "/images/Testimonials/Fake Fake.jpg"
