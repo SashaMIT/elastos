@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect } from "react";
 import { Network, Lock, Wallet, Zap, Search, CheckCircle } from "lucide-react";
 import { motion } from "framer-motion";
@@ -152,7 +151,7 @@ export default function ElaUtilityPage() {
               Discover the utility and capabilities of Elastos' native digital asset
             </p>
           </div>
-          
+
           <div className="relative">
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 xl:border rounded-md dark:border-neutral-800">
               {/* Stats Card */}
@@ -168,7 +167,7 @@ export default function ElaUtilityPage() {
                 <div className="text-base text-neutral-600 dark:text-neutral-300 font-[200] mb-3">
                   Track real-time metrics for Elastos blockchain performance and user adoption.
                 </div>
-                
+
                 <div className="flex flex-col gap-2 my-4">
                   <div className="flex justify-between items-center">
                     <span className="text-sm text-neutral-500 dark:text-neutral-400">Active Wallets</span>
@@ -179,7 +178,7 @@ export default function ElaUtilityPage() {
                     <span className="text-sm font-[200] text-black dark:text-white">${isHashrateLoading ? '...' : (hashrateData?.elaPrice?.toFixed(2) || '0.00')}</span>
                   </div>
                 </div>
-                
+
                 <a href="/stats" className="inline-flex px-3 py-2 bg-[rgba(92,142,255,0.15)] text-white rounded-full font-[200] transition-all items-center gap-1 border border-[rgba(92,142,255,0.25)] text-sm mt-2">
                   <span>Learn More</span>
                   <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 35 34" fill="none">
@@ -203,7 +202,7 @@ export default function ElaUtilityPage() {
                 <div className="text-base text-neutral-600 dark:text-neutral-300 font-[200] mb-3">
                   Explore how ELA maintains Bitcoin-level security and protects your assets.
                 </div>
-                
+
                 <div className="flex flex-col gap-2 my-4">
                   <div className="flex justify-between items-center">
                     <span className="text-sm text-neutral-500 dark:text-neutral-400">Hashrate</span>
@@ -214,7 +213,7 @@ export default function ElaUtilityPage() {
                     <span className="text-sm font-[200] text-black dark:text-white">{isHashrateLoading ? '...' : `${((hashrateData?.elastosHashrate ?? 0) / (hashrateData?.bitcoinHashrate ?? 1) * 100).toFixed(2)}%`}</span>
                   </div>
                 </div>
-                
+
                 <a href="/security" className="inline-flex px-3 py-2 bg-[rgba(92,142,255,0.15)] text-white rounded-full font-[200] transition-all items-center gap-1 border border-[rgba(92,142,255,0.25)] text-sm mt-2">
                   <span>Learn More</span>
                   <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 35 34" fill="none">
@@ -238,7 +237,7 @@ export default function ElaUtilityPage() {
                 <div className="text-base text-neutral-600 dark:text-neutral-300 font-[200] mb-3">
                   Understand ELA's tokenomics, emission schedule, and circulation metrics.
                 </div>
-                
+
                 <div className="flex flex-col gap-2 my-4">
                   <div className="flex justify-between items-center">
                     <span className="text-sm text-neutral-500 dark:text-neutral-400">Circulating Supply</span>
@@ -249,7 +248,7 @@ export default function ElaUtilityPage() {
                     <span className="text-sm font-[200] text-black dark:text-white">28.2M ELA</span>
                   </div>
                 </div>
-                
+
                 <a href="/supply" className="inline-flex px-3 py-2 bg-[rgba(92,142,255,0.15)] text-white rounded-full font-[200] transition-all items-center gap-1 border border-[rgba(92,142,255,0.25)] text-sm mt-2">
                   <span>Learn More</span>
                   <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 35 34" fill="none">
@@ -273,7 +272,7 @@ export default function ElaUtilityPage() {
                 <div className="text-base text-neutral-600 dark:text-neutral-300 font-[200] mb-3">
                   Get ELA on leading exchanges and decentralized platforms for easy access.
                 </div>
-                
+
                 <div className="flex flex-col gap-2 my-4">
                   <div className="flex justify-between items-center">
                     <span className="text-sm text-neutral-500 dark:text-neutral-400">Current Price</span>
@@ -284,7 +283,7 @@ export default function ElaUtilityPage() {
                     <span className="text-sm font-[200] text-black dark:text-white">${isMarketCapLoading ? '...' : formatNumber(marketCapData?.elastosMarketCap)}</span>
                   </div>
                 </div>
-                
+
                 <a href="/buy-ela" className="inline-flex px-3 py-2 bg-[rgba(92,142,255,0.15)] text-white rounded-full font-[200] transition-all items-center gap-1 border border-[rgba(92,142,255,0.25)] text-sm mt-2">
                   <span>Learn More</span>
                   <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 35 34" fill="none">
@@ -323,37 +322,47 @@ export default function ElaUtilityPage() {
                   </svg>
                 </div>
               </div>
-              
+
               <div className="flex items-center gap-3 mb-3">
                 <h3 className="text-xl font-[200] text-black dark:text-white">Stake & Earn</h3>
               </div>
-              
+
               <div className="mb-4">
                 <p className="text-neutral-600 dark:text-neutral-300 font-[200] text-base mb-3">
                   ELA staking offers a secure way to earn up to 3.29% APY while supporting the network's security and decentralization.
                 </p>
               </div>
-              
-              <div className="mb-4">
-                <div className="flex justify-between text-base mb-1">
-                  <span className="text-neutral-500 dark:text-neutral-400">Current APY</span>
-                  <span className="font-[200] text-black dark:text-[#5C8EFF]">3.29%</span>
+
+              {isHashrateLoading ? (
+                <div className="flex justify-center items-center py-6">
+                  <div className="text-[#5C8EFF]">
+                    <Dots_v2 /> {/* Assumed Dots_v2 component exists */}
+                  </div>
                 </div>
-                <div className="w-full h-2 bg-neutral-200 dark:bg-[#1A1A1A] rounded-full overflow-hidden">
-                  <div className="h-full bg-gradient-to-r from-[#5C8EFF] to-[#F6921A] rounded-full" style={{ width: '32.9%' }}></div>
-                </div>
-              </div>
-              
-              <div className="mb-5">
-                <div className="flex justify-between text-base mb-1">
-                  <span className="text-neutral-500 dark:text-neutral-400">Security Power</span>
-                  <span className="font-[200] text-black dark:text-[#5C8EFF]">{isHashrateLoading ? '...' : `${((hashrateData?.elastosHashrate ?? 0) / (hashrateData?.bitcoinHashrate ?? 1) * 100).toFixed(2)}%`}</span>
-                </div>
-                <div className="w-full h-2 bg-neutral-200 dark:bg-[#1A1A1A] rounded-full overflow-hidden">
-                  <div className="h-full bg-gradient-to-r from-[#5C8EFF] to-[#F6921A] rounded-full" style={{ width: `${((hashrateData?.elastosHashrate ?? 0) / (hashrateData?.bitcoinHashrate ?? 1) * 100)}%` }}></div>
-                </div>
-              </div>
-              
+              ) : (
+                <>
+                  <div className="mb-4">
+                    <div className="flex justify-between text-base mb-1">
+                      <span className="text-neutral-500 dark:text-neutral-400">Current APY</span>
+                      <span className="font-[200] text-black dark:text-[#5C8EFF]">3.29%</span>
+                    </div>
+                    <div className="w-full h-2 bg-neutral-200 dark:bg-[#1A1A1A] rounded-full overflow-hidden">
+                      <div className="h-full bg-gradient-to-r from-[#5C8EFF] to-[#F6921A] rounded-full" style={{ width: '32.9%' }}></div>
+                    </div>
+                  </div>
+
+                  <div className="mb-5">
+                    <div className="flex justify-between text-base mb-1">
+                      <span className="text-neutral-500 dark:text-neutral-400">Security Power</span>
+                      <span className="font-[200] text-black dark:text-[#5C8EFF]">{`${((hashrateData?.elastosHashrate ?? 0) / (hashrateData?.bitcoinHashrate ?? 1) * 100).toFixed(1)}%`}</span>
+                    </div>
+                    <div className="w-full h-2 bg-neutral-200 dark:bg-[#1A1A1A] rounded-full overflow-hidden">
+                      <div className="h-full bg-gradient-to-r from-[#5C8EFF] to-[#F6921A] rounded-full" style={{ width: `${((hashrateData?.elastosHashrate ?? 0) / (hashrateData?.bitcoinHashrate ?? 1) * 100)}%` }}></div>
+                    </div>
+                  </div>
+                </>
+              )}
+
               <a href="https://staking.elastos.net/" target="_blank" rel="noopener noreferrer" className="inline-flex px-3 py-2 bg-[rgba(92,142,255,0.15)] text-white rounded-full font-[200] transition-all items-center gap-1 border border-[rgba(92,142,255,0.25)] text-sm">
                 <span>Learn How to Stake</span>
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 35 34" fill="none">
@@ -373,17 +382,17 @@ export default function ElaUtilityPage() {
                   </svg>
                 </div>
               </div>
-              
+
               <div className="flex items-center gap-3 mb-3">
                 <h3 className="text-xl font-[200] text-black dark:text-white">Shape the Future</h3>
               </div>
-              
+
               <div className="mb-4">
                 <p className="text-neutral-600 dark:text-neutral-300 font-[200] text-base mb-3">
                   Participate in Elastos DAO governance with your ELA tokens. Elect council members and help determine the future direction.
                 </p>
               </div>
-              
+
               <div className="grid grid-cols-2 gap-3 mb-5">
                 <div className="bg-neutral-100 dark:bg-[#1A1A1A]/50 p-3 rounded-lg">
                   <div className="text-[#F6921A] dark:text-[#5C8EFF] text-xl font-bold">73+</div>
@@ -394,7 +403,7 @@ export default function ElaUtilityPage() {
                   <div className="text-neutral-500 dark:text-white/60 text-sm">Treasury (ELA)</div>
                 </div>
               </div>
-              
+
               <a href="/dao" className="inline-flex px-3 py-2 bg-[rgba(246,146,26,0.15)] text-white rounded-full font-[200] transition-all items-center gap-1 border border-[rgba(246,146,26,0.25)] text-sm">
                 <span>Explore DAO</span>
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 35 34" fill="none">
