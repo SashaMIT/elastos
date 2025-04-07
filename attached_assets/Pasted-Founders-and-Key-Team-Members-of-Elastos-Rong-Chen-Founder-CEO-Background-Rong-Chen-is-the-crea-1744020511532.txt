@@ -1,0 +1,75 @@
+Founders and Key Team Members of Elastos
+Rong Chen – Founder & CEO
+Background: Rong Chen is the creator and leader of Elastos. He was among the top students of the post-Cultural Revolution “Class of ‘77” in China, gaining admission to Tsinghua University where he became one of the first software engineering graduates in the country​
+ELASTOS.INFO
+. He later attended the Institute of Computing Technology at the Chinese Academy of Sciences and then pursued graduate studies in the United States. In the mid-1980s, Rong studied operating systems at the University of Illinois at Urbana-Champaign and worked at the National Center for Supercomputing Applications (NCSA), contributing to projects that helped lay groundwork for the first web browser, Mosaic​
+ELASTOS.INFO
+​
+COINTELEGRAPH.COM
+. Professional Experience: In 1992, Rong became the first Chinese employee at Microsoft Research, focusing on operating system design​
+ELASTOS.INFO
+. There he conceived the idea of a network operating system – “the network is the computer” – to solve internet security issues by running applications in a secure sandbox, an early vision that presaged Elastos​
+ELASTOS.INFO
+. His concept was initially prototyped as Microsoft’s .NET project, but after it was not adopted, Rong left Microsoft in 2000 to pursue his vision independently​
+ELASTOS.INFO
+. He founded a company called Kortide in 2000 to develop his “internet OS” idea​
+COINBUREAU.COM
+. Over the next decade, he persisted in building this platform and securing support. Notably, in 2013 Rong secured a $31 million investment from Foxconn to advance Elastos development​
+COINBUREAU.COM
+. In 2016, he successfully integrated blockchain technology into the Elastos operating system framework, enabling a “truly decentralized internet infrastructure” for secure data ownership​
+COINTELEGRAPH.COM
+. Role in Elastos: Rong Chen formally launched Elastos as a blockchain-powered internet project in 2017, becoming Co-Founder and Chairman of the Elastos Foundation​
+COINBUREAU.COM
+. He is the primary architect of Elastos’ vision of a “Smart Web” – a decentralized internet where users own their data and digital assets. Under his leadership, the Elastos project achieved milestones such as introducing merged mining with Bitcoin in 2018 to secure the network, and releasing a suite of core products (Elastos runtime, carrier, decentralized ID, etc.)​
+ELASTOS.INFO
+​
+ELASTOS.INFO
+. Rong is known for emphasizing equality and individual rights in the digital realm: “We are creating a revolutionary internet infrastructure project set to ensure equality in the digital realm on a global scale,” he says of Elastos​
+ELASTOS.INFO
+. He continues to serve as the CEO and figurehead of Elastos, frequently speaking on its technology. (He has authored opinion pieces on Cointelegraph and other outlets, sharing his insights as an Internet pioneer turned blockchain innovator​
+COINTELEGRAPH.COM
+.)
+Sunny Feng Han – Co-Founder
+Background: Sunny Feng Han (often known simply as Feng Han) is the co-founder of Elastos with a strong academic and blockchain advocacy background. He earned a Ph.D. in Physics from Tsinghua University and later became a visiting scholar and research associate at Columbia University in the United States​
+COINBUREAU.COM
+. Sunny has been active in the blockchain education space as well – he is noted as a founder of the MIT Blockchain Pillar initiative and has lectured on blockchain at Tsinghua University’s graduate courses​
+TOKENINSIGHT.COM
+. He also served as an advisor at Huawei’s Central Research Institute, reflecting his influence in tech circles​
+COINBUREAU.COM
+. Role in Elastos: Sunny Feng Han was instrumental in translating Rong Chen’s technical vision into a viable project and community. He joined Rong as co-founder around 2017 to help launch Elastos, leveraging his academic and industry connections to promote the project globally. Within the Elastos Foundation’s early leadership, Sunny was one of three initial Board Directors (alongside Rong Chen and Yipeng Su)​
+MEDIUM.COM
+. He became known as a thought leader and evangelist for Elastos, often representing the project at international conferences and meetups. Sunny has described himself as “one of the thought leaders of Elastos since inception”​
+ELASTOS.INFO
+. In the community-driven Cyber Republic (see below), Sunny took on a direct governance role: he ran for and was elected to the first Cyber Republic Council (2020), and served as a council member in its inaugural year​
+SUNNYFENGHAN.MEDIUM.COM
+. During that first year, he and fellow councilors tackled major issues for the ecosystem – Sunny highlights three key achievements of the council’s first term: the burning of over 13 million ELA tokens to address community concerns about token oversupply, adoption of a new tokenomics model with a capped supply and Bitcoin-like halving schedule, and significantly improving the transparency of the Elastos Foundation’s asset management​
+SUNNYFENGHAN.MEDIUM.COM
+. These moves, driven by Sunny and the council, strengthened community trust and aligned Elastos’ economic model with decentralized principles. Sunny has also been active in fostering partnerships: for example, in 2019 he partnered with industry figures (such as a Tencent Cloud VP and World Bank security architect) to launch a “data capitalization” initiative, which led to the incubation of CreDA, a decentralized credit oracle project in the Elastos ecosystem​
+SUNNYFENGHAN.MEDIUM.COM
+. This exemplifies Sunny’s role as a bridge between Elastos and broader blockchain/data communities. After serving on the CR Council for the 2020–2021 term (and being re-elected for 2021–2022), Sunny stepped back from daily operations; today he continues to support Elastos as an advisor and thought leader (frequently sharing insights on social media and Medium about Web3 and the Elastos vision).
+Yipeng Su – Chief Architect and Early Leader
+Background: Yipeng Su is the Chief Architect of Elastos and was part of the project’s founding team. He has over 20 years of experience in software and internet industries​
+MEDIUM.COM
+. Yipeng joined the Elastos initiative on August 1, 2017, soon after the project’s formal start, and played a crucial role in its early development​
+MEDIUM.COM
+. Prior to Elastos, he worked in senior technical roles (specific companies are not public, but his expertise in IT and development is well recognized​
+U.TODAY
+). He became one of the three directors of the Elastos Foundation (along with Rong and Sunny) in the project’s early days​
+MEDIUM.COM
+. Role in Elastos: As Chief Architect, Yipeng Su led the overall technical strategy and architecture of the Elastos smart web. In the first year of the project (2017–2018), Yipeng not only oversaw engineering teams but also managed day-to-day operations of the founding team, helping run the token sale and launch the main chain (Elastos’ mainnet launched in December 2017, with ELA token listing on exchanges by early 2018)​
+MEDIUM.COM
+​
+MEDIUM.COM
+. He was essentially Rong Chen’s right-hand in the foundation, coordinating across technical and non-technical domains. Yipeng is credited with helping Elastos explore a decentralized operational model from the start – notably, Elastos did not appoint a traditional CEO in 2017, instead entrusting leadership to a team approach which Yipeng helped facilitate​
+MEDIUM.COM
+. As more talent joined (he notes additions like Ben Lee, Jingyu Niu, Rebecca Zhu, Fay Li, etc., discussed below), Yipeng shifted focus back to high-level technical planning and strategy​
+MEDIUM.COM
+. Cyber Republic Involvement: Yipeng Su was the chief initiator of the Cyber Republic (CR) concept, which is Elastos’ community governance framework. When the Elastos Foundation set up the CR Interim Council in August 2018, Yipeng resigned from the Foundation’s Board of Directors to serve on this council and drive decentralization​
+MEDIUM.COM
+. He served on the Interim CR Council (2018–2020) as the representative of the founding team/Elastos Foundation​
+MEDIUM.COM
+. In this role, he helped oversee the creation of the CR consensus (CRC) whitepaper and governance processes. Yipeng’s influence is seen in key technical proposals as well – for example, in late 2021 he proposed the concept of Bonded Proof of Stake (BPoS) to enhance Elastos’ consensus security​
+ELASTOS-WIKI.NETLIFY.APP
+, which was adopted to complement Elastos’ hybrid consensus. Internally, Yipeng has been described as a “libero” – moving across the field to wherever needed​
+MEDIUM.COM
+ – engaging with core engineers on technical direction and with community contributors to gather feedback. His ability to wear both engineering and leadership hats has been fundamental to Elastos’ development. Yipeng continues to serve as Elastos’ Chief Architect and remains a key strategist for the project’s future direction.
