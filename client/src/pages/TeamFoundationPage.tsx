@@ -94,7 +94,7 @@ export default function TeamFoundationPage() {
       {/* Hero Section with Image and Gradient Overlay */}
       <div className="relative w-full h-[500px] overflow-hidden -mt-16">
         <img 
-          src="/images/Roadmap/Elastos Members.jpeg" 
+          src="/images/Community/Div4TBUWsAYmcEq.jpeg" 
           alt="Elastos Team Foundation" 
           className="w-full h-full object-cover opacity-80"
         />
