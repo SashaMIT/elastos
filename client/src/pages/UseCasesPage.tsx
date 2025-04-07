@@ -8,6 +8,7 @@ import { LogoCarouselDemo } from "@/components/LogoCarouselDemo";
 import { Layout } from "@/components/Layout";
 import { CodeBlock } from "@/components/ui/code-block";
 import { UseCaseModal } from "@/components/UseCaseModal";
+import { SEO } from "@/components/SEO";
 
 interface UseCase {
   id: number;
@@ -362,6 +363,13 @@ const UseCasesPage: React.FC = () => {
 
   return (
     <div className="min-h-screen bg-white dark:bg-[#171717]">
+      <SEO 
+        title="Elastos Use Cases | Applications & Solutions"
+        description="Explore real-world applications and use cases for Elastos technology across various industries including DeFi, NFTs, identity management, and more."
+        keywords="Elastos use cases, Web3 applications, DID, decentralized storage, NFT marketplace, dApps"
+        ogImage="/images/Elastosbanner.jpg"
+        canonicalUrl="/use-cases"
+      />
       <Layout>
         <div className="w-full relative">
           <BackgroundCells className="bg-slate-950 h-[50vh] -mt-60 pt-0">

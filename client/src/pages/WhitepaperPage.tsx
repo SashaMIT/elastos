@@ -4,6 +4,7 @@ import Layout from "@/components/Layout";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
 import React from "react";
+import { SEO } from "@/components/SEO";
 import { LogoCarouselDemo } from "@/components/LogoCarouselDemo";
 import { StackedCircularFooter } from "@/components/ui/stacked-circular-footer";
 
@@ -314,6 +315,13 @@ const WhitepaperPage = () => {
           </div>
         </div>
       </div>
+      <SEO 
+        title="Elastos Whitepaper | Technical Documentation"
+        description="Access the official Elastos whitepaper, technical documentation, and litepaper to understand the technology and vision behind the project."
+        keywords="Elastos whitepaper, technical documentation, blockchain whitepaper, Web3 infrastructure, litepaper"
+        ogImage="/images/whitepapers/litepaper-cover.png"
+        canonicalUrl="/whitepaper"
+      />
       <LogoCarouselDemo />
       <StackedCircularFooter />
     </Layout>

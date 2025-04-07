@@ -15,6 +15,7 @@ import { WhatYouCanBuild } from "@/components/blocks/what-you-can-build";
 import { WorldComputerBanner } from "@/components/blocks/world-computer-banner";
 import { DetailedVisionSection } from "@/components/blocks/detailed-vision-section";
 import { LogoCarouselDemo } from "@/components/LogoCarouselDemo";
+import { SEO } from "@/components/SEO";
 
 export function VisionPage() {
   const technologies = [
@@ -34,6 +35,13 @@ export function VisionPage() {
 
   return (
     <div className="w-full relative" style={{ zIndex: 0 }}>
+      <SEO 
+        title="Elastos Vision | The Future of the Web"
+        description="Learn about Elastos' vision for a decentralized internet where users have complete control over their digital identities, data, and assets."
+        keywords="Elastos vision, decentralized internet, Web3, digital ownership, SmartWeb, World Computer"
+        ogImage="/images/Elastosbanner.jpg"
+        canonicalUrl="/vision"
+      />
       <BackgroundCells className="bg-slate-950 h-[50vh] -mt-6 pt-0">
         <div className="container mx-auto px-4 relative z-10">
           <motion.div

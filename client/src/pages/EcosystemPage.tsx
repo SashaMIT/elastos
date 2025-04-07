@@ -4,6 +4,7 @@ import { Button } from '@/components/ui/button';
 import { Lens } from "@/components/ui/lens";
 import { ExternalLink, Share2, Terminal, Wallet, Image, Building2 } from 'lucide-react';
 import { motion } from "framer-motion";
+import { SEO } from "@/components/SEO";
 
 type Project = {
   name: string;
@@ -472,6 +473,13 @@ export default function EcosystemPage() {
 
   return (
     <div className="min-h-screen bg-white dark:bg-[#171717] text-black dark:text-white">
+      <SEO 
+        title="Elastos Ecosystem | Web3 Projects & Partners"
+        description="Explore the growing ecosystem of projects, applications, and partners building on Elastos technology to create a better internet."
+        keywords="Elastos ecosystem, dApps, blockchain projects, Elacity, BeL2, Elastos partners, Web3"
+        ogImage="/images/Elastosbanner.jpg"
+        canonicalUrl="/ecosystem"
+      />
       <div className="flex flex-col lg:flex-row">
         {/* Mobile Category Selector */}
         <div className="lg:hidden p-4 pt-4 overflow-x-auto">

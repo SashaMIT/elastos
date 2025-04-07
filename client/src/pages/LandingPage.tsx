@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { SEO } from "@/components/SEO";
 import { VerifyButton } from '@/components/ui/verify-button';
 import { Link } from 'react-router-dom';
 import { VideoPlayerDemo } from "@/components/VideoPlayerDemo";
@@ -259,6 +260,13 @@ const LandingPage = () => {
 
   return (
     <div className="flex flex-col gap- w-full">
+      <SEO 
+        title="Elastos - Web3 Infrastructure Secured by Bitcoin"
+        description="Elastos is building a decentralized internet infrastructure that gives you true digital ownership and privacy, secured by Bitcoin."
+        keywords="Elastos, blockchain, bitcoin, Web3, digital ownership, merged mining, decentralized identity, ELA"
+        ogImage="/images/Elastosbanner.jpg"
+        canonicalUrl="/"
+      />
 
       {/* Hero Section */}
       <div className="w-full px-2 mt-[-20px]">

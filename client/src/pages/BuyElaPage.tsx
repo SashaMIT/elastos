@@ -11,6 +11,7 @@ import {
 import { useHashrateData } from '../hooks/useHashrateData';
 import { AreaChart, Area, XAxis, YAxis, Tooltip as RechartsTooltip, ResponsiveContainer } from 'recharts';
 import { StackedCircularFooter } from "@/components/ui/stacked-circular-footer";
+import { SEO } from "@/components/SEO";
 
 const BuyElaPage = () => {
   const { data: hashrateData } = useHashrateData();
@@ -77,6 +78,13 @@ const BuyElaPage = () => {
 
   return (
     <div className="w-full h-full bg-white dark:bg-[#171717] p-4">
+      <SEO 
+        title="Buy ELA | How to Purchase Elastos Token"
+        description="Learn how to buy ELA, the native token of the Elastos ecosystem, through exchanges, wallets, and other available methods."
+        keywords="buy ELA, Elastos token, crypto exchanges, how to purchase ELA, Elastos investment"
+        ogImage="/images/Elastosbanner.jpg"
+        canonicalUrl="/buy-ela"
+      />
       <Card className="max-w-6xl mx-auto dark:bg-[#171717] dark:text-white border-0">
         <CardHeader className="p-3 dark:bg-[#171717]">
           <CardTitle className="flex items-center gap-2 text-base dark:text-white">

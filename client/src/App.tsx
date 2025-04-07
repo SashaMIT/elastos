@@ -1,6 +1,7 @@
 import React, { Suspense, lazy } from 'react';
 import { Route, Routes } from 'react-router-dom';
 import { Spinner } from '@/components/ui/spinner';
+import { OrganizationStructuredData } from './components/StructuredData';
 
 // Use lazy loading for page components
 const LandingPage = lazy(() => import('./pages/LandingPage'));
@@ -29,6 +30,7 @@ const PageLoader = () => (
 function App() {
   return (
     <Suspense fallback={<PageLoader />}>
+      <OrganizationStructuredData />
       <Routes>
         <Route path="/" element={<LandingPage />} />
         <Route path="/security" element={<SecurityPage />} />
