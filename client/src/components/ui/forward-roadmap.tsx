@@ -7,7 +7,7 @@ export const ForwardRoadmap = () => {
       quarter: 'Q1-Q2 2025',
       items: [
         {
-          title: 'Elastos 2.0 Launch with BeL2 Arbiter Launch',
+          title: 'BeL2 Arbiter Launch',
           details: 'Bitcoin Elastos Layer 2 Arbiter nodes to support Native Bitcoin DeFi with ELA staking'
         },
         {
@@ -15,8 +15,8 @@ export const ForwardRoadmap = () => {
           details: 'Launch of Elacity v3 Marketplace for digital asset trading in audio and video markets'
         },
         {
-          title: 'World Computer Support',
-          details: 'Integrating Login and DePin connectivity'
+          title: 'BeL2 Loan Dapp Connectivity',
+          details: 'Integrating BeL2 into a lending demo to show commercial viability'
         }
       ]
     },
@@ -30,10 +30,10 @@ export const ForwardRoadmap = () => {
         },
         {
           title: 'Developer Tools Expansion',
-          details: 'New SDKs and comprehensive documentation for developers'
+          details: 'New Elastos SDKs for all latest Elastos upgrades'
         },
         {
-          title: 'World Computer Support',
+          title: 'World Computer Updates',
           details: 'Integrating Login and DePin connectivity'
         }
       ]
