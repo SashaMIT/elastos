@@ -9,27 +9,41 @@ export default function AmbassadorsPage() {
     <div className="min-h-screen bg-white dark:bg-[#171717] relative">
       <ScrollToTop />
       
-      {/* Coming Soon Overlay */}
-      <div className="fixed inset-0 z-50 bg-black/80 backdrop-blur-md flex items-center justify-center">
-        <div className="bg-[#212121] p-12 rounded-xl border border-[#5C8EFF]/30 max-w-2xl text-center relative overflow-hidden">
+      {/* Coming Soon Overlay - Enhanced Glass Effect */}
+      <div className="fixed inset-0 z-50 bg-black/60 backdrop-blur-xl flex items-center justify-center">
+        {/* Content being worked on (blurred in background) */}
+        <div className="absolute inset-0 opacity-20 overflow-hidden">
+          <div className="w-full h-full bg-[#171717]/30"></div>
+        </div>
+        
+        <div className="bg-[#212121]/80 backdrop-blur-lg p-12 rounded-xl border border-[#5C8EFF]/40 max-w-2xl text-center relative overflow-hidden shadow-xl">
           {/* Background glow effects */}
-          <div className="absolute -top-20 -right-20 w-64 h-64 rounded-full bg-[#F6921A]/10 blur-[80px]"></div>
-          <div className="absolute -bottom-20 -left-20 w-72 h-72 rounded-full bg-[#5C8EFF]/10 blur-[100px]"></div>
+          <div className="absolute -top-20 -right-20 w-72 h-72 rounded-full bg-[#F6921A]/15 blur-[80px]"></div>
+          <div className="absolute -bottom-20 -left-20 w-80 h-80 rounded-full bg-[#5C8EFF]/15 blur-[100px]"></div>
           
+          <div className="relative">
+            <span className="absolute -top-12 left-1/2 -translate-x-1/2 bg-[#F6921A]/90 text-white text-xs px-3 py-1 rounded-full uppercase tracking-wider font-medium">Under Development</span>
+          </div>
           <h2 className="text-4xl md:text-5xl font-[200] text-white mb-6 relative z-10">Ambassador Program</h2>
-          <div className="w-16 h-1 bg-gradient-to-r from-[#F6921A] to-[#5C8EFF] mx-auto mb-6"></div>
-          <p className="text-gray-300 text-xl mb-8 relative z-10">Coming Soon</p>
-          <p className="text-gray-400 mb-8 relative z-10">
+          <div className="w-20 h-1 bg-gradient-to-r from-[#F6921A] to-[#5C8EFF] mx-auto mb-6"></div>
+          <p className="text-gray-200 text-xl mb-8 relative z-10 font-medium tracking-wide">Coming Soon</p>
+          <p className="text-gray-300 mb-8 relative z-10">
             We're currently building our ambassador program to help spread the Elastos vision worldwide. 
             Check back soon for details on how to participate and make a difference in the Elastos ecosystem.
           </p>
           <a 
             href="/"
-            className="inline-flex px-5 py-3 bg-[rgba(92,142,255,0.10)] text-[#5C8EFF] rounded-full font-medium transition-all items-center gap-2 border border-[rgba(92,142,255,0.50)] hover:bg-[rgba(92,142,255,0.15)] relative z-10"
+            className="inline-flex px-5 py-3 bg-[rgba(92,142,255,0.10)] text-[#5C8EFF] rounded-full font-medium transition-all items-center gap-2 border border-[rgba(92,142,255,0.50)] hover:bg-[rgba(92,142,255,0.20)] hover:scale-105 relative z-10 group shadow-lg shadow-[#5C8EFF]/5"
           >
+            <ArrowLeft className="h-4 w-4 group-hover:-translate-x-1 transition-transform" />
             <span>Return to Home</span>
-            <ArrowLeft className="h-4 w-4" />
           </a>
+          
+          {/* Subtle animated dot to draw attention */}
+          <div className="absolute bottom-6 right-6 flex items-center justify-center">
+            <div className="w-2 h-2 bg-[#F6921A] rounded-full animate-ping opacity-70"></div>
+            <div className="w-3 h-3 bg-[#F6921A]/30 rounded-full absolute blur-sm"></div>
+          </div>
         </div>
       </div>
 
