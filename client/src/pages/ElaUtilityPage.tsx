@@ -328,17 +328,10 @@ export default function ElaUtilityPage() {
                 <h3 className="text-xl font-[200] text-black dark:text-white">Stake & Earn</h3>
               </div>
               
-              <div className="flex gap-4 mb-4">
-                <img 
-                  src="/images/Essentials.png" 
-                  alt="Elastos Staking" 
-                  className="w-24 h-24 object-cover rounded-lg"
-                />
-                <div className="flex-1">
-                  <p className="text-neutral-600 dark:text-neutral-300 font-[200] text-base mb-3">
-                    ELA staking offers a secure way to earn up to 3.29% APY while supporting the network's security and decentralization.
-                  </p>
-                </div>
+              <div className="mb-4">
+                <p className="text-neutral-600 dark:text-neutral-300 font-[200] text-base mb-3">
+                  ELA staking offers a secure way to earn up to 3.29% APY while supporting the network's security and decentralization.
+                </p>
               </div>
               
               <div className="mb-4">
@@ -385,17 +378,10 @@ export default function ElaUtilityPage() {
                 <h3 className="text-xl font-[200] text-black dark:text-white">Shape the Future</h3>
               </div>
               
-              <div className="flex gap-4 mb-4">
-                <img 
-                  src="/images/Ecosystem/Cyber Republic.png" 
-                  alt="Elastos DAO" 
-                  className="w-24 h-24 object-cover rounded-lg"
-                />
-                <div className="flex-1">
-                  <p className="text-neutral-600 dark:text-neutral-300 font-[200] text-base mb-3">
-                    Participate in Elastos DAO governance with your ELA tokens. Elect council members and help determine the future direction.
-                  </p>
-                </div>
+              <div className="mb-4">
+                <p className="text-neutral-600 dark:text-neutral-300 font-[200] text-base mb-3">
+                  Participate in Elastos DAO governance with your ELA tokens. Elect council members and help determine the future direction.
+                </p>
               </div>
               
               <div className="grid grid-cols-2 gap-3 mb-5">
