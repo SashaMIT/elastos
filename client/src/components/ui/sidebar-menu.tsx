@@ -41,52 +41,52 @@ import { Menu as MenuIcon } from "lucide-react";
 
 export const SidebarMenu = () => {
   return (
-    <div className="flex flex-col h-[calc(100vh-4rem)] overflow-y-auto bg-background text-foreground pt-16">
+    <div className="flex flex-col h-[calc(100vh-4rem)] overflow-y-auto bg-[#171717] text-white pt-16">
       <Accordion type="single" collapsible className="w-full">
-        <AccordionItem value="explore" className="border-b">
-          <AccordionTrigger className="px-4 text-[#5C8EFF]">EXPLORE</AccordionTrigger>
+        <AccordionItem value="explore" className="border-0">
+          <AccordionTrigger className="px-4 text-white hover:text-[#F6921A] data-[state=open]:text-[#F6921A]">EXPLORE</AccordionTrigger>
           <AccordionContent>
             <div className="flex flex-col space-y-2 px-6">
               <h4 className="font-medium text-sm text-[#94b5ff] mb-2">ABOUT</h4>
-              <Link href="/vision" className="py-2 hover:text-primary flex items-center gap-2">
+              <Link href="/vision" className="py-2 hover:text-[#F6921A] flex items-center gap-2 text-white">
                 <ScrollText className="h-4 w-4 text-[#94b5ff]" />
                 <span>Our Vision</span>
               </Link>
-              <Link href="/roadmap" className="py-2 hover:text-primary flex items-center gap-2">
+              <Link href="/roadmap" className="py-2 hover:text-[#F6921A] flex items-center gap-2 text-white">
                 <LineChart className="h-4 w-4 text-[#94b5ff]" />
                 <span>Roadmap</span>
               </Link>
-              <Link href="/ela-utility" className="py-2 hover:text-primary flex items-center gap-2">
+              <Link href="/ela-utility" className="py-2 hover:text-[#F6921A] flex items-center gap-2 text-white">
                 <Star className="h-4 w-4 text-[#94b5ff]" />
                 <span>ELA Utility</span>
               </Link>
-              <Link href="/use-cases" className="py-2 hover:text-primary flex items-center gap-2">
+              <Link href="/use-cases" className="py-2 hover:text-[#F6921A] flex items-center gap-2 text-white">
                 <Target className="h-4 w-4 text-[#94b5ff]" />
                 <span>Use Cases</span>
               </Link>
-              <Link to="/whitepaper" className="py-2 hover:text-primary flex items-center gap-2">
+              <Link to="/whitepaper" className="py-2 hover:text-[#F6921A] flex items-center gap-2 text-white">
                 <FileText className="h-4 w-4 text-[#94b5ff]" />
                 <span>Litepaper / Whitepaper</span>
               </Link>
 
               <h4 className="font-medium text-sm text-[#94b5ff] mb-2 mt-4">NETWORK</h4>
-              <Link href="/wallet" className="py-2 hover:text-primary flex items-center gap-2">
+              <Link href="/wallet" className="py-2 hover:text-[#F6921A] flex items-center gap-2 text-white">
                 <Wallet className="h-4 w-4 text-[#94b5ff]" />
                 <span>Wallet</span>
               </Link>
-              <Link href="/staking" className="py-2 hover:text-primary flex items-center gap-2">
+              <Link href="/staking" className="py-2 hover:text-[#F6921A] flex items-center gap-2 text-white">
                 <Layers className="h-4 w-4 text-[#94b5ff]" />
                 <span>Staking & Nodes</span>
               </Link>
-              <Link href="/explorer" className="py-2 hover:text-primary flex items-center gap-2">
+              <Link href="/explorer" className="py-2 hover:text-[#F6921A] flex items-center gap-2 text-white">
                 <Search className="h-4 w-4 text-[#94b5ff]" />
                 <span>Explorer</span>
               </Link>
-              <Link href="/projects" className="py-2 hover:text-primary flex items-center gap-2">
+              <Link href="/projects" className="py-2 hover:text-[#F6921A] flex items-center gap-2 text-white">
                 <Globe className="h-4 w-4 text-[#94b5ff]" />
                 <span>Ecosystem Projects</span>
               </Link>
-              <Link href="/faqs" className="py-2 hover:text-primary flex items-center gap-2">
+              <Link href="/faqs" className="py-2 hover:text-[#F6921A] flex items-center gap-2 text-white">
                 <LifeBuoy className="h-4 w-4 text-[#94b5ff]" />
                 <span>FAQs</span>
               </Link>
@@ -94,26 +94,26 @@ export const SidebarMenu = () => {
           </AccordionContent>
         </AccordionItem>
 
-        <AccordionItem value="build" className="border-b">
-          <AccordionTrigger className="px-4 text-[#5C8EFF]">BUILD</AccordionTrigger>
+        <AccordionItem value="build" className="border-0">
+          <AccordionTrigger className="px-4 text-white hover:text-[#F6921A] data-[state=open]:text-[#F6921A]">BUILD</AccordionTrigger>
           <AccordionContent>
             <div className="flex flex-col space-y-2 px-6">
               <h4 className="font-medium text-sm text-[#94b5ff] mb-2">DEVS</h4>
-              <a href="https://elastos.dev/" target="_blank" rel="noopener noreferrer" className="py-2 hover:text-primary flex items-center gap-2">
+              <a href="https://elastos.dev/" target="_blank" rel="noopener noreferrer" className="py-2 hover:text-[#F6921A] flex items-center gap-2 text-white">
                 <Terminal className="h-4 w-4 text-[#94b5ff]" />
                 <span>Developer Portal</span>
               </a>
-              <a href="https://elastos.dev/sdk/welcome/" target="_blank" rel="noopener noreferrer" className="py-2 hover:text-primary flex items-center gap-2">
+              <a href="https://elastos.dev/sdk/welcome/" target="_blank" rel="noopener noreferrer" className="py-2 hover:text-[#F6921A] flex items-center gap-2 text-white">
                 <Download className="h-4 w-4 text-[#94b5ff]" />
                 <span>SDKs & Tools</span>
               </a>
 
               <h4 className="font-medium text-sm text-[#94b5ff] mb-2 mt-4">FUNDING</h4>
-              <Link href="/dao" className="py-2 hover:text-primary flex items-center gap-2">
+              <Link href="/dao" className="py-2 hover:text-[#F6921A] flex items-center gap-2 text-white">
                 <PiggyBank className="h-4 w-4 text-[#94b5ff]" />
                 <span>Elastos DAO</span>
               </Link>
-              <a href="https://www.cyberrepublic.org/funding" target="_blank" rel="noopener noreferrer" className="py-2 hover:text-primary flex items-center gap-2">
+              <a href="https://www.cyberrepublic.org/funding" target="_blank" rel="noopener noreferrer" className="py-2 hover:text-[#F6921A] flex items-center gap-2 text-white">
                 <FileText className="h-4 w-4 text-[#94b5ff]" />
                 <span>Submit a Proposal</span>
               </a>
@@ -121,26 +121,26 @@ export const SidebarMenu = () => {
           </AccordionContent>
         </AccordionItem>
 
-        <AccordionItem value="insights" className="border-b">
-          <AccordionTrigger className="px-4 text-[#5C8EFF]">INSIGHTS</AccordionTrigger>
+        <AccordionItem value="insights" className="border-0">
+          <AccordionTrigger className="px-4 text-white hover:text-[#F6921A] data-[state=open]:text-[#F6921A]">INSIGHTS</AccordionTrigger>
           <AccordionContent>
             <div className="flex flex-col space-y-2 px-6">
               <h4 className="font-medium text-sm text-[#94b5ff] mb-2">UPDATES</h4>
-              <Link to="/announcements" className="py-2 hover:text-primary flex items-center gap-2">
+              <Link to="/announcements" className="py-2 hover:text-[#F6921A] flex items-center gap-2 text-white">
                 <Bell className="h-4 w-4 text-[#94b5ff]" />
                 <span>Announcements</span>
               </Link>
-              <Link href="/blogs-news" className="py-2 hover:text-primary flex items-center gap-2">
+              <Link href="/blogs-news" className="py-2 hover:text-[#F6921A] flex items-center gap-2 text-white">
                 <BookOpen className="h-4 w-4 text-[#94b5ff]" />
                 <span>Blogs & News</span>
               </Link>
 
               <h4 className="font-medium text-sm text-[#94b5ff] mb-2 mt-4">LEARNING</h4>
-              <a href="https://www.youtube.com/@elastosinfo" target="_blank" rel="noopener noreferrer" className="py-2 hover:text-primary flex items-center gap-2">
+              <a href="https://www.youtube.com/@elastosinfo" target="_blank" rel="noopener noreferrer" className="py-2 hover:text-[#F6921A] flex items-center gap-2 text-white">
                 <Video className="h-4 w-4 text-[#94b5ff]" />
                 <span>Videos & Tutorials</span>
               </a>
-              <Link href="/team-foundation" className="py-2 hover:text-primary flex items-center gap-2">
+              <Link href="/team-foundation" className="py-2 hover:text-[#F6921A] flex items-center gap-2 text-white">
                 <Users className="h-4 w-4 text-[#94b5ff]" />
                 <span>Team Foundation</span>
               </Link>
@@ -148,26 +148,26 @@ export const SidebarMenu = () => {
           </AccordionContent>
         </AccordionItem>
 
-        <AccordionItem value="connect" className="border-b">
-          <AccordionTrigger className="px-4 text-[#5C8EFF]">CONNECT</AccordionTrigger>
+        <AccordionItem value="connect" className="border-0">
+          <AccordionTrigger className="px-4 text-white hover:text-[#F6921A] data-[state=open]:text-[#F6921A]">CONNECT</AccordionTrigger>
           <AccordionContent>
             <div className="flex flex-col space-y-2 px-6">
               <h4 className="font-medium text-sm text-[#94b5ff] mb-2">COMMUNITY</h4>
-              <Link to="/social-channels" className="py-2 hover:text-primary flex items-center gap-2">
+              <Link to="/social-channels" className="py-2 hover:text-[#F6921A] flex items-center gap-2 text-white">
                 <MessageCircle className="h-4 w-4 text-[#94b5ff]" />
                 <span>Social Channels</span>
               </Link>
-              <Link to="/ambassador-program" className="py-2 hover:text-primary flex items-center gap-2">
+              <Link to="/ambassador-program" className="py-2 hover:text-[#F6921A] flex items-center gap-2 text-white">
                 <Star className="h-4 w-4 text-[#94b5ff]" />
                 <span>Ambassador Program</span>
               </Link>
 
               <h4 className="font-medium text-sm text-[#94b5ff] mb-2 mt-4">RESOURCES</h4>
-              <Link href="/media-kit" className="py-2 hover:text-primary flex items-center gap-2">
+              <Link href="/media-kit" className="py-2 hover:text-[#F6921A] flex items-center gap-2 text-white">
                 <Download className="h-4 w-4 text-[#94b5ff]" />
                 <span>Media Kit</span>
               </Link>
-              <Link href="/contact-us" className="py-2 hover:text-primary flex items-center gap-2">
+              <Link href="/contact-us" className="py-2 hover:text-[#F6921A] flex items-center gap-2 text-white">
                 <HelpCircle className="h-4 w-4 text-[#94b5ff]" />
                 <span>Contact Us</span>
               </Link>
@@ -175,27 +175,27 @@ export const SidebarMenu = () => {
           </AccordionContent>
         </AccordionItem>
 
-        <AccordionItem value="ela" className="border-b">
-          <AccordionTrigger className="px-4 text-[#5C8EFF]">ELA</AccordionTrigger>
+        <AccordionItem value="ela" className="border-0">
+          <AccordionTrigger className="px-4 text-white hover:text-[#F6921A] data-[state=open]:text-[#F6921A]">ELA</AccordionTrigger>
           <AccordionContent>
             <div className="flex flex-col space-y-2 px-6">
-              <Link href="/stats" className="py-2 hover:text-primary flex items-center gap-2">
+              <Link href="/stats" className="py-2 hover:text-[#F6921A] flex items-center gap-2 text-white">
                 <Database className="h-4 w-4 text-[#94b5ff]" />
                 <span>Stats</span>
               </Link>
-              <Link href="/security" className="py-2 hover:text-primary flex items-center gap-2">
+              <Link href="/security" className="py-2 hover:text-[#F6921A] flex items-center gap-2 text-white">
                 <ShieldCheck className="h-4 w-4 text-[#94b5ff]" />
                 <span>Security</span>
               </Link>
-              <Link href="/supply" className="py-2 hover:text-primary flex items-center gap-2">
+              <Link href="/supply" className="py-2 hover:text-[#F6921A] flex items-center gap-2 text-white">
                 <Coins className="h-4 w-4 text-[#94b5ff]" />
                 <span>Supply</span>
               </Link>
-              <Link href="/bridge" className="py-2 hover:text-primary flex items-center gap-2">
+              <Link href="/bridge" className="py-2 hover:text-[#F6921A] flex items-center gap-2 text-white">
                 <Repeat className="h-4 w-4 text-[#94b5ff]" />
                 <span>Bridge</span>
               </Link>
-              <Link href="/buy-ela" className="py-2 hover:text-primary flex items-center gap-2">
+              <Link href="/buy-ela" className="py-2 hover:text-[#F6921A] flex items-center gap-2 text-white">
                 <ShoppingCart className="h-4 w-4 text-[#94b5ff]" />
                 <span>Buy ELA</span>
               </Link>
@@ -216,7 +216,7 @@ export const MobileNav = () => {
             <MenuIcon className="h-6 w-6" />
           </button>
         </SheetTrigger>
-        <SheetContent side="right" className="w-[300px] p-0">
+        <SheetContent side="right" className="w-[300px] p-0 dark:bg-[#171717] bg-[#171717]">
           <SidebarMenu />
         </SheetContent>
       </Sheet>
