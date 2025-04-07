@@ -128,7 +128,7 @@ export default function TeamFoundationPage() {
       </section>
 
       {/* Key Contributors Section - Horizontal Layout */}
-      <section className="py-20 bg-gray-50 dark:bg-[#1A1A1A]">
+      <section className="py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-3xl mx-auto text-center mb-16">
             <h2 className="text-3xl font-[200] mb-6 text-black dark:text-white">Key Contributors</h2>
