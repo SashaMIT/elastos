@@ -74,23 +74,30 @@ export function TestimonialsSection({
 
       {/* Modal for full testimonial text */}
       <Dialog open={!!selectedTestimonial} onOpenChange={(open) => !open && setSelectedTestimonial(null)}>
-        <DialogContent className="sm:max-w-md">
+        <DialogContent className="sm:max-w-md bg-gradient-to-b from-[#171717] to-[#1F1F1F] border border-[#5C8EFF]/25 shadow-[0_0_15px_rgba(92,142,255,0.15)]">
           <DialogHeader>
-            <DialogTitle className="flex items-center gap-2">
+            <DialogTitle className="flex items-center gap-4">
               <img 
                 src={selectedTestimonial?.author.avatar} 
                 alt={selectedTestimonial?.author.name} 
-                className="h-10 w-10 rounded-full object-cover"
+                className="h-14 w-14 rounded-full object-cover border-2 border-[#5C8EFF]/30"
               />
               <div className="flex flex-col items-start">
-                <span>{selectedTestimonial?.author.name}</span>
-                <span className="text-sm text-muted-foreground">{selectedTestimonial?.author.handle}</span>
+                <span className="text-white font-[200] text-lg">{selectedTestimonial?.author.name}</span>
+                <span className="text-sm bg-[#5C8EFF]/10 border border-[#5C8EFF]/30 text-white rounded-full text-xs font-medium px-2 py-0.5 mt-1">{selectedTestimonial?.author.handle}</span>
               </div>
             </DialogTitle>
           </DialogHeader>
-          <DialogDescription className="text-base text-foreground pt-2">
+          <DialogDescription className="text-base text-gray-300 pt-4 font-[200] leading-relaxed">
             {selectedTestimonial?.fullText || selectedTestimonial?.text}
           </DialogDescription>
+          <div className="absolute top-3 right-3 opacity-30">
+            <img 
+              src="/images/Elastos Icon - 2.svg" 
+              alt="Elastos Logo" 
+              className="w-8 h-8 opacity-50"
+            />
+          </div>
         </DialogContent>
       </Dialog>
     </section>
