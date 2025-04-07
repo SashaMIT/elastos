@@ -34,7 +34,7 @@ export function NavMenu() {
             href="https://twitter.com/elastosinfo"
             target="_blank"
             rel="noopener noreferrer"
-            className="flex items-center p-2 rounded-full hover:text-[#F6921A]"
+            className="flex items-center p-2 rounded-full"
           >
             <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
               <path d="M13.982 10.622 20.54 3h-1.554l-5.693 6.618L8.745 3H3.5l6.876 10.007L3.5 21h1.554l6.012-6.989L15.754 21h5.245l-7.017-10.378Zm-2.125 2.47L11 11.798l-4.826-7.05h2.076l3.9 5.696.857 1.295 5.047 7.452h-2.076l-4.12-6.099Z"></path>
