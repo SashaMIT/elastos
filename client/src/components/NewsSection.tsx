@@ -239,7 +239,7 @@ export function NewsSection() {
                 className="min-w-[300px] flex-shrink-0 bg-[#F5F5F5] dark:bg-[#1a1a1a] rounded-lg overflow-hidden" 
                 style={{ width: 'calc(33.333% - 16px)' }} /* Showing 3 cards per row */
               >
-                <div className="relative h-52 overflow-hidden">
+                <div className="relative h-64 overflow-hidden">
                   <img 
                     src={item.image} 
                     alt={item.title} 
