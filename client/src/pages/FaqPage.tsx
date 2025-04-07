@@ -21,7 +21,7 @@ const FaqPage = () => {
       {isLoading && <CenteredSpinner />}
       <div className="relative w-full">
         {/* Full-width hero image with gradient overlay */}
-        <div className="relative w-full h-[500px] overflow-hidden -mt-20">
+        <div className="relative w-full h-[350px] overflow-hidden -mt-20">
           <img 
             src="/images/Roadmap/Elastos hosted a meetup in Hong Kong.jpeg" 
             alt="Elastos FAQ" 
@@ -34,8 +34,8 @@ const FaqPage = () => {
           <div className="absolute inset-0 flex items-center justify-center">
             <div className="container mx-auto px-4">
               <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div className="text-center mb-12">
-                  <h1 className="text-4xl sm:text-4xl md:text-5xl font-[200] text-white mb-6">
+                <div className="text-center mb-4">
+                  <h1 className="text-4xl sm:text-4xl md:text-5xl font-[200] text-white mb-3">
                     Frequently Asked Questions
                   </h1>
                   <p className="text-gray-300 max-w-2xl mx-auto text-md sm:text-base md:text-lg">
