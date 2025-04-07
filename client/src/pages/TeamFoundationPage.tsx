@@ -167,13 +167,31 @@ export default function TeamFoundationPage() {
                     <div>
                       {expandedBios[index] ? (
                         <>
-                          <p className="text-gray-600 dark:text-gray-400 text-sm font-[200] mb-4">{member.bioLong}</p>
-                          <button onClick={() => toggleBio(index)} className="text-blue-500 hover:text-blue-700 text-sm">Show Less <ChevronUp className="inline-block w-4 h-4 ml-1"/></button>
+                          <div className="text-gray-600 dark:text-gray-400 text-sm font-[200] mb-4">
+                            {member.bioLong.split('\n\n').map((paragraph, i) => (
+                              <p key={i} className="mb-3">{paragraph}</p>
+                            ))}
+                          </div>
+                          <div className="text-center mt-4">
+                            <button 
+                              onClick={() => toggleBio(index)} 
+                              className="text-blue-500 hover:text-blue-700 text-sm bg-blue-50 dark:bg-blue-900/20 px-3 py-1.5 rounded-full inline-flex items-center"
+                            >
+                              Show Less <ChevronUp className="w-4 h-4 ml-1"/>
+                            </button>
+                          </div>
                         </>
                       ) : (
                         <>
                           <p className="text-gray-600 dark:text-gray-400 text-sm font-[200] mb-4">{member.bioShort}</p>
-                          <button onClick={() => toggleBio(index)} className="text-blue-500 hover:text-blue-700 text-sm">Show More <ChevronDown className="inline-block w-4 h-4 ml-1"/></button>
+                          <div className="text-center mt-4">
+                            <button 
+                              onClick={() => toggleBio(index)} 
+                              className="text-blue-500 hover:text-blue-700 text-sm bg-blue-50 dark:bg-blue-900/20 px-3 py-1.5 rounded-full inline-flex items-center"
+                            >
+                              Show More <ChevronDown className="w-4 h-4 ml-1"/>
+                            </button>
+                          </div>
                         </>
                       )}
                     </div>
