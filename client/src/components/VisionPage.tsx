@@ -172,7 +172,7 @@ export function VisionPage() {
                       Founder & Lead Architect
                     </span>
                     <p className="text-gray-600 dark:text-gray-300 text-sm mt-3">
-                      Former Microsoft employee and Tencent senior engineer, Rong has spent 
+                      Former Microsoft employee and senior engineer, Rong has spent 
                       30+ years developing operating systems. His vision of a secure "World Computer" 
                       led to the creation of Elastos. With a background in computer science 
                       from Tsinghua University, he's dedicated his career to addressing 
