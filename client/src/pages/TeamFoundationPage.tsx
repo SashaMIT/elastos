@@ -13,6 +13,45 @@ export default function TeamFoundationPage() {
       [index]: !prev[index]
     }));
   };
+  
+  const coreDevelopmentTeams = [
+    {
+      name: "BeL2 Team",
+      description: "The BeL2 team is focused on developing Elastos's Layer 2 solutions, building technologies that enhance scalability and user experience while maintaining the security of the Bitcoin-backed mainchain.",
+      videoSrc: "/videos/BeL2Team.mp4",
+      links: [
+        { text: "BeL2 Portal", url: "https://bel2.elastos.org/", icon: <Globe className="w-4 h-4" /> },
+        { text: "GitHub", url: "https://github.com/elastos", icon: <Github className="w-4 h-4" /> }
+      ]
+    },
+    {
+      name: "Elastos Essentials Team",
+      description: "The Elastos Essentials team develops and maintains the official Elastos wallet and identity management application, providing users with a secure way to manage their digital assets and identities.",
+      videoSrc: "/videos/EssentialsTeam.mp4",
+      links: [
+        { text: "Download App", url: "/wallet", icon: <ArrowRight className="w-4 h-4" /> },
+        { text: "GitHub", url: "https://github.com/elastos/Elastos.Essentials", icon: <Github className="w-4 h-4" /> }
+      ]
+    },
+    {
+      name: "Elacity Labs",
+      description: "Elacity Labs builds Web3 applications and NFT marketplaces on Elastos, creating user-friendly platforms that leverage Elastos' identity and security features for digital ownership and trading.",
+      videoSrc: "/videos/ElacityTeam.mp4",
+      links: [
+        { text: "Elacity", url: "https://elacity.io", icon: <Globe className="w-4 h-4" /> },
+        { text: "GitHub", url: "https://github.com/elacity", icon: <Github className="w-4 h-4" /> }
+      ]
+    },
+    {
+      name: "Cyber Republic DAO",
+      description: "The Cyber Republic DAO team oversees community governance, proposal reviews, and treasury management for the ecosystem. They ensure the decentralized governance of Elastos is maintained with integrity.",
+      videoSrc: "/videos/CyberRepublicTeam.mp4",
+      links: [
+        { text: "DAO Portal", url: "/dao", icon: <ArrowRight className="w-4 h-4" /> },
+        { text: "Proposals", url: "https://dao.cyberrepublic.org", icon: <Globe className="w-4 h-4" /> }
+      ]
+    }
+  ];
 
   const keyContributors = [
     {
