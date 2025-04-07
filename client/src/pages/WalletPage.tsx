@@ -9,6 +9,38 @@ import { StackedCircularFooter } from "@/components/ui/stacked-circular-footer";
 const WalletPage: React.FC = () => {
   return (
     <div className="min-h-screen bg-[#171717]">
+      {/* Hero Section with Image and Gradient Overlay */}
+      <div className="relative w-full h-[350px] overflow-hidden -mt-16">
+        <img 
+          src="/images/Roadmap/Community crowd.png" 
+          alt="Elastos Wallets" 
+          className="w-full h-full object-cover opacity-100"
+        />
+        {/* Gradient overlay */}
+        <div className="absolute inset-0 bg-gradient-to-b from-black/10 via-[#171717]/80 to-[#171717]"></div>
+
+        {/* Hero content overlay */}
+        <div className="absolute inset-0 flex items-center justify-center mt-20">
+          <div className="container mx-auto px-4">
+            <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5 }}
+                className="text-center mb-6 pt-16"
+              >
+                <h1 className="text-4xl sm:text-4xl md:text-5xl font-[200] text-white mb-4">
+                  Elastos Wallets
+                </h1>
+                <p className="text-gray-300 max-w-2xl mx-auto text-md sm:text-base md:text-lg font-[200]">
+                  Secure your digital assets with the official Elastos wallets and connect with the entire Elastos ecosystem
+                </p>
+              </motion.div>
+            </div>
+          </div>
+        </div>
+      </div>
+
       {/* Elastos Essentials Wallet Section */}
       <section className="py-16 relative overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-b from-white/[0.00] via-white/[0.02] to-white/[0.00] z-0"></div>
