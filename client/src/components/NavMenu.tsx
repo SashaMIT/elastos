@@ -307,7 +307,7 @@ export function NavMenu() {
                         </div>
                       </NavigationMenuLink>
                     </Link>
-                    <Link href="/ambassador-program">
+                    <Link to="/ambassador-program">
                       <NavigationMenuLink className={navigationMenuTriggerStyle()}>
                         <div className="flex items-center gap-2">
                           <Star className="h-4 w-4 text-[#94b5ff]" />
