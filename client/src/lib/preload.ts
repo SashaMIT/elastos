@@ -1,4 +1,3 @@
-
 import { preloadImage } from './imageUtils';
 
 /**
@@ -27,7 +26,7 @@ export const preloadRoute = (route: string) => {
   if (routeMap[route]) {
     preloadComponent(routeMap[route]);
   }
-  
+
   // Preload key images based on route
   const routeImages: Record<string, string[]> = {
     '/': ['/images/Elastosbanner.jpg', '/images/Hero image.png', '/images/Elastos Vision World Computer.png'],
@@ -35,7 +34,7 @@ export const preloadRoute = (route: string) => {
     '/security': ['/images/Security.png'],
     // Add more routes and their key images as needed
   };
-  
+
   if (routeImages[route]) {
     routeImages[route].forEach(imgSrc => {
       preloadImage(imgSrc, { format: 'webp', quality: 80 });
@@ -43,9 +42,7 @@ export const preloadRoute = (route: string) => {
   }
 };
 
-/**
- * Preload important site images
- */
+
 export const preloadCriticalImages = () => {
   const criticalImages = [
     '/images/Elastosbanner.jpg',
@@ -53,7 +50,7 @@ export const preloadCriticalImages = () => {
     '/images/Elastos Logo Dark - 1.png',
     '/images/placeholder-image.jpg'
   ];
-  
+
   criticalImages.forEach(src => {
     preloadImage(src, { format: 'webp', quality: 90 });
   });

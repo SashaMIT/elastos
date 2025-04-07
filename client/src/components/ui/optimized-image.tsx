@@ -1,74 +1,59 @@
-
-import React, { useState, useEffect } from 'react';
-import { cn } from '@/lib/utils';
-import { getOptimizedImageUrl } from '@/lib/imageUtils';
+import React from "react";
+import { cn } from "@/lib/utils";
+import { optimizeImageUrl } from "@/lib/imageUtils";
 
 interface OptimizedImageProps extends React.ImgHTMLAttributes<HTMLImageElement> {
-  fallback?: string;
+  src: string;
+  alt: string;
+  className?: string;
   aspectRatio?: string;
-  format?: 'webp' | 'jpeg' | 'png' | 'original';
-  quality?: number;
-  blurEffect?: boolean;
+  format?: 'webp' | 'jpeg' | 'png' | 'avif';
   width?: number;
   height?: number;
+  quality?: number;
+  blurEffect?: boolean;
+  fallback?: string;
 }
 
 export function OptimizedImage({
   src,
   alt,
   className,
-  fallback = '/images/placeholder-image.jpg',
-  aspectRatio = 'aspect-video',
-  format = 'webp',
-  quality = 80,
-  blurEffect = false,
+  aspectRatio = "aspect-auto",
+  format = "webp",
   width,
   height,
-  loading = 'lazy',
+  quality = 80,
+  blurEffect = false,
+  fallback,
   ...props
 }: OptimizedImageProps) {
-  const [isLoaded, setIsLoaded] = useState(false);
-  const [error, setError] = useState(false);
-  const [imageSrc, setImageSrc] = useState<string>(blurEffect ? fallback : (src || fallback));
-  
-  useEffect(() => {
-    if (src) {
-      // Only process optimization if we have a source
-      const optimizedSrc = getOptimizedImageUrl(src, { format, quality, width, height });
-      
-      if (!blurEffect) {
-        setImageSrc(optimizedSrc);
-      } else {
-        // For blur effect, we'll load the optimized image in the background
-        const img = new Image();
-        img.src = optimizedSrc;
-        img.onload = () => {
-          setImageSrc(optimizedSrc);
-          setIsLoaded(true);
-        };
-        img.onerror = () => {
-          setError(true);
-          setImageSrc(fallback);
-        };
-      }
-    }
-  }, [src, format, quality, width, height, blurEffect, fallback]);
+  const optimizedSrc = optimizeImageUrl(src, { width, height, quality, format });
+
+  // Handle loading state and missing images
+  const [isLoading, setIsLoading] = React.useState(true);
+  const [hasError, setHasError] = React.useState(false);
 
   return (
-    <div className={cn('overflow-hidden relative', aspectRatio, className)}>
+    <div className={cn("overflow-hidden relative", aspectRatio, className)}>
+      {blurEffect && isLoading && (
+        <div className="absolute inset-0 bg-gray-200 dark:bg-gray-800 animate-pulse" />
+      )}
       <img
-        src={error ? fallback : imageSrc}
-        alt={alt || ''}
-        loading={loading}
+        src={hasError && fallback ? fallback : optimizedSrc}
+        alt={alt}
+        className={cn(
+          "w-full h-full object-cover transition-opacity duration-300",
+          isLoading ? "opacity-0" : "opacity-100"
+        )}
+        onLoad={() => setIsLoading(false)}
+        onError={() => {
+          setIsLoading(false);
+          setHasError(true);
+        }}
         width={width}
         height={height}
-        className={cn(
-          'h-full w-full object-cover transition-opacity duration-300',
-          blurEffect ? (isLoaded ? 'opacity-100' : 'opacity-60 blur-[2px]') : 'opacity-100',
-          props.className
-        )}
-        onLoad={() => setIsLoaded(true)}
-        onError={() => setError(true)}
+        loading="lazy"
         {...props}
       />
     </div>
