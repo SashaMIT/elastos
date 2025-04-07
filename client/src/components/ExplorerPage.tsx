@@ -1,39 +1,33 @@
 import React, { useState } from "react";
 import { motion } from "framer-motion";
-import { 
-  ArrowRight, 
-  ArrowUpRight,
-  ArrowLeft,
-  Box, 
-  CircleCheck, 
-  Code, 
-  Coins, 
-  ExternalLink, 
-  Fingerprint, 
-  Globe, 
-  Layers, 
-  LinkIcon, 
-  LucideProps, 
-  MoveRight, 
-  Network, 
-  Shield, 
-  Workflow 
-} from "lucide-react";
+import {
+  Tabs,
+  TabsContent,
+  TabsList,
+  TabsTrigger,
+} from "@/components/ui/tabs";
+import { BlockTable } from "./BlockTable";
+import { NetworkSphere } from "./NetworkSphere";
+import { BlockVisualizer } from "./BlockVisualizer";
+import { MergeMiningViz } from "./MergeMiningViz";
+import { HashScaleViz } from "./HashScaleViz";
+import { ArrowRight, ArrowUpRight, ArrowLeft, Box, CircleCheck, Code, Coins, ExternalLink, Fingerprint, Globe, Layers, LinkIcon, LucideProps, MoveRight, Network, Shield, Workflow } from "lucide-react";
 import { StackedCircularFooter } from "@/components/ui/stacked-circular-footer";
+
 
 // Custom arrow component based on the provided SVG
 const CircleArrow = (props: LucideProps) => (
-  <svg 
-    xmlns="http://www.w3.org/2000/svg" 
-    width="24" 
-    height="24" 
-    viewBox="0 0 35 34" 
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    width="24"
+    height="24"
+    viewBox="0 0 35 34"
     fill="none"
     {...props}
   >
-    <circle cx="17.333" cy="17" r="16.75" stroke="#5C8EFF" strokeOpacity="0.5" strokeWidth="1.5"/>
-    <path d="M17.3338 22.9405L23.2741 17.0002L17.3338 11.0598L16.4162 11.9774L20.7628 16.324H10.8622V17.6763H20.7628L16.4162 22.0229L17.3338 22.9405Z" fill="#5C8EFF"/>
-    <path d="M20.7628 17.6638H10.8747V16.3365H20.7628H20.7929L20.7716 16.3152L16.4338 11.9774L17.3338 11.0775L23.2564 17.0002L17.3338 22.9228L16.4338 22.0229L20.7716 17.6851L20.7929 17.6638H20.7628Z" stroke="#5C8EFF" strokeOpacity="0.5" strokeWidth="1.5"/>
+    <circle cx="17.333" cy="17" r="16.75" stroke="#5C8EFF" strokeOpacity="0.5" strokeWidth="1.5" />
+    <path d="M17.3338 22.9405L23.2741 17.0002L17.3338 11.0598L16.4162 11.9774L20.7628 16.324H10.8622V17.6763H20.7628L16.4162 22.0229L17.3338 22.9405Z" fill="#5C8EFF" />
+    <path d="M20.7628 17.6638H10.8747V16.3365H20.7628H20.7929L20.7716 16.3152L16.4338 11.9774L17.3338 11.0775L23.2564 17.0002L17.3338 22.9228L16.4338 22.0229L20.7716 17.6851L20.7929 17.6638H20.7628Z" stroke="#5C8EFF" strokeOpacity="0.5" strokeWidth="1.5" />
   </svg>
 );
 
@@ -95,7 +89,7 @@ const elastosChains = [
     ],
     explorerUrl: "https://eid.elastos.io/",
     ctaText: "EID Explorer",
-    color: "from-[#8BABFF]/10 to-[#8BABFF]/5", 
+    color: "from-[#8BABFF]/10 to-[#8BABFF]/5",
     borderColor: "border-[#8BABFF]/20",
     textColor: "text-[#8BABFF]",
     gradientColors: "from-[#8BABFF] to-[#4758A8]",
@@ -199,302 +193,299 @@ const ecosystemFeatures = [
   }
 ];
 
-  const LearnMoreButton = () => (
-    <div className="mt-8 flex justify-center">
-      <a href="/vision" className="inline-flex px-3 py-2 bg-[rgba(246,146,26,0.10)] text-[#F6921A] rounded-full font-medium transition-all items-center gap-1 border border-[rgba(246,146,26,0.50)] text-sm">
-        <span>Learn More</span>
-        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 35 34" fill="none">
-          <circle cx="17.333" cy="17" r="16.75" stroke="#F6921A" strokeOpacity="0.5" strokeWidth="1.5"/>
-          <path d="M17.3338 22.9405L23.2741 17.0002L17.3338 11.0598L16.4162 11.9774L20.7628 16.324H10.8622V17.6763H20.7628L16.4162 22.0229L17.3338 22.9405Z" fill="#F6921A"/>
-          <path d="M20.7628 17.6638H10.8747V16.3365H20.7628H20.7929L20.7716 16.3152L16.4338 11.9774L17.3338 11.0775L23.2564 17.0002L17.3338 22.9228L16.4338 22.0229L20.7716 17.6851L20.7929 17.6638H20.7628Z" stroke="#F6921A" strokeOpacity="0.5" strokeWidth="1.5"/>
-        </svg>
-      </a>
-    </div>
-  );
+const LearnMoreButton = () => (
+  <div className="mt-8 flex justify-center">
+    <a href="/vision" className="inline-flex px-3 py-2 bg-[rgba(246,146,26,0.10)] text-[#F6921A] rounded-full font-medium transition-all items-center gap-1 border border-[rgba(246,146,26,0.50)] text-sm">
+      <span>Learn More</span>
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 35 34" fill="none">
+        <circle cx="17.333" cy="17" r="16.75" stroke="#F6921A" strokeOpacity="0.5" strokeWidth="1.5" />
+        <path d="M17.3338 22.9405L23.2741 17.0002L17.3338 11.0598L16.4162 11.9774L20.7628 16.324H10.8622V17.6763H20.7628L16.4162 22.0229L17.3338 22.9405Z" fill="#F6921A" />
+        <path d="M20.7628 17.6638H10.8747V16.3365H20.7628H20.7929L20.7716 16.3152L16.4338 11.9774L17.3338 11.0775L23.2564 17.0002L17.3338 22.9228L16.4338 22.0229L20.7716 17.6851L20.7929 17.6638H20.7628Z" stroke="#F6921A" strokeOpacity="0.5" strokeWidth="1.5" />
+      </svg>
+    </a>
+  </div>
+);
 
-  export function ExplorerPage() {
-  const [activeTab, setActiveTab] = useState<number>(0);
-  const [hoveredFeature, setHoveredFeature] = useState<number | null>(null);
-
-  // Handle tab change
-  const handleTabChange = (index: number) => {
-    setActiveTab(index);
-  };
-
+export default function ExplorerPage() {
   return (
     <div className="min-h-screen bg-[#171717] overflow-hidden">
-      {/* Hero Section */}
-      <div className="w-full max-w-7xl mx-auto px-4 py-16 sm:px-6 lg:px-8">
-        <div className="text-center mb-12">
-          <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-6">
-            Elastos Explorer
-          </h1>
-          <p className="text-gray-400 max-w-2xl mx-auto text-sm sm:text-base md:text-lg">
-            Discover the multi-chain structure of Elastos, where Bitcoin-secured blockchain technology combines with purpose-built sidechains to deliver a comprehensive Web3 infrastructure
-          </p>
-        </div>
+      {/* Hero Section with Image and Gradient Overlay */}
+      <div className="relative w-full h-[350px] overflow-hidden -mt-16">
+        <img
+          src="/images/Explorer.png"
+          alt="Elastos Explorer"
+          className="w-full h-full object-cover opacity-100"
+        />
+        {/* Gradient overlay */}
+        <div className="absolute inset-0 bg-gradient-to-b from-black/10 via-[#171717]/80 to-[#171717]"></div>
 
-        {/* Chains Overview */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-20">
-          {elastosChains.map((chain, index) => (
-            <motion.div
-              key={chain.name}
-              className={`relative rounded-xl overflow-hidden border ${chain.borderColor} bg-gradient-to-br ${chain.color}`}
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: index * 0.1 }}
-              whileHover={{ y: -5, transition: { duration: 0.2 } }}
-            >
-              <div className="p-6">
-                <div className={`w-10 h-10 rounded-full ${chain.glowColor} flex items-center justify-center mb-4`}>
-                  {React.cloneElement(chain.icon, { className: "w-5 h-5" })}
-                </div>
-                <h2 className={`text-xl font-bold mb-2 ${chain.textColor}`}>{chain.name}</h2>
-                <p className="text-gray-400 text-sm mb-4">{chain.description}</p>
-                <div className="space-y-2 mb-6">
-                  {chain.features.slice(0, 3).map((feature, idx) => (
-                    <div key={idx} className="flex items-center">
-                      <CircleCheck className="w-4 h-4 text-green-400 mr-2" />
-                      <span className="text-gray-300 text-sm">{feature}</span>
-                    </div>
-                  ))}
-                </div>
-                <a
-                  href={chain.explorerUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className={`inline-flex px-3 py-2 ${
-                    chain.name.includes("ESC") || chain.name.includes("EID") 
-                      ? "bg-[rgba(92,142,255,0.15)] text-white border-[rgba(92,142,255,0.25)]" 
-                      : "bg-[rgba(246,146,26,0.15)] text-white border-[rgba(246,146,26,0.25)]"
-                  } rounded-full font-[200] transition-all items-center gap-1 border border-opacity-25 text-sm`}
-                >
-                  <span>{chain.ctaText}</span>
-                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 35 34" fill="none">
-                    <circle cx="17.333" cy="17" r="16.75" stroke={chain.name.includes("ESC") || chain.name.includes("EID") ? "#5C8EFF" : "#F6921A"} strokeOpacity="0.25" strokeWidth="1.5"/>
-                    <path d="M17.3338 22.9405L23.2741 17.0002L17.3338 11.0598L16.4162 11.9774L20.7628 16.324H10.8622V17.6763H20.7628L16.4162 22.0229L17.3338 22.9405Z" fill={chain.name.includes("ESC") || chain.name.includes("EID") ? "#5C8EFF" : "#F6921A"}/>
-                    <path d="M20.7628 17.6638H10.8747V16.3365H20.7628H20.7929L20.7716 16.3152L16.4338 11.9774L17.3338 11.0775L23.2564 17.0002L17.3338 22.9228L16.4338 22.0229L20.7716 17.6851L20.7929 17.6638H20.7628Z" stroke={chain.name.includes("ESC") || chain.name.includes("EID") ? "#5C8EFF" : "#F6921A"} strokeOpacity="0.25" strokeWidth="1.5"/>
-                  </svg>
-                </a>
-              </div>
-              <div className="absolute bottom-0 right-0 p-4 opacity-10">
-                <div className="text-5xl font-bold">{chain.shortName}</div>
-              </div>
-            </motion.div>
-          ))}
-        </div>
-
-        {/* ELA Across Chains */}
-        <div className="mb-20">
-          <motion.h2
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="text-3xl font-bold text-white text-center mb-8"
-          >
-            ELA Across <span className="text-[#F7921A]">Chains</span>
-          </motion.h2>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {elaTokens.map((token, index) => (
+        {/* Hero content overlay */}
+        <div className="absolute inset-0 flex items-center justify-center mt-20">
+          <div className="container mx-auto px-4">
+            <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
               <motion.div
-                key={token.network}
-                className="bg-[#1A1A1A] border border-white/10 rounded-xl overflow-hidden"
                 initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: index * 0.1 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5 }}
+                className="text-center mb-6 pt-16"
               >
-                <div className="p-5">
-                  <div className="flex items-center mb-4">
-                    <div className={`w-10 h-10 rounded-full ${token.iconBg} flex items-center justify-center mr-3 ${token.borderColor}`}>
-                      {token.icon}
-                    </div>
-                    <div>
-                      <h3 className="text-white font-medium">{token.network}</h3>
-                      <p className="text-gray-400 text-sm">{token.tokenType}</p>
-                    </div>
-                  </div>
-                  <p className="text-gray-400 text-sm mb-4">{token.description}</p>
-                  <div className="flex items-center justify-between text-xs text-gray-500">
-                    <span>Decimals: {token.decimals}</span>
-                    <span>Chain ID: {token.chainId}</span>
-                  </div>
-                  <div className="mt-4 flex justify-end">
-                    <a
-                      href={token.explorerUrl}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="inline-flex items-center gap-1 text-[#5C8EFF] hover:underline"
-                    >
-                      <span className="text-sm">View on Explorer</span>
-                      <LinkIcon className="w-3 h-3" />
-                    </a>
-                  </div>
-                </div>
+                <h1 className="text-4xl sm:text-4xl md:text-5xl font-[200] text-white mb-4">
+                  Elastos Explorer
+                </h1>
+                <p className="text-gray-300 max-w-2xl mx-auto text-md sm:text-base md:text-lg font-[200]">
+                  Discover the multi-chain structure of Elastos, where Bitcoin-secured blockchain technology combines with purpose-built sidechains to deliver a comprehensive Web3 infrastructure.
+                </p>
               </motion.div>
-            ))}
-          </div>
-        </div>
-
-        {/* Ecosystem Features */}
-        <div className="mb-20">
-          <motion.h2
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="text-3xl font-bold text-white text-center mb-8"
-          >
-            Ecosystem <span className="text-[#5C8EFF]">Features</span>
-          </motion.h2>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {ecosystemFeatures.map((feature, index) => (
-              <motion.div
-                key={feature.title}
-                className={`feature-card bg-[#1A1A1A] border ${feature.border} rounded-xl overflow-hidden`}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: index * 0.1 }}
-                onMouseEnter={() => setHoveredFeature(index)}
-                onMouseLeave={() => setHoveredFeature(null)}
-              >
-                <div className="p-6">
-                  <div className="w-12 h-12 rounded-full bg-[#1E1E1E] flex items-center justify-center mb-4">
-                    {feature.icon}
-                  </div>
-                  <h3 className="text-white font-bold text-lg mb-2">{feature.title}</h3>
-                  <p className="text-gray-400 text-sm">{feature.description}</p>
-                </div>
-                <div 
-                  className={`h-1 bg-gradient-to-r ${feature.gradient} transition-all duration-500 ease-in-out`}
-                  style={{ 
-                    width: hoveredFeature === index ? '100%' : '0%',
-                    opacity: hoveredFeature === index ? 1 : 0
-                  }}
-                ></div>
-              </motion.div>
-            ))}
-          </div>
-          <LearnMoreButton />
-        </div>
-
-        {/* Elastos Testnets Section */}
-        <div className="w-full max-w-7xl mx-auto px-4 py-16 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <motion.h2 
-              className="text-3xl sm:text-4xl font-bold text-white mb-6"
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: 0.2 }}
-            >
-              Elastos <span className="text-[#F7921A]">Testnets</span>
-            </motion.h2>
-            <p className="text-gray-400 max-w-2xl mx-auto text-sm sm:text-base">
-              Explore and build on Elastos test environments
-            </p>
-          </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto">
-            <motion.a 
-              href="https://esc-testnet.elastos.io/" 
-              target="_blank"
-              rel="noopener noreferrer"
-              className="bg-[#171717] border border-[#5C8EFF]/20 rounded-xl p-6 hover:border-[#5C8EFF]/50 transition-all"
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: 0.3 }}
-              whileHover={{ scale: 1.02 }}
-            >
-              <h3 className="text-xl font-semibold text-white mb-3">Elastos ESC Testnet</h3>
-              <p className="text-gray-400 mb-4">Test your smart contracts and dApps on the Elastos Smart Contract chain</p>
-              <div className="flex items-center text-[#5C8EFF]">
-                <span>Visit Testnet</span>
-                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="ml-2">
-                  <path d="M5 12h14"></path>
-                  <path d="m12 5 7 7-7 7"></path>
-                </svg>
-              </div>
-            </motion.a>
-            <motion.a 
-              href="https://eid-testnet.elastos.io/" 
-              target="_blank"
-              rel="noopener noreferrer"
-              className="bg-[#171717] border border-[#5C8EFF]/20 rounded-xl p-6 hover:border-[#5C8EFF]/50 transition-all"
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: 0.4 }}
-              whileHover={{ scale: 1.02 }}
-            >
-              <h3 className="text-xl font-semibold text-white mb-3">Elastos EID Testnet</h3>
-              <p className="text-gray-400 mb-4">Develop and test applications with Elastos Identity on the testnet</p>
-              <div className="flex items-center text-[#5C8EFF]">
-                <span>Visit Testnet</span>
-                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="ml-2">
-                  <path d="M5 12h14"></path>
-                  <path d="m12 5 7 7-7 7"></path>
-                </svg>
-              </div>
-            </motion.a>
-          </div>
-        </div>
-
-        {/* CTA Section */}
-        <div className="w-full max-w-7xl mx-auto px-4 py-16 sm:px-6 lg:px-8">
-          <div className="bg-gradient-to-br from-[#5C8EFF]/10 to-[#F6921A]/10 rounded-2xl p-8 sm:p-12 border border-[#5C8EFF]/30">
-            <div className="max-w-3xl mx-auto text-center">
-              <h2 className="text-2xl md:text-3xl font-bold text-white mb-4">Ready to Explore the Elastos Ecosystem?</h2>
-              <p className="text-gray-400 mb-8">Visit our blockchain explorers to track transactions, view smart contracts, and monitor network activity</p>
-
-              <div className="flex flex-wrap justify-center gap-4">
-                <a
-                  href="https://blockchain.elastos.io/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex px-3 py-2 bg-[rgba(246,146,26,0.10)] text-[#F6921A] rounded-full font-medium transition-all items-center gap-1 border border-[rgba(246,146,26,0.50)] text-sm"
-                >
-                  <span>Mainchain Explorer</span>
-                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 35 34" fill="none">
-                    <circle cx="17.333" cy="17" r="16.75" stroke="#F6921A" strokeOpacity="0.5" strokeWidth="1.5"/>
-                    <path d="M17.3338 22.9405L23.2741 17.0002L17.3338 11.0598L16.4162 11.9774L20.7628 16.324H10.8622V17.6763H20.7628L16.4162 22.0229L17.3338 22.9405Z" fill="#F6921A"/>
-                    <path d="M20.7628 17.6638H10.8747V16.3365H20.7628H20.7929L20.7716 16.3152L16.4338 11.9774L17.3338 11.0775L23.2564 17.0002L17.3338 22.9228L16.4338 22.0229L20.7716 17.6851L20.7929 17.6638H20.7628Z" stroke="#F6921A" strokeOpacity="0.5" strokeWidth="1.5"/>
-                  </svg>
-                </a>
-
-                <a
-                  href="https://esc.elastos.io/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex px-3 py-2 bg-[rgba(92,142,255,0.10)] text-[#5C8EFF] rounded-full font-medium transition-all items-center gap-1 border border-[rgba(92,142,255,0.50)] text-sm"
-                >
-                  <span>ESC Explorer</span>
-                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 35 34" fill="none">
-                    <circle cx="17.333" cy="17" r="16.75" stroke="#5C8EFF" strokeOpacity="0.5" strokeWidth="1.5"/>
-                    <path d="M17.3338 22.9405L23.2741 17.0002L17.3338 11.0598L16.4162 11.9774L20.7628 16.324H10.8622V17.6763H20.7628L16.4162 22.0229L17.3338 22.9405Z" fill="#5C8EFF"/>
-                    <path d="M20.7628 17.6638H10.8747V16.3365H20.7628H20.7929L20.7716 16.3152L16.4338 11.9774L17.3338 11.0775L23.2564 17.0002L17.3338 22.9228L16.4338 22.0229L20.7716 17.6851L20.7929 17.6638H20.7628Z" stroke="#5C8EFF" strokeOpacity="0.5" strokeWidth="1.5"/>
-                  </svg>
-                </a>
-
-                <a
-                  href="https://eid.elastos.io/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex px-3 py-2 bg-[rgba(92,142,255,0.10)] text-[#5C8EFF] rounded-full font-medium transition-all items-center gap-1 border border-[rgba(92,142,255,0.50)] text-sm"
-                >
-                  <span>EID Explorer</span>
-                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 35 34" fill="none">
-                    <circle cx="17.333" cy="17" r="16.75" stroke="#5C8EFF" strokeOpacity="0.5" strokeWidth="1.5"/>
-                    <path d="M17.3338 22.9405L23.2741 17.0002L17.3338 11.0598L16.4162 11.9774L20.7628 16.324H10.8622V17.6763H20.7628L16.4162 22.0229L17.3338 22.9405Z" fill="#5C8EFF"/>
-                    <path d="M20.7628 17.6638H10.8747V16.3365H20.7628H20.7929L20.7716 16.3152L16.4338 11.9774L17.3338 11.0775L23.2564 17.0002L17.3338 22.9228L16.4338 22.0229L20.7716 17.6851L20.7929 17.6638H20.7628Z" stroke="#5C8EFF" strokeOpacity="0.5" strokeWidth="1.5"/>
-                  </svg>
-                </a>
-              </div>
             </div>
           </div>
         </div>
       </div>
 
-      {/* Footer */}
+      {/* Explorer Content */}
+      <div className="w-full max-w-7xl mx-auto px-4 py-8 sm:px-6 lg:px-8">
+        <div className="text-center mb-12">
+          <Tabs defaultValue="architecture" className="w-full">
+            <TabsList className="grid w-full grid-cols-1 md:grid-cols-4 h-auto bg-black/30 rounded-3xl p-1">
+              <TabsTrigger
+                value="architecture"
+                className="data-[state=active]:bg-[#171717] data-[state=active]:text-white rounded-3xl py-2"
+              >
+                Architecture
+              </TabsTrigger>
+              <TabsTrigger
+                value="mainchain"
+                className="data-[state=active]:bg-[#171717] data-[state=active]:text-white rounded-3xl py-2"
+              >
+                Mainchain
+              </TabsTrigger>
+              <TabsTrigger
+                value="sidechains"
+                className="data-[state=active]:bg-[#171717] data-[state=active]:text-white rounded-3xl py-2"
+              >
+                Sidechains
+              </TabsTrigger>
+              <TabsTrigger
+                value="security"
+                className="data-[state=active]:bg-[#171717] data-[state=active]:text-white rounded-3xl py-2"
+              >
+                Security
+              </TabsTrigger>
+            </TabsList>
+
+            {/* Architecture Tab */}
+            <TabsContent value="architecture" className="py-6">
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mt-4">
+                <div className="bg-[#11111B]/40 p-6 rounded-xl">
+                  <h3 className="text-xl font-medium text-white mb-4">
+                    Elastos Network Sphere
+                  </h3>
+                  <p className="text-gray-400 mb-6">
+                    Explore the interconnected architecture of the Elastos network, including the Bitcoin-backed mainchain and purpose-built sidechains.
+                  </p>
+                  <div className="h-[400px] flex items-center justify-center">
+                    <NetworkSphere />
+                  </div>
+                </div>
+
+                <div className="bg-[#11111B]/40 p-6 rounded-xl">
+                  <h3 className="text-xl font-medium text-white mb-4">
+                    Multi-Chain Design
+                  </h3>
+                  <p className="text-gray-400 mb-6">
+                    Elastos uses a multi-chain architecture with specialized sidechains for different functions, all secured by the Bitcoin-backed mainchain.
+                  </p>
+                  <div className="grid grid-cols-1 gap-4">
+                    <div className="bg-[#21212B]/40 p-4 rounded-lg flex items-center">
+                      <div className="w-12 h-12 bg-[#F6921A]/20 rounded-full flex items-center justify-center mr-4">
+                        <span className="text-[#F6921A]">1</span>
+                      </div>
+                      <div>
+                        <h4 className="text-white font-medium">Elastos Mainchain (ELA)</h4>
+                        <p className="text-gray-400 text-sm">Secured by Bitcoin hashpower</p>
+                      </div>
+                    </div>
+                    <div className="bg-[#21212B]/40 p-4 rounded-lg flex items-center">
+                      <div className="w-12 h-12 bg-[#5C8EFF]/20 rounded-full flex items-center justify-center mr-4">
+                        <span className="text-[#5C8EFF]">2</span>
+                      </div>
+                      <div>
+                        <h4 className="text-white font-medium">Smart Contract Chain (ESC)</h4>
+                        <p className="text-gray-400 text-sm">EVM-compatible for dApps and DeFi</p>
+                      </div>
+                    </div>
+                    <div className="bg-[#21212B]/40 p-4 rounded-lg flex items-center">
+                      <div className="w-12 h-12 bg-[#7B4AE2]/20 rounded-full flex items-center justify-center mr-4">
+                        <span className="text-[#7B4AE2]">3</span>
+                      </div>
+                      <div>
+                        <h4 className="text-white font-medium">Identity Chain (EID)</h4>
+                        <p className="text-gray-400 text-sm">Self-sovereign identity services</p>
+                      </div>
+                    </div>
+                    <div className="bg-[#21212B]/40 p-4 rounded-lg flex items-center">
+                      <div className="w-12 h-12 bg-[#00BFA6]/20 rounded-full flex items-center justify-center mr-4">
+                        <span className="text-[#00BFA6]">4</span>
+                      </div>
+                      <div>
+                        <h4 className="text-white font-medium">Carrier Network</h4>
+                        <p className="text-gray-400 text-sm">P2P communication infrastructure</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </TabsContent>
+
+            {/* Mainchain Tab */}
+            <TabsContent value="mainchain" className="py-6">
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mt-4">
+                <div className="bg-[#11111B]/40 p-6 rounded-xl">
+                  <h3 className="text-xl font-medium text-white mb-4">
+                    Recent Blocks
+                  </h3>
+                  <BlockTable />
+                </div>
+
+                <div className="bg-[#11111B]/40 p-6 rounded-xl">
+                  <h3 className="text-xl font-medium text-white mb-4">
+                    Block Visualizer
+                  </h3>
+                  <BlockVisualizer />
+                </div>
+              </div>
+            </TabsContent>
+
+            {/* Sidechains Tab */}
+            <TabsContent value="sidechains" className="py-6">
+              <div className="grid grid-cols-1 gap-8 mt-4">
+                <div className="bg-[#11111B]/40 p-6 rounded-xl">
+                  <h3 className="text-xl font-medium text-white mb-4">
+                    Elastos Sidechains
+                  </h3>
+                  <p className="text-gray-400 mb-6">
+                    Elastos uses specialized sidechains for different functions, all secured by the Bitcoin-backed mainchain.
+                  </p>
+                  <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+                    <div className="bg-[#21212B]/40 p-6 rounded-lg">
+                      <h4 className="text-white font-medium mb-2">Elastos Smart Chain (ESC)</h4>
+                      <p className="text-gray-400 text-sm mb-4">
+                        EVM-compatible blockchain for smart contracts and DeFi applications
+                      </p>
+                      <div className="flex justify-between text-sm">
+                        <span className="text-gray-500">TPS:</span>
+                        <span className="text-white">~100</span>
+                      </div>
+                      <div className="flex justify-between text-sm">
+                        <span className="text-gray-500">Block Time:</span>
+                        <span className="text-white">5s</span>
+                      </div>
+                      <div className="flex justify-between text-sm">
+                        <span className="text-gray-500">Gas Token:</span>
+                        <span className="text-white">ELA</span>
+                      </div>
+                      <div className="mt-4">
+                        <a
+                          href="https://escscan.elastos.io"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="text-[#5C8EFF] text-sm hover:underline"
+                        >
+                          View Explorer →
+                        </a>
+                      </div>
+                    </div>
+                    <div className="bg-[#21212B]/40 p-6 rounded-lg">
+                      <h4 className="text-white font-medium mb-2">Elastos Identity Chain (EID)</h4>
+                      <p className="text-gray-400 text-sm mb-4">
+                        Specialized sidechain for self-sovereign identity and verifiable credentials
+                      </p>
+                      <div className="flex justify-between text-sm">
+                        <span className="text-gray-500">Function:</span>
+                        <span className="text-white">DID/VC</span>
+                      </div>
+                      <div className="flex justify-between text-sm">
+                        <span className="text-gray-500">Block Time:</span>
+                        <span className="text-white">2m</span>
+                      </div>
+                      <div className="flex justify-between text-sm">
+                        <span className="text-gray-500">Consensus:</span>
+                        <span className="text-white">DPoS</span>
+                      </div>
+                      <div className="mt-4">
+                        <a
+                          href="https://eid.elastos.io"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="text-[#5C8EFF] text-sm hover:underline"
+                        >
+                          View Explorer →
+                        </a>
+                      </div>
+                    </div>
+                    <div className="bg-[#21212B]/40 p-6 rounded-lg">
+                      <h4 className="text-white font-medium mb-2">BeL2</h4>
+                      <p className="text-gray-400 text-sm mb-4">
+                        A Bitcoin Layer-2 solution for DeFi and smart contracts powered by Elastos
+                      </p>
+                      <div className="flex justify-between text-sm">
+                        <span className="text-gray-500">Function:</span>
+                        <span className="text-white">Bitcoin DeFi</span>
+                      </div>
+                      <div className="flex justify-between text-sm">
+                        <span className="text-gray-500">Status:</span>
+                        <span className="text-white">In Development</span>
+                      </div>
+                      <div className="flex justify-between text-sm">
+                        <span className="text-gray-500">Bridge:</span>
+                        <span className="text-white">Two-way</span>
+                      </div>
+                      <div className="mt-4">
+                        <a
+                          href="https://bel2.org"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="text-[#5C8EFF] text-sm hover:underline"
+                        >
+                          Learn More →
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </TabsContent>
+
+            {/* Security Tab */}
+            <TabsContent value="security" className="py-6">
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mt-4">
+                <div className="bg-[#11111B]/40 p-6 rounded-xl">
+                  <h3 className="text-xl font-medium text-white mb-4">
+                    Merge Mining with Bitcoin
+                  </h3>
+                  <p className="text-gray-400 mb-6">
+                    Elastos is secured through merged mining with Bitcoin, inheriting Bitcoin's security without additional energy costs.
+                  </p>
+                  <div className="h-[300px]">
+                    <MergeMiningViz />
+                  </div>
+                </div>
+
+                <div className="bg-[#11111B]/40 p-6 rounded-xl">
+                  <h3 className="text-xl font-medium text-white mb-4">
+                    Hashrate Security
+                  </h3>
+                  <p className="text-gray-400 mb-6">
+                    Elastos typically secures over 50% of Bitcoin's total hashrate, making it one of the most secure blockchain networks.
+                  </p>
+                  <div className="h-[300px]">
+                    <HashScaleViz />
+                  </div>
+                </div>
+              </div>
+            </TabsContent>
+          </Tabs>
+        </div>
+      </div>
       <StackedCircularFooter />
     </div>
   );
