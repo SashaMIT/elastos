@@ -223,40 +223,16 @@ const ecosystemFeatures = [
 
   return (
     <div className="min-h-screen bg-[#171717] overflow-hidden">
-      {/* Hero Section with Image and Gradient Overlay */}
-      <div className="relative w-full h-[350px] overflow-hidden mt-0 -mt-16">
-        <img 
-          src="/images/Roadmap/Community crowd.png" 
-          alt="Elastos Explorer" 
-          className="w-full h-full object-cover opacity-100"
-        />
-        {/* Gradient overlay */}
-        <div className="absolute inset-0 bg-gradient-to-b from-black/10 via-[#171717]/80 to-[#171717]"></div>
-
-        {/* Hero content overlay */}
-        <div className="absolute inset-0 flex items-center justify-center mt-20">
-          <div className="container mx-auto px-4">
-            <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5 }}
-                className="text-center mb-6 pt-16"
-              >
-                <h1 className="text-4xl sm:text-4xl md:text-5xl font-[200] text-white mb-4">
-                  Elastos Explorer
-                </h1>
-                <p className="text-gray-300 max-w-2xl mx-auto text-md sm:text-base md:text-lg font-[200]">
-                  Discover the multi-chain structure of Elastos, where Bitcoin-secured blockchain technology combines with purpose-built sidechains to deliver a comprehensive Web3 infrastructure
-                </p>
-              </motion.div>
-            </div>
-          </div>
+      {/* Hero Section */}
+      <div className="w-full max-w-7xl mx-auto px-4 py-16 sm:px-6 lg:px-8">
+        <div className="text-center mb-12">
+          <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-6">
+            Elastos Explorer
+          </h1>
+          <p className="text-gray-400 max-w-2xl mx-auto text-sm sm:text-base md:text-lg">
+            Discover the multi-chain structure of Elastos, where Bitcoin-secured blockchain technology combines with purpose-built sidechains to deliver a comprehensive Web3 infrastructure
+          </p>
         </div>
-      </div>
-
-      {/* Main Content */}
-      <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-8">
 
         {/* Chains Overview */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-20">
@@ -452,7 +428,7 @@ const ecosystemFeatures = [
                   href="https://esc.elastos.io/"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex px-3 py-2 bg-[rgba(92,14255,0.10)] text-[#5C8EFF] rounded-full font-medium transition-all items-center gap-1 border border-[rgba(92,142,255,0.50)] text-sm"
+                  className="inline-flex px-3 py-2 bg-[rgba(92,142,255,0.10)] text-[#5C8EFF] rounded-full font-medium transition-all items-center gap-1 border border-[rgba(92,142,255,0.50)] text-sm"
                 >
                   <span>ESC Explorer</span>
                   <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 35 34" fill="none">
