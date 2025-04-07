@@ -6,8 +6,32 @@ import { StackedCircularFooter } from "@/components/ui/stacked-circular-footer";
 
 export default function AmbassadorsPage() {
   return (
-    <div className="min-h-screen bg-white dark:bg-[#171717]">
+    <div className="min-h-screen bg-white dark:bg-[#171717] relative">
       <ScrollToTop />
+      
+      {/* Coming Soon Overlay */}
+      <div className="fixed inset-0 z-50 bg-black/80 backdrop-blur-md flex items-center justify-center">
+        <div className="bg-[#212121] p-12 rounded-xl border border-[#5C8EFF]/30 max-w-2xl text-center relative overflow-hidden">
+          {/* Background glow effects */}
+          <div className="absolute -top-20 -right-20 w-64 h-64 rounded-full bg-[#F6921A]/10 blur-[80px]"></div>
+          <div className="absolute -bottom-20 -left-20 w-72 h-72 rounded-full bg-[#5C8EFF]/10 blur-[100px]"></div>
+          
+          <h2 className="text-4xl md:text-5xl font-[200] text-white mb-6 relative z-10">Ambassador Program</h2>
+          <div className="w-16 h-1 bg-gradient-to-r from-[#F6921A] to-[#5C8EFF] mx-auto mb-6"></div>
+          <p className="text-gray-300 text-xl mb-8 relative z-10">Coming Soon</p>
+          <p className="text-gray-400 mb-8 relative z-10">
+            We're currently building our ambassador program to help spread the Elastos vision worldwide. 
+            Check back soon for details on how to participate and make a difference in the Elastos ecosystem.
+          </p>
+          <a 
+            href="/"
+            className="inline-flex px-5 py-3 bg-[rgba(92,142,255,0.10)] text-[#5C8EFF] rounded-full font-medium transition-all items-center gap-2 border border-[rgba(92,142,255,0.50)] hover:bg-[rgba(92,142,255,0.15)] relative z-10"
+          >
+            <span>Return to Home</span>
+            <ArrowLeft className="h-4 w-4" />
+          </a>
+        </div>
+      </div>
 
       {/* Hero Section with Image and Gradient Overlay */}
       <div className="relative w-full h-[500px] overflow-hidden -mt-16">
