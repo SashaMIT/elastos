@@ -12,7 +12,7 @@ const WhitepaperPage = () => {
     <Layout>
       <div className="relative w-full">
         {/* Full-width hero image with gradient overlay */}
-        <div className="relative w-full h-[500px] overflow-hidden -mt-32">
+        <div className="relative w-full h-[350px] overflow-hidden -mt-32">
           <img 
             src="/images/Roadmap/Elastos 1 Year.jpeg" 
             alt="Elastos Documentation" 
@@ -22,14 +22,14 @@ const WhitepaperPage = () => {
           <div className="absolute inset-0 bg-gradient-to-b from-black/10 via-[#171717]/80 to-[#171717]"></div>
 
           {/* Hero content overlay */}
-          <div className="absolute inset-0 flex items-center justify-center">
+          <div className="absolute inset-0 flex items-center justify-center mt-10">
             <div className="container mx-auto px-4">
               <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div className="text-center mb-12">
-                  <h1 className="text-4xl sm:text-4xl md:text-5xl font-bold text-white mb-6">
+                <div className="text-center mb-0">
+                  <h1 className="text-4xl sm:text-4xl md:text-5xl font-[200] text-white mb-3">
                     Elastos Documentation
                   </h1>
-                  <p className="text-gray-300 max-w-2xl mx-auto text-md sm:text-base md:text-lg">
+                  <p className="text-gray-300 max-w-2xl mx-auto text-md sm:text-base md:text-lg font-[200]">
                     Explore the technical documentation, whitepapers, and litepapers that define the Elastos ecosystem.
                     These documents serve as the foundation for understanding how Elastos is building the modern internet
                     infrastructure secured by Bitcoin.
@@ -40,7 +40,7 @@ const WhitepaperPage = () => {
           </div>
         </div>
 
-        <div className="container mx-auto px-4 py-12 bg-[#171717]">
+        <div className="container mx-auto px-4 py-6 bg-[#171717]">
           {/* Documents Grid */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-16">
             {/* Whitepaper Card */}
@@ -96,40 +96,40 @@ const WhitepaperPage = () => {
               </CardFooter>
             </Card>
 
-            {/* Litepaper Card */}
+            {/* DAO Whitepaper Card */}
             <Card className="overflow-hidden hover:shadow-lg transition-shadow duration-300 border border-gray-100 dark:border-gray-800">
               <div className="h-60 bg-gray-200 dark:bg-gray-700 relative overflow-hidden flex items-center justify-center">
                 <img 
-                  src="/images/whitepapers/litepaper-cover.png" 
-                  alt="Elastos Litepaper Cover"
+                  src="/images/ElastosDAO.png" 
+                  alt="Elastos DAO Whitepaper Cover"
                   className="h-full object-contain"
                   onError={(e) => {
-                    e.currentTarget.src = "https://via.placeholder.com/400x200?text=Elastos+Litepaper";
+                    e.currentTarget.src = "https://via.placeholder.com/400x200?text=Elastos+DAO+Whitepaper";
                   }}
                 />
               </div>
               <CardHeader className="pb-3 relative">
                 <span className="absolute top-5 right-5 px-4 py-1 bg-[#5C8EFF]/10 border border-[#5C8EFF]/30 text-white rounded-full text-xs font-medium whitespace-nowrap">2025</span>
-                <CardTitle className="text-white">Elastos Litepaper</CardTitle>
-                <CardDescription>Current Ecosystem Overview & Roadmap</CardDescription>
+                <CardTitle className="text-white">Elastos DAO Whitepaper</CardTitle>
+                <CardDescription>Decentralized Governance & Community</CardDescription>
               </CardHeader>
               <CardContent className="pt-0">
                 <div className="mb-3">
                   <p className="text-sm text-gray-600 dark:text-gray-400 mb-3">
-                    The latest litepaper providing a comprehensive yet accessible overview of the current Elastos ecosystem, technology, and future plans.
+                    This whitepaper details the Elastos DAO governance model, community-driven development initiatives, and the role of the DAO in shaping the future of the Elastos ecosystem.
                   </p>
                   <ul className="mt-4 text-sm text-gray-700 dark:text-gray-300 space-y-1">
                     <li className="flex items-start">
                       <span className="text-[#F6921A] mr-2">•</span>
-                      <span>Current technology architecture</span>
+                      <span>Decentralized governance framework</span>
                     </li>
                     <li className="flex items-start">
                       <span className="text-[#F6921A] mr-2">•</span>
-                      <span>Ecosystem overview and roadmap</span>
+                      <span>Community proposal and voting system</span>
                     </li>
                     <li className="flex items-start">
                       <span className="text-[#F6921A] mr-2">•</span>
-                      <span>Use cases and integration partners</span>
+                      <span>Funding allocation and treasury management</span>
                     </li>
                   </ul>
                 </div>
