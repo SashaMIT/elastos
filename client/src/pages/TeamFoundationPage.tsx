@@ -113,11 +113,8 @@ export default function TeamFoundationPage() {
       </div>
 
       {/* Vision Section */}
-      <section className="py-0 relative overflow-hidden">
-        <div className="absolute -top-40 -right-40 w-80 h-80 bg-[#5C8EFF]/10 rounded-full filter blur-[120px]"></div>
-        <div className="absolute -bottom-20 -left-40 w-80 h-80 bg-[#F6921A]/10 rounded-full filter blur-[120px]"></div>
-
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      <section className="py-0 relative">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-3xl mx-auto text-center mb-16">
             <h2 className="text-3xl font-[200] mb-6 text-black dark:text-white">Building a New Internet</h2>
             <p className="text-gray-600 dark:text-gray-400 text-base font-[200] mb-8">
