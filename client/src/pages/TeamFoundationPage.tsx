@@ -168,7 +168,7 @@ export default function TeamFoundationPage() {
                     <div>
                       {expandedBios[index] ? (
                         <>
-                          <div className="text-gray-600 dark:text-gray-400 text-sm font-[200] mb-4">
+                          <div className="text-gray-600 dark:text-gray-400 text-base font-[200] mb-4">
                             {member.bioLong.split('\n\n').map((paragraph, i) => (
                               <p key={i} className="mb-3">{paragraph}</p>
                             ))}
@@ -184,7 +184,7 @@ export default function TeamFoundationPage() {
                         </>
                       ) : (
                         <>
-                          <p className="text-gray-600 dark:text-gray-400 text-sm font-[200] mb-4">{member.bioShort}</p>
+                          <p className="text-gray-600 dark:text-gray-400 text-base font-[200] mb-4">{member.bioShort}</p>
                           <div className="flex justify-end mt-4">
                             <button 
                               onClick={() => toggleBio(index)} 
