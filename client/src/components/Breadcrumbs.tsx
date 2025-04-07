@@ -4,8 +4,8 @@ import { Link, useLocation } from "wouter";
 import { ChevronRight, Home } from "lucide-react";
 
 const Breadcrumbs: React.FC = () => {
-  const location = useLocation();
-  const pathnames = location.pathname.split("/").filter((x) => x);
+  const [pathname] = useLocation();
+  const pathnames = pathname.split("/").filter((x) => x);
 
   // Map routes to readable names
   const routeNames: Record<string, string> = {
