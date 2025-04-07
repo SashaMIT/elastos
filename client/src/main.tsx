@@ -9,7 +9,7 @@ import AnnouncementsPage from './pages/AnnouncementsPage'; // Import Announcemen
 import AmbassadorsPage from './pages/AmbassadorsPage'; // Import AmbassadorsPage component
 import TeamFoundationPage from './pages/TeamFoundationPage'; // Import TeamFoundationPage component
 
-import { StrictMode } from "react";
+import { StrictMode, useEffect } from "react";
 import { createRoot } from "react-dom/client";
 import { Switch, Route } from "wouter";
 import '@fontsource/inter'
@@ -20,6 +20,9 @@ import { Toaster } from "@/components/ui/toaster";
 import Layout from "./components/Layout";
 import { lazy, Suspense } from "react";
 import { Spinner } from "@/components/ui/spinner";
+
+// Force dark mode on startup
+document.documentElement.classList.add('dark');
 
 const LandingPage = lazy(() => import("./pages/LandingPage"));
 const HomePage = lazy(() => import("./pages/HomePage"));
