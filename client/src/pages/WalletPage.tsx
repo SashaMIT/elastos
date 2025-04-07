@@ -10,11 +10,11 @@ const WalletPage: React.FC = () => {
   return (
     <div className="min-h-screen bg-[#171717]">
       {/* Hero Section with Image and Gradient Overlay */}
-      <div className="relative w-full h-[350px] overflow-hidden -mt-16">
+      <div className="relative w-full h-[350px] overflow-hidden -mt-8">
         <img 
           src="/images/Community/EEQmb19UYAApxrk.jpeg" 
           alt="Elastos Wallets" 
-          className="w-full h-full object-cover opacity-100"
+          className="w-full h-full object-cover opacity-100 mt-8"
         />
         {/* Gradient overlay */}
         <div className="absolute inset-0 bg-gradient-to-b from-black/10 via-[#171717]/80 to-[#171717]"></div>
