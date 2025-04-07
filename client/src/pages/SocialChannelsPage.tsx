@@ -96,7 +96,7 @@ const SocialChannelsPage: React.FC = () => {
       {/* Hero Section with Image and Gradient Overlay */}
       <div className="relative w-full h-[350px] overflow-hidden -mt-16">
         <img 
-          src="/images/6253437.jpg" 
+          src="/images/Roadmap/Community crowd.png" 
           alt="Elastos Community" 
           className="w-full h-full object-cover opacity-100"
         />
