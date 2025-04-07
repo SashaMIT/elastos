@@ -574,6 +574,9 @@ const LandingPage = () => {
 
         </div>
 
+      {/* Spacer div to add more distance */}
+      <div className="py-10 md:py-10"></div>
+      
       {/* News Section */}
       <div className="px-4 md:px-0">
         <NewsSection />
