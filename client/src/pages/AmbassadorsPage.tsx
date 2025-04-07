@@ -1,6 +1,6 @@
 
 import { motion } from "framer-motion";
-import { ArrowRight, Award, Globe, Heart, Users, Star, Shield, Sparkles, Zap, ScrollText } from "lucide-react";
+import { ArrowRight, ArrowLeft, Award, Globe, Heart, Users, Star, Shield, Sparkles, Zap, ScrollText } from "lucide-react";
 import { ScrollToTop } from "@/components/ScrollToTop";
 import { StackedCircularFooter } from "@/components/ui/stacked-circular-footer";
 
