@@ -225,7 +225,7 @@ export function GlowingStarsBackgroundCardPreview() {
         </GlowingStarsBackgroundCard>
       </a>
 
-      <a href="#" target="_blank" rel="noopener noreferrer">
+      <a href="https://staking.elastos.net/" target="_blank" rel="noopener noreferrer">
         <GlowingStarsBackgroundCard className="cursor-pointer group">
           <div className="flex justify-between items-center">
             <GlowingStarsTitle>Stake</GlowingStarsTitle>
@@ -274,7 +274,7 @@ export function GlowingStarsBackgroundCardPreview() {
         </GlowingStarsBackgroundCard>
       </a>
 
-      <a href="#" target="_blank" rel="noopener noreferrer">
+      <a href="/ecosystem" rel="noopener noreferrer">
         <GlowingStarsBackgroundCard className="cursor-pointer group">
           <div className="flex justify-between items-center">
             <GlowingStarsTitle>Use</GlowingStarsTitle>
