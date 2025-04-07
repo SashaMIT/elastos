@@ -184,8 +184,7 @@ export function VisionPage() {
                       Sunny is a blockchain economics researcher and instructor at several 
                       prestigious universities. He co-founded the Elastos Foundation with Rong Chen 
                       and has been instrumental in developing the economic model and ecosystem 
-                      strategies. Sunny leads initiatives connecting Elastos with academic 
-                      and industry partners worldwide.
+                      strategies. 
                     </p>
                   </div>
                 </div>
