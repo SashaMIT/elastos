@@ -16,7 +16,7 @@ export default function AmbassadorsPage() {
           <div className="w-full h-full bg-[#171717]/20"></div>
         </div>
         
-        <div className="bg-[#212121]/70 backdrop-blur-md p-10 md:p-12 rounded-2xl border border-[#5C8EFF]/30 max-w-2xl text-center relative overflow-hidden shadow-2xl">
+        <div className="bg-[#212121]/70 backdrop-blur-md p-8 md:p-10 lg:p-12 rounded-2xl border border-[#5C8EFF]/30 max-w-2xl w-[90%] mx-auto text-center relative overflow-hidden shadow-2xl my-4 md:my-6">
           {/* Enhanced gradient background */}
           <div className="absolute inset-0 bg-gradient-to-br from-[#212121]/90 via-[#212121]/80 to-[#212121]/60 z-0"></div>
           
@@ -29,17 +29,17 @@ export default function AmbassadorsPage() {
           
           <div className="relative">
           </div>
-          <h2 className="text-4xl md:text-5xl font-[200] text-white mb-6 relative z-10">Ambassador Program</h2>
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-[200] text-white mb-4 sm:mb-6 relative z-10">Ambassador Program</h2>
           <div className="w-24 h-1 bg-gradient-to-r from-[#F6921A] to-[#5C8EFF] mx-auto mb-8 opacity-80"></div>
           <p className="text-gray-100 text-xl mb-6 relative z-10 font-medium tracking-wide">Coming Soon</p>
-          <p className="text-gray-200 mb-10 relative z-10 max-w-xl mx-auto">
+          <p className="text-gray-200 mb-6 md:mb-8 lg:mb-10 relative z-10 max-w-xl mx-auto px-2 sm:px-4">
             We're currently building our ambassador program to help spread the Elastos vision worldwide. 
             Check back soon for details on how to participate and make a difference in the Elastos ecosystem.
           </p>
           
           <a 
             href="/"
-            className="inline-flex px-6 py-3 bg-[rgba(92,142,255,0.15)] text-[#5C8EFF] rounded-full font-medium transition-all items-center gap-2 border border-[rgba(92,142,255,0.40)] hover:bg-[rgba(92,142,255,0.25)] hover:scale-105 relative z-10 group shadow-lg"
+            className="inline-flex px-5 sm:px-6 py-2.5 sm:py-3 bg-[rgba(92,142,255,0.15)] text-[#5C8EFF] rounded-full font-medium transition-all items-center gap-2 border border-[rgba(92,142,255,0.40)] hover:bg-[rgba(92,142,255,0.25)] hover:scale-105 relative z-10 group shadow-lg mt-2 mb-2"
           >
             <ArrowLeft className="h-4 w-4 group-hover:-translate-x-1 transition-transform" />
             <span>Return to Home</span>
