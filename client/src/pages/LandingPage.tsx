@@ -572,14 +572,7 @@ const LandingPage = () => {
 
         </div>
 
-        {/* Add spacing before LogoCarouselDemo */}
-        <div className="py-6 md:py-6"></div>
-
-        <LogoCarouselDemo />
-      </div>
-
-      {/* Spacer div to add more distance */}
-      <div className="py-5 md:py-5"></div>
+        </div>
 
       {/* News Section */}
       <div className="px-4 md:px-0">
@@ -891,6 +884,11 @@ const LandingPage = () => {
         <div className="container mx-auto px-4 md:px-0">
           <FaqComponent showButtons={true} className="max-w-full" />
         </div>
+      </div>
+
+      {/* LogoCarouselDemo moved to bottom of page */}
+      <div className="container mx-auto px-4 md:px-0 py-12">
+        <LogoCarouselDemo />
       </div>
 
       <StackedCircularFooter />
