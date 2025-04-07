@@ -20,6 +20,7 @@ import {
   Workflow 
 } from "lucide-react";
 import { StackedCircularFooter } from "@/components/ui/stacked-circular-footer";
+import { LogoCarouselDemo } from "@/components/LogoCarouselDemo";
 
 // Custom arrow component based on the provided SVG
 const CircleArrow = (props: LucideProps) => (
@@ -457,6 +458,11 @@ const ecosystemFeatures = [
             </div>
           </div>
         </div>
+      </div>
+
+      {/* Logo Carousel */}
+      <div className="mt-20 -mx-4">
+        <LogoCarouselDemo />
       </div>
 
       {/* Footer */}
