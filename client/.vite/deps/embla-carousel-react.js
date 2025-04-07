@@ -1333,8 +1333,11 @@ function Engine(root, container, slides, ownerDocument, ownerWindow, options, ev
     const shouldSettle = scrollBody2.settled();
     const withinBounds = !scrollBounds.shouldConstrain();
     const hasSettled = loop2 ? shouldSettle : shouldSettle && withinBounds;
-    const hasSettledAndIdle = hasSettled && !dragHandler.pointerDown();
-    if (hasSettledAndIdle) animation2.stop();
+    if (hasSettled && !dragHandler.pointerDown()) {
+      animation2.stop();
+      eventHandler2.emit("settle");
+    }
+    if (!hasSettled) eventHandler2.emit("scroll");
     const interpolatedLocation = location2.get() * alpha + previousLocation2.get() * (1 - alpha);
     offsetLocation2.set(interpolatedLocation);
     if (loop2) {
@@ -1342,8 +1345,6 @@ function Engine(root, container, slides, ownerDocument, ownerWindow, options, ev
       slideLooper.loop();
     }
     translate.to(offsetLocation2.get());
-    if (hasSettledAndIdle) eventHandler2.emit("settle");
-    if (!hasSettled) eventHandler2.emit("scroll");
   };
   const animation = Animations(ownerDocument, ownerWindow, () => update(engine), (alpha) => render(engine, alpha));
   const friction = 0.68;
@@ -1616,7 +1617,7 @@ function EmblaCarousel(root, userOptions, userPlugins) {
     return engine.scrollSnapList;
   }
   function scrollProgress() {
-    return engine.scrollProgress.get(engine.offsetLocation.get());
+    return engine.scrollProgress.get(engine.location.get());
   }
   function selectedScrollSnap() {
     return engine.index.get();

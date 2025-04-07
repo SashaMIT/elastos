@@ -8,8 +8,8 @@ export function useTheme() {
     if (savedTheme) {
       return savedTheme as 'light' | 'dark';
     }
-    // Always default to dark mode
-    return 'dark';
+    // Fall back to system preference
+    return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
   });
 
   useEffect(() => {
