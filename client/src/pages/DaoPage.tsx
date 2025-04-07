@@ -572,7 +572,7 @@ const DaoPage: React.FC = () => {
                   >
                     <div className="flex items-center mb-3 gap-2 text-[#F7921A]">
                       {event.icon}
-                      <div className="text-lg font-bold font-[200]">{event.year}</div>
+                      <div className="text-lg font-[200]">{event.year}</div>
                     </div>
                     <h3 className="text-lg font-semibold mb-2 text-white font-[200]">
                       {event.title}
