@@ -39,7 +39,7 @@ export function MediaKitPage() {
       {/* Hero Section with Image and Gradient Overlay */}
       <div className="relative w-full h-[500px] overflow-hidden -mt-16">
         <img 
-          src="/images/Roadmap/Community crowd.png" 
+          src="/images/usecases/Digital Identity Management 2.jpg" 
           alt="Elastos Media Kit" 
           className="w-full h-full object-cover opacity-100"
         />
