@@ -1,8 +1,6 @@
+
 import { Icons } from "@/components/ui/icons"
 import { Button } from "@/components/ui/button"
-import { Input } from "@/components/ui/input"
-import { Label } from "@/components/ui/label"
-import { Facebook, Instagram, Linkedin, Twitter } from "lucide-react"
 import { Link } from "wouter"
 
 export function StackedCircularFooter() {
@@ -19,39 +17,57 @@ export function StackedCircularFooter() {
           </div>
           <nav className="mb-8 flex flex-wrap justify-center gap-6">
             <div className="grid grid-cols-2 md:grid-cols-4 gap-8 w-full max-w-4xl">
+              {/* Explore Section */}
               <div>
-                <h3 className="font-semibold mb-4">ELA</h3>
+                <h3 className="font-semibold mb-4">Explore</h3>
                 <div className="flex flex-col gap-2">
+                  <Link href="/vision" className="hover:text-primary">Our Vision</Link>
+                  <Link href="/roadmap" className="hover:text-primary">Roadmap</Link>
+                  <Link href="/ela-utility" className="hover:text-primary">ELA Utility</Link>
+                  <Link href="/whitepaper" className="hover:text-primary">Whitepaper</Link>
+                  <Link href="/use-cases" className="hover:text-primary">Use Cases</Link>
+                  <Link href="/ecosystem" className="hover:text-primary">Ecosystem</Link>
+                  <Link href="/faq" className="hover:text-primary">FAQs</Link>
+                </div>
+              </div>
+              
+              {/* Network Section */}
+              <div>
+                <h3 className="font-semibold mb-4">Network</h3>
+                <div className="flex flex-col gap-2">
+                  <Link href="/wallet" className="hover:text-primary">Wallet</Link>
+                  <a href="https://staking.elastos.net/" target="_blank" rel="noopener noreferrer" className="hover:text-primary">Staking & Nodes</a>
+                  <Link href="/explorer" className="hover:text-primary">Explorer</Link>
                   <Link href="/stats" className="hover:text-primary">Stats</Link>
                   <Link href="/security" className="hover:text-primary">Security</Link>
-                  {/* Value Calc removed */}
                   <Link href="/supply" className="hover:text-primary">Supply</Link>
+                  <Link href="/bridge" className="hover:text-primary">Bridge</Link>
                   <Link href="/buy-ela" className="hover:text-primary">Buy ELA</Link>
                 </div>
               </div>
+              
+              {/* Build Section */}
               <div>
-                <h3 className="font-semibold mb-4">Products</h3>
+                <h3 className="font-semibold mb-4">Build</h3>
                 <div className="flex flex-col gap-2">
-                  <a href="https://bel2.org" target="_blank" rel="noopener noreferrer" className="hover:text-primary">BeL2</a>
-                  <a href="https://labs.ela.city" target="_blank" rel="noopener noreferrer" className="hover:text-primary">Elacity</a>
-                  <a href="https://cyberrepublic.org" target="_blank" rel="noopener noreferrer" className="hover:text-primary">Cyber Republic</a>
-                  <a href="https://d.web3essentials.io/" target="_blank" rel="noopener noreferrer" className="hover:text-primary">Essentials</a>
+                  <a href="https://elastos.dev/" target="_blank" rel="noopener noreferrer" className="hover:text-primary">Developer Portal</a>
+                  <a href="https://elastos.dev/sdk/welcome/" target="_blank" rel="noopener noreferrer" className="hover:text-primary">SDKs & Tools</a>
+                  <Link href="/dao" className="hover:text-primary">Elastos DAO</Link>
+                  <a href="https://www.cyberrepublic.org/funding" target="_blank" rel="noopener noreferrer" className="hover:text-primary">Submit a Proposal</a>
                 </div>
               </div>
+              
+              {/* Insights & Connect Section */}
               <div>
-                <h3 className="font-semibold mb-4">Support</h3>
+                <h3 className="font-semibold mb-4">Connect & Insights</h3>
                 <div className="flex flex-col gap-2">
-                  <Link href="/support/help" className="hover:text-primary">Help Center</Link>
-                  <Link href="/support/faq" className="hover:text-primary">FAQ</Link>
-                  <Link href="/support/contact" className="hover:text-primary">Contact</Link>
-                </div>
-              </div>
-              <div>
-                <h3 className="font-semibold mb-4">Company</h3>
-                <div className="flex flex-col gap-2">
-                  <Link href="/about" className="hover:text-primary">About</Link>
-                  <Link href="/blog" className="hover:text-primary">Blog</Link>
-                  <Link href="/careers" className="hover:text-primary">Careers</Link>
+                  <Link href="/social-channels" className="hover:text-primary">Social Channels</Link>
+                  <Link href="/ambassador-program" className="hover:text-primary">Ambassador Program</Link>
+                  <Link href="/media-kit" className="hover:text-primary">Media Kit</Link>
+                  <Link href="/contact-us" className="hover:text-primary">Contact Us</Link>
+                  <Link href="/announcements" className="hover:text-primary">Announcements</Link>
+                  <Link href="/blogs-news" className="hover:text-primary">Blogs & News</Link>
+                  <Link href="/team-foundation" className="hover:text-primary">Team Foundation</Link>
                 </div>
               </div>
             </div>
