@@ -238,6 +238,7 @@ const daoStats = {
 const getInvolved = [
   {
     title: "Vote",
+    icon: <Vote className="w-10 h-10 text-white" />,
     steps: [
       "Stake your ELA",
       "Connect with your DID",
@@ -248,6 +249,7 @@ const getInvolved = [
   },
   {
     title: "Submit a Proposal",
+    icon: <FileText className="w-10 h-10 text-white" />,
     steps: [
       "Have an idea that benefits Elastos?",
       "Write and submit a suggestion",
@@ -258,6 +260,7 @@ const getInvolved = [
   },
   {
     title: "Run for Council",
+    icon: <Users className="w-10 h-10 text-white" />,
     steps: [
       "Stake 5,000 ELA as collateral",
       "Share your vision and campaign",
@@ -624,7 +627,9 @@ const DaoPage: React.FC = () => {
                   <div className="mb-6">
                     <div className={`w-14 h-14 rounded-full flex items-center justify-center ${
                       index % 2 === 0 ? 'bg-[#F7921A]/10' : 'bg-[#8BABFF]/10'
-                    }`}></div>
+                    }`}>
+                      {item.icon}
+                    </div>
                   </div>
                   <h3 className={`text-xl font-semibold mb-6 ${
                     index % 2 === 0 ? 'text-[#F7921A]' : 'text-[#8BABFF]'
