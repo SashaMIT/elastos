@@ -348,7 +348,7 @@ const ecosystemFeatures = [
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.2 }}
             >
-              Elastos <span className="text-[#F7921A]">Testnets</span>
+              Elastos Testnets
             </motion.h2>
             <p className="text-gray-400 max-w-2xl mx-auto text-sm sm:text-base">
               Explore and build on Elastos test environments
