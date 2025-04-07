@@ -252,7 +252,7 @@ export function NavMenu() {
                 <div className="grid w-[400px] gap-1 p-2 md:w-[500px] md:grid-cols-2">
                   <div>
                     <h4 className="font-medium text-sm text-muted-foreground mb-2 px-2 text-[#94b5ff]">UPDATES</h4>
-                    <Link href="/announcements">
+                    <Link to="/announcements">
                       <NavigationMenuLink className={navigationMenuTriggerStyle()}>
                         <div className="flex items-center gap-2">
                           <BookOpen className="h-4 w-4 text-[#94b5ff]" />
