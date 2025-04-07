@@ -14,7 +14,7 @@ interface BlockData {
   networkhashps: number;
 }
 
-const BlockTable: React.FC = () => {
+const BlockTable = () => {
   const [blocks, setBlocks] = useState<BlockData[]>([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
