@@ -153,9 +153,7 @@ export function LogoCarouselDemo() {
     },
   ];
 
-  const handleLogoClick = (url: string) => {
-    window.open(url, "_blank", "noopener,noreferrer");
-  };
+  // Logo click functionality is now handled directly in the LogoColumn component
 
   return (
     <div className="w-full py-0 md:py-0 dark:bg-[#171717]">

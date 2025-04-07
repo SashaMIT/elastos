@@ -59,6 +59,12 @@ const LogoColumn: React.FC<LogoColumnProps> = React.memo(
     const adjustedTime = (currentTime + columnDelay) % (cycleInterval * logos.length)
     const currentIndex = Math.floor(adjustedTime / cycleInterval)
     const CurrentLogo = useMemo(() => logos[currentIndex].img, [logos, currentIndex])
+    
+    const handleClick = () => {
+      if (logos[currentIndex].url) {
+        window.open(logos[currentIndex].url, "_blank", "noopener,noreferrer");
+      }
+    };
 
     return (
       <motion.div
@@ -99,6 +105,8 @@ const LogoColumn: React.FC<LogoColumnProps> = React.memo(
                 duration: 0.3,
               },
             }}
+            onClick={handleClick}
+            style={{ cursor: logos[currentIndex].url ? 'pointer' : 'default' }}
           >
             <CurrentLogo className="h-15 w-15 max-h-[60%] max-w-[60%] object-contain md:h-24 md:w-24" />
           </motion.div>
