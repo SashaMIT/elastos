@@ -8,7 +8,7 @@ import {
 } from "@/components/ui/tabs";
 import BlockTable from "./BlockTable";
 import { NetworkSphere } from "./NetworkSphere";
-import { BlockVisualizer } from "./BlockVisualizer";
+import BlockVisualizer from "./BlockVisualizer";
 import { MergeMiningViz } from "./MergeMiningViz";
 import { HashScaleViz } from "./HashScaleViz";
 import { ArrowRight, ArrowUpRight, ArrowLeft, Box, CircleCheck, Code, Coins, ExternalLink, Fingerprint, Globe, Layers, LinkIcon, LucideProps, MoveRight, Network, Shield, Workflow } from "lucide-react";
