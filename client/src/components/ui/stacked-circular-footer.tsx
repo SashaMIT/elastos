@@ -16,7 +16,7 @@ export function StackedCircularFooter() {
             />
           </div>
           <nav className="mb-8 flex flex-wrap justify-center gap-6">
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-8 w-full max-w-4xl">
+            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6 w-full max-w-5xl">
               {/* Explore Section */}
               <div>
                 <h3 className="font-semibold mb-4">Explore</h3>
@@ -25,9 +25,17 @@ export function StackedCircularFooter() {
                   <Link href="/roadmap" className="hover:text-primary">Roadmap</Link>
                   <Link href="/ela-utility" className="hover:text-primary">ELA Utility</Link>
                   <Link href="/whitepaper" className="hover:text-primary">Whitepaper</Link>
+                </div>
+              </div>
+              
+              {/* Ecosystem Section */}
+              <div>
+                <h3 className="font-semibold mb-4">Ecosystem</h3>
+                <div className="flex flex-col gap-2">
                   <Link href="/use-cases" className="hover:text-primary">Use Cases</Link>
                   <Link href="/ecosystem" className="hover:text-primary">Ecosystem</Link>
                   <Link href="/faq" className="hover:text-primary">FAQs</Link>
+                  <Link href="/team-foundation" className="hover:text-primary">Team Foundation</Link>
                 </div>
               </div>
               
@@ -39,6 +47,13 @@ export function StackedCircularFooter() {
                   <a href="https://staking.elastos.net/" target="_blank" rel="noopener noreferrer" className="hover:text-primary">Staking & Nodes</a>
                   <Link href="/explorer" className="hover:text-primary">Explorer</Link>
                   <Link href="/stats" className="hover:text-primary">Stats</Link>
+                </div>
+              </div>
+              
+              {/* Resources Section */}
+              <div>
+                <h3 className="font-semibold mb-4">Resources</h3>
+                <div className="flex flex-col gap-2">
                   <Link href="/security" className="hover:text-primary">Security</Link>
                   <Link href="/supply" className="hover:text-primary">Supply</Link>
                   <Link href="/bridge" className="hover:text-primary">Bridge</Link>
@@ -57,9 +72,9 @@ export function StackedCircularFooter() {
                 </div>
               </div>
               
-              {/* Insights & Connect Section */}
+              {/* Connect Section */}
               <div>
-                <h3 className="font-semibold mb-4">Connect & Insights</h3>
+                <h3 className="font-semibold mb-4">Connect</h3>
                 <div className="flex flex-col gap-2">
                   <Link href="/social-channels" className="hover:text-primary">Social Channels</Link>
                   <Link href="/ambassador-program" className="hover:text-primary">Ambassador Program</Link>
@@ -67,7 +82,6 @@ export function StackedCircularFooter() {
                   <Link href="/contact-us" className="hover:text-primary">Contact Us</Link>
                   <Link href="/announcements" className="hover:text-primary">Announcements</Link>
                   <Link href="/blogs-news" className="hover:text-primary">Blogs & News</Link>
-                  <Link href="/team-foundation" className="hover:text-primary">Team Foundation</Link>
                 </div>
               </div>
             </div>
