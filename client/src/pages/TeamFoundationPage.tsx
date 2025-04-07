@@ -3,6 +3,7 @@ import { motion } from "framer-motion";
 import { ArrowRight, Github, Globe, Linkedin, Mail, Twitter } from "lucide-react";
 import { ScrollToTop } from "@/components/ScrollToTop";
 import { StackedCircularFooter } from "@/components/ui/stacked-circular-footer";
+import { LogoCarouselDemo } from "@/components/LogoCarouselDemo";
 
 export default function TeamFoundationPage() {
   const keyContributors = [
@@ -127,7 +128,7 @@ export default function TeamFoundationPage() {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 gap-8 max-w-4xl mx-auto">
+          <div className="grid grid-cols-1 gap-8 w-full mx-auto">
             {keyContributors.map((member, index) => (
               <motion.div
                 key={index}
@@ -231,38 +232,21 @@ export default function TeamFoundationPage() {
         </div>
       </section>
 
-      {/* Join Our Team Section */}
-      <section className="py-20 bg-gray-50 dark:bg-[#1A1A1A]">
+      
+
+      {/* Logo Carousel Section */}
+      <section className="py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="bg-gradient-to-br from-[#5C8EFF]/10 to-[#F6921A]/10 rounded-2xl p-8 sm:p-12 border border-[#5C8EFF]/30">
-            <div className="max-w-3xl mx-auto text-center">
-              <h2 className="text-3xl font-[200] mb-6 text-black dark:text-white">Contribute to Elastos</h2>
-              <p className="text-gray-600 dark:text-gray-400 font-[200] mb-8">
-                Elastos is a community-driven project that welcomes talented individuals who are passionate about creating a better, more secure internet. If you're interested in contributing to the Elastos ecosystem, check out the open-source projects or join the community.
-              </p>
-              
-              <div className="flex flex-wrap justify-center gap-4">
-                <a
-                  href="https://github.com/elastos"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex px-5 py-3 bg-[rgba(92,142,255,0.10)] text-[#5C8EFF] rounded-full font-medium transition-all items-center gap-2 border border-[rgba(92,142,255,0.50)]"
-                >
-                  <Github className="h-4 w-4" />
-                  <span>Contribute on GitHub</span>
-                </a>
-                
-                <a
-                  href="https://discord.com/invite/elastos"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex px-5 py-3 bg-[rgba(246,146,26,0.10)] text-[#F6921A] rounded-full font-medium transition-all items-center gap-2 border border-[rgba(246,146,26,0.50)]"
-                >
-                  <span>Join Our Discord</span>
-                  <ArrowRight className="h-4 w-4" />
-                </a>
-              </div>
-            </div>
+          <div className="max-w-3xl mx-auto text-center mb-16">
+            <h2 className="text-3xl font-[200] mb-6 text-black dark:text-white">Our Partners</h2>
+            <p className="text-gray-600 dark:text-gray-400 font-[200]">
+              Partnering with leading organizations to build the future of the internet
+            </p>
+          </div>
+          
+          {/* Import the LogoCarouselDemo component */}
+          <div className="mt-10">
+            <LogoCarouselDemo />
           </div>
         </div>
       </section>
