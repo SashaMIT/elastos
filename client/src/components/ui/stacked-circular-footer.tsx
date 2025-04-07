@@ -77,10 +77,8 @@ export function StackedCircularFooter() {
                 <h3 className="font-semibold mb-4 text-[#F6921A]">Connect</h3>
                 <div className="flex flex-col gap-2">
                   <Link href="/social-channels" className="hover:text-primary">Social Channels</Link>
-                  <Link href="/ambassador-program" className="hover:text-primary">Ambassador Program</Link>
                   <Link href="/media-kit" className="hover:text-primary">Media Kit</Link>
                   <Link href="/contact-us" className="hover:text-primary">Contact Us</Link>
-                  <Link href="/announcements" className="hover:text-primary">Announcements</Link>
                   <Link href="/blogs-news" className="hover:text-primary">Blogs & News</Link>
                 </div>
               </div>
