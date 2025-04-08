@@ -16,15 +16,15 @@ function shouldIgnorePath(path: string): boolean {
   return ignoredPaths.some(pattern => pattern.test(path));
 }
 
-// Custom watch implementation
-if (process.env.NODE_ENV === 'development') {
-  watch('.', { recursive: true }, (_, filename) => {
-    if (filename && !shouldIgnorePath(filename)) {
-      // Only reload for relevant file changes
-      console.log(`File ${filename} changed`);
-    }
-  });
-}
+// Disable custom watch implementation to reduce file watchers
+// if (process.env.NODE_ENV === 'development') {
+//   watch('.', { recursive: true }, (_, filename) => {
+//     if (filename && !shouldIgnorePath(filename)) {
+//       // Only reload for relevant file changes
+//       console.log(`File ${filename} changed`);
+//     }
+//   });
+// }
 
 function log(message: string) {
   const formattedTime = new Date().toLocaleTimeString("en-US", {

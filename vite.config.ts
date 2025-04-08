@@ -3,21 +3,21 @@ import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
 import path from 'path';
 import checker from 'vite-plugin-checker';
-import runtimeErrorOverlay from 'vite-plugin-runtime-error-overlay';
 import { setupVite, serveStatic } from './server/vite';
 
 export default defineConfig({
   plugins: [
     react(),
     checker({ typescript: true, overlay: false }),
-    runtimeErrorOverlay(),
   ],
   cacheDir: './.vite',
   server: {
     host: true,
     watch: {
-      ignored: ['**/server/**', '**/timestamp-*.mjs', '**/node_modules/**', '**/.git/**', '**/client/public/**'],
-      usePolling: true
+      ignored: ['**/server/**', '**/timestamp-*.mjs', '**/node_modules/**', '**/.git/**', '**/client/public/**', '**/dist/**', '**/.vite/**'],
+      usePolling: true,
+      interval: 1000,
+      binaryInterval: 3000
     },
     proxy: {
       '/api': {
