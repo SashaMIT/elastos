@@ -4,14 +4,13 @@ import react from '@vitejs/plugin-react';
 import path from 'path';
 import checker from 'vite-plugin-checker';
 import runtimeErrorOverlay from 'vite-plugin-runtime-error-overlay';
-import themePlugin from './server/vite';
+import { setupVite, serveStatic } from './server/vite';
 
 export default defineConfig({
   plugins: [
     react(),
     checker({ typescript: true, overlay: false }),
     runtimeErrorOverlay(),
-    themePlugin(),
   ],
   cacheDir: './.vite',
   server: {
