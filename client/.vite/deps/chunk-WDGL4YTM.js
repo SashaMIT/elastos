@@ -1,6 +1,6 @@
 import {
   createContextScope
-} from "./chunk-MT2JYC2F.js";
+} from "./chunk-JSNTLHVP.js";
 import {
   Slot,
   useComposedRefs
@@ -82,4 +82,4 @@ function createCollection(name) {
 export {
   createCollection
 };
-//# sourceMappingURL=chunk-GCNYP364.js.map
+//# sourceMappingURL=chunk-WDGL4YTM.js.map

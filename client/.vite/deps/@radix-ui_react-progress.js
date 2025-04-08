@@ -1,10 +1,8 @@
 "use client";
 import {
+  Primitive,
   createContextScope
-} from "./chunk-MT2JYC2F.js";
-import {
-  Primitive
-} from "./chunk-QPYCDYEA.js";
+} from "./chunk-JSNTLHVP.js";
 import "./chunk-FATZ6S3O.js";
 import "./chunk-YEEQWJ5N.js";
 import {
