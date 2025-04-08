@@ -37,11 +37,21 @@ export default defineConfig({
     allowedHosts: ['c0b56459-2666-4001-a4bb-92502af66317-00-1dvqr9mkxq95y.sisko.replit.dev', '024bbc9c-b64f-4b5b-b383-44ef1ae09c01-00-ogqry17bf5w4.sisko.replit.dev', 'elastosv2.replit.app', 'a66d2cf2-889a-41aa-8bb1-ef462686fa46-00-24onv1up4iyt7.sisko.replit.dev', 'elastosnettest.replit.app', 'all']
   },
   optimizeDeps: {
-    include: ['react-router-dom', 'embla-carousel-react']
+    include: ['react-router-dom', 'embla-carousel-react', '@tabler/icons-react']
   },
   build: {
     commonjsOptions: {
       include: [/react-router-dom/, /embla-carousel-react/]
+    },
+    rollupOptions: {
+      output: {
+        manualChunks(id) {
+          // Bundle all Tabler icons into a single chunk
+          if (id.includes('@tabler/icons-react')) {
+            return 'tabler-icons';
+          }
+        }
+      }
     }
   },
   preview: {
