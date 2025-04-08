@@ -128,9 +128,10 @@ function getElementRef(element) {
 var Root = Slot;
 
 export {
+  composeRefs,
   useComposedRefs,
   Slot,
   Slottable,
   Root
 };
-//# sourceMappingURL=chunk-XLUPJ7ZA.js.map
+//# sourceMappingURL=chunk-FATZ6S3O.js.map

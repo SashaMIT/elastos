@@ -2,19 +2,15 @@ import {
   composeEventHandlers
 } from "./chunk-GS66RH7K.js";
 import {
-  useCallbackRef,
-  useLayoutEffect2
+  useCallbackRef
 } from "./chunk-TAZ6BGS6.js";
 import {
   Primitive,
   dispatchDiscreteCustomEvent
-} from "./chunk-4DQOY4E2.js";
+} from "./chunk-JSNTLHVP.js";
 import {
   useComposedRefs
-} from "./chunk-XLUPJ7ZA.js";
-import {
-  require_react_dom
-} from "./chunk-YEEQWJ5N.js";
+} from "./chunk-FATZ6S3O.js";
 import {
   require_jsx_runtime
 } from "./chunk-57FKUPNS.js";
@@ -250,25 +246,9 @@ function handleAndDispatchCustomEvent(name, handler, detail, { discrete }) {
 var Root = DismissableLayer;
 var Branch = DismissableLayerBranch;
 
-// node_modules/@radix-ui/react-portal/dist/index.mjs
-var React3 = __toESM(require_react(), 1);
-var import_react_dom = __toESM(require_react_dom(), 1);
-var import_jsx_runtime2 = __toESM(require_jsx_runtime(), 1);
-var PORTAL_NAME = "Portal";
-var Portal = React3.forwardRef((props, forwardedRef) => {
-  var _a;
-  const { container: containerProp, ...portalProps } = props;
-  const [mounted, setMounted] = React3.useState(false);
-  useLayoutEffect2(() => setMounted(true), []);
-  const container = containerProp || mounted && ((_a = globalThis == null ? void 0 : globalThis.document) == null ? void 0 : _a.body);
-  return container ? import_react_dom.default.createPortal((0, import_jsx_runtime2.jsx)(Primitive.div, { ...portalProps, ref: forwardedRef }), container) : null;
-});
-Portal.displayName = PORTAL_NAME;
-
 export {
   DismissableLayer,
   Root,
-  Branch,
-  Portal
+  Branch
 };
-//# sourceMappingURL=chunk-CDD5XG32.js.map
+//# sourceMappingURL=chunk-QAWT3SJP.js.map
