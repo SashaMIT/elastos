@@ -2,7 +2,10 @@ import { cn } from "@/lib/utils";
 import {
   IconFingerprint,
   IconNetwork,
-  IconDatabase
+  IconDatabase,
+  IconShieldLock,
+  IconCode,
+  IconWallet
 } from "@/lib/icons";
 import React, { ReactNode } from 'react';
 
