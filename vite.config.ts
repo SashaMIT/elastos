@@ -30,7 +30,7 @@ export default defineConfig({
     hmr: {
       clientPort: 443
     },
-    allowedHosts: ['teamela2.replit.app', 'elastosv2.replit.app', 'elastosnettest.replit.app', 'all']
+    allowedHosts: ['teamela2.replit.app', 'elastosv2.replit.app', 'elastosnettest.replit.app', 'a66d2cf2-889a-41aa-8bb1-ef462686fa46-00-24onv1up4iyt7.sisko.replit.dev', 'all']
   },
   optimizeDeps: {
     include: ['react-router-dom', 'embla-carousel-react', '@tabler/icons-react']
