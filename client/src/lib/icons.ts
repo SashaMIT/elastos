@@ -27,7 +27,8 @@ export {
   IconWallet
 };
 
-// Re-export Lucide icons that are used
+// Only export specific icons that are actually used in the application
+// This improves tree-shaking and prevents loading unused icons
 export {
   FileText,
   Wallet,
