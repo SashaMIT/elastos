@@ -9,7 +9,7 @@ import {
   IconFingerprint,
   IconDatabase,
   IconUsers
-} from "@tabler/icons-react";
+} from "@/lib/icons";
 
 export function FeaturesSectionWithTechStack() {
   const features = [

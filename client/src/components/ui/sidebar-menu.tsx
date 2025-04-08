@@ -26,8 +26,9 @@ import {
   Users,
   PiggyBank,
   Terminal,
-  Repeat
-} from "lucide-react";
+  Repeat,
+  Menu as MenuIcon
+} from "@/lib/icons";
 import { Link } from "wouter";
 import {
   Accordion,
@@ -36,7 +37,6 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
-import { Menu as MenuIcon } from "lucide-react";
 
 export const SidebarMenu = () => {
   return (
