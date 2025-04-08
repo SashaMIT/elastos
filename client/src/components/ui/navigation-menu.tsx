@@ -1,15 +1,5 @@
 import * as React from "react"
-import {
-  Root,
-  List,
-  Item,
-  Trigger,
-  Content,
-  Link,
-  Indicator,
-  ViewportProps,
-  NavigationMenuViewport
-} from "@radix-ui/react-navigation-menu"
+import * as NavigationMenuPrimitive from "@radix-ui/react-navigation-menu"
 import { cva } from "class-variance-authority"
 import { ChevronDown } from "lucide-react"
 
