@@ -7,7 +7,8 @@ export {
   IconNetwork, 
   IconFingerprint,
   IconDatabase,
-  IconUsers
+  IconUsers,
+  IconServer
 } from "@tabler/icons-react";
 
 // Re-export Lucide icons that are used

@@ -4,9 +4,8 @@ import { cn } from "@/lib/utils";
 import { 
   IconLock, 
   IconFingerprint, 
-  IconServer, 
   IconDatabase 
-} from "@tabler/icons-react";
+} from "@/lib/icons";
 
 export function WhyTheWorldNeedsThis() {
   const [activeTab, setActiveTab] = useState('digital-ownership');
