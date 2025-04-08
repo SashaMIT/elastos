@@ -1,4 +1,3 @@
-
 // Centralized icons export file
 // Using only Lucide icons instead of @tabler/icons-react
 import {
@@ -66,3 +65,72 @@ export {
 // Re-export your custom icons
 export { Icons } from "@/components/ui/icons";
 export { BoxesStacked, ChartBar } from "@/components/icons";
+
+// Import only specific icons that are used in the application
+// This improves tree-shaking and reduces bundle size
+import {
+  // UI/Navigation icons
+  ArrowRight,
+  ArrowUp,
+  ArrowDown,
+  ArrowDownCircle,
+  ChevronDown,
+  ChevronUp,
+  ChevronRight,
+  Check,
+  CheckCircle2,
+  Copy,
+  X,
+  Menu,
+  MoreHorizontal,
+  ExternalLink,
+
+  // Brand/Social icons
+  Github,
+  Twitter,
+  Facebook,
+  Linkedin,
+
+  // Feature/Product icons
+  Wallet,
+  Shield,
+  Lock,
+  Layers,
+  Users,
+  Database,
+  Globe,
+  Code,
+  Smartphone,
+  WalletCards,
+
+  // Status/Notification icons
+  AlertTriangle,
+  Info,
+
+  // File/Document icons
+  FileText,
+  BookCopy,
+  Box,
+
+  // Action icons
+  Download as DownloadIcon,
+  Share2,
+  Workflow,
+  Shuffle,
+  RefreshCw,
+  Repeat,
+
+  // Various icons
+  Play,
+  Pause,
+  Star,
+  Fingerprint,
+  MessageCircle,
+  Video,
+  GitMerge,
+  Clock,
+  Timer,
+  Plus,
+  Minus,
+  Asterisk,
+} from "lucide-react";
