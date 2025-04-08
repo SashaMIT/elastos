@@ -1,10 +1,23 @@
 
 // Centralized icons export file
-// Import only what's used from @tabler/icons-react
+// Using only Lucide icons instead of @tabler/icons-react
+import {
+  Lock as IconLock,
+  GitBranch as IconArrowsSplit,
+  Network as IconNetwork,
+  Fingerprint as IconFingerprint,
+  Database as IconDatabase,
+  Users as IconUsers,
+  Server as IconServer,
+  ShieldCheck as IconShieldLock,
+  Code as IconCode,
+  Wallet as IconWallet
+} from "lucide-react";
+
 export {
   IconLock,
   IconArrowsSplit,
-  IconNetwork, 
+  IconNetwork,
   IconFingerprint,
   IconDatabase,
   IconUsers,
@@ -12,7 +25,7 @@ export {
   IconShieldLock,
   IconCode,
   IconWallet
-} from "@tabler/icons-react";
+};
 
 // Re-export Lucide icons that are used
 export {
