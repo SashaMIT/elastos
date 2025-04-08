@@ -1,12 +1,9 @@
 import { cn } from "@/lib/utils";
 import {
-  IconShieldLock,
   IconFingerprint,
   IconNetwork,
-  IconDatabase,
-  IconCode,
-  IconWallet
-} from "@tabler/icons-react";
+  IconDatabase
+} from "@/lib/icons";
 import React, { ReactNode } from 'react';
 
 export function FeaturesSectionWithHoverEffects() {
