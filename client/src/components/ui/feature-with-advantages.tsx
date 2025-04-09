@@ -1,4 +1,3 @@
-
 import { StarBorder } from "@/components/ui/star-border";
 import { useHashrateData } from "@/hooks/useHashrateData";
 import { useElaSupply } from "@/hooks/useElaSupply";
