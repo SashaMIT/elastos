@@ -1,7 +1,8 @@
 import React, { useEffect, useState, useCallback } from 'react';
-import { ChevronLeft, ChevronRight, RefreshCcw, AlertTriangle } from 'lucide-react';
+import { RefreshCcw, AlertTriangle } from 'lucide-react';
 import { Spinner } from './ui/spinner';
 import { Skeleton } from './ui/skeleton';
+import { OptimizedImage } from './ui/optimized-image';
 
 interface NewsItem {
   id: string;
@@ -55,6 +56,7 @@ const fallbackNewsItems: NewsItem[] = [
 const RSS_FEED_URL = "https://rss.app/feeds/4dpMoB5Crc5ACmOz.xml";
 const CORS_PROXY = "https://api.allorigins.win/get?url=";
 const DEFAULT_IMAGE = '/images/Elastos New Logo_Kit-03.png';
+const MAX_NEWS_ITEMS = 9; // Limit to 9 items
 
 // Cache key for localStorage
 const CACHE_KEY = 'elastos_news_cache';
@@ -178,12 +180,14 @@ export function NewsSection() {
       });
 
       if (parsedItems.length > 0) {
-        setNewsItems(parsedItems);
+        // Limit to MAX_NEWS_ITEMS (9)
+        const limitedItems = parsedItems.slice(0, MAX_NEWS_ITEMS);
+        setNewsItems(limitedItems);
         // Cache the successfully fetched data
-        setCachedData(parsedItems);
+        setCachedData(limitedItems);
       } else {
         // Use fallback data if no items were parsed
-        setNewsItems(fallbackNewsItems);
+        setNewsItems(fallbackNewsItems.slice(0, MAX_NEWS_ITEMS));
         setError("No news items found in feed");
       }
     } catch (error) {
@@ -211,20 +215,6 @@ export function NewsSection() {
   const handleRetry = () => {
     setIsRetrying(true);
     fetchNews(true);
-  };
-
-  const scrollLeft = () => {
-    if (scrollRef.current) {
-      const scrollAmount = scrollRef.current.clientWidth * 0.75;
-      scrollRef.current.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
-    }
-  };
-
-  const scrollRight = () => {
-    if (scrollRef.current) {
-      const scrollAmount = scrollRef.current.clientWidth * 0.75;
-      scrollRef.current.scrollBy({ left: scrollAmount, behavior: 'smooth' });
-    }
   };
 
   // Check scroll possibilities
@@ -343,28 +333,6 @@ export function NewsSection() {
 
         {/* Content area with scroll controls */}
         <div className="relative">
-          {/* Left scroll button */}
-          {canScrollLeft && (
-            <button
-              onClick={scrollLeft}
-              className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-4 z-10 bg-white dark:bg-[#242424] shadow-md rounded-full p-2 hover:bg-gray-100 dark:hover:bg-[#2a2a2a] transition-colors"
-              aria-label="Scroll left"
-            >
-              <ChevronLeft className="h-5 w-5 text-gray-700 dark:text-gray-300" />
-            </button>
-          )}
-
-          {/* Right scroll button */}
-          {canScrollRight && (
-            <button
-              onClick={scrollRight}
-              className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-4 z-10 bg-white dark:bg-[#242424] shadow-md rounded-full p-2 hover:bg-gray-100 dark:hover:bg-[#2a2a2a] transition-colors"
-              aria-label="Scroll right"
-            >
-              <ChevronRight className="h-5 w-5 text-gray-700 dark:text-gray-300" />
-            </button>
-          )}
-
           {/* Main content */}
           <div 
             ref={scrollRef}
@@ -373,18 +341,23 @@ export function NewsSection() {
             aria-label="Latest news articles"
           >
             {loading ? renderSkeletons() : (
-              newsItems.map(item => (
+              newsItems.map((item, index) => (
                 <article 
                   key={item.id} 
                   className="min-w-[300px] flex-shrink-0 bg-[#F5F5F5] dark:bg-[#1a1a1a] rounded-lg overflow-hidden shadow-sm hover:shadow-md transition-shadow duration-300" 
                   style={{ width: 'calc(33.333% - 16px)' }} /* Showing 3 cards per row */
                 >
                   <div className="relative h-52 overflow-hidden">
+                    {/* Use OptimizedImage component for better image loading */}
                     <img 
                       src={item.image} 
                       alt=""
                       aria-hidden="true"
-                      loading="lazy"
+                      // Priority loading for first 3 visible cards
+                      loading={index < 3 ? "eager" : "lazy"}
+                      fetchPriority={index < 3 ? "high" : "low"}
+                      width={400}
+                      height={225}
                       className="w-full h-full object-cover bg-gray-100 dark:bg-gray-800"
                       onError={(e) => {
                         // If image fails to load, replace with default image
