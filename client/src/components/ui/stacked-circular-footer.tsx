@@ -1,4 +1,3 @@
-
 import { Icons } from "@/components/ui/icons"
 import { Button } from "@/components/ui/button"
 import { Link } from "wouter"
@@ -27,7 +26,7 @@ export function StackedCircularFooter() {
                   <Link href="/whitepaper" className="hover:text-primary">Whitepaper</Link>
                 </div>
               </div>
-              
+
               {/* Ecosystem Section */}
               <div>
                 <h3 className="font-semibold mb-4 text-[#F6921A]">Ecosystem</h3>
@@ -38,7 +37,7 @@ export function StackedCircularFooter() {
                   <Link href="/team-foundation" className="hover:text-primary">Team Foundation</Link>
                 </div>
               </div>
-              
+
               {/* Network Section */}
               <div>
                 <h3 className="font-semibold mb-4 text-[#F6921A]">Network</h3>
@@ -49,7 +48,7 @@ export function StackedCircularFooter() {
                   <Link href="/stats" className="hover:text-primary">Stats</Link>
                 </div>
               </div>
-              
+
               {/* Resources Section */}
               <div>
                 <h3 className="font-semibold mb-4 text-[#F6921A]">Resources</h3>
@@ -60,7 +59,7 @@ export function StackedCircularFooter() {
                   <Link href="/buy-ela" className="hover:text-primary">Buy ELA</Link>
                 </div>
               </div>
-              
+
               {/* Build Section */}
               <div>
                 <h3 className="font-semibold mb-4 text-[#F6921A]">Build</h3>
@@ -71,15 +70,15 @@ export function StackedCircularFooter() {
                   <a href="https://www.cyberrepublic.org/funding" target="_blank" rel="noopener noreferrer" className="hover:text-primary">Submit a Proposal</a>
                 </div>
               </div>
-              
+
               {/* Connect Section */}
               <div>
                 <h3 className="font-semibold mb-4 text-[#F6921A]">Connect</h3>
                 <div className="flex flex-col gap-2">
                   <Link href="/social-channels" className="hover:text-primary">Social Channels</Link>
                   <Link href="/media-kit" className="hover:text-primary">Media Kit</Link>
-                  <a href="https://contact.elastos.net" target="_blank" rel="noopener noreferrer" className="hover:text-primary">Contact Us</a>
-                  <a href="https://blog.elastos.net" target="_blank" rel="noopener noreferrer" className="hover:text-primary">Blogs & News</a>
+                  <a href="https://blog.elastos.net/contact-us/" target="_blank" rel="noopener noreferrer" className="hover:text-primary">Contact Us</a>
+                  <Link href="/announcements" className="hover:text-primary">Blog & News</Link>
                 </div>
               </div>
             </div>
