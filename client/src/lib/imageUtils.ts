@@ -13,9 +13,36 @@ export interface OptimizationOptions {
  * Optimize an image URL based on specified options
  */
 export const optimizeImageUrl = (src: string, options: OptimizationOptions = {}): string => {
-  // In a real implementation, this would transform the URL to fetch an optimized version
-  // For now, just return the original URL as a placeholder
-  return src;
+  // Skip processing for external URLs or SVGs
+  if (src.startsWith('http') || src.endsWith('.svg')) {
+    return src;
+  }
+  
+  const { width, height, quality = 80, format = 'webp' } = options;
+  
+  // Simple implementation that appends query parameters for client-side image optimization
+  // In production, this would use a proper image optimization service or CDN
+  let optimizedUrl = src;
+  
+  // Add format conversion if needed
+  if (format && !src.endsWith(`.${format}`)) {
+    // Extract base path without extension
+    const basePath = src.substring(0, src.lastIndexOf('.'));
+    optimizedUrl = `${basePath}.${format}`;
+  }
+  
+  // Add query parameters for dimensions and quality
+  const params = new URLSearchParams();
+  if (width) params.append('w', width.toString());
+  if (height) params.append('h', height.toString());
+  if (quality) params.append('q', quality.toString());
+  
+  const queryString = params.toString();
+  if (queryString) {
+    optimizedUrl += `?${queryString}`;
+  }
+  
+  return optimizedUrl;
 };
 
 /**
