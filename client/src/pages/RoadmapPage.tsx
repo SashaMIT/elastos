@@ -4,9 +4,6 @@ import { ImageZoom } from "@/components/ui/zoomable-image";
 import { ForwardRoadmap } from "@/components/ui/forward-roadmap";
 import { StackedCircularFooter } from "@/components/ui/stacked-circular-footer";
 import { LogoCarouselDemo } from "@/components/LogoCarouselDemo";
-import SEO from "@/components/SEO"; // Assuming SEO component exists
-import WebPageStructuredData from "@/components/WebPageStructuredData"; //Assuming WebPageStructuredData component exists
-
 
 export default function RoadmapPage() {
   const timelineData = [
@@ -77,19 +74,6 @@ export default function RoadmapPage() {
   return (
     <div className="relative w-full font-[200]">
       {/* Full-width hero image with gradient overlay */}
-      <SEO 
-        title="Elastos Roadmap - Past, Present, and Future Milestones"
-        description="Explore the development journey of Elastos from its inception to future plans, including key milestones, achievements, and upcoming features."
-        keywords="Elastos roadmap, blockchain timeline, Web3 development, Elastos milestones, decentralized web future"
-        ogImage="/images/Roadmap/Elastos Project Early Days 2017.jpeg"
-        canonicalUrl="/roadmap"
-      />
-      <WebPageStructuredData
-        title="Elastos Roadmap - Past, Present, and Future Development"
-        description="Review the complete development timeline of Elastos, including past milestones, current progress, and future goals for building the decentralized web."
-        url="/roadmap"
-        imageUrl="/images/Roadmap/Elastos Project Early Days 2017.jpeg"
-      />
       <div className="relative w-full h-[500px] overflow-hidden -mt-16">
         <img 
           src="/images/Roadmap/Community crowd.png" 

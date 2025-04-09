@@ -7,24 +7,10 @@ import React from "react";
 import { SEO } from "@/components/SEO";
 import { LogoCarouselDemo } from "@/components/LogoCarouselDemo";
 import { StackedCircularFooter } from "@/components/ui/stacked-circular-footer";
-import { WebPageStructuredData } from "@/components/StructuredData"; // Import from correct path
 
 const WhitepaperPage = () => {
   return (
     <Layout>
-      <SEO 
-        title="Elastos Whitepapers - Technical Documentation"
-        description="Access and download the complete collection of Elastos whitepapers, technical documentation, and litepaper to understand the technical foundations of the platform."
-        keywords="Elastos whitepaper, blockchain documentation, Web3 whitepaper, Elastos technical docs, decentralized web architecture"
-        ogImage="/images/whitepapers/original-wp-cover.png"
-        canonicalUrl="/whitepaper"
-      />
-      <WebPageStructuredData
-        title="Elastos Whitepapers and Technical Documentation"
-        description="Official repository of Elastos whitepapers, technical specs, and documentation explaining the architecture and vision of the Elastos ecosystem."
-        url="/whitepaper"
-        imageUrl="/images/whitepapers/original-wp-cover.png"
-      />
       <div className="relative w-full">
         {/* Full-width hero image with gradient overlay */}
         <div className="relative w-full h-[350px] overflow-hidden -mt-32">
@@ -329,6 +315,13 @@ const WhitepaperPage = () => {
           </div>
         </div>
       </div>
+      <SEO 
+        title="Elastos Whitepaper | Technical Documentation"
+        description="Access the official Elastos whitepaper, technical documentation, and litepaper to understand the technology and vision behind the project."
+        keywords="Elastos whitepaper, technical documentation, blockchain whitepaper, Web3 infrastructure, litepaper"
+        ogImage="/images/whitepapers/litepaper-cover.png"
+        canonicalUrl="/whitepaper"
+      />
       <LogoCarouselDemo />
       <StackedCircularFooter />
     </Layout>

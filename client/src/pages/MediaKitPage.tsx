@@ -1,3 +1,4 @@
+
 import React, { useState } from "react";
 import { motion } from "framer-motion";
 import { Download, ExternalLink } from "lucide-react";
@@ -8,15 +9,13 @@ import { ColorPaletteCard } from "@/components/media-kit/ColorPaletteCard";
 import { FontCard } from "@/components/media-kit/FontCard";
 import { logos, colorPalettes, fonts } from "@/lib/media-kit-utils";
 import { StackedCircularFooter } from "@/components/ui/stacked-circular-footer";
-import { SEO } from "@/components/SEO";
-import { WebPageStructuredData } from "@/components/StructuredData";
 
 export function MediaKitPage() {
   const [downloading, setDownloading] = useState(false);
 
   const downloadBrandingGuidelines = async () => {
     setDownloading(true);
-
+    
     try {
       // Direct download of the branding guidelines
       const response = await fetch("/logo-assets/Elastos-Brand-Guidelines.pdf");
@@ -37,19 +36,6 @@ export function MediaKitPage() {
 
   return (
     <div className="min-h-screen bg-[#171717] text-white">
-      <SEO 
-        title="Elastos Media Kit - Brand Assets and Guidelines"
-        description="Download official Elastos brand assets, logos, icons, color guidelines, and marketing materials for press, media, and partners."
-        keywords="Elastos media kit, brand assets, logo download, brand guidelines, marketing materials, press kit"
-        ogImage="/images/Elastos New Logo_Kit-03.png"
-        canonicalUrl="/media-kit"
-      />
-      <WebPageStructuredData
-        title="Elastos Media Kit and Brand Resources"
-        description="Official repository of Elastos brand assets, logos, color schemes, and usage guidelines for consistent representation across media."
-        url="/media-kit"
-        imageUrl="/images/Elastos New Logo_Kit-03.png"
-      />
       {/* Hero Section with Image and Gradient Overlay */}
       <div className="relative w-full h-[500px] overflow-hidden -mt-16">
         <img 
@@ -59,7 +45,7 @@ export function MediaKitPage() {
         />
         {/* Gradient overlay */}
         <div className="absolute inset-0 bg-gradient-to-b from-black/10 via-[#171717]/80 to-[#171717]"></div>
-
+        
         {/* Hero content overlay */}
         <div className="absolute inset-0 flex items-center justify-center">
           <div className="container mx-auto px-4">
@@ -73,7 +59,7 @@ export function MediaKitPage() {
                   Use these assets to build consistent and recognizable Elastos-related content.
                 </p>
               </div>
-
+              
               <div className="flex flex-wrap justify-center gap-4 mt-8">
                 <button 
                   onClick={downloadBrandingGuidelines}
@@ -105,13 +91,13 @@ export function MediaKitPage() {
           </div>
         </div>
       </div>
-
+      
       {/* Background glows */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <div className="absolute top-1/4 -right-28 w-96 h-96 rounded-full bg-[#F6921A]/10 blur-[120px]"></div>
         <div className="absolute bottom-1/3 -left-28 w-96 h-96 rounded-full bg-[#5C8EFF]/10 blur-[120px]"></div>
       </div>
-
+      
       <div className="container mx-auto px-4 pt-0 pb-16 relative z-10">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -141,7 +127,7 @@ export function MediaKitPage() {
                 </TabsTrigger>
               </TabsList>
             </div>
-
+            
             <TabsContent value="logos" className="space-y-8">
               <div className="flex justify-start">
                 <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6 max-w-6xl">
@@ -151,7 +137,7 @@ export function MediaKitPage() {
                 </div>
               </div>
             </TabsContent>
-
+            
             <TabsContent value="colors" className="space-y-8">
               <div className="flex justify-start">
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-6xl">
@@ -161,7 +147,7 @@ export function MediaKitPage() {
                 </div>
               </div>
             </TabsContent>
-
+            
             <TabsContent value="typography" className="space-y-8">
               <div className="flex justify-start">
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-6xl">
@@ -173,7 +159,7 @@ export function MediaKitPage() {
             </TabsContent>
           </Tabs>
         </motion.div>
-
+        
         <div className="mt-20">
           <StackedCircularFooter />
         </div>

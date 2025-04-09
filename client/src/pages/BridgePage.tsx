@@ -38,8 +38,6 @@ import {
   TabsList,
   TabsTrigger,
 } from "@/components/ui/tabs";
-import { SEO } from "@/components/SEO";
-import { WebPageStructuredData } from "@/components/StructuredData";
 
 const fadeIn = {
   hidden: { opacity: 0, y: 20 },
@@ -60,7 +58,7 @@ const staggerContainer = {
   }
 };
 
-export default function BridgePage() {
+export function BridgePage() {
   const [activeStepIndex, setActiveStepIndex] = useState(0);
   const [shadowStep, setShadowStep] = useState(0);
   const [expandedSection, setExpandedSection] = useState<string | null>("native");
@@ -139,19 +137,6 @@ export default function BridgePage() {
 
   return (
     <div className="relative w-full font-[200] flex flex-col min-h-screen text-white">
-      <SEO 
-        title="Elastos Bridge - Cross-Chain Asset Transfers"
-        description="Learn how to transfer ELA tokens and assets between different blockchains using the Elastos bridge services and cross-chain solutions."
-        keywords="Elastos bridge, cross-chain transfers, ELA token bridge, blockchain interoperability, Chainge Finance, crypto bridge"
-        ogImage="/images/Bridge/Chainge Finance.png"
-        canonicalUrl="/bridge"
-      />
-      <WebPageStructuredData
-        title="Elastos Bridge - Cross-Chain Asset Transfer Guide"
-        description="Step-by-step guide for bridging ELA tokens and assets between Elastos Smart Chain (ESC) and other blockchain networks."
-        url="/bridge"
-        imageUrl="/images/Bridge/Chainge Finance.png"
-      />
       {/* Full-width hero image with gradient overlay */}
       <div className="relative w-full h-[500px] overflow-hidden -mt-16">
         <img
@@ -934,7 +919,7 @@ export default function BridgePage() {
                                           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 35 34" fill="none" className="rotate-180">
                                             <circle cx="17.333" cy="17" r="16.75" stroke="#5C8EFF" strokeOpacity="0.25" strokeWidth="1.5" />
                                             <path d="M17.3338 22.9405L23.2741 17.0002L17.3338 11.0598L16.4162 11.9774L20.7628 16.324H10.8622V17.6763H20.7628L16.4162 22.0229L17.3338 22.9405Z" fill="#5C8EFF" />
-                                            <path d="M20.7628 17.6638H10.8747V16.3365H20.7628H20.7929L20.7716 16.3152L16.4338 11.9774L17.3338 11.075L23.2564 17.0002L17.3338 22.9228L16.4338 22.0229L20.7716 17.6851L20.7929 17.6638H20.7628Z" stroke="#5C8EFF" strokeOpacity="0.25" strokewidth="1.5" />
+                                            <path d="M20.7628 17.6638H10.8747V16.3365H20.7628H20.7929L20.7716 16.3152L16.4338 11.9774L17.3338 11.075L23.2564 17.0002L17.3338 22.9228L16.4338 22.0229L20.7716 17.6851L20.7929 17.6638H20.7628Z" stroke="#5C8EFF" strokeOpacity="0.25" strokeWidth="1.5" />
                                           </svg>
                                           <span>Previous</span>
                                         </button>
@@ -1313,7 +1298,7 @@ export default function BridgePage() {
                       <AccordionTrigger className="flex flex-1 items-center py-2 text-left text-[15px] font-[200] text-foreground dark:text-foreground [&>svg]:hidden">
                         <span className="flex-grow pr-4">Which wallet should I use for bridging?</span>
                         <div className="flex-shrink-0 w-6 h-6 rounded-full border border-[#F6921A] flex items-center justify-center">
-                          <                          <div className="w-4 h-4 text-[#F6921A]" data-state-icon>
+                          <div className="w-4 h-4 text-[#F6921A]" data-state-icon>
                             <Plus className="h-4 w-4" />
                           </div>
                         </div>
@@ -1368,7 +1353,7 @@ export default function BridgePage() {
           </div>
         </div>
       </section>
-
+      
       {/* Footer */}
       <div className="mt-auto">
         <div className="w-full">

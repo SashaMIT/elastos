@@ -20,8 +20,6 @@ import {
 } from "@/components/ui/dialog";
 import CompactCalcAnimation from '../components/CompactCalcAnimation';
 import ValueJustificationViz from '../components/ValueJustificationViz';
-import { SEO } from "@/components/SEO";
-import { WebPageStructuredData } from "@/components/StructuredData";
 
 const ValueCalcPage = () => {
   // Calculator state
@@ -56,19 +54,6 @@ const ValueCalcPage = () => {
 
   return (
     <div className="bg-background dark:bg-[#171717] p-2 sm:p-4 md:p-6 w-full flex justify-center">
-      <SEO 
-        title="Elastos Value Calculator"
-        description="Calculate and analyze the potential value of ELA tokens based on various metrics, market scenarios, and adoption rates."
-        keywords="Elastos value calculator, ELA price prediction, token valuation, crypto calculator, blockchain valuation"
-        ogImage="/images/Elastosbanner.jpg"
-        canonicalUrl="/value-calculator"
-      />
-      <WebPageStructuredData
-        title="Elastos Value Calculator and Analysis Tool"
-        description="Interactive calculator for estimating the potential value of ELA tokens under different market conditions and ecosystem growth scenarios."
-        url="/value-calculator"
-        imageUrl="/images/Elastosbanner.jpg"
-      />
       <Card className="w-full max-w-4xl bg-background/95 dark:bg-[#171717] backdrop-blur-sm mx-auto border-0 dark:border-0">
         <CardHeader className="p-2 sm:p-4">
           <CardTitle className="flex items-center gap-2 text-base sm:text-lg md:text-xl">

@@ -17,10 +17,6 @@ import {
   TooltipContent,
   TooltipProvider,
   TooltipTrigger,
-
-import { SEO } from "@/components/SEO";
-import { WebPageStructuredData } from "@/components/StructuredData";
-
 } from "@/components/ui/tooltip";
 import { StackedCircularFooter } from "@/components/ui/stacked-circular-footer";
 
@@ -116,19 +112,6 @@ const stats: StatItem[] = [
 
   return (
     <div className="min-h-screen bg-white dark:bg-[#171717] flex flex-col items-center justify-start pt-0 p-0 sm:p-1">
-      <SEO 
-        title="Elastos Homepage - Bitcoin-Secured Web3 Infrastructure"
-        description="Explore real-time statistics about Elastos, the blockchain platform secured by Bitcoin's hashrate through merged mining."
-        keywords="Elastos, Bitcoin security, merged mining, blockchain statistics, hashrate, Web3, decentralized web"
-        ogImage="/images/Elastosbanner.jpg"
-        canonicalUrl="/home"
-      />
-      <WebPageStructuredData
-        title="Elastos Homepage - Bitcoin-Secured Web3 Infrastructure"
-        description="Track and analyze Elastos network statistics, security metrics, and Bitcoin merged mining data."
-        url="/home"
-        imageUrl="/images/Elastosbanner.jpg"
-      />
       <Dialog open={showDisclaimer} onOpenChange={setShowDisclaimer}>
         <DialogContent className="sm:max-w-[425px] bg-white dark:bg-[#151515] border-0 shadow-lg">
           <DialogHeader>
