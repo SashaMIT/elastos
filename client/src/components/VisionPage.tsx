@@ -10,6 +10,38 @@ import { DetailedVisionSection } from "@/components/blocks/detailed-vision-secti
 import { SEO } from "@/components/SEO";
 import { VideoPlayerDemo } from "@/components/VideoPlayerDemo";
 
+// Added component for arrow
+const ArrowRight = () => (
+  <svg
+    width="24"
+    height="24"
+    viewBox="0 0 24 24"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <path
+      d="M12 19L16.5 14.5L15.0999 13.0999L12 16L8.90002 12.9001L7.5 14.3001L12 19Z"
+      fill="#5C8EFF"
+    />
+  </svg>
+);
+
+
+// Added Feature component
+const Feature = () => (
+  <div className="flex flex-col md:flex-row items-center justify-between space-y-8 md:space-y-0 md:space-x-12">
+    <div className="space-y-4">
+      <h2 className="text-3xl font-bold text-black dark:text-white">
+        Own Your Data. Own Your Future.
+      </h2>
+      <p className="text-lg text-gray-600 dark:text-gray-400">
+        Elastos empowers you to take control of your digital life.
+      </p>
+    </div>
+    <ArrowRight className="w-10 h-10" />
+  </div>
+);
+
 export function VisionPage() {
   return (
     <div className="relative bg-white dark:bg-[#171717]">
@@ -46,6 +78,11 @@ export function VisionPage() {
             {/* Detailed Vision Section */}
             <div>
               <DetailedVisionSection />
+            </div>
+
+            {/* SmartWeb Feature Section */}
+            <div className="mb-20">
+              <Feature />
             </div>
 
             {/* Feature Section with Bento Grid */}
