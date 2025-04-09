@@ -4,7 +4,8 @@ import { cn } from "@/lib/utils";
 import { 
   IconLock, 
   IconFingerprint, 
-  IconDatabase 
+  IconDatabase,
+  IconServer
 } from "@/lib/icons";
 
 export function WhyTheWorldNeedsThis() {
@@ -32,7 +33,7 @@ export function WhyTheWorldNeedsThis() {
       title: "Control",
       description: "A few powerful entities control what we see and do online.",
       longDescription: "A handful of tech giants act as gatekeepers to the internet, deciding what content gets promoted, censored, or monetized. Elastos creates a peer-to-peer internet infrastructure where users can interact directly without intermediaries controlling the flow of information.",
-      icon: <IconServer className="h-8 w-8 text-[#F6921A]" />,
+      icon: <IconDatabase className="h-8 w-8 text-[#F6921A]" />,
       color: "#24272f" 
     },
     {
