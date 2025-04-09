@@ -391,8 +391,8 @@ const LandingPage = () => {
               ) : (
                 <>
                   <p className="text-xl sm:text-2xl font-[200]">${hashrateData?.elaPrice?.toFixed(2) || '0.00'}</p>
-                  <p className={`text-sm ${hashrateData?.elaPriceChange24h >= 0 ? 'text-green-500 dark:text-green-400' : 'text-red-500 dark:text-red-400'} mb-4`}>
-                    {(hashrateData?.elaPriceChange24h >= 0 ? '+' : '') + (hashrateData?.elaPriceChange24h || 0).toFixed(2)}%
+                  <p className="text-sm text-gray-500 dark:text-gray-400 mb-4">
+                    Per ELA
                   </p>
                   <div className="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-1.5">
                     <div className="bg-[#F6921A] h-1.5 rounded-full" style={{ width: `${((hashrateData?.elaPrice || 0) / 77 * 100)}%` }} />
