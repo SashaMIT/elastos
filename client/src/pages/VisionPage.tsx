@@ -9,6 +9,7 @@ import { WorldComputerBanner } from "@/components/blocks/world-computer-banner";
 import { StackedCircularFooter } from "@/components/ui/stacked-circular-footer";
 import { WhyTheWorldNeedsThis } from "@/components/blocks/why-the-world-needs-this";
 import { LogoCarouselDemo } from "@/components/LogoCarouselDemo";
+import { Feature } from "@/components/ui/feature-with-advantages";
 
 export function VisionPage() {
   return (
@@ -32,6 +33,11 @@ export function VisionPage() {
             <div className="mt-10">
               <VideoPlayerDemo />
             </div>
+          </div>
+          
+          {/* Feature component from feature-with-advantages */}
+          <div className="mb-20">
+            <Feature />
           </div>
 
           <div className="space-y-32">
