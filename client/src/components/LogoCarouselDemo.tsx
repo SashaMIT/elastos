@@ -1,14 +1,15 @@
+
 "use client";
 
-import React from "react";
+import React, { useMemo } from "react";
 import { LogoCarousel } from "@/components/ui/logo-carousel";
 import { useTheme } from "@/hooks/useTheme";
 
 export function LogoCarouselDemo() {
   const { theme } = useTheme();
 
-  // Define logos array inside the component so it updates on each render.
-  const logos = [
+  // Define logos array using useMemo to prevent recreation on each render
+  const logos = useMemo(() => [
     {
       name: "Glide",
       id: 9,
@@ -21,6 +22,7 @@ export function LogoCarouselDemo() {
           width="120"
           height="36"
           className="h-9 w-auto object-contain hover:opacity-80 transition-opacity cursor-pointer"
+          fetchPriority="low"
         />
       ),
     },
@@ -32,7 +34,11 @@ export function LogoCarouselDemo() {
         <img
           src="/images/Kucoin.png"
           alt="Kucoin - Crypto Exchange"
+          loading="lazy"
+          width="140" 
+          height="36"
           className="h-9 w-auto object-contain hover:opacity-80 transition-opacity cursor-pointer"
+          fetchPriority="low"
         />
       ),
     },
@@ -48,7 +54,9 @@ export function LogoCarouselDemo() {
             alt="Coinbase - Cryptocurrency Exchange"
             width="140"
             height="28"
+            loading="lazy"
             className="block dark:hidden h-7 w-auto object-contain hover:opacity-80 transition-opacity cursor-pointer"
+            fetchPriority="high"
           />
           {/* Dark mode image */}
           <img
@@ -56,7 +64,9 @@ export function LogoCarouselDemo() {
             alt="Coinbase - Cryptocurrency Exchange"
             width="140"
             height="28"
+            loading="lazy"
             className="hidden dark:block h-7 w-auto object-contain hover:opacity-80 transition-opacity cursor-pointer"
+            fetchPriority="high"
           />
         </>
       ),
@@ -69,7 +79,11 @@ export function LogoCarouselDemo() {
         <img
           src="/images/Gateio.png"
           alt="Gate.io - Cryptocurrency Trading Platform"
+          loading="lazy"
+          width="140"
+          height="36"
           className="h-9 w-auto object-contain hover:opacity-80 transition-opacity cursor-pointer"
+          fetchPriority="low"
         />
       ),
     },
@@ -83,13 +97,21 @@ export function LogoCarouselDemo() {
           <img
             src="/images/Huobi.png"
             alt="Huobi Light"
+            loading="lazy"
+            width="140"
+            height="36"
             className="block dark:hidden h-9 w-auto object-contain hover:opacity-80 transition-opacity cursor-pointer"
+            fetchPriority="low"
           />
           {/* Dark mode image */}
           <img
             src="/images/Huobi-w.png"
             alt="Huobi Dark"
+            loading="lazy"
+            width="140"
+            height="36"
             className="hidden dark:block h-9 w-auto object-contain hover:opacity-80 transition-opacity cursor-pointer"
+            fetchPriority="low"
           />
         </>
       ),
@@ -102,7 +124,11 @@ export function LogoCarouselDemo() {
         <img
           src="/images/BitGet.png"
           alt="BitGet"
+          loading="lazy"
+          width="140"
+          height="36"
           className="h-9 w-auto object-contain hover:opacity-80 transition-opacity cursor-pointer"
+          fetchPriority="low"
         />
       ),
     },
@@ -116,13 +142,21 @@ export function LogoCarouselDemo() {
           <img
             src="/images/Crypto.png"
             alt="Crypto Light"
+            loading="lazy"
+            width="140"
+            height="36"
             className="block dark:hidden h-9 w-auto object-contain hover:opacity-80 transition-opacity cursor-pointer"
+            fetchPriority="low"
           />
           {/* Dark mode image */}
           <img
             src="/images/Crypto-w.png"
             alt="Crypto Dark"
+            loading="lazy"
+            width="140"
+            height="36"
             className="hidden dark:block h-9 w-auto object-contain hover:opacity-80 transition-opacity cursor-pointer"
+            fetchPriority="low"
           />
         </>
       ),
@@ -135,7 +169,11 @@ export function LogoCarouselDemo() {
         <img
           src="/images/Uniswap.png"
           alt="Uniswap"
+          loading="lazy"
+          width="140"
+          height="36"
           className="h-9 w-auto object-contain hover:opacity-80 transition-opacity cursor-pointer"
+          fetchPriority="low"
         />
       ),
     },
@@ -147,13 +185,15 @@ export function LogoCarouselDemo() {
         <img
           src="/images/chainge.png"
           alt="Chainge"
+          loading="lazy"
+          width="140"
+          height="36"
           className="h-9 w-auto object-contain hover:opacity-80 transition-opacity cursor-pointer"
+          fetchPriority="low"
         />
       ),
     },
-  ];
-
-  // Logo click functionality is now handled directly in the LogoColumn component
+  ], []);  // Empty dependency array since these don't change
 
   return (
     <div className="w-full py-0 md:py-0 dark:bg-[#171717]">

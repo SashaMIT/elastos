@@ -13,8 +13,30 @@ export interface OptimizationOptions {
  * Optimize an image URL based on specified options
  */
 export const optimizeImageUrl = (src: string, options: OptimizationOptions = {}): string => {
-  // In a real implementation, this would transform the URL to fetch an optimized version
-  // For now, just return the original URL as a placeholder
+  // Check if src is a remote URL (starts with http or https)
+  if (src.startsWith('http')) {
+    // For remote URLs, we can't modify them directly
+    return src;
+  }
+  
+  // For local images served from our own server
+  const { width, height, quality = 80, format } = options;
+  
+  // Build query parameters for optimization
+  const params = new URLSearchParams();
+  
+  if (width) params.append('w', width.toString());
+  if (height) params.append('h', height.toString());
+  if (quality) params.append('q', quality.toString());
+  if (format) params.append('fmt', format);
+  
+  // If we have parameters, append them to the URL
+  const queryString = params.toString();
+  if (queryString) {
+    // Add optimization path prefix
+    return `/image-optimize${src}?${queryString}`;
+  }
+  
   return src;
 };
 

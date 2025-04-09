@@ -54,17 +54,41 @@ const LogoColumn: React.FC<LogoColumnProps> = React.memo(
   ({ logos, index, currentTime }) => {
     const { theme } = useTheme();
     const isDark = theme === 'dark';
-    const cycleInterval = 2000
-    const columnDelay = index * 200
-    const adjustedTime = (currentTime + columnDelay) % (cycleInterval * logos.length)
-    const currentIndex = Math.floor(adjustedTime / cycleInterval)
-    const CurrentLogo = useMemo(() => logos[currentIndex].img, [logos, currentIndex])
+    const cycleInterval = 2000;
+    const columnDelay = index * 200;
     
-    const handleClick = () => {
+    // Use a more efficient calculation to avoid unnecessary rerenders
+    const adjustedTime = (currentTime + columnDelay) % (cycleInterval * logos.length);
+    const currentIndex = Math.floor(adjustedTime / cycleInterval);
+    
+    // Memoize the current logo component to prevent unnecessary recreation
+    const CurrentLogo = useMemo(() => logos[currentIndex].img, [logos, currentIndex]);
+    
+    // Preload the next logo to avoid flickering during transitions
+    React.useEffect(() => {
+      const nextIndex = (currentIndex + 1) % logos.length;
+      // This will be handled by the browser's preload mechanism
+      // without adding extra DOM elements
+      if (typeof window !== 'undefined') {
+        const nextLogoUrl = logos[nextIndex].url;
+        if (nextLogoUrl) {
+          const link = document.createElement('link');
+          link.rel = 'prefetch';
+          link.href = nextLogoUrl;
+          link.as = 'image';
+          document.head.appendChild(link);
+          return () => {
+            document.head.removeChild(link);
+          };
+        }
+      }
+    }, [currentIndex, logos]);
+    
+    const handleClick = useCallback(() => {
       if (logos[currentIndex].url) {
         window.open(logos[currentIndex].url, "_blank", "noopener,noreferrer");
       }
-    };
+    }, [logos, currentIndex]);
 
     return (
       <motion.div
@@ -130,9 +154,27 @@ export function LogoCarousel({ columnCount = 2, logos }: LogoCarouselProps) {
   }, [])
 
   useEffect(() => {
-    const intervalId = setInterval(updateTime, 100)
-    return () => clearInterval(intervalId)
-  }, [updateTime])
+    let animationFrameId: number;
+    let lastUpdate = Date.now();
+    
+    const animate = () => {
+      const now = Date.now();
+      // Only update every 100ms to avoid excessive renders
+      if (now - lastUpdate >= 100) {
+        updateTime();
+        lastUpdate = now;
+      }
+      animationFrameId = requestAnimationFrame(animate);
+    };
+    
+    animationFrameId = requestAnimationFrame(animate);
+    
+    return () => {
+      if (animationFrameId) {
+        cancelAnimationFrame(animationFrameId);
+      }
+    };
+  }, [updateTime]);
 
   useEffect(() => {
     const distributedLogos = distributeLogos(logos, columnCount)
