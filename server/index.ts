@@ -110,8 +110,8 @@ app.use((req, res, next) => {
 (async () => {
   registerRoutes(app);
 
-  // Apply image optimization middleware
-  const imageOptimizationMiddleware = require('./server-middleware/image-optimization'); // Assumed path
+  // Apply image optimization middleware - Adjust path as needed
+  const imageOptimizationMiddleware = require('./server-middleware/image-optimization'); 
   app.use(imageOptimizationMiddleware);
 
 

@@ -78,13 +78,11 @@ export function CommunityImageGrid() {
             key={image.key} 
             className="aspect-square" 
             variants={itemVariants}
-            // Only eagerly load first 4 images, lazy load the rest
-            loading-priority={index < 4 ? "high" : "low"}
           >
             <OptimizedImage
               src={image.src}
               alt={image.alt}
-              className="w-full h-full"
+              className="w-full h-full rounded-md object-cover"
               aspectRatio="aspect-square"
               width={300}
               height={300}
@@ -92,6 +90,12 @@ export function CommunityImageGrid() {
               quality={75}
               blurEffect={true}
               loading={index < 4 ? "eager" : "lazy"}
+              fallback="/images/placeholder-image.jpg"
+              onError={(e) => {
+                console.error(`Failed to load image: ${image.src}`);
+                // Set a default placeholder on error
+                e.currentTarget.src = "/images/placeholder-image.jpg";
+              }}
             />
           </motion.div>
         ))}
