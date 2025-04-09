@@ -5,6 +5,7 @@ import { Lens } from "@/components/ui/lens";
 import { ExternalLink, Share2, Terminal, Wallet, Image, Building2 } from 'lucide-react';
 import { motion } from "framer-motion";
 import { SEO } from "@/components/SEO";
+import { WebPageStructuredData } from "@/components/StructuredData";
 
 type Project = {
   name: string;
@@ -474,11 +475,17 @@ export default function EcosystemPage() {
   return (
     <div className="min-h-screen bg-white dark:bg-[#171717] text-black dark:text-white">
       <SEO 
-        title="Elastos Ecosystem | Web3 Projects & Partners"
-        description="Explore the growing ecosystem of projects, applications, and partners building on Elastos technology to create a better internet."
-        keywords="Elastos ecosystem, dApps, blockchain projects, Elacity, BeL2, Elastos partners, Web3"
-        ogImage="/images/Elastosbanner.jpg"
+        title="Elastos Ecosystem - Projects and Partners"
+        description="Explore the diverse ecosystem of projects, dApps, partners, and initiatives building on the Elastos blockchain and Web3 infrastructure."
+        keywords="Elastos ecosystem, blockchain projects, Web3 applications, dApps, Elastos partners, decentralized apps"
+        ogImage="/images/Ecosystem/Elacity Market.png"
         canonicalUrl="/ecosystem"
+      />
+      <WebPageStructuredData
+        title="Elastos Ecosystem of Projects and Partners"
+        description="Comprehensive directory of projects, applications, services, and partners that are part of the growing Elastos ecosystem."
+        url="/ecosystem"
+        imageUrl="/images/Ecosystem/Elacity Market.png"
       />
       <div className="flex flex-col lg:flex-row">
         {/* Mobile Category Selector */}

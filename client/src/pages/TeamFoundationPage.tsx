@@ -4,6 +4,8 @@ import { ScrollToTop } from "@/components/ScrollToTop";
 import { StackedCircularFooter } from "@/components/ui/stacked-circular-footer";
 import { LogoCarouselDemo } from "@/components/LogoCarouselDemo";
 import { useState } from "react";
+import { SEO } from "@/components/SEO";
+import { WebPageStructuredData } from "@/components/StructuredData";
 
 export default function TeamFoundationPage() {
   const [expandedBios, setExpandedBios] = useState<{[key: number]: boolean}>({});
@@ -84,6 +86,19 @@ export default function TeamFoundationPage() {
   return (
     <div className="min-h-screen bg-white dark:bg-[#171717] text-black dark:text-white">
       <ScrollToTop />
+      <SEO 
+        title="Elastos Team and Foundation"
+        description="Meet the founders, core team members, and key contributors behind Elastos, including their backgrounds, expertise, and vision for the project."
+        keywords="Elastos team, Rong Chen, Sunny Feng Han, blockchain founders, Web3 developers, Elastos foundation"
+        ogImage="/images/Rong Chen.png"
+        canonicalUrl="/team"
+      />
+      <WebPageStructuredData
+        title="Elastos Team, Foundation and Key Contributors"
+        description="Profiles of the Elastos founding team, core developers, and key contributors who are building the decentralized web infrastructure."
+        url="/team"
+        imageUrl="/images/Rong Chen.png"
+      />
 
       {/* Hero Section with Image and Gradient Overlay */}
       <div className="relative w-full h-[500px] overflow-hidden -mt-16">

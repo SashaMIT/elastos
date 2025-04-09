@@ -2,6 +2,8 @@ import { motion } from "framer-motion";
 import { ArrowRight, ArrowLeft, Award, Globe, Heart, Users, Star, Shield, Sparkles, Zap, ScrollText } from "lucide-react";
 import { ScrollToTop } from "@/components/ScrollToTop";
 import { StackedCircularFooter } from "@/components/ui/stacked-circular-footer";
+import { SEO } from "@/components/SEO";
+import { WebPageStructuredData } from "@/components/StructuredData";
 
 export default function AmbassadorsPage() {
   return (

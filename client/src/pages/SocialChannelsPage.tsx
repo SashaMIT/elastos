@@ -15,6 +15,26 @@ import { StackedCircularFooter } from "@/components/ui/stacked-circular-footer";
 import { LogoCarouselDemo } from "@/components/LogoCarouselDemo";
 import { VerifyButton } from "@/components/ui/verify-button";
 
+// Placeholder components - replace with actual implementations
+const SEO = ({ title, description, keywords, ogImage, canonicalUrl }) => (
+  <div>
+    {/* SEO meta tags here */}
+    <h1>{title}</h1>
+    <p>{description}</p>
+  </div>
+);
+
+const WebPageStructuredData = ({ title, description, url, imageUrl }) => (
+  <div>
+    {/* Structured data script here */}
+    <p>{title}</p>
+    <p>{description}</p>
+    <p>{url}</p>
+    <p>{imageUrl}</p>
+  </div>
+);
+
+
 const SocialChannelsPage: React.FC = () => {
   const socialChannels = [
     {
@@ -93,6 +113,19 @@ const SocialChannelsPage: React.FC = () => {
 
   return (
     <div className="min-h-screen bg-[#171717]">
+      <SEO 
+        title="Elastos Social Channels - Community and Communication"
+        description="Connect with the Elastos community through official social media channels, chat groups, forums, and communication platforms."
+        keywords="Elastos social media, Telegram groups, Twitter, Discord, community channels, blockchain community"
+        ogImage="/images/Community/Elastos Celebration.png"
+        canonicalUrl="/social-channels"
+      />
+      <WebPageStructuredData
+        title="Elastos Social Media and Community Channels"
+        description="Directory of official Elastos social media accounts, community groups, and communication channels for staying informed and engaged."
+        url="/social-channels"
+        imageUrl="/images/Community/Elastos Celebration.png"
+      />
       {/* Hero Section with Image and Gradient Overlay */}
       <div className="relative w-full h-[350px] overflow-hidden -mt-16">
         <img 
@@ -254,7 +287,7 @@ const SocialChannelsPage: React.FC = () => {
                   href="https://elastos.dev"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-[#5C8EFF] hover:underline text-xs flex items-center gap-1 bg-[#5C8EFF]/5 px-2 py-1 rounded-md"
+                  className="text-[#5C8EFF] hover:underline text-xs flex items-center gap-1 bg-[#5C8EFF]/5 px-2 py-1 py-1 rounded-md"
                 >
                   <Globe className="h-3 w-3" />
                   <span>Developer Portal</span>

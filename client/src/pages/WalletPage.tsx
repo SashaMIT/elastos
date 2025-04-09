@@ -5,10 +5,25 @@ import { Button } from "@/components/ui/button";
 import { ArrowRight, Code, Download, ExternalLink, Wallet, CheckCircle, Fingerprint } from "lucide-react";
 import { LogoCarouselDemo } from "@/components/LogoCarouselDemo";
 import { StackedCircularFooter } from "@/components/ui/stacked-circular-footer";
+import { SEO } from "@/components/SEO";
+import { WebPageStructuredData } from "@/components/StructuredData";
 
 const WalletPage: React.FC = () => {
   return (
     <div className="min-h-screen bg-[#171717]">
+      <SEO 
+        title="Elastos Wallets - Store and Manage ELA"
+        description="Discover the best wallets for storing, sending, and managing ELA tokens and other Elastos-based assets securely."
+        keywords="Elastos wallet, ELA wallet, Elastos Essentials, crypto wallet, digital identity wallet, Web3 wallet"
+        ogImage="/images/Essentials.png"
+        canonicalUrl="/wallet"
+      />
+      <WebPageStructuredData
+        title="Elastos Wallets and Asset Management Tools"
+        description="Guide to wallets for ELA tokens and Elastos-based assets, featuring options for security, staking, and digital identity management."
+        url="/wallet"
+        imageUrl="/images/Essentials.png"
+      />
       {/* Hero Section with Image and Gradient Overlay */}
       <div className="relative w-full h-[350px] overflow-hidden -mt-16">
         <img 

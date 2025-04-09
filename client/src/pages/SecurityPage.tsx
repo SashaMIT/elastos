@@ -4,7 +4,9 @@ import { useHashrateData } from '@/hooks/useHashrateData';
 import { Card, CardContent } from '@/components/ui/card';
 import { Dots_v2 } from "@/components/ui/spinner";
 import { StackedCircularFooter } from "@/components/ui/stacked-circular-footer";
-import { SEO } from '@/components/SEO'; // Import the SEO component
+import { SEO } from '@/components/SEO';
+import { WebPageStructuredData } from "@/components/StructuredData"; // Added import
+
 
 const SecurityPage = () => {
   const { data: hashrateData, isLoading, error } = useHashrateData();
@@ -28,12 +30,18 @@ const SecurityPage = () => {
   return (
     <div className="min-h-screen bg-background dark:bg-[#171717] p-4 sm:p-6 md:p-8">
       <SEO 
-        title="Elastos Security | Bitcoin-Level Protection"
-        description="Discover how Elastos leverages Bitcoin's hashpower through merged mining to create one of the most secure blockchain networks in existence."
-        keywords="Elastos security, Bitcoin merged mining, blockchain security, hashrate, ELA security"
+        title="Elastos Security - Bitcoin-Backed Protection"
+        description="Discover how Elastos leverages Bitcoin's security through merged mining, providing unparalleled protection for its blockchain network and digital assets."
+        keywords="Elastos security, Bitcoin merged mining, blockchain security, hashrate sharing, decentralized security, Web3 security"
         ogImage="/images/Security.png"
         canonicalUrl="/security"
-      /> {/* Added SEO component here */}
+      />
+      <WebPageStructuredData
+        title="Elastos Security - Powered by Bitcoin Mining"
+        description="Explore how Elastos achieves industry-leading security by sharing Bitcoin's hashrate through merged mining technology."
+        url="/security"
+        imageUrl="/images/Security.png"
+      /> {/* Added WebPageStructuredData component */}
       {isError ? (
         <Card className="max-w-4xl mx-auto dark:bg-[#151515] dark:border-neutral-800">
           <CardContent className="p-8 text-center">

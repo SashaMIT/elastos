@@ -9,6 +9,7 @@ import { Layout } from "@/components/Layout";
 import { CodeBlock } from "@/components/ui/code-block";
 import { UseCaseModal } from "@/components/UseCaseModal";
 import { SEO } from "@/components/SEO";
+import { WebPageStructuredData } from "@/components/StructuredData"; // Added import
 
 interface UseCase {
   id: number;
@@ -363,12 +364,18 @@ const UseCasesPage: React.FC = () => {
 
   return (
     <div className="min-h-screen bg-white dark:bg-[#171717]">
-      <SEO 
-        title="Elastos Use Cases | Applications & Solutions"
-        description="Explore real-world applications and use cases for Elastos technology across various industries including DeFi, NFTs, identity management, and more."
-        keywords="Elastos use cases, Web3 applications, DID, decentralized storage, NFT marketplace, dApps"
-        ogImage="/images/Elastosbanner.jpg"
+      <SEO
+        title="Elastos Use Cases - Applications and Solutions"
+        description="Explore real-world applications and use cases for Elastos technology across various industries, from digital identity to decentralized finance."
+        keywords="Elastos use cases, blockchain applications, Web3 solutions, decentralized identity, DeFi, NFTs, data marketplaces"
+        ogImage="/images/usecases/Digital Identity Management 2.jpg"
         canonicalUrl="/use-cases"
+      />
+      <WebPageStructuredData
+        title="Elastos Use Cases and Real-World Applications"
+        description="Comprehensive overview of practical applications and solutions built on Elastos technology in various sectors and industries."
+        url="/use-cases"
+        imageUrl="/images/usecases/Digital Identity Management 2.jpg"
       />
       <Layout>
         <div className="w-full relative">

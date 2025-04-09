@@ -18,6 +18,8 @@ import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip as RechartsToolti
 import { Button } from '../components/ui/button';
 import { Slider } from '../components/ui/slider';
 import { StackedCircularFooter } from '../components/ui/stacked-circular-footer'; // Added import
+import { SEO } from "@/components/SEO"; // Added SEO import
+import { WebPageStructuredData } from "@/components/StructuredData"; // Added StructuredData import
 
 
 const ELASupplyPage = () => {
@@ -148,6 +150,19 @@ const ELASupplyPage = () => {
 
   return (
     <div className="w-full h-full bg-background dark:bg-[#171717] px-0 md:px-8 lg:px-16 xl:px-52 2xl:px-52">
+      <SEO 
+        title="Elastos Token Supply - Circulation and Distribution"
+        description="Understand ELA token economics, including total supply, circulating supply, mining schedule, and distribution across the ecosystem."
+        keywords="Elastos token supply, ELA circulation, tokenomics, token distribution, mining schedule, crypto economics"
+        ogImage="/images/Elastosbanner.jpg"
+        canonicalUrl="/supply"
+      />
+      <WebPageStructuredData
+        title="Elastos Token Supply and Distribution"
+        description="Detailed information about the ELA token supply, including maximum supply, current circulation, mining schedule, and distribution patterns."
+        url="/supply"
+        imageUrl="/images/Elastosbanner.jpg"
+      />
       <Card className="w-full overflow-hidden dark:bg-[#171717] dark:border-neutral-800">
         <CardHeader className="p-3">
           <CardTitle className="flex items-center gap-2 text-base">

@@ -14,6 +14,8 @@ import { useHashrateData } from "@/hooks/useHashrateData";
 import { useMarketCapData } from "@/hooks/useMarketCapData"; // Added import
 import { useElaSupply } from "@/hooks/useElaSupply"; // Added import
 import { Dots_v2 } from "@/components/ui/spinner"; // Import Dots_v2 spinner component
+import { SEO } from "@/components/SEO";
+import { WebPageStructuredData } from "@/components/StructuredData"; // Added import
 
 
 interface GridItemProps {
@@ -131,6 +133,19 @@ export default function ElaUtilityPage() {
 
   return (
     <>
+      <SEO 
+        title="ELA Token Utility - Functions and Use Cases"
+        description="Discover the utility and functions of the ELA token within the Elastos ecosystem, including staking, governance, fees, and incentives."
+        keywords="ELA token, Elastos utility, staking, governance, tokenomics, cryptocurrency utility, Web3 token"
+        ogImage="/images/Elastosbanner.jpg"
+        canonicalUrl="/ela-utility"
+      />
+      <WebPageStructuredData
+        title="ELA Token Utility in the Elastos Ecosystem"
+        description="Learn about the various utilities of the ELA token, Elastos' native cryptocurrency, and how it powers the decentralized web infrastructure."
+        url="/ela-utility"
+        imageUrl="/images/Elastosbanner.jpg"
+      />
       <div className="container mx-auto px-4">
         <SparklesPreview />
         <div className="text-center" id="text-effect-trigger">

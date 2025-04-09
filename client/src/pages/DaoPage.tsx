@@ -24,6 +24,8 @@ import { Button } from "@/components/ui/button";
 import { Progress } from "@/components/ui/progress";
 import { StackedCircularFooter } from "@/components/ui/stacked-circular-footer";
 import { LogoCarouselDemo } from "@/components/LogoCarouselDemo";
+import { SEO } from "@/components/SEO";
+import { WebPageStructuredData } from "@/components/StructuredData";
 
 // Circle arrow component for buttons
 const CircleArrow = () => (
@@ -275,7 +277,20 @@ const DaoPage: React.FC = () => {
   const [hoveredFeature, setHoveredFeature] = useState<number | null>(null);
 
   return (
-    <div className="min-h-screen bg-[#171717]">
+    <div className="min-h-screen bg-[#171717] text-white">
+      <SEO 
+        title="Elastos DAO - Decentralized Governance"
+        description="Learn about Elastos DAO (formerly Cyber Republic), the decentralized autonomous organization that governs the Elastos ecosystem through community participation."
+        keywords="Elastos DAO, Cyber Republic, blockchain governance, decentralized governance, Web3 DAO, community governance"
+        ogImage="/images/Roadmap/Cyber Republic DAO meetup.jpeg"
+        canonicalUrl="/dao"
+      />
+      <WebPageStructuredData
+        title="Elastos DAO - Decentralized Autonomous Organization"
+        description="Explore how the Elastos DAO enables community-driven governance, proposal systems, and treasury management for the Elastos ecosystem."
+        url="/dao"
+        imageUrl="/images/Roadmap/Cyber Republic DAO meetup.jpeg"
+      />
       {/* Full-width hero image with gradient overlay */}
       <div className="relative w-full h-[500px] overflow-hidden -mt-16">
         <img 
@@ -589,7 +604,7 @@ const DaoPage: React.FC = () => {
         </div>
       </section>
 
-      
+
 
       {/* How to Get Involved */}
       <section className="py-16 relative bg-[#171717]">
@@ -601,7 +616,7 @@ const DaoPage: React.FC = () => {
             className="text-center mb-12"
           >
             <h2 className="text-3xl font-bold text-white mb-4 font-[200]">
-              How to Get Involved
+              How toGet Involved
             </h2>
             <p className="text-lg text-white/70 max-w-3xl mx-auto font-[200]">
               Join the community shaping the future of the decentralized internet

@@ -4,6 +4,8 @@ import { StackedCircularFooter } from "@/components/ui/stacked-circular-footer";
 import { ScrollToTop } from "@/components/ScrollToTop";
 import { Calendar, CalendarDays, ChevronRight, Clock, ExternalLink, Loader2 } from "lucide-react";
 import { Card, CardContent, CardFooter } from "@/components/ui/card";
+import { SEO } from "@/components/SEO";
+import { WebPageStructuredData } from "@/components/StructuredData";
 
 interface NewsItem {
   title: string;
@@ -18,7 +20,7 @@ interface NewsItem {
   categories?: string[];
 }
 
-export function AnnouncementsPage() {
+export default function AnnouncementsPage() {
   const [newsItems, setNewsItems] = useState<NewsItem[]>([]);
   const [loading, setLoading] = useState<boolean>(true);
   const [error, setError] = useState<string | null>(null);
@@ -231,6 +233,19 @@ export function AnnouncementsPage() {
 
   return (
     <div className="min-h-screen bg-white dark:bg-[#171717]">
+      <SEO 
+        title="Elastos Announcements - News and Updates"
+        description="Stay up-to-date with the latest announcements, news, updates, and developments from the Elastos ecosystem."
+        keywords="Elastos news, blockchain announcements, Web3 updates, Elastos development, crypto news, project updates"
+        ogImage="/images/Elastosbanner.jpg"
+        canonicalUrl="/announcements"
+      />
+      <WebPageStructuredData
+        title="Elastos Announcements and Latest News"
+        description="Archive of official announcements, news items, and updates about Elastos technology, partnerships, developments, and community activities."
+        url="/announcements"
+        imageUrl="/images/Elastosbanner.jpg"
+      />
       <ScrollToTop />
 
       {/* Hero Section with Image and Gradient Overlay */}
@@ -242,7 +257,7 @@ export function AnnouncementsPage() {
         />
         {/* Gradient overlay */}
         <div className="absolute inset-0 bg-gradient-to-b from-black/10 via-[#171717]/80 to-[#171717]"></div>
-        
+
         {/* Hero content overlay */}
         <div className="absolute inset-0 flex items-center justify-center">
           <div className="container mx-auto px-4">
@@ -259,7 +274,7 @@ export function AnnouncementsPage() {
           </div>
         </div>
       </div>
-      
+
       {/* Background glows */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <div className="absolute top-1/4 -right-28 w-96 h-96 rounded-full bg-[#F6921A]/10 blur-[120px]"></div>
@@ -398,5 +413,3 @@ export function AnnouncementsPage() {
     </div>
   );
 }
-
-export default AnnouncementsPage;
