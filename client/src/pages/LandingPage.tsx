@@ -38,7 +38,6 @@ import { FeaturesCarousel } from "@/components/FeaturesCarousel";
 import { cn } from '@/lib/utils';
 import BlockTable from '@/components/BlockTable';
 import { Dots_v2, Spinner, RoundSpinner } from "@/components/ui/spinner"; // Import spinner components
-import { CommunityImageGrid } from "@/components/CommunityImageGrid"; // Import the new component
 
 
 interface FeatureCardProps {
@@ -585,7 +584,7 @@ const LandingPage = () => {
 
       {/* Spacer div to add more distance */}
       <div className="py-10 md:py-10"></div>
-
+      
       {/* News Section */}
       <div className="px-4 md:px-0">
         <NewsSection />
@@ -705,7 +704,226 @@ const LandingPage = () => {
         />
 
         {/* Community Image Grid */}
-        <CommunityImageGrid />
+        <div className="container mx-auto px-4 mt-16 md:mt-0">
+          <div className="grid grid-cols-3 md:grid-cols-12 gap-6">
+            <ImageZoom
+              key="1"
+              src="/images/Roadmap/Elastos Members.jpeg"
+              alt="Elastos Community Event"
+              className="w-full aspect-square object-cover"
+              loading="lazy"
+              width={300}
+              height={300}
+            />
+            <ImageZoom
+              key="2"
+              src="/images/Roadmap/Sash as speaker in Bitcoin2024.jpeg"
+              alt="Sash as speaker in Bitcoin2024"
+              className="w-full aspect-square object-cover"
+              loading="lazy"
+              width={300}
+              height={300}
+            />
+            <ImageZoom
+              key="3"
+              src="/images/Roadmap/Rong Chen and kevin Zhang hosted a meetup in London.jpeg"
+              alt="Elastos Community Gathering"
+              className="w-full aspect-square object-cover"
+              loading="lazy"
+              width={300}
+              height={300}
+            />
+            <ImageZoom
+              key="4"
+              src="/images/Community/Elastos Celebration.png"
+              alt="Elastos Celebration"
+              className="w-full aspect-square object-cover"
+              loading="lazy"
+              width={300}
+              height={300}
+            />
+            <ImageZoom
+              key="5"
+              src="/images/Community/FmIGJV0XkA4B7wA.jpeg"
+              alt="Elastos Community Gathering"
+              className="w-full aspect-square object-cover"
+              loading="lazy"
+              width={300}
+              height={300}
+            />
+            <ImageZoom
+              key="6"
+              src="/images/Roadmap/Elastos hosted a meetup in Hong Kong.jpeg"
+              alt="Elastos hosted a meetup in Hong Kong"
+              className="w-full aspect-square object-cover"
+              loading="lazy"
+              width={300}
+              height={300}
+            />
+            <ImageZoom
+              key="7"
+              src="/images/Community/EiJX5nNVoAEe9pX.jpeg"
+              alt="Elastos Community Event"
+              className="w-full aspect-square object-cover"
+              loading="lazy"
+              width={300}
+              height={300}
+            />
+            <ImageZoom
+              key="8"
+              src="/images/Roadmap/BeL2 booth in Bitcoin 2024.jpeg"
+              alt="BeL2 booth in Bitcoin 2024"
+              className="w-full aspect-square object-cover"
+              loading="lazy"
+              width={300}
+              height={300}
+            />
+            <ImageZoom
+              key="9"
+              src="/images/Community/E4b9vKPXIAYJ1s_.jpeg"
+              alt="Elastos Community Event"
+              className="w-full aspect-square object-cover"
+              loading="lazy"
+              width={300}
+              height={300}
+            />
+            <ImageZoom
+              key="10"
+              src="/images/Roadmap/Sunny Feng Han at Teamz Web Summit in Tokyo.jpeg"
+              alt="Sunny Feng Han at Teamz Web Summit in Tokyo"
+              className="w-full aspect-square object-cover"
+              loading="lazy"
+              width={300}
+              height={300}
+            />
+            <ImageZoom
+              key="11"
+              src="/images/Community/EdJmPJ-U4AAU8F7.jpeg"
+              alt="Elastos Community Gathering"
+              className="w-full aspect-square object-cover"
+              loading="lazy"
+              width={300}
+              height={300}
+            />
+            <ImageZoom
+              key="12"
+              src="/images/Community/Sunny Vitalik.jpeg"
+              alt="Sunny with Vitalik Buterin"
+              className="w-full aspect-square object-cover"
+              loading="lazy"
+              width={300}
+              height={300}
+            />
+            <ImageZoom
+              key="13"
+              src="/images/Community/Div4TBUWsAYmcEq.jpeg"
+              alt="Elastos Community Meetup"
+              className="w-full aspect-square object-cover"
+              loading="lazy"
+              width={300}
+              height={300}
+            />
+            <ImageZoom
+              key="14"
+              src="/images/Roadmap/Rong Chen and Kevin Zhang hosted a meetup in Barcelona.jpeg"
+              alt="Rong Chen and Kevin Zhang hosted a meetup in Barcelona"
+              className="w-full aspect-square object-cover"
+              loading="lazy"
+              width={300}
+              height={300}
+            />
+            <ImageZoom
+              key="15"
+              src="/images/Community/EfLML37U0AMxc-e.jpeg"
+              alt="Elastos Community Event"
+              className="w-full aspect-square object-cover"
+              loading="lazy"
+              width={300}
+              height={300}
+            />
+            <ImageZoom
+              key="16"
+              src="/images/Roadmap/Elastos in Couinstore event.jpeg"
+              alt="Elastos in Couinstore event"
+              className="w-full aspect-square object-cover"
+              loading="lazy"
+              width={300}
+              height={300}
+            />
+            <ImageZoom
+              key="17"
+              src="/images/Community/DVM2La_VwAEeq-U.jpeg"
+              alt="Elastos Community Event"
+              className="w-full aspect-square object-cover"
+              loading="lazy"
+              width={300}
+              height={300}
+            />
+            <ImageZoom
+              key="18"
+              src="/images/Roadmap/Sunny Feng Han in DACA event.jpg"
+              alt="Sunny Feng Han in DACA event"
+              className="w-full aspect-square object-cover"
+              loading="lazy"
+              width={300}
+              height={300}
+            />
+            <ImageZoom
+              key="19"
+              src="/images/Roadmap/Elastos 1 Year.jpeg"
+              alt="Elastos 1 Year"
+              className="w-full aspect-square object-cover"
+              loading="lazy"
+              width={300}
+              height={300}
+            />
+            <ImageZoom
+              key="20"
+              src="/images/Community/Ezbt41dUUAAjX4p.jpeg"
+              alt="Elastos Community Event"
+              className="w-full aspect-square object-cover"
+              loading="lazy"
+              width={300}
+              height={300}
+            />
+            <ImageZoom
+              key="21"
+              src="/images/Community/F6EWQCJXoAAfGlY.jpeg"
+              alt="Elastos Community Gathering"
+              className="w-full aspect-square object-cover"
+              loading="lazy"
+              width={300}
+              height={300}
+            />
+            <ImageZoom
+              key="22"
+              src="/images/Community/D35ZHIUUYAA2xKO.jpeg"
+              alt="Elastos Community Event"
+              className="w-full aspect-square object-cover"
+              loading="lazy"
+              width={300}
+              height={300}
+            />
+            <ImageZoom
+              key="23"
+              src="/images/Roadmap/Rong Pomp.png"
+              alt="Rong Chen with Pomp"
+              className="w-full aspect-square object-cover"
+              loading="lazy"
+              width={300}
+              height={300}
+            />
+            <ImageZoom
+              key="24"
+              src="/images/Community/Ecp2XbVUYAAlUeC.jpeg"
+              alt="Elastos Community Event"
+              className="w-full aspect-square object-cover"
+              loading="lazy"
+              width={300}
+              height={300}
+            />
+          </div>
+        </div>
       </div>
 
 
