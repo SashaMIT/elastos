@@ -7,7 +7,7 @@ import React from "react";
 import { SEO } from "@/components/SEO";
 import { LogoCarouselDemo } from "@/components/LogoCarouselDemo";
 import { StackedCircularFooter } from "@/components/ui/stacked-circular-footer";
-import { WebPageStructuredData } from "@/components/WebPageStructuredData"; // Assumed component
+import { WebPageStructuredData } from "@/components/StructuredData"; // Import from correct path
 
 const WhitepaperPage = () => {
   return (
