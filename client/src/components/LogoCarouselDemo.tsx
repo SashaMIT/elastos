@@ -1,4 +1,3 @@
-
 "use client";
 
 import React, { useMemo } from "react";
@@ -22,7 +21,7 @@ export function LogoCarouselDemo() {
           width="120"
           height="36"
           className="h-9 w-auto object-contain hover:opacity-80 transition-opacity cursor-pointer"
-          fetchPriority="low"
+          fetchpriority="low"
         />
       ),
     },
@@ -38,7 +37,7 @@ export function LogoCarouselDemo() {
           width="140" 
           height="36"
           className="h-9 w-auto object-contain hover:opacity-80 transition-opacity cursor-pointer"
-          fetchPriority="low"
+          fetchpriority="low"
         />
       ),
     },
@@ -56,7 +55,7 @@ export function LogoCarouselDemo() {
             height="28"
             loading="lazy"
             className="block dark:hidden h-7 w-auto object-contain hover:opacity-80 transition-opacity cursor-pointer"
-            fetchPriority="high"
+            fetchpriority="high"
           />
           {/* Dark mode image */}
           <img
@@ -66,7 +65,7 @@ export function LogoCarouselDemo() {
             height="28"
             loading="lazy"
             className="hidden dark:block h-7 w-auto object-contain hover:opacity-80 transition-opacity cursor-pointer"
-            fetchPriority="high"
+            fetchpriority="high"
           />
         </>
       ),
@@ -83,7 +82,7 @@ export function LogoCarouselDemo() {
           width="140"
           height="36"
           className="h-9 w-auto object-contain hover:opacity-80 transition-opacity cursor-pointer"
-          fetchPriority="low"
+          fetchpriority="low"
         />
       ),
     },
@@ -101,7 +100,7 @@ export function LogoCarouselDemo() {
             width="140"
             height="36"
             className="block dark:hidden h-9 w-auto object-contain hover:opacity-80 transition-opacity cursor-pointer"
-            fetchPriority="low"
+            fetchpriority="low"
           />
           {/* Dark mode image */}
           <img
@@ -111,7 +110,7 @@ export function LogoCarouselDemo() {
             width="140"
             height="36"
             className="hidden dark:block h-9 w-auto object-contain hover:opacity-80 transition-opacity cursor-pointer"
-            fetchPriority="low"
+            fetchpriority="low"
           />
         </>
       ),
@@ -128,7 +127,7 @@ export function LogoCarouselDemo() {
           width="140"
           height="36"
           className="h-9 w-auto object-contain hover:opacity-80 transition-opacity cursor-pointer"
-          fetchPriority="low"
+          fetchpriority="low"
         />
       ),
     },
@@ -146,7 +145,7 @@ export function LogoCarouselDemo() {
             width="140"
             height="36"
             className="block dark:hidden h-9 w-auto object-contain hover:opacity-80 transition-opacity cursor-pointer"
-            fetchPriority="low"
+            fetchpriority="low"
           />
           {/* Dark mode image */}
           <img
@@ -156,7 +155,7 @@ export function LogoCarouselDemo() {
             width="140"
             height="36"
             className="hidden dark:block h-9 w-auto object-contain hover:opacity-80 transition-opacity cursor-pointer"
-            fetchPriority="low"
+            fetchpriority="low"
           />
         </>
       ),
@@ -173,7 +172,7 @@ export function LogoCarouselDemo() {
           width="140"
           height="36"
           className="h-9 w-auto object-contain hover:opacity-80 transition-opacity cursor-pointer"
-          fetchPriority="low"
+          fetchpriority="low"
         />
       ),
     },
@@ -189,7 +188,7 @@ export function LogoCarouselDemo() {
           width="140"
           height="36"
           className="h-9 w-auto object-contain hover:opacity-80 transition-opacity cursor-pointer"
-          fetchPriority="low"
+          fetchpriority="low"
         />
       ),
     },
