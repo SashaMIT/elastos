@@ -268,22 +268,57 @@ const LandingPage = () => {
         canonicalUrl="/"
       />
 
-      {/* Hero Section */}
+      {/* Hero Section - Performance Optimized */}
       <div className="w-full px-2 mt-[-20px]">
         <div className="relative w-full h-[700px] overflow-hidden rounded-3xl">
-          {/* Video Background */}
+          {/* Performance optimization: Only load video for fast connections */}
+          {(() => {
+            // This self-invoking function handles conditional video loading
+            const [shouldLoadVideo, setShouldLoadVideo] = React.useState<boolean | null>(null);
+            
+            React.useEffect(() => {
+              // Check if the connection is fast enough for video
+              if ('connection' in navigator && (navigator as any).connection) {
+                const connection = (navigator as any).connection;
+                const isSlowConnection = connection.saveData || 
+                  (connection.effectiveType && ['slow-2g', '2g', '3g'].includes(connection.effectiveType));
+                
+                setShouldLoadVideo(!isSlowConnection);
+              } else {
+                // If Network Information API is not available, default to showing video
+                setShouldLoadVideo(true);
+              }
+            }, []);
+
+            return null; // This function just sets state, doesn't render anything
+          })()}
+          {/* Video Background - Optimized */}
           <video
             className="absolute inset-0 w-full h-full object-cover"
             autoPlay
             loop
             muted
             playsInline
-            preload="none"
+            preload="metadata"
             poster="/images/Hero image.png"
+            loading="lazy"
+            fetchPriority="low"
           >
-            <source src="/videos/Elastos Hero Video2.mp4" type="video/mp4" />
+            <source 
+              src="/videos/Elastos Hero Video2.mp4" 
+              type="video/mp4" 
+            />
           </video>
 
+          {/* Optimized background image as fallback */}
+          <img 
+            src="/images/Hero image.png"
+            alt="Elastos Hero Background" 
+            className="absolute inset-0 w-full h-full object-cover"
+            fetchPriority="high"
+            decoding="async"
+          />
+          
           {/* Overlay for better text readability */}
           <div className="absolute inset-0 bg-black/30"></div>
 
