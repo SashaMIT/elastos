@@ -8,6 +8,7 @@ import { StackedCircularFooter } from "@/components/ui/stacked-circular-footer";
 import { LogoCarouselDemo } from "@/components/LogoCarouselDemo";
 import { DetailedVisionSection } from "@/components/blocks/detailed-vision-section";
 import { SEO } from "@/components/SEO";
+import { VideoPlayerDemo } from "@/components/VideoPlayerDemo";
 
 export function VisionPage() {
   return (
@@ -36,6 +37,9 @@ export function VisionPage() {
             <p className="text-lg text-gray-600 dark:text-gray-300 mb-8 font-[200]">
               Elastos is building a new paradigm for the internet—a Web3 infrastructure that gives you true digital ownership and privacy, secured by Bitcoin.
             </p>
+            <div className="mt-10">
+              <VideoPlayerDemo />
+            </div>
           </div>
 
           <div className="space-y-32">

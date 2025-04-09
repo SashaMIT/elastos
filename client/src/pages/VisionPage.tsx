@@ -3,6 +3,7 @@ import { Link } from "wouter";
 import { BackgroundCells } from "@/components/blocks/background-ripple-effect";
 import { FeaturesSectionWithBentoGrid } from "@/components/blocks/feature-section-with-bento-grid";
 import { FeatureCards } from "@/components/blocks/feature-cards";
+import { VideoPlayerDemo } from "@/components/VideoPlayerDemo";
 import { FeaturesSectionWithHoverEffects } from "@/components/blocks/feature-section-with-hover-effects";
 import { WorldComputerBanner } from "@/components/blocks/world-computer-banner";
 import { StackedCircularFooter } from "@/components/ui/stacked-circular-footer";
@@ -28,6 +29,9 @@ export function VisionPage() {
             <p className="text-lg text-gray-600 dark:text-gray-300 mb-8 font-[200]">
               Elastos is building a new paradigm for the internet—a Web3 infrastructure that gives you true digital ownership and privacy, secured by Bitcoin.
             </p>
+            <div className="mt-10">
+              <VideoPlayerDemo />
+            </div>
           </div>
 
           <div className="space-y-32">
