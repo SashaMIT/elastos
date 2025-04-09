@@ -65,7 +65,7 @@ export function NewsSection() {
         // Using a CORS proxy to handle the cross-origin request
         const response = await fetch(
           "https://api.allorigins.win/get?url=" + 
-          encodeURIComponent("https://blog.elastos.net/feed/")
+          encodeURIComponent("https://rss.app/feeds/4dpMoB5Crc5ACmOz.xml")
         );
 
         if (!response.ok) {
