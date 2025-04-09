@@ -33,12 +33,19 @@ export function TestimonialCard({
         "hover:from-muted/60 hover:to-muted/20",
         "max-w-[320px] sm:max-w-[320px]",
         "transition-colors duration-300",
+        "will-change-transform", // GPU acceleration hint
         className
       )}
     >
       <div className="flex items-center gap-3">
         <Avatar className="h-12 w-12">
-          <AvatarImage src={author.avatar} alt={author.name} />
+          <AvatarImage 
+            src={author.avatar} 
+            alt={author.name} 
+            loading="lazy" 
+            width={48} 
+            height={48}
+          />
         </Avatar>
         <div className="flex flex-col items-start">
           <h3 className="text-md font-semibold leading-none">
