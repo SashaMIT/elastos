@@ -455,17 +455,17 @@ const LandingPage = () => {
               ) : (
                 <>
                   <p className="text-xl sm:text-2xl font-[200]">3.29%</p>
-                  <p className="text-sm text-gray-500 dark:text-gray-400 mt-1">{(networkStats?.stakedAmount || 0).toLocaleString()} ELA staked</p>
+                  <p className="text-sm text-gray-500 dark:text-gray-400 mt-1">5,252,197 ELA staked</p>
                   <div className="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-1.5 mt-4">
                     <div 
                       className="bg-[#F6921A] h-1.5 rounded-full" 
                       style={{ 
-                        width: `${((networkStats?.stakedAmount || 0) / (totalSupply || 28199999)) * 100}%` 
+                        width: `${(5252197 / (totalSupply || 25748861)) * 100}%` 
                       }} 
                     />
                   </div>
                   <p className="text-xs text-gray-500 dark:text-gray-400 mt-1">
-                    {((networkStats?.stakedAmount || 0) / (totalSupply || 28199999) * 100).toFixed(1)}% of circulating supply
+                    {((5252197 / (totalSupply || 25748861)) * 100).toFixed(1)}% of circulating supply
                   </p>
                 </>
               )}
