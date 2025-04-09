@@ -1,6 +1,5 @@
 import React from "react";
 import { Link } from "wouter";
-import { TextScramble } from "@/components/ui/text-scramble";
 import { BackgroundCells } from "@/components/blocks/background-ripple-effect";
 import { FeaturesSectionWithBentoGrid } from "@/components/blocks/feature-section-with-bento-grid";
 import { FeatureCards } from "@/components/blocks/feature-cards";
@@ -11,13 +10,6 @@ import { WhyTheWorldNeedsThis } from "@/components/blocks/why-the-world-needs-th
 import { LogoCarouselDemo } from "@/components/LogoCarouselDemo";
 
 export function VisionPage() {
-  const taglines = [
-    "Own Your Digital Life – Secured by Bitcoin",
-    "Reclaim Your Internet: Privacy, Freedom, and Digital Ownership",
-    "The Smart Web: An Internet Where You're in Control",
-    "No More Middlemen. No More Censorship. No More Data Exploitation."
-  ];
-
   return (
     <div className="relative bg-white dark:bg-[#171717]">
       {/* Background */}
@@ -31,7 +23,7 @@ export function VisionPage() {
           {/* Hero Section */}
           <div className="text-center max-w-3xl mx-auto mb-20">
             <h1 className="font-[200] text-6xl mb-8 text-black dark:text-white">
-              <TextScramble phrases={taglines} />
+              Own Your Digital Life – Secured by Bitcoin
             </h1>
             <p className="text-lg text-gray-600 dark:text-gray-300 mb-8 font-[200]">
               Elastos is building a new paradigm for the internet—a Web3 infrastructure that gives you true digital ownership and privacy, secured by Bitcoin.
