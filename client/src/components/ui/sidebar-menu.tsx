@@ -166,7 +166,7 @@ export const SidebarMenu = () => {
                 <Download className="h-4 w-4 text-[#94b5ff]" />
                 <span>Media Kit</span>
               </Link>
-              <a href="https://contact.elastos.net" target="_blank" rel="noopener noreferrer" className="py-2 hover:text-[#F6921A] flex items-center gap-2 text-white">
+              <a href="https://blog.elastos.net/contact-us/" target="_blank" rel="noopener noreferrer" className="py-2 hover:text-[#F6921A] flex items-center gap-2 text-white">
                 <HelpCircle className="h-4 w-4 text-[#94b5ff]" />
                 <span>Contact Us</span>
               </a>

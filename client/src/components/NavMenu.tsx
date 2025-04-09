@@ -318,7 +318,7 @@ export function NavMenu() {
                         </div>
                       </NavigationMenuLink>
                     </Link>
-                    <a href="https://contact.elastos.net" target="_blank" rel="noopener noreferrer">
+                    <a href="https://blog.elastos.net/contact-us/" target="_blank" rel="noopener noreferrer">
                       <NavigationMenuLink className={navigationMenuTriggerStyle()}>
                         <div className="flex items-center gap-2">
                           <HelpCircle className="h-4 w-4 text-[#94b5ff]" />
