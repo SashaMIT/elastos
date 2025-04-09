@@ -10,6 +10,7 @@ import { StackedCircularFooter } from "@/components/ui/stacked-circular-footer";
 import { WhyTheWorldNeedsThis } from "@/components/blocks/why-the-world-needs-this";
 import { LogoCarouselDemo } from "@/components/LogoCarouselDemo";
 import { Feature } from "@/components/ui/feature-with-advantages";
+import { ArrowRight } from "lucide-react";
 
 export function VisionPage() {
   return (
@@ -36,8 +37,22 @@ export function VisionPage() {
           </div>
           
           {/* Feature component from feature-with-advantages */}
-          <div className="mb-20">
+          <div className="mb-20 p-6 bg-gray-100 dark:bg-gray-800 rounded-lg border border-gray-200 dark:border-gray-700">
+            <h2 className="text-2xl font-bold mb-4 text-center text-black dark:text-white">SmartWeb Feature</h2>
             <Feature />
+            
+            {/* Fallback Feature component in case the imported one isn't working */}
+            <div className="mt-8 flex flex-col md:flex-row items-center justify-between space-y-8 md:space-y-0 md:space-x-12 p-6 bg-white dark:bg-gray-900 rounded-lg">
+              <div className="space-y-4">
+                <h3 className="text-2xl font-bold text-black dark:text-white">
+                  Own Your Data. Own Your Future.
+                </h3>
+                <p className="text-lg text-gray-600 dark:text-gray-400">
+                  Elastos empowers you to take control of your digital life with Bitcoin-secured infrastructure.
+                </p>
+              </div>
+              <ArrowRight className="w-10 h-10 text-[#5C8EFF]" />
+            </div>
           </div>
 
           <div className="space-y-32">
