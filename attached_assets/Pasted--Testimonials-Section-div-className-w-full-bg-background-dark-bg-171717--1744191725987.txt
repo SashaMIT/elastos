@@ -1,0 +1,109 @@
+ {/* Testimonials Section */}
+      <div className="w-full bg-background dark:bg-[#171717]">
+        <div className="container mx-auto px-4 md:px-0 mb-0">
+          <div className="flex flex-row items-center justify-between mb-0">
+            <h3 className="text-2xl md:text-2xl lg:text-3xl font-[400] leading-tight text-left mb-0 text-black dark:text-white">
+            Join the Movement
+          </h3>
+            <a 
+              href="https://t.me/elastosgroup" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="inline-flex px-3 py-2 bg-[rgba(246,146,26,0.15)] text-white rounded-full font-[200] transition-all items-center gap-1 border border-[rgba(246,146,26,0.25)] text-sm mt-0 md:mt-0"
+            >
+              <span>Talk with Community</span>
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 35 34" fill="none">
+                <circle cx="17.333" cy="17" r="16.75" stroke="#F6921A" strokeOpacity="0.25" strokeWidth="1.5"/>
+                <path d="M17.3338 22.9405L23.2741 17.0002L17.3338 11.0598L16.4162 11.9774L20.7628 16.324H10.8622V17.6763H20.7628L16.4162 22.0229L17.3338 22.9405Z" fill="#F6921A"/>
+                <path d="M20.7628 17.6638H10.8747V16.3365H20.7628H20.7929L20.7716 16.3152L16.4338 11.9774L17.3338 11.0775L23.2564 17.0002L17.3338 22.9228L16.4338 22.0229L20.7716 17.6851L20.7929 17.6638H20.7628Z" stroke="#F6921A" strokeOpacity="0.25" strokeWidth="1.5"/>
+              </svg>
+            </a>
+          </div>
+        </div>
+        <TestimonialsSection 
+          title="" 
+          description=""
+          testimonials={[
+            {
+              author: {
+                name: "Igor",
+                handle: "DAO Council Member",
+                avatar: "/images/Testimonials/Igor.jpg"
+              },
+              text: "Elastos spoke to me as a vision of the internet where privacy, security, and data ownership aren't optional features, but the foundation...",
+              fullText: "Elastos spoke to me as a vision of the internet where privacy, security, and data ownership aren't optional features, but the foundation. It's through this journey that I've come to believe the future of AI belongs to local models running on personal devices, beyond the reach of centralized power. Elastos isn't just enabling this, it's actively building it, and I'm proud to be part of it as an Elastos DAO member."
+            },
+            {
+              author: {
+                name: "Sash Mitchell",
+                handle: "Elacity Founder",
+                avatar: "/images/Testimonials/Sash.jpeg"
+              },
+              text: "Elastos is a powerful vehicle for data ownership and digital participation. In the physical world, we're becoming liabilities with the rise of AI, robotics and automation...",
+              fullText: "Elastos is a powerful vehicle for data ownership and digital participation. In the physical world, we're becoming liabilities with the rise of AI, robotics and automation. In the digital world, we're constant assets, yet the value we create rarely comes back to us. Elastos is building tools for a fairer digital future and anyone can join the community and own a piece of the network with ELA. Im very grateful for the amazing people and experiences I've found through Elastos."
+            },
+            {
+              author: {
+                name: "Fake Fake",
+                handle: "Community Member",
+                avatar: "/images/Testimonials/Fake Fake.jpg"
+              },
+              text: "I joined Elastos in 2018, inspired by its powerful vision of a truly decentralized internet. Watching it now returning to its roots with the World Computer...",
+              fullText: "I joined Elastos in 2018, inspired by its powerful vision of a truly decentralized internet. Watching it now returning to its roots with the World Computer reignites my excitement. Together with Elacity and BeL2, it's unlocking the tools we need to truly own our digital lives. I believe in building a better, user-owned web—and Elastos is leading the way."
+            },
+            {
+              author: {
+                name: "Hayley",
+                handle: "BPoS Node Validator",
+                avatar: "/images/Testimonials/Hayley.jpg"
+              },
+              text: "I first noticed Elastos on GitHub, and was blown away by their extensive work building a decentralised internet OS where I could control my data and assets...",
+              fullText: "I first noticed Elastos on GitHub, and was blown away by their extensive work building a decentralised internet OS where I could control my data and assets. Now it's even bigger! With Elacity, BeL2, DIDs, carrier and storage. The 'World Computer' idea is around the corner and it's so ridiculously exciting! I totally adore the Elastos community too, some of the most passionate, friendly and welcoming people."
+            },
+            {
+              author: {
+                name: "Crypto Shmate",
+                handle: "Community Member",
+                avatar: "/images/Testimonials/Crypto Shmate.jpg"
+              },
+              text: "The idea of a new age of internet intrigued me. The background of the founders instilled confidence, and the innovation thus far has kept me...",
+              fullText: "The idea of a new age of internet intrigued me. The background of the founders instilled confidence, and the innovation thus far has kept me. Elastos will forever be a project I stick behind. A small dive will show you why it stands out from the rest."
+            },
+            {
+              author: {
+                name: "BigP",
+                handle: "BPoS Node Validator",
+                avatar: "/images/Testimonials/BigP.jpg"
+              },
+              text: "Like many others, back in 2017, I was captivated by the infamous Blockchain Brad interview with Elastos founder Rong Chen. As a libertarian at heart...",
+              fullText: "Like many others, back in 2017, I was captivated by the infamous Blockchain Brad interview with Elastos founder Rong Chen. As a libertarian at heart, the concept of a decentralized internet completely blew my mind. I believe that owning your own data is essential to any truly free society. Ever since, I've been hooked on Elastos and genuinely excited about what the future holds."
+            },
+            {
+              author: {
+                name: "Stephan",
+                handle: "Community Member",
+                avatar: "/images/Testimonials/Stephan.jpg"
+              },
+              text: "The continuous progress of the Elastos team initially drew me in, while their real Web 3.0 vision and innovative tech like BeL2 truly captivated me...",
+              fullText: "The continuous progress of the Elastos team initially drew me in, while their real Web 3.0 vision and innovative tech like BeL2 truly captivated me. It reshaped how I see crypto—not just as assets, but as a foundation for digital freedom and ownership. Elastos changed my perspective completely."
+            },
+            {
+              author: {
+                name: "Yagami",
+                handle: "Community Member",
+                avatar: "/images/Testimonials/Yagami.jpg"
+              },
+              text: "After researching over 500 projects, I made a bold decision to go all in on Elastos. Only this project can achieve true Web3.",
+              fullText: "After researching over 500 projects, I made a bold decision to go all in on Elastos. Only this project can achieve true Web3."
+            },
+            {
+              author: {
+                name: "Yew",
+                handle: "BPoS Node Validator",
+                avatar: "/images/Testimonials/Yew.jpg"
+              },
+              text: "Sasha's passion towards Elacity, Rong's vision of the World Computer and Sunny's goal in building BeL2 will attract literally anyone to be excited and invested in Elastos.",
+              fullText: "Sasha's passion towards Elacity, Rong's vision of the World Computer and Sunny's goal in building BeL2 will attract literally anyone to be excited and invested in Elastos."
+            }
+          ]}
+        />
