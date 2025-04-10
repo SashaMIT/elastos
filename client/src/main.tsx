@@ -2,6 +2,8 @@ import Vision from './pages/Vision';
 import WhitepaperPage from './pages/WhitepaperPage'; 
 import Explorer from './pages/Explorer'; 
 import Dao from './pages/Dao'; // Added import for Dao page
+import Supply from './pages/Supply'; // Import Supply component
+import Ambassadors from './pages/Ambassadors'; // Import Ambassadors component
 import SocialChannelsPage from './pages/SocialChannelsPage';
 import MediaKit from './pages/MediaKit'; // Import MediaKit component
 import Bridge from './pages/Bridge'; // Import Bridge component
@@ -51,7 +53,7 @@ function Router() {
           <Route path="/stats" component={HomePage} />
           <Route path="/security" component={SecurityPage} />
           <Route path="/value-calc" component={ValueCalcPage} />
-          <Route path="/supply" component={SupplyPage} />
+          <Route path="/supply" component={Supply} />
           <Route path="/buy-ela" component={BuyElaPage} />
           <Route path="/ecosystem" component={EcosystemPage} />
           <Route path="/faq" component={FaqPage} />
@@ -66,6 +68,7 @@ function Router() {
           <Route path="/social-channels" component={SocialChannelsPage} />
           <Route path="/media-kit" component={MediaKit} /> {/* Added MediaKit route */}
           <Route path="/bridge" component={Bridge} /> {/* Added Bridge route */}
+          <Route path="/ambassadors" component={Ambassadors} /> {/* Added Ambassadors route */}
           <Route path="/announcements" component={AnnouncementsPage} /> {/* Added Announcements route */}
           <Route path="/ambassador-program" component={AmbassadorsPage} /> {/* Added Ambassadors route */}
           <Route path="/team-foundation" component={TeamFoundationPage} /> {/* Added Team Foundation route */}
