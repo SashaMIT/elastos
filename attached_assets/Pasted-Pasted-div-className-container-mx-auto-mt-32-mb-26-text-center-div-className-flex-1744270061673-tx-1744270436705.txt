@@ -1,0 +1,99 @@
+Pasted--div-className-container-mx-auto-mt-32-mb-26-text-center-div-className-flex--1744270061673.txt
+
+        <div className="container mx-auto mt-32 mb-26 text-center">
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-12">
+            <img 
+              src="/images/Elastos New Logo_Kit-03.png" 
+              alt="Elastos Logo" 
+              className="h-8 w-auto mb-3 sm:mb-0"
+            />
+            <h2 className="text-2xl sm:text-xl md:text-3xl lg:text-4xl font-bold text-white">
+              Queen ELA: Married to Bitcoin since 2018.
+            </h2>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-5xl mx-auto">
+            <div className="bg-[#ececec] dark:bg-[#5C8EFF]/[0.06] rounded-lg p-3 sm:p-6 shadow-sm">
+              <h3 className="text-lg font-medium mb-4">Current Price</h3>
+              {isHashrateLoading ? (
+                <div className="flex flex-col items-center justify-center h-[120px]">
+                  <Spinner size="lg" />
+                </div>
+              ) : (
+                <>
+                  <p className="text-xl sm:text-2xl font-[200]">${hashrateData?.elaPrice?.toFixed(2) || '0.00'}</p>
+                  <p className="text-sm text-gray-500 dark:text-gray-400 mb-4">
+                    Per ELA
+                  </p>
+                  <div className="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-1.5">
+                    <div className="bg-[#F6921A] h-1.5 rounded-full" style={{ width: `${((hashrateData?.elaPrice || 0) / 77 * 100)}%` }} />
+                  </div>
+                  <p className="text-sm text-gray-500 dark:text-gray-400 mt-2">{((hashrateData?.elaPrice || 0) / 77 * 100).toFixed(1)}% from ATH ($77.00)</p>
+                </>
+              )}
+            </div>
+
+            <div className="bg-[#ececec] dark:bg-[#5C8EFF]/[0.06] rounded-lg p-3 sm:p-6 shadow-sm">
+              <h3 className="text-lg font-medium mb-4">Total Supply</h3>
+              {isSupplyLoading ? (
+                <div className="flex flex-col items-center justify-center h-[120px]">
+                  <Spinner size="lg" />
+                </div>
+              ) : (
+                <>
+                  <p className="text-xl sm:text-2xl font-[200]">28,199,999 ELA</p>
+                  <p className="text-sm text-gray-500 dark:text-gray-400 mt-1">91.31% mined</p>
+                  <div className="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-1.5 mt-4">
+                    <div className="bg-[#F6921A] h-1.5 rounded-full" style={{ width: '91.31%' }} />
+                  </div>
+                  <p className="text-xs text-gray-500 dark:text-gray-400 mt-2">{(totalSupply || 0).toLocaleString()} ELA currently</p>
+                </>
+              )}
+            </div>
+
+
+
+
+
+            <div className="bg-[#ececec] dark:bg-[#5C8EFF]/[0.06] rounded-lg p-3 sm:p-6 shadow-sm">
+              <h3 className="text-lg font-medium mb-4">Market Cap</h3>
+              {isMarketCapLoading ? (
+                <div className="flex flex-col items-center justify-center h-[120px]">
+                  <Spinner size="lg" />
+                </div>
+              ) : (
+                <>
+                  <p className="text-xl sm:text-2xl font-[200]">${formatNumber(marketCapData?.elastosMarketCap ?? 0)}</p>
+                  <p className="text-sm text-gray-500 dark:text-gray-400 mt-1">{((marketCapData?.marketCapRatio ?? 0) * 100).toFixed(4)}% of BTC</p>
+                  <div className="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-1.5 mt-4">
+                    <div className="bg-[#F6921A] h-1.5 rounded-full" style={{ width: `${((marketCapData?.marketCapRatio ?? 0) * 100)}%` }} />
+                  </div>
+                  <p className="text-xs text-gray-500 dark:text-gray-400 mt-2">${formatNumber(marketCapData?.bitcoinMarketCap ?? 0)} BTC Cap</p>
+                </>
+              )}
+            </div>
+
+
+
+
+
+            <div className="bg-[#ececec] dark:bg-[#5C8EFF]/[0.06] rounded-lg p-3 sm:p-6 shadow-sm">
+              <h3 className="text-lg font-medium mb-4">Current APR</h3>
+              {!networkStats ? (
+                <div className="flex flex-col items-center justify-center h-[120px]">
+                  <Spinner size="lg" />
+                </div>
+              ) : (
+                <>
+                  <p className="text-xl sm:text-2xl font-[200]">3.29%</p>
+                  <p className="text-sm text-gray-500 dark:text-gray-400 mt-1">5,252,197 ELA staked</p>
+                  <div className="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-1.5 mt-4">
+                    <div 
+                      className="bg-[#F6921A] h-1.5 rounded-full" 
+                      style={{ 
+                        width: `${(5252197 / (totalSupply || 25748861)) * 100}%` 
+                      }} 
+                    />
+                  </div>
+                  <p className="text-xs text-gray-500 dark:text-gray-400 mt-1">
+                    {((5252197 / (totalSupply || 25748861)) * 100).toFixed(1)}% of circulating supply
+   ...
