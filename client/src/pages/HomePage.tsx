@@ -32,7 +32,16 @@ interface StatItem {
 
 const HomePage = () => {
   const [showDisclaimer, setShowDisclaimer] = useState(false);
-  const { data: hashrateData } = useHashrateData();
+  const [isLoading, setIsLoading] = useState(false);
+  const [dataFetched, setDataFetched] = useState(false);
+  
+  // Data hooks with enabled:false to prevent auto-fetching
+  const { data: hashrateData, refetch: refetchHashrateData } = useHashrateData({
+    enabled: false
+  });
+  const { data: marketCapData, refetch: refetchMarketCapData } = useMarketCapData({
+    enabled: false
+  });
 
   useEffect(() => {
     const hasSeenDisclaimer = localStorage.getItem('hasSeenDisclaimer');
@@ -45,6 +54,30 @@ const HomePage = () => {
     localStorage.setItem('hasSeenDisclaimer', 'true');
     setShowDisclaimer(false);
   };
+  
+  // Update function to fetch data when user clicks the update button
+  const handleUpdateData = async () => {
+    setIsLoading(true);
+    try {
+      await Promise.all([
+        refetchHashrateData(),
+        refetchMarketCapData()
+      ]);
+      setDataFetched(true);
+    } catch (error) {
+      console.error('Error fetching data:', error);
+    } finally {
+      setIsLoading(false);
+    }
+  };
+
+  // Fetch data on component mount if it hasn't been fetched yet
+  useEffect(() => {
+    if (!dataFetched && !isLoading) {
+      handleUpdateData();
+    }
+  }, []);
+
   const bitcoinPrice = hashrateData?.bitcoinPrice ?? 0;
   const bitcoinHashrate = hashrateData?.bitcoinHashrate ?? 0;
   const elaPrice = hashrateData?.elaPrice ?? 0;
@@ -58,9 +91,8 @@ const HomePage = () => {
     return `$${(value / 1e9).toFixed(2)}B`;
   };
 
-const { data: marketCapData } = useMarketCapData();
-const bitcoinMarketCap = marketCapData?.bitcoinMarketCap ?? 0;
-const elastosMarketCap = marketCapData?.elastosMarketCap ?? 0;
+  const bitcoinMarketCap = marketCapData?.bitcoinMarketCap ?? 0;
+  const elastosMarketCap = marketCapData?.elastosMarketCap ?? 0;
 
 const stats: StatItem[] = [
     // Top row - Bitcoin stats
@@ -147,6 +179,25 @@ const stats: StatItem[] = [
       <div className="max-w-[1200px] w-full flex flex-col items-center space-y-0 px-1 mt-4">
         <div className="w-full flex justify-center items-center mt-8 mb-0">
           <MergeMiningAnimation />
+        </div>
+
+        <div className="flex justify-center mt-4 mb-2">
+          <button
+            onClick={handleUpdateData}
+            disabled={isLoading}
+            className="px-4 py-2 bg-primary hover:bg-primary/90 text-white dark:text-black rounded-md flex items-center gap-2 transition-all"
+          >
+            {isLoading ? (
+              <>
+                <div className="animate-spin w-4 h-4 border-2 border-white dark:border-black border-t-transparent rounded-full"></div>
+                <span>Updating...</span>
+              </>
+            ) : (
+              <>
+                <span>Update Stats</span>
+              </>
+            )}
+          </button>
         </div>
 
         <div className="grid grid-cols-2 md:grid-cols-4 gap-1 sm:gap-2 lg:gap-3 w-full px-1 sm:px-2 pt-2">

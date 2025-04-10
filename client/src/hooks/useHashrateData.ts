@@ -24,10 +24,7 @@ const fetchWithRetry = async (url: string, options: RequestInit = {}): Promise<R
 
   for (let attempt = 1; attempt <= maxRetries; attempt++) {
     try {
-      // Create a new AbortController for each attempt
       const controller = new AbortController();
-      
-      // Set up timeout that will abort the fetch
       const timeoutId = setTimeout(() => {
         try {
           controller.abort();
@@ -35,48 +32,42 @@ const fetchWithRetry = async (url: string, options: RequestInit = {}): Promise<R
           console.warn("Error when aborting fetch:", e);
         }
       }, timeoutDuration);
-      
+
       console.log(`Attempting fetch for ${url} (attempt ${attempt}/${maxRetries})`);
-      
-      // Use a try-finally to ensure timeout is cleared
+
       try {
         const response = await fetch(url, {
           ...options,
           headers: {
             'Accept': 'application/json',
             'Content-Type': 'application/json',
-            // Don't send Origin header as it can cause CORS issues
             ...options.headers,
           },
           mode: 'cors',
           credentials: 'omit',
           signal: controller.signal,
-          // Add cache control to avoid caching issues
           cache: 'no-cache'
         });
 
         if (!response.ok) {
           throw new Error(`HTTP error! status: ${response.status}`);
         }
-        
+
         return response;
       } finally {
-        // Always clear the timeout
         clearTimeout(timeoutId);
       }
     } catch (error: any) {
       lastError = error;
       console.error(`Fetch error (attempt ${attempt}/${maxRetries})`, error);
-      
-      // If we've reached max retries, break out
+
       if (attempt === maxRetries) break;
-      
-      // Wait before trying again
+
       console.log(`Retrying in ${retryDelay * attempt}ms...`);
       await new Promise(resolve => setTimeout(resolve, retryDelay * attempt));
     }
   }
-  
+
   throw lastError || new Error('Max retries exceeded');
 };
 
@@ -88,7 +79,6 @@ const fetchHashrate = async (): Promise<number> => {
     throw new Error('Invalid API response: network_hashrate not found');
   }
 
-  // Convert to EH/s
   const hashrate = Number(data[0].network_hashrate) / 1e18;
   return hashrate;
 };
@@ -114,7 +104,7 @@ const fetchElastosHashrate = async (): Promise<number> => {
     return hashrate;
   } catch (error) {
     console.error('Elastos hashrate fetch error:', error);
-    throw error; // Let React Query handle retries
+    throw error; 
   }
 };
 
@@ -166,7 +156,6 @@ export const useHashrateData = (options?: UseHashrateDataOptions) => {
           fetchElastosHashrate()
         ]);
 
-        // Validate elastosHashrate
         if (!elastosHashrate || elastosHashrate <= 0) {
           throw new Error('Invalid Elastos hashrate value');
         }
@@ -192,13 +181,44 @@ export const useHashrateData = (options?: UseHashrateDataOptions) => {
           elaPriceChange24h: 0,
           isLoading: false,
           error: error as Error
-        }; // Return error state instead of throwing
+        }; 
       }
     },
-    refetchInterval: 5 * 60 * 1000, // Refetch every 5 minutes
+    refetchInterval: 5 * 60 * 1000, 
     refetchIntervalInBackground: true,
     retry: MAX_RETRIES,
-    // If enabled is explicitly provided, use it; otherwise, default to true
     enabled: options?.enabled !== undefined ? options.enabled : true,
   });
 };
+
+
+// Hypothetical HomePage component demonstrating the update button
+import React, { useState } from 'react';
+
+function HomePage() {
+  const [enabled, setEnabled] = useState(false);
+  const { data, isLoading, error } = useHashrateData({ enabled });
+
+  const handleClick = () => {
+    setEnabled(true);
+  };
+
+  if (isLoading) return <p>Loading...</p>;
+  if (error) return <p>Error: {error.message}</p>;
+
+  return (
+    <div>
+      <h1>Home Page</h1>
+      <button onClick={handleClick}>Update Data</button>
+      {data && (
+        <>
+          <p>Bitcoin Hashrate: {data.bitcoinHashrate}</p>
+          <p>Elastos Hashrate: {data.elastosHashrate}</p>
+          {/* ... display other data ... */}
+        </>
+      )}
+    </div>
+  );
+}
+
+export default HomePage;

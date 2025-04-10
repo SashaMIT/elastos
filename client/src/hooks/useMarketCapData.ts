@@ -18,7 +18,7 @@ const fetchWithRetry = async (url: string, retries = 3): Promise<Response> => {
       // Add timeout to fetch requests
       const controller = new AbortController();
       const timeoutId = setTimeout(() => controller.abort(), 5000); // 5 second timeout
-      
+
       const response = await fetch(url, { 
         signal: controller.signal,
         headers: {
@@ -26,9 +26,9 @@ const fetchWithRetry = async (url: string, retries = 3): Promise<Response> => {
           'Content-Type': 'application/json'
         }
       });
-      
+
       clearTimeout(timeoutId);
-      
+
       if (response.ok) return response;
       console.warn(`Retry ${i+1}/${retries} for ${url}: Status ${response.status}`);
       await new Promise(resolve => setTimeout(resolve, 1000 * (i + 1)));
@@ -82,7 +82,7 @@ export const useMarketCapData = (options?: UseMarketCapDataOptions) => {
           `${COINGECKO_API}/simple/price?ids=elastos&vs_currencies=usd&include_market_cap=true&include_circulating_supply=true`
         );
         const elaMarketData = await elaMarketDataResponse.json();
-        
+
         if (elaMarketData && elaMarketData.elastos) {
           elastosMarketCap = elaMarketData.elastos.usd_market_cap;
           elastosCirculatingSupply = elaMarketData.elastos.circulating_supply || FALLBACK_ELASTOS_SUPPLY;
@@ -92,7 +92,7 @@ export const useMarketCapData = (options?: UseMarketCapDataOptions) => {
         }
       } catch (error) {
         console.error('Failed to fetch Elastos data from CoinGecko, using fallback calculation:', error);
-        
+
         // Try alternative API if available (uncomment and configure if you have an alternative)
         /*
         try {
@@ -104,7 +104,7 @@ export const useMarketCapData = (options?: UseMarketCapDataOptions) => {
           console.error('Alternative API also failed:', altError);
         }
         */
-        
+
         // Fallback calculation using known supply and current price
         const elaPrice = hashrateData?.elaPrice ?? 0;
         elastosMarketCap = elaPrice * FALLBACK_ELASTOS_SUPPLY;
