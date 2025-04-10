@@ -79,9 +79,9 @@ const BuyElaPage = () => {
   return (
     <div className="w-full h-full bg-white dark:bg-[#171717] p-4">
       <SEO 
-        title="Buy ELA | Guide to Purchasing Elastos Token"
-        description="Comprehensive guide on how to buy ELA, the native token of the Elastos ecosystem, through major exchanges like Coinbase, KuCoin, and DEXs. Learn about wallets, staking options, and the benefits of holding ELA."
-        keywords="buy ELA, Elastos token, crypto exchanges, how to purchase ELA, Elastos investment, Coinbase ELA, KuCoin ELA, Gate.io ELA, Uniswap ELA, Essentials wallet, stake ELA"
+        title="Buy ELA | How to Purchase Elastos Token"
+        description="Learn how to buy ELA, the native token of the Elastos ecosystem, through exchanges, wallets, and other available methods."
+        keywords="buy ELA, Elastos token, crypto exchanges, how to purchase ELA, Elastos investment"
         ogImage="/images/Elastosbanner.jpg"
         canonicalUrl="/buy-ela"
       />

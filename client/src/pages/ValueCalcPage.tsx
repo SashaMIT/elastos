@@ -54,13 +54,6 @@ const ValueCalcPage = () => {
 
   return (
     <div className="bg-background dark:bg-[#171717] p-2 sm:p-4 md:p-6 w-full flex justify-center">
-      <SEO 
-        title="Elastos Value Calculator | ELA Token Price Estimation Tool"
-        description="Calculate the intrinsic value of ELA token based on Bitcoin security metrics, hashrate, and mining economics. Compare market price with security-backed valuation."
-        keywords="Elastos value calculator, ELA token value, Bitcoin security valuation, crypto valuation model, ELA price estimation, blockchain value metrics, Elastos economics"
-        ogImage="/images/Elastosbanner.jpg"
-        canonicalUrl="/value-calculator"
-      />
       <Card className="w-full max-w-4xl bg-background/95 dark:bg-[#171717] backdrop-blur-sm mx-auto border-0 dark:border-0">
         <CardHeader className="p-2 sm:p-4">
           <CardTitle className="flex items-center gap-2 text-base sm:text-lg md:text-xl">

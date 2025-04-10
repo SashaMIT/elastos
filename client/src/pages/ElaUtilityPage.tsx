@@ -131,13 +131,6 @@ export default function ElaUtilityPage() {
 
   return (
     <>
-      <SEO 
-        title="ELA Token Utility | Elastos Native Digital Asset"
-        description="Explore the utility and functionality of ELA, the native token of Elastos. Learn about governance, staking, gas fees, and how ELA powers the entire Elastos ecosystem."
-        keywords="ELA token utility, Elastos cryptocurrency, ELA staking, Elastos governance, digital asset, Smart Web token, DeFi on Elastos, ELA gas fees, Elastos DAO, ELA use cases"
-        ogImage="/images/Elastosbanner.jpg"
-        canonicalUrl="/ela-utility"
-      />
       <div className="container mx-auto px-4">
         <SparklesPreview />
         <div className="text-center" id="text-effect-trigger">
