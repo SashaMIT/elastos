@@ -150,9 +150,10 @@ const fetchELAPrice = async (): Promise<{ price: number; change24h: number }> =>
   };
 };
 
-export const useHashrateData = () => {
+export const useHashrateData = (enabled = false) => {
   return useQuery<HashrateData>({
     queryKey: ['hashrate-and-price'],
+    enabled: enabled,
     queryFn: async () => {
       try {
         const [bitcoinHashrate, bitcoinPriceData, elaPriceData, elastosHashrate] = await Promise.all([

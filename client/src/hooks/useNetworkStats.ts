@@ -13,9 +13,10 @@ interface StakeResponse {
   jsonrpc: string;
 }
 
-export const useNetworkStats = () => {
+export const useNetworkStats = (enabled = false) => {
   return useQuery<NetworkStats>({
     queryKey: ['networkStats'],
+    enabled: enabled,
     queryFn: async () => {
       try {
         // Fetch wallet addresses
