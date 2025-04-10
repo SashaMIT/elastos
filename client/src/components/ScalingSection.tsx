@@ -90,7 +90,7 @@ export function ScalingSection() {
                 </div>
               </div>
               <div className="text-center md:text-left md:max-w-lg">
-                <div className="flex flex-col md:flex-row items-center md:items-center gap-2 md:gap-3 mb-3 md:mb-4">
+                <div className="flex flex-row items-center gap-2 md:gap-3 mb-3 md:mb-4 justify-center md:justify-start flex-wrap">
                   <h3 className="text-2xl font-bold font-sans">Bitcoin-Grade Security</h3>
                   <span className="px-4 py-1 bg-[#5C8EFF]/10 border border-[#5C8EFF]/30 text-white rounded-full text-xs font-medium">LIVE</span>
                 </div>
@@ -111,7 +111,7 @@ export function ScalingSection() {
 
             <div className="grid grid-cols-1 md:grid-cols-2 items-center gap-0 md:gap-12">
               <div className="order-2 md:order-1 text-center md:text-left md:max-w-lg md:pl-6">
-                <div className="flex flex-col md:flex-row items-center md:items-center gap-2 md:gap-3 mb-3 md:mb-4">
+                <div className="flex flex-row items-center gap-2 md:gap-3 mb-3 md:mb-4 justify-center md:justify-start flex-wrap">
                   <h3 className="text-2xl font-bold font-sans">Financial Empowerment</h3>
                   <span className="px-4 py-1 bg-[#5C8EFF]/10 border border-[#5C8EFF]/30 text-white rounded-full text-xs font-medium">LIVE</span>
                 </div>
@@ -142,7 +142,7 @@ export function ScalingSection() {
                 </div>
               </div>
               <div className="text-center md:text-left md:max-w-lg">
-                <div className="flex flex-col md:flex-row items-center md:items-center gap-2 md:gap-3 mb-3 md:mb-4">
+                <div className="flex flex-row items-center gap-2 md:gap-3 mb-3 md:mb-4 justify-center md:justify-start flex-wrap">
                   <h3 className="text-2xl font-bold font-sans">Digital Freedom and Ownership</h3>
                   <span className="px-4 py-1 bg-[#5C8EFF]/10 border border-[#5C8EFF]/30 text-white rounded-full text-xs font-medium whitespace-nowrap">IN PROGRESS</span>
                 </div>
