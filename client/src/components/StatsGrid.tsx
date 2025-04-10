@@ -61,12 +61,12 @@ export const StatsGrid = () => {
 
   return (
     <div className="mx-auto max-w-7xl">
-      <div className="flex justify-between items-center mb-6">
+      <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-3 mb-6">
         <h2 className="text-xl font-[300]">Queen ELA: Married to Bitcoin since 2018.</h2>
         <Button 
           variant="outline" 
           onClick={handleRefresh} 
-          className="flex items-center gap-2"
+          className="flex items-center gap-2 whitespace-nowrap"
           disabled={isLoading}
         >
           <RefreshCw className={`h-4 w-4 ${isLoading && 'animate-spin'}`} />
