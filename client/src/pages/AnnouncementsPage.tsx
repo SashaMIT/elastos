@@ -4,6 +4,9 @@ import { StackedCircularFooter } from "@/components/ui/stacked-circular-footer";
 import { ScrollToTop } from "@/components/ScrollToTop";
 import { Calendar, CalendarDays, ChevronRight, Clock, ExternalLink, Loader2 } from "lucide-react";
 import { Card, CardContent, CardFooter } from "@/components/ui/card";
+import { SEO } from "@/components/SEO";
+import { Helmet } from 'react-helmet';
+import { WebPageStructuredData } from "@/components/StructuredData";
 
 interface NewsItem {
   title: string;
@@ -231,6 +234,31 @@ export function AnnouncementsPage() {
 
   return (
     <div className="min-h-screen bg-white dark:bg-[#171717]">
+      <Helmet>
+        {/* Google Tag */}
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-775BN8EH1L"></script>
+        <script>
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-775BN8EH1L');
+          `}
+        </script>
+      </Helmet>
+      <SEO 
+        title="Elastos News | Latest Updates and Announcements"
+        description="Stay up to date with the latest news, updates, and events from the Elastos ecosystem, including Bitcoin-secured Web3 developments and project milestones."
+        keywords="Elastos news, Elastos updates, Elastos announcements, blockchain news, Web3 news, Bitcoin-secured news, cryptocurrency updates"
+        ogImage="/images/Roadmap/Community crowd.png"
+        canonicalUrl="/announcements"
+      />
+      <WebPageStructuredData
+        title="Elastos News | Latest Updates and Announcements"
+        description="Stay up to date with the latest news, updates, and events from the Elastos ecosystem."
+        url="/announcements"
+        imageUrl="/images/Roadmap/Community crowd.png"
+      />
       <ScrollToTop />
 
       {/* Hero Section with Image and Gradient Overlay */}
