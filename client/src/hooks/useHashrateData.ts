@@ -190,35 +190,3 @@ export const useHashrateData = (options?: UseHashrateDataOptions) => {
     enabled: options?.enabled !== undefined ? options.enabled : true,
   });
 };
-
-
-// Hypothetical HomePage component demonstrating the update button
-import React, { useState } from 'react';
-
-function HomePage() {
-  const [enabled, setEnabled] = useState(false);
-  const { data, isLoading, error } = useHashrateData({ enabled });
-
-  const handleClick = () => {
-    setEnabled(true);
-  };
-
-  if (isLoading) return <p>Loading...</p>;
-  if (error) return <p>Error: {error.message}</p>;
-
-  return (
-    <div>
-      <h1>Home Page</h1>
-      <button onClick={handleClick}>Update Data</button>
-      {data && (
-        <>
-          <p>Bitcoin Hashrate: {data.bitcoinHashrate}</p>
-          <p>Elastos Hashrate: {data.elastosHashrate}</p>
-          {/* ... display other data ... */}
-        </>
-      )}
-    </div>
-  );
-}
-
-export default HomePage;
