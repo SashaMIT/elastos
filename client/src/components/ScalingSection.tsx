@@ -89,15 +89,15 @@ export function ScalingSection() {
                   <img src="/images/Glass Circles1.png" alt="Elastos Mainchain" className="w-full h-full object-contain" />
                 </div>
               </div>
-              <div className="md:max-w-lg">
-                <div className="flex items-center gap-3 mb-3 md:mb-4">
+              <div className="text-center md:text-left md:max-w-lg">
+                <div className="flex flex-col md:flex-row items-center md:items-center gap-2 md:gap-3 mb-3 md:mb-4">
                   <h3 className="text-2xl font-bold font-sans">Bitcoin-Grade Security</h3>
                   <span className="px-4 py-1 bg-[#5C8EFF]/10 border border-[#5C8EFF]/30 text-white rounded-full text-xs font-medium">LIVE</span>
                 </div>
                 <p className="text-muted-foreground mb-4 md:mb-6">
                   We anchor our security to Bitcoin's proof-of-work hashpower and utilize multiple sidechains for specialized functions.
                 </p>
-                <div className="flex gap-0">
+                <div className="flex justify-center md:justify-start gap-0">
                   <Link href="/stats">
                     <button className="w-8 h-8 rounded-full border border-[#F6921A] bg-[#F6921A]/30 flex items-center justify-center transition-all hover:bg-[#F6921A]/50 hover:scale-110">
                       <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -110,15 +110,15 @@ export function ScalingSection() {
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 items-center gap-0 md:gap-12">
-              <div className="order-2 md:order-1 md:max-w-lg md:pl-6">
-                <div className="flex items-center gap-3 mb-3 md:mb-4">
+              <div className="order-2 md:order-1 text-center md:text-left md:max-w-lg md:pl-6">
+                <div className="flex flex-col md:flex-row items-center md:items-center gap-2 md:gap-3 mb-3 md:mb-4">
                   <h3 className="text-2xl font-bold font-sans">Financial Empowerment</h3>
                   <span className="px-4 py-1 bg-[#5C8EFF]/10 border border-[#5C8EFF]/30 text-white rounded-full text-xs font-medium">LIVE</span>
                 </div>
                 <p className="text-muted-foreground mb-4 md:mb-6">
                   ELA, secured by Bitcoin is the oil of the Elastos SmartWeb. Use your Bitcoin for DeFi without custodians or ever moving it off the Bitcoin mainchain.
                 </p>
-                <div className="flex gap-4">
+                <div className="flex justify-center md:justify-start gap-4">
                   <Link href="/ela-utility">
                     <button className="w-8 h-8 rounded-full border border-[#F6921A] bg-[#F6921A]/30 flex items-center justify-center transition-all hover:bg-[#F6921A]/50 hover:scale-110">
                       <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -141,15 +141,15 @@ export function ScalingSection() {
                   <img src="/images/Glass Circles3.png" alt="DePIN Network" className="w-full h-full object-contain" />
                 </div>
               </div>
-              <div className="md:max-w-lg">
-                <div className="flex items-center gap-3 mb-3 md:mb-4">
+              <div className="text-center md:text-left md:max-w-lg">
+                <div className="flex flex-col md:flex-row items-center md:items-center gap-2 md:gap-3 mb-3 md:mb-4">
                   <h3 className="text-2xl font-bold font-sans">Digital Freedom and Ownership</h3>
                   <span className="px-4 py-1 bg-[#5C8EFF]/10 border border-[#5C8EFF]/30 text-white rounded-full text-xs font-medium whitespace-nowrap">IN PROGRESS</span>
                 </div>
                 <p className="text-muted-foreground mb-4 md:mb-6">
                   Combining blockchain, decentralized identity, and secure off-chain data storage and networking, Elastos is your gateway to owning your digital life.
                 </p>
-                <div className="flex gap-4">
+                <div className="flex justify-center md:justify-start gap-4">
                   <Link href="/vision">
                     <button className="w-8 h-8 rounded-full border border-[#F6921A] bg-[#F6921A]/30 flex items-center justify-center transition-all hover:bg-[#F6921A]/50 hover:scale-110">
                       <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
