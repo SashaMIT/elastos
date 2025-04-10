@@ -101,6 +101,16 @@ export default function ElaUtilityPage() {
   const { data: totalSupply, isLoading: isSupplyLoading } = useElaSupply();
   const [networkStats, setNetworkStats] = useState<{ stakedAmount?: number, walletAddresses?: number } | null>(null);
   const [isStatsLoading, setIsStatsLoading] = useState(true);
+  
+  return (
+    <>
+      <SEO 
+        title="ELA Token Utility | Elastos Native Digital Asset"
+        description="Explore the utility of ELA, the native digital asset that fuels the Elastos ecosystem, providing security, governance, and utility across the Web3 infrastructure."
+        keywords="ELA token utility, Elastos coin, Web3 token, Bitcoin-secured currency, digital asset, blockchain utility, staking rewards, governance token"
+        ogImage="/images/Elastosbanner.jpg"
+        canonicalUrl="/ela-utility"
+      />
 
   useEffect(() => {
     const fetchNetworkStats = async () => {
@@ -131,6 +141,13 @@ export default function ElaUtilityPage() {
 
   return (
     <>
+      <SEO 
+        title="ELA Token Utility | Elastos Native Digital Asset"
+        description="Explore the utility of ELA, the native digital asset that fuels the Elastos ecosystem, providing security, governance, and utility across the Web3 infrastructure."
+        keywords="ELA token utility, Elastos coin, Web3 token, Bitcoin-secured currency, digital asset, blockchain utility, staking rewards, governance token"
+        ogImage="/images/Elastosbanner.jpg"
+        canonicalUrl="/ela-utility"
+      />
       <div className="container mx-auto px-4">
         <SparklesPreview />
         <div className="text-center" id="text-effect-trigger">

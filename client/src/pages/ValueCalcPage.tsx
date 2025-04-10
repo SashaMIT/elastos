@@ -26,6 +26,17 @@ const ValueCalcPage = () => {
   const [showMethodology, setShowMethodology] = useState(false);
   const [estimatedValue, setEstimatedValue] = useState(0);
   const [potentialUpside, setPotentialUpside] = useState(0);
+  
+  // Add SEO component
+  return (
+    <>
+      <SEO 
+        title="ELA Value Calculator | Elastos Bitcoin-Backed Security Valuation"
+        description="Calculate the intrinsic value of ELA tokens based on Bitcoin's security and hashrate allocation through merge mining, giving you real-time data-driven price discovery."
+        keywords="ELA value calculator, Elastos token value, Bitcoin security, crypto valuation tool, ELA price discovery, merge mining valuation, hashrate value"
+        ogImage="/images/Elastosbanner.jpg"
+        canonicalUrl="/value-calculator"
+      />
   const { data: hashrateData, isLoading, error } = useHashrateData();
   const bitcoinHashrate = hashrateData?.bitcoinHashrate ?? 671.05;
   const elastosHashrate = hashrateData?.elastosHashrate ?? 48.52;
@@ -53,8 +64,16 @@ const ValueCalcPage = () => {
   };
 
   return (
-    <div className="bg-background dark:bg-[#171717] p-2 sm:p-4 md:p-6 w-full flex justify-center">
-      <Card className="w-full max-w-4xl bg-background/95 dark:bg-[#171717] backdrop-blur-sm mx-auto border-0 dark:border-0">
+    <>
+      <SEO 
+        title="ELA Value Calculator | Elastos Bitcoin-Backed Security Valuation"
+        description="Calculate the intrinsic value of ELA tokens based on Bitcoin's security and hashrate allocation through merge mining, giving you real-time data-driven price discovery."
+        keywords="ELA value calculator, Elastos token value, Bitcoin security, crypto valuation tool, ELA price discovery, merge mining valuation, hashrate value"
+        ogImage="/images/Elastosbanner.jpg"
+        canonicalUrl="/value-calculator"
+      />
+      <div className="bg-background dark:bg-[#171717] p-2 sm:p-4 md:p-6 w-full flex justify-center">
+        <Card className="w-full max-w-4xl bg-background/95 dark:bg-[#171717] backdrop-blur-sm mx-auto border-0 dark:border-0">
         <CardHeader className="p-2 sm:p-4">
           <CardTitle className="flex items-center gap-2 text-base sm:text-lg md:text-xl">
             <Calculator className="w-5 h-5 sm:w-6 sm:h-6 text-blue-500 shrink-0 mt-1" />
@@ -341,7 +360,8 @@ const ValueCalcPage = () => {
           </div>
         </CardContent>
       </Card>
-    </div>
+      </div>
+    </>
   );
 };
 
