@@ -15,6 +15,14 @@ import { ArrowRight } from "lucide-react";
 export function VisionPage() {
   return (
     <div className="relative bg-white dark:bg-[#171717]">
+      <SEO 
+        title="Elastos Vision | Building the SmartWeb Secured by Bitcoin"
+        description="Explore Elastos' vision for a new internet paradigm that gives users true digital ownership, privacy, and freedom, all secured by Bitcoin's hashpower."
+        keywords="Elastos vision, Web3 infrastructure, SmartWeb, Bitcoin security, digital ownership, decentralized internet, web3 future, Internet of Value"
+        ogImage="/images/Elastosbanner.jpg"
+        canonicalUrl="/vision"
+      />
+      
       {/* Background */}
       <div className="absolute inset-0 overflow-hidden">
         <BackgroundCells className="w-full h-full" />

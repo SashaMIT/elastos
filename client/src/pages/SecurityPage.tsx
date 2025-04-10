@@ -28,12 +28,12 @@ const SecurityPage = () => {
   return (
     <div className="min-h-screen bg-background dark:bg-[#171717] p-4 sm:p-6 md:p-8">
       <SEO 
-        title="Elastos Security | Bitcoin-Level Protection"
-        description="Discover how Elastos leverages Bitcoin's hashpower through merged mining to create one of the most secure blockchain networks in existence."
-        keywords="Elastos security, Bitcoin merged mining, blockchain security, hashrate, ELA security"
+        title="Elastos Security | Bitcoin Backed Blockchain Protection"
+        description="Discover how Elastos leverages Bitcoin's hashpower through merged mining to create one of the most secure blockchain networks in existence, with over 45% of Bitcoin's security."
+        keywords="Elastos security, Bitcoin merged mining, blockchain security, hashrate, ELA security, Bitcoin-backed blockchain, secure web3, Elastos protection, Bitcoin security model"
         ogImage="/images/Security.png"
         canonicalUrl="/security"
-      /> {/* Added SEO component here */}
+      />
       {isError ? (
         <Card className="max-w-4xl mx-auto dark:bg-[#151515] dark:border-neutral-800">
           <CardContent className="p-8 text-center">
