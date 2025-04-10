@@ -25,6 +25,17 @@ import HashScaleViz from './HashScaleViz';
 import MergeMiningViz from './MergeMiningViz';
 import { useHashrateData } from '../hooks/useHashrateData';
 
+// Default placeholder data
+const PLACEHOLDER_DATA = {
+  bitcoinHashrate: 475.3,
+  elastosHashrate: 259.2,
+  merkleRoot: "4a5e1e4baab89f3a32518a88c31bc87f618f76673e2cc77ab2127b7afdeda33b",
+  hashratePercentage: 54.5,
+  lastUpdated: new Date().toISOString(),
+  blockHeight: 1249876,
+  difficulty: 87654321
+};
+
 interface Scale {
   unit: string;
   buttonText?: string;
@@ -43,8 +54,65 @@ interface Scales {
 
 type ScaleType = keyof Scales;
 
-const HashrateVisualizer = () => {
-  const [selectedScale, setSelectedScale] = useState<ScaleType>('supercomputers');
+interface HashrateVisualizerProps {
+  usePlaceholder?: boolean;
+  hashrateData?: any;
+  onRefresh?: () => void; // Added refresh function
+}
+
+const HashrateVisualizer: React.FC<HashrateVisualizerProps> = ({ 
+  usePlaceholder = true,
+  hashrateData = null,
+  onRefresh
+}) => {
+  const [refreshing, setRefreshing] = useState(false); // Added refreshing state
+
+  const { data: hookData, refresh: refreshHook } = useHashrateData(false);
+
+  const data = usePlaceholder 
+    ? PLACEHOLDER_DATA 
+    : (hashrateData || hookData || PLACEHOLDER_DATA);
+
+  const handleRefresh = async () => {
+    setRefreshing(true);
+    if (onRefresh) {
+      await onRefresh();
+    } else if (refreshHook) {
+      await refreshHook();
+    }
+    setRefreshing(false);
+  };
+
+  if (refreshing) {
+    return (
+      <Card className="w-full max-w-3xl mx-auto bg-background/95 dark:bg-[#171717] backdrop-blur-sm border-0 dark:border-0">
+        <CardHeader className="p-4 sm:p-6">
+          <div className="animate-pulse space-y-4">
+            <div className="h-8 bg-accent/20 rounded-lg w-3/4"></div>
+            <div className="h-4 bg-accent/20 rounded w-1/2"></div>
+          </div>
+        </CardHeader>
+      </Card>
+    );
+  }
+
+
+  const calculateEquivalent = (hashrate: number, base: number): number => {
+    return (hashrate * 1_000_000_000_000) / base;
+  };
+
+  const formatNumber = (num: number): string => {
+    if (num >= 1_000_000_000_000) {
+      return `${(num / 1_000_000_000_000).toFixed(1)} trillion`;
+    }
+    if (num >= 1_000_000_000) {
+      return `${(num / 1_000_000_000).toFixed(1)} billion`;
+    }
+    if (num >= 1_000_000) {
+      return `${(num / 1_000_000).toFixed(1)} million`;
+    }
+    return num.toLocaleString();
+  };
 
   const scales: Scales = {
     supercomputers: {
@@ -97,51 +165,8 @@ const HashrateVisualizer = () => {
     }
   };
 
-  const { data: hashrateData, isLoading, error } = useHashrateData();
-  const bitcoinHashrate = hashrateData?.bitcoinHashrate ?? 0;
-  const elastosHashrate = hashrateData?.elastosHashrate ?? 0;
-
-  if (isLoading) {
-    return (
-      <Card className="w-full max-w-3xl mx-auto bg-background/95 dark:bg-[#171717] backdrop-blur-sm border-0 dark:border-0">
-        <CardHeader className="p-4 sm:p-6">
-          <div className="animate-pulse space-y-4">
-            <div className="h-8 bg-accent/20 rounded-lg w-3/4"></div>
-            <div className="h-4 bg-accent/20 rounded w-1/2"></div>
-          </div>
-        </CardHeader>
-      </Card>
-    );
-  }
-
-  if (error) {
-    return (
-      <Card className="w-full max-w-3xl mx-auto bg-background/95 dark:bg-[#171717] backdrop-blur-sm border-0 dark:border-0">
-        <CardHeader className="p-4 sm:p-6">
-          <CardTitle className="text-red-500">
-            Error loading hashrate data. Please try again later.
-          </CardTitle>
-        </CardHeader>
-      </Card>
-    );
-  }
-
-  const calculateEquivalent = (hashrate: number, base: number): number => {
-    return (hashrate * 1_000_000_000_000) / base;
-  };
-
-  const formatNumber = (num: number): string => {
-    if (num >= 1_000_000_000_000) {
-      return `${(num / 1_000_000_000_000).toFixed(1)} trillion`;
-    }
-    if (num >= 1_000_000_000) {
-      return `${(num / 1_000_000_000).toFixed(1)} billion`;
-    }
-    if (num >= 1_000_000) {
-      return `${(num / 1_000_000).toFixed(1)} million`;
-    }
-    return num.toLocaleString();
-  };
+  const bitcoinHashrate = data.bitcoinHashrate ?? 0;
+  const elastosHashrate = data.elastosHashrate ?? 0;
 
   return (
     <Card className="w-full max-w-3xl mx-auto bg-background/95 dark:bg-[#171717] backdrop-blur-sm border-0 dark:border-0">
@@ -151,6 +176,7 @@ const HashrateVisualizer = () => {
           <span className="leading-tight">
             Bitcoin and Elastos Network Computing Power
           </span>
+          <Button onClick={handleRefresh} variant={"ghost"} className="ml-auto">Refresh</Button> {/* Added refresh button */}
         </CardTitle>
       </CardHeader>
       <CardContent className="p-4 sm:p-6">
@@ -265,8 +291,6 @@ const HashrateVisualizer = () => {
               </DialogContent>
             </Dialog>
           </div>
-
-          {/* Colored Stats Cards REMOVED */}
 
           <div className="mb-6">
             <BlockVisualizer />

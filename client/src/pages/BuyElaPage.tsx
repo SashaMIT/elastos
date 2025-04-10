@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { motion } from "framer-motion";
 import { Card, CardHeader, CardTitle, CardContent } from '@/components/ui/card';
-import { Shield, Lock, Bitcoin, Star, Wallet, ExternalLink, CheckCircle, CheckCircle2, Info } from 'lucide-react';
+import { Shield, Lock, Bitcoin, Star, Wallet, ExternalLink, CheckCircle, CheckCircle2, Info, RefreshCcw } from 'lucide-react';
+import { Button } from '@/components/ui/button';
 import {
   Tooltip,
   TooltipContent,
@@ -16,13 +17,36 @@ import { Helmet } from 'react-helmet';
 import { WebPageStructuredData } from '@/components/StructuredData';
 
 const BuyElaPage = () => {
-  const { data: hashrateData } = useHashrateData();
-  const bitcoinHashrate = hashrateData?.bitcoinHashrate ?? 0;
-  const elastosHashrate = hashrateData?.elastosHashrate ?? 0;
-  const [animatedHashrate, setAnimatedHashrate] = useState(0);
+  const [isInitialLoading, setIsInitialLoading] = useState(false);
+  const [fetchRequested, setFetchRequested] = useState(false);
+  const { data: hashrateData, isLoading, error, refetch } = useHashrateData(false);
+  const [isError, setIsError] = useState(false);
+  
+  // Default placeholder values
+  const PLACEHOLDER_VALUES = {
+    bitcoinHashrate: 475.3,
+    elastosHashrate: 259.2
+  };
+  
+  const bitcoinHashrate = fetchRequested && hashrateData ? hashrateData.bitcoinHashrate : PLACEHOLDER_VALUES.bitcoinHashrate;
+  const elastosHashrate = fetchRequested && hashrateData ? hashrateData.elastosHashrate : PLACEHOLDER_VALUES.elastosHashrate;
+  const [animatedHashrate, setAnimatedHashrate] = useState(PLACEHOLDER_VALUES.elastosHashrate);
 
   const COINGECKO_API = 'https://api.coingecko.com/api/v3';
   const ELASTOS_API = 'https://ela.elastos.io/api/v1/data-statistics';
+  
+  const handleFetchData = async () => {
+    setIsInitialLoading(true);
+    setFetchRequested(true);
+    setIsError(false);
+    try {
+      await refetch();
+    } catch (error) {
+      setIsError(true);
+    } finally {
+      setIsInitialLoading(false);
+    }
+  };
 
   const realHashrateData = [
     { year: '2018', hashrate: 22, btcHashrate: 101, percentage: "21.8%" },
@@ -92,6 +116,21 @@ const BuyElaPage = () => {
           `}
         </script>
       </Helmet>
+      
+      <div className="max-w-6xl mx-auto mb-4 flex justify-end">
+        <Button 
+          onClick={handleFetchData}
+          className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[rgba(246,146,26,0.15)] text-white font-[200] transition-all hover:bg-[rgba(246,146,26,0.25)] border border-[rgba(246,146,26,0.25)]"
+          disabled={isInitialLoading && isLoading}
+        >
+          {isInitialLoading && isLoading ? (
+            <div className="w-4 h-4 rounded-full border-2 border-white/30 border-t-white animate-spin mr-2"></div>
+          ) : (
+            <RefreshCcw size={18} />
+          )}
+          Update Market Stats
+        </Button>
+      </div>
       <SEO 
         title="Buy ELA | Bitcoin-Secured Digital Asset | Elastos Token"
         description="Learn how to buy ELA, the native Bitcoin-secured digital asset of the Elastos ecosystem. Discover exchanges, wallets, and staking options for this powerful Web3 utility token."

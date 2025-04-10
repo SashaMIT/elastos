@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { Card, CardHeader, CardTitle, CardContent } from '../components/ui/card';
-import { Shield, Lock, Coins, Clock, Calendar, Database, Heart, TrendingUp, ChevronRight, Table, Focus } from 'lucide-react';
+import { Shield, Lock, Coins, Clock, Calendar, Database, Heart, TrendingUp, ChevronRight, Table, Focus, RefreshCcw } from 'lucide-react';
+import { Button } from '../components/ui/button';
+import { useElaSupply, PLACEHOLDER_SUPPLY_DATA } from '../hooks/useElaSupply';
 import {
   Tooltip,
   TooltipContent,
@@ -21,9 +23,31 @@ import { StackedCircularFooter } from '../components/ui/stacked-circular-footer'
 
 
 const ELASupplyPage = () => {
-  const currentSupply = 25748861;
+  const [isInitialLoading, setIsInitialLoading] = useState(false);
+  const [fetchRequested, setFetchRequested] = useState(false);
+  const { data: supplyData, isLoading, error, refetch } = useElaSupply(false);
+  const [isError, setIsError] = useState(false);
+  
+  // Use placeholder data by default
+  const currentSupply = fetchRequested && supplyData ? supplyData.currentSupply : PLACEHOLDER_SUPPLY_DATA.currentSupply;
   const nextHalvingDate = new Date('2025-12-01');
 
+  // Skip initial loading
+  useEffect(() => {
+    setIsInitialLoading(false);
+  }, []);
+
+  const handleFetchData = async () => {
+    setIsInitialLoading(true);
+    setFetchRequested(true);
+    setIsError(false);
+    try {
+      await refetch();
+    } catch (error) {
+      setIsError(true);
+    }
+  };
+  
   const supplySchedule = [
     { halvingDate: new Date('2021-12-01'), year: 2021, percentage: null, increment: null, supply: 24620000 },
     { halvingDate: new Date('2025-12-01'), year: 2025, percentage: 0.02, increment: 1600000, supply: 26620000 },
@@ -148,6 +172,21 @@ const ELASupplyPage = () => {
 
   return (
     <div className="w-full h-full bg-background dark:bg-[#171717] px-0 md:px-8 lg:px-16 xl:px-52 2xl:px-52">
+      <div className="max-w-full w-full mb-4 flex justify-end px-4">
+        <Button 
+          onClick={handleFetchData}
+          className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[rgba(246,146,26,0.15)] text-white font-[200] transition-all hover:bg-[rgba(246,146,26,0.25)] border border-[rgba(246,146,26,0.25)]"
+          disabled={isInitialLoading && isLoading}
+        >
+          {isInitialLoading && isLoading ? (
+            <div className="w-4 h-4 rounded-full border-2 border-white/30 border-t-white animate-spin mr-2"></div>
+          ) : (
+            <RefreshCcw size={18} />
+          )}
+          Update Supply Data
+        </Button>
+      </div>
+      
       <Card className="w-full overflow-hidden dark:bg-[#171717] dark:border-neutral-800">
         <CardHeader className="p-3">
           <CardTitle className="flex items-center gap-2 text-base">
