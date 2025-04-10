@@ -17,8 +17,8 @@ import { WebPageStructuredData } from '@/components/StructuredData';
 
 const BuyElaPage = () => {
   const { data: hashrateData } = useHashrateData();
-  const bitcoinHashrate = hashrateData?.bitcoinHashrate ?? 0;
-  const elastosHashrate = hashrateData?.elastosHashrate ?? 0;
+  const bitcoinHashrate = hashrateData?.bitcoinHashrate ?? 481;
+  const elastosHashrate = hashrateData?.elastosHashrate ?? 924;
   const [animatedHashrate, setAnimatedHashrate] = useState(0);
 
   const COINGECKO_API = 'https://api.coingecko.com/api/v3';

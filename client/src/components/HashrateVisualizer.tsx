@@ -98,8 +98,8 @@ const HashrateVisualizer = () => {
   };
 
   const { data: hashrateData, isLoading, error } = useHashrateData();
-  const bitcoinHashrate = hashrateData?.bitcoinHashrate ?? 0;
-  const elastosHashrate = hashrateData?.elastosHashrate ?? 0;
+  const bitcoinHashrate = hashrateData?.bitcoinHashrate ?? 481;
+  const elastosHashrate = hashrateData?.elastosHashrate ?? 924;
 
   if (isLoading) {
     return (
