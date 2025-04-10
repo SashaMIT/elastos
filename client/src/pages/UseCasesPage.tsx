@@ -9,6 +9,8 @@ import { Layout } from "@/components/Layout";
 import { CodeBlock } from "@/components/ui/code-block";
 import { UseCaseModal } from "@/components/UseCaseModal";
 import { SEO } from "@/components/SEO";
+import { Helmet } from 'react-helmet';
+import { WebPageStructuredData } from "@/components/StructuredData";
 
 interface UseCase {
   id: number;
@@ -363,12 +365,30 @@ const UseCasesPage: React.FC = () => {
 
   return (
     <div className="min-h-screen bg-white dark:bg-[#171717]">
+      <Helmet>
+        {/* Google Tag */}
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-775BN8EH1L"></script>
+        <script>
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-775BN8EH1L');
+          `}
+        </script>
+      </Helmet>
       <SEO 
-        title="Elastos Use Cases | Applications & Solutions"
-        description="Explore real-world applications and use cases for Elastos technology across various industries including DeFi, NFTs, identity management, and more."
-        keywords="Elastos use cases, Web3 applications, DID, decentralized storage, NFT marketplace, dApps"
+        title="Elastos Use Cases | Bitcoin-Secured Web3 Applications"
+        description="Explore innovative real-world applications built on Elastos technology across finance, identity, governance, and more. Discover how Bitcoin security underpins next-generation Web3 solutions."
+        keywords="Elastos use cases, Web3 applications, Bitcoin-secured DID, decentralized identity, Web3 storage, NFT marketplace, dApps, DeFi applications, decentralized governance, smart contracts"
         ogImage="/images/Elastosbanner.jpg"
         canonicalUrl="/use-cases"
+      />
+      <WebPageStructuredData
+        title="Elastos Use Cases | Bitcoin-Secured Web3 Applications"
+        description="Explore innovative real-world applications built on Elastos technology across finance, identity, governance, and more."
+        url="/use-cases"
+        imageUrl="/images/Elastosbanner.jpg"
       />
       <Layout>
         <div className="w-full relative">

@@ -14,6 +14,9 @@ import { useHashrateData } from "@/hooks/useHashrateData";
 import { useMarketCapData } from "@/hooks/useMarketCapData"; // Added import
 import { useElaSupply } from "@/hooks/useElaSupply"; // Added import
 import { Dots_v2 } from "@/components/ui/spinner"; // Import Dots_v2 spinner component
+import { Helmet } from 'react-helmet';
+import { SEO } from "@/components/SEO";
+import { WebPageStructuredData } from "@/components/StructuredData";
 
 
 interface GridItemProps {
@@ -131,6 +134,31 @@ export default function ElaUtilityPage() {
 
   return (
     <>
+      <Helmet>
+        {/* Google Tag */}
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-775BN8EH1L"></script>
+        <script>
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-775BN8EH1L');
+          `}
+        </script>
+      </Helmet>
+      <SEO 
+        title="ELA Token Utility | Bitcoin-Secured Digital Asset | Elastos"
+        description="Discover the powerful utility of ELA, the Bitcoin-secured native token powering the Elastos ecosystem. Learn about staking, governance, security, and utility across the decentralized SmartWeb."
+        keywords="ELA token, Elastos utility, Bitcoin-merged mining, crypto utility token, ELA staking, DAO governance, Web3 token, Bitcoin hashrate security, digital asset utility"
+        ogImage="/images/Elastosbanner.jpg"
+        canonicalUrl="/ela-utility"
+      />
+      <WebPageStructuredData
+        title="ELA Token Utility | Bitcoin-Secured Digital Asset | Elastos"
+        description="Discover the powerful utility of ELA, the Bitcoin-secured native token powering the Elastos ecosystem."
+        url="/ela-utility"
+        imageUrl="/images/Elastosbanner.jpg"
+      />
       <div className="container mx-auto px-4">
         <SparklesPreview />
         <div className="text-center" id="text-effect-trigger">
