@@ -5,12 +5,39 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
 import React from "react";
 import { SEO } from "@/components/SEO";
+import { Helmet } from 'react-helmet';
+import { WebPageStructuredData } from "@/components/StructuredData";
 import { LogoCarouselDemo } from "@/components/LogoCarouselDemo";
 import { StackedCircularFooter } from "@/components/ui/stacked-circular-footer";
 
 const WhitepaperPage = () => {
   return (
     <Layout>
+      <Helmet>
+        {/* Google Tag */}
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-775BN8EH1L"></script>
+        <script>
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-775BN8EH1L');
+          `}
+        </script>
+      </Helmet>
+      <SEO 
+        title="Elastos Whitepaper & Technical Documentation | Bitcoin-Secured Protocols"
+        description="Access the official Elastos whitepapers, technical specifications, and developer documents that define the foundation of Elastos' Bitcoin-secured smart web architecture."
+        keywords="Elastos whitepaper, Elastos litepaper, technical documentation, Bitcoin merged mining, Web3 infrastructure, blockchain security, decentralized identity"
+        ogImage="/images/whitepapers/litepaper-cover.png"
+        canonicalUrl="/whitepaper"
+      />
+      <WebPageStructuredData
+        title="Elastos Whitepaper & Technical Documentation | Bitcoin-Secured Protocols"
+        description="Access the official Elastos whitepapers and technical documentation."
+        url="/whitepaper"
+        imageUrl="/images/whitepapers/litepaper-cover.png"
+      />
       <div className="relative w-full">
         {/* Full-width hero image with gradient overlay */}
         <div className="relative w-full h-[350px] overflow-hidden -mt-32">
@@ -315,13 +342,6 @@ const WhitepaperPage = () => {
           </div>
         </div>
       </div>
-      <SEO 
-        title="Elastos Whitepaper | Technical Documentation"
-        description="Access the official Elastos whitepaper, technical documentation, and litepaper to understand the technology and vision behind the project."
-        keywords="Elastos whitepaper, technical documentation, blockchain whitepaper, Web3 infrastructure, litepaper"
-        ogImage="/images/whitepapers/litepaper-cover.png"
-        canonicalUrl="/whitepaper"
-      />
       <LogoCarouselDemo />
       <StackedCircularFooter />
     </Layout>

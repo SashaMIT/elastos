@@ -5,6 +5,8 @@ import { Lens } from "@/components/ui/lens";
 import { ExternalLink, Share2, Terminal, Wallet, Image, Building2 } from 'lucide-react';
 import { motion } from "framer-motion";
 import { SEO } from "@/components/SEO";
+import { Helmet } from 'react-helmet';
+import { WebPageStructuredData } from "@/components/StructuredData";
 
 type Project = {
   name: string;
@@ -473,12 +475,30 @@ export default function EcosystemPage() {
 
   return (
     <div className="min-h-screen bg-white dark:bg-[#171717] text-black dark:text-white">
+      <Helmet>
+        {/* Google Tag */}
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-775BN8EH1L"></script>
+        <script>
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-775BN8EH1L');
+          `}
+        </script>
+      </Helmet>
       <SEO 
-        title="Elastos Ecosystem | Web3 Projects & Partners"
-        description="Explore the growing ecosystem of projects, applications, and partners building on Elastos technology to create a better internet."
-        keywords="Elastos ecosystem, dApps, blockchain projects, Elacity, BeL2, Elastos partners, Web3"
+        title="Elastos Ecosystem | Bitcoin-Secured Web3 Applications & Partners"
+        description="Discover the robust ecosystem of applications, tools, and partners building on Elastos' Bitcoin-secured infrastructure, from DeFi and digital identity to NFT platforms."
+        keywords="Elastos ecosystem, Elastos dApps, Bitcoin-secured applications, Elacity, BeL2, Essentials wallet, Elastos partners, Web3 ecosystem, Bitcoin DeFi, decentralized identity"
         ogImage="/images/Elastosbanner.jpg"
         canonicalUrl="/ecosystem"
+      />
+      <WebPageStructuredData
+        title="Elastos Ecosystem | Bitcoin-Secured Web3 Applications & Partners"
+        description="Discover the robust ecosystem of applications, tools, and partners building on Elastos' Bitcoin-secured infrastructure."
+        url="/ecosystem"
+        imageUrl="/images/Elastosbanner.jpg"
       />
       <div className="flex flex-col lg:flex-row">
         {/* Mobile Category Selector */}
