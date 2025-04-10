@@ -19,7 +19,7 @@ export function useHashrateData() {
     elastosHashrate: 481,
     bitcoinHashrate: 924,
     elaPrice: 1.24,
-    bitcoinPrice: 62500,
+    bitcoinPrice: 81728,
     elaPriceChange24h: 0.5,
     bitcoinPriceChange24h: 1.2
   };
