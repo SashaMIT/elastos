@@ -40,16 +40,17 @@ export async function setupVite(app: Express, server: Server) {
 }
 
 export function serveStatic(app: Express) {
-  const distPath = path.resolve(__dirname, "public");
+  const publicPath = path.join(__dirname, "../dist/public");
 
-  if (!fs.existsSync(distPath)) {
-    throw new Error(
-      `Could not find the build directory: ${distPath}, make sure to build the client first`
-    );
-  }
+  // Serve static files with cache control
+  app.use(express.static(publicPath, {
+    maxAge: '1w', // Set max age to 1 week
+    etag: true,
+    lastModified: true
+  }));
 
-  app.use(express.static(distPath));
-  app.get("*", (_req, res) => {
-    res.sendFile(path.join(distPath, "index.html"));
+  // Catch-all route to serve index.html
+  app.get("*", (req, res) => {
+    res.sendFile(path.join(publicPath, "index.html"));
   });
 }
