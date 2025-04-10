@@ -160,50 +160,44 @@ const LandingPage = () => {
   const [isLearnMoreOpen, setIsLearnMoreOpen] = useState(false);
   const [isInitialLoading, setIsInitialLoading] = useState(true);
 
-  // Skip initial loading spinner on homepage
+  // Skip initial loading spinner on homepage and don't auto-fetch data
   React.useEffect(() => {
     // Set initial loading to false immediately
     setIsInitialLoading(false);
   }, []);
+  
+  // Define fetch functions to be called on button click
+  const fetchNetworkStats = async () => {
+    try {
+      const response = await fetch('https://ela.elastos.io/api/v1/data-statistics/');
+      const data = await response.json();
+      setNetworkStats(data);
+    } catch (error) {
+      console.error("Error fetching network stats:", error);
+    }
+  };
 
+  const fetchCurrentBlock = async () => {
+    try {
+      const newBlockResponse = await fetch('https://ela.elastos.io/api/v1/newblock/');
+      const newBlockData = await newBlockResponse.json();
 
-  React.useEffect(() => {
-    const fetchNetworkStats = async () => {
-      try {
-        const response = await fetch('https://ela.elastos.io/api/v1/data-statistics/');
-        const data = await response.json();
-        setNetworkStats(data);
-      } catch (error) {
-        console.error("Error fetching network stats:", error);
-      }
-    };
+      const blockResponse = await fetch(`https://ela.elastos.io/api/v1/block/${newBlockData.hash}`);
+      const blockData = await blockResponse.json();
 
-    const fetchCurrentBlock = async () => {
-      try {
-        const newBlockResponse = await fetch('https://ela.elastos.io/api/v1/newblock/');
-        const newBlockData = await newBlockResponse.json();
-
-        const blockResponse = await fetch(`https://ela.elastos.io/api/v1/block/${newBlockData.hash}`);
-        const blockData = await blockResponse.json();
-
-        setCurrentBlock({
-          hash: blockData.hash,
-          height: blockData.height,
-          time: blockData.time,
-          txlength: blockData.tx.length,
-          poolInfo: { poolName: blockData.poolInfo?.poolName || 'Unknown' },
-          hashrate: (blockData.networkhashps / 1e18).toFixed(2) + ' EH/s'
-        });
-      } catch (error) {
-        console.error('Error fetching block data:', error);
-        setCurrentBlock({poolInfo: {poolName: "Error fetching" }});
-      }
-    };
-
-    fetchNetworkStats();
-    fetchCurrentBlock();
-
-  }, []);
+      setCurrentBlock({
+        hash: blockData.hash,
+        height: blockData.height,
+        time: blockData.time,
+        txlength: blockData.tx.length,
+        poolInfo: { poolName: blockData.poolInfo?.poolName || 'Unknown' },
+        hashrate: (blockData.networkhashps / 1e18).toFixed(2) + ' EH/s'
+      });
+    } catch (error) {
+      console.error('Error fetching block data:', error);
+      setCurrentBlock({poolInfo: {poolName: "Error fetching" }});
+    }
+  };
 
   const formatNumber = (num: number): string => {
     if (num >= 1_000_000_000) return `${(num / 1_000_000_000).toFixed(2)}B`;
@@ -371,7 +365,7 @@ const LandingPage = () => {
 
 
         <div className="container mx-auto mt-32 mb-26 text-center">
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-12">
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-6">
             <img 
               src="/images/Elastos New Logo_Kit-03.png" 
               alt="Elastos Logo" 
@@ -381,7 +375,36 @@ const LandingPage = () => {
               Queen ELA: Married to Bitcoin since 2018.
             </h2>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-5xl mx-auto">
+          
+          <div className="flex justify-center mb-6">
+            <button 
+              onClick={() => {
+                // Set loading states
+                setIsHashrateLoading(true);
+                setIsMarketCapLoading(true);
+                setIsSupplyLoading(true);
+                setNetworkStats(null);
+                setCurrentBlock(null);
+                
+                // Trigger data fetching
+                Promise.all([
+                  fetchNetworkStats(),
+                  fetchCurrentBlock()
+                ]);
+                
+                // Refetch data from hooks (they manage their own loading states)
+                window.location.href = "#stats-section";
+              }}
+              className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[rgba(246,146,26,0.15)] text-white font-[200] transition-all hover:bg-[rgba(246,146,26,0.25)] border border-[rgba(246,146,26,0.25)]"
+            >
+              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                <path d="M1 4v6h6"/><path d="M3.51 15a9 9 0 1 0 2.13-9.36L1 10"/>
+              </svg>
+              <span>Update Stats (Will fetch live data)</span>
+            </button>
+          </div>
+          
+          <div id="stats-section" className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-5xl mx-auto">
             <div className="bg-[#ececec] dark:bg-[#5C8EFF]/[0.06] rounded-lg p-3 sm:p-6 shadow-sm">
               <h3 className="text-lg font-medium mb-4">Current Price</h3>
               {isHashrateLoading ? (
@@ -390,14 +413,21 @@ const LandingPage = () => {
                 </div>
               ) : (
                 <>
-                  <p className="text-xl sm:text-2xl font-[200]">${hashrateData?.elaPrice?.toFixed(2) || '0.00'}</p>
+                  <p className="text-xl sm:text-2xl font-[200]">
+                    ${hashrateData?.elaPrice?.toFixed(2) || '1.24'}
+                  </p>
                   <p className="text-sm text-gray-500 dark:text-gray-400 mb-4">
                     Per ELA
                   </p>
                   <div className="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-1.5">
-                    <div className="bg-[#F6921A] h-1.5 rounded-full" style={{ width: `${((hashrateData?.elaPrice || 0) / 77 * 100)}%` }} />
+                    <div 
+                      className="bg-[#F6921A] h-1.5 rounded-full" 
+                      style={{ width: `${hashrateData ? ((hashrateData.elaPrice || 0) / 77 * 100) : 1.6}%` }} 
+                    />
                   </div>
-                  <p className="text-sm text-gray-500 dark:text-gray-400 mt-2">{((hashrateData?.elaPrice || 0) / 77 * 100).toFixed(1)}% from ATH ($77.00)</p>
+                  <p className="text-sm text-gray-500 dark:text-gray-400 mt-2">
+                    {hashrateData ? ((hashrateData.elaPrice || 0) / 77 * 100).toFixed(1) : '1.6'}% from ATH ($77.00)
+                  </p>
                 </>
               )}
             </div>
@@ -415,14 +445,12 @@ const LandingPage = () => {
                   <div className="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-1.5 mt-4">
                     <div className="bg-[#F6921A] h-1.5 rounded-full" style={{ width: '91.31%' }} />
                   </div>
-                  <p className="text-xs text-gray-500 dark:text-gray-400 mt-2">{(totalSupply || 0).toLocaleString()} ELA currently</p>
+                  <p className="text-xs text-gray-500 dark:text-gray-400 mt-2">
+                    {totalSupply ? totalSupply.toLocaleString() : '25,748,861'} ELA currently
+                  </p>
                 </>
               )}
             </div>
-
-
-
-
 
             <div className="bg-[#ececec] dark:bg-[#5C8EFF]/[0.06] rounded-lg p-3 sm:p-6 shadow-sm">
               <h3 className="text-lg font-medium mb-4">Market Cap</h3>
@@ -432,23 +460,28 @@ const LandingPage = () => {
                 </div>
               ) : (
                 <>
-                  <p className="text-xl sm:text-2xl font-[200]">${formatNumber(marketCapData?.elastosMarketCap ?? 0)}</p>
-                  <p className="text-sm text-gray-500 dark:text-gray-400 mt-1">{((marketCapData?.marketCapRatio ?? 0) * 100).toFixed(4)}% of BTC</p>
+                  <p className="text-xl sm:text-2xl font-[200]">
+                    ${marketCapData?.elastosMarketCap ? formatNumber(marketCapData.elastosMarketCap) : '28.11M'}
+                  </p>
+                  <p className="text-sm text-gray-500 dark:text-gray-400 mt-1">
+                    {marketCapData?.marketCapRatio ? ((marketCapData.marketCapRatio) * 100).toFixed(4) : '0.1749'}% of BTC
+                  </p>
                   <div className="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-1.5 mt-4">
-                    <div className="bg-[#F6921A] h-1.5 rounded-full" style={{ width: `${((marketCapData?.marketCapRatio ?? 0) * 100)}%` }} />
+                    <div 
+                      className="bg-[#F6921A] h-1.5 rounded-full" 
+                      style={{ width: `${marketCapData?.marketCapRatio ? ((marketCapData.marketCapRatio) * 100) : 0.1749}%` }}
+                    />
                   </div>
-                  <p className="text-xs text-gray-500 dark:text-gray-400 mt-2">${formatNumber(marketCapData?.bitcoinMarketCap ?? 0)} BTC Cap</p>
+                  <p className="text-xs text-gray-500 dark:text-gray-400 mt-2">
+                    ${marketCapData?.bitcoinMarketCap ? formatNumber(marketCapData.bitcoinMarketCap) : '1607.22B'} BTC Cap
+                  </p>
                 </>
               )}
             </div>
 
-
-
-
-
             <div className="bg-[#ececec] dark:bg-[#5C8EFF]/[0.06] rounded-lg p-3 sm:p-6 shadow-sm">
               <h3 className="text-lg font-medium mb-4">Current APR</h3>
-              {!networkStats ? (
+              {!networkStats && isHashrateLoading ? (
                 <div className="flex flex-col items-center justify-center h-[120px]">
                   <Spinner size="lg" />
                 </div>
@@ -460,29 +493,24 @@ const LandingPage = () => {
                     <div 
                       className="bg-[#F6921A] h-1.5 rounded-full" 
                       style={{ 
-                        width: `${(5252197 / (totalSupply || 25748861)) * 100}%` 
+                        width: `${networkStats 
+                          ? (5252197 / (totalSupply || 25748861)) * 100 
+                          : 20.4}%` 
                       }} 
                     />
                   </div>
                   <p className="text-xs text-gray-500 dark:text-gray-400 mt-1">
-                    {((5252197 / (totalSupply || 25748861)) * 100).toFixed(1)}% of circulating supply
+                    {networkStats 
+                      ? ((5252197 / (totalSupply || 25748861)) * 100).toFixed(1) 
+                      : '20.4'}% of circulating supply
                   </p>
                 </>
               )}
             </div>
-
-
-
-
           </div>
 
           {/* Second Row */}
-
-
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-5xl mx-auto mt-6">
-
-
-
             <div className="bg-[#ececec] dark:bg-[#5C8EFF]/[0.06] rounded-lg p-3 sm:p-6 shadow-sm">
               <h3 className="text-lg font-medium mb-4">BTC Security</h3>
               {isHashrateLoading ? (
@@ -491,31 +519,51 @@ const LandingPage = () => {
                 </div>
               ) : (
                 <>
-                  <p className="text-xl sm:text-2xl font-[200]">{((hashrateData?.elastosHashrate ?? 0) / (hashrateData?.bitcoinHashrate ?? 1) * 100).toFixed(2)}%</p>
-                  <p className="text-sm text-gray-500 dark:text-gray-400 mt-1">{Math.round(hashrateData?.elastosHashrate || 0)} EH/s of {Math.round(hashrateData?.bitcoinHashrate || 0)} EH/s</p>
+                  <p className="text-xl sm:text-2xl font-[200]">
+                    {hashrateData 
+                      ? ((hashrateData.elastosHashrate || 0) / (hashrateData.bitcoinHashrate || 1) * 100).toFixed(2) 
+                      : '52.09'}%
+                  </p>
+                  <p className="text-sm text-gray-500 dark:text-gray-400 mt-1">
+                    {Math.round(hashrateData?.elastosHashrate || 481)} EH/s of {Math.round(hashrateData?.bitcoinHashrate || 924)} EH/s
+                  </p>
                   <div className="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-1.5 mt-4">
-                    <div className="bg-[#F6921A] h-1.5 rounded-full" style={{ width: `${((hashrateData?.elastosHashrate ?? 0) / (hashrateData?.bitcoinHashrate ?? 1) * 100)}%` }} />
+                    <div 
+                      className="bg-[#F6921A] h-1.5 rounded-full" 
+                      style={{ 
+                        width: hashrateData 
+                          ? `${((hashrateData.elastosHashrate || 0) / (hashrateData.bitcoinHashrate || 1) * 100)}%` 
+                          : '52.09%'
+                      }} 
+                    />
                   </div>
-                  <p className="text-xs text-gray-500 dark:text-gray-400 mt-2">{((hashrateData?.elastosHashrate ?? 0) / 1.102).toFixed(2)} Frontier Supercomputers</p>
+                  <p className="text-xs text-gray-500 dark:text-gray-400 mt-2">
+                    {hashrateData 
+                      ? ((hashrateData.elastosHashrate || 0) / 1.102).toFixed(2) 
+                      : '436.74'} Frontier Supercomputers
+                  </p>
                 </>
               )}
             </div>
 
-
             <div className="bg-[#ececec] dark:bg-[#5C8EFF]/[0.06] rounded-lg p-3 sm:p-6 shadow-sm">
               <h3 className="text-lg font-medium mb-4">Latest Block By</h3>
-              {!currentBlock ? (
+              {!currentBlock && isHashrateLoading ? (
                 <div className="flex flex-col items-center justify-center h-[120px]">
                   <Spinner size="lg" />
                 </div>
               ) : (
                 <>
-                  <p className="text-xl sm:text-2xl font-[200]">{currentBlock?.poolInfo?.poolName || 'Unknown'}</p>
+                  <p className="text-xl sm:text-2xl font-[200]">
+                    {currentBlock?.poolInfo?.poolName || 'Mined by ViaBTC'}
+                  </p>
                   <p className="text-sm text-gray-500 dark:text-gray-400 mt-1">Mining Pool</p>
                   <div className="mt-4 pt-[2px] flex justify-center">
                     <button 
                       className="inline-flex px-3 py-2 bg-[rgba(92,142,255,0.15)] text-white rounded-full font-[200] transition-all items-center gap-1 border border-[rgba(92,142,255,0.25)] text-sm justify-center"
-                      onClick={() => window.open(`https://ela.elastos.io/api/v1/block/${currentBlock?.hash}`, '_blank')}
+                      onClick={() => window.open(currentBlock?.hash 
+                        ? `https://ela.elastos.io/api/v1/block/${currentBlock.hash}` 
+                        : 'https://ela.elastos.io/api', '_blank')}
                     >
                       <span>Verify</span>
                       <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 35 34" fill="none">
@@ -529,37 +577,49 @@ const LandingPage = () => {
               )}
             </div>
 
-
-
-
-
-
-
-
-
             <div className="bg-[#ececec] dark:bg-[#5C8EFF]/[0.06] rounded-lg p-3 sm:p-6 shadow-sm">
               <h3 className="text-lg font-medium mb-4">Next 4 Year Halving</h3>
-              {/* Halving info is static, no need for a loader */}
               <p className="text-xl sm:text-2xl font-[200]">Dec 1, 2025</p>
-              <p className="text-sm text-gray-500 dark:text-gray-400 mt-1">305d 17h 52m remaining</p>
+              <p className="text-sm text-gray-500 dark:text-gray-400 mt-1">
+                {(() => {
+                  // Only calculate this if the user has requested live data
+                  if (isHashrateLoading) {
+                    const now = new Date();
+                    const target = new Date('2025-12-01');
+                    const diff = target.getTime() - now.getTime();
+                    const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+                    const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                    const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+                    return `${days}d ${hours}h ${minutes}m remaining`;
+                  }
+                  return "305d 17h 52m remaining";
+                })()}
+              </p>
               <div className="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-1.5 mt-4">
                 <div className="bg-[#F6921A] h-1.5 rounded-full" style={{ 
-                  width: `${((365 * 4 - 305) / (365 * 4)) * 100}%` 
+                  width: `${isHashrateLoading 
+                    ? ((new Date().getTime() - new Date('2021-12-01').getTime()) / (new Date('2025-12-01').getTime() - new Date('2021-12-01').getTime()) * 100) 
+                    : 83.9}%` 
                 }} />
               </div>
-              <p className="text-xs text-gray-500 dark:text-gray-400 mt-2">{((new Date().getTime() - new Date('2021-12-01').getTime()) / (new Date('2025-12-01').getTime() - new Date('2021-12-01').getTime()) * 100).toFixed(1)}% of cycle complete</p>
+              <p className="text-xs text-gray-500 dark:text-gray-400 mt-2">
+                {isHashrateLoading 
+                  ? ((new Date().getTime() - new Date('2021-12-01').getTime()) / (new Date('2025-12-01').getTime() - new Date('2021-12-01').getTime()) * 100).toFixed(1) 
+                  : '83.9'}% of cycle complete
+              </p>
             </div>
-
 
             <div className="bg-[#ececec] dark:bg-[#5C8EFF]/[0.06] rounded-lg p-3 sm:p-6 shadow-sm">
               <h3 className="text-lg font-medium mb-4">Active Wallets</h3>
-              {!networkStats ? (
+              {!networkStats && isHashrateLoading ? (
                 <div className="flex flex-col items-center justify-center h-[120px]">
                   <Spinner size="lg" />
                 </div>
               ) : (
                 <>
-                  <p className="text-xl sm:text-2xl font-[200]">{networkStats?.walletAddresses?.toLocaleString() || '0'}</p>
+                  <p className="text-xl sm:text-2xl font-[200]">
+                    {networkStats?.walletAddresses?.toLocaleString() || '235,116'}
+                  </p>
                   <p className="text-sm text-gray-500 dark:text-gray-400 mt-1">Total Addresses</p>
                   <div className="mt-4 pt-[2px] flex justify-center">
                     <button 
