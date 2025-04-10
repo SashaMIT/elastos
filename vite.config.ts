@@ -47,6 +47,11 @@ export default defineConfig({
     commonjsOptions: {
       include: [/react-router-dom/, /embla-carousel-react/]
     },
+    // Enable compression for build assets
+    assetsInlineLimit: 4096,
+    cssCodeSplit: true,
+    brotliSize: true,
+    reportCompressedSize: true,
     rollupOptions: {
       output: {
         manualChunks(id) {

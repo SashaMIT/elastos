@@ -3,6 +3,7 @@ import { registerRoutes } from "./routes";
 import { setupVite, serveStatic } from "./vite";
 import { createServer } from "http";
 import { watch } from "fs";
+import compression from "compression";
 
 // Ignore temporary Vite files
 const ignoredPaths = [
@@ -38,6 +39,8 @@ function log(message: string) {
 }
 
 const app = express();
+// Enable gzip compression for all responses
+app.use(compression());
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 
