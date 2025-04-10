@@ -1,58 +1,74 @@
 
-import { useQuery } from '@tanstack/react-query';
+import { useState, useEffect, useCallback } from 'react';
 
 interface NetworkStats {
   walletAddresses: number;
   stakedAmount: number;
 }
 
-interface StakeResponse {
-  error: null | any;
-  result: number;
-  id: null | string;
-  jsonrpc: string;
-}
+export function useNetworkStats() {
+  const [data, setData] = useState<NetworkStats | null>(null);
+  const [isLoading, setIsLoading] = useState<boolean>(false);
+  const [error, setError] = useState<Error | null>(null);
 
-export const useNetworkStats = () => {
-  return useQuery<NetworkStats>({
-    queryKey: ['networkStats'],
-    queryFn: async () => {
-      try {
-        // Fetch wallet addresses
-        const statsResponse = await fetch('https://ela.elastos.io/api/v1/data-statistics/');
-        const statsData = await statsResponse.json();
+  // Placeholder values from the landing page
+  const placeholderStats: NetworkStats = {
+    walletAddresses: 235116,
+    stakedAmount: 5252197 // From the landing page APR card
+  };
 
-        // Fetch staked amount
-        const stakeResponse = await fetch('https://api.elastos.io/ela', {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json',
-          },
-          body: JSON.stringify({
-            method: 'getreceivedbyaddress',
-            params: {
-              address: 'STAKEPooLXXXXXXXXXXXXXXXXXXXpP1PQ2',
-              spendable: false
+  const fetchData = useCallback(async () => {
+    setIsLoading(true);
+    setError(null);
+
+    try {
+      // Function to retry fetch
+      const fetchWithRetry = async (url: string, maxRetries = 3) => {
+        for (let attempt = 1; attempt <= maxRetries; attempt++) {
+          try {
+            const response = await fetch(url);
+            if (!response.ok) {
+              throw new Error(`HTTP error! status: ${response.status}`);
             }
-          })
-        });
-        
-        const stakeData: StakeResponse = await stakeResponse.json();
-        const stakedAmount = stakeData.result ? Number(stakeData.result) / 100000000 : 0; // Convert SELA to ELA
-        
-        return {
-          walletAddresses: statsData.walletAddresses || 0,
-          stakedAmount: stakedAmount
-        };
-      } catch (error) {
-        console.error('Error fetching network stats:', error);
-        return {
-          walletAddresses: 0,
-          stakedAmount: 0
-        };
+            return await response.json();
+          } catch (e) {
+            console.log(`Fetch error (attempt ${attempt}/${maxRetries})`, e);
+            if (attempt === maxRetries) throw e;
+          }
+        }
+      };
+
+      // Fetch network stats
+      try {
+        const networkData = await fetchWithRetry('https://ela.elastos.io/api/v1/data-statistics');
+        if (networkData) {
+          setData({
+            walletAddresses: networkData.Addresses || placeholderStats.walletAddresses,
+            stakedAmount: networkData.StakedAmount || placeholderStats.stakedAmount
+          });
+        } else {
+          throw new Error('Invalid data structure from API');
+        }
+      } catch (e) {
+        console.error('Failed to fetch network stats, using default:', e);
+        setData(placeholderStats);
       }
-    },
-    refetchInterval: 300000, // Refetch every 5 minutes
-    staleTime: 60000 // Consider data stale after 1 minute
-  });
-};
+    } catch (e) {
+      if (e instanceof Error) {
+        setError(e);
+      } else {
+        setError(new Error('Unknown error occurred'));
+      }
+      console.error('Error fetching network stats:', e);
+    } finally {
+      setIsLoading(false);
+    }
+  }, []);
+
+  return {
+    data: data || placeholderStats,
+    isLoading,
+    error,
+    fetchData
+  };
+}

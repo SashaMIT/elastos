@@ -1,35 +1,63 @@
 
-import { useQuery } from '@tanstack/react-query';
+import { useState, useEffect, useCallback } from 'react';
 
-interface ElaSupplyResponse {
-  total_supply: number;
-}
+export function useElaSupply() {
+  const [data, setData] = useState<number | null>(null);
+  const [isLoading, setIsLoading] = useState<boolean>(false);
+  const [error, setError] = useState<Error | null>(null);
 
-interface UseElaSupplyOptions {
-  enabled?: boolean;
-}
+  // Placeholder value from the landing page
+  const placeholderSupply = 25748861;
 
-export const useElaSupply = (options?: UseElaSupplyOptions) => {
-  return useQuery<number>({
-    queryKey: ['elaSupply'],
-    queryFn: async () => {
-      try {
-        const response = await fetch('https://api.elastos.io/widgets?q=total_supply');
-        if (!response.ok) {
-          throw new Error('Failed to fetch supply data');
+  const fetchData = useCallback(async () => {
+    setIsLoading(true);
+    setError(null);
+
+    try {
+      // Function to retry fetch
+      const fetchWithRetry = async (url: string, maxRetries = 3) => {
+        for (let attempt = 1; attempt <= maxRetries; attempt++) {
+          try {
+            const response = await fetch(url);
+            if (!response.ok) {
+              throw new Error(`HTTP error! status: ${response.status}`);
+            }
+            return await response.json();
+          } catch (e) {
+            console.log(`Fetch error (attempt ${attempt}/${maxRetries})`, e);
+            if (attempt === maxRetries) throw e;
+          }
         }
-        const data: ElaSupplyResponse = await response.json();
-        return data.total_supply || 25748861; // Fallback if API returns 0 or null
-      } catch (error) {
-        console.error('Error fetching ELA supply:', error);
-        return 25748861; // Current supply fallback if API fails
+      };
+
+      // Fetch Elastos circulating supply
+      try {
+        const elastosData = await fetchWithRetry('https://ela.elastos.io/api/v1/data-statistics');
+        if (elastosData && elastosData.CirculatingSupply) {
+          setData(elastosData.CirculatingSupply);
+        } else {
+          throw new Error('Invalid data structure from API');
+        }
+      } catch (e) {
+        console.error('Failed to fetch Elastos supply, using default:', e);
+        setData(placeholderSupply);
       }
-    },
-    refetchInterval: 300000, // Refetch every 5 minutes
-    staleTime: 60000, // Consider data stale after 1 minute
-    retry: 3,
-    retryDelay: 1000,
-    initialData: 25748861, // Provide initial data while loading
-    enabled: options?.enabled !== undefined ? options.enabled : true,
-  });
-};
+    } catch (e) {
+      if (e instanceof Error) {
+        setError(e);
+      } else {
+        setError(new Error('Unknown error occurred'));
+      }
+      console.error('Error fetching Elastos supply data:', e);
+    } finally {
+      setIsLoading(false);
+    }
+  }, []);
+
+  return {
+    data: data || placeholderSupply,
+    isLoading,
+    error,
+    fetchData
+  };
+}
