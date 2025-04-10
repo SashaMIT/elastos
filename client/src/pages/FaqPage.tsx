@@ -21,18 +21,6 @@ const FaqPage = () => {
   return (
     <>
       {isLoading && <CenteredSpinner />}
-      <Helmet>
-        {/* Google Tag */}
-        <script async src="https://www.googletagmanager.com/gtag/js?id=G-775BN8EH1L"></script>
-        <script>
-          {`
-            window.dataLayer = window.dataLayer || [];
-            function gtag(){dataLayer.push(arguments);}
-            gtag('js', new Date());
-            gtag('config', 'G-775BN8EH1L');
-          `}
-        </script>
-      </Helmet>
       <div className="relative w-full">
         {/* Full-width hero image with gradient overlay */}
         <div className="relative w-full h-[350px] overflow-hidden -mt-20">
@@ -88,30 +76,6 @@ const FaqPage = () => {
                     "acceptedAnswer": {
                       "@type": "Answer",
                       "text": "Elastos is secured through merged mining with Bitcoin, giving it access to Bitcoin's hashpower."
-                    }
-                  },
-                  {
-                    "@type": "Question",
-                    "name": "What is the ELA token used for?",
-                    "acceptedAnswer": {
-                      "@type": "Answer",
-                      "text": "ELA is the native token of the Elastos ecosystem, used for transaction fees, staking, governance through the Cyber Republic DAO, and as a store of value secured by Bitcoin's hashpower."
-                    }
-                  },
-                  {
-                    "@type": "Question",
-                    "name": "What makes Elastos different from other blockchain projects?",
-                    "acceptedAnswer": {
-                      "@type": "Answer",
-                      "text": "Elastos stands out by leveraging Bitcoin's security through merged mining, offering a complete Web3 infrastructure stack, and providing true digital ownership through its decentralized identity (DID) solution."
-                    }
-                  },
-                  {
-                    "@type": "Question",
-                    "name": "What is BeL2?",
-                    "acceptedAnswer": {
-                      "@type": "Answer",
-                      "text": "BeL2 is Elastos' Layer 2 solution for Bitcoin, enabling DeFi applications, smart contracts, and scalability while maintaining Bitcoin's security guarantees."
                     }
                   }
                 ]
