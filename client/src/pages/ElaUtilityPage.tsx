@@ -122,16 +122,6 @@ export default function ElaUtilityPage() {
     return hashrate ? `${hashrate.toFixed(2)} EH/s` : 'Loading...';
   };
 
-  return (
-    <>
-      <SEO 
-        title="ELA Token Utility | Elastos Native Digital Asset"
-        description="Explore the utility of ELA, the native digital asset that fuels the Elastos ecosystem, providing security, governance, and utility across the Web3 infrastructure."
-        keywords="ELA token utility, Elastos coin, Web3 token, Bitcoin-secured currency, digital asset, blockchain utility, staking rewards, governance token"
-        ogImage="/images/Elastosbanner.jpg"
-        canonicalUrl="/ela-utility"
-      />
-
   const formatNumber = (num?: number): string => {
     if (!num) return 'Loading...';
     if (num >= 1_000_000_000) return `${(num / 1_000_000_000).toFixed(2)}B`;
