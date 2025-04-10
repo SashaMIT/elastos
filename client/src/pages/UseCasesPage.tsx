@@ -364,9 +364,9 @@ const UseCasesPage: React.FC = () => {
   return (
     <div className="min-h-screen bg-white dark:bg-[#171717]">
       <SEO 
-        title="Elastos Use Cases | Real-World Web3 Applications & Solutions"
-        description="Explore practical applications of Elastos technology across industries - from secure digital identity and data marketplaces to NFT platforms, decentralized finance, and more."
-        keywords="Elastos use cases, Web3 applications, DID, decentralized identity, data marketplaces, NFT platforms, decentralized storage, DAO governance, Bitcoin-secured apps, Carrier P2P"
+        title="Elastos Use Cases | Applications & Solutions"
+        description="Explore real-world applications and use cases for Elastos technology across various industries including DeFi, NFTs, identity management, and more."
+        keywords="Elastos use cases, Web3 applications, DID, decentralized storage, NFT marketplace, dApps"
         ogImage="/images/Elastosbanner.jpg"
         canonicalUrl="/use-cases"
       />
