@@ -1,9 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Server, Shield, Coins, Zap, Globe, Lock, GitMerge, MessageCircle } from 'lucide-react';
 import MiningAnimation from './MiningAnimation';
-import { useHashrateData } from '@/hooks/useHashrateData';
-import { useElaSupply } from '@/hooks/useElaSupply';
-import { useNetworkStats } from '@/hooks/useNetworkStats';
 import {
   Dialog,
   DialogContent,
@@ -22,18 +19,6 @@ const MergeMiningAnimation = () => {
   const [securityParticles, setSecurityParticles] = useState<Particle[]>([]);
   const [rewardParticles, setRewardParticles] = useState<Particle[]>([]);
   const [isOpen, setIsOpen] = useState(false);
-  
-  // Get refetch functions from hooks
-  const { refetch: refetchHashrate } = useHashrateData();
-  const { refetch: refetchSupply } = useElaSupply();
-  const { refetch: refetchNetworkStats } = useNetworkStats();
-  
-  // Function to fetch all data
-  const fetchAllData = () => {
-    refetchHashrate();
-    refetchSupply();
-    refetchNetworkStats();
-  };
 
   // Auto-advance tabs (step state)
   useEffect(() => {
@@ -163,69 +148,52 @@ const MergeMiningAnimation = () => {
       </h1>
 
       {/* Descriptive Text */}
-      <div className="flex flex-col items-center">
-        <div className="flex items-center justify-center">
-          <p className="text-center text-sm sm:text-base mt-[10px] mb-0 relative z-50 font-[200]">
-            By leveraging Bitcoin's unmatched hash rate, Elastos' ELA fulfills{' '}
-            <Dialog open={isOpen} onOpenChange={setIsOpen}>
-              <DialogTrigger asChild>
-                <span 
-                  role="button"
-                  className="text-blue-500 hover:text-blue-600 dark:text-blue-400 dark:hover:text-blue-300 underline font-medium relative z-50 cursor-pointer"
+      <p className="text-center text-sm sm:text-base mt-[10px] mb-0 relative z-50 font-[200]">
+        By leveraging Bitcoin's unmatched hash rate, Elastos' ELA fulfills{' '}
+        <Dialog open={isOpen} onOpenChange={setIsOpen}>
+          <DialogTrigger asChild>
+            <span 
+              role="button"
+              className="text-blue-500 hover:text-blue-600 dark:text-blue-400 dark:hover:text-blue-300 underline font-medium relative z-50 cursor-pointer"
+            >
+              Satoshi Nakamoto's vision
+            </span>
+          </DialogTrigger>
+          <DialogContent className="max-w-[95vw] sm:max-w-md md:max-w-lg p-3 sm:p-4 md:p-6 overflow-y-auto max-h-[90vh] backdrop-blur-sm bg-background border-none shadow-lg">
+            <DialogHeader>
+              <DialogTitle className="text-xl font-bold">Satoshi Nakamoto's Vision of Merged Mining</DialogTitle>
+            </DialogHeader>
+            <div className="space-y-6">
+              <p className="text-sm sm:text-base text-muted-foreground">
+                In his 2010 Bitcoin forum posts, Satoshi Nakamoto envisioned merged mining to enable networks like BitDNS to share Bitcoin's hash rate. This approach strengthened smaller networks, avoided computational fragmentation, and rewarded miners for securing multiple chains simultaneously, advancing innovation while maintaining decentralization. Bitcoin, as a secure backbone, becomes a foundation for a unified and efficient blockchain ecosystem.
+              </p>
+              <div className="grid grid-cols-2 gap-2">
+                <a href="http://bitcointalk.org/index.php?topic=1790.msg28696#msg28696" 
+                   target="_blank" 
+                   rel="noopener noreferrer"
+                   className="flex items-center gap-2 text-sm px-3 py-2 bg-orange-50 hover:bg-orange-100 dark:bg-[#252525] dark:hover:bg-[#2a2a2a] text-orange-600 rounded-lg transition-colors w-full"
                 >
-                  Satoshi Nakamoto's vision
-                </span>
-              </DialogTrigger>
-              <DialogContent className="max-w-[95vw] sm:max-w-md md:max-w-lg p-3 sm:p-4 md:p-6 overflow-y-auto max-h-[90vh] backdrop-blur-sm bg-background border-none shadow-lg">
-                <DialogHeader>
-                  <DialogTitle className="text-xl font-bold">Satoshi Nakamoto's Vision of Merged Mining</DialogTitle>
-                </DialogHeader>
-                <div className="space-y-6">
-                  <p className="text-sm sm:text-base text-muted-foreground">
-                    In his 2010 Bitcoin forum posts, Satoshi Nakamoto envisioned merged mining to enable networks like BitDNS to share Bitcoin's hash rate. This approach strengthened smaller networks, avoided computational fragmentation, and rewarded miners for securing multiple chains simultaneously, advancing innovation while maintaining decentralization. Bitcoin, as a secure backbone, becomes a foundation for a unified and efficient blockchain ecosystem.
-                  </p>
-                  <div className="grid grid-cols-2 gap-2">
-                    <a href="http://bitcointalk.org/index.php?topic=1790.msg28696#msg28696" 
-                      target="_blank" 
-                      rel="noopener noreferrer"
-                      className="flex items-center gap-2 text-sm px-3 py-2 bg-orange-50 hover:bg-orange-100 dark:bg-[#252525] dark:hover:bg-[#2a2a2a] text-orange-600 rounded-lg transition-colors w-full"
-                    >
-                      <MessageCircle className="w-4 h-4" />
-                      BitcoinForum Post 1 →
-                    </a>
-                    <a href="http://bitcointalk.org/index.php?topic=1790.msg28715#msg28715" 
-                      target="_blank" 
-                      rel="noopener noreferrer"
-                      className="flex items-center gap-2 text-sm px-3 py-2 bg-blue-50 hover:bg-blue-100 dark:bg-[#252525] dark:hover:bg-[#2a2a2a] text-blue-600 rounded-lg transition-colors w-full"
-                    >
-                      <MessageCircle className="w-4 h-4" />
-                      Bitcoin Forum Post 2 →
-                    </a>
-                  </div>
-                  <div className="mt-6 border-t pt-6">
-                    <MiningAnimation />
-                  </div>
-                </div>
-              </DialogContent>
-            </Dialog>
-            {' '}of advancing decentralized innovation on the most secure foundation ever created. BTC King. ELA Queen.
-          </p>
-          <button 
-            onClick={() => {
-              // Scroll to stats section
-              window.location.href = "#stats-section";
-              
-              // Fetch all data
-              fetchAllData();
-            }}
-            className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[rgba(246,146,26,0.15)] text-white font-[200] transition-all hover:bg-[rgba(246,146,26,0.25)] border border-[rgba(246,146,26,0.25)] ml-2"
-          >
-            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-              <path d="M1 4v6h6"/><path d="M3.51 15a9 9 0 1 0 2.13-9.36L1 10"/>
-            </svg>
-          </button>
-        </div>
-      </div>
+                  <MessageCircle className="w-4 h-4" />
+                  BitcoinForum Post 1 →
+                </a>
+                <a href="http://bitcointalk.org/index.php?topic=1790.msg28715#msg28715" 
+                   target="_blank" 
+                   rel="noopener noreferrer"
+                   className="flex items-center gap-2 text-sm px-3 py-2 bg-blue-50 hover:bg-blue-100 dark:bg-[#252525] dark:hover:bg-[#2a2a2a] text-blue-600 rounded-lg transition-colors w-full"
+                >
+                  <MessageCircle className="w-4 h-4" />
+                  Bitcoin Forum Post 2 →
+                </a>
+              </div>
+              <div className="mt-6 border-t pt-6">
+
+                <MiningAnimation />
+              </div>
+            </div>
+          </DialogContent>
+        </Dialog>
+        {' '}of advancing decentralized innovation on the most secure foundation ever created. BTC King. ELA Queen.
+      </p>
 
       {/* Animation Container */}
       <div className="relative h-[400px] sm:h-[400px] mt-[-90px] z-0">
