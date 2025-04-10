@@ -153,6 +153,24 @@ export function StackedCircularFooter() {
             <p className="text-sm text-muted-foreground">
               © 2025 Elastos. All rights reserved.
             </p>
+            <div className="flex justify-center gap-4 mt-2">
+              <a 
+                href="https://blog.elastos.net/privacy-policy/" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="text-xs text-muted-foreground hover:text-primary transition-colors"
+              >
+                Privacy Policy
+              </a>
+              <a 
+                href="https://blog.elastos.net/cookie-policy/" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="text-xs text-muted-foreground hover:text-primary transition-colors"
+              >
+                Cookie Policy
+              </a>
+            </div>
           </div>
         </div>
       </div>
