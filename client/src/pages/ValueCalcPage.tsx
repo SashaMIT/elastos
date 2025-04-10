@@ -10,6 +10,9 @@ import { ChevronDown, ChevronUp, Calculator, DollarSign, BarChart2, Info } from 
 import { useHashrateData } from '../hooks/useHashrateData';
 import { useElaSupply } from '../hooks/useElaSupply';
 import { Button } from "@/components/ui/button";
+import { Helmet } from 'react-helmet';
+import { SEO } from '@/components/SEO';
+import { WebPageStructuredData } from '@/components/StructuredData';
 import {
   Dialog,
   DialogContent,
@@ -54,6 +57,31 @@ const ValueCalcPage = () => {
 
   return (
     <div className="bg-background dark:bg-[#171717] p-2 sm:p-4 md:p-6 w-full flex justify-center">
+      <Helmet>
+        {/* Google Tag */}
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-775BN8EH1L"></script>
+        <script>
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-775BN8EH1L');
+          `}
+        </script>
+      </Helmet>
+      <SEO 
+        title="ELA Value Calculator | Bitcoin-Secured Asset Valuation Tool"
+        description="Calculate the intrinsic value of ELA based on Bitcoin's security through merge mining. Discover the potential of Elastos' native token with real-time blockchain data."
+        keywords="ELA value calculator, Elastos token value, Bitcoin security valuation, crypto valuation tool, merge mining value, intrinsic crypto value, ELA price analysis, Bitcoin hashrate security"
+        ogImage="/images/Elastosbanner.jpg"
+        canonicalUrl="/value-calculator"
+      />
+      <WebPageStructuredData
+        title="ELA Value Calculator | Bitcoin-Secured Asset Valuation Tool"
+        description="Calculate the intrinsic value of ELA based on Bitcoin's security through merge mining."
+        url="/value-calculator"
+        imageUrl="/images/Elastosbanner.jpg"
+      />
       <Card className="w-full max-w-4xl bg-background/95 dark:bg-[#171717] backdrop-blur-sm mx-auto border-0 dark:border-0">
         <CardHeader className="p-2 sm:p-4">
           <CardTitle className="flex items-center gap-2 text-base sm:text-lg md:text-xl">

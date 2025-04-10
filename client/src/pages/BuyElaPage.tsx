@@ -12,6 +12,8 @@ import { useHashrateData } from '../hooks/useHashrateData';
 import { AreaChart, Area, XAxis, YAxis, Tooltip as RechartsTooltip, ResponsiveContainer } from 'recharts';
 import { StackedCircularFooter } from "@/components/ui/stacked-circular-footer";
 import { SEO } from "@/components/SEO";
+import { Helmet } from 'react-helmet';
+import { WebPageStructuredData } from '@/components/StructuredData';
 
 const BuyElaPage = () => {
   const { data: hashrateData } = useHashrateData();
@@ -78,12 +80,30 @@ const BuyElaPage = () => {
 
   return (
     <div className="w-full h-full bg-white dark:bg-[#171717] p-4">
+      <Helmet>
+        {/* Google Tag */}
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-775BN8EH1L"></script>
+        <script>
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-775BN8EH1L');
+          `}
+        </script>
+      </Helmet>
       <SEO 
-        title="Buy ELA | How to Purchase Elastos Token"
-        description="Learn how to buy ELA, the native token of the Elastos ecosystem, through exchanges, wallets, and other available methods."
-        keywords="buy ELA, Elastos token, crypto exchanges, how to purchase ELA, Elastos investment"
+        title="Buy ELA | Bitcoin-Secured Digital Asset | Elastos Token"
+        description="Learn how to buy ELA, the native Bitcoin-secured digital asset of the Elastos ecosystem. Discover exchanges, wallets, and staking options for this powerful Web3 utility token."
+        keywords="buy ELA, Elastos token, ELA exchanges, Bitcoin-secured asset, how to purchase ELA, digital reserve asset, crypto staking, Web3 token, Bitcoin security token, digital asset investment"
         ogImage="/images/Elastosbanner.jpg"
         canonicalUrl="/buy-ela"
+      />
+      <WebPageStructuredData
+        title="Buy ELA | Bitcoin-Secured Digital Asset | Elastos Token"
+        description="Learn how to buy ELA, the native token of the Elastos ecosystem, through exchanges, wallets, and other available methods."
+        url="/buy-ela"
+        imageUrl="/images/Elastosbanner.jpg"
       />
       <Card className="max-w-6xl mx-auto dark:bg-[#171717] dark:text-white border-0">
         <CardHeader className="p-3 dark:bg-[#171717]">
