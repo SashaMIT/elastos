@@ -1,44 +1,30 @@
 
 import { useQuery } from '@tanstack/react-query';
 
-interface SupplyData {
-  currentSupply: number;
-  maxSupply: number;
-  percentageMined: number;
+interface ElaSupplyResponse {
+  total_supply: number;
 }
 
-export const useElaSupply = (enabled = false) => {
-  return useQuery<SupplyData>({
+export const useElaSupply = () => {
+  return useQuery<number>({
     queryKey: ['elaSupply'],
     queryFn: async () => {
       try {
-        const response = await fetch('https://api.elastos.io/ela/v1/totalcirculation');
-        const data = await response.json();
-        
-        if (!data.Result) {
-          throw new Error('Invalid API response from ELA supply endpoint');
+        const response = await fetch('https://api.elastos.io/widgets?q=total_supply');
+        if (!response.ok) {
+          throw new Error('Failed to fetch supply data');
         }
-        
-        const currentSupply = parseFloat(data.Result) / 100000000; // Convert from SELA to ELA
-        const maxSupply = 28220587; // Max supply is fixed
-        const percentageMined = (currentSupply / maxSupply) * 100;
-        
-        return {
-          currentSupply,
-          maxSupply,
-          percentageMined
-        };
+        const data: ElaSupplyResponse = await response.json();
+        return data.total_supply || 25748861; // Fallback if API returns 0 or null
       } catch (error) {
-        console.error('Error fetching ELA supply data:', error);
-        return {
-          currentSupply: 25748861, // Fallback value
-          maxSupply: 28220587,
-          percentageMined: 91.31
-        };
+        console.error('Error fetching ELA supply:', error);
+        return 25748861; // Current supply fallback if API fails
       }
     },
     refetchInterval: 300000, // Refetch every 5 minutes
     staleTime: 60000, // Consider data stale after 1 minute
-    enabled: enabled
+    retry: 3,
+    retryDelay: 1000,
+    initialData: 25748861, // Provide initial data while loading
   });
 };
