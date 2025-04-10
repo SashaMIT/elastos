@@ -620,30 +620,39 @@ const LandingPage = () => {
               <p className="text-xl sm:text-2xl font-[200]">Dec 1, 2025</p>
               <p className="text-sm text-gray-500 dark:text-gray-400 mt-1">
                 {(() => {
-                  // Only calculate this if the user has requested live data
-                  if (isHashrateLoading) {
-                    const now = new Date();
-                    const target = new Date('2025-12-01');
-                    const diff = target.getTime() - now.getTime();
-                    const days = Math.floor(diff / (1000 * 60 * 60 * 24));
-                    const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-                    const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
-                    return `${days}d ${hours}h ${minutes}m remaining`;
-                  }
-                  return "305d 17h 52m remaining";
+                  // Always calculate the current time remaining
+                  const now = new Date();
+                  const target = new Date('2025-12-01');
+                  const diff = Math.max(0, target.getTime() - now.getTime());
+                  const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+                  const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                  const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+                  return `${days}d ${hours}h ${minutes}m remaining`;
                 })()}
               </p>
               <div className="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-1.5 mt-4">
                 <div className="bg-[#F6921A] h-1.5 rounded-full" style={{ 
-                  width: `${isHashrateLoading 
-                    ? ((new Date().getTime() - new Date('2021-12-01').getTime()) / (new Date('2025-12-01').getTime() - new Date('2021-12-01').getTime()) * 100) 
-                    : 83.9}%` 
+                  width: `${(() => {
+                    // Calculate progress percentage from last halving to next
+                    const now = new Date();
+                    const lastHalving = new Date('2021-12-01');
+                    const nextHalving = new Date('2025-12-01');
+                    const totalDuration = nextHalving.getTime() - lastHalving.getTime();
+                    const elapsed = now.getTime() - lastHalving.getTime();
+                    return Math.min(100, Math.max(0, (elapsed / totalDuration) * 100));
+                  })()}%` 
                 }} />
               </div>
               <p className="text-xs text-gray-500 dark:text-gray-400 mt-2">
-                {isHashrateLoading 
-                  ? ((new Date().getTime() - new Date('2021-12-01').getTime()) / (new Date('2025-12-01').getTime() - new Date('2021-12-01').getTime()) * 100).toFixed(1) 
-                  : '83.9'}% of cycle complete
+                {(() => {
+                  // Calculate cycle completion percentage
+                  const now = new Date();
+                  const lastHalving = new Date('2021-12-01');
+                  const nextHalving = new Date('2025-12-01');
+                  const totalDuration = nextHalving.getTime() - lastHalving.getTime();
+                  const elapsed = now.getTime() - lastHalving.getTime();
+                  return (Math.min(100, Math.max(0, (elapsed / totalDuration) * 100))).toFixed(1);
+                })()}% of cycle complete
               </p>
             </div>
 
