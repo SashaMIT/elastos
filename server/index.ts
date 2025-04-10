@@ -44,6 +44,21 @@ app.use(compression());
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 
+// Add Expires headers for static content
+app.use((req, res, next) => {
+  // Check if the request is for a static asset
+  const isStaticAsset = /\.(jpg|jpeg|png|gif|ico|css|js|svg|webp|woff|woff2|ttf|eot|mp4)$/i.test(req.path);
+  
+  if (isStaticAsset) {
+    // Set expires headers for static content (1 week)
+    const oneWeekInSeconds = 60 * 60 * 24 * 7;
+    res.setHeader('Cache-Control', `public, max-age=${oneWeekInSeconds}`);
+    res.setHeader('Expires', new Date(Date.now() + oneWeekInSeconds * 1000).toUTCString());
+  }
+  
+  next();
+});
+
 let isShuttingDown = false;
 
 // Handle graceful shutdown
