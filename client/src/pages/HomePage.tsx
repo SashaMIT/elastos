@@ -64,7 +64,7 @@ const HomePage = () => {
     return `$${(value / 1e9).toFixed(2)}B`;
   };
 
-const { data: marketCapData } = useMarketCapData();
+// Use the existing marketCapData from the hook destructured above
 const bitcoinMarketCap = marketCapData?.bitcoinMarketCap ?? 0;
 const elastosMarketCap = marketCapData?.elastosMarketCap ?? 0;
 
