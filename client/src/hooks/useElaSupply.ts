@@ -5,10 +5,9 @@ interface ElaSupplyResponse {
   total_supply: number;
 }
 
-export const useElaSupply = (enabled = false) => {
+export const useElaSupply = () => {
   return useQuery<number>({
     queryKey: ['elaSupply'],
-    enabled: enabled,
     queryFn: async () => {
       try {
         const response = await fetch('https://api.elastos.io/widgets?q=total_supply');

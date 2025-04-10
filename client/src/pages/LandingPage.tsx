@@ -26,7 +26,7 @@ import FaqComponent from '@/components/FaqComponent';
 import { useHashrateData } from '../hooks/useHashrateData';
 import { useMarketCapData } from '../hooks/useMarketCapData';
 import { useElaSupply } from '../hooks/useElaSupply';
-import { Shield, Lock, Bitcoin, Star, ArrowUpRight, ArrowDownRight, Wallet, ChartBar, Server, Clock, X, RefreshCw } from 'lucide-react';
+import { Shield, Lock, Bitcoin, Star, ArrowUpRight, ArrowDownRight, Wallet, ChartBar, Server, Clock, X } from 'lucide-react';
 import { HeroScrollDemo } from "@/components/HeroScrollDemo";
 import { SecurityStats } from "@/components/SecurityStats";
 import { TextGenerateEffect } from "@/components/ui/text-generate-effect";
@@ -134,9 +134,9 @@ const StatCard = ({ title, value, progress, gaugeValue, countdown, circular, sub
 };
 
 const LandingPage = () => {
-  const { data: hashrateData, isLoading: isHashrateLoading } = useHashrateData(loadApiData);
-  const { data: marketCapData, isLoading: isMarketCapLoading } = useMarketCapData(loadApiData);
-  const { data: totalSupply, isLoading: isSupplyLoading } = useElaSupply(loadApiData);
+  const { data: hashrateData, isLoading: isHashrateLoading } = useHashrateData();
+  const { data: marketCapData, isLoading: isMarketCapLoading } = useMarketCapData();
+  const { data: totalSupply, isLoading: isSupplyLoading } = useElaSupply();
   interface NetworkStats {
     stakedAmount?: number;
     walletAddresses?: number;
@@ -159,7 +159,6 @@ const LandingPage = () => {
   const [currentBlock, setCurrentBlock] = React.useState<BlockInfo | null>(null);
   const [isLearnMoreOpen, setIsLearnMoreOpen] = useState(false);
   const [isInitialLoading, setIsInitialLoading] = useState(true);
-  const [loadApiData, setLoadApiData] = useState(false);
 
   // Skip initial loading spinner on homepage
   React.useEffect(() => {
@@ -378,46 +377,34 @@ const LandingPage = () => {
               alt="Elastos Logo" 
               className="h-8 w-auto mb-3 sm:mb-0"
             />
-            <div className="flex items-center gap-3">
-              <h2 className="text-2xl sm:text-xl md:text-3xl lg:text-4xl font-bold text-white">
-                Queen ELA: Married to Bitcoin since 2018.
-              </h2>
-              <button 
-                onClick={() => {
-                  setLoadApiData(true);
-                }}
-                className="flex items-center gap-2 whitespace-nowrap bg-orange-500/80 hover:bg-orange-500 text-white rounded-full px-3 py-1"
-                disabled={isHashrateLoading || isSupplyLoading || isMarketCapLoading}
-              >
-                <RefreshCw className={`h-4 w-4 ${(isHashrateLoading || isSupplyLoading || isMarketCapLoading) && 'animate-spin'}`} />
-                <span className="text-sm">{loadApiData ? 'Refresh' : 'Load Data'}</span>
-              </button>
-            </div>
+            <h2 className="text-2xl sm:text-xl md:text-3xl lg:text-4xl font-bold text-white">
+              Queen ELA: Married to Bitcoin since 2018.
+            </h2>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-5xl mx-auto">
             <div className="bg-[#ececec] dark:bg-[#5C8EFF]/[0.06] rounded-lg p-3 sm:p-6 shadow-sm">
               <h3 className="text-lg font-medium mb-4">Current Price</h3>
-              {loadApiData && isHashrateLoading ? (
+              {isHashrateLoading ? (
                 <div className="flex flex-col items-center justify-center h-[120px]">
                   <Spinner size="lg" />
                 </div>
               ) : (
                 <>
-                  <p className="text-xl sm:text-2xl font-[200]">${loadApiData ? hashrateData?.elaPrice?.toFixed(2) || '0.00' : '1.24'}</p>
+                  <p className="text-xl sm:text-2xl font-[200]">${hashrateData?.elaPrice?.toFixed(2) || '0.00'}</p>
                   <p className="text-sm text-gray-500 dark:text-gray-400 mb-4">
                     Per ELA
                   </p>
                   <div className="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-1.5">
-                    <div className="bg-[#F6921A] h-1.5 rounded-full" style={{ width: `${loadApiData ? ((hashrateData?.elaPrice || 0) / 77 * 100) : 1.6}%` }} />
+                    <div className="bg-[#F6921A] h-1.5 rounded-full" style={{ width: `${((hashrateData?.elaPrice || 0) / 77 * 100)}%` }} />
                   </div>
-                  <p className="text-sm text-gray-500 dark:text-gray-400 mt-2">1.6% from ATH ($77.00)</p>
+                  <p className="text-sm text-gray-500 dark:text-gray-400 mt-2">{((hashrateData?.elaPrice || 0) / 77 * 100).toFixed(1)}% from ATH ($77.00)</p>
                 </>
               )}
             </div>
 
             <div className="bg-[#ececec] dark:bg-[#5C8EFF]/[0.06] rounded-lg p-3 sm:p-6 shadow-sm">
               <h3 className="text-lg font-medium mb-4">Total Supply</h3>
-              {loadApiData && isSupplyLoading ? (
+              {isSupplyLoading ? (
                 <div className="flex flex-col items-center justify-center h-[120px]">
                   <Spinner size="lg" />
                 </div>
@@ -428,32 +415,40 @@ const LandingPage = () => {
                   <div className="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-1.5 mt-4">
                     <div className="bg-[#F6921A] h-1.5 rounded-full" style={{ width: '91.31%' }} />
                   </div>
-                  <p className="text-xs text-gray-500 dark:text-gray-400 mt-2">25,748,861 ELA currently</p>
+                  <p className="text-xs text-gray-500 dark:text-gray-400 mt-2">{(totalSupply || 0).toLocaleString()} ELA currently</p>
                 </>
               )}
             </div>
 
+
+
+
+
             <div className="bg-[#ececec] dark:bg-[#5C8EFF]/[0.06] rounded-lg p-3 sm:p-6 shadow-sm">
               <h3 className="text-lg font-medium mb-4">Market Cap</h3>
-              {loadApiData && isMarketCapLoading ? (
+              {isMarketCapLoading ? (
                 <div className="flex flex-col items-center justify-center h-[120px]">
                   <Spinner size="lg" />
                 </div>
               ) : (
                 <>
-                  <p className="text-xl sm:text-2xl font-[200]">${loadApiData ? formatNumber(marketCapData?.elastosMarketCap ?? 0) : '28.11M'}</p>
-                  <p className="text-sm text-gray-500 dark:text-gray-400 mt-1">0.1749% of BTC</p>
+                  <p className="text-xl sm:text-2xl font-[200]">${formatNumber(marketCapData?.elastosMarketCap ?? 0)}</p>
+                  <p className="text-sm text-gray-500 dark:text-gray-400 mt-1">{((marketCapData?.marketCapRatio ?? 0) * 100).toFixed(4)}% of BTC</p>
                   <div className="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-1.5 mt-4">
-                    <div className="bg-[#F6921A] h-1.5 rounded-full" style={{ width: `${loadApiData ? ((marketCapData?.marketCapRatio ?? 0) * 100) : 0.1749}%` }} />
+                    <div className="bg-[#F6921A] h-1.5 rounded-full" style={{ width: `${((marketCapData?.marketCapRatio ?? 0) * 100)}%` }} />
                   </div>
-                  <p className="text-xs text-gray-500 dark:text-gray-400 mt-2">$1607.22B BTC Cap</p>
+                  <p className="text-xs text-gray-500 dark:text-gray-400 mt-2">${formatNumber(marketCapData?.bitcoinMarketCap ?? 0)} BTC Cap</p>
                 </>
               )}
             </div>
 
+
+
+
+
             <div className="bg-[#ececec] dark:bg-[#5C8EFF]/[0.06] rounded-lg p-3 sm:p-6 shadow-sm">
               <h3 className="text-lg font-medium mb-4">Current APR</h3>
-              {loadApiData && !networkStats ? (
+              {!networkStats ? (
                 <div className="flex flex-col items-center justify-center h-[120px]">
                   <Spinner size="lg" />
                 </div>
@@ -464,51 +459,63 @@ const LandingPage = () => {
                   <div className="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-1.5 mt-4">
                     <div 
                       className="bg-[#F6921A] h-1.5 rounded-full" 
-                      style={{ width: '20.4%' }} 
+                      style={{ 
+                        width: `${(5252197 / (totalSupply || 25748861)) * 100}%` 
+                      }} 
                     />
                   </div>
                   <p className="text-xs text-gray-500 dark:text-gray-400 mt-1">
-                    20.4% of circulating supply
+                    {((5252197 / (totalSupply || 25748861)) * 100).toFixed(1)}% of circulating supply
                   </p>
                 </>
               )}
             </div>
+
+
+
+
           </div>
 
           {/* Second Row */}
+
+
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-5xl mx-auto mt-6">
+
+
+
             <div className="bg-[#ececec] dark:bg-[#5C8EFF]/[0.06] rounded-lg p-3 sm:p-6 shadow-sm">
               <h3 className="text-lg font-medium mb-4">BTC Security</h3>
-              {loadApiData && isHashrateLoading ? (
+              {isHashrateLoading ? (
                 <div className="flex flex-col items-center justify-center h-[120px]">
                   <Spinner size="lg" />
                 </div>
               ) : (
                 <>
-                  <p className="text-xl sm:text-2xl font-[200]">52.09%</p>
-                  <p className="text-sm text-gray-500 dark:text-gray-400 mt-1">481 EH/s of 924 EH/s</p>
+                  <p className="text-xl sm:text-2xl font-[200]">{((hashrateData?.elastosHashrate ?? 0) / (hashrateData?.bitcoinHashrate ?? 1) * 100).toFixed(2)}%</p>
+                  <p className="text-sm text-gray-500 dark:text-gray-400 mt-1">{Math.round(hashrateData?.elastosHashrate || 0)} EH/s of {Math.round(hashrateData?.bitcoinHashrate || 0)} EH/s</p>
                   <div className="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-1.5 mt-4">
-                    <div className="bg-[#F6921A] h-1.5 rounded-full" style={{ width: '52.09%' }} />
+                    <div className="bg-[#F6921A] h-1.5 rounded-full" style={{ width: `${((hashrateData?.elastosHashrate ?? 0) / (hashrateData?.bitcoinHashrate ?? 1) * 100)}%` }} />
                   </div>
-                  <p className="text-xs text-gray-500 dark:text-gray-400 mt-2">436.74 Frontier Supercomputers</p>
+                  <p className="text-xs text-gray-500 dark:text-gray-400 mt-2">{((hashrateData?.elastosHashrate ?? 0) / 1.102).toFixed(2)} Frontier Supercomputers</p>
                 </>
               )}
             </div>
 
+
             <div className="bg-[#ececec] dark:bg-[#5C8EFF]/[0.06] rounded-lg p-3 sm:p-6 shadow-sm">
               <h3 className="text-lg font-medium mb-4">Latest Block By</h3>
-              {loadApiData && !currentBlock ? (
+              {!currentBlock ? (
                 <div className="flex flex-col items-center justify-center h-[120px]">
                   <Spinner size="lg" />
                 </div>
               ) : (
                 <>
-                  <p className="text-xl sm:text-2xl font-[200]">Mined by ViaBTC</p>
+                  <p className="text-xl sm:text-2xl font-[200]">{currentBlock?.poolInfo?.poolName || 'Unknown'}</p>
                   <p className="text-sm text-gray-500 dark:text-gray-400 mt-1">Mining Pool</p>
                   <div className="mt-4 pt-[2px] flex justify-center">
                     <button 
                       className="inline-flex px-3 py-2 bg-[rgba(92,142,255,0.15)] text-white rounded-full font-[200] transition-all items-center gap-1 border border-[rgba(92,142,255,0.25)] text-sm justify-center"
-                      onClick={() => window.open(`https://ela.elastos.io/`, '_blank')}
+                      onClick={() => window.open(`https://ela.elastos.io/api/v1/block/${currentBlock?.hash}`, '_blank')}
                     >
                       <span>Verify</span>
                       <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 35 34" fill="none">
@@ -522,25 +529,37 @@ const LandingPage = () => {
               )}
             </div>
 
+
+
+
+
+
+
+
+
             <div className="bg-[#ececec] dark:bg-[#5C8EFF]/[0.06] rounded-lg p-3 sm:p-6 shadow-sm">
               <h3 className="text-lg font-medium mb-4">Next 4 Year Halving</h3>
+              {/* Halving info is static, no need for a loader */}
               <p className="text-xl sm:text-2xl font-[200]">Dec 1, 2025</p>
               <p className="text-sm text-gray-500 dark:text-gray-400 mt-1">305d 17h 52m remaining</p>
               <div className="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-1.5 mt-4">
-                <div className="bg-[#F6921A] h-1.5 rounded-full" style={{ width: '83.9%' }} />
+                <div className="bg-[#F6921A] h-1.5 rounded-full" style={{ 
+                  width: `${((365 * 4 - 305) / (365 * 4)) * 100}%` 
+                }} />
               </div>
-              <p className="text-xs text-gray-500 dark:text-gray-400 mt-2">83.9% of cycle complete</p>
+              <p className="text-xs text-gray-500 dark:text-gray-400 mt-2">{((new Date().getTime() - new Date('2021-12-01').getTime()) / (new Date('2025-12-01').getTime() - new Date('2021-12-01').getTime()) * 100).toFixed(1)}% of cycle complete</p>
             </div>
+
 
             <div className="bg-[#ececec] dark:bg-[#5C8EFF]/[0.06] rounded-lg p-3 sm:p-6 shadow-sm">
               <h3 className="text-lg font-medium mb-4">Active Wallets</h3>
-              {loadApiData && !networkStats ? (
+              {!networkStats ? (
                 <div className="flex flex-col items-center justify-center h-[120px]">
                   <Spinner size="lg" />
                 </div>
               ) : (
                 <>
-                  <p className="text-xl sm:text-2xl font-[200]">235,116</p>
+                  <p className="text-xl sm:text-2xl font-[200]">{networkStats?.walletAddresses?.toLocaleString() || '0'}</p>
                   <p className="text-sm text-gray-500 dark:text-gray-400 mt-1">Total Addresses</p>
                   <div className="mt-4 pt-[2px] flex justify-center">
                     <button 
@@ -558,6 +577,7 @@ const LandingPage = () => {
               )}
             </div>
           </div>
+
         </div>
 
         </div>

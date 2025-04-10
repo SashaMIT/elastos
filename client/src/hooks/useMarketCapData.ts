@@ -45,8 +45,8 @@ const fetchWithRetry = async (url: string, retries = 3): Promise<Response> => {
   throw new Error('Max retries reached');
 };
 
-export const useMarketCapData = (enabled = false) => {
-  const { data: hashrateData, isLoading: isHashrateLoading, error: hashrateError } = useHashrateData(enabled);
+export const useMarketCapData = () => {
+  const { data: hashrateData, isLoading: isHashrateLoading, error: hashrateError } = useHashrateData();
 
   const fetchMarketCapData = async (): Promise<MarketCapData> => {
     try {
