@@ -7,7 +7,7 @@ interface SupplyData {
   percentageMined: number;
 }
 
-export const useElaSupply = (enabled = true) => {
+export const useElaSupply = (enabled = false) => {
   return useQuery<SupplyData>({
     queryKey: ['elaSupply'],
     queryFn: async () => {

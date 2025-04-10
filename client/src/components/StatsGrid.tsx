@@ -7,7 +7,6 @@ import { useHashrateData } from '@/hooks/useHashrateData';
 import { useMarketCapData } from '@/hooks/useMarketCapData';
 import { useNetworkStats } from '@/hooks/useNetworkStats';
 import { useElaSupply } from '@/hooks/useElaSupply';
-import { Badge } from './ui/badge';
 import { Skeleton } from './ui/skeleton';
 
 export const StatsGrid = () => {
@@ -57,6 +56,9 @@ export const StatsGrid = () => {
     ]);
   };
 
+  // Determine if we're currently loading data
+  const isLoading = loadApiData && (isHashrateLoading || isMarketCapLoading || isNetworkStatsLoading || isSupplyLoading);
+
   return (
     <div className="mx-auto max-w-7xl">
       <div className="flex justify-between items-center mb-6">
@@ -65,9 +67,9 @@ export const StatsGrid = () => {
           variant="outline" 
           onClick={handleRefresh} 
           className="flex items-center gap-2"
-          disabled={isHashrateLoading || isMarketCapLoading || isNetworkStatsLoading || isSupplyLoading}
+          disabled={isLoading}
         >
-          <RefreshCw className={`h-4 w-4 ${(isHashrateLoading || isMarketCapLoading || isNetworkStatsLoading || isSupplyLoading) && 'animate-spin'}`} />
+          <RefreshCw className={`h-4 w-4 ${isLoading && 'animate-spin'}`} />
           {loadApiData ? 'Refresh Stats' : 'Load Live Data'}
         </Button>
       </div>

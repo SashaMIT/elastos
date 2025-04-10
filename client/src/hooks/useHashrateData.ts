@@ -151,7 +151,7 @@ const fetchELAPrice = async (): Promise<{ price: number; change24h: number }> =>
   };
 };
 
-export const useHashrateData = (enabled = true) => {
+export const useHashrateData = (enabled = false) => {
   return useQuery<HashrateData>({
     queryKey: ['hashrate-and-price'],
     queryFn: async () => {

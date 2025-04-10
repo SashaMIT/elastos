@@ -13,7 +13,7 @@ interface StakeResponse {
   jsonrpc: string;
 }
 
-export const useNetworkStats = (enabled = true) => {
+export const useNetworkStats = (enabled = false) => {
   return useQuery<NetworkStats>({
     queryKey: ['networkStats'],
     queryFn: async () => {
