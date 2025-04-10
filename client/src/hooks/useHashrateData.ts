@@ -1,3 +1,4 @@
+
 import { useQuery } from "@tanstack/react-query";
 
 interface HashrateData {
@@ -150,7 +151,7 @@ const fetchELAPrice = async (): Promise<{ price: number; change24h: number }> =>
   };
 };
 
-export const useHashrateData = () => {
+export const useHashrateData = (enabled = true) => {
   return useQuery<HashrateData>({
     queryKey: ['hashrate-and-price'],
     queryFn: async () => {
@@ -194,5 +195,6 @@ export const useHashrateData = () => {
     refetchInterval: 5 * 60 * 1000, // Refetch every 5 minutes
     refetchIntervalInBackground: true,
     retry: MAX_RETRIES,
+    enabled: enabled, // Only run query if enabled is true
   });
 };

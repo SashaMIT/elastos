@@ -1,3 +1,4 @@
+
 import { useQuery } from '@tanstack/react-query';
 import { useHashrateData } from './useHashrateData';
 
@@ -45,8 +46,8 @@ const fetchWithRetry = async (url: string, retries = 3): Promise<Response> => {
   throw new Error('Max retries reached');
 };
 
-export const useMarketCapData = () => {
-  const { data: hashrateData, isLoading: isHashrateLoading, error: hashrateError } = useHashrateData();
+export const useMarketCapData = (enabled = true) => {
+  const { data: hashrateData, isLoading: isHashrateLoading, error: hashrateError } = useHashrateData(enabled);
 
   const fetchMarketCapData = async (): Promise<MarketCapData> => {
     try {
@@ -87,18 +88,6 @@ export const useMarketCapData = () => {
       } catch (error) {
         console.error('Failed to fetch Elastos data from CoinGecko, using fallback calculation:', error);
         
-        // Try alternative API if available (uncomment and configure if you have an alternative)
-        /*
-        try {
-          console.log('Attempting to fetch from alternative API');
-          const alternativeResponse = await fetchWithRetry('YOUR_ALTERNATIVE_API_ENDPOINT');
-          const alternativeData = await alternativeResponse.json();
-          // Process alternative data accordingly
-        } catch (altError) {
-          console.error('Alternative API also failed:', altError);
-        }
-        */
-        
         // Fallback calculation using known supply and current price
         const elaPrice = hashrateData?.elaPrice ?? 0;
         elastosMarketCap = elaPrice * FALLBACK_ELASTOS_SUPPLY;
@@ -132,7 +121,7 @@ export const useMarketCapData = () => {
   return useQuery<MarketCapData>({
     queryKey: ['marketCapData', hashrateData],
     queryFn: fetchMarketCapData,
-    enabled: !isHashrateLoading && !hashrateError,
+    enabled: enabled && !isHashrateLoading && !hashrateError,
     refetchInterval: 300000, // Refetch every 5 minutes
     staleTime: 60000, // Consider data stale after 1 minute
     retry: 3, // Allow 3 retries for the entire query

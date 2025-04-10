@@ -13,7 +13,7 @@ interface StakeResponse {
   jsonrpc: string;
 }
 
-export const useNetworkStats = () => {
+export const useNetworkStats = (enabled = true) => {
   return useQuery<NetworkStats>({
     queryKey: ['networkStats'],
     queryFn: async () => {
@@ -53,6 +53,7 @@ export const useNetworkStats = () => {
       }
     },
     refetchInterval: 300000, // Refetch every 5 minutes
-    staleTime: 60000 // Consider data stale after 1 minute
+    staleTime: 60000, // Consider data stale after 1 minute
+    enabled: enabled
   });
 };
