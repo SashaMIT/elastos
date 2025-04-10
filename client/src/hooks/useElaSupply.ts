@@ -5,7 +5,11 @@ interface ElaSupplyResponse {
   total_supply: number;
 }
 
-export const useElaSupply = () => {
+interface UseElaSupplyOptions {
+  enabled?: boolean;
+}
+
+export const useElaSupply = (options?: UseElaSupplyOptions) => {
   return useQuery<number>({
     queryKey: ['elaSupply'],
     queryFn: async () => {
@@ -26,5 +30,6 @@ export const useElaSupply = () => {
     retry: 3,
     retryDelay: 1000,
     initialData: 25748861, // Provide initial data while loading
+    enabled: options?.enabled !== undefined ? options.enabled : true,
   });
 };

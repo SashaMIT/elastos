@@ -150,7 +150,11 @@ const fetchELAPrice = async (): Promise<{ price: number; change24h: number }> =>
   };
 };
 
-export const useHashrateData = () => {
+interface UseHashrateDataOptions {
+  enabled?: boolean;
+}
+
+export const useHashrateData = (options?: UseHashrateDataOptions) => {
   return useQuery<HashrateData>({
     queryKey: ['hashrate-and-price'],
     queryFn: async () => {
@@ -194,5 +198,7 @@ export const useHashrateData = () => {
     refetchInterval: 5 * 60 * 1000, // Refetch every 5 minutes
     refetchIntervalInBackground: true,
     retry: MAX_RETRIES,
+    // If enabled is explicitly provided, use it; otherwise, default to true
+    enabled: options?.enabled !== undefined ? options.enabled : true,
   });
 };

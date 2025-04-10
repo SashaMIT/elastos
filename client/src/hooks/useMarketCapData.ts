@@ -45,8 +45,14 @@ const fetchWithRetry = async (url: string, retries = 3): Promise<Response> => {
   throw new Error('Max retries reached');
 };
 
-export const useMarketCapData = () => {
-  const { data: hashrateData, isLoading: isHashrateLoading, error: hashrateError } = useHashrateData();
+interface UseMarketCapDataOptions {
+  enabled?: boolean;
+}
+
+export const useMarketCapData = (options?: UseMarketCapDataOptions) => {
+  const { data: hashrateData, isLoading: isHashrateLoading, error: hashrateError } = useHashrateData({
+    enabled: options?.enabled
+  });
 
   const fetchMarketCapData = async (): Promise<MarketCapData> => {
     try {
@@ -132,7 +138,7 @@ export const useMarketCapData = () => {
   return useQuery<MarketCapData>({
     queryKey: ['marketCapData', hashrateData],
     queryFn: fetchMarketCapData,
-    enabled: !isHashrateLoading && !hashrateError,
+    enabled: options?.enabled !== undefined ? options.enabled : (!isHashrateLoading && !hashrateError),
     refetchInterval: 300000, // Refetch every 5 minutes
     staleTime: 60000, // Consider data stale after 1 minute
     retry: 3, // Allow 3 retries for the entire query
