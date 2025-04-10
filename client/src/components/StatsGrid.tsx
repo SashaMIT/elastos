@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import { Card, Text, Metric, Flex, ProgressBar, DonutChart, AreaChart } from '@tremor/react';
 import { Shield, Bitcoin, Clock, LineChart } from 'lucide-react';
 import { useHashrateData } from '@/hooks/useHashrateData';
@@ -6,25 +6,6 @@ import { useElaSupply } from '@/hooks/useElaSupply';
 import { differenceInDays, format } from 'date-fns';
 import { VerifyButton } from '@/components/ui/verify-button'; // Import VerifyButton
 
-
-// Default placeholder data
-const PLACEHOLDER_STATS = {
-  mainchain: {
-    latest_block: {
-      height: 1249876,
-      time: new Date().getTime() / 1000 - 120, // 2 minutes ago
-      hash: "4a5e1e4baab89f3a32518a88c31bc87f618f76673e2cc77ab2127b7afdeda33b",
-      tx_count: 32
-    },
-    mining: {
-      difficulty: 87654321,
-      hashrate: 259200 // PH/s
-    },
-    tx_count_24h: 2851,
-    address_count: 358967,
-    total_utxo_count: 712456
-  }
-};
 
 export function StatsGrid() {
   const { data: hashrateData } = useHashrateData();

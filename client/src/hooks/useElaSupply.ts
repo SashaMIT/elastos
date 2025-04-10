@@ -1,32 +1,35 @@
+
 import { useQuery } from '@tanstack/react-query';
 
-// Default placeholder data
-export const PLACEHOLDER_SUPPLY_DATA = {
-  currentSupply: 25748861,
-  lastUpdated: new Date().toISOString()
-};
+interface ElaSupplyResponse {
+  total_supply: number;
+}
 
-export const useElaSupply = (enableAutoFetch = false) => {
-  const fetchElaSupply = async () => {
-    try {
-      const response = await fetch('https://api.elastos.io/widgets?q=total_supply');
-      const data = await response.json();
+interface UseElaSupplyOptions {
+  enabled?: boolean;
+}
 
-      return {
-        currentSupply: data.total_supply,
-        lastUpdated: new Date().toISOString()
-      };
-    } catch (error) {
-      console.error("Error fetching ELA supply data:", error);
-      throw error;
-    }
-  };
-
-  return useQuery({
+export const useElaSupply = (options?: UseElaSupplyOptions) => {
+  return useQuery<number>({
     queryKey: ['elaSupply'],
-    queryFn: fetchElaSupply,
-    staleTime: 5 * 60 * 1000, // 5 minutes
-    refetchOnWindowFocus: false,
-    enabled: enableAutoFetch, // Only auto-fetch if enableAutoFetch is true
+    queryFn: async () => {
+      try {
+        const response = await fetch('https://api.elastos.io/widgets?q=total_supply');
+        if (!response.ok) {
+          throw new Error('Failed to fetch supply data');
+        }
+        const data: ElaSupplyResponse = await response.json();
+        return data.total_supply || 25748861; // Fallback if API returns 0 or null
+      } catch (error) {
+        console.error('Error fetching ELA supply:', error);
+        return 25748861; // Current supply fallback if API fails
+      }
+    },
+    refetchInterval: 300000, // Refetch every 5 minutes
+    staleTime: 60000, // Consider data stale after 1 minute
+    retry: 3,
+    retryDelay: 1000,
+    initialData: 25748861, // Provide initial data while loading
+    enabled: options?.enabled !== undefined ? options.enabled : true,
   });
 };

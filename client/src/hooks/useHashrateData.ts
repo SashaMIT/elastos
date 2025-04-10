@@ -1,4 +1,4 @@
-import { useQuery } from '@tanstack/react-query';
+import { useQuery } from "@tanstack/react-query";
 
 interface HashrateData {
   bitcoinHashrate: number;
@@ -26,7 +26,7 @@ const fetchWithRetry = async (url: string, options: RequestInit = {}): Promise<R
     try {
       // Create a new AbortController for each attempt
       const controller = new AbortController();
-
+      
       // Set up timeout that will abort the fetch
       const timeoutId = setTimeout(() => {
         try {
@@ -35,9 +35,9 @@ const fetchWithRetry = async (url: string, options: RequestInit = {}): Promise<R
           console.warn("Error when aborting fetch:", e);
         }
       }, timeoutDuration);
-
+      
       console.log(`Attempting fetch for ${url} (attempt ${attempt}/${maxRetries})`);
-
+      
       // Use a try-finally to ensure timeout is cleared
       try {
         const response = await fetch(url, {
@@ -58,7 +58,7 @@ const fetchWithRetry = async (url: string, options: RequestInit = {}): Promise<R
         if (!response.ok) {
           throw new Error(`HTTP error! status: ${response.status}`);
         }
-
+        
         return response;
       } finally {
         // Always clear the timeout
@@ -67,16 +67,16 @@ const fetchWithRetry = async (url: string, options: RequestInit = {}): Promise<R
     } catch (error: any) {
       lastError = error;
       console.error(`Fetch error (attempt ${attempt}/${maxRetries})`, error);
-
+      
       // If we've reached max retries, break out
       if (attempt === maxRetries) break;
-
+      
       // Wait before trying again
       console.log(`Retrying in ${retryDelay * attempt}ms...`);
       await new Promise(resolve => setTimeout(resolve, retryDelay * attempt));
     }
   }
-
+  
   throw lastError || new Error('Max retries exceeded');
 };
 
