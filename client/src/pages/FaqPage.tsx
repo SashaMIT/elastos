@@ -5,7 +5,6 @@ import { StackedCircularFooter } from "@/components/ui/stacked-circular-footer";
 import { LogoCarouselDemo } from "@/components/LogoCarouselDemo";
 import { SEO } from "@/components/SEO"; // Import SEO as a named export
 import { StructuredData } from "@/components/StructuredData"; // Using named import for StructuredData
-import { Helmet } from 'react-helmet';
 
 
 const FaqPage = () => {
@@ -52,22 +51,10 @@ const FaqPage = () => {
 
         <div className="container mx-auto px-4 pt-0 pb-8 bg-[#171717]">
           <div className="w-full max-w-7xl mx-auto px-4 py-0 md:px-8 lg:px-16 xl:px-52 2xl:px-52 mt-0">
-            <Helmet>
-              {/* Google Tag */}
-              <script async src="https://www.googletagmanager.com/gtag/js?id=G-775BN8EH1L"></script>
-              <script>
-                {`
-                  window.dataLayer = window.dataLayer || [];
-                  function gtag(){dataLayer.push(arguments);}
-                  gtag('js', new Date());
-                  gtag('config', 'G-775BN8EH1L');
-                `}
-              </script>
-            </Helmet>
             <SEO 
-              title="Elastos FAQ | Bitcoin-Secured Blockchain Questions & Answers"
-              description="Get answers to frequently asked questions about Elastos' Bitcoin-secured technology, ELA tokenomics, Cyber Republic governance, and World Computer vision."
-              keywords="Elastos FAQ, Bitcoin merged mining, Elastos World Computer, ELA token, Cyber Republic DAO, Web3 infrastructure, blockchain FAQ, decentralized identity, DeFi on Bitcoin"
+              title="Elastos FAQ | Frequently Asked Questions"
+              description="Find answers to the most common questions about Elastos technology, token economics, governance, and ecosystem."
+              keywords="Elastos FAQ, Elastos questions, ELA token, Cyber Republic, blockchain FAQ"
               ogImage="/images/Elastosbanner.jpg"
               canonicalUrl="/faq"
             />
@@ -80,7 +67,7 @@ const FaqPage = () => {
                     "name": "What is Elastos?",
                     "acceptedAnswer": {
                       "@type": "Answer",
-                      "text": "Elastos is a Web3 infrastructure project building a secure, decentralized internet where users own their data and digital assets, secured by Bitcoin's hashpower through merged mining."
+                      "text": "Elastos is a Web3 infrastructure project building a secure, decentralized internet where users own their data and digital assets."
                     }
                   },
                   {
@@ -88,15 +75,7 @@ const FaqPage = () => {
                     "name": "How is Elastos secured?",
                     "acceptedAnswer": {
                       "@type": "Answer",
-                      "text": "Elastos is secured through merged mining with Bitcoin, giving it access to Bitcoin's hashpower without requiring additional energy consumption, making it one of the most secure blockchain platforms."
-                    }
-                  },
-                  {
-                    "@type": "Question",
-                    "name": "What is the ELA token used for?",
-                    "acceptedAnswer": {
-                      "@type": "Answer",
-                      "text": "ELA is the native utility token of the Elastos ecosystem, used for transaction fees, staking, governance voting in the Cyber Republic DAO, and as a store of value secured by Bitcoin's hashrate."
+                      "text": "Elastos is secured through merged mining with Bitcoin, giving it access to Bitcoin's hashpower."
                     }
                   }
                 ]

@@ -1,7 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { SEO } from "@/components/SEO";
-import { Helmet } from 'react-helmet';
-import { WebPageStructuredData } from "@/components/StructuredData";
+import { motion } from "framer-motion";
 import { StackedCircularFooter } from "@/components/ui/stacked-circular-footer";
 import { ScrollToTop } from "@/components/ScrollToTop";
 import { Calendar, CalendarDays, ChevronRight, Clock, ExternalLink, Loader2 } from "lucide-react";
@@ -232,34 +230,10 @@ export function AnnouncementsPage() {
   };
 
   return (
-    <div className="min-h-screen bg-white dark:bg-[#171717] text-black dark:text-white">
-      <Helmet>
-        {/* Google Tag */}
-        <script async src="https://www.googletagmanager.com/gtag/js?id=G-775BN8EH1L"></script>
-        <script>
-          {`
-            window.dataLayer = window.dataLayer || [];
-            function gtag(){dataLayer.push(arguments);}
-            gtag('js', new Date());
-            gtag('config', 'G-775BN8EH1L');
-          `}
-        </script>
-      </Helmet>
-      <SEO 
-        title="Elastos News & Announcements | Bitcoin-Secured Blockchain Updates"
-        description="Stay informed with the latest news, project updates, and ecosystem announcements from Elastos - the Bitcoin-secured infrastructure for Web3 applications."
-        keywords="Elastos news, Bitcoin merged-mining updates, Web3 announcements, blockchain ecosystem news, Elastos BeL2, Cyber Republic updates, ELA token news"
-        ogImage="/images/Elastosbanner.jpg"
-        canonicalUrl="/announcements"
-      />
-      <WebPageStructuredData
-        title="Elastos News & Announcements | Bitcoin-Secured Blockchain Updates"
-        description="Stay informed with the latest news, project updates, and ecosystem announcements from Elastos."
-        url="/announcements"
-        imageUrl="/images/Elastosbanner.jpg"
-      />
+    <div className="min-h-screen bg-white dark:bg-[#171717]">
+      <ScrollToTop />
 
-      {/* Hero section */}
+      {/* Hero Section with Image and Gradient Overlay */}
       <div className="relative w-full h-[500px] overflow-hidden -mt-16">
         <img 
           src="/images/Roadmap/Community crowd.png" 
@@ -268,7 +242,7 @@ export function AnnouncementsPage() {
         />
         {/* Gradient overlay */}
         <div className="absolute inset-0 bg-gradient-to-b from-black/10 via-[#171717]/80 to-[#171717]"></div>
-
+        
         {/* Hero content overlay */}
         <div className="absolute inset-0 flex items-center justify-center">
           <div className="container mx-auto px-4">
@@ -285,7 +259,7 @@ export function AnnouncementsPage() {
           </div>
         </div>
       </div>
-
+      
       {/* Background glows */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <div className="absolute top-1/4 -right-28 w-96 h-96 rounded-full bg-[#F6921A]/10 blur-[120px]"></div>
