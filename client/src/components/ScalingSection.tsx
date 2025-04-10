@@ -142,7 +142,7 @@ export function ScalingSection() {
                 </div>
               </div>
               <div className="text-center md:text-left md:max-w-lg">
-                <div className="flex flex-row items-center gap-2 md:gap-3 mb-3 md:mb-4 justify-center md:justify-start flex-wrap">
+                <div className="flex flex-row items-center gap-2 md:gap-3 mb-3 md:mb-4 justify-center md:justify-start">
                   <h3 className="text-2xl font-bold font-sans">Digital Freedom and Ownership</h3>
                   <span className="px-4 py-1 bg-[#5C8EFF]/10 border border-[#5C8EFF]/30 text-white rounded-full text-xs font-medium whitespace-nowrap">IN PROGRESS</span>
                 </div>
