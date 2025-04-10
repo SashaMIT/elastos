@@ -1,120 +1,204 @@
-import { useState, useEffect, useCallback } from 'react';
+import { useQuery } from "@tanstack/react-query";
 
 interface HashrateData {
-  elastosHashrate: number;
   bitcoinHashrate: number;
-  elaPrice: number;
+  elastosHashrate: number;
   bitcoinPrice: number;
-  elaPriceChange24h: number;
+  elaPrice: number;
   bitcoinPriceChange24h: number;
+  elaPriceChange24h: number;
+  isLoading: boolean;
+  error: Error | null;
 }
 
-export function useHashrateData() {
-  const [data, setData] = useState<HashrateData | null>(null);
-  const [isLoading, setIsLoading] = useState<boolean>(false);
-  const [error, setError] = useState<Error | null>(null);
+const MAX_RETRIES = 3;
+const RETRY_DELAY = 1000;
 
-  // Placeholder values from the landing page
-  const placeholderData: HashrateData = {
-    elastosHashrate: 481,
-    bitcoinHashrate: 924,
-    elaPrice: 1.24,
-    bitcoinPrice: 81728,
-    elaPriceChange24h: 0.5,
-    bitcoinPriceChange24h: 1.2
-  };
+const isMobile = /iPhone|iPad|iPod|Android|webOS|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
 
-  const fetchData = useCallback(async () => {
-    setIsLoading(true);
-    setError(null);
+const fetchWithRetry = async (url: string, options: RequestInit = {}): Promise<Response> => {
+  const maxRetries = 3;
+  const retryDelay = 1000;
+  const timeoutDuration = 10000; // Increased timeout to 10 seconds
+  let lastError: Error | null = null;
 
+  for (let attempt = 1; attempt <= maxRetries; attempt++) {
     try {
-      // Function to retry fetch
-      const fetchWithRetry = async (url: string, maxRetries = 3) => {
-        for (let attempt = 1; attempt <= maxRetries; attempt++) {
-          try {
-            const response = await fetch(url);
-            if (!response.ok) {
-              throw new Error(`HTTP error! status: ${response.status}`);
-            }
-            return await response.json();
-          } catch (e) {
-            console.log(`Fetch error (attempt ${attempt}/${maxRetries})`, e);
-            if (attempt === maxRetries) throw e;
-          }
+      // Create a new AbortController for each attempt
+      const controller = new AbortController();
+      
+      // Set up timeout that will abort the fetch
+      const timeoutId = setTimeout(() => {
+        try {
+          controller.abort();
+        } catch (e) {
+          console.warn("Error when aborting fetch:", e);
         }
-      };
-
-      // Fetch Bitcoin hashrate
-      let bitcoinHashrate = 0;
+      }, timeoutDuration);
+      
+      console.log(`Attempting fetch for ${url} (attempt ${attempt}/${maxRetries})`);
+      
+      // Use a try-finally to ensure timeout is cleared
       try {
-        const bitcoinData = await fetchWithRetry('https://api.minerstat.com/v2/coins?list=BTC&query=%7B%22method%22:%22GET%22,%22isArray%22:true%7D');
-        bitcoinHashrate = bitcoinData[0].network_hashrate / 1e18; // Convert to EH/s
-      } catch (e) {
-        console.error('Failed to fetch Bitcoin hashrate, using default:', e);
-        bitcoinHashrate = placeholderData.bitcoinHashrate;
-      }
+        const response = await fetch(url, {
+          ...options,
+          headers: {
+            'Accept': 'application/json',
+            'Content-Type': 'application/json',
+            // Don't send Origin header as it can cause CORS issues
+            ...options.headers,
+          },
+          mode: 'cors',
+          credentials: 'omit',
+          signal: controller.signal,
+          // Add cache control to avoid caching issues
+          cache: 'no-cache'
+        });
 
-      // Fetch Elastos hashrate
-      let elastosHashrate = 0;
-      try {
-        const elastosData = await fetchWithRetry('https://ela.elastos.io/api/v1/data-statistics');
-        elastosHashrate = elastosData.Hashrate / 1e18; // Convert to EH/s
-      } catch (e) {
-        console.error('Failed to fetch Elastos hashrate, using default:', e);
-        elastosHashrate = placeholderData.elastosHashrate;
+        if (!response.ok) {
+          throw new Error(`HTTP error! status: ${response.status}`);
+        }
+        
+        return response;
+      } finally {
+        // Always clear the timeout
+        clearTimeout(timeoutId);
       }
-
-      // Fetch ELA price from CoinGecko
-      let elaPrice = 0;
-      let elaPriceChange24h = 0;
-      try {
-        const elaMarketData = await fetchWithRetry('https://api.coingecko.com/api/v3/coins/elastos');
-        elaPrice = elaMarketData.market_data.current_price.usd;
-        elaPriceChange24h = elaMarketData.market_data.price_change_percentage_24h;
-      } catch (e) {
-        console.error('Failed to fetch ELA price, using default:', e);
-        elaPrice = placeholderData.elaPrice;
-        elaPriceChange24h = placeholderData.elaPriceChange24h;
-      }
-
-      // Fetch Bitcoin price from CoinGecko
-      let bitcoinPrice = 0;
-      let bitcoinPriceChange24h = 0;
-      try {
-        const bitcoinMarketData = await fetchWithRetry('https://api.coingecko.com/api/v3/coins/bitcoin');
-        bitcoinPrice = bitcoinMarketData.market_data.current_price.usd;
-        bitcoinPriceChange24h = bitcoinMarketData.market_data.price_change_percentage_24h;
-      } catch (e) {
-        console.error('Failed to fetch Bitcoin price, using default:', e);
-        bitcoinPrice = placeholderData.bitcoinPrice;
-        bitcoinPriceChange24h = placeholderData.bitcoinPriceChange24h;
-      }
-
-      setData({
-        elastosHashrate,
-        bitcoinHashrate,
-        elaPrice,
-        bitcoinPrice,
-        elaPriceChange24h,
-        bitcoinPriceChange24h
-      });
-    } catch (e) {
-      if (e instanceof Error) {
-        setError(e);
-      } else {
-        setError(new Error('Unknown error occurred'));
-      }
-      console.error('Error fetching hashrate data:', e);
-    } finally {
-      setIsLoading(false);
+    } catch (error: any) {
+      lastError = error;
+      console.error(`Fetch error (attempt ${attempt}/${maxRetries})`, error);
+      
+      // If we've reached max retries, break out
+      if (attempt === maxRetries) break;
+      
+      // Wait before trying again
+      console.log(`Retrying in ${retryDelay * attempt}ms...`);
+      await new Promise(resolve => setTimeout(resolve, retryDelay * attempt));
     }
-  }, []);
+  }
+  
+  throw lastError || new Error('Max retries exceeded');
+};
+
+const fetchHashrate = async (): Promise<number> => {
+  const response = await fetchWithRetry('https://api.minerstat.com/v2/coins?list=BTC&query=%7B%22method%22:%22GET%22,%22isArray%22:true%7D');
+  const data = await response.json();
+
+  if (!data?.[0]?.network_hashrate) {
+    throw new Error('Invalid API response: network_hashrate not found');
+  }
+
+  // Convert to EH/s
+  const hashrate = Number(data[0].network_hashrate) / 1e18;
+  return hashrate;
+};
+
+const fetchElastosHashrate = async (): Promise<number> => {
+  try {
+    const response = await fetch('https://ela.elastos.io/api/v1/data-statistics', {
+      method: 'GET',
+      headers: {
+        'Accept': 'application/json'
+      },
+      cache: 'no-cache'
+    });
+
+    if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
+
+    const data = await response.json();
+    if (!data.networkHashps) {
+      throw new Error('Invalid API response: networkHashps not found');
+    }
+
+    const hashrate = Number(data.networkHashps) / 1e18;
+    return hashrate;
+  } catch (error) {
+    console.error('Elastos hashrate fetch error:', error);
+    throw error; // Let React Query handle retries
+  }
+};
+
+const fetchBitcoinPrice = async (): Promise<{ price: number; change24h: number }> => {
+  const response = await fetchWithRetry(
+    'https://api.coingecko.com/api/v3/simple/price?ids=bitcoin&vs_currencies=usd&include_24hr_change=true'
+  );
+  const data = await response.json();
+
+  if (!data.bitcoin?.usd) {
+    throw new Error('Invalid Bitcoin price data');
+  }
 
   return {
-    data: data || placeholderData,
-    isLoading,
-    error,
-    fetchData
+    price: data.bitcoin.usd,
+    change24h: Number((data.bitcoin.usd_24h_change ?? 0).toFixed(2))
   };
+};
+
+const fetchELAPrice = async (): Promise<{ price: number; change24h: number }> => {
+  const response = await fetchWithRetry(
+    'https://api.coingecko.com/api/v3/simple/price?ids=elastos&vs_currencies=usd&include_24hr_change=true'
+  );
+  const data = await response.json();
+
+  if (!data.elastos?.usd) {
+    throw new Error('Invalid ELA price data');
+  }
+
+  return {
+    price: data.elastos.usd,
+    change24h: Number((data.elastos.usd_24h_change ?? 0).toFixed(2))
+  };
+};
+
+interface UseHashrateDataOptions {
+  enabled?: boolean;
 }
+
+export const useHashrateData = (options?: UseHashrateDataOptions) => {
+  return useQuery<HashrateData>({
+    queryKey: ['hashrate-and-price'],
+    queryFn: async () => {
+      try {
+        const [bitcoinHashrate, bitcoinPriceData, elaPriceData, elastosHashrate] = await Promise.all([
+          fetchHashrate(),
+          fetchBitcoinPrice(),
+          fetchELAPrice(),
+          fetchElastosHashrate()
+        ]);
+
+        // Validate elastosHashrate
+        if (!elastosHashrate || elastosHashrate <= 0) {
+          throw new Error('Invalid Elastos hashrate value');
+        }
+
+        return {
+          bitcoinHashrate,
+          elastosHashrate,
+          bitcoinPrice: bitcoinPriceData.price,
+          elaPrice: elaPriceData.price,
+          bitcoinPriceChange24h: bitcoinPriceData.change24h,
+          elaPriceChange24h: elaPriceData.change24h,
+          isLoading: false,
+          error: null
+        };
+      } catch (error) {
+        console.error('Failed to fetch data:', error);
+        return {
+          bitcoinHashrate: 0,
+          elastosHashrate: 0,
+          bitcoinPrice: 0,
+          elaPrice: 0,
+          bitcoinPriceChange24h: 0,
+          elaPriceChange24h: 0,
+          isLoading: false,
+          error: error as Error
+        }; // Return error state instead of throwing
+      }
+    },
+    refetchInterval: 5 * 60 * 1000, // Refetch every 5 minutes
+    refetchIntervalInBackground: true,
+    retry: MAX_RETRIES,
+    // If enabled is explicitly provided, use it; otherwise, default to true
+    enabled: options?.enabled !== undefined ? options.enabled : true,
+  });
+};
