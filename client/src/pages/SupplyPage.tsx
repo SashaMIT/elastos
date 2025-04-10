@@ -17,7 +17,6 @@ import {
   DialogTitle,
 } from "../components/ui/dialog";
 import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip as RechartsTooltip, Legend, ResponsiveContainer, ReferenceLine } from 'recharts';
-import { Button } from '../components/ui/button';
 import { Slider } from '../components/ui/slider';
 import { StackedCircularFooter } from '../components/ui/stacked-circular-footer'; // Added import
 
