@@ -5,6 +5,8 @@ import { Card, CardContent } from '@/components/ui/card';
 import { Dots_v2 } from "@/components/ui/spinner";
 import { StackedCircularFooter } from "@/components/ui/stacked-circular-footer";
 import { SEO } from '@/components/SEO'; // Import the SEO component
+import { Helmet } from 'react-helmet';
+import { WebPageStructuredData } from '@/components/StructuredData';
 
 const SecurityPage = () => {
   const { data: hashrateData, isLoading, error } = useHashrateData();
@@ -27,13 +29,31 @@ const SecurityPage = () => {
 
   return (
     <div className="min-h-screen bg-background dark:bg-[#171717] p-4 sm:p-6 md:p-8">
+      <Helmet>
+        {/* Google Tag */}
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-775BN8EH1L"></script>
+        <script>
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-775BN8EH1L');
+          `}
+        </script>
+      </Helmet>
       <SEO 
-        title="Elastos Security | Bitcoin-Level Protection"
-        description="Discover how Elastos leverages Bitcoin's hashpower through merged mining to create one of the most secure blockchain networks in existence."
-        keywords="Elastos security, Bitcoin merged mining, blockchain security, hashrate, ELA security"
+        title="Elastos Security | Bitcoin-Level Protection through Merged Mining"
+        description="Discover how Elastos leverages Bitcoin's immense hashpower through merged mining to create one of the most secure blockchain networks in existence, providing unparalleled security without additional energy costs."
+        keywords="Elastos security, Bitcoin merged mining, blockchain security, hashrate, ELA security, Bitcoin hashpower, Bitcoin-backed security, secure blockchain, Elastos protection"
         ogImage="/images/Security.png"
         canonicalUrl="/security"
-      /> {/* Added SEO component here */}
+      />
+      <WebPageStructuredData
+        title="Elastos Security | Bitcoin-Level Protection"
+        description="Discover how Elastos leverages Bitcoin's hashpower through merged mining to create one of the most secure blockchain networks in existence."
+        url="/security"
+        imageUrl="/images/Security.png"
+      />
       {isError ? (
         <Card className="max-w-4xl mx-auto dark:bg-[#151515] dark:border-neutral-800">
           <CardContent className="p-8 text-center">
