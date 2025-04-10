@@ -83,7 +83,7 @@ export function ScalingSection() {
 
         {activeTab === 'public' ? (
           <div className="space-y-20 md:space-y-20">
-            <div className="grid grid-cols-1 md:grid-cols-2 items-center gap-4 md:gap-12">
+            <div className="grid grid-cols-1 md:grid-cols-2 items-center gap-0 md:gap-12">
               <div className="flex justify-center mb-2 md:mb-0">
                 <div className="w-48 h-48 md:w-60 md:h-60 lg:w-68 lg:h-68 xl:w-76 xl:h-76 relative">
                   <img src="/images/Glass Circles1.png" alt="Elastos Mainchain" className="w-full h-full object-contain" />
@@ -97,7 +97,7 @@ export function ScalingSection() {
                 <p className="text-muted-foreground mb-4 md:mb-6">
                   We anchor our security to Bitcoin's proof-of-work hashpower and utilize multiple sidechains for specialized functions.
                 </p>
-                <div className="flex gap-4">
+                <div className="flex gap-0">
                   <Link href="/stats">
                     <button className="w-8 h-8 rounded-full border border-[#F6921A] bg-[#F6921A]/30 flex items-center justify-center transition-all hover:bg-[#F6921A]/50 hover:scale-110">
                       <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -109,7 +109,7 @@ export function ScalingSection() {
               </div>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 items-center gap-4 md:gap-12">
+            <div className="grid grid-cols-1 md:grid-cols-2 items-center gap-0 md:gap-12">
               <div className="order-2 md:order-1 md:max-w-lg md:pl-6">
                 <div className="flex items-center gap-3 mb-3 md:mb-4">
                   <h3 className="text-2xl font-bold font-sans">Financial Empowerment</h3>
@@ -135,7 +135,7 @@ export function ScalingSection() {
               </div>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 items-center gap-4 md:gap-12">
+            <div className="grid grid-cols-1 md:grid-cols-2 items-center gap-0 md:gap-12">
               <div className="flex justify-center mb-2 md:mb-0">
                 <div className="w-48 h-48 md:w-60 md:h-60 lg:w-68 lg:h-68 xl:w-76 xl:h-76 relative">
                   <img src="/images/Glass Circles3.png" alt="DePIN Network" className="w-full h-full object-contain" />
