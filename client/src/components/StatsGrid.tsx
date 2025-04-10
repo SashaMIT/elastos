@@ -10,8 +10,8 @@ import { useElaSupply } from '@/hooks/useElaSupply';
 import { Skeleton } from './ui/skeleton';
 
 export const StatsGrid = () => {
-  // State to track if data should be loaded from APIs
-  const [loadApiData, setLoadApiData] = useState(false);
+  // State to track if data should be loaded from APIs - initialize to true if on stats page
+  const [loadApiData, setLoadApiData] = useState(window.location.pathname.includes('/stats'));
   
   // Only enable these queries when loadApiData is true
   const { data: hashrateData, isLoading: isHashrateLoading, refetch: refetchHashrate } = useHashrateData(loadApiData);
@@ -64,9 +64,9 @@ export const StatsGrid = () => {
       <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-3 mb-6">
         <h2 className="text-xl font-[300]">Queen ELA: Married to Bitcoin since 2018.</h2>
         <Button 
-          variant="outline" 
+          variant={loadApiData ? "outline" : "default"}
           onClick={handleRefresh} 
-          className="flex items-center gap-2 whitespace-nowrap"
+          className="flex items-center gap-2 whitespace-nowrap bg-orange-500/80 hover:bg-orange-500 text-white dark:text-white"
           disabled={isLoading}
         >
           <RefreshCw className={`h-4 w-4 ${isLoading && 'animate-spin'}`} />
