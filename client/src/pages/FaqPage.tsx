@@ -5,6 +5,7 @@ import { StackedCircularFooter } from "@/components/ui/stacked-circular-footer";
 import { LogoCarouselDemo } from "@/components/LogoCarouselDemo";
 import { SEO } from "@/components/SEO"; // Import SEO as a named export
 import { StructuredData } from "@/components/StructuredData"; // Using named import for StructuredData
+import { Helmet } from "react-helmet";
 
 
 const FaqPage = () => {
@@ -20,6 +21,18 @@ const FaqPage = () => {
 
   return (
     <>
+      <Helmet>
+        {/* Google Tag */}
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-775BN8EH1L"></script>
+        <script>
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-775BN8EH1L');
+          `}
+        </script>
+      </Helmet>
       {isLoading && <CenteredSpinner />}
       <div className="relative w-full">
         {/* Full-width hero image with gradient overlay */}
