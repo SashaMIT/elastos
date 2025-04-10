@@ -45,12 +45,12 @@ const HomePage = () => {
     localStorage.setItem('hasSeenDisclaimer', 'true');
     setShowDisclaimer(false);
   };
-  const bitcoinPrice = hashrateData?.bitcoinPrice ?? 65000; // Fallback BTC price
-  const bitcoinHashrate = hashrateData?.bitcoinHashrate ?? 600; // Fallback BTC hashrate in EH/s
-  const elaPrice = hashrateData?.elaPrice ?? 3.50; // Fallback ELA price
-  const elastosHashrate = hashrateData?.elastosHashrate ?? 12; // Fallback ELA hashrate in EH/s
-  const bitcoinPriceChange = hashrateData?.bitcoinPriceChange24h ?? 0.75; // Fallback BTC price change
-  const elaPriceChange = hashrateData?.elaPriceChange24h ?? 2.5; // Fallback ELA price change
+  const bitcoinPrice = hashrateData?.bitcoinPrice ?? 0;
+  const bitcoinHashrate = hashrateData?.bitcoinHashrate ?? 0;
+  const elaPrice = hashrateData?.elaPrice ?? 0;
+  const elastosHashrate = hashrateData?.elastosHashrate ?? 0;
+  const bitcoinPriceChange = hashrateData?.bitcoinPriceChange24h ?? 0;
+  const elaPriceChange = hashrateData?.elaPriceChange24h ?? 0;
 
   const formatMarketCap = (value: number, isElastos = false) => {
     if (isElastos) return `$${(value / 1e6).toFixed(2)}M`;
@@ -237,7 +237,7 @@ const stats: StatItem[] = [
         </div>
 
       </div>
-
+      
       {/* Footer */}
       <div className="mt-12 w-full">
         <StackedCircularFooter />
