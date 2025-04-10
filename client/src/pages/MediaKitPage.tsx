@@ -9,6 +9,9 @@ import { ColorPaletteCard } from "@/components/media-kit/ColorPaletteCard";
 import { FontCard } from "@/components/media-kit/FontCard";
 import { logos, colorPalettes, fonts } from "@/lib/media-kit-utils";
 import { StackedCircularFooter } from "@/components/ui/stacked-circular-footer";
+import { SEO } from "@/components/SEO";
+import { Helmet } from 'react-helmet';
+import { WebPageStructuredData } from "@/components/StructuredData";
 
 export function MediaKitPage() {
   const [downloading, setDownloading] = useState(false);
@@ -36,6 +39,31 @@ export function MediaKitPage() {
 
   return (
     <div className="min-h-screen bg-[#171717] text-white">
+      <Helmet>
+        {/* Google Tag */}
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-775BN8EH1L"></script>
+        <script>
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-775BN8EH1L');
+          `}
+        </script>
+      </Helmet>
+      <SEO 
+        title="Elastos Media Kit | Official Brand Assets and Guidelines"
+        description="Access the official Elastos brand assets, logo files, color palettes, typography, and design guidelines for consistent representation of the Bitcoin-secured Web3 ecosystem."
+        keywords="Elastos brand, Elastos logo, Elastos media kit, Web3 branding, blockchain brand assets, Elastos design guidelines, brand guidelines, Elastos typography, Elastos colors"
+        ogImage="/images/Roadmap/Community crowd.png"
+        canonicalUrl="/media-kit"
+      />
+      <WebPageStructuredData
+        title="Elastos Media Kit | Official Brand Assets and Guidelines"
+        description="Access the official Elastos brand assets, logo files, color palettes, typography, and design guidelines."
+        url="/media-kit"
+        imageUrl="/images/Roadmap/Community crowd.png"
+      />
       {/* Hero Section with Image and Gradient Overlay */}
       <div className="relative w-full h-[500px] overflow-hidden -mt-16">
         <img 

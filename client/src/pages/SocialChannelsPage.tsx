@@ -14,6 +14,9 @@ import {
 import { StackedCircularFooter } from "@/components/ui/stacked-circular-footer";
 import { LogoCarouselDemo } from "@/components/LogoCarouselDemo";
 import { VerifyButton } from "@/components/ui/verify-button";
+import { SEO } from "@/components/SEO";
+import { Helmet } from 'react-helmet';
+import { WebPageStructuredData } from "@/components/StructuredData";
 
 const SocialChannelsPage: React.FC = () => {
   const socialChannels = [
@@ -93,6 +96,31 @@ const SocialChannelsPage: React.FC = () => {
 
   return (
     <div className="min-h-screen bg-[#171717]">
+      <Helmet>
+        {/* Google Tag */}
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-775BN8EH1L"></script>
+        <script>
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-775BN8EH1L');
+          `}
+        </script>
+      </Helmet>
+      <SEO 
+        title="Elastos Community Channels | Join Our Global Bitcoin-Secured Web3 Community"
+        description="Connect with the Elastos community through official channels including Twitter, Telegram, Discord, and more. Stay updated on the latest developments in Bitcoin-secured Web3."
+        keywords="Elastos community, Elastos social media, Elastos Telegram, Elastos Discord, Elastos Twitter, Web3 community, blockchain community, Bitcoin-secured network"
+        ogImage="/images/Roadmap/Community crowd.png"
+        canonicalUrl="/social-channels"
+      />
+      <WebPageStructuredData
+        title="Elastos Community Channels | Join Our Global Bitcoin-Secured Web3 Community"
+        description="Connect with the Elastos community through official channels including Twitter, Telegram, Discord, and more."
+        url="/social-channels"
+        imageUrl="/images/Roadmap/Community crowd.png"
+      />
       {/* Hero Section with Image and Gradient Overlay */}
       <div className="relative w-full h-[350px] overflow-hidden -mt-16">
         <img 
