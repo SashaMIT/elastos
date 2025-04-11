@@ -263,3 +263,30 @@
     font-weight: 200 !important;
   }
 }
+
+/* Additional global styles */
+.dark .dark\:bg-dark {
+  background-color: #09090b;
+}
+
+/* Mobile video player fixes */
+@media (max-width: 768px) {
+  .video-player-mobile {
+    position: relative;
+    z-index: 10;
+    width: 100%;
+    max-width: 95%;
+    margin: 0 auto;
+  }
+
+  /* Fix z-index stacking for video elements */
+  iframe, video {
+    z-index: 5;
+    position: relative;
+  }
+
+  /* Ensure background elements don't overlap important content */
+  .bg-cells-container {
+    z-index: 0;
+  }
+}

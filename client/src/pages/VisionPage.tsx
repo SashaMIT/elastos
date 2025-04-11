@@ -50,9 +50,9 @@ export function VisionPage() {
           </div>
           
           {/* Completely separate section for mobile video player, well below the mission text */}
-          <div className="block md:hidden w-full py-40 border-t border-gray-800 mt-48">
-            <h2 className="font-[200] text-xl mb-12 text-center text-black dark:text-white">Watch Our Video</h2>
-            <div className="mt-16">
+          <div className="block md:hidden w-full py-20 border-t border-gray-800 mt-32 mb-20">
+            <h2 className="font-[200] text-xl mb-8 text-center text-black dark:text-white">Watch Our Video</h2>
+            <div className="mt-4 px-4 relative z-10">
               <VideoPlayerDemo />
             </div>
           </div>
