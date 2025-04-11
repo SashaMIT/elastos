@@ -152,16 +152,17 @@ export function FeaturesCarousel() {
                   "backdrop-blur-lg border border-white/10",
                   isMobile ? "h-[320px]" : "h-[400px]"
                 )}>
+                  <div className="absolute inset-0 bg-black/30 z-[1]"></div>
                   {/* Always render all videos but use lazy loading for non-visible slides */}
                   {feature.youtubeEmbed ? (
                     <iframe 
                       src={`${feature.video.replace('youtu.be/', 'youtube.com/embed/')}?autoplay=1&mute=1&loop=1&playlist=${feature.video.split('/').pop()}&controls=0`}
-                      className={`absolute inset-0 w-full h-full object-cover transform-gpu ${
+                      className={`absolute inset-0 w-full h-full object-cover transform-gpu z-0 ${
                         isMobile ? (
-                          index === 0 ? "scale-[1.75]" : // Elacity - much more zoom on mobile
-                          index === 1 ? "scale-[2.0]" : // BeL2 - much more zoom on mobile
-                          index === 2 ? "scale-[2.25]" : // Essentials - much more zoom on mobile
-                          "scale-[2.0]"                 // Cyber Republic - much more zoom on mobile
+                          index === 0 ? "scale-[1.6]" : // Elacity - reduced zoom on mobile
+                          index === 1 ? "scale-[1.7]" : // BeL2 - reduced zoom on mobile
+                          index === 2 ? "scale-[1.8]" : // Essentials - reduced zoom on mobile
+                          "scale-[1.7]"                 // Cyber Republic - reduced zoom on mobile
                         ) : (
                           index === 0 ? "scale-125" : // Elacity - standard zoom
                           index === 1 ? "scale-150" : // BeL2 - more zoom
@@ -183,7 +184,7 @@ export function FeaturesCarousel() {
                       loading="lazy"
                       preload="metadata"
                       fetchPriority={index === currentIndex ? "high" : "low"}
-                      className={`absolute inset-0 w-full h-full object-cover ${isMobile ? 'scale-[1.75]' : 'scale-125'} transform-gpu ${!isVisible ? 'opacity-0' : 'opacity-100'}`}
+                      className={`absolute inset-0 w-full h-full object-cover ${isMobile ? 'scale-[1.6]' : 'scale-125'} transform-gpu z-0 ${!isVisible ? 'opacity-0' : 'opacity-100'}`}
                       poster={feature.poster}
                       onEnded={(e) => {
                         // When video ends, show poster image
@@ -196,11 +197,11 @@ export function FeaturesCarousel() {
                       <source src={feature.video} type="video/mp4" />
                     </video>
                   )}
-                  <div className="absolute inset-0 p-8 text-white">
+                  <div className="absolute inset-0 p-8 text-white z-10">
                     <div className="h-full flex flex-col">
                       <div className="flex-grow" />
                       <div className="flex flex-col sm:flex-row justify-between items-center gap-4">
-                        <h2 className="text-sm sm:text-xl md:text-2xl lg:text-3xl font-bold max-w-full sm:max-w-[70%] text-center sm:text-left">{feature.title}</h2>
+                        <h2 className="text-sm sm:text-xl md:text-2xl lg:text-3xl font-bold max-w-full sm:max-w-[70%] text-center sm:text-left bg-black/40 p-2 rounded-lg backdrop-blur-sm">{feature.title}</h2>
                         <a 
                           href={
                             index === 0 ? "https://labs.ela.city" : 
@@ -210,7 +211,7 @@ export function FeaturesCarousel() {
                           } 
                           target={index === 0 || index === 1 ? "_blank" : "_self"}
                           rel={index === 0 || index === 1 ? "noopener noreferrer" : ""}
-                          className="px-4 py-2 bg-[#21293a] text-white rounded-full font-[200] transition-all flex flex-row items-center gap-2 border border-[rgba(92,142,255,0.25)] text-sm min-w-[130px] hover:bg-[#2a3548]"
+                          className="px-4 py-2 bg-[#21293a] text-white rounded-full font-[200] transition-all flex flex-row items-center gap-2 border border-[rgba(92,142,255,0.25)] text-sm min-w-[130px] hover:bg-[#2a3548] backdrop-blur-sm"
                         >
                           <span>{feature.buttonText}</span>
                           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 35 34" fill="none">
