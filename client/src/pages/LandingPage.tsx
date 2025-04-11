@@ -313,10 +313,13 @@ const LandingPage = () => {
             autoPlay
             muted
             playsInline
+            loop={false}
             preload="metadata"
             poster="/images/Hero image.png"
             onEnded={(e) => {
               // When video ends, set poster image to display
+              e.currentTarget.pause();
+              e.currentTarget.currentTime = 0;
               e.currentTarget.load();
               e.currentTarget.poster = "/images/Hero image.png";
             }}
