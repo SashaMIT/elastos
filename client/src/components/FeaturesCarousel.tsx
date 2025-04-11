@@ -17,28 +17,27 @@ const features = [
     buttonText: "Learn More",
     video: "https://youtu.be/mq7TnEK3P4I",
     youtubeEmbed: true,
-    poster: "/posters/ElacityTeam.jpg" // Add poster image path
+    poster: "/images/Home Page Carousel/ElacityTea.jpeg" // Updated to correct path
   },
   {
     title: "BeL2. Unlocking Bitcoins Value with Native Bitcoin DeFi using ELA-backed Nodes.",
     buttonText: "Learn More",
     video: "https://youtu.be/yuj3h4AOBuM",
     youtubeEmbed: true,
-    poster: "/posters/BeL2Team.jpg" // Add poster image path
+    poster: "/images/Home Page Carousel/BeL2Tea.jpeg" // Updated to correct path
   },
   {
     title: "Essentials Wallet. Stake ELA and Earn APY, Access dApps and Explore Elastos.",
     buttonText: "Learn More",
     video: "https://youtu.be/OCwAsCfgOFg",
     youtubeEmbed: true,
-    poster: "/posters/EssentialsTeam.jpg" // Add poster image path
+    poster: "/images/Home Page Carousel/EssentialsTea.jpeg" // Updated to correct path
   },
   {
     title: "Cyber Republic: Our community-governed DAO, powered by merged-mined ELA.",
     buttonText: "Learn More",
-    video: "https://youtu.be/RpIFm57cLt4",
-    youtubeEmbed: true,
-    poster: "/posters/CyberRepublicTeam.jpg" // Add poster image path
+
+    poster: "/images/Home Page Carousel/CyberRepublicTea.jpeg" // Updated to correct path
   },
 ];
 
