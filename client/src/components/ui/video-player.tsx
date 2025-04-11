@@ -50,7 +50,6 @@ interface VideoPlayerProps {
   src: string;
   poster?: string;
   preventLoop?: boolean;
-  autoPlay?: boolean;
 }
 
 const VideoPlayer = ({ src, poster = "/images/Elastosvideoimage.png", preventLoop = false }: VideoPlayerProps) => {
