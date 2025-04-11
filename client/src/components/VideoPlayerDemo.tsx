@@ -14,7 +14,7 @@ const VideoPlayerDemo = () => {
     
     return (
         <div className={`container mx-auto w-full ${isMobile ? 'px-4 video-player-mobile mt-16' : ''}`}>
-            <div className={`w-full ${isMobile ? 'max-w-[95%] mx-auto' : ''}`}>
+            <div className={`w-full ${isMobile ? 'max-w-full mx-auto' : ''}`}>
                 {!videoLoaded ? (
                     <div 
                         className="relative w-full rounded-xl overflow-hidden cursor-pointer shadow-lg border border-gray-800/20"
@@ -27,7 +27,7 @@ const VideoPlayerDemo = () => {
                         />
                         <div className="absolute inset-0 flex items-center justify-center bg-black/30">
                             <div className="bg-white/10 backdrop-blur-sm p-4 rounded-full">
-                                <Play className={`${isMobile ? 'w-10 h-10' : 'w-12 h-12'} text-white`} />
+                                <Play className={`${isMobile ? 'w-12 h-12' : 'w-12 h-12'} text-white`} />
                             </div>
                             <span className="absolute bottom-4 text-white font-medium">
                                 Click to play
