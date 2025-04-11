@@ -81,8 +81,8 @@ app.use((req, res, next) => {
     const now = Date.now();
     const lastRequest = requestLimiter.videoRequests.get(requestKey) || 0;
     
-    // Allow only one video request per 5 minutes per IP per video
-    const rateLimitWindow = 5 * 60 * 1000; // 5 minutes
+    // Allow only one video request per 30 minutes per IP per video
+    const rateLimitWindow = 30 * 60 * 1000; // 30 minutes
     
     if (!isValidReferer) {
       // Block hotlinking
@@ -100,10 +100,10 @@ app.use((req, res, next) => {
     // Update rate limiter
     requestLimiter.videoRequests.set(requestKey, now);
     
-    // Set more restrictive cache for videos (1 hour)
-    const oneHourInSeconds = 60 * 60;
-    res.setHeader('Cache-Control', `public, max-age=${oneHourInSeconds}`);
-    res.setHeader('Expires', new Date(Date.now() + oneHourInSeconds * 1000).toUTCString());
+    // Add strong caching headers for videos (1 week)
+    const oneWeekInSeconds = 7 * 24 * 60 * 60;
+    res.setHeader('Cache-Control', `public, max-age=${oneWeekInSeconds}, immutable`);
+    res.setHeader('Expires', new Date(Date.now() + oneWeekInSeconds * 1000).toUTCString());
   } else if (/\.(jpg|jpeg|png|gif|ico|css|js|svg|webp|woff|woff2|ttf|eot)$/i.test(req.path)) {
     // Set expires headers for non-video static content (1 week)
     const oneWeekInSeconds = 60 * 60 * 24 * 7;
