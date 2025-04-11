@@ -18,28 +18,28 @@ const features = [
     // Store YouTube links for future reference but don't use them now
     // video: "https://youtu.be/mq7TnEK3P4I",
     youtubeEmbed: false,
-    poster: "/images/Carousel/ElacityTea.png"
+    poster: "/images/ElacityTea.png"
   },
   {
     title: "BeL2. Unlocking Bitcoins Value with Native Bitcoin DeFi using ELA-backed Nodes.",
     buttonText: "Learn More",
     // video: "https://youtu.be/yuj3h4AOBuM",
     youtubeEmbed: false,
-    poster: "/images/Carousel/BeL2Tea.png"
+    poster: "/images/BeL2Tea.png"
   },
   {
     title: "Essentials Wallet. Stake ELA and Earn APY, Access dApps and Explore Elastos.",
     buttonText: "Learn More",
     // video: "https://youtu.be/OCwAsCfgOFg",
     youtubeEmbed: false,
-    poster: "/images/Carousel/EssentialsTea.png"
+    poster: "/images/EssentialsTea.png"
   },
   {
     title: "Cyber Republic: Our community-governed DAO, powered by merged-mined ELA.",
     buttonText: "Learn More",
     // video: "https://youtu.be/RpIFm57cLt4",
     youtubeEmbed: false,
-    poster: "/images/Carousel/CyberRepublicTea.png"
+    poster: "/images/CyberRepublicTea.png"
   },
 ];
 
@@ -162,12 +162,12 @@ export function FeaturesCarousel() {
                   isMobile ? "h-[320px]" : "h-[400px]"
                 )}>
                   <div className="absolute inset-0 bg-black/30 z-[1]"></div>
-                  {/* Using images from Carousel folder */}
+                  {/* Using absolute paths to ensure proper loading */}
                   <img 
-                    src={index === 0 ? "/images/Carousel/ElacityTea.png" : 
-                         index === 1 ? "/images/Carousel/BeL2Tea.png" : 
-                         index === 2 ? "/images/Carousel/EssentialsTea.png" : 
-                         "/images/Carousel/CyberRepublicTea.png"}
+                    src={index === 0 ? "/images/ElacityTea.png" : 
+                         index === 1 ? "/images/BeL2Tea.png" : 
+                         index === 2 ? "/images/EssentialsTea.png" : 
+                         "/images/CyberRepublicTea.png"}
                     alt={`${index === 0 ? 'Elacity' : index === 1 ? 'BeL2' : index === 2 ? 'Essentials' : 'Cyber Republic'} Preview`}
                     className={`absolute inset-0 w-full h-full object-cover transform-gpu z-0 ${
                       isMobile ? (
