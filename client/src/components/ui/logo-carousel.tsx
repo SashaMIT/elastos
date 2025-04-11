@@ -52,8 +52,7 @@ const distributeLogos = (allLogos: Logo[], columnCount: number): Logo[][] => {
 
 const LogoColumn: React.FC<LogoColumnProps> = React.memo(
   ({ logos, index, currentTime }) => {
-    const { theme } = useTheme();
-    const isDark = theme === 'dark';
+    // Removed theme checking as we're only using dark mode
     const cycleInterval = 2000;
     const columnDelay = index * 200;
     
