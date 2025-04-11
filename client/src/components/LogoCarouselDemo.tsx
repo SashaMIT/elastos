@@ -1,3 +1,4 @@
+
 "use client";
 
 import React, { useMemo } from "react";
@@ -6,190 +7,185 @@ import { useTheme } from "@/hooks/useTheme";
 
 export function LogoCarouselDemo() {
   const { theme } = useTheme();
+  const isDark = theme === 'dark';
 
   // Define logos array using useMemo to prevent recreation on each render
+  // Using a more efficient approach to handle light/dark mode images
   const logos = useMemo(() => [
     {
       name: "Glide",
-      id: 9,
+      id: "glide",
       url: "https://glidefinance.io/swap",
       img: () => (
-        <img
-          src="/images/glide.png"
-          alt="Glide - Decentralized Exchange"
-          loading="lazy"
-          width="120"
-          height="36"
-          className="h-9 w-auto object-contain hover:opacity-80 transition-opacity cursor-pointer"
-          fetchpriority="low"
-        />
+        <picture>
+          <img
+            src="/images/glide.png"
+            alt="Glide - Decentralized Exchange"
+            loading="lazy"
+            width="120"
+            height="36"
+            className="h-9 w-auto object-contain hover:opacity-80 transition-opacity cursor-pointer"
+            fetchpriority="low"
+          />
+        </picture>
       ),
     },
     {
       name: "Kucoin",
-      id: 2,
+      id: "kucoin",
       url: "https://www.kucoin.com/trade/ELA-USDT?rcode=e21sNJ",
       img: () => (
-        <img
-          src="/images/Kucoin.png"
-          alt="Kucoin - Crypto Exchange"
-          loading="lazy"
-          width="140" 
-          height="36"
-          className="h-9 w-auto object-contain hover:opacity-80 transition-opacity cursor-pointer"
-          fetchpriority="low"
-        />
+        <picture>
+          <img
+            src="/images/Kucoin.png"
+            alt="Kucoin - Crypto Exchange"
+            loading="lazy"
+            width="140" 
+            height="36"
+            className="h-9 w-auto object-contain hover:opacity-80 transition-opacity cursor-pointer"
+            fetchpriority="low"
+          />
+        </picture>
       ),
     },
     {
       name: "Coinbase",
-      id: 1,
+      id: "coinbase",
       url: "https://www.coinbase.com/en-gb/advanced-trade/spot/ELA-USD",
       img: () => (
         <>
-          {/* Light mode image */}
-          <img
-            src="/images/Coinbase.png"
-            alt="Coinbase - Cryptocurrency Exchange"
-            width="140"
-            height="28"
-            loading="lazy"
-            className="block dark:hidden h-7 w-auto object-contain hover:opacity-80 transition-opacity cursor-pointer"
-            fetchpriority="high"
-          />
-          {/* Dark mode image */}
-          <img
-            src="/images/Coinbase-w.png"
-            alt="Coinbase - Cryptocurrency Exchange"
-            width="140"
-            height="28"
-            loading="lazy"
-            className="hidden dark:block h-7 w-auto object-contain hover:opacity-80 transition-opacity cursor-pointer"
-            fetchpriority="high"
-          />
+          <picture>
+            <source 
+              media="(prefers-color-scheme: dark)" 
+              srcSet="/images/Coinbase-w.png" 
+            />
+            <img
+              src="/images/Coinbase.png"
+              alt="Coinbase - Cryptocurrency Exchange"
+              width="140"
+              height="28"
+              loading="lazy"
+              className="h-7 w-auto object-contain hover:opacity-80 transition-opacity cursor-pointer"
+              fetchpriority="high"
+            />
+          </picture>
         </>
       ),
     },
     {
       name: "Gateio",
-      id: 3,
+      id: "gateio",
       url: "https://www.gate.io/trade/ELA_USDT?ref=3018394",
       img: () => (
-        <img
-          src="/images/Gateio.png"
-          alt="Gate.io - Cryptocurrency Trading Platform"
-          loading="lazy"
-          width="140"
-          height="36"
-          className="h-9 w-auto object-contain hover:opacity-80 transition-opacity cursor-pointer"
-          fetchpriority="low"
-        />
+        <picture>
+          <img
+            src="/images/Gateio.png"
+            alt="Gate.io - Cryptocurrency Trading Platform"
+            loading="lazy"
+            width="140"
+            height="36"
+            className="h-9 w-auto object-contain hover:opacity-80 transition-opacity cursor-pointer"
+            fetchpriority="low"
+          />
+        </picture>
       ),
     },
     {
       name: "Huobi",
-      id: 4,
+      id: "huobi",
       url: "https://www.huobi.com/en-us/trade/ELA_USDT",
       img: () => (
-        <>
-          {/* Light mode image */}
+        <picture>
+          <source 
+            media="(prefers-color-scheme: dark)" 
+            srcSet="/images/Huobi-w.png" 
+          />
           <img
             src="/images/Huobi.png"
-            alt="Huobi Light"
+            alt="Huobi - Cryptocurrency Exchange"
             loading="lazy"
             width="140"
             height="36"
-            className="block dark:hidden h-9 w-auto object-contain hover:opacity-80 transition-opacity cursor-pointer"
+            className="h-9 w-auto object-contain hover:opacity-80 transition-opacity cursor-pointer"
             fetchpriority="low"
           />
-          {/* Dark mode image */}
-          <img
-            src="/images/Huobi-w.png"
-            alt="Huobi Dark"
-            loading="lazy"
-            width="140"
-            height="36"
-            className="hidden dark:block h-9 w-auto object-contain hover:opacity-80 transition-opacity cursor-pointer"
-            fetchpriority="low"
-          />
-        </>
+        </picture>
       ),
     },
     {
       name: "BitGet",
-      id: 5,
+      id: "bitget",
       url: "https://www.bitget.com/spot/ELAUSDT/?channelCode=42xn&vipCode=sq59&languageType=0",
       img: () => (
-        <img
-          src="/images/BitGet.png"
-          alt="BitGet"
-          loading="lazy"
-          width="140"
-          height="36"
-          className="h-9 w-auto object-contain hover:opacity-80 transition-opacity cursor-pointer"
-          fetchpriority="low"
-        />
+        <picture>
+          <img
+            src="/images/BitGet.png"
+            alt="BitGet"
+            loading="lazy"
+            width="140"
+            height="36"
+            className="h-9 w-auto object-contain hover:opacity-80 transition-opacity cursor-pointer"
+            fetchpriority="low"
+          />
+        </picture>
       ),
     },
     {
       name: "Crypto",
-      id: 6,
+      id: "crypto",
       url: "https://crypto.com/exchange/trade/ELA_USD",
       img: () => (
-        <>
-          {/* Light mode image */}
+        <picture>
+          <source 
+            media="(prefers-color-scheme: dark)" 
+            srcSet="/images/Crypto-w.png" 
+          />
           <img
             src="/images/Crypto.png"
-            alt="Crypto Light"
+            alt="Crypto.com Exchange"
             loading="lazy"
             width="140"
             height="36"
-            className="block dark:hidden h-9 w-auto object-contain hover:opacity-80 transition-opacity cursor-pointer"
+            className="h-9 w-auto object-contain hover:opacity-80 transition-opacity cursor-pointer"
             fetchpriority="low"
           />
-          {/* Dark mode image */}
-          <img
-            src="/images/Crypto-w.png"
-            alt="Crypto Dark"
-            loading="lazy"
-            width="140"
-            height="36"
-            className="hidden dark:block h-9 w-auto object-contain hover:opacity-80 transition-opacity cursor-pointer"
-            fetchpriority="low"
-          />
-        </>
+        </picture>
       ),
     },
     {
       name: "Uniswap",
-      id: 7,
+      id: "uniswap",
       url: "https://app.uniswap.org/#/swap?outputCurrency=0xe6fd75ff38adca4b97fbcd938c86070c3dabd5b9",
       img: () => (
-        <img
-          src="/images/Uniswap.png"
-          alt="Uniswap"
-          loading="lazy"
-          width="140"
-          height="36"
-          className="h-9 w-auto object-contain hover:opacity-80 transition-opacity cursor-pointer"
-          fetchpriority="low"
-        />
+        <picture>
+          <img
+            src="/images/Uniswap.png"
+            alt="Uniswap"
+            loading="lazy"
+            width="140"
+            height="36"
+            className="h-9 w-auto object-contain hover:opacity-80 transition-opacity cursor-pointer"
+            fetchpriority="low"
+          />
+        </picture>
       ),
     },
     {
       name: "Chainge",
-      id: 8,
+      id: "chainge",
       url: "https://dapp.chainge.finance/",
       img: () => (
-        <img
-          src="/images/chainge.png"
-          alt="Chainge"
-          loading="lazy"
-          width="140"
-          height="36"
-          className="h-9 w-auto object-contain hover:opacity-80 transition-opacity cursor-pointer"
-          fetchpriority="low"
-        />
+        <picture>
+          <img
+            src="/images/chainge.png"
+            alt="Chainge"
+            loading="lazy"
+            width="140"
+            height="36"
+            className="h-9 w-auto object-contain hover:opacity-80 transition-opacity cursor-pointer"
+            fetchpriority="low"
+          />
+        </picture>
       ),
     },
   ], []);  // Empty dependency array since these don't change
