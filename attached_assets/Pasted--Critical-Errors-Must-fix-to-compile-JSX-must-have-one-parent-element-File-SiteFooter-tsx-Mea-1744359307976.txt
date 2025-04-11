@@ -1,0 +1,108 @@
+🔴 Critical Errors (Must fix to compile)
+JSX must have one parent element
+
+File: SiteFooter.tsx
+
+Meaning: Multiple JSX elements at the top level without a wrapper.
+
+Severity: 🔥 Blocks rendering.
+
+Fix: Wrap elements in a <div> or <>...</> fragment.
+
+Expected corresponding JSX closing tag for div
+
+File: VisionPage.tsx:38
+
+Meaning: An opening tag like <div> is never closed.
+
+Severity: 🔥 JSX syntax will break.
+
+Fix: Match every <div> with a </div>.
+
+JSX element <new_str> has no closing tag
+
+File: VisionPage.tsx:39
+
+Meaning: <new_str> is not a valid JSX element (likely leftover merge conflict marker).
+
+Severity: 🔥 Fatal JSX error.
+
+Fix: Remove <new_str> and <old_str>, replace with real JSX.
+
+) expected / Expression expected
+
+File: VisionPage.tsx:186–187
+
+Meaning: Malformed return block—probably missing a closing bracket or JSX not well-formed.
+
+Severity: 🔥 Breaks the component.
+
+Fix: Check return structure and JSX for completeness.
+
+NavigationMenuTrigger not closed
+
+File: NavMenu.tsx:46
+
+Meaning: The JSX tag is malformed; looks like <NavigationMenuTrigger>...</NavigationMenuTrigger> is written incorrectly.
+
+Severity: 🔥 Compiler will fail.
+
+Fix: Correct to valid JSX tag with matching open/close.
+
+Unexpected token. Did you mean {'>'} or &gt;?
+
+File: NavMenu.tsx:46
+
+Meaning: Likely stray text or malformed tag (e.g. forgot to close a string or JSX).
+
+Severity: 🔥 Invalid syntax.
+
+Fix: Fix malformed string or JSX tag. Don’t embed tag names as text.
+
+🟠 Moderate Errors (Builds, but bad behavior)
+@import must precede all other statements
+
+File: index.css, other .css files
+
+Meaning: @import must be at the top before @tailwind or any other rule.
+
+Severity: ⚠️ Breaks Tailwind or custom CSS.
+
+Fix: Move all @import lines to the top of the CSS file.
+
+🟡 Minor / Dev Experience
+HMR (Hot Module Replacement) export issue
+
+File: FaqComponent.tsx
+
+Meaning: Probably exporting an object or named export incompatible with HMR.
+
+Severity: ⚠️ Won’t block build, but hot reload won’t work.
+
+Fix: Use export default for main components.
+
+EADDRINUSE — port already in use
+
+File: Dev server (Vite)
+
+Meaning: Port 5173 is occupied.
+
+Severity: ❗️Blocks local dev server.
+
+Fix: Either kill the process on that port (lsof -i :5173 && kill PID) or change the port.
+
+🧠 Suggested Fixing Order
+Fix JSX syntax in VisionPage.tsx and SiteFooter.tsx
+
+Clean NavMenu.tsx JSX and tag closure
+
+Clean out <old_str>, <new_str> markers
+
+Correct malformed return block in VisionPage.tsx
+
+Fix CSS @import ordering
+
+Adjust FaqComponent exports if HMR matters
+
+Resolve port conflict to get local dev working again
+
