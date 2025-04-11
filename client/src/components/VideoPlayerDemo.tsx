@@ -13,7 +13,7 @@ const VideoPlayerDemo = () => {
     }, [isMobile]);
     
     return (
-        <div className={`container mx-auto w-full ${isMobile ? 'px-4' : ''}`}>
+        <div className={`container mx-auto w-full ${isMobile ? 'px-4 video-player-mobile mt-16' : ''}`}>
             <div className={`w-full ${isMobile ? 'max-w-[95%] mx-auto' : ''}`}>
                 {!videoLoaded ? (
                     <div 
