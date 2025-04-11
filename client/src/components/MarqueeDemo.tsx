@@ -2,35 +2,69 @@ import React from 'react';
 import { Marquee } from "@/components/ui/marquee";
 
 export function MarqueeDemo() {
+  // Adjust the top offset based on screen width.
+  const topOffset =
+    typeof window !== "undefined" && window.innerWidth < 768 ? "-60px" : "-30px";
+
+  // Simplified to only use dark mode images
+  const items = [
+    {
+      name: "Alibaba",
+      image: "/marque/Ali.png",
+    },
+    {
+      name: "Ant Financial",
+      image: "/marque/Ant-w.png",
+    },
+    {
+      name: "Binance",
+      image: "/marque/Binance.png",
+    },
+    {
+      name: "BitMain",
+      image: "/marque/Bit-w.png",
+    },
+    {
+      name: "OKex",
+      image: "/marque/Ok-w.png",
+    },
+    {
+      name: "Tencent",
+      image: "/marque/Ten-w.png",
+    },
+    {
+      name: "Via BTC",
+      image: "/marque/Via.png",
+    },
+    {
+      name: "F2Pool",
+      image: "/marque/f2.png",
+    },
+  ];
+
   return (
-    <div className="relative overflow-hidden flex justify-around items-start w-screen">
-      <div className="absolute inset-0 bg-gradient-to-b from-[rgba(17,17,17,0.0)] to-[rgba(17,17,17,1)] z-40 h-[100px] bottom-[-2px] max-w-full"></div>
-      <div className="absolute inset-0 bg-gradient-to-b from-[rgba(17,17,17,1)] to-[rgba(17,17,17,0.0)] z-40 h-[50px] top-[-1px] max-w-full"></div>
-      <div
-        className="flex space-x-16 animate-marquee"
-        style={{
-          "--duration": "40s",
-        } as React.CSSProperties}
-      >
-        {Array.from({ length: 2 }).map((_, index) => (
-          <div key={index} className="relative overflow-hidden inline-flex py-6">
-            <iframe
-              src="https://www.youtube.com/embed/mq7TnEK3P4I?autoplay=1&mute=1&loop=1&playlist=mq7TnEK3P4I&controls=0"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-              allowFullScreen
-              className="w-[300px] h-[200px] object-cover rounded-[20px] shadow-[0_8px_32px_rgba(0,0,0,0.2)]"
-              title="Elacity Team Video"
-            ></iframe>
+    <div style={{ position: "relative", top: topOffset }}>
+      <Marquee className="py-0">
+        {items.map((item, index) => (
+          <div
+            key={index}
+            className="flex justify-center items-center"
+            style={{ margin: "0 40px", flexShrink: 0 }}
+          >
+            <img
+              src={item.image}
+              alt={item.name}
+              style={{
+                width: item.name === "Via BTC" || item.name === "F2Pool" ? "105px" : "125px",
+                height: item.name === "Via BTC" || item.name === "F2Pool" ? "105px" : "125px",
+                objectFit: "contain",
+              }}
+              loading="lazy"
+              fetchpriority="low"
+            />
           </div>
         ))}
-      </div>
-      <div
-        className="flex space-x-16 animate-marquee"
-        style={{
-          "--duration": "45s",
-        } as React.CSSProperties}
-      >
-      </div>
+      </Marquee>
     </div>
   );
 }
