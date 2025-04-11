@@ -67,28 +67,28 @@ if (!requestLimiter.cleanupInterval) {
 app.use((req, res, next) => {
   // Check if the request is for a video file
   const isVideoAsset = /\.(mp4)$/i.test(req.path);
-  
+
   if (isVideoAsset) {
     // Check referrer - only allow from your own domain
     const referer = req.get('Referer') || '';
     const allowedDomains = ['elastos.net', 'www.elastos.net', 'elastosnet.replit.app'];
     const isValidReferer = allowedDomains.some(domain => referer.includes(domain));
-    
+
     // Get client IP for rate limiting
     const clientIp = req.ip || req.connection.remoteAddress;
     const videoId = req.path;
     const requestKey = `${clientIp}:${videoId}`;
     const now = Date.now();
     const lastRequest = requestLimiter.videoRequests.get(requestKey) || 0;
-    
+
     // Allow only one video request per 30 minutes per IP per video
     const rateLimitWindow = 30 * 60 * 1000; // 30 minutes
-    
+
     if (!isValidReferer) {
       // Block hotlinking
       return res.status(403).send('Direct video access not allowed');
     }
-    
+
     if (now - lastRequest < rateLimitWindow) {
       // Set rate limit headers
       res.setHeader('X-RateLimit-Limit', '1');
@@ -96,10 +96,10 @@ app.use((req, res, next) => {
       res.setHeader('X-RateLimit-Reset', new Date(lastRequest + rateLimitWindow).toUTCString());
       return res.status(429).send('Too many requests. Please try again later.');
     }
-    
+
     // Update rate limiter
     requestLimiter.videoRequests.set(requestKey, now);
-    
+
     // Add strong caching headers for videos (1 week)
     const oneWeekInSeconds = 7 * 24 * 60 * 60;
     res.setHeader('Cache-Control', `public, max-age=${oneWeekInSeconds}, immutable`);
@@ -110,7 +110,7 @@ app.use((req, res, next) => {
     res.setHeader('Cache-Control', `public, max-age=${oneWeekInSeconds}`);
     res.setHeader('Expires', new Date(Date.now() + oneWeekInSeconds * 1000).toUTCString());
   }
-  
+
   next();
 });
 
@@ -120,9 +120,9 @@ let isShuttingDown = false;
 async function shutdown() {
   if (isShuttingDown) return;
   isShuttingDown = true;
-  
+
   console.log('Shutting down gracefully...');
-  
+
   try {
     // Close the server
     if (server) {
@@ -133,13 +133,13 @@ async function shutdown() {
         });
       });
     }
-    
+
     // Force exit after 1 second if graceful shutdown fails
     setTimeout(() => {
       console.log('Forcing exit...');
       process.exit(0);
     }, 1000);
-    
+
   } catch (error) {
     console.error('Error during shutdown:', error);
     process.exit(1);
