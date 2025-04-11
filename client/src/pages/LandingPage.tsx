@@ -316,7 +316,7 @@ const LandingPage = () => {
             />
             <div className="absolute inset-0 w-full h-full z-20 overflow-hidden">
               <iframe 
-                className={`absolute top-0 left-0 w-[100%] h-[100%] ${window.innerWidth <= 768 ? 'scale-[1.95]' : 'scale-[1.35]'}`}
+                className={`absolute top-0 left-0 w-[100%] h-[100%] ${window.innerWidth <= 768 ? 'scale-[2.925]' : 'scale-[1.35]'}`}
                 src="https://www.youtube.com/embed/PEtrJlSQB3w?autoplay=1&mute=1&controls=0&showinfo=0&rel=0&loop=1&playlist=PEtrJlSQB3w&enablejsapi=1"
                 title="Elastos Hero"
                 frameBorder="0"
