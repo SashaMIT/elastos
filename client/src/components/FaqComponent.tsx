@@ -1,8 +1,10 @@
-import React, { useState, useEffect } from "react";
+
+import React, { useState } from "react";
 import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui/card";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { Plus, Minus } from "lucide-react";
 
+// Export the FAQ items as a constant so it doesn't get recreated on each render
 export const faqItems = [
   {
     id: "1",
@@ -52,14 +54,14 @@ interface FaqComponentProps {
 }
 
 const FaqComponent: React.FC<FaqComponentProps> = ({ className = "", showButtons = true }) => {
-  // Using a single state for the currently open item
-  const [openItem, setOpenItem] = useState<string | undefined>("1");
+  const [openItem, setOpenItem] = useState<string | undefined>(undefined);
   
-  // Handle accordion change
-  const handleValueChange = (value: string) => {
-    setOpenItem(value);
-  };
+  // Using a memoized handler to prevent unnecessary renders
+  const handleValueChange = React.useCallback((value: string) => {
+    setOpenItem(prevValue => prevValue === value ? undefined : value);
+  }, []);
   
+  // Render the component with optimized performance
   return (
     <Card className={`w-full overflow-hidden bg-card dark:bg-[#171717] border-0 shadow-none mt-8 ${className}`} style={{ boxShadow: 'none' }}>
       <CardHeader className="p-6 pl-0 pb-2">
@@ -93,18 +95,21 @@ const FaqComponent: React.FC<FaqComponentProps> = ({ className = "", showButtons
           {faqItems.map((item) => (
             <AccordionItem 
               value={item.id} 
-              key={item.id} 
+              key={item.id}
               className="py-2 border-b border-border dark:border-neutral-800"
             >
               <AccordionTrigger className="flex flex-1 items-center py-2 text-left text-[15px] font-[200] text-foreground dark:text-foreground [&>svg]:hidden">
                 <span className="flex-grow pr-4">{item.title}</span>
                 <div className="flex-shrink-0 w-6 h-6 rounded-full border border-[#F6921A] flex items-center justify-center">
                   <div className="w-4 h-4 text-[#F6921A]" data-state-icon>
-                    {item.id === openItem ? <Minus className="h-4 w-4" /> : <Plus className="h-4 w-4" />}
+                    {item.id === openItem ? 
+                      <Minus className="h-4 w-4" /> : 
+                      <Plus className="h-4 w-4" />
+                    }
                   </div>
                 </div>
               </AccordionTrigger>
-              <AccordionContent className="pb-2 text-muted-foreground dark:text-muted-foreground">
+              <AccordionContent className="pb-2 text-muted-foreground dark:text-muted-foreground will-change-transform">
                 {item.content}
               </AccordionContent>
             </AccordionItem>

@@ -198,6 +198,15 @@
   transition: opacity 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
+/* Optimize accordion animations for smoother performance */
+@layer utilities {
+  .will-change-transform {
+    will-change: transform, opacity, height;
+    transition-property: transform, opacity, height;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  }
+}
+
 @layer base {
   :root {
     --background: 0 0% 100%;
