@@ -170,18 +170,9 @@ export function FeaturesCarousel() {
                          "/images/Carousel/CyberRepublicTea.png"}
                     alt={`${index === 0 ? 'Elacity' : index === 1 ? 'BeL2' : index === 2 ? 'Essentials' : 'Cyber Republic'} Preview`}
                     className={`absolute inset-0 w-full h-full object-cover transform-gpu z-0 ${
-                      isMobile ? (
-                        index === 0 ? "scale-[2.0]" : // Elacity - increased zoom on mobile
-                        index === 1 ? "scale-[1.7]" : // BeL2 - reduced zoom on mobile
-                        index === 2 ? "scale-[1.8]" : // Essentials - reduced zoom on mobile
-                        "scale-[1.7]"                 // Cyber Republic - reduced zoom on mobile
-                      ) : (
-                        index === 0 ? "scale-125" : // Elacity - standard zoom
-                        index === 1 ? "scale-150" : // BeL2 - more zoom
-                        index === 2 ? "scale-175" : // Essentials - even more zoom
-                        "scale-150"                 // Cyber Republic - more zoom
-                      )
-                    } ${!isVisible ? 'opacity-0' : 'opacity-100'}`}
+                      // No scaling/zoom for all images
+                      !isVisible ? 'opacity-0' : 'opacity-100'
+                    }`}
                     loading="eager" 
                     onContextMenu={(e) => e.preventDefault()}
                   />
