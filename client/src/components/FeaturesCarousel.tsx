@@ -201,7 +201,7 @@ export function FeaturesCarousel() {
                     <div className="h-full flex flex-col">
                       <div className="flex-grow" />
                       <div className="flex flex-col sm:flex-row justify-between items-center gap-4">
-                        <h2 className="text-sm sm:text-xl md:text-2xl lg:text-3xl font-bold max-w-full sm:max-w-[70%] text-center sm:text-left bg-black/40 p-2 rounded-lg backdrop-blur-sm">{feature.title}</h2>
+                        <h2 className="text-sm sm:text-xl md:text-2xl lg:text-3xl font-bold max-w-full sm:max-w-[70%] text-center sm:text-left text-shadow-lg">{feature.title}</h2>
                         <a 
                           href={
                             index === 0 ? "https://labs.ela.city" : 
@@ -211,7 +211,7 @@ export function FeaturesCarousel() {
                           } 
                           target={index === 0 || index === 1 ? "_blank" : "_self"}
                           rel={index === 0 || index === 1 ? "noopener noreferrer" : ""}
-                          className="px-4 py-2 bg-[#21293a] text-white rounded-full font-[200] transition-all flex flex-row items-center gap-2 border border-[rgba(92,142,255,0.25)] text-sm min-w-[130px] hover:bg-[#2a3548] backdrop-blur-sm"
+                          className="px-4 py-2 bg-[#21293a] text-white rounded-full font-[200] transition-all flex flex-row items-center gap-2 border border-[rgba(92,142,255,0.25)] text-sm min-w-[130px] hover:bg-[#2a3548]"
                         >
                           <span>{feature.buttonText}</span>
                           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 35 34" fill="none">
