@@ -153,50 +153,29 @@ export function FeaturesCarousel() {
                   isMobile ? "h-[320px]" : "h-[400px]"
                 )}>
                   <div className="absolute inset-0 bg-black/30 z-[1]"></div>
-                  {/* Always render all videos but use lazy loading for non-visible slides */}
-                  {feature.youtubeEmbed ? (
-                    <iframe 
-                      src={`${feature.video.replace('youtu.be/', 'youtube.com/embed/')}?autoplay=1&mute=1&loop=1&playlist=${feature.video.split('/').pop()}&controls=0`}
-                      className={`absolute inset-0 w-full h-full object-cover transform-gpu z-0 ${
-                        isMobile ? (
-                          index === 0 ? "scale-[2.0]" : // Elacity - increased zoom on mobile
-                          index === 1 ? "scale-[1.7]" : // BeL2 - reduced zoom on mobile
-                          index === 2 ? "scale-[1.8]" : // Essentials - reduced zoom on mobile
-                          "scale-[1.7]"                 // Cyber Republic - reduced zoom on mobile
-                        ) : (
-                          index === 0 ? "scale-125" : // Elacity - standard zoom
-                          index === 1 ? "scale-150" : // BeL2 - more zoom
-                          index === 2 ? "scale-175" : // Essentials - even more zoom
-                          "scale-150"                 // Cyber Republic - more zoom
-                        )
-                      } ${!isVisible ? 'opacity-0' : 'opacity-100'}`}
-                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                      allowFullScreen
-                      frameBorder="0"
-                      title={`${index === 0 ? 'Elacity' : index === 1 ? 'BeL2' : index === 2 ? 'Essentials' : 'Cyber Republic'} Video`}
-                      loading="lazy"
-                    ></iframe>
-                  ) : (
-                    <video
-                      autoPlay
-                      muted
-                      playsInline
-                      loading="lazy"
-                      preload="metadata"
-                      fetchPriority={index === currentIndex ? "high" : "low"}
-                      className={`absolute inset-0 w-full h-full object-cover ${isMobile ? 'scale-[1.6]' : 'scale-125'} transform-gpu z-0 ${!isVisible ? 'opacity-0' : 'opacity-100'}`}
-                      poster={feature.poster}
-                      onEnded={(e) => {
-                        // When video ends, show poster image
-                        e.currentTarget.load();
-                        e.currentTarget.poster = feature.poster;
-                      }}
-                      controlsList="nodownload"
-                      onContextMenu={(e) => e.preventDefault()}
-                    >
-                      <source src={feature.video} type="video/mp4" />
-                    </video>
-                  )}
+                  {/* Using placeholder images instead of videos */}
+                  <img 
+                    src={index === 0 ? "/images/Home Page Carousel/ElacityTea.jpeg" : 
+                         index === 1 ? "/images/Home Page Carousel/BeL2Tea.jpeg" : 
+                         index === 2 ? "/images/Home Page Carousel/EssentialsTea.jpeg" : 
+                         "/images/Home Page Carousel/CyberRepublicTea.jpeg"}
+                    alt={`${index === 0 ? 'Elacity' : index === 1 ? 'BeL2' : index === 2 ? 'Essentials' : 'Cyber Republic'} Preview`}
+                    className={`absolute inset-0 w-full h-full object-cover transform-gpu z-0 ${
+                      isMobile ? (
+                        index === 0 ? "scale-[2.0]" : // Elacity - increased zoom on mobile
+                        index === 1 ? "scale-[1.7]" : // BeL2 - reduced zoom on mobile
+                        index === 2 ? "scale-[1.8]" : // Essentials - reduced zoom on mobile
+                        "scale-[1.7]"                 // Cyber Republic - reduced zoom on mobile
+                      ) : (
+                        index === 0 ? "scale-125" : // Elacity - standard zoom
+                        index === 1 ? "scale-150" : // BeL2 - more zoom
+                        index === 2 ? "scale-175" : // Essentials - even more zoom
+                        "scale-150"                 // Cyber Republic - more zoom
+                      )
+                    } ${!isVisible ? 'opacity-0' : 'opacity-100'}`}
+                    loading="lazy"
+                    onContextMenu={(e) => e.preventDefault()}
+                  />
                   <div className="absolute inset-0 p-8 text-white z-10">
                     <div className="h-full flex flex-col">
                       <div className="flex-grow" />
