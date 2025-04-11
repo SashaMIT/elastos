@@ -22,19 +22,22 @@ const features = [
   {
     title: "BeL2. Unlocking Bitcoins Value with Native Bitcoin DeFi using ELA-backed Nodes.",
     buttonText: "Learn More",
-    video: "/videos/BeL2Team.mp4",
+    video: "https://youtu.be/yuj3h4AOBuM",
+    youtubeEmbed: true,
     poster: "/posters/BeL2Team.jpg" // Add poster image path
   },
   {
     title: "Essentials Wallet. Stake ELA and Earn APY, Access dApps and Explore Elastos.",
     buttonText: "Learn More",
-    video: "/videos/EssentialsTeam.mp4",
+    video: "https://youtu.be/OCwAsCfgOFg",
+    youtubeEmbed: true,
     poster: "/posters/EssentialsTeam.jpg" // Add poster image path
   },
   {
     title: "Cyber Republic: Our community-governed DAO, powered by merged-mined ELA.",
     buttonText: "Learn More",
-    video: "/videos/CyberRepublicTeam.mp4",
+    video: "https://youtu.be/RpIFm57cLt4",
+    youtubeEmbed: true,
     poster: "/posters/CyberRepublicTeam.jpg" // Add poster image path
   },
 ];
@@ -153,12 +156,12 @@ export function FeaturesCarousel() {
                   {isVisible && (
                     feature.youtubeEmbed ? (
                       <iframe 
-                        src={`${feature.video.replace('youtu.be/', 'youtube.com/embed/')}?autoplay=1&mute=1&loop=1&playlist=mq7TnEK3P4I&controls=0`}
+                        src={`${feature.video.replace('youtu.be/', 'youtube.com/embed/')}?autoplay=1&mute=1&loop=1&playlist=${feature.video.split('/').pop()}&controls=0`}
                         className="absolute inset-0 w-full h-full object-cover"
                         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                         allowFullScreen
                         frameBorder="0"
-                        title="Elacity Team Video"
+                        title={`${index === 0 ? 'Elacity' : index === 1 ? 'BeL2' : index === 2 ? 'Essentials' : 'Cyber Republic'} Video`}
                       ></iframe>
                     ) : (
                       <video
