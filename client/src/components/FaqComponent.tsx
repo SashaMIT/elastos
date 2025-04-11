@@ -25,22 +25,22 @@ export const faqItems = [
     content: "Unlike most blockchains that focus on DeFi or NFTs alone, Elastos provides a complete decentralized World Computer framework, including: Decentralized ID (DID), Elastos Carrier for P2P communication, Elastos Hive for decentralized storage, Elastos Runtime for secure dApp execution, Smart Contracts (EVM-Compatible) for finance and rights management, Bitcoin-Level Security, and BeL2 (Bitcoin Elastos Layer-2)."
   },
   {
-    id: "4",
+    id: "5",
     title: "How does Elastos use Bitcoin for security?",
     content: "Elastos uses Auxiliary Proof-of-Work (AuxPoW), meaning it is merged-mined with Bitcoin. This allows Bitcoin miners to secure Elastos without extra energy consumption, leveraging Bitcoin's immense hashpower for security."
   },
   {
-    id: "5",
+    id: "6",
     title: "What is BeL2 (Bitcoin Elastos Layer-2)?",
     content: "BeL2 is Elastos's Layer-2 scaling solution for Bitcoin, designed to bring decentralized identity (DID), smart contracts, and secure data management to the Bitcoin network. It allows for fast, low-cost transactions and dApp functionality while still benefiting from Bitcoin's unmatched security."
   },
   {
-    id: "6",
+    id: "7",
     title: "What is Elastos DID?",
     content: "Elastos Decentralized ID (DID) is a self-sovereign identity system where users own and control their digital identities without relying on Google, Facebook, or governments. Your DID is stored on the blockchain, allowing you to authenticate yourself privately and securely across applications."
   },
   {
-    id: "7",
+    id: "8",
     title: "How does Elastos protect user privacy?",
     content: "Elastos protects privacy through: 1) No central servers – Everything runs P2P via Elastos Carrier, 2) No third-party tracking – DID authentication removes the need for password-based logins, 3) Data belongs to you – Files are stored in Elastos Hive, meaning no platform can take them away."
   }
@@ -52,7 +52,14 @@ interface FaqComponentProps {
 }
 
 const FaqComponent: React.FC<FaqComponentProps> = ({ className = "", showButtons = true }) => {
-  const [openItem, setOpenItem] = useState<string | null>(null);
+  // Using a single state for the currently open item
+  const [openItem, setOpenItem] = useState<string | undefined>("1");
+  
+  // Handle accordion change
+  const handleValueChange = (value: string) => {
+    setOpenItem(value);
+  };
+  
   return (
     <Card className={`w-full overflow-hidden bg-card dark:bg-[#171717] border-0 shadow-none mt-8 ${className}`} style={{ boxShadow: 'none' }}>
       <CardHeader className="p-6 pl-0 pb-2">
@@ -76,7 +83,13 @@ const FaqComponent: React.FC<FaqComponentProps> = ({ className = "", showButtons
         </div>
       </CardHeader>
       <CardContent className="p-6 pl-0 pt-0">
-        <Accordion type="single" collapsible className="w-full" defaultValue="1">
+        <Accordion 
+          type="single" 
+          collapsible 
+          className="w-full" 
+          value={openItem}
+          onValueChange={handleValueChange}
+        >
           {faqItems.map((item) => (
             <AccordionItem 
               value={item.id} 
