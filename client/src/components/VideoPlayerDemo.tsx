@@ -31,7 +31,7 @@ const VideoPlayerDemo = () => {
                     <div className="w-full aspect-video rounded-xl overflow-hidden">
                         <iframe 
                             className="w-full h-full"
-                            src="https://www.youtube.com/embed/vaJ5Pguxd4M?autoplay=1&rel=0"
+                            src="https://www.youtube.com/embed/vaJ5Pguxd4M?autoplay=1&rel=0&loop=1&playlist=vaJ5Pguxd4M"
                             title="Elastos: The Modern Internet"
                             frameBorder="0"
                             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
@@ -42,6 +42,6 @@ const VideoPlayerDemo = () => {
             </div>
         </div>
     );
-}
+};
 
 export { VideoPlayerDemo };
