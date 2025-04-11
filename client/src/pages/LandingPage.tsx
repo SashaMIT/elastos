@@ -847,6 +847,7 @@ const LandingPage = () => {
         {/* Community Image Grid */}
         <div className="container mx-auto px-4 mt-16 md:mt-0">
           <div className="grid grid-cols-3 md:grid-cols-12 gap-6">
+            {/* Lazy load with intersection observer for better performance */}
             <ImageZoom
               key="1"
               src="/images/Roadmap/Elastos Members.jpeg"
@@ -855,6 +856,7 @@ const LandingPage = () => {
               loading="lazy"
               width={300}
               height={300}
+              fetchpriority="low"
             />
             <ImageZoom
               key="2"

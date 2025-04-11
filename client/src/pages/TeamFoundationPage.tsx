@@ -35,7 +35,8 @@ export default function TeamFoundationPage() {
     {
       name: "Elacity Labs",
       description: "Elacity Labs builds Web3 applications and NFT marketplaces on Elastos, creating user-friendly platforms that leverage Elastos' identity and security features for digital ownership and trading.",
-      videoSrc: "/videos/ElacityTeam.mp4",
+      videoSrc: "https://www.youtube.com/embed/YOUTUBE_VIDEO_ID_HERE", // Replace with actual YouTube ID
+      youtubeEmbed: true, // Add flag to indicate YouTube embed
       links: [
         { text: "Elacity", url: "https://labs.ela.city", icon: <Globe className="w-4 h-4" /> }
       ]

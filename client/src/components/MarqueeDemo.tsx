@@ -70,6 +70,8 @@ export function MarqueeDemo() {
                 height: item.name === "Via BTC" || item.name === "F2Pool" ? "105px" : "125px",
                 objectFit: "contain",
               }}
+              loading="lazy"
+              fetchpriority="low"
             />
             {/* Dark mode image (white-text) */}
             <img
@@ -81,6 +83,8 @@ export function MarqueeDemo() {
                 height: item.name === "Via BTC" || item.name === "F2Pool" ? "105px" : "125px",
                 objectFit: "contain",
               }}
+              loading="lazy"
+              fetchpriority="low"
             />
           </div>
         ))}
