@@ -157,10 +157,17 @@ export function FeaturesCarousel() {
                     <iframe 
                       src={`${feature.video.replace('youtu.be/', 'youtube.com/embed/')}?autoplay=1&mute=1&loop=1&playlist=${feature.video.split('/').pop()}&controls=0`}
                       className={`absolute inset-0 w-full h-full object-cover transform-gpu ${
-                        index === 0 ? "scale-125" : // Elacity - standard zoom
-                        index === 1 ? "scale-150" : // BeL2 - more zoom
-                        index === 2 ? "scale-175" : // Essentials - even more zoom
-                        "scale-150"                 // Cyber Republic - more zoom
+                        isMobile ? (
+                          index === 0 ? "scale-[1.75]" : // Elacity - much more zoom on mobile
+                          index === 1 ? "scale-[2.0]" : // BeL2 - much more zoom on mobile
+                          index === 2 ? "scale-[2.25]" : // Essentials - much more zoom on mobile
+                          "scale-[2.0]"                 // Cyber Republic - much more zoom on mobile
+                        ) : (
+                          index === 0 ? "scale-125" : // Elacity - standard zoom
+                          index === 1 ? "scale-150" : // BeL2 - more zoom
+                          index === 2 ? "scale-175" : // Essentials - even more zoom
+                          "scale-150"                 // Cyber Republic - more zoom
+                        )
                       } ${!isVisible ? 'opacity-0' : 'opacity-100'}`}
                       allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                       allowFullScreen
@@ -176,7 +183,7 @@ export function FeaturesCarousel() {
                       loading="lazy"
                       preload="metadata"
                       fetchPriority={index === currentIndex ? "high" : "low"}
-                      className={`absolute inset-0 w-full h-full object-cover scale-125 transform-gpu ${!isVisible ? 'opacity-0' : 'opacity-100'}`}
+                      className={`absolute inset-0 w-full h-full object-cover ${isMobile ? 'scale-[1.75]' : 'scale-125'} transform-gpu ${!isVisible ? 'opacity-0' : 'opacity-100'}`}
                       poster={feature.poster}
                       onEnded={(e) => {
                         // When video ends, show poster image
