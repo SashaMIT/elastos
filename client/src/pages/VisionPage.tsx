@@ -31,9 +31,14 @@ export function VisionPage() {
             <p className="text-lg text-gray-600 dark:text-gray-300 mb-8 font-[200]">
               Elastos is building a new paradigm for the internet—a Web3 infrastructure that gives you true digital ownership and privacy, secured by Bitcoin.
             </p>
-            <div className="mt-10">
+            <div className="hidden md:block mt-10">
               <VideoPlayerDemo />
             </div>
+          </div>
+          
+          {/* Video player shown only on mobile, positioned lower */}
+          <div className="block md:hidden mb-20">
+            <VideoPlayerDemo />
           </div>
           
           {/* Feature component from feature-with-advantages */}
