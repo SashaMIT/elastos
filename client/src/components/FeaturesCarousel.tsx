@@ -157,7 +157,12 @@ export function FeaturesCarousel() {
                     feature.youtubeEmbed ? (
                       <iframe 
                         src={`${feature.video.replace('youtu.be/', 'youtube.com/embed/')}?autoplay=1&mute=1&loop=1&playlist=${feature.video.split('/').pop()}&controls=0`}
-                        className="absolute inset-0 w-full h-full object-cover scale-125 transform-gpu"
+                        className={`absolute inset-0 w-full h-full object-cover transform-gpu ${
+                          index === 0 ? "scale-125" : // Elacity - standard zoom
+                          index === 1 ? "scale-150" : // BeL2 - more zoom
+                          index === 2 ? "scale-175" : // Essentials - even more zoom
+                          "scale-150"                 // Cyber Republic - more zoom
+                        }`}
                         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                         allowFullScreen
                         frameBorder="0"
