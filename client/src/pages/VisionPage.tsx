@@ -35,9 +35,23 @@ export function VisionPage() {
               <VideoPlayerDemo />
             </div>
           </div>
+</old_str>
+<new_str>
+          <div className="text-center max-w-3xl mx-auto mb-20">
+            <h1 className="font-[200] text-6xl mb-8 text-black dark:text-white">
+              Own Your Digital Life – Secured by Bitcoin
+            </h1>
+            <p className="text-lg text-gray-600 dark:text-gray-300 mb-8 font-[200]">
+              Elastos is building a new paradigm for the internet—a Web3 infrastructure that gives you true digital ownership and privacy, secured by Bitcoin.
+            </p>
+            <div className="hidden md:block mt-10">
+              <VideoPlayerDemo />
+            </div>
+          </div>
           
-          {/* Video player shown only on mobile, positioned much lower with significantly more spacing */}
-          <div className="block md:hidden mt-64 pt-64 mb-20">
+          {/* Completely separate section for mobile video player, well below the mission text */}
+          <div className="block md:hidden w-full py-32 border-t border-gray-800 mt-32">
+            <h2 className="font-[200] text-xl mb-8 text-center text-black dark:text-white">Watch Our Video</h2>
             <VideoPlayerDemo />
           </div>
           
