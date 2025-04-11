@@ -157,7 +157,7 @@ export function FeaturesCarousel() {
                     feature.youtubeEmbed ? (
                       <iframe 
                         src={`${feature.video.replace('youtu.be/', 'youtube.com/embed/')}?autoplay=1&mute=1&loop=1&playlist=${feature.video.split('/').pop()}&controls=0`}
-                        className="absolute inset-0 w-full h-full object-cover"
+                        className="absolute inset-0 w-full h-full object-cover scale-125 transform-gpu"
                         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                         allowFullScreen
                         frameBorder="0"
@@ -171,7 +171,7 @@ export function FeaturesCarousel() {
                         loading="lazy"
                         preload="metadata"
                         fetchPriority={index === currentIndex ? "high" : "low"}
-                        className="absolute inset-0 w-full h-full object-cover"
+                        className="absolute inset-0 w-full h-full object-cover scale-125 transform-gpu"
                         poster={feature.poster}
                         onEnded={(e) => {
                           // When video ends, show poster image
