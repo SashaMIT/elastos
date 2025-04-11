@@ -15,7 +15,8 @@ const features = [
   {
     title: "Elacity World Computer Marketplace. A Blockchain-Powered Open Market.",
     buttonText: "Learn More",
-    video: "/videos/ElacityTeam.mp4",
+    video: "https://youtu.be/mq7TnEK3P4I",
+    youtubeEmbed: true,
     poster: "/posters/ElacityTeam.jpg" // Add poster image path
   },
   {
@@ -150,25 +151,36 @@ export function FeaturesCarousel() {
                 )}>
                   {/* Only load video when visible or adjacent to visible slide */}
                   {isVisible && (
-                    <video
-                      autoPlay
-                      muted
-                      playsInline
-                      loading="lazy"
-                      preload="metadata"
-                      fetchPriority={index === currentIndex ? "high" : "low"}
-                      className="absolute inset-0 w-full h-full object-cover"
-                      poster={feature.poster}
-                      onEnded={(e) => {
-                        // When video ends, show poster image
-                        e.currentTarget.load();
-                        e.currentTarget.poster = feature.poster;
-                      }}
-                      controlsList="nodownload"
-                      onContextMenu={(e) => e.preventDefault()}
-                    >
-                      <source src={feature.video} type="video/mp4" />
-                    </video>
+                    feature.youtubeEmbed ? (
+                      <iframe 
+                        src={`${feature.video.replace('youtu.be/', 'youtube.com/embed/')}?autoplay=1&mute=1&loop=1&playlist=mq7TnEK3P4I&controls=0`}
+                        className="absolute inset-0 w-full h-full object-cover"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        allowFullScreen
+                        frameBorder="0"
+                        title="Elacity Team Video"
+                      ></iframe>
+                    ) : (
+                      <video
+                        autoPlay
+                        muted
+                        playsInline
+                        loading="lazy"
+                        preload="metadata"
+                        fetchPriority={index === currentIndex ? "high" : "low"}
+                        className="absolute inset-0 w-full h-full object-cover"
+                        poster={feature.poster}
+                        onEnded={(e) => {
+                          // When video ends, show poster image
+                          e.currentTarget.load();
+                          e.currentTarget.poster = feature.poster;
+                        }}
+                        controlsList="nodownload"
+                        onContextMenu={(e) => e.preventDefault()}
+                      >
+                        <source src={feature.video} type="video/mp4" />
+                      </video>
+                    )
                   )}
                   <div className="absolute inset-0 p-8 text-white">
                     <div className="h-full flex flex-col">
