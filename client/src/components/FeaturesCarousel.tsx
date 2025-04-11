@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect, useMemo, useCallback } from 'react';
 import {
   Carousel,
@@ -16,22 +15,26 @@ const features = [
   {
     title: "Elacity World Computer Marketplace. A Blockchain-Powered Open Market.",
     buttonText: "Learn More",
-    video: "/videos/ElacityTeam.mp4"
+    video: "/videos/ElacityTeam.mp4",
+    poster: "/posters/ElacityTeam.jpg" // Add poster image path
   },
   {
     title: "BeL2. Unlocking Bitcoins Value with Native Bitcoin DeFi using ELA-backed Nodes.",
     buttonText: "Learn More",
-    video: "/videos/BeL2Team.mp4"
+    video: "/videos/BeL2Team.mp4",
+    poster: "/posters/BeL2Team.jpg" // Add poster image path
   },
   {
     title: "Essentials Wallet. Stake ELA and Earn APY, Access dApps and Explore Elastos.",
     buttonText: "Learn More",
-    video: "/videos/EssentialsTeam.mp4"
+    video: "/videos/EssentialsTeam.mp4",
+    poster: "/posters/EssentialsTeam.jpg" // Add poster image path
   },
   {
     title: "Cyber Republic: Our community-governed DAO, powered by merged-mined ELA.",
     buttonText: "Learn More",
-    video: "/videos/CyberRepublicTeam.mp4"
+    video: "/videos/CyberRepublicTeam.mp4",
+    poster: "/posters/CyberRepublicTeam.jpg" // Add poster image path
   },
 ];
 
@@ -101,7 +104,7 @@ export function FeaturesCarousel() {
   useEffect(() => {
     let startTime = Date.now();
     let animationFrameId;
-    
+
     const updateProgress = () => {
       const elapsed = Date.now() - startTime;
       const newProgress = Math.min(100, (elapsed / SLIDE_DURATION) * 100);
@@ -117,12 +120,12 @@ export function FeaturesCarousel() {
           api.scrollTo(nextIndex);
         }
       }
-      
+
       animationFrameId = setTimeout(updateProgress, PROGRESS_UPDATE_INTERVAL);
     };
-    
+
     animationFrameId = setTimeout(updateProgress, PROGRESS_UPDATE_INTERVAL);
-    
+
     return () => clearTimeout(animationFrameId);
   }, [currentIndex, api]);
 
@@ -137,7 +140,7 @@ export function FeaturesCarousel() {
         <CarouselContent>
           {features.map((feature, index) => {
             const isVisible = visibleIndexes.has(index);
-            
+
             return (
               <CarouselItem key={index} className="carousel-item" data-index={index}>
                 <div className={cn(
@@ -150,12 +153,19 @@ export function FeaturesCarousel() {
                     <video
                       autoPlay
                       muted
-                      loop
                       playsInline
                       loading="lazy"
                       preload="metadata"
                       fetchPriority={index === currentIndex ? "high" : "low"}
                       className="absolute inset-0 w-full h-full object-cover"
+                      poster={feature.poster}
+                      onEnded={(e) => {
+                        // When video ends, show poster image
+                        e.currentTarget.load();
+                        e.currentTarget.poster = feature.poster;
+                      }}
+                      controlsList="nodownload"
+                      onContextMenu={(e) => e.preventDefault()}
                     >
                       <source src={feature.video} type="video/mp4" />
                     </video>

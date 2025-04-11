@@ -46,7 +46,13 @@ const CustomSlider = ({
   );
 };
 
-const VideoPlayer = ({ src }: { src: string }) => {
+interface VideoPlayerProps {
+  src: string;
+  poster?: string;
+  preventLoop?: boolean;
+}
+
+const VideoPlayer = ({ src, poster = "/images/Elastosvideoimage.png", preventLoop = false }: VideoPlayerProps) => {
   const videoRef = useRef<HTMLVideoElement>(null);
   const [isPlaying, setIsPlaying] = useState(false);
   const [volume, setVolume] = useState(1);
@@ -56,6 +62,7 @@ const VideoPlayer = ({ src }: { src: string }) => {
   const [showControls, setShowControls] = useState(false);
   const [currentTime, setCurrentTime] = useState(0);
   const [duration, setDuration] = useState(0);
+  const [videoEnded, setVideoEnded] = useState(false);
 
   const togglePlay = () => {
     if (videoRef.current) {
@@ -131,11 +138,19 @@ const VideoPlayer = ({ src }: { src: string }) => {
         className="w-full"
         onTimeUpdate={handleTimeUpdate}
         src={src}
-        poster="/images/Elastosvideoimage.png"
+        poster={poster}
         onClick={togglePlay}
         preload="metadata"
         controlsList="nodownload"
         onContextMenu={(e) => e.preventDefault()}
+        onEnded={(e) => {
+          if (preventLoop) {
+            setIsPlaying(false);
+            setVideoEnded(true);
+            // Reset to poster image when video ends
+            e.currentTarget.load();
+          }
+        }}
       />
 
       <AnimatePresence>
