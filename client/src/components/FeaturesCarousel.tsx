@@ -152,43 +152,42 @@ export function FeaturesCarousel() {
                   "backdrop-blur-lg border border-white/10",
                   isMobile ? "h-[320px]" : "h-[400px]"
                 )}>
-                  {/* Only load video when visible or adjacent to visible slide */}
-                  {isVisible && (
-                    feature.youtubeEmbed ? (
-                      <iframe 
-                        src={`${feature.video.replace('youtu.be/', 'youtube.com/embed/')}?autoplay=1&mute=1&loop=1&playlist=${feature.video.split('/').pop()}&controls=0`}
-                        className={`absolute inset-0 w-full h-full object-cover transform-gpu ${
-                          index === 0 ? "scale-125" : // Elacity - standard zoom
-                          index === 1 ? "scale-150" : // BeL2 - more zoom
-                          index === 2 ? "scale-175" : // Essentials - even more zoom
-                          "scale-150"                 // Cyber Republic - more zoom
-                        }`}
-                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                        allowFullScreen
-                        frameBorder="0"
-                        title={`${index === 0 ? 'Elacity' : index === 1 ? 'BeL2' : index === 2 ? 'Essentials' : 'Cyber Republic'} Video`}
-                      ></iframe>
-                    ) : (
-                      <video
-                        autoPlay
-                        muted
-                        playsInline
-                        loading="lazy"
-                        preload="metadata"
-                        fetchPriority={index === currentIndex ? "high" : "low"}
-                        className="absolute inset-0 w-full h-full object-cover scale-125 transform-gpu"
-                        poster={feature.poster}
-                        onEnded={(e) => {
-                          // When video ends, show poster image
-                          e.currentTarget.load();
-                          e.currentTarget.poster = feature.poster;
-                        }}
-                        controlsList="nodownload"
-                        onContextMenu={(e) => e.preventDefault()}
-                      >
-                        <source src={feature.video} type="video/mp4" />
-                      </video>
-                    )
+                  {/* Always render all videos but use lazy loading for non-visible slides */}
+                  {feature.youtubeEmbed ? (
+                    <iframe 
+                      src={`${feature.video.replace('youtu.be/', 'youtube.com/embed/')}?autoplay=1&mute=1&loop=1&playlist=${feature.video.split('/').pop()}&controls=0`}
+                      className={`absolute inset-0 w-full h-full object-cover transform-gpu ${
+                        index === 0 ? "scale-125" : // Elacity - standard zoom
+                        index === 1 ? "scale-150" : // BeL2 - more zoom
+                        index === 2 ? "scale-175" : // Essentials - even more zoom
+                        "scale-150"                 // Cyber Republic - more zoom
+                      } ${!isVisible ? 'opacity-0' : 'opacity-100'}`}
+                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                      allowFullScreen
+                      frameBorder="0"
+                      title={`${index === 0 ? 'Elacity' : index === 1 ? 'BeL2' : index === 2 ? 'Essentials' : 'Cyber Republic'} Video`}
+                      loading="lazy"
+                    ></iframe>
+                  ) : (
+                    <video
+                      autoPlay
+                      muted
+                      playsInline
+                      loading="lazy"
+                      preload="metadata"
+                      fetchPriority={index === currentIndex ? "high" : "low"}
+                      className={`absolute inset-0 w-full h-full object-cover scale-125 transform-gpu ${!isVisible ? 'opacity-0' : 'opacity-100'}`}
+                      poster={feature.poster}
+                      onEnded={(e) => {
+                        // When video ends, show poster image
+                        e.currentTarget.load();
+                        e.currentTarget.poster = feature.poster;
+                      }}
+                      controlsList="nodownload"
+                      onContextMenu={(e) => e.preventDefault()}
+                    >
+                      <source src={feature.video} type="video/mp4" />
+                    </video>
                   )}
                   <div className="absolute inset-0 p-8 text-white">
                     <div className="h-full flex flex-col">
