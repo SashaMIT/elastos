@@ -21,7 +21,7 @@ const projects: Project[] = [
   {
     name: "Essentials",
     description: "Elastos SuperWallet with ELA staking, multi-chain, identity and CR governance",
-    url: "https://essentials.elastos.org",
+    url: "/wallet",
     category: "Infra and Dev Tools",
     image: "/images/Ecosystem/Essentials.png"
   },
