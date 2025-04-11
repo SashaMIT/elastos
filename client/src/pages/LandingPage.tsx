@@ -314,14 +314,18 @@ const LandingPage = () => {
               alt="Elastos Hero" 
               className="absolute inset-0 w-full h-full object-cover z-10" 
             />
-            <div className="absolute inset-0 w-full h-full z-20">
+            <div className="absolute inset-0 w-full h-full z-20 overflow-hidden">
               <iframe 
-                className="absolute top-0 left-0 w-full h-full object-cover"
+                className="absolute top-0 left-0 w-[100%] h-[100%] scale-[1.35]"
                 src="https://www.youtube.com/embed/PEtrJlSQB3w?autoplay=1&mute=1&controls=0&showinfo=0&rel=0&loop=0&playlist=PEtrJlSQB3w&enablejsapi=1"
                 title="Elastos Hero"
                 frameBorder="0"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                style={{pointerEvents: "none"}}
+                style={{
+                  pointerEvents: "none",
+                  objectFit: "cover",
+                  objectPosition: "center"
+                }}
               ></iframe>
               <script dangerouslySetInnerHTML={{
                 __html: `
