@@ -24,7 +24,7 @@ const VideoPlayerDemo = () => {
                                 <Play className="w-12 h-12 text-white" />
                             </div>
                             <span className="absolute bottom-4 text-white font-medium">
-                                Click to play video (35MB)
+                            
                             </span>
                         </div>
                     </div>
