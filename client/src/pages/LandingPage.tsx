@@ -308,15 +308,26 @@ const LandingPage = () => {
       <div className="w-full px-2 mt-[-20px]">
         <div className="relative w-full h-[700px] overflow-hidden rounded-3xl">
           {/* Video Background */}
-          {/* Using only placeholder image instead of video to reduce bandwidth usage */}
-          <div className="absolute inset-0 w-full h-full">
-            <img 
-              src="/images/Hero image.png" 
-              alt="Elastos Hero" 
-              className="w-full h-full object-cover" 
-              onContextMenu={(e) => e.preventDefault()}
-            />
-          </div>
+          <video
+            className="absolute inset-0 w-full h-full object-cover"
+            autoPlay
+            muted
+            playsInline
+            loop={false}
+            preload="metadata"
+            poster="/images/Hero image.png"
+            onEnded={(e) => {
+              // When video ends, set poster image to display
+              e.currentTarget.pause();
+              e.currentTarget.currentTime = 0;
+              e.currentTarget.load();
+              e.currentTarget.poster = "/images/Hero image.png";
+            }}
+            controlsList="nodownload"
+            onContextMenu={(e) => e.preventDefault()}
+          >
+            <source src="/videos/Elastos Hero Video2.mp4" type="video/mp4" />
+          </video>
 
           {/* Overlay for better text readability */}
           <div className="absolute inset-0 bg-black/30"></div>
