@@ -317,7 +317,7 @@ const LandingPage = () => {
             <div className="absolute inset-0 w-full h-full z-20 overflow-hidden">
               <iframe 
                 className="absolute top-0 left-0 w-[100%] h-[100%] scale-[1.35]"
-                src="https://www.youtube.com/embed/PEtrJlSQB3w?autoplay=1&mute=1&controls=0&showinfo=0&rel=0&loop=0&playlist=PEtrJlSQB3w&enablejsapi=1"
+                src="https://www.youtube.com/embed/PEtrJlSQB3w?autoplay=1&mute=1&controls=0&showinfo=0&rel=0&loop=1&playlist=PEtrJlSQB3w&enablejsapi=1"
                 title="Elastos Hero"
                 frameBorder="0"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
@@ -329,7 +329,7 @@ const LandingPage = () => {
               ></iframe>
               <script dangerouslySetInnerHTML={{
                 __html: `
-                // Add event listener to hide video when it ends
+                // Initialize YouTube API for controlling the player
                 var tag = document.createElement('script');
                 tag.src = "https://www.youtube.com/iframe_api";
                 var firstScriptTag = document.getElementsByTagName('script')[0];
@@ -345,8 +345,9 @@ const LandingPage = () => {
                 }
                 
                 function onPlayerStateChange(event) {
+                  // Ensure continuous playback
                   if(event.data === YT.PlayerState.ENDED) {
-                    document.getElementById('hero-youtube-container').style.display = 'none';
+                    player.playVideo(); // Restart video if it somehow ends
                   }
                 }
                 `
