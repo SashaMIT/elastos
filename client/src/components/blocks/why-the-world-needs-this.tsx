@@ -54,7 +54,8 @@ export function WhyTheWorldNeedsThis() {
         <h2 className="text-3xl md:text-4xl font-bold text-center mb-12">Why the World Needs This</h2>
 
         <div className="flex justify-center mb-8 overflow-hidden">
-          <div className="rounded-full border-[0.5px] border-[#95B5FF]/30 bg-[#95B5FF]/10 dark:bg-[#95B5FF]/10 flex overflow-x-auto scrollbar-hide">
+          <div className="rounded-full border-[0.5px] border-[#95B5FF]/30 bg-[#95B5FF]/10 dark:bg-[#95B5FF]/10 flex overflow-hidden">
+            <div className="flex overflow-x-auto scrollbar-hide w-full">
             {reasons.map((reason, index) => (
               <button
                 key={reason.id}
@@ -69,6 +70,7 @@ export function WhyTheWorldNeedsThis() {
                 {reason.title}
               </button>
             ))}
+            </div>
           </div>
         </div>
 
