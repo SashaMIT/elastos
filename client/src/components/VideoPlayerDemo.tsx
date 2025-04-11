@@ -6,7 +6,7 @@ const VideoPlayerDemo = () => {
     const [videoLoaded, setVideoLoaded] = useState(false);
     
     return (
-        <div className="container mx-auto mt-12 w-full">
+        <div className="container mx-auto mt-12 md:mt-12 w-full">
             <div className="w-full">
                 {!videoLoaded ? (
                     <div 
