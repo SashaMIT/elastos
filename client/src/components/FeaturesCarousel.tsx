@@ -15,29 +15,31 @@ const features = [
   {
     title: "Elacity World Computer Marketplace. A Blockchain-Powered Open Market.",
     buttonText: "Learn More",
-    video: "https://youtu.be/mq7TnEK3P4I",
-    youtubeEmbed: true,
-    poster: "/images/Home Page Carousel/ElacityTea.jpeg" // Updated to correct path
+    // Store YouTube links for future reference but don't use them now
+    // video: "https://youtu.be/mq7TnEK3P4I",
+    youtubeEmbed: false,
+    poster: "/images/Home Page Carousel/ElacityTea.jpeg"
   },
   {
     title: "BeL2. Unlocking Bitcoins Value with Native Bitcoin DeFi using ELA-backed Nodes.",
     buttonText: "Learn More",
-    video: "https://youtu.be/yuj3h4AOBuM",
-    youtubeEmbed: true,
-    poster: "/images/Home Page Carousel/BeL2Tea.jpeg" // Updated to correct path
+    // video: "https://youtu.be/yuj3h4AOBuM",
+    youtubeEmbed: false,
+    poster: "/images/Home Page Carousel/BeL2Tea.jpeg"
   },
   {
     title: "Essentials Wallet. Stake ELA and Earn APY, Access dApps and Explore Elastos.",
     buttonText: "Learn More",
-    video: "https://youtu.be/OCwAsCfgOFg",
-    youtubeEmbed: true,
-    poster: "/images/Home Page Carousel/EssentialsTea.jpeg" // Updated to correct path
+    // video: "https://youtu.be/OCwAsCfgOFg",
+    youtubeEmbed: false,
+    poster: "/images/Home Page Carousel/EssentialsTea.jpeg"
   },
   {
     title: "Cyber Republic: Our community-governed DAO, powered by merged-mined ELA.",
     buttonText: "Learn More",
-
-    poster: "/images/Home Page Carousel/CyberRepublicTea.jpeg" // Updated to correct path
+    // video: "https://youtu.be/RpIFm57cLt4",
+    youtubeEmbed: false,
+    poster: "/images/Home Page Carousel/CyberRepublicTea.jpeg"
   },
 ];
 
@@ -51,6 +53,14 @@ export function FeaturesCarousel() {
   const [progress, setProgress] = useState(100);
   const [api, setApi] = React.useState();
   const [visibleIndexes, setVisibleIndexes] = useState(new Set([0])); // Track visible slides
+
+  // Preload all images on initial load
+  useEffect(() => {
+    features.forEach(feature => {
+      const img = new Image();
+      img.src = feature.poster;
+    });
+  }, []);
 
   // Memoize carousel options to prevent recreation on render
   const carouselOptions = useMemo(() => ({
