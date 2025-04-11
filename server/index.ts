@@ -44,13 +44,68 @@ app.use(compression());
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 
-// Add Expires headers for static content
+// In-memory store for rate limiting
+const requestLimiter = {
+  videoRequests: new Map(),
+  cleanupInterval: null
+};
+
+// Initialize cleanup interval
+if (!requestLimiter.cleanupInterval) {
+  // Clean up rate limiting data every hour
+  requestLimiter.cleanupInterval = setInterval(() => {
+    const oneHourAgo = Date.now() - (60 * 60 * 1000);
+    for (const [key, timestamp] of requestLimiter.videoRequests.entries()) {
+      if (timestamp < oneHourAgo) {
+        requestLimiter.videoRequests.delete(key);
+      }
+    }
+  }, 60 * 60 * 1000);
+}
+
+// Add protection for video assets and expire headers for static content
 app.use((req, res, next) => {
-  // Check if the request is for a static asset
-  const isStaticAsset = /\.(jpg|jpeg|png|gif|ico|css|js|svg|webp|woff|woff2|ttf|eot|mp4)$/i.test(req.path);
+  // Check if the request is for a video file
+  const isVideoAsset = /\.(mp4)$/i.test(req.path);
   
-  if (isStaticAsset) {
-    // Set expires headers for static content (1 week)
+  if (isVideoAsset) {
+    // Check referrer - only allow from your own domain
+    const referer = req.get('Referer') || '';
+    const allowedDomains = ['elastos.net', 'www.elastos.net', 'elastosnet.replit.app'];
+    const isValidReferer = allowedDomains.some(domain => referer.includes(domain));
+    
+    // Get client IP for rate limiting
+    const clientIp = req.ip || req.connection.remoteAddress;
+    const videoId = req.path;
+    const requestKey = `${clientIp}:${videoId}`;
+    const now = Date.now();
+    const lastRequest = requestLimiter.videoRequests.get(requestKey) || 0;
+    
+    // Allow only one video request per 5 minutes per IP per video
+    const rateLimitWindow = 5 * 60 * 1000; // 5 minutes
+    
+    if (!isValidReferer) {
+      // Block hotlinking
+      return res.status(403).send('Direct video access not allowed');
+    }
+    
+    if (now - lastRequest < rateLimitWindow) {
+      // Set rate limit headers
+      res.setHeader('X-RateLimit-Limit', '1');
+      res.setHeader('X-RateLimit-Remaining', '0');
+      res.setHeader('X-RateLimit-Reset', new Date(lastRequest + rateLimitWindow).toUTCString());
+      return res.status(429).send('Too many requests. Please try again later.');
+    }
+    
+    // Update rate limiter
+    requestLimiter.videoRequests.set(requestKey, now);
+    
+    // Set more restrictive cache for videos (1 hour)
+    const oneHourInSeconds = 60 * 60;
+    res.setHeader('Cache-Control', `public, max-age=${oneHourInSeconds}`);
+    res.setHeader('Expires', new Date(Date.now() + oneHourInSeconds * 1000).toUTCString());
+  } else if (/\.(jpg|jpeg|png|gif|ico|css|js|svg|webp|woff|woff2|ttf|eot)$/i.test(req.path)) {
+    // Set expires headers for non-video static content (1 week)
     const oneWeekInSeconds = 60 * 60 * 24 * 7;
     res.setHeader('Cache-Control', `public, max-age=${oneWeekInSeconds}`);
     res.setHeader('Expires', new Date(Date.now() + oneWeekInSeconds * 1000).toUTCString());

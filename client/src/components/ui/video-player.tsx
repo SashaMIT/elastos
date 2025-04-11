@@ -133,6 +133,9 @@ const VideoPlayer = ({ src }: { src: string }) => {
         src={src}
         poster="/images/Elastosvideoimage.png"
         onClick={togglePlay}
+        preload="metadata"
+        controlsList="nodownload"
+        onContextMenu={(e) => e.preventDefault()}
       />
 
       <AnimatePresence>
