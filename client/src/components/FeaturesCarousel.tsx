@@ -159,7 +159,7 @@ export function FeaturesCarousel() {
                       src={`${feature.video.replace('youtu.be/', 'youtube.com/embed/')}?autoplay=1&mute=1&loop=1&playlist=${feature.video.split('/').pop()}&controls=0`}
                       className={`absolute inset-0 w-full h-full object-cover transform-gpu z-0 ${
                         isMobile ? (
-                          index === 0 ? "scale-[1.6]" : // Elacity - reduced zoom on mobile
+                          index === 0 ? "scale-[2.0]" : // Elacity - increased zoom on mobile
                           index === 1 ? "scale-[1.7]" : // BeL2 - reduced zoom on mobile
                           index === 2 ? "scale-[1.8]" : // Essentials - reduced zoom on mobile
                           "scale-[1.7]"                 // Cyber Republic - reduced zoom on mobile
