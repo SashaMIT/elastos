@@ -335,10 +335,10 @@ const LandingPage = () => {
           </div>
 
           {/* Overlay for better text readability */}
-          <div className="absolute inset-0 bg-black/30"></div>
+          <div className="absolute inset-0 bg-black/30" style={{ zIndex: 30 }}></div>
 
           {/* Content */}
-          <div className="relative z-10 flex flex-col items-center justify-center h-full text-white p-4 sm:p-8">
+          <div className="relative flex flex-col items-center justify-center h-full text-white p-4 sm:p-8" style={{ zIndex: 40 }}>
             <h1 className="text-xl sm:text-3xl md:text-3xl lg:text-4xl font-bold text-center mb-4 px-2">
               Own Your Digital Life, Secured by Bitcoin.
             </h1>
