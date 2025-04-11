@@ -214,61 +214,74 @@ export default function TeamFoundationPage() {
       </section>
 
       {/* Development Teams Section */}
-      <section className="py-20">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="max-w-3xl mx-auto text-center mb-16">
-            <h2 className="text-3xl font-[200] mb-6 text-black dark:text-white">Core Contributers</h2>
-            <p className="text-gray-600 dark:text-gray-400 text-base font-[200]">
+      <section className="py-16 relative bg-white dark:bg-[#171717]">
+        <div className="container mx-auto px-4">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="text-center mb-12"
+          >
+            <h2 className="text-3xl font-bold mb-4 text-black dark:text-white font-[200]">
+              Core Contributors
+            </h2>
+            <p className="text-lg text-gray-600 dark:text-gray-400 max-w-3xl mx-auto font-[200]">
               Specialized teams focusing on different aspects of the Elastos ecosystem
             </p>
-          </div>
+          </motion.div>
 
-          <div className="space-y-16">
-            {coreDevelopmentTeams.map((team, index) => (
-              <div 
-                key={index}
-                className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center"
-              >
-                <div className={`order-2 ${index % 2 === 0 ? 'lg:order-1' : 'lg:order-2'}`}>
-                  <h3 className="text-2xl font-[200] mb-4 text-black dark:text-white">{team.name}</h3>
-                  <p className="text-gray-600 dark:text-gray-400 text-base font-[200] mb-6">{team.description}</p>
-
-                  <div className="flex flex-wrap gap-4">
-                    {team.links.map((link, linkIndex) => (
-                      <a
-                        key={linkIndex}
-                        href={link.url}
-                        target={link.url.startsWith('/') ? "_self" : "_blank"}
-                        rel="noopener noreferrer"
-                        className="inline-flex px-3 py-2 bg-[rgba(92,142,255,0.15)] text-white rounded-full font-[200] transition-all items-center gap-1 border border-[rgba(92,142,255,0.25)] text-sm"
-                      >
-                        <span>{link.text}</span>
-                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 35 34" fill="none">
-                          <circle cx="17.333" cy="17" r="16.75" stroke="#5C8EFF" strokeOpacity="0.25" strokeWidth="1.5"/>
-                          <path d="M17.3338 22.9405L23.2741 17.0002L17.3338 11.0598L16.4162 11.9774L20.7628 16.324H10.8622V17.6763H20.7628L16.4162 22.0229L17.3338 22.9405Z" fill="#5C8EFF"/>
-                          <path d="M20.7628 17.6638H10.8747V16.3365H20.7628H20.7929L20.7716 16.3152L16.4338 11.9774L17.3338 11.0775L23.2564 17.0002L17.3338 22.9228L16.4338 22.0229L20.7716 17.6851L20.7929 17.6638H20.7628Z" stroke="#5C8EFF" strokeOpacity="0.25" strokeWidth="1.5"/>
-                        </svg>
-                      </a>
-                    ))}
-                  </div>
+          <div className="relative">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 xl:border rounded-md dark:border-neutral-800 max-w-6xl mx-auto">
+              {coreDevelopmentTeams.map((team, index) => (
+                <div 
+                  key={team.name} 
+                  className={`p-6 relative overflow-hidden group hover:bg-neutral-100 dark:hover:bg-neutral-900 transition-colors duration-300 ${
+                    index < coreDevelopmentTeams.length - 4 ? 'border-b dark:border-neutral-800' : ''
+                  } ${
+                    index % 4 !== 3 ? 'md:border-r dark:border-neutral-800' : ''
+                  }`}
+                >
+                  <motion.div
+                    whileHover={{ scale: 1.03 }}
+                    className="flex flex-col h-full"
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ delay: index * 0.1 }}
+                  >
+                    <div className="mb-4">
+                      <div className="w-8 h-8 flex items-center justify-center rounded-full bg-[#1E1E1E] dark:bg-[#2E2E2E]">
+                        {team.links[0].icon || <Globe className="w-4 h-4 text-[#8BABFF]" />}
+                      </div>
+                    </div>
+                    <h3 className="text-lg font-semibold mb-2 text-[#8BABFF] font-[200]">
+                      {team.name}
+                    </h3>
+                    <p className="text-gray-600 dark:text-neutral-300 text-sm mb-4 font-[200]">
+                      {team.description}
+                    </p>
+                    <div className="mt-auto pt-4">
+                      {team.links.map((link, linkIndex) => (
+                        <a
+                          key={linkIndex}
+                          href={link.url}
+                          target={link.url.startsWith('/') ? "_self" : "_blank"}
+                          rel="noopener noreferrer"
+                          className="inline-flex px-3 py-2 bg-[rgba(92,142,255,0.15)] text-black dark:text-white rounded-full font-[200] transition-all items-center gap-1 border border-[rgba(92,142,255,0.25)] text-sm"
+                        >
+                          <span>{link.text}</span>
+                          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 35 34" fill="none">
+                            <circle cx="17.333" cy="17" r="16.75" stroke="#5C8EFF" strokeOpacity="0.25" strokeWidth="1.5"/>
+                            <path d="M17.3338 22.9405L23.2741 17.0002L17.3338 11.0598L16.4162 11.9774L20.7628 16.324H10.8622V17.6763H20.7628L16.4162 22.0229L17.3338 22.9405Z" fill="#5C8EFF"/>
+                            <path d="M20.7628 17.6638H10.8747V16.3365H20.7628H20.7929L20.7716 16.3152L16.4338 11.9774L17.3338 11.0775L23.2564 17.0002L17.3338 22.9228L16.4338 22.0229L20.7716 17.6851L20.7929 17.6638H20.7628Z" stroke="#5C8EFF" strokeOpacity="0.25" strokeWidth="1.5"/>
+                          </svg>
+                        </a>
+                      ))}
+                    </div>
+                  </motion.div>
                 </div>
-
-                <div className={`order-1 ${index % 2 === 0 ? 'lg:order-2' : 'lg:order-1'}`}>
-                  <div className="rounded-xl overflow-hidden shadow-lg border border-gray-200 dark:border-gray-800">
-                    <video 
-                      className="w-full h-auto" 
-                      autoPlay 
-                      loop 
-                      muted 
-                      playsInline
-                    >
-                      <source src={team.videoSrc} type="video/mp4" />
-                      Your browser does not support the video tag.
-                    </video>
-                  </div>
-                </div>
-              </div>
-            ))}
+              ))}
+            </div>
           </div>
         </div>
       </section>
