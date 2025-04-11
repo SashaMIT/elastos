@@ -1,6 +1,5 @@
 
 import React, { useState } from "react";
-import VideoPlayer from "@/components/ui/video-player";
 import { Play } from "lucide-react";
 
 const VideoPlayerDemo = () => {
@@ -29,11 +28,16 @@ const VideoPlayerDemo = () => {
                         </div>
                     </div>
                 ) : (
-                    <VideoPlayer 
-                        src="/videos/Elastos_ The Modern Internet.mp4"
-                        poster="/images/Elastosvideoimage.png"
-                        preventLoop={true}
-                    />
+                    <div className="w-full aspect-video rounded-xl overflow-hidden">
+                        <iframe 
+                            className="w-full h-full"
+                            src="https://www.youtube.com/embed/vaJ5Pguxd4M?autoplay=1&rel=0"
+                            title="Elastos: The Modern Internet"
+                            frameBorder="0"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                            allowFullScreen
+                        ></iframe>
+                    </div>
                 )}
             </div>
         </div>
