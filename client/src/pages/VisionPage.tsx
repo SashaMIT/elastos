@@ -36,8 +36,8 @@ export function VisionPage() {
             </div>
           </div>
           
-          {/* Video player shown only on mobile, positioned lower */}
-          <div className="block md:hidden mb-20">
+          {/* Video player shown only on mobile, positioned much lower */}
+          <div className="block md:hidden mt-32 pt-32 mb-20">
             <VideoPlayerDemo />
           </div>
           
