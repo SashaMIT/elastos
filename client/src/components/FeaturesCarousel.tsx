@@ -155,10 +155,10 @@ export function FeaturesCarousel() {
                   <div className="absolute inset-0 bg-black/30 z-[1]"></div>
                   {/* Using placeholder images instead of videos */}
                   <img 
-                    src={index === 0 ? "/images/Home Page Carousel/ElacityTea.jpeg" : 
-                         index === 1 ? "/images/Home Page Carousel/BeL2Tea.jpeg" : 
-                         index === 2 ? "/images/Home Page Carousel/EssentialsTea.jpeg" : 
-                         "/images/Home Page Carousel/CyberRepublicTea.jpeg"}
+                    src={index === 0 ? "./images/Home Page Carousel/ElacityTea.jpeg" : 
+                         index === 1 ? "./images/Home Page Carousel/BeL2Tea.jpeg" : 
+                         index === 2 ? "./images/Home Page Carousel/EssentialsTea.jpeg" : 
+                         "./images/Home Page Carousel/CyberRepublicTea.jpeg"}
                     alt={`${index === 0 ? 'Elacity' : index === 1 ? 'BeL2' : index === 2 ? 'Essentials' : 'Cyber Republic'} Preview`}
                     className={`absolute inset-0 w-full h-full object-cover transform-gpu z-0 ${
                       isMobile ? (
