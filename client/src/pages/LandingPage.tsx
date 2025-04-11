@@ -314,24 +314,40 @@ const LandingPage = () => {
               alt="Elastos Hero" 
               className="absolute inset-0 w-full h-full object-cover z-10" 
             />
-            <video
-              className="absolute inset-0 w-full h-full object-cover"
-              autoPlay
-              muted
-              playsInline
-              loop={false}
-              preload="metadata"
-              controlsList="nodownload"
-              onContextMenu={(e) => e.preventDefault()}
-              onEnded={(e) => {
-                // Hide video when it ends
-                const video = e.currentTarget;
-                video.style.display = 'none';
-              }}
-              style={{ zIndex: 20 }}
-            >
-              <source src="/videos/Elastos Hero Video2.mp4" type="video/mp4" />
-            </video>
+            <div className="absolute inset-0 w-full h-full z-20">
+              <iframe 
+                className="absolute top-0 left-0 w-full h-full object-cover"
+                src="https://www.youtube.com/embed/PEtrJlSQB3w?autoplay=1&mute=1&controls=0&showinfo=0&rel=0&loop=0&playlist=PEtrJlSQB3w&enablejsapi=1"
+                title="Elastos Hero"
+                frameBorder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                style={{pointerEvents: "none"}}
+              ></iframe>
+              <script dangerouslySetInnerHTML={{
+                __html: `
+                // Add event listener to hide video when it ends
+                var tag = document.createElement('script');
+                tag.src = "https://www.youtube.com/iframe_api";
+                var firstScriptTag = document.getElementsByTagName('script')[0];
+                firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+                
+                var player;
+                function onYouTubeIframeAPIReady() {
+                  player = new YT.Player('hero-youtube-video', {
+                    events: {
+                      'onStateChange': onPlayerStateChange
+                    }
+                  });
+                }
+                
+                function onPlayerStateChange(event) {
+                  if(event.data === YT.PlayerState.ENDED) {
+                    document.getElementById('hero-youtube-container').style.display = 'none';
+                  }
+                }
+                `
+              }} />
+            </div>
           </div>
 
           {/* Overlay for better text readability */}
