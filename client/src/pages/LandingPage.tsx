@@ -311,11 +311,17 @@ const LandingPage = () => {
           <video
             className="absolute inset-0 w-full h-full object-cover"
             autoPlay
-            loop
             muted
             playsInline
-            preload="none"
+            preload="metadata"
             poster="/images/Hero image.png"
+            onEnded={(e) => {
+              // When video ends, set poster image to display
+              e.currentTarget.load();
+              e.currentTarget.poster = "/images/Hero image.png";
+            }}
+            controlsList="nodownload"
+            onContextMenu={(e) => e.preventDefault()}
           >
             <source src="/videos/Elastos Hero Video2.mp4" type="video/mp4" />
           </video>
