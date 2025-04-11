@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { SEO } from "@/components/SEO";
 import { VerifyButton } from '@/components/ui/verify-button';
 import { Link } from 'react-router-dom';
-import { VideoPlayerDemo } from "@/components/VideoPlayerDemo";
+
 import { LogoCarouselDemo } from "@/components/LogoCarouselDemo";
 import { ScalingSection } from "@/components/ScalingSection";
 import { CenteredSpinner } from "@/components/ui/centered-spinner";
