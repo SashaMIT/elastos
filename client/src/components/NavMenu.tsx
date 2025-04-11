@@ -24,17 +24,17 @@ export function NavMenu() {
     : "/images/Elastos Logo Light - 1.png";
 
   return (
-    <div className="flex justify-between items-center w-full px-4 bg-[#ffffff] dark:bg-background/20 backdrop-blur-lg">
+    <div className="flex justify-between items-center w-full px-4 bg-[#ffffff] dark:bg-background/20 backdrop-blur-lg overflow-x-hidden"> {/* Added overflow-x-hidden */}
       <Link href="/" className="z-20 flex items-center">
         <img src={logoSrc} alt="Elastos Logo" className="h-5 w-auto object-contain" />
       </Link>
-      <div className="flex-1 flex justify-end md:justify-center relative">
-        <div className="hidden md:flex absolute right-8 top-1/2 -translate-y-1/2 items-center gap-2">
+      <div className="flex-1 flex justify-end md:justify-center relative overflow-x-hidden"> {/* Added overflow-x-hidden */}
+        <div className="hidden md:flex absolute right-8 top-1/2 -translate-y-1/2 items-center gap-2 overflow-x-hidden"> {/* Added overflow-x-hidden */}
           <a
             href="https://twitter.com/ElastosInfo"
             target="_blank"
             rel="noopener noreferrer"
-            className="flex items-center p-2 rounded-full hover:text-[#95B5FF]"
+            className="flex items-center p-2 rounded-full hover:text-[#95B5FF] overflow-x-hidden" {/* Added overflow-x-hidden */}
           >
             <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
               <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
@@ -43,12 +43,12 @@ export function NavMenu() {
           <NavigationMenu>
             <NavigationMenuList>
               <NavigationMenuItem>
-                <NavigationMenuTrigger className="text-sm font-[200] bg-[#F6921A]/5 hover:bg-[#F6921A]/10 text-white border border-[#F6921A]/50 rounded-full px-4 [&>svg]:text-[#F6921A]/50">ELA</NavigationMenuTrigger>
-                <NavigationMenuContent>
-                  <div className="grid w-[200px] gap-1 p-2">
+                <NavigationMenuTrigger className="text-sm font-[200] bg-[#F6921A]/5 hover:bg-[#F6921A]/10 text-white border border-[#F6921A]/50 rounded-full px-4 [&>svg]:text-[#F6921A]/50 overflow-x-hidden"> {/* Added overflow-x-hidden */}NavigationMenuTrigger>
+                <NavigationMenuContent className="overflow-x-hidden"> {/* Added overflow-x-hidden */}
+                  <div className="grid w-[200px] gap-1 p-2 overflow-x-hidden"> {/* Added overflow-x-hidden */}
                     <Link href="/stats">
                       <NavigationMenuLink className={navigationMenuTriggerStyle()}>
-                        <div className="flex items-center gap-2">
+                        <div className="flex items-center gap-2 overflow-x-hidden"> {/* Added overflow-x-hidden */}
                           <Home className="h-4 w-4 text-[#94b5ff]" />
                           <span>Stats</span>
                         </div>
@@ -56,7 +56,7 @@ export function NavMenu() {
                     </Link>
                     <Link href="/security">
                       <NavigationMenuLink className={navigationMenuTriggerStyle()}>
-                        <div className="flex items-center gap-2">
+                        <div className="flex items-center gap-2 overflow-x-hidden"> {/* Added overflow-x-hidden */}
                           <Shield className="h-4 w-4 text-[#94b5ff]" />
                           <span>Security</span>
                         </div>
@@ -64,7 +64,7 @@ export function NavMenu() {
                     </Link>
                     <Link href="/supply">
                       <NavigationMenuLink className={navigationMenuTriggerStyle()}>
-                        <div className="flex items-center gap-2">
+                        <div className="flex items-center gap-2 overflow-x-hidden"> {/* Added overflow-x-hidden */}
                           <Coins className="h-4 w-4 text-[#94b5ff]" />
                           <span>Supply</span>
                         </div>
@@ -72,7 +72,7 @@ export function NavMenu() {
                     </Link>
                     <Link href="/bridge">
                       <NavigationMenuLink className={navigationMenuTriggerStyle()}>
-                        <div className="flex items-center gap-2">
+                        <div className="flex items-center gap-2 overflow-x-hidden"> {/* Added overflow-x-hidden */}
                           <Repeat className="h-4 w-4 text-[#94b5ff]" />
                           <span>Bridge</span>
                         </div>
@@ -80,7 +80,7 @@ export function NavMenu() {
                     </Link>
                     <Link href="/buy-ela">
                       <NavigationMenuLink className={navigationMenuTriggerStyle()}>
-                        <div className="flex items-center gap-2">
+                        <div className="flex items-center gap-2 overflow-x-hidden"> {/* Added overflow-x-hidden */}
                           <ShoppingCart className="h-4 w-4 text-[#94b5ff]" />
                           <span>Buy ELA</span>
                         </div>
@@ -93,17 +93,17 @@ export function NavMenu() {
           </NavigationMenu>
         </div>
         {/* Desktop Navigation */}
-        <NavigationMenu className="hidden md:flex absolute left-[46.5%] top-1/2 -translate-x-1/2 -translate-y-1/2">
-          <NavigationMenuList className="hidden md:flex gap-4 lg:gap-6 items-center justify-center w-[400px]">
+        <NavigationMenu className="hidden md:flex absolute left-[46.5%] top-1/2 -translate-x-1/2 -translate-y-1/2 overflow-x-hidden"> {/* Added overflow-x-hidden */}
+          <NavigationMenuList className="hidden md:flex gap-4 lg:gap-6 items-center justify-center w-[400px] overflow-x-hidden"> {/* Added overflow-x-hidden */}
             <NavigationMenuItem>
-              <NavigationMenuTrigger className="font-[200]">Explore</NavigationMenuTrigger>
-              <NavigationMenuContent>
-                <div className="grid w-[400px] gap-1 p-2 md:w-[500px] md:grid-cols-2">
+              <NavigationMenuTrigger className="font-[200] overflow-x-hidden"> {/* Added overflow-x-hidden */}Explore</NavigationMenuTrigger>
+              <NavigationMenuContent className="overflow-x-hidden"> {/* Added overflow-x-hidden */}
+                <div className="grid w-[400px] gap-1 p-2 md:w-[500px] md:grid-cols-2 overflow-x-hidden"> {/* Added overflow-x-hidden */}
                   <div>
-                    <h4 className="font-medium text-sm text-muted-foreground mb-2 px-2 text-[#94b5ff]">ABOUT</h4>
+                    <h4 className="font-medium text-sm text-muted-foreground mb-2 px-2 text-[#94b5ff] overflow-x-hidden"> {/* Added overflow-x-hidden */}ABOUT</h4>
                     <Link to="/vision">
                       <NavigationMenuLink className={navigationMenuTriggerStyle()}>
-                        <div className="flex items-center gap-2">
+                        <div className="flex items-center gap-2 overflow-x-hidden"> {/* Added overflow-x-hidden */}
                           <ScrollText className="h-4 w-4 text-[#94b5ff]" />
                           <span>Our Vision</span>
                         </div>
@@ -111,7 +111,7 @@ export function NavMenu() {
                     </Link>
                     <Link href="/roadmap">
                       <NavigationMenuLink className={navigationMenuTriggerStyle()}>
-                        <div className="flex items-center gap-2">
+                        <div className="flex items-center gap-2 overflow-x-hidden"> {/* Added overflow-x-hidden */}
                           <LineChart className="h-4 w-4 text-[#94b5ff]" />
                           <span>Roadmap</span>
                         </div>
@@ -119,7 +119,7 @@ export function NavMenu() {
                     </Link>
                     <Link to="/ela-utility">
                       <NavigationMenuLink className={navigationMenuTriggerStyle()}>
-                        <div className="flex items-center gap-2">
+                        <div className="flex items-center gap-2 overflow-x-hidden"> {/* Added overflow-x-hidden */}
                           <Coins className="h-4 w-4 text-[#94b5ff]" />
                           <span>ELA Utility</span>
                         </div>
@@ -127,7 +127,7 @@ export function NavMenu() {
                     </Link>
                     <Link to="/whitepaper">
                       <NavigationMenuLink className={navigationMenuTriggerStyle()}>
-                        <div className="flex items-center gap-2">
+                        <div className="flex items-center gap-2 overflow-x-hidden"> {/* Added overflow-x-hidden */}
                           <FileText className="h-4 w-4 text-[#94b5ff]" />
                           <span>Litepaper / Whitepaper</span>
                         </div>
@@ -135,7 +135,7 @@ export function NavMenu() {
                     </Link>
                     <Link href="/use-cases">
                       <NavigationMenuLink className={navigationMenuTriggerStyle()}>
-                        <div className="flex items-center gap-2">
+                        <div className="flex items-center gap-2 overflow-x-hidden"> {/* Added overflow-x-hidden */}
                           <Target className="h-4 w-4 text-[#94b5ff]" />
                           <span>Use Cases</span>
                         </div>
@@ -143,10 +143,10 @@ export function NavMenu() {
                     </Link>
                   </div>
                   <div>
-                    <h4 className="font-medium text-sm text-muted-foreground mb-2 px-2 text-[#94b5ff]">NETWORK</h4>
+                    <h4 className="font-medium text-sm text-muted-foreground mb-2 px-2 text-[#94b5ff] overflow-x-hidden"> {/* Added overflow-x-hidden */}NETWORK</h4>
                     <Link to="/wallet">
                       <NavigationMenuLink className={navigationMenuTriggerStyle()}>
-                        <div className="flex items-center gap-2">
+                        <div className="flex items-center gap-2 overflow-x-hidden"> {/* Added overflow-x-hidden */}
                           <Wallet className="h-4 w-4 text-[#94b5ff]" />
                           <span>Wallet</span>
                         </div>
@@ -154,7 +154,7 @@ export function NavMenu() {
                     </Link>
                     <a href="https://staking.elastos.net/" target="_blank" rel="noopener noreferrer">
                       <NavigationMenuLink className={navigationMenuTriggerStyle()}>
-                        <div className="flex items-center gap-2">
+                        <div className="flex items-center gap-2 overflow-x-hidden"> {/* Added overflow-x-hidden */}
                           <LineChart className="h-4 w-4 text-[#94b5ff]" />
                           <span>Staking & Nodes</span>
                         </div>
@@ -162,7 +162,7 @@ export function NavMenu() {
                     </a>
                     <Link to="/explorer">
                       <NavigationMenuLink className={navigationMenuTriggerStyle()}>
-                        <div className="flex items-center gap-2">
+                        <div className="flex items-center gap-2 overflow-x-hidden"> {/* Added overflow-x-hidden */}
                           <MessageCircle className="h-4 w-4 text-[#94b5ff]" />
                           <span>Explorer</span>
                         </div>
@@ -170,7 +170,7 @@ export function NavMenu() {
                     </Link>
                     <Link to="/ecosystem"> {/* Changed to Link component and removed target="_blank" */}
                       <NavigationMenuLink className={navigationMenuTriggerStyle()}>
-                        <div className="flex items-center gap-2">
+                        <div className="flex items-center gap-2 overflow-x-hidden"> {/* Added overflow-x-hidden */}
                           <ShoppingCart className="h-4 w-4 text-[#94b5ff]" />
                           <span>Ecosystem Projects</span>
                         </div>
@@ -178,7 +178,7 @@ export function NavMenu() {
                     </Link>
                     <Link href="/faq">
                       <NavigationMenuLink className={navigationMenuTriggerStyle()}>
-                        <div className="flex items-center gap-2">
+                        <div className="flex items-center gap-2 overflow-x-hidden"> {/* Added overflow-x-hidden */}
                           <HelpCircle className="h-4 w-4 text-[#94b5ff]" />
                           <span>FAQs</span>
                         </div>
@@ -190,16 +190,16 @@ export function NavMenu() {
             </NavigationMenuItem>
 
             <NavigationMenuItem>
-              <NavigationMenuTrigger className="text-sm font-[200]">
+              <NavigationMenuTrigger className="text-sm font-[200] overflow-x-hidden"> {/* Added overflow-x-hidden */}
                 Build
               </NavigationMenuTrigger>
-              <NavigationMenuContent>
-                <div className="grid w-[400px] gap-1 p-4 md:w-[500px] md:grid-cols-2">
+              <NavigationMenuContent className="overflow-x-hidden"> {/* Added overflow-x-hidden */}
+                <div className="grid w-[400px] gap-1 p-4 md:w-[500px] md:grid-cols-2 overflow-x-hidden"> {/* Added overflow-x-hidden */}
                   <div>
-                    <h4 className="font-medium text-sm text-muted-foreground mb-2 px-2 text-[#94b5ff]">DEVS</h4>
+                    <h4 className="font-medium text-sm text-muted-foreground mb-2 px-2 text-[#94b5ff] overflow-x-hidden"> {/* Added overflow-x-hidden */}DEVS</h4>
                     <a href="https://elastos.dev/" target="_blank" rel="noopener noreferrer">
                       <NavigationMenuLink className={navigationMenuTriggerStyle()}>
-                        <div className="flex items-center gap-2">
+                        <div className="flex items-center gap-2 overflow-x-hidden"> {/* Added overflow-x-hidden */}
                           <Terminal className="h-4 w-4 text-[#94b5ff]" />
                           <span>Developer Portal</span>
                         </div>
@@ -207,7 +207,7 @@ export function NavMenu() {
                     </a>
                     <a href="https://elastos.dev/sdk/welcome/" target="_blank" rel="noopener noreferrer">
                       <NavigationMenuLink className={navigationMenuTriggerStyle()}>
-                        <div className="flex items-center gap-2">
+                        <div className="flex items-center gap-2 overflow-x-hidden"> {/* Added overflow-x-hidden */}
                           <Download className="h-4 w-4 text-[#94b5ff]" />
                           <span>SDKs & Tools</span>
                         </div>
@@ -215,10 +215,10 @@ export function NavMenu() {
                     </a>
                   </div>
                   <div>
-                    <h4 className="font-medium text-sm text-muted-foreground mb-2 px-2 text-[#94b5ff]">FUNDING</h4>
+                    <h4 className="font-medium text-sm text-muted-foreground mb-2 px-2 text-[#94b5ff] overflow-x-hidden"> {/* Added overflow-x-hidden */}FUNDING</h4>
                     <Link href="/dao"> {/* Added DAO link */}
                       <NavigationMenuLink className={navigationMenuTriggerStyle()}>
-                        <div className="flex items-center gap-2">
+                        <div className="flex items-center gap-2 overflow-x-hidden"> {/* Added overflow-x-hidden */}
                           <PiggyBank className="h-4 w-4 text-[#94b5ff]" />
                           <span>Elastos DAO</span>
                         </div>
@@ -226,7 +226,7 @@ export function NavMenu() {
                     </Link>
                     <a href="https://www.cyberrepublic.org/funding" target="_blank" rel="noopener noreferrer">
                       <NavigationMenuLink className={navigationMenuTriggerStyle()}>
-                        <div className="flex items-center gap-2">
+                        <div className="flex items-center gap-2 overflow-x-hidden"> {/* Added overflow-x-hidden */}
                           <FileText className="h-4 w-4 text-[#94b5ff]" />
                           <span>Submit a Proposal</span>
                         </div>
@@ -237,16 +237,16 @@ export function NavMenu() {
               </NavigationMenuContent>
             </NavigationMenuItem>
             <NavigationMenuItem>
-              <NavigationMenuTrigger className="text-sm font-[200]">
+              <NavigationMenuTrigger className="text-sm font-[200] overflow-x-hidden"> {/* Added overflow-x-hidden */}
                 Insights
               </NavigationMenuTrigger>
-              <NavigationMenuContent>
-                <div className="grid w-[400px] gap-1 p-2 md:w-[500px] md:grid-cols-2">
+              <NavigationMenuContent className="overflow-x-hidden"> {/* Added overflow-x-hidden */}
+                <div className="grid w-[400px] gap-1 p-2 md:w-[500px] md:grid-cols-2 overflow-x-hidden"> {/* Added overflow-x-hidden */}
                   <div>
-                    <h4 className="font-medium text-sm text-muted-foreground mb-2 px-2 text-[#94b5ff]">UPDATES</h4>
+                    <h4 className="font-medium text-sm text-muted-foreground mb-2 px-2 text-[#94b5ff] overflow-x-hidden"> {/* Added overflow-x-hidden */}UPDATES</h4>
                     <Link to="/announcements">
                       <NavigationMenuLink className={navigationMenuTriggerStyle()}>
-                        <div className="flex items-center gap-2">
+                        <div className="flex items-center gap-2 overflow-x-hidden"> {/* Added overflow-x-hidden */}
                           <Bell className="h-4 w-4 text-[#94b5ff]" />
                           <span>Announcements</span>
                         </div>
@@ -254,7 +254,7 @@ export function NavMenu() {
                     </Link>
                     <a href="https://blog.elastos.net" target="_blank" rel="noopener noreferrer">
                       <NavigationMenuLink className={navigationMenuTriggerStyle()}>
-                        <div className="flex items-center gap-2">
+                        <div className="flex items-center gap-2 overflow-x-hidden"> {/* Added overflow-x-hidden */}
                           <BookOpen className="h-4 w-4 text-[#94b5ff]" />
                           <span>Blogs & News</span>
                         </div>
@@ -262,10 +262,10 @@ export function NavMenu() {
                     </a>
                   </div>
                   <div>
-                    <h4 className="font-medium text-sm text-muted-foreground mb-2 px-2 text-[#94b5ff]">LEARNING</h4>
+                    <h4 className="font-medium text-sm text-muted-foreground mb-2 px-2 text-[#94b5ff] overflow-x-hidden"> {/* Added overflow-x-hidden */}LEARNING</h4>
                     <a href="https://www.youtube.com/@elastosinfo" target="_blank" rel="noopener noreferrer">
                       <NavigationMenuLink className={navigationMenuTriggerStyle()}>
-                        <div className="flex items-center gap-2">
+                        <div className="flex items-center gap-2 overflow-x-hidden"> {/* Added overflow-x-hidden */}
                           <Video className="h-4 w-4 text-[#94b5ff]" />
                           <span>Videos & Tutorials</span>
                         </div>
@@ -273,7 +273,7 @@ export function NavMenu() {
                     </a>
                     <Link href="/team-foundation">
                       <NavigationMenuLink className={navigationMenuTriggerStyle()}>
-                        <div className="flex items-center gap-2">
+                        <div className="flex items-center gap-2 overflow-x-hidden"> {/* Added overflow-x-hidden */}
                           <Users className="h-4 w-4 text-[#94b5ff]" />
                           <span>Team Foundation</span>
                         </div>
@@ -284,16 +284,16 @@ export function NavMenu() {
               </NavigationMenuContent>
             </NavigationMenuItem>
             <NavigationMenuItem>
-              <NavigationMenuTrigger className="text-sm font-[200]">
+              <NavigationMenuTrigger className="text-sm font-[200] overflow-x-hidden"> {/* Added overflow-x-hidden */}
                 Connect
               </NavigationMenuTrigger>
-              <NavigationMenuContent>
-                <div className="grid w-[400px] gap-1 p-2 md:w-[500px] md:grid-cols-2">
+              <NavigationMenuContent className="overflow-x-hidden"> {/* Added overflow-x-hidden */}
+                <div className="grid w-[400px] gap-1 p-2 md:w-[500px] md:grid-cols-2 overflow-x-hidden"> {/* Added overflow-x-hidden */}
                   <div>
-                    <h4 className="font-medium text-sm text-muted-foreground mb-2 px-2 text-[#94b5ff]">COMMUNITY</h4>
+                    <h4 className="font-medium text-sm text-muted-foreground mb-2 px-2 text-[#94b5ff] overflow-x-hidden"> {/* Added overflow-x-hidden */}COMMUNITY</h4>
                     <Link to="/social-channels">
                       <NavigationMenuLink className={navigationMenuTriggerStyle()}>
-                        <div className="flex items-center gap-2">
+                        <div className="flex items-center gap-2 overflow-x-hidden"> {/* Added overflow-x-hidden */}
                           <MessageCircle className="h-4 w-4 text-[#94b5ff]" />
                           <span className="text-white">Social Channels</span>
                         </div>
@@ -301,7 +301,7 @@ export function NavMenu() {
                     </Link>
                     <Link to="/ambassador-program">
                       <NavigationMenuLink className={navigationMenuTriggerStyle()}>
-                        <div className="flex items-center gap-2">
+                        <div className="flex items-center gap-2 overflow-x-hidden"> {/* Added overflow-x-hidden */}
                           <Star className="h-4 w-4 text-[#94b5ff]" />
                           <span className="text-white">Ambassador Program</span>
                         </div>
@@ -309,10 +309,10 @@ export function NavMenu() {
                     </Link>
                   </div>
                   <div>
-                    <h4 className="font-medium text-sm text-muted-foreground mb-2 px-2 text-[#94b5ff]">RESOURCES</h4>
+                    <h4 className="font-medium text-sm text-muted-foreground mb-2 px-2 text-[#94b5ff] overflow-x-hidden"> {/* Added overflow-x-hidden */}RESOURCES</h4>
                     <Link href="/media-kit">
                       <NavigationMenuLink className={navigationMenuTriggerStyle()}>
-                        <div className="flex items-center gap-2">
+                        <div className="flex items-center gap-2 overflow-x-hidden"> {/* Added overflow-x-hidden */}
                           <Download className="h-4 w-4 text-[#94b5ff]" />
                           <span className="text-white">Media Kit</span>
                         </div>
@@ -320,7 +320,7 @@ export function NavMenu() {
                     </Link>
                     <a href="https://blog.elastos.net/contact-us/" target="_blank" rel="noopener noreferrer">
                       <NavigationMenuLink className={navigationMenuTriggerStyle()}>
-                        <div className="flex items-center gap-2">
+                        <div className="flex items-center gap-2 overflow-x-hidden"> {/* Added overflow-x-hidden */}
                           <HelpCircle className="h-4 w-4 text-[#94b5ff]" />
                           <span className="text-white">Contact Us</span>
                         </div>
@@ -334,12 +334,12 @@ export function NavMenu() {
         </NavigationMenu>
 
         {/* Mobile Navigation */}
-        <div className="md:hidden">
+        <div className="md:hidden overflow-x-hidden"> {/* Added overflow-x-hidden */}
           <Sheet>
             <SheetTrigger className="p-2">
               <MenuIcon className="h-6 w-6" />
             </SheetTrigger>
-            <SheetContent side="right" className="w-[300px] sm:w-[400px] dark:bg-[#171717] overflow-y-auto border-none p-0">
+            <SheetContent side="right" className="w-[300px] sm:w-[400px] dark:bg-[#171717] overflow-y-auto border-none p-0 overflow-x-hidden"> {/* Added overflow-x-hidden */}
               <SidebarMenu />
             </SheetContent>
           </Sheet>
@@ -353,7 +353,7 @@ export function NavMenu() {
 // New WhitepaperPage Component
 export function WhitepaperPage() {
   return (
-    <div>
+    <div className="overflow-x-hidden"> {/* Added overflow-x-hidden */}
       <h1>Elastos Whitepaper and Litepaper</h1>
       <p>This page will eventually contain links to the original 2018 whitepaper, the latest litepaper, and any supporting documentation.</p>
       {/* Add links to actual whitepaper and litepaper documents here */}
@@ -397,10 +397,10 @@ export function AnnouncementsPage() {
   }
 
   return (
-    <div>
+    <div className="overflow-x-hidden"> {/* Added overflow-x-hidden */}
       <h1>Announcements</h1>
       {newsItems.map((item, index) => (
-        <div key={index} className="card p-4 m-2 border border-gray-300 rounded-lg shadow-md">
+        <div key={index} className="card p-4 m-2 border border-gray-300 rounded-lg shadow-md overflow-x-hidden"> {/* Added overflow-x-hidden */}
           <h2>{item.title}</h2>
           <p>{item.description}</p>
           <a href={item.link} target="_blank" rel="noopener noreferrer">Read More</a>

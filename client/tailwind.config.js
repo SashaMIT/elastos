@@ -47,5 +47,23 @@ module.exports = {
       },
     },
   },
-  plugins: [],
+  plugins: [
+    function({ addUtilities }) {
+      const newUtilities = {
+        '.overflow-x-clip': {
+          'overflow-x': 'clip',
+        },
+        '.no-scrollbar': {
+          'scrollbar-width': 'none',
+          '-ms-overflow-style': 'none',
+        },
+        '.no-scrollbar::-webkit-scrollbar': {
+          'display': 'none',
+          'width': '0',
+          'height': '0',
+        }
+      }
+      addUtilities(newUtilities)
+    }
+  ],
 }
