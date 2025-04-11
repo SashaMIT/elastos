@@ -88,6 +88,18 @@
   scrollbar-width: none;
 }
 
+/* Ensure text is visible in dialogs and sheets */
+[data-radix-popper-content-wrapper],
+[role="dialog"],
+[data-state="open"] {
+  z-index: 999 !important;
+  color-scheme: light dark;
+}
+
+.text-foreground {
+  @apply text-black dark:text-white;
+}
+
 .recharts-tooltip-wrapper, 
 .recharts-default-tooltip {
   @apply dark:bg-[#171717] dark:text-white dark:border-neutral-700 !important;
