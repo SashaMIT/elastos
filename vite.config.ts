@@ -12,22 +12,22 @@ export default defineConfig({
   cacheDir: './.vite',
   server: {
     host: true,
+    port: 3000,
+    strictPort: true,
     watch: {
       ignored: ['**/server/**', '**/timestamp-*.mjs', '**/node_modules/**', '**/.git/**', '**/client/public/**', '**/dist/**', '**/.vite/**'],
-      usePolling: true,
-      interval: 1000,
-      binaryInterval: 3000
+      usePolling: false
     },
     proxy: {
       '/api': {
-        target: 'http://localhost:8080',
+        target: 'http://localhost:5000',
         changeOrigin: true,
         secure: false,
         ws: true
       }
     },
     hmr: {
-      clientPort: 443
+      port: 3000
     },
     allowedHosts: ['teamela2.replit.app', 'elastosv2.replit.app', 'elastosnettest.replit.app', 'elastosnet.replit.app', 'Elastos.net', 'www.elastos.net', 'elastos.net', 'a66d2cf2-889a-41aa-8bb1-ef462686fa46-00-24onv1up4iyt7.sisko.replit.dev', '4d4c1048-01fa-4d65-bf66-1a103b162732-00-2wyqqfgo642gj.pike.replit.dev', 'gitworking.replit.app', 'all', 'elastos.net']
   },

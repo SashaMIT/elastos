@@ -1,4 +1,3 @@
-
 "use client";
 
 import React, { useMemo } from "react";
@@ -23,7 +22,7 @@ export function LogoCarouselDemo() {
           width="120"
           height="36"
           className="h-9 w-auto object-contain hover:opacity-80 transition-opacity cursor-pointer"
-          fetchpriority="low"
+          fetchPriority="low"
         />
       ),
     },
@@ -39,7 +38,7 @@ export function LogoCarouselDemo() {
           width="140" 
           height="36"
           className="h-9 w-auto object-contain hover:opacity-80 transition-opacity cursor-pointer"
-          fetchpriority="low"
+          fetchPriority="low"
         />
       ),
     },
@@ -55,7 +54,7 @@ export function LogoCarouselDemo() {
           height="28"
           loading="lazy"
           className="h-7 w-auto object-contain hover:opacity-80 transition-opacity cursor-pointer"
-          fetchpriority="high"
+          fetchPriority="high"
         />
       ),
     },
@@ -71,7 +70,7 @@ export function LogoCarouselDemo() {
           width="140"
           height="36"
           className="h-9 w-auto object-contain hover:opacity-80 transition-opacity cursor-pointer"
-          fetchpriority="low"
+          fetchPriority="low"
         />
       ),
     },
@@ -87,7 +86,7 @@ export function LogoCarouselDemo() {
           width="140"
           height="36"
           className="h-9 w-auto object-contain hover:opacity-80 transition-opacity cursor-pointer"
-          fetchpriority="low"
+          fetchPriority="low"
         />
       ),
     },
@@ -103,7 +102,7 @@ export function LogoCarouselDemo() {
           width="140"
           height="36"
           className="h-9 w-auto object-contain hover:opacity-80 transition-opacity cursor-pointer"
-          fetchpriority="low"
+          fetchPriority="low"
         />
       ),
     },
@@ -119,7 +118,7 @@ export function LogoCarouselDemo() {
           width="140"
           height="36"
           className="h-9 w-auto object-contain hover:opacity-80 transition-opacity cursor-pointer"
-          fetchpriority="low"
+          fetchPriority="low"
         />
       ),
     },
@@ -135,7 +134,7 @@ export function LogoCarouselDemo() {
           width="140"
           height="36"
           className="h-9 w-auto object-contain hover:opacity-80 transition-opacity cursor-pointer"
-          fetchpriority="low"
+          fetchPriority="low"
         />
       ),
     },
@@ -151,7 +150,7 @@ export function LogoCarouselDemo() {
           width="140"
           height="36"
           className="h-9 w-auto object-contain hover:opacity-80 transition-opacity cursor-pointer"
-          fetchpriority="low"
+          fetchPriority="low"
         />
       ),
     },

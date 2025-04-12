@@ -1,10 +1,10 @@
 "use client";
 import {
-  useSize
-} from "./chunk-FZKUCQC2.js";
-import {
   usePrevious
 } from "./chunk-BNHVZT3E.js";
+import {
+  useSize
+} from "./chunk-FZKUCQC2.js";
 import {
   useDirection
 } from "./chunk-ZIGUDJAS.js";

@@ -19,7 +19,7 @@ function shouldIgnorePath(path: string): boolean {
 
 // Disable custom watch implementation to reduce file watchers
 // if (process.env.NODE_ENV === 'development') {
-//   watch('.', { recursive: true }, (_, filename) => {
+//   watch('.', { recursive: true, persistent: false }, (_, filename) => {
 //     if (filename && !shouldIgnorePath(filename)) {
 //       // Only reload for relevant file changes
 //       console.log(`File ${filename} changed`);
@@ -114,6 +114,7 @@ app.use((req, res, next) => {
   next();
 });
 
+let server: any = null;
 let isShuttingDown = false;
 
 // Handle graceful shutdown
@@ -134,21 +135,22 @@ async function shutdown() {
       });
     }
 
-    // Force exit after 1 second if graceful shutdown fails
-    setTimeout(() => {
-      console.log('Forcing exit...');
-      process.exit(0);
-    }, 1000);
+    // Clear any intervals
+    if (requestLimiter.cleanupInterval) {
+      clearInterval(requestLimiter.cleanupInterval);
+    }
 
+    // Exit immediately after cleanup
+    process.exit(0);
   } catch (error) {
     console.error('Error during shutdown:', error);
     process.exit(1);
   }
 }
 
+// Only handle SIGINT and SIGTERM, remove SIGUSR2
 process.on('SIGTERM', shutdown);
 process.on('SIGINT', shutdown);
-process.on('SIGUSR2', shutdown); // Handle nodemon/tsx restart
 
 app.use((req, res, next) => {
   const start = Date.now();
@@ -182,17 +184,17 @@ app.use((req, res, next) => {
 
 (async () => {
   registerRoutes(app);
-  const server = createServer(app);
+  server = createServer(app);
 
-// Handle server errors
-server.on('error', (error: any) => {
-  console.error('Server error:', error);
-});
+  // Handle server errors
+  server.on('error', (error: any) => {
+    console.error('Server error:', error);
+  });
 
-// Handle unhandled promise rejections
-process.on('unhandledRejection', (error: any) => {
-  console.error('Unhandled rejection:', error);
-});
+  // Handle unhandled promise rejections
+  process.on('unhandledRejection', (error: any) => {
+    console.error('Unhandled rejection:', error);
+  });
 
   app.use((err: any, _req: Request, res: Response, _next: NextFunction) => {
     const status = err.status || err.statusCode || 500;

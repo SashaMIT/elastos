@@ -12,7 +12,7 @@ import { LogoCarouselDemo } from "@/components/LogoCarouselDemo";
 import { Feature } from "@/components/ui/feature-with-advantages";
 import { ArrowRight } from "lucide-react";
 
-export function VisionPage() {
+export default function VisionPage() {
   return (
     <div className="relative bg-white dark:bg-[#171717]">
       {/* Background */}
@@ -24,19 +24,6 @@ export function VisionPage() {
       <div className="relative z-10 max-w-7xl mx-auto px-4">
         <div className="py-16 md:py-24">
           {/* Hero Section */}
-          <div className="text-center max-w-3xl mx-auto mb-20">
-            <h1 className="font-[200] text-6xl mb-8 text-black dark:text-white">
-              Own Your Digital Life – Secured by Bitcoin
-            </h1>
-            <p className="text-lg text-gray-600 dark:text-gray-300 mb-8 font-[200]">
-              Elastos is building a new paradigm for the internet—a Web3 infrastructure that gives you true digital ownership and privacy, secured by Bitcoin.
-            </p>
-            <div className="hidden md:block mt-10">
-              <VideoPlayerDemo />
-            </div>
-          </div>
-</old_str>
-<new_str>
           <div className="text-center max-w-3xl mx-auto mb-20">
             <h1 className="font-[200] text-6xl mb-8 text-black dark:text-white">
               Own Your Digital Life – Secured by Bitcoin

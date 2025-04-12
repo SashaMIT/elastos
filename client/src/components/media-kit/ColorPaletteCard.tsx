@@ -1,14 +1,13 @@
-
 import React, { useState } from "react";
 import { Copy, Check } from "lucide-react";
 import { motion } from "framer-motion";
-import { 
-  Card, 
-  CardContent, 
-  CardDescription, 
-  CardHeader, 
-  CardTitle 
-} from "@/components/ui/Card";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
 
 interface ColorPaletteProps {
   palette: {

@@ -5,8 +5,8 @@
   "license": "MIT",
   "scripts": {
     "dev:client": "NODE_ENV=development vite",
-    "dev:server": "NODE_ENV=development tsx watch server/index.ts",
-    "dev": "concurrently \"npm run dev:client\" \"npm run dev:server\"",
+    "dev:server": "NODE_ENV=development tsx --no-watch server/index.ts",
+    "dev": "concurrently -k \"npm run dev:client\" \"npm run dev:server\"",
     "build": "tsc && vite build",
     "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview",
@@ -106,6 +106,7 @@
     "@types/passport-local": "^1.0.38",
     "@types/react": "^18.3.11",
     "@types/react-dom": "^18.3.1",
+    "@types/react-syntax-highlighter": "^15.5.13",
     "@types/ws": "^8.5.13",
     "@vitejs/plugin-react": "^4.3.2",
     "autoprefixer": "^10.4.20",

@@ -1,32 +1,19 @@
-return (
-    <Card className={`${className} grid gap-2 hover:shadow-md transition-all border-border/20 dark:border-border/20 bg-card dark:bg-card/40 relative overflow-hidden`}>
-      <CardHeader className="p-4 border-b border-b-border/10 dark:border-b-border/10 flex flex-row items-center justify-between flex-wrap gap-2">
-        <CardTitle className="text-md font-normal text-foreground/90 dark:text-foreground/90 w-fit">{title}</CardTitle>
-        {subtitle && <CardDescription className="text-xs text-right text-muted-foreground dark:text-muted-foreground">{subtitle}</CardDescription>}
-      </CardHeader>
-      <CardContent className="p-4 pt-2 flex items-center justify-between flex-wrap">
-        <div className={`text-[28px] font-normal tracking-tight flex items-center ${valueClassName}`}>
-          {value}
-          {percentChange !== undefined && (
-            <span className={`text-xs ml-2 ${percentChange < 0 ? 'text-red-500' : 'text-green-500'}`}>
-              {percentChange >= 0 ? '+' : ''}{percentChange}%
-            </span>
-          )}
-        </div>
-        {additionalInfo && <div className="text-[10px] text-muted-foreground">{additionalInfo}</div>}
-      </CardContent>
-      {children && <div className="p-4 pt-0">{children}</div>}
+import React from "react";
 
-      {showProgressBar && (
-        <div className="px-4 pb-4">
-          <div className="w-full bg-gray-200 dark:bg-gray-700 h-1.5 rounded-full overflow-hidden">
-            <div 
-              className="h-full rounded-full transition-all duration-500 ease-in-out bg-[#F6921A] dark:bg-[#F6921A]" 
-              style={{ width: `${progressPercentage}%` }} 
-            />
-          </div>
-          {progressLabel && <div className="text-[10px] mt-1 text-muted-foreground">{progressLabel}</div>}
-        </div>
+interface CardStatProps {
+  title: string;
+  value: string | number;
+  description?: string;
+}
+
+export const CardStat: React.FC<CardStatProps> = ({ title, value, description }) => {
+  return (
+    <div className="flex flex-col items-center justify-center p-4 bg-white dark:bg-gray-800 rounded-lg shadow-sm">
+      <h3 className="text-sm font-medium text-gray-500 dark:text-gray-400">{title}</h3>
+      <p className="text-2xl font-semibold text-gray-900 dark:text-white">{value}</p>
+      {description && (
+        <p className="text-sm text-gray-500 dark:text-gray-400 mt-1">{description}</p>
       )}
-    </Card>
+    </div>
   );
+};
