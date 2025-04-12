@@ -10,17 +10,21 @@ import {
   CardTitle 
 } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
+import { AppPreview } from "@/lib/media-kit-utils";
+
+interface AppPreviewCardProps {
+  preview: AppPreview;
+}
 
 /**
  * App Preview Card Component
  * 
  * Displays app preview images with download option
  * 
- * @param {Object} props
- * @param {Object} props.preview - App preview data object
+ * @param {AppPreviewCardProps} props
  * @returns {JSX.Element}
  */
-export const AppPreviewCard = ({ preview }) => {
+export const AppPreviewCard: React.FC<AppPreviewCardProps> = ({ preview }) => {
   const downloadImage = async () => {
     try {
       const response = await fetch(preview.image);

@@ -1,7 +1,7 @@
 "use client"
 
 import React from "react"
-import SyntaxHighlighter from "react-syntax-highlighter/dist/cjs/prism";
+import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
 import { atomDark } from "react-syntax-highlighter/dist/cjs/styles/prism"
 import { Check, Copy } from "lucide-react"
 
@@ -101,7 +101,7 @@ export const CodeBlock = ({
         }}
         wrapLines={true}
         showLineNumbers={true}
-        lineProps={(lineNumber) => ({
+        lineProps={(lineNumber: number) => ({
           style: {
             backgroundColor: activeHighlightLines.includes(lineNumber)
               ? "rgba(255,255,255,0.1)"

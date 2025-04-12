@@ -13,14 +13,14 @@ export default defineConfig({
   server: {
     host: true,
     port: 3000,
-    strictPort: false,
+    strictPort: true,
     watch: {
       ignored: ['**/server/**', '**/timestamp-*.mjs', '**/node_modules/**', '**/.git/**', '**/client/public/**', '**/dist/**', '**/.vite/**'],
       usePolling: false
     },
     proxy: {
       '/api': {
-        target: 'http://localhost:5000',
+        target: 'http://localhost:5001',
         changeOrigin: true,
         secure: false,
         ws: true
