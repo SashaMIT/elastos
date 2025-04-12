@@ -26,11 +26,11 @@ export const logos = [
     id: "elastos-essentials",
     name: "Elastos Essentials",
     description: "Elastos Essentials wallet application logo",
-    preview: "/images/Website Graphics/Elastos Essentials.png", // Updated image path
+    preview: "/images/Website Graphics/Elastos Essentials.png",
     downloadLink: "/logo-assets/Elastos-Essentials-Logo-Kit.zip",
     variants: {
       standard: {
-        png: "/images/Website Graphics/Elastos Essentials.png" // Updated image path
+        png: "/images/Website Graphics/Elastos Essentials.png"
       }
     }
   }
@@ -38,14 +38,14 @@ export const logos = [
 
 export const colorPalettes = [
   {
-    id: "core-colors",
-    name: "Core Brand Colors",
-    description: "Primary Elastos brand colors",
+    id: "brand",
+    name: "Brand Colors",
+    description: "Primary brand colors for Elastos",
     colors: [
-      { name: "Black", hex: "#141414", rgb: "RGB 20 20 20" },
-      { name: "Orange", hex: "#F6921A", rgb: "RGB 246 146 26" },
-      { name: "Blue", hex: "#95B5FF", rgb: "RGB 149 181 255" },
-      { name: "White", hex: "#FFFFFF", rgb: "RGB 255 255 255" }
+      { name: "Orange", hex: "#F6921A" },
+      { name: "Blue", hex: "#5C8EFF" },
+      { name: "Black", hex: "#171717" },
+      { name: "White", hex: "#FFFFFF" }
     ]
   },
   {

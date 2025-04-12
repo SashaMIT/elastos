@@ -64,7 +64,7 @@ import {
   updateAnimation,
   updateColor
 } from "./chunk-JVCQF5AA.js";
-import "./chunk-WOOG5QLI.js";
+import "./chunk-SNAQBZPT.js";
 
 // node_modules/@tsparticles/move-base/browser/Utils.js
 var half = 0.5;

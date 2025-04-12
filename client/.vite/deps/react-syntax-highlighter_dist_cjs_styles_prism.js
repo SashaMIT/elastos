@@ -1,10 +1,10 @@
 import {
   require_interopRequireDefault,
   require_prism
-} from "./chunk-BPSK6N3C.js";
+} from "./chunk-G4BJMEO7.js";
 import {
   __commonJS
-} from "./chunk-WOOG5QLI.js";
+} from "./chunk-SNAQBZPT.js";
 
 // node_modules/react-syntax-highlighter/dist/cjs/styles/prism/coy.js
 var require_coy = __commonJS({

@@ -1,4 +1,4 @@
-import Vision from './pages/Vision';
+import { VisionPage } from './components/VisionPage';
 import WhitepaperPage from './pages/WhitepaperPage'; 
 import Explorer from './pages/Explorer'; 
 import Dao from './pages/Dao'; // Added import for Dao page
@@ -60,7 +60,7 @@ function AppRouter() {
             <Route path="/ecosystem" component={EcosystemPage} />
             <Route path="/faq" component={FaqPage} />
             <Route path="/roadmap" component={RoadmapPage} />
-            <Route path="/vision" component={Vision} />
+            <Route path="/vision" component={VisionPage} />
             <Route path="/ela-utility" component={ElaUtilityPage} />
             <Route path="/use-cases" component={UseCasesPage} /> 
             <Route path="/wallet" component={Wallet} /> 

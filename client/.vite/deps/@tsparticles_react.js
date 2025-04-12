@@ -3,13 +3,13 @@ import {
 } from "./chunk-JVCQF5AA.js";
 import {
   require_jsx_runtime
-} from "./chunk-57FKUPNS.js";
+} from "./chunk-QX4ZPKKX.js";
 import {
   require_react
-} from "./chunk-7X7SXSYK.js";
+} from "./chunk-DBR6V4P4.js";
 import {
   __toESM
-} from "./chunk-WOOG5QLI.js";
+} from "./chunk-SNAQBZPT.js";
 
 // node_modules/@tsparticles/react/dist/Particles.js
 var import_jsx_runtime = __toESM(require_jsx_runtime(), 1);

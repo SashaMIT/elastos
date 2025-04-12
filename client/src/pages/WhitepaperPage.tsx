@@ -111,7 +111,7 @@ const WhitepaperPage = () => {
                 </div>
               </CardContent>
               <CardFooter className="pt-0 -mt-5">
-                <a href="/whitepapers/Elastos_Whitepaper_v0.2.pdf" target="_blank" rel="noopener noreferrer">
+                <a href="https://www.elastos.org/downloads/elastos_whitepaper_en.pdf" target="_blank" rel="noopener noreferrer">
                   <button className="px-3 py-2 bg-[rgba(246,146,26,0.15)] text-white rounded-full font-[200] transition-all flex items-center gap-1 border border-[rgba(246,146,26,0.25)] text-sm">
                     <span>View</span>
                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 35 34" fill="none">
@@ -163,7 +163,7 @@ const WhitepaperPage = () => {
                 </div>
               </CardContent>
               <CardFooter className="pt-0 -mt-5">
-                <a href="/whitepapers/Elastos_Litepaper_2024.pdf" target="_blank" rel="noopener noreferrer">
+                <a href="https://www.cyberrepublic.org/whitepaper" target="_blank" rel="noopener noreferrer">
                   <button className="px-3 py-2 bg-[rgba(246,146,26,0.15)] text-white rounded-full font-[200] transition-all flex items-center gap-1 border border-[rgba(246,146,26,0.25)] text-sm">
                     <span>View</span>
                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 35 34" fill="none">

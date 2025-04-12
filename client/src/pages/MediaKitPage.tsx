@@ -82,6 +82,7 @@ const localFonts: Font[] = [
 
 export function MediaKitPage() {
   const [downloading, setDownloading] = useState(false);
+  const [selectedTab, setSelectedTab] = useState('logos');
 
   const downloadBrandingGuidelines = async () => {
     setDownloading(true);
@@ -194,71 +195,63 @@ export function MediaKitPage() {
       </div>
       
       <div className="container mx-auto px-4 pt-0 pb-16 relative z-10">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, delay: 0.3 }}
-        >
-          <Tabs defaultValue="logos" className="w-full">
-            <div className="flex flex-wrap justify-start gap-2 mb-8">
-              <TabsList className="flex bg-transparent gap-2 p-0 border-none">
-                <TabsTrigger 
-                  value="logos" 
-                  className="px-4 py-2 data-[state=active]:bg-[#F6921A]/10 data-[state=active]:border-[#F6921A]/30 data-[state=inactive]:bg-[#5C8EFF]/10 data-[state=inactive]:border-[#5C8EFF]/30 text-white rounded-full text-base font-[200] border"
-                >
-                  Logos
-                </TabsTrigger>
-                <TabsTrigger 
-                  value="colors" 
-                  className="px-4 py-2 data-[state=active]:bg-[#F6921A]/10 data-[state=active]:border-[#F6921A]/30 data-[state=inactive]:bg-[#5C8EFF]/10 data-[state=inactive]:border-[#5C8EFF]/30 text-white rounded-full text-base font-[200] border"
-                >
-                  Colors
-                </TabsTrigger>
-                <TabsTrigger 
-                  value="typography" 
-                  className="px-4 py-2 data-[state=active]:bg-[#F6921A]/10 data-[state=active]:border-[#F6921A]/30 data-[state=inactive]:bg-[#5C8EFF]/10 data-[state=inactive]:border-[#5C8EFF]/30 text-white rounded-full text-base font-[200] border"
-                >
-                  Typography
-                </TabsTrigger>
-              </TabsList>
-            </div>
-            
-            <TabsContent value="logos" className="space-y-8">
-              <div className="flex justify-start">
-                <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6 max-w-6xl">
-                  {localLogos.map((logo) => (
-                    <LogoCard key={logo.id} logo={logo} />
-                  ))}
-                </div>
-              </div>
-            </TabsContent>
-            
-            <TabsContent value="colors" className="space-y-8">
-              <div className="flex justify-start">
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-6xl">
-                  {localColorPalettes.map((palette) => (
-                    <ColorPaletteCard key={palette.id} palette={palette} />
-                  ))}
-                </div>
-              </div>
-            </TabsContent>
-            
-            <TabsContent value="typography" className="space-y-8">
-              <div className="flex justify-start">
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-6xl">
-                  {localFonts.map((font) => (
-                    <FontCard key={font.id} font={font} />
-                  ))}
-                </div>
-              </div>
-            </TabsContent>
-          </Tabs>
-        </motion.div>
-        
-        <div className="mt-20">
-          <StackedCircularFooter />
+        <div className="max-w-3xl mb-16">
+          {/* Category filter */}
+          <div className="flex flex-wrap gap-2 mb-8">
+            <span
+              className={`px-4 py-2 ${selectedTab === 'logos' ? 'bg-[#F6921A]/10 border border-[#F6921A]/30' : 'bg-[#5C8EFF]/10 border border-[#5C8EFF]/30'} text-white rounded-full text-base font-[200] cursor-pointer`}
+              onClick={() => setSelectedTab('logos')}
+            >
+              Logos
+            </span>
+            <span
+              className={`px-4 py-2 ${selectedTab === 'colors' ? 'bg-[#F6921A]/10 border border-[#F6921A]/30' : 'bg-[#5C8EFF]/10 border border-[#5C8EFF]/30'} text-white rounded-full text-base font-[200] cursor-pointer`}
+              onClick={() => setSelectedTab('colors')}
+            >
+              Colors
+            </span>
+            <span
+              className={`px-4 py-2 ${selectedTab === 'typography' ? 'bg-[#F6921A]/10 border border-[#F6921A]/30' : 'bg-[#5C8EFF]/10 border border-[#5C8EFF]/30'} text-white rounded-full text-base font-[200] cursor-pointer`}
+              onClick={() => setSelectedTab('typography')}
+            >
+              Typography
+            </span>
+          </div>
         </div>
+
+        <Tabs 
+          defaultValue="logos" 
+          className="w-full"
+          value={selectedTab}
+          onValueChange={(value) => setSelectedTab(value)}
+        >
+          <TabsContent value="logos" className="mt-8">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+              {logos.map((logo) => (
+                <LogoCard key={logo.id} logo={logo} />
+              ))}
+            </div>
+          </TabsContent>
+
+          <TabsContent value="colors" className="mt-8">
+            <div className="space-y-6">
+              {colorPalettes.map((palette) => (
+                <ColorPaletteCard key={palette.id} palette={palette} />
+              ))}
+            </div>
+          </TabsContent>
+
+          <TabsContent value="typography" className="mt-8">
+            <div className="grid grid-cols-1 gap-6">
+              {fonts.map((font) => (
+                <FontCard key={font.id} font={font} />
+              ))}
+            </div>
+          </TabsContent>
+        </Tabs>
       </div>
+
+      <StackedCircularFooter />
     </div>
   );
 }

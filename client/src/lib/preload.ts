@@ -17,7 +17,6 @@ export const preloadRoute = (route: string) => {
   const routeMap: Record<string, () => Promise<any>> = {
     '/': () => import('../pages/LandingPage'),
     '/security': () => import('../pages/SecurityPage'),
-    '/vision': () => import('../pages/VisionPage'),
     '/buy-ela': () => import('../pages/BuyElaPage'),
     // Add other routes as needed
   };
@@ -30,7 +29,7 @@ export const preloadRoute = (route: string) => {
   // Preload key images based on route
   const routeImages: Record<string, string[]> = {
     '/': ['/images/Elastosbanner.jpg', '/images/Hero image.png', '/images/Elastos Vision World Computer.png'],
-    '/vision': ['/images/Elastos Vision World Computer.png', '/images/Rong Chen.png', '/images/Sunny.jpeg'],
+    '/vision-page': ['/images/Elastos Vision World Computer.png', '/images/Rong Chen.png', '/images/Sunny.jpeg'],
     '/security': ['/images/Security.png'],
     // Add more routes and their key images as needed
   };
