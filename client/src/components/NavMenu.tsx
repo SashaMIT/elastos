@@ -1,7 +1,7 @@
 "use client";
 
-import * as React from "react";
-import { Link } from "wouter";
+import React from 'react';
+import { Link } from 'wouter';
 import { Home, Shield, Code, HelpCircle, MessageCircle, Newspaper, Menu as MenuIcon, Moon, Sun, LineChart, Coins, ShoppingCart, ScrollText, Target, FileText, Terminal, Github, Download, PiggyBank, FileCode2, BookOpen, Video, Database, Star, Wallet, Repeat, Bell, Users } from "lucide-react";
 import { SidebarMenu } from "@/components/ui/sidebar-menu";
 import { useTheme } from "@/hooks/useTheme";
@@ -16,7 +16,14 @@ import {
 } from "@/components/ui/navigation-menu";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 
-export function NavMenu() {
+interface NavMenuProps {
+  items: Array<{
+    label: string;
+    to: string;
+  }>;
+}
+
+export const NavMenu: React.FC<NavMenuProps> = ({ items }) => {
   const { theme, toggleTheme } = useTheme();
 
   const logoSrc = theme === 'dark' 
@@ -25,7 +32,7 @@ export function NavMenu() {
 
   return (
     <div className="flex justify-between items-center w-full px-4 bg-[#ffffff] dark:bg-background/20 backdrop-blur-lg">
-      <Link href="/" className="z-20 flex items-center">
+      <Link to="/" className="z-20 flex items-center">
         <img src={logoSrc} alt="Elastos Logo" className="h-5 w-auto object-contain" />
       </Link>
       <div className="flex-1 flex justify-end md:justify-center relative">
@@ -46,7 +53,7 @@ export function NavMenu() {
                 <NavigationMenuTrigger className="text-sm font-[200] bg-[#F6921A]/5 hover:bg-[#F6921A]/10 text-white border border-[#F6921A]/50 rounded-full px-4 [&>svg]:text-[#F6921A]/50">ELA</NavigationMenuTrigger>
                 <NavigationMenuContent>
                   <div className="grid w-[200px] gap-1 p-2">
-                    <Link href="/stats">
+                    <Link to="/stats">
                       <NavigationMenuLink className={navigationMenuTriggerStyle()}>
                         <div className="flex items-center gap-2">
                           <Home className="h-4 w-4 text-[#94b5ff]" />
@@ -54,7 +61,7 @@ export function NavMenu() {
                         </div>
                       </NavigationMenuLink>
                     </Link>
-                    <Link href="/security">
+                    <Link to="/security">
                       <NavigationMenuLink className={navigationMenuTriggerStyle()}>
                         <div className="flex items-center gap-2">
                           <Shield className="h-4 w-4 text-[#94b5ff]" />
@@ -62,7 +69,7 @@ export function NavMenu() {
                         </div>
                       </NavigationMenuLink>
                     </Link>
-                    <Link href="/supply">
+                    <Link to="/supply">
                       <NavigationMenuLink className={navigationMenuTriggerStyle()}>
                         <div className="flex items-center gap-2">
                           <Coins className="h-4 w-4 text-[#94b5ff]" />
@@ -70,7 +77,7 @@ export function NavMenu() {
                         </div>
                       </NavigationMenuLink>
                     </Link>
-                    <Link href="/bridge">
+                    <Link to="/bridge">
                       <NavigationMenuLink className={navigationMenuTriggerStyle()}>
                         <div className="flex items-center gap-2">
                           <Repeat className="h-4 w-4 text-[#94b5ff]" />
@@ -78,7 +85,7 @@ export function NavMenu() {
                         </div>
                       </NavigationMenuLink>
                     </Link>
-                    <Link href="/buy-ela">
+                    <Link to="/buy-ela">
                       <NavigationMenuLink className={navigationMenuTriggerStyle()}>
                         <div className="flex items-center gap-2">
                           <ShoppingCart className="h-4 w-4 text-[#94b5ff]" />
@@ -109,7 +116,7 @@ export function NavMenu() {
                         </div>
                       </NavigationMenuLink>
                     </Link>
-                    <Link href="/roadmap">
+                    <Link to="/roadmap">
                       <NavigationMenuLink className={navigationMenuTriggerStyle()}>
                         <div className="flex items-center gap-2">
                           <LineChart className="h-4 w-4 text-[#94b5ff]" />
@@ -133,7 +140,7 @@ export function NavMenu() {
                         </div>
                       </NavigationMenuLink>
                     </Link>
-                    <Link href="/use-cases">
+                    <Link to="/use-cases">
                       <NavigationMenuLink className={navigationMenuTriggerStyle()}>
                         <div className="flex items-center gap-2">
                           <Target className="h-4 w-4 text-[#94b5ff]" />
@@ -168,7 +175,7 @@ export function NavMenu() {
                         </div>
                       </NavigationMenuLink>
                     </Link>
-                    <Link to="/ecosystem"> {/* Changed to Link component and removed target="_blank" */}
+                    <Link to="/ecosystem">
                       <NavigationMenuLink className={navigationMenuTriggerStyle()}>
                         <div className="flex items-center gap-2">
                           <ShoppingCart className="h-4 w-4 text-[#94b5ff]" />
@@ -176,7 +183,7 @@ export function NavMenu() {
                         </div>
                       </NavigationMenuLink>
                     </Link>
-                    <Link href="/faq">
+                    <Link to="/faq">
                       <NavigationMenuLink className={navigationMenuTriggerStyle()}>
                         <div className="flex items-center gap-2">
                           <HelpCircle className="h-4 w-4 text-[#94b5ff]" />
@@ -216,7 +223,7 @@ export function NavMenu() {
                   </div>
                   <div>
                     <h4 className="font-medium text-sm text-muted-foreground mb-2 px-2 text-[#94b5ff]">FUNDING</h4>
-                    <Link href="/dao"> {/* Added DAO link */}
+                    <Link to="/dao">
                       <NavigationMenuLink className={navigationMenuTriggerStyle()}>
                         <div className="flex items-center gap-2">
                           <PiggyBank className="h-4 w-4 text-[#94b5ff]" />
@@ -310,7 +317,7 @@ export function NavMenu() {
                   </div>
                   <div>
                     <h4 className="font-medium text-sm text-muted-foreground mb-2 px-2 text-[#94b5ff]">RESOURCES</h4>
-                    <Link href="/media-kit">
+                    <Link to="/media-kit">
                       <NavigationMenuLink className={navigationMenuTriggerStyle()}>
                         <div className="flex items-center gap-2">
                           <Download className="h-4 w-4 text-[#94b5ff]" />
@@ -347,65 +354,4 @@ export function NavMenu() {
       </div>
     </div>
   );
-}
-
-
-// New WhitepaperPage Component
-export function WhitepaperPage() {
-  return (
-    <div>
-      <h1>Elastos Whitepaper and Litepaper</h1>
-      <p>This page will eventually contain links to the original 2018 whitepaper, the latest litepaper, and any supporting documentation.</p>
-      {/* Add links to actual whitepaper and litepaper documents here */}
-    </div>
-  );
-}
-
-// New AnnouncementsPage component
-import { useState, useEffect } from 'react';
-
-export function AnnouncementsPage() {
-  const [newsItems, setNewsItems] = useState([]);
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState(null);
-
-  useEffect(() => {
-    const fetchNews = async () => {
-      try {
-        const response = await fetch('https://api.rss2json.com/v1/api.json?rss_url=https://rss.app/feeds/tQGWZNuxHC69yKOm.xml');
-        if (!response.ok) {
-          throw new Error(`HTTP error! status: ${response.status}`);
-        }
-        const data = await response.json();
-        setNewsItems(data.items);
-      } catch (error) {
-        setError(error);
-      } finally {
-        setLoading(false);
-      }
-    };
-
-    fetchNews();
-  }, []);
-
-  if (loading) {
-    return <p>Loading...</p>;
-  }
-
-  if (error) {
-    return <p>Error: {error.message}</p>;
-  }
-
-  return (
-    <div>
-      <h1>Announcements</h1>
-      {newsItems.map((item, index) => (
-        <div key={index} className="card p-4 m-2 border border-gray-300 rounded-lg shadow-md">
-          <h2>{item.title}</h2>
-          <p>{item.description}</p>
-          <a href={item.link} target="_blank" rel="noopener noreferrer">Read More</a>
-        </div>
-      ))}
-    </div>
-  );
-}
+};

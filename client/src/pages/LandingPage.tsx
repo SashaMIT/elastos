@@ -143,9 +143,7 @@ const LandingPage = () => {
   const { data: hashrateData, refetch: refetchHashrateData } = useHashrateData({
     enabled: false
   });
-  const { data: marketCapData, refetch: refetchMarketCapData } = useMarketCapData({
-    enabled: false
-  });
+  const { data: marketCapData, refetch: refetchMarketCapData } = useMarketCapData();
   const { data: totalSupply, refetch: refetchSupply } = useElaSupply({
     enabled: false
   });
@@ -427,7 +425,7 @@ const LandingPage = () => {
           padding: "0",
         }}
       >
-        <MarqueeDemo />
+        <MarqueeDemo images={[]} />
       </div>
 
       <div className="container mx-auto px-4 md:px-0">
@@ -857,7 +855,7 @@ const LandingPage = () => {
               loading="lazy"
               width={300}
               height={300}
-              fetchpriority="low"
+              fetchPriority="low"
             />
             <ImageZoom
               key="2"

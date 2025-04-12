@@ -131,7 +131,9 @@ const LogoColumn: React.FC<LogoColumnProps> = React.memo(
             onClick={handleClick}
             style={{ cursor: logos[currentIndex].url ? 'pointer' : 'default' }}
           >
-            <CurrentLogo className="h-15 w-15 max-h-[60%] max-w-[60%] object-contain md:h-24 md:w-24" />
+            <div className="h-15 w-15 max-h-[60%] max-w-[60%] object-contain md:h-24 md:w-24">
+              <CurrentLogo />
+            </div>
           </motion.div>
         </AnimatePresence>
       </motion.div>

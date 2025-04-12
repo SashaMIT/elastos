@@ -51,12 +51,38 @@ export const Sidebar = ({
   );
 };
 
-export const SidebarBody = (props: React.ComponentProps<typeof motion.div>) => {
+export const SidebarBody = (props: {
+  className?: string;
+  children?: React.ReactNode;
+}) => {
   return (
     <>
-      <DesktopSidebar {...props} />
-      <MobileSidebar {...props} />
+      <DesktopSidebar className={props.className}>{props.children}</DesktopSidebar>
+      <MobileSidebar className={props.className}>{props.children}</MobileSidebar>
     </>
+  );
+};
+
+interface SidebarLinkProps {
+  link: Links;
+  className?: string;
+  onClick?: () => void;
+}
+
+interface SidebarMenuItemProps {
+  label?: string;
+  href?: string;
+  icon?: React.ReactNode;
+  children?: React.ReactNode;
+  target?: string;
+}
+
+const SidebarMenuItem = ({ label, href, icon, children, target }: SidebarMenuItemProps) => {
+  return (
+    <div className="py-2 hover:text-primary flex items-center gap-2">
+      {icon}
+      <span>{label ?? children}</span>
+    </div>
   );
 };
 
@@ -64,15 +90,18 @@ const DesktopSidebar = ({
   className,
   children,
   ...props
-}: React.ComponentProps<typeof motion.div>) => {
+}: {
+  className?: string;
+  children?: React.ReactNode;
+}) => {
   const { open, setOpen, animate } = useSidebar();
   return (
-    <motion.div
+    <div
       className={cn(
         "h-full px-4 py-4 hidden md:flex md:flex-col bg-neutral-100 dark:bg-neutral-800 w-[300px] flex-shrink-0",
         className
       )}
-      animate={{
+      style={{
         width: animate ? (open ? "300px" : "60px") : "300px",
       }}
       onMouseEnter={() => setOpen(true)}
@@ -80,7 +109,7 @@ const DesktopSidebar = ({
       {...props}
     >
       {children}
-    </motion.div>
+    </div>
   );
 };
 
@@ -88,7 +117,10 @@ const MobileSidebar = ({
   className,
   children,
   ...props
-}: React.ComponentProps<"div">) => {
+}: {
+  className?: string;
+  children?: React.ReactNode;
+}) => {
   const { open, setOpen } = useSidebar();
   return (
     <>
@@ -107,15 +139,15 @@ const MobileSidebar = ({
       </div>
       <AnimatePresence>
         {open && (
-          <motion.div
-            initial={{ x: "-100%" }}
-            animate={{ x: 0 }}
-            exit={{ x: "-100%" }}
-            transition={{ type: "spring", bounce: 0, duration: 0.4 }}
+          <div
             className={cn(
               "fixed inset-0 bg-[#171717] z-40 md:hidden overflow-y-auto pt-14 pb-4",
               className
             )}
+            style={{
+              transform: open ? "translateX(0)" : "translateX(-100%)",
+              transition: "transform 0.4s ease-in-out",
+            }}
             {...props}
           >
             <button
@@ -175,7 +207,7 @@ const MobileSidebar = ({
                 <SidebarMenuItem label="Market" href="/market" />
               </SidebarMenuItem>
             </div>
-          </motion.div>
+          </div>
         )}
       </AnimatePresence>
     </>
@@ -192,7 +224,7 @@ export const SidebarLink: React.FC<SidebarLinkProps> = ({
 
   return (
     <Link
-      href={link.href}
+      to={link.href}
       className={cn(
         "flex items-center justify-start gap-2 group/sidebar py-2",
         className
@@ -201,25 +233,7 @@ export const SidebarLink: React.FC<SidebarLinkProps> = ({
       {...props}
     >
       {link.icon}
-      <motion.span
-        animate={{
-          display: animate ? (open ? "inline-block" : "none") : "inline-block",
-          opacity: animate ? (open ? 1 : 0) : 1,
-        }}
-        className="text-neutral-700 dark:text-neutral-200 text-sm group-hover/sidebar:translate-x-1 transition duration-150 whitespace-pre inline-block !p-0 !m-0"
-      >
-        {link.label}
-      </motion.span>
+      {(open || !animate) && <span>{link.label}</span>}
     </Link>
   );
 };
-
-// Added a dummy SidebarMenuItem component (replace with your actual implementation)
-const SidebarMenuItem = ({ label, href, icon, children, target }: { label?: string; href?: string; icon?: React.ReactNode; children?: React.ReactNode; target?: string }) => {
-    return (
-        <Link href={href} className="py-2 hover:text-primary flex items-center gap-2" target={target}>
-            {icon}
-            <span>{label ?? children}</span>
-        </Link>
-    )
-}

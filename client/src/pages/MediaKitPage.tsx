@@ -1,4 +1,3 @@
-
 import React, { useState } from "react";
 import { motion } from "framer-motion";
 import { Download, ExternalLink } from "lucide-react";
@@ -12,6 +11,74 @@ import { StackedCircularFooter } from "@/components/ui/stacked-circular-footer";
 import { SEO } from "@/components/SEO";
 import { Helmet } from 'react-helmet';
 import { WebPageStructuredData } from "@/components/StructuredData";
+
+interface ColorPalette {
+  id: string;
+  name: string;
+  description?: string;
+  colors: {
+    name: string;
+    hex: string;
+    rgb?: string;
+    opacity?: string;
+  }[];
+}
+
+interface Logo {
+  id: string;
+  name: string;
+  description: string;
+  preview: string;
+  downloadLink?: string;
+  variants: Record<string, Record<string, string>>;
+}
+
+interface Font {
+  id: string;
+  name: string;
+  description: string;
+  files: {
+    name: string;
+    weight: string;
+    path: string;
+  }[];
+}
+
+const localColorPalettes: ColorPalette[] = [
+  {
+    id: "primary",
+    name: "Primary Colors",
+    description: "Main brand colors",
+    colors: [
+      { name: "Primary", hex: "#000000" },
+      { name: "Secondary", hex: "#FFFFFF" }
+    ]
+  }
+];
+
+const localLogos: Logo[] = [
+  {
+    id: "main-logo",
+    name: "Main Logo",
+    description: "Primary logo",
+    preview: "/path/to/logo.png",
+    variants: {
+      light: { path: "/path/to/light.png" },
+      dark: { path: "/path/to/dark.png" }
+    }
+  }
+];
+
+const localFonts: Font[] = [
+  {
+    id: "main-font",
+    name: "Main Font",
+    description: "Primary font",
+    files: [
+      { name: "Regular", weight: "400", path: "/path/to/regular.woff2" }
+    ]
+  }
+];
 
 export function MediaKitPage() {
   const [downloading, setDownloading] = useState(false);
@@ -159,7 +226,7 @@ export function MediaKitPage() {
             <TabsContent value="logos" className="space-y-8">
               <div className="flex justify-start">
                 <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6 max-w-6xl">
-                  {logos.map((logo) => (
+                  {localLogos.map((logo) => (
                     <LogoCard key={logo.id} logo={logo} />
                   ))}
                 </div>
@@ -169,7 +236,7 @@ export function MediaKitPage() {
             <TabsContent value="colors" className="space-y-8">
               <div className="flex justify-start">
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-6xl">
-                  {colorPalettes.map((palette) => (
+                  {localColorPalettes.map((palette) => (
                     <ColorPaletteCard key={palette.id} palette={palette} />
                   ))}
                 </div>
@@ -179,7 +246,7 @@ export function MediaKitPage() {
             <TabsContent value="typography" className="space-y-8">
               <div className="flex justify-start">
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-6xl">
-                  {fonts.map((font) => (
+                  {localFonts.map((font) => (
                     <FontCard key={font.id} font={font} />
                   ))}
                 </div>

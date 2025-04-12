@@ -37,7 +37,7 @@ export const preloadRoute = (route: string) => {
 
   if (routeImages[route]) {
     routeImages[route].forEach(imgSrc => {
-      preloadImage(imgSrc, { format: 'webp', quality: 80 });
+      preloadImage(imgSrc);
     });
   }
 };
@@ -52,6 +52,6 @@ export const preloadCriticalImages = () => {
   ];
 
   criticalImages.forEach(src => {
-    preloadImage(src, { format: 'webp', quality: 90 });
+    preloadImage(src);
   });
 };

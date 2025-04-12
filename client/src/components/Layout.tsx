@@ -2,6 +2,7 @@
 
 import React, { useState, useEffect } from "react";
 import { NavMenu } from "./NavMenu";
+import { Helmet } from "react-helmet";
 
 interface LayoutProps {
   children: React.ReactNode;
@@ -30,16 +31,20 @@ export const Layout: React.FC<LayoutProps> = ({ children, title, description, ke
 
   return (
     <div className="min-h-screen bg-gray-100 dark:bg-[#171717] dark:text-white transition-colors duration-200">
-      {/* SEO meta tags would be inserted here using a dedicated component */}
-      <meta name="description" content={metaDescription} />
-      <meta name="keywords" content={metaKeywords} />
-      {title && <title>{title}</title>}
-
+      <Helmet>
+        {title && <title>{title}</title>}
+        <meta name="description" content={metaDescription} />
+        <meta name="keywords" content={metaKeywords} />
+      </Helmet>
 
       <header className="fixed top-0 z-[100] w-full bg-[#FFFFFF] dark:bg-[#171717] backdrop-blur-sm border-b border-neutral-200/50 dark:border-neutral-800/50 transition-transform duration-300"
               style={{ transform: `translateY(${scrollY > lastScrollY && scrollY > 64 ? '-100%' : '0'})` }}>
         <div className="container mx-auto flex h-14 items-center px-4">
-          <NavMenu />
+          <NavMenu items={[
+            { label: "Home", to: "/" },
+            { label: "About", to: "/about" },
+            { label: "Contact", to: "/contact" }
+          ]} />
         </div>
       </header>
 

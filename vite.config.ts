@@ -13,7 +13,7 @@ export default defineConfig({
   server: {
     host: true,
     port: 3000,
-    strictPort: true,
+    strictPort: false,
     watch: {
       ignored: ['**/server/**', '**/timestamp-*.mjs', '**/node_modules/**', '**/.git/**', '**/client/public/**', '**/dist/**', '**/.vite/**'],
       usePolling: false
@@ -27,7 +27,7 @@ export default defineConfig({
       }
     },
     hmr: {
-      port: 3000
+      port: 3001
     },
     allowedHosts: ['teamela2.replit.app', 'elastosv2.replit.app', 'elastosnettest.replit.app', 'elastosnet.replit.app', 'Elastos.net', 'www.elastos.net', 'elastos.net', 'a66d2cf2-889a-41aa-8bb1-ef462686fa46-00-24onv1up4iyt7.sisko.replit.dev', '4d4c1048-01fa-4d65-bf66-1a103b162732-00-2wyqqfgo642gj.pike.replit.dev', 'gitworking.replit.app', 'all', 'elastos.net']
   },
@@ -50,7 +50,6 @@ export default defineConfig({
     // Enable compression for build assets
     assetsInlineLimit: 4096,
     cssCodeSplit: true,
-    brotliSize: true,
     reportCompressedSize: true,
     rollupOptions: {
       output: {

@@ -145,7 +145,7 @@ export const Vortex = (props: VortexProps) => {
     const ctx = canvas?.getContext('2d');
     if (!canvas || !ctx) return;
 
-    resize(canvas, ctx);
+    resize(canvas);
 
     for (let i = 0; i < particlePropsLength; i += particlePropCount) {
       initParticle(i);

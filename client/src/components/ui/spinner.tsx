@@ -1,11 +1,11 @@
-
 import { Loader } from "lucide-react"
 import { motion } from "framer-motion"
 import { cn } from "@/lib/utils"
 
 interface SpinnerProps {
-  size?: string
-  color?: string
+  size?: "sm" | "md" | "lg"
+  className?: string
+  color?: keyof FillProps
 }
 
 interface SizeProps {
@@ -56,16 +56,19 @@ const strokeClasses = {
   white: "stroke-background",
 } as StrokeProps
 
-export const Spinner = ({ size = "md" }: SpinnerProps) => {
+export function Spinner({ size = "md", className }: SpinnerProps) {
   return (
-    <div aria-label="Loading..." role="status">
-      <Loader
-        className={cn(
-          "animate-spin text-foreground",
-          sizesClasses[size as keyof SizeProps],
-        )}
-      />
-    </div>
+    <div
+      className={cn(
+        "animate-spin rounded-full border-2 border-current border-t-transparent",
+        {
+          "h-4 w-4": size === "sm",
+          "h-6 w-6": size === "md",
+          "h-8 w-8": size === "lg",
+        },
+        className
+      )}
+    />
   )
 }
 

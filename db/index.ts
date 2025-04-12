@@ -9,9 +9,7 @@ const dbUrl = process.env.DATABASE_URL || 'postgres://default:password@localhost
 // Create connection with error handling
 let sql;
 try {
-  sql = neon(dbUrl, { 
-    webSocketConstructor: ws
-  });
+  sql = neon(dbUrl);
 } catch (error) {
   console.error('Failed to connect to database:', error);
   // Provide a fallback that won't break the app but will log errors
@@ -20,7 +18,7 @@ try {
       console.error('Database unavailable, operation failed');
       return [];
     }
-  };
+  } as any;
 }
 
 const db = drizzle(sql, { schema });

@@ -47,7 +47,7 @@ app.use(express.urlencoded({ extended: false }));
 // In-memory store for rate limiting
 const requestLimiter = {
   videoRequests: new Map(),
-  cleanupInterval: null
+  cleanupInterval: null as NodeJS.Timeout | null
 };
 
 // Initialize cleanup interval
@@ -213,7 +213,7 @@ app.use((req, res, next) => {
     serveStatic(app);
   }
 
-  const PORT = process.env.PORT || 5000;
+  const PORT = process.env.PORT || 5001;
   server.listen(PORT, "0.0.0.0", () => {
     log(`serving on port ${PORT}`);
   });

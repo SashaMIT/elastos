@@ -1,120 +1,57 @@
 import React from 'react';
-import { Card, Text, Metric, Flex, ProgressBar, DonutChart, AreaChart } from '@tremor/react';
-import { Shield, Bitcoin, Clock, LineChart } from 'lucide-react';
-import { useHashrateData } from '@/hooks/useHashrateData';
-import { useElaSupply } from '@/hooks/useElaSupply';
-import { differenceInDays, format } from 'date-fns';
-import { VerifyButton } from '@/components/ui/verify-button'; // Import VerifyButton
+import { format, differenceInDays } from 'date-fns';
+import { Card, Flex, ProgressBar, DonutChart, AreaChart } from '@tremor/react';
+import { cn } from '@/lib/utils';
 
+const MAX_SUPPLY = 28000000;
+const NEXT_HALVING = new Date('2024-05-01');
 
 export function StatsGrid() {
-  const { data: hashrateData } = useHashrateData();
-  const { data: currentSupply } = useElaSupply();
-
-  const MAX_SUPPLY = 28199999;
-  const NEXT_HALVING = new Date('2025-12-01');
-  const LAST_HALVING = new Date('2021-12-01'); // Added last halving date
   const now = new Date();
-
-  const getHalvingProgress = () => {
-    const totalDuration = NEXT_HALVING.getTime() - LAST_HALVING.getTime();
-    const elapsed = now.getTime() - LAST_HALVING.getTime();
-    return Math.min(100, Math.max(0, (elapsed / totalDuration) * 100));
-  };
-
-  const halvingProgress = getHalvingProgress();
-
-
-  const supplyProgress = ((currentSupply ?? 0) / MAX_SUPPLY) * 100;
-  const btcSecurityPercent = ((hashrateData?.elastosHashrate ?? 0) / (hashrateData?.bitcoinHashrate ?? 1)) * 100;
-
-  const formatHashrate = (hashrate?: number) => hashrate ? `${hashrate.toFixed(2)} EH/s` : 'Loading...';
+  const supplyProgress = (1000000 / MAX_SUPPLY) * 100;
+  const btcSecurityPercent = 0.5;
 
   return (
-    <div className="p-4">
-      <div className="grid grid-cols-2 gap-4">
-        {/* Supply Progress Card */}
-        <Card decoration="top" decorationColor="blue">
-          <Flex>
-            <Bitcoin className="w-6 h-6" />
-            <div>
-              <Text fontWeight="200">Total Supply Progress</Text>
-              <Metric fontWeight="200">{Math.round(supplyProgress)}% Complete</Metric>
-              <Text fontWeight="200" className="mt-2">Target: {MAX_SUPPLY.toLocaleString()} ELA</Text>
-              <ProgressBar value={supplyProgress} className="mt-2" />
-            </div>
-          </Flex>
-          <VerifyButton /> {/* Added VerifyButton */}
-        </Card>
+    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+      <Card>
+        <Flex>
+          <div>
+            <p className="text-gray-600 dark:text-gray-300">Total Supply Progress</p>
+            <p className="text-2xl font-semibold text-gray-900 dark:text-white">{Math.round(supplyProgress)}% Complete</p>
+            <p className="text-gray-600 dark:text-gray-300 mt-2">Target: {MAX_SUPPLY.toLocaleString()} ELA</p>
+          </div>
+        </Flex>
+      </Card>
 
-        {/* Bitcoin Security Card */}
-        <Card decoration="top" decorationColor="green">
-          <Flex>
-            <Shield className="w-6 h-6" />
-            <div>
-              <Text fontWeight="200">Bitcoin Security</Text>
-              <Metric fontWeight="200">{btcSecurityPercent.toFixed(2)}% of BTC</Metric>
-              <Text fontWeight="200" className="mt-2">
-                Protected by {formatHashrate(hashrateData?.elastosHashrate)} of {formatHashrate(hashrateData?.bitcoinHashrate)}
-              </Text>
-              <DonutChart
-                className="mt-2 h-20"
-                data={[
-                  { name: 'Secured', value: btcSecurityPercent },
-                  { name: 'Remaining', value: 100 - btcSecurityPercent }
-                ]}
-                category="value"
-                index="name"
-                colors={["green", "gray"]}
-                variant="pie"
-              />
-            </div>
-          </Flex>
-          {/* Removed VerifyButton */}
-        </Card>
+      <Card>
+        <Flex>
+          <div>
+            <p className="text-gray-600 dark:text-gray-300">Bitcoin Security</p>
+            <p className="text-2xl font-semibold text-gray-900 dark:text-white">{btcSecurityPercent.toFixed(2)}% of BTC</p>
+            <p className="text-gray-600 dark:text-gray-300 mt-2">Secured by Bitcoin's hashpower</p>
+          </div>
+        </Flex>
+      </Card>
 
-        {/* APY Card */}
-        <Card decoration="top" decorationColor="orange">
-          <Flex>
-            <LineChart className="w-6 h-6" />
-            <div>
-              <Text fontWeight="200">Current APY</Text>
-              <Metric fontWeight="200">3.29%</Metric>
-              <Text fontWeight="200" className="mt-2">Halving every 4 years until 2105</Text>
-              <AreaChart
-                className="mt-2 h-20"
-                data={[
-                  { date: '2024', value: 3.29 },
-                  { date: '2025', value: 1.645 },
-                  { date: '2029', value: 0.82 },
-                  { date: '2033', value: 0.41 }
-                ]}
-                categories={['value']}
-                index="date"
-                colors={["orange"]}
-                showXAxis={false}
-                showYAxis={false}
-                showLegend={false}
-              />
-            </div>
-          </Flex>
-          {/* Removed VerifyButton */}
-        </Card>
+      <Card>
+        <Flex>
+          <div>
+            <p className="text-gray-600 dark:text-gray-300">Current APY</p>
+            <p className="text-2xl font-semibold text-gray-900 dark:text-white">3.29%</p>
+            <p className="text-gray-600 dark:text-gray-300 mt-2">Halving every 4 years until 2105</p>
+          </div>
+        </Flex>
+      </Card>
 
-        {/* Halving Countdown Card */}
-        <Card decoration="top" decorationColor="purple">
-          <Flex>
-            <Clock className="w-6 h-6" />
-            <div>
-              <Text fontWeight="200">Next Halving</Text>
-              <Metric fontWeight="200">{format(NEXT_HALVING, 'MMM d, yyyy')}</Metric>
-              <Text fontWeight="200" className="mt-2">{differenceInDays(NEXT_HALVING, now)} days remaining</Text>
-              <ProgressBar value={halvingProgress} className="mt-2" />
-            </div>
-          </Flex>
-          {/* Removed VerifyButton */}
-        </Card>
-      </div>
+      <Card>
+        <Flex>
+          <div>
+            <p className="text-gray-600 dark:text-gray-300">Next Halving</p>
+            <p className="text-2xl font-semibold text-gray-900 dark:text-white">{format(NEXT_HALVING, 'MMM d, yyyy')}</p>
+            <p className="text-gray-600 dark:text-gray-300 mt-2">{differenceInDays(NEXT_HALVING, now)} days remaining</p>
+          </div>
+        </Flex>
+      </Card>
     </div>
   );
 }

@@ -34,7 +34,7 @@ function App() {
       <Routes>
         <Route path="/" element={<LandingPage />} />
         <Route path="/security" element={<SecurityPage />} />
-        <Route path="/vision" element={<Vision />} />
+        <Route path="/vision" element={<VisionPage />} />
         <Route path="/value-calculator" element={<ValueCalcPage />} />
         <Route path="/buy-ela" element={<BuyElaPage />} />
         <Route path="/ela-utility" element={<ElaUtilityPage />} />

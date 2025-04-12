@@ -1,4 +1,3 @@
-
 "use client"
 
 import { type ImgHTMLAttributes } from "react"
@@ -27,11 +26,6 @@ export function ImageZoom({
         "data-[state=open]:animate-in data-[state=closed]:animate-out",
         "data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0"
       )}
-      classOverlay={cn(
-        "absolute inset-0 transition-colors bg-background/80",
-        "cursor-zoom-out" 
-      )}
-      closeText="Close" 
       zoomMargin={20}
       wrapElement="span"
       {...zoomProps}
