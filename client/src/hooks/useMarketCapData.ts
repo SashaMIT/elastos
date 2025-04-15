@@ -6,7 +6,11 @@ interface MarketCapData {
   marketCapRatio: number;
 }
 
-export const useMarketCapData = () => {
+interface UseMarketCapOptions {
+  enabled?: boolean;
+}
+
+export const useMarketCapData = (options?: UseMarketCapOptions) => {
   return useQuery({
     queryKey: ["marketCap"],
     queryFn: async () => {
@@ -16,5 +20,6 @@ export const useMarketCapData = () => {
       }
       return response.json() as Promise<MarketCapData>;
     },
+    enabled: options?.enabled !== undefined ? options.enabled : false,
   });
 };

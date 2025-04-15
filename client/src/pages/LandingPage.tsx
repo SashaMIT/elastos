@@ -143,7 +143,9 @@ const LandingPage = () => {
   const { data: hashrateData, refetch: refetchHashrateData } = useHashrateData({
     enabled: false
   });
-  const { data: marketCapData, refetch: refetchMarketCapData } = useMarketCapData();
+  const { data: marketCapData, refetch: refetchMarketCapData } = useMarketCapData({
+    enabled: false
+  });
   const { data: totalSupply, refetch: refetchSupply } = useElaSupply({
     enabled: false
   });
