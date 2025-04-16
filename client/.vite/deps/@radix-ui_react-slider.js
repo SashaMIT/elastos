@@ -1,48 +1,48 @@
 "use client";
 import {
   usePrevious
-} from "./chunk-IXMQFTRP.js";
-import {
-  useSize
-} from "./chunk-EJGAUH5O.js";
+} from "./chunk-MOEDCT23.js";
 import {
   useDirection
-} from "./chunk-4ONEFOJG.js";
+} from "./chunk-JSSIILN2.js";
 import {
   createCollection
-} from "./chunk-A6F63KQO.js";
+} from "./chunk-5O3UZ4WE.js";
+import {
+  useSize
+} from "./chunk-3NS2AK5E.js";
 import {
   composeEventHandlers,
   useControllableState
-} from "./chunk-SUL2DYLC.js";
-import "./chunk-77MTKFCU.js";
+} from "./chunk-ILVG5NBT.js";
+import "./chunk-UUKKEGQJ.js";
 import {
   Primitive,
   createContextScope
-} from "./chunk-ZDHCAE57.js";
+} from "./chunk-TFXR2K5M.js";
 import {
   useComposedRefs
-} from "./chunk-EDRO45RL.js";
-import "./chunk-SQFPIQGA.js";
+} from "./chunk-63HEPLPE.js";
+import "./chunk-ATCYXUJR.js";
 import {
   require_jsx_runtime
-} from "./chunk-QX4ZPKKX.js";
+} from "./chunk-VNID673C.js";
 import {
   require_react
-} from "./chunk-DBR6V4P4.js";
+} from "./chunk-K3CCW6BN.js";
 import {
   __toESM
-} from "./chunk-SNAQBZPT.js";
+} from "./chunk-VHXUCOYC.js";
 
-// node_modules/@radix-ui/react-slider/dist/index.mjs
+// client/node_modules/@radix-ui/react-slider/dist/index.mjs
 var React = __toESM(require_react(), 1);
 
-// node_modules/@radix-ui/number/dist/index.mjs
+// client/node_modules/@radix-ui/number/dist/index.mjs
 function clamp(value, [min, max]) {
   return Math.min(max, Math.max(min, value));
 }
 
-// node_modules/@radix-ui/react-slider/dist/index.mjs
+// client/node_modules/@radix-ui/react-slider/dist/index.mjs
 var import_jsx_runtime = __toESM(require_jsx_runtime(), 1);
 var PAGE_KEYS = ["PageUp", "PageDown"];
 var ARROW_KEYS = ["ArrowUp", "ArrowDown", "ArrowLeft", "ArrowRight"];
@@ -86,9 +86,8 @@ var Slider = React.forwardRef(
       prop: value,
       defaultProp: defaultValue,
       onChange: (value2) => {
-        var _a;
         const thumbs = [...thumbRefs.current];
-        (_a = thumbs[valueIndexToChangeRef.current]) == null ? void 0 : _a.focus();
+        thumbs[valueIndexToChangeRef.current]?.focus();
         onValueChange(value2);
       }
     });
@@ -225,20 +224,20 @@ var SliderHorizontal = React.forwardRef(
             },
             onSlideStart: (event) => {
               const value = getValueFromPointer(event.clientX);
-              onSlideStart == null ? void 0 : onSlideStart(value);
+              onSlideStart?.(value);
             },
             onSlideMove: (event) => {
               const value = getValueFromPointer(event.clientX);
-              onSlideMove == null ? void 0 : onSlideMove(value);
+              onSlideMove?.(value);
             },
             onSlideEnd: () => {
               rectRef.current = void 0;
-              onSlideEnd == null ? void 0 : onSlideEnd();
+              onSlideEnd?.();
             },
             onStepKeyDown: (event) => {
               const slideDirection = isSlidingFromLeft ? "from-left" : "from-right";
               const isBackKey = BACK_KEYS[slideDirection].includes(event.key);
-              onStepKeyDown == null ? void 0 : onStepKeyDown({ event, direction: isBackKey ? -1 : 1 });
+              onStepKeyDown?.({ event, direction: isBackKey ? -1 : 1 });
             }
           }
         )
@@ -290,20 +289,20 @@ var SliderVertical = React.forwardRef(
             },
             onSlideStart: (event) => {
               const value = getValueFromPointer(event.clientY);
-              onSlideStart == null ? void 0 : onSlideStart(value);
+              onSlideStart?.(value);
             },
             onSlideMove: (event) => {
               const value = getValueFromPointer(event.clientY);
-              onSlideMove == null ? void 0 : onSlideMove(value);
+              onSlideMove?.(value);
             },
             onSlideEnd: () => {
               rectRef.current = void 0;
-              onSlideEnd == null ? void 0 : onSlideEnd();
+              onSlideEnd?.();
             },
             onStepKeyDown: (event) => {
               const slideDirection = isSlidingFromBottom ? "from-bottom" : "from-top";
               const isBackKey = BACK_KEYS[slideDirection].includes(event.key);
-              onStepKeyDown == null ? void 0 : onStepKeyDown({ event, direction: isBackKey ? -1 : 1 });
+              onStepKeyDown?.({ event, direction: isBackKey ? -1 : 1 });
             }
           }
         )
@@ -439,7 +438,7 @@ var SliderThumbImpl = React.forwardRef(
     const value = context.values[index];
     const percent = value === void 0 ? 0 : convertValueToPercentage(value, context.min, context.max);
     const label = getLabel(index, context.values.length);
-    const orientationSize = size == null ? void 0 : size[orientation.size];
+    const orientationSize = size?.[orientation.size];
     const thumbInBoundsOffset = orientationSize ? getThumbInBoundsOffset(orientationSize, percent, orientation.direction) : 0;
     React.useEffect(() => {
       if (thumb) {

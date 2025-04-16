@@ -1,47 +1,47 @@
 "use client";
 import {
+  useId
+} from "./chunk-OR7E356R.js";
+import {
   Portal
-} from "./chunk-WG4AZ7NC.js";
+} from "./chunk-E6LMAOHG.js";
 import {
   DismissableLayer
-} from "./chunk-2JPX52RK.js";
-import {
-  useId
-} from "./chunk-R7PPYS66.js";
+} from "./chunk-OSCKFPQL.js";
 import {
   Presence
-} from "./chunk-KHW2GGBR.js";
+} from "./chunk-MLZJABZR.js";
 import {
   composeEventHandlers,
   useControllableState
-} from "./chunk-SUL2DYLC.js";
+} from "./chunk-ILVG5NBT.js";
 import {
   useCallbackRef
-} from "./chunk-77MTKFCU.js";
+} from "./chunk-UUKKEGQJ.js";
 import {
   Primitive,
   createContext2,
   createContextScope
-} from "./chunk-ZDHCAE57.js";
+} from "./chunk-TFXR2K5M.js";
 import {
-  Slot,
+  createSlot,
   useComposedRefs
-} from "./chunk-EDRO45RL.js";
-import "./chunk-SQFPIQGA.js";
+} from "./chunk-63HEPLPE.js";
+import "./chunk-ATCYXUJR.js";
 import {
   require_jsx_runtime
-} from "./chunk-QX4ZPKKX.js";
+} from "./chunk-VNID673C.js";
 import {
   require_react
-} from "./chunk-DBR6V4P4.js";
+} from "./chunk-K3CCW6BN.js";
 import {
   __toESM
-} from "./chunk-SNAQBZPT.js";
+} from "./chunk-VHXUCOYC.js";
 
-// node_modules/@radix-ui/react-dialog/dist/index.mjs
+// client/node_modules/@radix-ui/react-dialog/dist/index.mjs
 var React12 = __toESM(require_react(), 1);
 
-// node_modules/@radix-ui/react-focus-scope/dist/index.mjs
+// client/node_modules/@radix-ui/react-focus-scope/dist/index.mjs
 var React = __toESM(require_react(), 1);
 var import_jsx_runtime = __toESM(require_jsx_runtime(), 1);
 var AUTOFOCUS_ON_MOUNT = "focusScope.autoFocusOnMount";
@@ -222,15 +222,14 @@ function createFocusScopesStack() {
     add(focusScope) {
       const activeFocusScope = stack[0];
       if (focusScope !== activeFocusScope) {
-        activeFocusScope == null ? void 0 : activeFocusScope.pause();
+        activeFocusScope?.pause();
       }
       stack = arrayRemove(stack, focusScope);
       stack.unshift(focusScope);
     },
     remove(focusScope) {
-      var _a;
       stack = arrayRemove(stack, focusScope);
-      (_a = stack[0]) == null ? void 0 : _a.resume();
+      stack[0]?.resume();
     }
   };
 }
@@ -246,7 +245,7 @@ function removeLinks(items) {
   return items.filter((item) => item.tagName !== "A");
 }
 
-// node_modules/@radix-ui/react-focus-guards/dist/index.mjs
+// client/node_modules/@radix-ui/react-focus-guards/dist/index.mjs
 var React2 = __toESM(require_react(), 1);
 var count = 0;
 function useFocusGuards() {
@@ -274,7 +273,7 @@ function createFocusGuard() {
   return element;
 }
 
-// node_modules/tslib/tslib.es6.mjs
+// client/node_modules/tslib/tslib.es6.mjs
 var __assign = function() {
   __assign = Object.assign || function __assign2(t) {
     for (var s, i = 1, n = arguments.length; i < n; i++) {
@@ -306,19 +305,19 @@ function __spreadArray(to, from, pack) {
   return to.concat(ar || Array.prototype.slice.call(from));
 }
 
-// node_modules/react-remove-scroll/dist/es2015/Combination.js
+// client/node_modules/react-remove-scroll/dist/es2015/Combination.js
 var React11 = __toESM(require_react());
 
-// node_modules/react-remove-scroll/dist/es2015/UI.js
+// client/node_modules/react-remove-scroll/dist/es2015/UI.js
 var React7 = __toESM(require_react());
 
-// node_modules/react-remove-scroll-bar/dist/es2015/constants.js
+// client/node_modules/react-remove-scroll-bar/dist/es2015/constants.js
 var zeroRightClassName = "right-scroll-bar-position";
 var fullWidthClassName = "width-before-scroll-bar";
 var noScrollbarsClassName = "with-scroll-bars-hidden";
 var removedBarSizeVariable = "--removed-body-scroll-bar-size";
 
-// node_modules/use-callback-ref/dist/es2015/assignRef.js
+// client/node_modules/use-callback-ref/dist/es2015/assignRef.js
 function assignRef(ref, value) {
   if (typeof ref === "function") {
     ref(value);
@@ -328,7 +327,7 @@ function assignRef(ref, value) {
   return ref;
 }
 
-// node_modules/use-callback-ref/dist/es2015/useRef.js
+// client/node_modules/use-callback-ref/dist/es2015/useRef.js
 var import_react = __toESM(require_react());
 function useCallbackRef2(initialValue, callback) {
   var ref = (0, import_react.useState)(function() {
@@ -356,7 +355,7 @@ function useCallbackRef2(initialValue, callback) {
   return ref.facade;
 }
 
-// node_modules/use-callback-ref/dist/es2015/useMergeRef.js
+// client/node_modules/use-callback-ref/dist/es2015/useMergeRef.js
 var React3 = __toESM(require_react());
 var useIsomorphicLayoutEffect = typeof window !== "undefined" ? React3.useLayoutEffect : React3.useEffect;
 var currentValues = /* @__PURE__ */ new WeakMap();
@@ -388,13 +387,13 @@ function useMergeRefs(refs, defaultValue) {
   return callbackRef;
 }
 
-// node_modules/use-sidecar/dist/es2015/hoc.js
+// client/node_modules/use-sidecar/dist/es2015/hoc.js
 var React4 = __toESM(require_react());
 
-// node_modules/use-sidecar/dist/es2015/hook.js
+// client/node_modules/use-sidecar/dist/es2015/hook.js
 var import_react2 = __toESM(require_react());
 
-// node_modules/use-sidecar/dist/es2015/medium.js
+// client/node_modules/use-sidecar/dist/es2015/medium.js
 function ItoI(a) {
   return a;
 }
@@ -480,11 +479,11 @@ function createSidecarMedium(options) {
   return medium;
 }
 
-// node_modules/use-sidecar/dist/es2015/renderProp.js
+// client/node_modules/use-sidecar/dist/es2015/renderProp.js
 var React5 = __toESM(require_react());
 var import_react3 = __toESM(require_react());
 
-// node_modules/use-sidecar/dist/es2015/exports.js
+// client/node_modules/use-sidecar/dist/es2015/exports.js
 var React6 = __toESM(require_react());
 var SideCar = function(_a) {
   var sideCar = _a.sideCar, rest = __rest(_a, ["sideCar"]);
@@ -503,10 +502,10 @@ function exportSidecar(medium, exported) {
   return SideCar;
 }
 
-// node_modules/react-remove-scroll/dist/es2015/medium.js
+// client/node_modules/react-remove-scroll/dist/es2015/medium.js
 var effectCar = createSidecarMedium();
 
-// node_modules/react-remove-scroll/dist/es2015/UI.js
+// client/node_modules/react-remove-scroll/dist/es2015/UI.js
 var nothing = function() {
   return;
 };
@@ -538,16 +537,16 @@ RemoveScroll.classNames = {
   zeroRight: zeroRightClassName
 };
 
-// node_modules/react-remove-scroll/dist/es2015/SideEffect.js
+// client/node_modules/react-remove-scroll/dist/es2015/SideEffect.js
 var React10 = __toESM(require_react());
 
-// node_modules/react-remove-scroll-bar/dist/es2015/component.js
+// client/node_modules/react-remove-scroll-bar/dist/es2015/component.js
 var React9 = __toESM(require_react());
 
-// node_modules/react-style-singleton/dist/es2015/hook.js
+// client/node_modules/react-style-singleton/dist/es2015/hook.js
 var React8 = __toESM(require_react());
 
-// node_modules/get-nonce/dist/es2015/index.js
+// client/node_modules/get-nonce/dist/es2015/index.js
 var currentNonce;
 var getNonce = function() {
   if (currentNonce) {
@@ -559,7 +558,7 @@ var getNonce = function() {
   return void 0;
 };
 
-// node_modules/react-style-singleton/dist/es2015/singleton.js
+// client/node_modules/react-style-singleton/dist/es2015/singleton.js
 function makeStyleTag() {
   if (!document)
     return null;
@@ -605,7 +604,7 @@ var stylesheetSingleton = function() {
   };
 };
 
-// node_modules/react-style-singleton/dist/es2015/hook.js
+// client/node_modules/react-style-singleton/dist/es2015/hook.js
 var styleHookSingleton = function() {
   var sheet = stylesheetSingleton();
   return function(styles, isDynamic) {
@@ -618,7 +617,7 @@ var styleHookSingleton = function() {
   };
 };
 
-// node_modules/react-style-singleton/dist/es2015/component.js
+// client/node_modules/react-style-singleton/dist/es2015/component.js
 var styleSingleton = function() {
   var useStyle = styleHookSingleton();
   var Sheet = function(_a) {
@@ -629,7 +628,7 @@ var styleSingleton = function() {
   return Sheet;
 };
 
-// node_modules/react-remove-scroll-bar/dist/es2015/utils.js
+// client/node_modules/react-remove-scroll-bar/dist/es2015/utils.js
 var zeroGap = {
   left: 0,
   top: 0,
@@ -664,7 +663,7 @@ var getGapWidth = function(gapMode) {
   };
 };
 
-// node_modules/react-remove-scroll-bar/dist/es2015/component.js
+// client/node_modules/react-remove-scroll-bar/dist/es2015/component.js
 var Style = styleSingleton();
 var lockAttribute = "data-scroll-locked";
 var getStyles = function(_a, allowRelative, gapMode, important) {
@@ -704,7 +703,7 @@ var RemoveScrollBar = function(_a) {
   return React9.createElement(Style, { styles: getStyles(gap, !noRelative, gapMode, !noImportant ? "!important" : "") });
 };
 
-// node_modules/react-remove-scroll/dist/es2015/aggresiveCapture.js
+// client/node_modules/react-remove-scroll/dist/es2015/aggresiveCapture.js
 var passiveSupported = false;
 if (typeof window !== "undefined") {
   try {
@@ -723,7 +722,7 @@ if (typeof window !== "undefined") {
 var options;
 var nonPassive = passiveSupported ? { passive: false } : false;
 
-// node_modules/react-remove-scroll/dist/es2015/handleScroll.js
+// client/node_modules/react-remove-scroll/dist/es2015/handleScroll.js
 var alwaysContainsScroll = function(node) {
   return node.tagName === "TEXTAREA";
 };
@@ -823,7 +822,7 @@ var handleScroll = function(axis, endTarget, event, sourceDelta, noOverscroll) {
   return shouldCancelScroll;
 };
 
-// node_modules/react-remove-scroll/dist/es2015/SideEffect.js
+// client/node_modules/react-remove-scroll/dist/es2015/SideEffect.js
 var getTouchXY = function(event) {
   return "changedTouches" in event ? [event.changedTouches[0].clientX, event.changedTouches[0].clientY] : [0, 0];
 };
@@ -988,17 +987,17 @@ function getOutermostShadowParent(node) {
   return shadowParent;
 }
 
-// node_modules/react-remove-scroll/dist/es2015/sidecar.js
+// client/node_modules/react-remove-scroll/dist/es2015/sidecar.js
 var sidecar_default = exportSidecar(effectCar, RemoveScrollSideCar);
 
-// node_modules/react-remove-scroll/dist/es2015/Combination.js
+// client/node_modules/react-remove-scroll/dist/es2015/Combination.js
 var ReactRemoveScroll = React11.forwardRef(function(props, ref) {
   return React11.createElement(RemoveScroll, __assign({}, props, { ref, sideCar: sidecar_default }));
 });
 ReactRemoveScroll.classNames = RemoveScroll.classNames;
 var Combination_default = ReactRemoveScroll;
 
-// node_modules/aria-hidden/dist/es2015/index.js
+// client/node_modules/aria-hidden/dist/es2015/index.js
 var getDefaultParent = function(originalTarget) {
   if (typeof document === "undefined") {
     return null;
@@ -1119,7 +1118,7 @@ var hideOthers = function(originalTarget, parentNode, markerName) {
   return applyAttributeToOthers(targets, activeParentNode, markerName, "aria-hidden");
 };
 
-// node_modules/@radix-ui/react-dialog/dist/index.mjs
+// client/node_modules/@radix-ui/react-dialog/dist/index.mjs
 var import_jsx_runtime2 = __toESM(require_jsx_runtime(), 1);
 var DIALOG_NAME = "Dialog";
 var [createDialogContext, createDialogScope] = createContextScope(DIALOG_NAME);
@@ -1200,6 +1199,7 @@ var DialogOverlay = React12.forwardRef(
   }
 );
 DialogOverlay.displayName = OVERLAY_NAME;
+var Slot = createSlot("DialogOverlay.RemoveScroll");
 var DialogOverlayImpl = React12.forwardRef(
   (props, forwardedRef) => {
     const { __scopeDialog, ...overlayProps } = props;
@@ -1246,9 +1246,8 @@ var DialogContentModal = React12.forwardRef(
         trapFocus: context.open,
         disableOutsidePointerEvents: true,
         onCloseAutoFocus: composeEventHandlers(props.onCloseAutoFocus, (event) => {
-          var _a;
           event.preventDefault();
-          (_a = context.triggerRef.current) == null ? void 0 : _a.focus();
+          context.triggerRef.current?.focus();
         }),
         onPointerDownOutside: composeEventHandlers(props.onPointerDownOutside, (event) => {
           const originalEvent = event.detail.originalEvent;
@@ -1277,18 +1276,16 @@ var DialogContentNonModal = React12.forwardRef(
         trapFocus: false,
         disableOutsidePointerEvents: false,
         onCloseAutoFocus: (event) => {
-          var _a, _b;
-          (_a = props.onCloseAutoFocus) == null ? void 0 : _a.call(props, event);
+          props.onCloseAutoFocus?.(event);
           if (!event.defaultPrevented) {
-            if (!hasInteractedOutsideRef.current) (_b = context.triggerRef.current) == null ? void 0 : _b.focus();
+            if (!hasInteractedOutsideRef.current) context.triggerRef.current?.focus();
             event.preventDefault();
           }
           hasInteractedOutsideRef.current = false;
           hasPointerDownOutsideRef.current = false;
         },
         onInteractOutside: (event) => {
-          var _a, _b;
-          (_a = props.onInteractOutside) == null ? void 0 : _a.call(props, event);
+          props.onInteractOutside?.(event);
           if (!event.defaultPrevented) {
             hasInteractedOutsideRef.current = true;
             if (event.detail.originalEvent.type === "pointerdown") {
@@ -1296,7 +1293,7 @@ var DialogContentNonModal = React12.forwardRef(
             }
           }
           const target = event.target;
-          const targetIsTrigger = (_b = context.triggerRef.current) == null ? void 0 : _b.contains(target);
+          const targetIsTrigger = context.triggerRef.current?.contains(target);
           if (targetIsTrigger) event.preventDefault();
           if (event.detail.originalEvent.type === "focusin" && hasPointerDownOutsideRef.current) {
             event.preventDefault();
@@ -1408,8 +1405,7 @@ var DescriptionWarning = ({ contentRef, descriptionId }) => {
   const descriptionWarningContext = useWarningContext(DESCRIPTION_WARNING_NAME);
   const MESSAGE = `Warning: Missing \`Description\` or \`aria-describedby={undefined}\` for {${descriptionWarningContext.contentName}}.`;
   React12.useEffect(() => {
-    var _a;
-    const describedById = (_a = contentRef.current) == null ? void 0 : _a.getAttribute("aria-describedby");
+    const describedById = contentRef.current?.getAttribute("aria-describedby");
     if (descriptionId && describedById) {
       const hasDescription = document.getElementById(descriptionId);
       if (!hasDescription) console.warn(MESSAGE);

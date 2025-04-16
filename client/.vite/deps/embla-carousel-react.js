@@ -1,14 +1,14 @@
 import {
   require_react
-} from "./chunk-DBR6V4P4.js";
+} from "./chunk-K3CCW6BN.js";
 import {
   __toESM
-} from "./chunk-SNAQBZPT.js";
+} from "./chunk-VHXUCOYC.js";
 
-// node_modules/embla-carousel-react/esm/embla-carousel-react.esm.js
+// client/node_modules/embla-carousel-react/esm/embla-carousel-react.esm.js
 var import_react = __toESM(require_react());
 
-// node_modules/embla-carousel-reactive-utils/esm/embla-carousel-reactive-utils.esm.js
+// client/node_modules/embla-carousel-reactive-utils/esm/embla-carousel-reactive-utils.esm.js
 function isObject(subject) {
   return Object.prototype.toString.call(subject) === "[object Object]";
 }
@@ -46,7 +46,7 @@ function arePluginsEqual(pluginsA, pluginsB) {
   });
 }
 
-// node_modules/embla-carousel/esm/embla-carousel.esm.js
+// client/node_modules/embla-carousel/esm/embla-carousel.esm.js
 function isNumber(subject) {
   return typeof subject === "number";
 }
@@ -1333,11 +1333,8 @@ function Engine(root, container, slides, ownerDocument, ownerWindow, options, ev
     const shouldSettle = scrollBody2.settled();
     const withinBounds = !scrollBounds.shouldConstrain();
     const hasSettled = loop2 ? shouldSettle : shouldSettle && withinBounds;
-    if (hasSettled && !dragHandler.pointerDown()) {
-      animation2.stop();
-      eventHandler2.emit("settle");
-    }
-    if (!hasSettled) eventHandler2.emit("scroll");
+    const hasSettledAndIdle = hasSettled && !dragHandler.pointerDown();
+    if (hasSettledAndIdle) animation2.stop();
     const interpolatedLocation = location2.get() * alpha + previousLocation2.get() * (1 - alpha);
     offsetLocation2.set(interpolatedLocation);
     if (loop2) {
@@ -1345,6 +1342,8 @@ function Engine(root, container, slides, ownerDocument, ownerWindow, options, ev
       slideLooper.loop();
     }
     translate.to(offsetLocation2.get());
+    if (hasSettledAndIdle) eventHandler2.emit("settle");
+    if (!hasSettled) eventHandler2.emit("scroll");
   };
   const animation = Animations(ownerDocument, ownerWindow, () => update(engine), (alpha) => render(engine, alpha));
   const friction = 0.68;
@@ -1617,7 +1616,7 @@ function EmblaCarousel(root, userOptions, userPlugins) {
     return engine.scrollSnapList;
   }
   function scrollProgress() {
-    return engine.scrollProgress.get(engine.location.get());
+    return engine.scrollProgress.get(engine.offsetLocation.get());
   }
   function selectedScrollSnap() {
     return engine.index.get();
@@ -1675,7 +1674,7 @@ function EmblaCarousel(root, userOptions, userPlugins) {
 }
 EmblaCarousel.globalOptions = void 0;
 
-// node_modules/embla-carousel-react/esm/embla-carousel-react.esm.js
+// client/node_modules/embla-carousel-react/esm/embla-carousel-react.esm.js
 function useEmblaCarousel(options = {}, plugins = []) {
   const storedOptions = (0, import_react.useRef)(options);
   const storedPlugins = (0, import_react.useRef)(plugins);

@@ -1,15 +1,15 @@
 "use client";
 import {
   require_react_dom
-} from "./chunk-SQFPIQGA.js";
+} from "./chunk-ATCYXUJR.js";
 import {
   require_react
-} from "./chunk-DBR6V4P4.js";
+} from "./chunk-K3CCW6BN.js";
 import {
   __toESM
-} from "./chunk-SNAQBZPT.js";
+} from "./chunk-VHXUCOYC.js";
 
-// node_modules/react-medium-image-zoom/dist/index.js
+// client/node_modules/react-medium-image-zoom/dist/index.js
 var import_react = __toESM(require_react());
 var import_react_dom = __toESM(require_react_dom());
 function ICompress() {
@@ -26,10 +26,7 @@ function IEnlarge() {
     import_react.default.createElement("path", { d: "M 9 1 L 9 2 L 12.292969 2 L 2 12.292969 L 2 9 L 1 9 L 1 14 L 6 14 L 6 13 L 2.707031 13 L 13 2.707031 L 13 6 L 14 6 L 14 1 Z" })
   );
 }
-var testElType = (type, el) => {
-  var _a, _b;
-  return type === ((_b = (_a = el == null ? void 0 : el.tagName) == null ? void 0 : _a.toUpperCase) == null ? void 0 : _b.call(_a));
-};
+var testElType = (type, el) => type === el?.tagName?.toUpperCase?.();
 var testDiv = (el) => testElType("DIV", el) || testElType("SPAN", el);
 var testImg = (el) => testElType("IMG", el);
 var testImgLoaded = (el) => el.complete && el.naturalHeight !== 0;
@@ -64,14 +61,13 @@ var getScale = ({ containerHeight, containerWidth, hasScalableSrc, offset, targe
 };
 var URL_REGEX = /url(?:\(['"]?)(.*?)(?:['"]?\))/;
 var getImgSrc = (imgEl) => {
-  var _a;
   if (imgEl) {
     if (testImg(imgEl)) {
       return imgEl.currentSrc;
     } else if (testDiv(imgEl)) {
       const bgImg = window.getComputedStyle(imgEl).backgroundImage;
       if (bgImg) {
-        return (_a = URL_REGEX.exec(bgImg)) == null ? void 0 : _a[1];
+        return URL_REGEX.exec(bgImg)?.[1];
       }
     }
   }
@@ -247,8 +243,7 @@ var getDivImgStyle = ({ backgroundPosition, backgroundSize, containerHeight, con
 };
 var SRC_SVG_REGEX = /\.svg$/i;
 var getStyleModalImg = ({ hasZoomImg, imgSrc, isSvg, isZoomed, loadedImgEl, offset, shouldRefresh, targetEl }) => {
-  var _a;
-  const hasScalableSrc = isSvg || ((_a = imgSrc == null ? void 0 : imgSrc.slice) == null ? void 0 : _a.call(imgSrc, 0, 18)) === "data:image/svg+xml" || hasZoomImg || !!(imgSrc && SRC_SVG_REGEX.test(imgSrc));
+  const hasScalableSrc = isSvg || imgSrc?.slice?.(0, 18) === "data:image/svg+xml" || hasZoomImg || !!(imgSrc && SRC_SVG_REGEX.test(imgSrc));
   const imgRect = targetEl.getBoundingClientRect();
   const targetElComputedStyle = window.getComputedStyle(targetEl);
   const isDivImg = loadedImgEl != null && testDiv(targetEl);
@@ -260,8 +255,8 @@ var getStyleModalImg = ({ hasZoomImg, imgSrc, isSvg, isZoomed, loadedImgEl, offs
     containerWidth: imgRect.width,
     hasScalableSrc,
     offset,
-    targetHeight: (loadedImgEl == null ? void 0 : loadedImgEl.naturalHeight) || imgRect.height,
-    targetWidth: (loadedImgEl == null ? void 0 : loadedImgEl.naturalWidth) || imgRect.width
+    targetHeight: loadedImgEl?.naturalHeight || imgRect.height,
+    targetWidth: loadedImgEl?.naturalWidth || imgRect.width
   });
   const styleImgObjectFit = isImgObjectFit ? getImgObjectFitStyle({
     containerHeight: imgRect.height,
@@ -272,8 +267,8 @@ var getStyleModalImg = ({ hasZoomImg, imgSrc, isSvg, isZoomed, loadedImgEl, offs
     objectFit: targetElComputedStyle.objectFit,
     objectPosition: targetElComputedStyle.objectPosition,
     offset,
-    targetHeight: (loadedImgEl == null ? void 0 : loadedImgEl.naturalHeight) || imgRect.height,
-    targetWidth: (loadedImgEl == null ? void 0 : loadedImgEl.naturalWidth) || imgRect.width
+    targetHeight: loadedImgEl?.naturalHeight || imgRect.height,
+    targetWidth: loadedImgEl?.naturalWidth || imgRect.width
   }) : void 0;
   const styleDivImg = isDivImg ? getDivImgStyle({
     backgroundPosition: targetElComputedStyle.backgroundPosition,
@@ -284,8 +279,8 @@ var getStyleModalImg = ({ hasZoomImg, imgSrc, isSvg, isZoomed, loadedImgEl, offs
     containerWidth: imgRect.width,
     hasScalableSrc,
     offset,
-    targetHeight: (loadedImgEl == null ? void 0 : loadedImgEl.naturalHeight) || imgRect.height,
-    targetWidth: (loadedImgEl == null ? void 0 : loadedImgEl.naturalWidth) || imgRect.width
+    targetHeight: loadedImgEl?.naturalHeight || imgRect.height,
+    targetWidth: loadedImgEl?.naturalWidth || imgRect.width
   }) : void 0;
   const style = Object.assign({}, styleImgRegular, styleImgObjectFit, styleDivImg);
   if (isZoomed) {
@@ -406,7 +401,6 @@ var ControlledBase = class extends import_react.default.Component {
     this.prevBodyAttrs = defaultBodyAttrs;
     this.styleModalImg = {};
     this.handleModalStateChange = (prevModalState) => {
-      var _a, _b, _c, _d;
       const { modalState } = this.state;
       if (prevModalState !== "LOADING" && modalState === "LOADING") {
         this.loadZoomImg();
@@ -429,8 +423,8 @@ var ControlledBase = class extends import_react.default.Component {
       } else if (prevModalState !== "UNLOADED" && modalState === "UNLOADED") {
         this.bodyScrollEnable();
         window.removeEventListener("resize", this.handleResize);
-        (_b = (_a = this.refModalImg.current) == null ? void 0 : _a.removeEventListener) == null ? void 0 : _b.call(_a, "transitionend", this.handleImgTransitionEnd);
-        (_d = (_c = this.refDialog.current) == null ? void 0 : _c.close) == null ? void 0 : _d.call(_c);
+        this.refModalImg.current?.removeEventListener?.("transitionend", this.handleImgTransitionEnd);
+        this.refDialog.current?.close?.();
       }
     };
     this.getDialogContainer = () => {
@@ -447,13 +441,12 @@ var ControlledBase = class extends import_react.default.Component {
       this.setState({ id: gen4() + gen4() + gen4() });
     };
     this.setAndTrackImg = () => {
-      var _a, _b;
       const contentEl = this.refContent.current;
       if (!contentEl)
         return;
       this.imgEl = contentEl.querySelector(IMAGE_QUERY);
       if (this.imgEl) {
-        (_b = (_a = this.contentNotFoundChangeObserver) == null ? void 0 : _a.disconnect) == null ? void 0 : _b.call(_a);
+        this.contentNotFoundChangeObserver?.disconnect?.();
         this.imgEl.addEventListener("load", this.handleImgLoad);
         this.imgEl.addEventListener("click", this.handleZoom);
         if (!this.state.loadedImgEl) {
@@ -461,7 +454,7 @@ var ControlledBase = class extends import_react.default.Component {
         }
         this.imgElResizeObserver = new ResizeObserver((entries) => {
           const entry = entries[0];
-          if (entry == null ? void 0 : entry.target) {
+          if (entry?.target) {
             this.imgEl = entry.target;
             this.setState({ styleGhost: getStyleGhost(this.imgEl) });
           }
@@ -512,14 +505,12 @@ var ControlledBase = class extends import_react.default.Component {
       });
     };
     this.handleZoom = () => {
-      var _a, _b;
       if (this.hasImage()) {
-        (_b = (_a = this.props).onZoomChange) == null ? void 0 : _b.call(_a, true);
+        this.props.onZoomChange?.(true);
       }
     };
     this.handleUnzoom = () => {
-      var _a, _b;
-      (_b = (_a = this.props).onZoomChange) == null ? void 0 : _b.call(_a, false);
+      this.props.onZoomChange?.(false);
     };
     this.handleBtnUnzoomClick = (e) => {
       e.preventDefault();
@@ -564,8 +555,7 @@ var ControlledBase = class extends import_react.default.Component {
       }
     };
     this.handleTouchMove = (e) => {
-      var _a;
-      const browserScale = ((_a = window.visualViewport) == null ? void 0 : _a.scale) ?? 1;
+      const browserScale = window.visualViewport?.scale ?? 1;
       if (this.props.canSwipeToUnzoom && !this.isScaling && browserScale <= 1 && this.touchYStart != null && e.changedTouches[0]) {
         this.touchYEnd = e.changedTouches[0].screenY;
         const max = Math.max(this.touchYStart, this.touchYEnd);
@@ -595,10 +585,9 @@ var ControlledBase = class extends import_react.default.Component {
       return this.imgEl && (this.state.loadedImgEl || testSvg(this.imgEl)) && window.getComputedStyle(this.imgEl).display !== "none";
     };
     this.zoom = () => {
-      var _a, _b, _c, _d;
       this.bodyScrollDisable();
-      (_b = (_a = this.refDialog.current) == null ? void 0 : _a.showModal) == null ? void 0 : _b.call(_a);
-      (_d = (_c = this.refModalImg.current) == null ? void 0 : _c.addEventListener) == null ? void 0 : _d.call(_c, "transitionend", this.handleImgTransitionEnd);
+      this.refDialog.current?.showModal?.();
+      this.refModalImg.current?.addEventListener?.("transitionend", this.handleImgTransitionEnd);
       this.setState({ modalState: "LOADING" });
     };
     this.unzoom = () => {
@@ -638,12 +627,12 @@ var ControlledBase = class extends import_react.default.Component {
     };
     this.loadZoomImg = () => {
       const { props: { zoomImg } } = this;
-      const zoomImgSrc = zoomImg == null ? void 0 : zoomImg.src;
+      const zoomImgSrc = zoomImg?.src;
       if (zoomImgSrc) {
         const img = new Image();
-        img.sizes = (zoomImg == null ? void 0 : zoomImg.sizes) ?? "";
-        img.srcset = (zoomImg == null ? void 0 : zoomImg.srcSet) ?? "";
-        img.crossOrigin = (zoomImg == null ? void 0 : zoomImg.crossOrigin) ?? void 0;
+        img.sizes = zoomImg?.sizes ?? "";
+        img.srcset = zoomImg?.srcSet ?? "";
+        img.crossOrigin = zoomImg?.crossOrigin ?? void 0;
         img.src = zoomImgSrc;
         const setLoaded = () => {
           this.setState({ isZoomImgLoaded: true });
@@ -658,7 +647,6 @@ var ControlledBase = class extends import_react.default.Component {
       }
     };
     this.UNSAFE_handleSvg = () => {
-      var _a, _b, _c, _d, _e;
       const { imgEl, refModalImg, styleModalImg } = this;
       if (testSvg(imgEl)) {
         const svgEl = imgEl.cloneNode(true);
@@ -666,8 +654,8 @@ var ControlledBase = class extends import_react.default.Component {
         svgEl.style.width = `${styleModalImg.width || 0}px`;
         svgEl.style.height = `${styleModalImg.height || 0}px`;
         svgEl.addEventListener("click", this.handleUnzoom);
-        (_c = (_b = (_a = refModalImg.current) == null ? void 0 : _a.firstChild) == null ? void 0 : _b.remove) == null ? void 0 : _c.call(_b);
-        (_e = (_d = refModalImg.current) == null ? void 0 : _d.appendChild) == null ? void 0 : _e.call(_d, svgEl);
+        refModalImg.current?.firstChild?.remove?.();
+        refModalImg.current?.appendChild?.(svgEl);
       }
     };
   }
@@ -683,7 +671,7 @@ var ControlledBase = class extends import_react.default.Component {
     const imgSizes = isImg ? imgEl.sizes : void 0;
     const imgSrcSet = isImg ? imgEl.srcset : void 0;
     const imgCrossOrigin = isImg ? imgEl.crossOrigin : void 0;
-    const hasZoomImg = !!(zoomImg == null ? void 0 : zoomImg.src);
+    const hasZoomImg = !!zoomImg?.src;
     const hasImage = this.hasImage();
     const labelBtnZoom = imgAlt ? `${a11yNameButtonZoom}: ${imgAlt}` : a11yNameButtonZoom;
     const isModalActive = modalState === "LOADING" || modalState === "LOADED";
@@ -745,16 +733,15 @@ var ControlledBase = class extends import_react.default.Component {
     this.UNSAFE_handleSvg();
   }
   componentWillUnmount() {
-    var _a, _b, _c, _d, _e, _f, _g, _h, _i, _j, _k, _l;
     if (this.state.modalState !== "UNLOADED") {
       this.bodyScrollEnable();
     }
-    (_b = (_a = this.contentChangeObserver) == null ? void 0 : _a.disconnect) == null ? void 0 : _b.call(_a);
-    (_d = (_c = this.contentNotFoundChangeObserver) == null ? void 0 : _c.disconnect) == null ? void 0 : _d.call(_c);
-    (_f = (_e = this.imgElResizeObserver) == null ? void 0 : _e.disconnect) == null ? void 0 : _f.call(_e);
-    (_h = (_g = this.imgEl) == null ? void 0 : _g.removeEventListener) == null ? void 0 : _h.call(_g, "load", this.handleImgLoad);
-    (_j = (_i = this.imgEl) == null ? void 0 : _i.removeEventListener) == null ? void 0 : _j.call(_i, "click", this.handleZoom);
-    (_l = (_k = this.refModalImg.current) == null ? void 0 : _k.removeEventListener) == null ? void 0 : _l.call(_k, "transitionend", this.handleImgTransitionEnd);
+    this.contentChangeObserver?.disconnect?.();
+    this.contentNotFoundChangeObserver?.disconnect?.();
+    this.imgElResizeObserver?.disconnect?.();
+    this.imgEl?.removeEventListener?.("load", this.handleImgLoad);
+    this.imgEl?.removeEventListener?.("click", this.handleZoom);
+    this.refModalImg.current?.removeEventListener?.("transitionend", this.handleImgTransitionEnd);
     window.removeEventListener("wheel", this.handleWheel);
     window.removeEventListener("touchstart", this.handleTouchStart);
     window.removeEventListener("touchmove", this.handleTouchMove);

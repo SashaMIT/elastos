@@ -1,58 +1,58 @@
 "use client";
 import {
   useSize
-} from "./chunk-EJGAUH5O.js";
-import {
-  Portal
-} from "./chunk-WG4AZ7NC.js";
+} from "./chunk-3NS2AK5E.js";
 import {
   Root
-} from "./chunk-GVIJQRML.js";
-import {
-  DismissableLayer
-} from "./chunk-2JPX52RK.js";
+} from "./chunk-REXQ5MAF.js";
 import {
   useId
-} from "./chunk-R7PPYS66.js";
+} from "./chunk-OR7E356R.js";
+import {
+  Portal
+} from "./chunk-E6LMAOHG.js";
+import {
+  DismissableLayer
+} from "./chunk-OSCKFPQL.js";
 import {
   Presence
-} from "./chunk-KHW2GGBR.js";
+} from "./chunk-MLZJABZR.js";
 import {
   composeEventHandlers,
   useControllableState
-} from "./chunk-SUL2DYLC.js";
+} from "./chunk-ILVG5NBT.js";
 import {
   useCallbackRef,
   useLayoutEffect2
-} from "./chunk-77MTKFCU.js";
+} from "./chunk-UUKKEGQJ.js";
 import {
   Primitive,
   createContextScope
-} from "./chunk-ZDHCAE57.js";
+} from "./chunk-TFXR2K5M.js";
 import {
-  Slottable,
+  createSlottable,
   useComposedRefs
-} from "./chunk-EDRO45RL.js";
+} from "./chunk-63HEPLPE.js";
 import {
   require_react_dom
-} from "./chunk-SQFPIQGA.js";
+} from "./chunk-ATCYXUJR.js";
 import {
   require_jsx_runtime
-} from "./chunk-QX4ZPKKX.js";
+} from "./chunk-VNID673C.js";
 import {
   require_react
-} from "./chunk-DBR6V4P4.js";
+} from "./chunk-K3CCW6BN.js";
 import {
   __toESM
-} from "./chunk-SNAQBZPT.js";
+} from "./chunk-VHXUCOYC.js";
 
-// node_modules/@radix-ui/react-tooltip/dist/index.mjs
+// client/node_modules/@radix-ui/react-tooltip/dist/index.mjs
 var React4 = __toESM(require_react(), 1);
 
-// node_modules/@radix-ui/react-popper/dist/index.mjs
+// client/node_modules/@radix-ui/react-popper/dist/index.mjs
 var React3 = __toESM(require_react(), 1);
 
-// node_modules/@floating-ui/utils/dist/floating-ui.utils.mjs
+// client/node_modules/@floating-ui/utils/dist/floating-ui.utils.mjs
 var sides = ["top", "right", "bottom", "left"];
 var alignments = ["start", "end"];
 var placements = sides.reduce((acc, side) => acc.concat(side, side + "-" + alignments[0], side + "-" + alignments[1]), []);
@@ -185,7 +185,7 @@ function rectToClientRect(rect) {
   };
 }
 
-// node_modules/@floating-ui/core/dist/floating-ui.core.mjs
+// client/node_modules/@floating-ui/core/dist/floating-ui.core.mjs
 function computeCoordsFromPlacement(_ref, placement, rtl) {
   let {
     reference,
@@ -889,7 +889,7 @@ var size = function(options) {
   };
 };
 
-// node_modules/@floating-ui/utils/dist/floating-ui.utils.dom.mjs
+// client/node_modules/@floating-ui/utils/dist/floating-ui.utils.dom.mjs
 function hasWindow() {
   return typeof window !== "undefined";
 }
@@ -1035,7 +1035,7 @@ function getFrameElement(win) {
   return win.parent && Object.getPrototypeOf(win.parent) ? win.frameElement : null;
 }
 
-// node_modules/@floating-ui/dom/dist/floating-ui.dom.mjs
+// client/node_modules/@floating-ui/dom/dist/floating-ui.dom.mjs
 function getCssDimensions(element) {
   const css = getComputedStyle(element);
   let width = parseFloat(css.width) || 0;
@@ -1631,7 +1631,7 @@ var computePosition2 = (reference, floating, options) => {
   });
 };
 
-// node_modules/@floating-ui/react-dom/dist/floating-ui.react-dom.mjs
+// client/node_modules/@floating-ui/react-dom/dist/floating-ui.react-dom.mjs
 var React = __toESM(require_react(), 1);
 var import_react = __toESM(require_react(), 1);
 var ReactDOM = __toESM(require_react_dom(), 1);
@@ -1912,7 +1912,7 @@ var arrow3 = (options, deps) => ({
   options: [options, deps]
 });
 
-// node_modules/@radix-ui/react-arrow/dist/index.mjs
+// client/node_modules/@radix-ui/react-arrow/dist/index.mjs
 var React2 = __toESM(require_react(), 1);
 var import_jsx_runtime = __toESM(require_jsx_runtime(), 1);
 var NAME = "Arrow";
@@ -1934,7 +1934,7 @@ var Arrow = React2.forwardRef((props, forwardedRef) => {
 Arrow.displayName = NAME;
 var Root2 = Arrow;
 
-// node_modules/@radix-ui/react-popper/dist/index.mjs
+// client/node_modules/@radix-ui/react-popper/dist/index.mjs
 var import_jsx_runtime2 = __toESM(require_jsx_runtime(), 1);
 var POPPER_NAME = "Popper";
 var [createPopperContext, createPopperScope] = createContextScope(POPPER_NAME);
@@ -1953,7 +1953,7 @@ var PopperAnchor = React3.forwardRef(
     const ref = React3.useRef(null);
     const composedRefs = useComposedRefs(forwardedRef, ref);
     React3.useEffect(() => {
-      context.onAnchorChange((virtualRef == null ? void 0 : virtualRef.current) || ref.current);
+      context.onAnchorChange(virtualRef?.current || ref.current);
     });
     return virtualRef ? null : (0, import_jsx_runtime2.jsx)(Primitive.div, { ...anchorProps, ref: composedRefs });
   }
@@ -1963,7 +1963,6 @@ var CONTENT_NAME = "PopperContent";
 var [PopperContentProvider, useContentContext] = createPopperContext(CONTENT_NAME);
 var PopperContent = React3.forwardRef(
   (props, forwardedRef) => {
-    var _a, _b, _c, _d, _e, _f;
     const {
       __scopePopper,
       side = "bottom",
@@ -1985,8 +1984,8 @@ var PopperContent = React3.forwardRef(
     const composedRefs = useComposedRefs(forwardedRef, (node) => setContent(node));
     const [arrow4, setArrow] = React3.useState(null);
     const arrowSize = useSize(arrow4);
-    const arrowWidth = (arrowSize == null ? void 0 : arrowSize.width) ?? 0;
-    const arrowHeight = (arrowSize == null ? void 0 : arrowSize.height) ?? 0;
+    const arrowWidth = arrowSize?.width ?? 0;
+    const arrowHeight = arrowSize?.height ?? 0;
     const desiredPlacement = side + (align !== "center" ? "-" + align : "");
     const collisionPadding = typeof collisionPaddingProp === "number" ? collisionPaddingProp : { top: 0, right: 0, bottom: 0, left: 0, ...collisionPaddingProp };
     const boundary = Array.isArray(collisionBoundary) ? collisionBoundary : [collisionBoundary];
@@ -2039,12 +2038,12 @@ var PopperContent = React3.forwardRef(
     const handlePlaced = useCallbackRef(onPlaced);
     useLayoutEffect2(() => {
       if (isPositioned) {
-        handlePlaced == null ? void 0 : handlePlaced();
+        handlePlaced?.();
       }
     }, [isPositioned, handlePlaced]);
-    const arrowX = (_a = middlewareData.arrow) == null ? void 0 : _a.x;
-    const arrowY = (_b = middlewareData.arrow) == null ? void 0 : _b.y;
-    const cannotCenterArrow = ((_c = middlewareData.arrow) == null ? void 0 : _c.centerOffset) !== 0;
+    const arrowX = middlewareData.arrow?.x;
+    const arrowY = middlewareData.arrow?.y;
+    const cannotCenterArrow = middlewareData.arrow?.centerOffset !== 0;
     const [contentZIndex, setContentZIndex] = React3.useState();
     useLayoutEffect2(() => {
       if (content) setContentZIndex(window.getComputedStyle(content).zIndex);
@@ -2061,13 +2060,13 @@ var PopperContent = React3.forwardRef(
           minWidth: "max-content",
           zIndex: contentZIndex,
           ["--radix-popper-transform-origin"]: [
-            (_d = middlewareData.transformOrigin) == null ? void 0 : _d.x,
-            (_e = middlewareData.transformOrigin) == null ? void 0 : _e.y
+            middlewareData.transformOrigin?.x,
+            middlewareData.transformOrigin?.y
           ].join(" "),
           // hide the content if using the hide middleware and should be hidden
           // set visibility to hidden and disable pointer events so the UI behaves
           // as if the PopperContent isn't there at all
-          ...((_f = middlewareData.hide) == null ? void 0 : _f.referenceHidden) && {
+          ...middlewareData.hide?.referenceHidden && {
             visibility: "hidden",
             pointerEvents: "none"
           }
@@ -2166,16 +2165,15 @@ var transformOrigin = (options) => ({
   name: "transformOrigin",
   options,
   fn(data) {
-    var _a, _b, _c;
     const { placement, rects, middlewareData } = data;
-    const cannotCenterArrow = ((_a = middlewareData.arrow) == null ? void 0 : _a.centerOffset) !== 0;
+    const cannotCenterArrow = middlewareData.arrow?.centerOffset !== 0;
     const isArrowHidden = cannotCenterArrow;
     const arrowWidth = isArrowHidden ? 0 : options.arrowWidth;
     const arrowHeight = isArrowHidden ? 0 : options.arrowHeight;
     const [placedSide, placedAlign] = getSideAndAlignFromPlacement(placement);
     const noArrowAlign = { start: "0%", center: "50%", end: "100%" }[placedAlign];
-    const arrowXCenter = (((_b = middlewareData.arrow) == null ? void 0 : _b.x) ?? 0) + arrowWidth / 2;
-    const arrowYCenter = (((_c = middlewareData.arrow) == null ? void 0 : _c.y) ?? 0) + arrowHeight / 2;
+    const arrowXCenter = (middlewareData.arrow?.x ?? 0) + arrowWidth / 2;
+    const arrowYCenter = (middlewareData.arrow?.y ?? 0) + arrowHeight / 2;
     let x = "";
     let y = "";
     if (placedSide === "bottom") {
@@ -2203,7 +2201,7 @@ var Anchor = PopperAnchor;
 var Content = PopperContent;
 var Arrow2 = PopperArrow;
 
-// node_modules/@radix-ui/react-tooltip/dist/index.mjs
+// client/node_modules/@radix-ui/react-tooltip/dist/index.mjs
 var import_jsx_runtime3 = __toESM(require_jsx_runtime(), 1);
 var [createTooltipContext, createTooltipScope] = createContextScope("Tooltip", [
   createPopperScope
@@ -2221,7 +2219,7 @@ var TooltipProvider = (props) => {
     disableHoverableContent = false,
     children
   } = props;
-  const [isOpenDelayed, setIsOpenDelayed] = React4.useState(true);
+  const isOpenDelayedRef = React4.useRef(true);
   const isPointerInTransitRef = React4.useRef(false);
   const skipDelayTimerRef = React4.useRef(0);
   React4.useEffect(() => {
@@ -2232,16 +2230,16 @@ var TooltipProvider = (props) => {
     TooltipProviderContextProvider,
     {
       scope: __scopeTooltip,
-      isOpenDelayed,
+      isOpenDelayedRef,
       delayDuration,
       onOpen: React4.useCallback(() => {
         window.clearTimeout(skipDelayTimerRef.current);
-        setIsOpenDelayed(false);
+        isOpenDelayedRef.current = false;
       }, []),
       onClose: React4.useCallback(() => {
         window.clearTimeout(skipDelayTimerRef.current);
         skipDelayTimerRef.current = window.setTimeout(
-          () => setIsOpenDelayed(true),
+          () => isOpenDelayedRef.current = true,
           skipDelayDuration
         );
       }, [skipDelayDuration]),
@@ -2285,7 +2283,7 @@ var Tooltip = (props) => {
       } else {
         providerContext.onClose();
       }
-      onOpenChange == null ? void 0 : onOpenChange(open2);
+      onOpenChange?.(open2);
     }
   });
   const stateAttribute = React4.useMemo(() => {
@@ -2328,9 +2326,9 @@ var Tooltip = (props) => {
       trigger,
       onTriggerChange: setTrigger,
       onTriggerEnter: React4.useCallback(() => {
-        if (providerContext.isOpenDelayed) handleDelayedOpen();
+        if (providerContext.isOpenDelayedRef.current) handleDelayedOpen();
         else handleOpen();
-      }, [providerContext.isOpenDelayed, handleDelayedOpen, handleOpen]),
+      }, [providerContext.isOpenDelayedRef, handleDelayedOpen, handleOpen]),
       onTriggerLeave: React4.useCallback(() => {
         if (disableHoverableContent) {
           handleClose();
@@ -2381,6 +2379,9 @@ var TooltipTrigger = React4.forwardRef(
           hasPointerMoveOpenedRef.current = false;
         }),
         onPointerDown: composeEventHandlers(props.onPointerDown, () => {
+          if (context.open) {
+            context.onClose();
+          }
           isPointerDownRef.current = true;
           document.addEventListener("pointerup", handlePointerUp, { once: true });
         }),
@@ -2459,7 +2460,7 @@ var TooltipContentHoverable = React4.forwardRef((props, forwardedRef) => {
       const handleTrackPointerGrace = (event) => {
         const target = event.target;
         const pointerPosition = { x: event.clientX, y: event.clientY };
-        const hasEnteredTarget = (trigger == null ? void 0 : trigger.contains(target)) || (content == null ? void 0 : content.contains(target));
+        const hasEnteredTarget = trigger?.contains(target) || content?.contains(target);
         const isPointerOutsideGraceArea = !isPointInPolygon(pointerPosition, pointerGraceArea);
         if (hasEnteredTarget) {
           handleRemoveGraceArea();
@@ -2475,6 +2476,7 @@ var TooltipContentHoverable = React4.forwardRef((props, forwardedRef) => {
   return (0, import_jsx_runtime3.jsx)(TooltipContentImpl, { ...props, ref: composedRefs });
 });
 var [VisuallyHiddenContentContextProvider, useVisuallyHiddenContentContext] = createTooltipContext(TOOLTIP_NAME, { isInside: false });
+var Slottable = createSlottable("TooltipContent");
 var TooltipContentImpl = React4.forwardRef(
   (props, forwardedRef) => {
     const {
@@ -2496,7 +2498,7 @@ var TooltipContentImpl = React4.forwardRef(
       if (context.trigger) {
         const handleScroll = (event) => {
           const target = event.target;
-          if (target == null ? void 0 : target.contains(context.trigger)) onClose();
+          if (target?.contains(context.trigger)) onClose();
         };
         window.addEventListener("scroll", handleScroll, { capture: true });
         return () => window.removeEventListener("scroll", handleScroll, { capture: true });

@@ -1,18 +1,18 @@
 import {
   require_object_assign,
   require_prop_types
-} from "./chunk-36GIOVOI.js";
+} from "./chunk-KYTYHDWB.js";
 import {
   require_react
-} from "./chunk-DBR6V4P4.js";
+} from "./chunk-K3CCW6BN.js";
 import {
   __commonJS,
   __toESM
-} from "./chunk-SNAQBZPT.js";
+} from "./chunk-VHXUCOYC.js";
 
-// node_modules/react-side-effect/lib/index.js
+// client/node_modules/react-side-effect/lib/index.js
 var require_lib = __commonJS({
-  "node_modules/react-side-effect/lib/index.js"(exports, module) {
+  "client/node_modules/react-side-effect/lib/index.js"(exports, module) {
     "use strict";
     function _interopDefault(ex) {
       return ex && typeof ex === "object" && "default" in ex ? ex["default"] : ex;
@@ -111,9 +111,9 @@ var require_lib = __commonJS({
   }
 });
 
-// node_modules/react-fast-compare/index.js
+// client/node_modules/react-fast-compare/index.js
 var require_react_fast_compare = __commonJS({
-  "node_modules/react-fast-compare/index.js"(exports, module) {
+  "client/node_modules/react-fast-compare/index.js"(exports, module) {
     var hasElementType = typeof Element !== "undefined";
     var hasMap = typeof Map === "function";
     var hasSet = typeof Set === "function";
@@ -188,7 +188,7 @@ var require_react_fast_compare = __commonJS({
   }
 });
 
-// node_modules/react-helmet/es/Helmet.js
+// client/node_modules/react-helmet/es/Helmet.js
 var import_prop_types = __toESM(require_prop_types());
 var import_react_side_effect = __toESM(require_lib());
 var import_react_fast_compare = __toESM(require_react_fast_compare());
@@ -463,8 +463,8 @@ var rafPolyfill = function() {
 var cafPolyfill = function cafPolyfill2(id) {
   return clearTimeout(id);
 };
-var requestAnimationFrame = typeof window !== "undefined" ? window.requestAnimationFrame && window.requestAnimationFrame.bind(window) || window.webkitRequestAnimationFrame || window.mozRequestAnimationFrame || rafPolyfill : global.requestAnimationFrame || rafPolyfill;
-var cancelAnimationFrame = typeof window !== "undefined" ? window.cancelAnimationFrame || window.webkitCancelAnimationFrame || window.mozCancelAnimationFrame || cafPolyfill : global.cancelAnimationFrame || cafPolyfill;
+var requestAnimationFrame = typeof window !== "undefined" ? window.requestAnimationFrame && window.requestAnimationFrame.bind(window) || window.webkitRequestAnimationFrame || window.mozRequestAnimationFrame || rafPolyfill : globalThis.requestAnimationFrame || rafPolyfill;
+var cancelAnimationFrame = typeof window !== "undefined" ? window.cancelAnimationFrame || window.webkitCancelAnimationFrame || window.mozCancelAnimationFrame || cafPolyfill : globalThis.cancelAnimationFrame || cafPolyfill;
 var warn = function warn2(msg) {
   return console && typeof console.warn === "function" && console.warn(msg);
 };

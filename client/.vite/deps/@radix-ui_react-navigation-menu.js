@@ -1,56 +1,56 @@
 "use client";
 import {
   usePrevious
-} from "./chunk-IXMQFTRP.js";
-import {
-  Root
-} from "./chunk-GVIJQRML.js";
-import {
-  DismissableLayer
-} from "./chunk-2JPX52RK.js";
+} from "./chunk-MOEDCT23.js";
 import {
   useDirection
-} from "./chunk-4ONEFOJG.js";
+} from "./chunk-JSSIILN2.js";
 import {
   createCollection
-} from "./chunk-A6F63KQO.js";
+} from "./chunk-5O3UZ4WE.js";
+import {
+  Root
+} from "./chunk-REXQ5MAF.js";
 import {
   useId
-} from "./chunk-R7PPYS66.js";
+} from "./chunk-OR7E356R.js";
+import {
+  DismissableLayer
+} from "./chunk-OSCKFPQL.js";
 import {
   Presence
-} from "./chunk-KHW2GGBR.js";
+} from "./chunk-MLZJABZR.js";
 import {
   composeEventHandlers,
   useControllableState
-} from "./chunk-SUL2DYLC.js";
+} from "./chunk-ILVG5NBT.js";
 import {
   useCallbackRef,
   useLayoutEffect2
-} from "./chunk-77MTKFCU.js";
+} from "./chunk-UUKKEGQJ.js";
 import {
   Primitive,
   createContextScope,
   dispatchDiscreteCustomEvent
-} from "./chunk-ZDHCAE57.js";
+} from "./chunk-TFXR2K5M.js";
 import {
   composeRefs,
   useComposedRefs
-} from "./chunk-EDRO45RL.js";
+} from "./chunk-63HEPLPE.js";
 import {
   require_react_dom
-} from "./chunk-SQFPIQGA.js";
+} from "./chunk-ATCYXUJR.js";
 import {
   require_jsx_runtime
-} from "./chunk-QX4ZPKKX.js";
+} from "./chunk-VNID673C.js";
 import {
   require_react
-} from "./chunk-DBR6V4P4.js";
+} from "./chunk-K3CCW6BN.js";
 import {
   __toESM
-} from "./chunk-SNAQBZPT.js";
+} from "./chunk-VHXUCOYC.js";
 
-// node_modules/@radix-ui/react-navigation-menu/dist/index.mjs
+// client/node_modules/@radix-ui/react-navigation-menu/dist/index.mjs
 var React = __toESM(require_react(), 1);
 var import_react_dom = __toESM(require_react_dom(), 1);
 var import_jsx_runtime = __toESM(require_jsx_runtime(), 1);
@@ -98,7 +98,7 @@ var NavigationMenu = React.forwardRef(
             skipDelayDuration
           );
         }
-        onValueChange == null ? void 0 : onValueChange(value2);
+        onValueChange?.(value2);
       },
       defaultProp: defaultValue
     });
@@ -390,7 +390,7 @@ var NavigationMenuTrigger = React.forwardRef((props, forwardedRef) => {
             const content = itemContext.contentRef.current;
             const prevFocusedElement = event.relatedTarget;
             const wasTriggerFocused = prevFocusedElement === ref.current;
-            const wasFocusFromContent = content == null ? void 0 : content.contains(prevFocusedElement);
+            const wasFocusFromContent = content?.contains(prevFocusedElement);
             if (wasTriggerFocused || !wasFocusFromContent) {
               itemContext.onFocusProxyEnter(wasTriggerFocused ? "start" : "end");
             }
@@ -422,7 +422,7 @@ var NavigationMenuLink = React.forwardRef(
               bubbles: true,
               cancelable: true
             });
-            target.addEventListener(LINK_SELECT, (event2) => onSelect == null ? void 0 : onSelect(event2), { once: true });
+            target.addEventListener(LINK_SELECT, (event2) => onSelect?.(event2), { once: true });
             dispatchDiscreteCustomEvent(target, linkSelectEvent);
             if (!linkSelectEvent.defaultPrevented && !event.metaKey) {
               const rootContentDismissEvent = new CustomEvent(ROOT_CONTENT_DISMISS, {
@@ -461,9 +461,8 @@ var NavigationMenuIndicatorImpl = React.forwardRef((props, forwardedRef) => {
   const isHorizontal = context.orientation === "horizontal";
   const isVisible = Boolean(context.value);
   React.useEffect(() => {
-    var _a;
     const items = getItems();
-    const triggerNode = (_a = items.find((item) => item.value === context.value)) == null ? void 0 : _a.ref.current;
+    const triggerNode = items.find((item) => item.value === context.value)?.ref.current;
     if (triggerNode) setActiveTrigger(triggerNode);
   }, [getItems, context.value]);
   const handlePositionChange = () => {
@@ -574,10 +573,9 @@ var NavigationMenuContentImpl = React.forwardRef((props, forwardedRef) => {
     const content = ref.current;
     if (context.isRootMenu && content) {
       const handleClose = () => {
-        var _a;
         onItemDismiss();
         onRootContentClose();
-        if (content.contains(document.activeElement)) (_a = triggerRef.current) == null ? void 0 : _a.focus();
+        if (content.contains(document.activeElement)) triggerRef.current?.focus();
       };
       content.addEventListener(ROOT_CONTENT_DISMISS, handleClose);
       return () => content.removeEventListener(ROOT_CONTENT_DISMISS, handleClose);
@@ -613,31 +611,24 @@ var NavigationMenuContentImpl = React.forwardRef((props, forwardedRef) => {
       ref: composedRefs,
       disableOutsidePointerEvents: false,
       onDismiss: () => {
-        var _a;
         const rootContentDismissEvent = new Event(ROOT_CONTENT_DISMISS, {
           bubbles: true,
           cancelable: true
         });
-        (_a = ref.current) == null ? void 0 : _a.dispatchEvent(rootContentDismissEvent);
+        ref.current?.dispatchEvent(rootContentDismissEvent);
       },
       onFocusOutside: composeEventHandlers(props.onFocusOutside, (event) => {
-        var _a;
         onContentFocusOutside();
         const target = event.target;
-        if ((_a = context.rootNavigationMenu) == null ? void 0 : _a.contains(target)) event.preventDefault();
+        if (context.rootNavigationMenu?.contains(target)) event.preventDefault();
       }),
       onPointerDownOutside: composeEventHandlers(props.onPointerDownOutside, (event) => {
-        var _a;
         const target = event.target;
-        const isTrigger = getItems().some((item) => {
-          var _a2;
-          return (_a2 = item.ref.current) == null ? void 0 : _a2.contains(target);
-        });
-        const isRootViewport = context.isRootMenu && ((_a = context.viewport) == null ? void 0 : _a.contains(target));
+        const isTrigger = getItems().some((item) => item.ref.current?.contains(target));
+        const isRootViewport = context.isRootMenu && context.viewport?.contains(target);
         if (isTrigger || isRootViewport || !context.isRootMenu) event.preventDefault();
       }),
       onKeyDown: composeEventHandlers(props.onKeyDown, (event) => {
-        var _a;
         const isMetaKey = event.altKey || event.ctrlKey || event.metaKey;
         const isTabKey = event.key === "Tab" && !isMetaKey;
         if (isTabKey) {
@@ -649,11 +640,11 @@ var NavigationMenuContentImpl = React.forwardRef((props, forwardedRef) => {
           if (focusFirst(nextCandidates)) {
             event.preventDefault();
           } else {
-            (_a = focusProxyRef.current) == null ? void 0 : _a.focus();
+            focusProxyRef.current?.focus();
           }
         }
       }),
-      onEscapeKeyDown: composeEventHandlers(props.onEscapeKeyDown, (event) => {
+      onEscapeKeyDown: composeEventHandlers(props.onEscapeKeyDown, (_event) => {
         wasEscapeCloseRef.current = true;
       })
     }
@@ -677,8 +668,8 @@ var NavigationMenuViewportImpl = React.forwardRef((props, forwardedRef) => {
   );
   const [size, setSize] = React.useState(null);
   const [content, setContent] = React.useState(null);
-  const viewportWidth = size ? (size == null ? void 0 : size.width) + "px" : void 0;
-  const viewportHeight = size ? (size == null ? void 0 : size.height) + "px" : void 0;
+  const viewportWidth = size ? size?.width + "px" : void 0;
+  const viewportHeight = size ? size?.height + "px" : void 0;
   const open = Boolean(context.value);
   const activeContentValue = open ? context.value : context.previousValue;
   const handleSizeChange = () => {

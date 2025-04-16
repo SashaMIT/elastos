@@ -63,10 +63,10 @@ import {
   setRangeValue,
   updateAnimation,
   updateColor
-} from "./chunk-JVCQF5AA.js";
-import "./chunk-SNAQBZPT.js";
+} from "./chunk-U56Q5JIZ.js";
+import "./chunk-VHXUCOYC.js";
 
-// node_modules/@tsparticles/move-base/browser/Utils.js
+// client/node_modules/@tsparticles/move-base/browser/Utils.js
 var half = 0.5;
 var double = 2;
 var minVelocity = 0;
@@ -103,17 +103,17 @@ function applyDistance(particle) {
 }
 function move(particle, moveOptions, moveSpeed, maxSpeed, moveDrift, delta) {
   applyPath(particle, delta);
-  const gravityOptions = particle.gravity, gravityFactor = (gravityOptions == null ? void 0 : gravityOptions.enable) && gravityOptions.inverse ? -identity : identity;
+  const gravityOptions = particle.gravity, gravityFactor = gravityOptions?.enable && gravityOptions.inverse ? -identity : identity;
   if (moveDrift && moveSpeed) {
     particle.velocity.x += moveDrift * delta.factor / (moveSpeedFactor * moveSpeed);
   }
-  if ((gravityOptions == null ? void 0 : gravityOptions.enable) && moveSpeed) {
+  if (gravityOptions?.enable && moveSpeed) {
     particle.velocity.y += gravityFactor * (gravityOptions.acceleration * delta.factor) / (moveSpeedFactor * moveSpeed);
   }
   const decay = particle.moveDecay;
   particle.velocity.multTo(decay);
   const velocity = particle.velocity.mult(moveSpeed);
-  if ((gravityOptions == null ? void 0 : gravityOptions.enable) && maxSpeed > minVelocity && (!gravityOptions.inverse && velocity.y >= minVelocity && velocity.y >= maxSpeed || gravityOptions.inverse && velocity.y <= minVelocity && velocity.y <= -maxSpeed)) {
+  if (gravityOptions?.enable && maxSpeed > minVelocity && (!gravityOptions.inverse && velocity.y >= minVelocity && velocity.y >= maxSpeed || gravityOptions.inverse && velocity.y <= minVelocity && velocity.y <= -maxSpeed)) {
     velocity.y = gravityFactor * maxSpeed;
     if (moveSpeed) {
       particle.velocity.y = velocity.y / moveSpeed;
@@ -151,7 +151,6 @@ function spin(particle, moveSpeed) {
   particle.spin.angle += moveSpeed * spinFactor * (identity - particle.spin.radius / maxCanvasSize);
 }
 function applyPath(particle, delta) {
-  var _a;
   const particlesOptions = particle.options, pathOptions = particlesOptions.move.path, pathEnabled = pathOptions.enable;
   if (!pathEnabled) {
     return;
@@ -160,7 +159,7 @@ function applyPath(particle, delta) {
     particle.lastPathTime += delta.value;
     return;
   }
-  const path = (_a = particle.pathGenerator) == null ? void 0 : _a.generate(particle, delta);
+  const path = particle.pathGenerator?.generate(particle, delta);
   if (path) {
     particle.velocity.addTo(path);
   }
@@ -192,7 +191,7 @@ function initSpin(particle) {
   };
 }
 
-// node_modules/@tsparticles/move-base/browser/BaseMover.js
+// client/node_modules/@tsparticles/move-base/browser/BaseMover.js
 var diffFactor = 2;
 var defaultSizeFactor = 1;
 var defaultDeltaFactor = 1;
@@ -228,7 +227,7 @@ var BaseMover = class {
   }
 };
 
-// node_modules/@tsparticles/move-base/browser/index.js
+// client/node_modules/@tsparticles/move-base/browser/index.js
 async function loadBaseMover(engine, refresh = true) {
   engine.checkVersion("3.8.1");
   await engine.addMover("base", () => {
@@ -236,7 +235,7 @@ async function loadBaseMover(engine, refresh = true) {
   }, refresh);
 }
 
-// node_modules/@tsparticles/shape-circle/browser/Utils.js
+// client/node_modules/@tsparticles/shape-circle/browser/Utils.js
 var double2 = 2;
 var doublePI2 = Math.PI * double2;
 var minAngle = 0;
@@ -250,7 +249,7 @@ function drawCircle(data) {
   context.arc(origin.x, origin.y, radius, circleRange.min, circleRange.max, false);
 }
 
-// node_modules/@tsparticles/shape-circle/browser/CircleDrawer.js
+// client/node_modules/@tsparticles/shape-circle/browser/CircleDrawer.js
 var sides = 12;
 var maxAngle = 360;
 var minAngle2 = 0;
@@ -265,7 +264,7 @@ var CircleDrawer = class {
     return sides;
   }
   particleInit(container, particle) {
-    const shapeData = particle.shapeData, angle = (shapeData == null ? void 0 : shapeData.angle) ?? {
+    const shapeData = particle.shapeData, angle = shapeData?.angle ?? {
       max: maxAngle,
       min: minAngle2
     };
@@ -276,13 +275,13 @@ var CircleDrawer = class {
   }
 };
 
-// node_modules/@tsparticles/shape-circle/browser/index.js
+// client/node_modules/@tsparticles/shape-circle/browser/index.js
 async function loadCircleShape(engine, refresh = true) {
   engine.checkVersion("3.8.1");
   await engine.addShape(new CircleDrawer(), refresh);
 }
 
-// node_modules/@tsparticles/updater-color/browser/ColorUpdater.js
+// client/node_modules/@tsparticles/updater-color/browser/ColorUpdater.js
 var ColorUpdater = class {
   constructor(container, engine) {
     this._container = container;
@@ -296,14 +295,14 @@ var ColorUpdater = class {
   }
   isEnabled(particle) {
     const { h: hAnimation, s: sAnimation, l: lAnimation } = particle.options.color.animation, { color } = particle;
-    return !particle.destroyed && !particle.spawning && ((color == null ? void 0 : color.h.value) !== void 0 && hAnimation.enable || (color == null ? void 0 : color.s.value) !== void 0 && sAnimation.enable || (color == null ? void 0 : color.l.value) !== void 0 && lAnimation.enable);
+    return !particle.destroyed && !particle.spawning && (color?.h.value !== void 0 && hAnimation.enable || color?.s.value !== void 0 && sAnimation.enable || color?.l.value !== void 0 && lAnimation.enable);
   }
   update(particle, delta) {
     updateColor(particle.color, delta);
   }
 };
 
-// node_modules/@tsparticles/updater-color/browser/index.js
+// client/node_modules/@tsparticles/updater-color/browser/index.js
 async function loadColorUpdater(engine, refresh = true) {
   engine.checkVersion("3.8.1");
   await engine.addParticleUpdater("color", (container) => {
@@ -311,7 +310,7 @@ async function loadColorUpdater(engine, refresh = true) {
   }, refresh);
 }
 
-// node_modules/@tsparticles/plugin-hex-color/browser/HexColorManager.js
+// client/node_modules/@tsparticles/plugin-hex-color/browser/HexColorManager.js
 var RgbIndexes;
 (function(RgbIndexes3) {
   RgbIndexes3[RgbIndexes3["r"] = 1] = "r";
@@ -342,7 +341,7 @@ var HexColorManager = class {
     if (typeof hexColor !== "string") {
       return;
     }
-    if (!(hexColor == null ? void 0 : hexColor.startsWith(this.stringPrefix))) {
+    if (!hexColor?.startsWith(this.stringPrefix)) {
       return;
     }
     const hexFixed = hexColor.replace(shorthandHexRegex, (_, r, g, b, a) => {
@@ -357,13 +356,13 @@ var HexColorManager = class {
   }
 };
 
-// node_modules/@tsparticles/plugin-hex-color/browser/index.js
+// client/node_modules/@tsparticles/plugin-hex-color/browser/index.js
 async function loadHexColorPlugin(engine, refresh = true) {
   engine.checkVersion("3.8.1");
   await engine.addColorManager(new HexColorManager(), refresh);
 }
 
-// node_modules/@tsparticles/plugin-hsl-color/browser/HslColorManager.js
+// client/node_modules/@tsparticles/plugin-hsl-color/browser/HslColorManager.js
 var HslIndexes;
 (function(HslIndexes2) {
   HslIndexes2[HslIndexes2["h"] = 1] = "h";
@@ -406,13 +405,13 @@ var HslColorManager = class {
   }
 };
 
-// node_modules/@tsparticles/plugin-hsl-color/browser/index.js
+// client/node_modules/@tsparticles/plugin-hsl-color/browser/index.js
 async function loadHslColorPlugin(engine, refresh = true) {
   engine.checkVersion("3.8.1");
   await engine.addColorManager(new HslColorManager(), refresh);
 }
 
-// node_modules/@tsparticles/updater-opacity/browser/OpacityUpdater.js
+// client/node_modules/@tsparticles/updater-opacity/browser/OpacityUpdater.js
 var OpacityUpdater = class {
   constructor(container) {
     this.container = container;
@@ -446,7 +445,7 @@ var OpacityUpdater = class {
   }
 };
 
-// node_modules/@tsparticles/updater-opacity/browser/index.js
+// client/node_modules/@tsparticles/updater-opacity/browser/index.js
 async function loadOpacityUpdater(engine, refresh = true) {
   engine.checkVersion("3.8.1");
   await engine.addParticleUpdater("opacity", (container) => {
@@ -454,7 +453,7 @@ async function loadOpacityUpdater(engine, refresh = true) {
   }, refresh);
 }
 
-// node_modules/@tsparticles/updater-out-modes/browser/Utils.js
+// client/node_modules/@tsparticles/updater-out-modes/browser/Utils.js
 var minVelocity2 = 0;
 var boundsMin = 0;
 function bounceHorizontal(data) {
@@ -516,7 +515,7 @@ function bounceVertical(data) {
   }
 }
 
-// node_modules/@tsparticles/updater-out-modes/browser/BounceOutMode.js
+// client/node_modules/@tsparticles/updater-out-modes/browser/BounceOutMode.js
 var BounceOutMode = class {
   constructor(container) {
     this.container = container;
@@ -548,7 +547,7 @@ var BounceOutMode = class {
   }
 };
 
-// node_modules/@tsparticles/updater-out-modes/browser/DestroyOutMode.js
+// client/node_modules/@tsparticles/updater-out-modes/browser/DestroyOutMode.js
 var minVelocity3 = 0;
 var DestroyOutMode = class {
   constructor(container) {
@@ -579,7 +578,7 @@ var DestroyOutMode = class {
   }
 };
 
-// node_modules/@tsparticles/updater-out-modes/browser/NoneOutMode.js
+// client/node_modules/@tsparticles/updater-out-modes/browser/NoneOutMode.js
 var minVelocity4 = 0;
 var NoneOutMode = class {
   constructor(container) {
@@ -610,7 +609,7 @@ var NoneOutMode = class {
   }
 };
 
-// node_modules/@tsparticles/updater-out-modes/browser/OutOutMode.js
+// client/node_modules/@tsparticles/updater-out-modes/browser/OutOutMode.js
 var minVelocity5 = 0;
 var minDistance = 0;
 var OutOutMode = class {
@@ -714,7 +713,7 @@ var OutOutMode = class {
   }
 };
 
-// node_modules/@tsparticles/updater-out-modes/browser/OutOfCanvasUpdater.js
+// client/node_modules/@tsparticles/updater-out-modes/browser/OutOfCanvasUpdater.js
 var checkOutMode = (outModes, outMode) => {
   return outModes.default === outMode || outModes.bottom === outMode || outModes.left === outMode || outModes.right === outMode || outModes.top === outMode;
 };
@@ -752,7 +751,7 @@ var OutOfCanvasUpdater = class {
   }
 };
 
-// node_modules/@tsparticles/updater-out-modes/browser/index.js
+// client/node_modules/@tsparticles/updater-out-modes/browser/index.js
 async function loadOutModesUpdater(engine, refresh = true) {
   engine.checkVersion("3.8.1");
   await engine.addParticleUpdater("outModes", (container) => {
@@ -760,7 +759,7 @@ async function loadOutModesUpdater(engine, refresh = true) {
   }, refresh);
 }
 
-// node_modules/@tsparticles/plugin-rgb-color/browser/RgbColorManager.js
+// client/node_modules/@tsparticles/plugin-rgb-color/browser/RgbColorManager.js
 var RgbIndexes2;
 (function(RgbIndexes3) {
   RgbIndexes3[RgbIndexes3["r"] = 1] = "r";
@@ -803,13 +802,13 @@ var RgbColorManager = class {
   }
 };
 
-// node_modules/@tsparticles/plugin-rgb-color/browser/index.js
+// client/node_modules/@tsparticles/plugin-rgb-color/browser/index.js
 async function loadRgbColorPlugin(engine, refresh = true) {
   engine.checkVersion("3.8.1");
   await engine.addColorManager(new RgbColorManager(), refresh);
 }
 
-// node_modules/@tsparticles/updater-size/browser/SizeUpdater.js
+// client/node_modules/@tsparticles/updater-size/browser/SizeUpdater.js
 var minLoops = 0;
 var SizeUpdater = class {
   init(particle) {
@@ -835,7 +834,7 @@ var SizeUpdater = class {
   }
 };
 
-// node_modules/@tsparticles/updater-size/browser/index.js
+// client/node_modules/@tsparticles/updater-size/browser/index.js
 async function loadSizeUpdater(engine, refresh = true) {
   engine.checkVersion("3.8.1");
   await engine.addParticleUpdater("size", () => {
@@ -843,7 +842,7 @@ async function loadSizeUpdater(engine, refresh = true) {
   }, refresh);
 }
 
-// node_modules/@tsparticles/basic/browser/index.js
+// client/node_modules/@tsparticles/basic/browser/index.js
 async function loadBasic(engine, refresh = true) {
   engine.checkVersion("3.8.1");
   await loadHexColorPlugin(engine, false);
@@ -858,7 +857,7 @@ async function loadBasic(engine, refresh = true) {
   await engine.refresh(refresh);
 }
 
-// node_modules/@tsparticles/plugin-easing-quad/browser/index.js
+// client/node_modules/@tsparticles/plugin-easing-quad/browser/index.js
 async function loadEasingQuadPlugin(engine, refresh = true) {
   engine.checkVersion("3.8.1");
   await engine.addEasing(EasingType.easeInQuad, (value) => value ** 2, false);
@@ -867,7 +866,7 @@ async function loadEasingQuadPlugin(engine, refresh = true) {
   await engine.refresh(refresh);
 }
 
-// node_modules/@tsparticles/shape-emoji/browser/Utils.js
+// client/node_modules/@tsparticles/shape-emoji/browser/Utils.js
 function drawEmoji(data, image) {
   const { context, opacity } = data, half9 = 0.5, previousAlpha = context.globalAlpha;
   if (!image) {
@@ -879,7 +878,7 @@ function drawEmoji(data, image) {
   context.globalAlpha = previousAlpha;
 }
 
-// node_modules/@tsparticles/shape-emoji/browser/EmojiDrawer.js
+// client/node_modules/@tsparticles/shape-emoji/browser/EmojiDrawer.js
 var defaultFont = '"Twemoji Mozilla", Apple Color Emoji, "Segoe UI Emoji", "Noto Color Emoji", "EmojiOne Color"';
 var noPadding = 0;
 var EmojiDrawer = class {
@@ -890,7 +889,7 @@ var EmojiDrawer = class {
   destroy() {
     for (const [key, data] of this._emojiShapeDict) {
       if (data instanceof ImageBitmap) {
-        data == null ? void 0 : data.close();
+        data?.close();
       }
       this._emojiShapeDict.delete(key);
     }
@@ -926,7 +925,7 @@ var EmojiDrawer = class {
   }
   particleInit(_container, particle) {
     const double11 = 2, shapeData = particle.shapeData;
-    if (!(shapeData == null ? void 0 : shapeData.value)) {
+    if (!shapeData?.value) {
       return;
     }
     const emoji = itemFromSingleOrMultiple(shapeData.value, particle.randomIndexData);
@@ -979,13 +978,13 @@ var EmojiDrawer = class {
   }
 };
 
-// node_modules/@tsparticles/shape-emoji/browser/index.js
+// client/node_modules/@tsparticles/shape-emoji/browser/index.js
 async function loadEmojiShape(engine, refresh = true) {
   engine.checkVersion("3.8.1");
   await engine.addShape(new EmojiDrawer(), refresh);
 }
 
-// node_modules/@tsparticles/interaction-external-attract/browser/Utils.js
+// client/node_modules/@tsparticles/interaction-external-attract/browser/Utils.js
 var minFactor = 1;
 var identity2 = 1;
 var minRadius = 0;
@@ -1032,7 +1031,7 @@ function hoverAttract(engine, container, enabledCb) {
   processAttract(engine, container, mousePos, attractRadius, new Circle(mousePos.x, mousePos.y, attractRadius), (p) => enabledCb(p));
 }
 
-// node_modules/@tsparticles/interaction-external-attract/browser/Options/Classes/Attract.js
+// client/node_modules/@tsparticles/interaction-external-attract/browser/Options/Classes/Attract.js
 var Attract = class {
   constructor() {
     this.distance = 200;
@@ -1067,7 +1066,7 @@ var Attract = class {
   }
 };
 
-// node_modules/@tsparticles/interaction-external-attract/browser/Attractor.js
+// client/node_modules/@tsparticles/interaction-external-attract/browser/Attractor.js
 var attractMode = "attract";
 var Attractor = class extends ExternalInteractorBase {
   constructor(engine, container) {
@@ -1123,7 +1122,7 @@ var Attractor = class extends ExternalInteractorBase {
     }
   }
   isEnabled(particle) {
-    const container = this.container, options = container.actualOptions, mouse = container.interactivity.mouse, events = ((particle == null ? void 0 : particle.interactivity) ?? options.interactivity).events;
+    const container = this.container, options = container.actualOptions, mouse = container.interactivity.mouse, events = (particle?.interactivity ?? options.interactivity).events;
     if ((!mouse.position || !events.onHover.enable) && (!mouse.clickPosition || !events.onClick.enable)) {
       return false;
     }
@@ -1135,14 +1134,14 @@ var Attractor = class extends ExternalInteractorBase {
       options.attract = new Attract();
     }
     for (const source of sources) {
-      options.attract.load(source == null ? void 0 : source.attract);
+      options.attract.load(source?.attract);
     }
   }
   reset() {
   }
 };
 
-// node_modules/@tsparticles/interaction-external-attract/browser/index.js
+// client/node_modules/@tsparticles/interaction-external-attract/browser/index.js
 async function loadExternalAttractInteraction(engine, refresh = true) {
   engine.checkVersion("3.8.1");
   await engine.addInteractor("externalAttract", (container) => {
@@ -1150,7 +1149,7 @@ async function loadExternalAttractInteraction(engine, refresh = true) {
   }, refresh);
 }
 
-// node_modules/@tsparticles/interaction-external-bounce/browser/Utils.js
+// client/node_modules/@tsparticles/interaction-external-bounce/browser/Utils.js
 var squareExp = 2;
 var half2 = 0.5;
 var halfPI = Math.PI * half2;
@@ -1197,7 +1196,7 @@ function mouseBounce(container, enabledCb) {
   processBounce(container, mousePos, radius, new Circle(mousePos.x, mousePos.y, radius + tolerance), enabledCb);
 }
 
-// node_modules/@tsparticles/interaction-external-bounce/browser/Options/Classes/Bounce.js
+// client/node_modules/@tsparticles/interaction-external-bounce/browser/Options/Classes/Bounce.js
 var Bounce = class {
   constructor() {
     this.distance = 200;
@@ -1212,7 +1211,7 @@ var Bounce = class {
   }
 };
 
-// node_modules/@tsparticles/interaction-external-bounce/browser/Bouncer.js
+// client/node_modules/@tsparticles/interaction-external-bounce/browser/Bouncer.js
 var bounceMode = "bounce";
 var Bouncer = class extends ExternalInteractorBase {
   constructor(container) {
@@ -1236,7 +1235,7 @@ var Bouncer = class extends ExternalInteractorBase {
     }
   }
   isEnabled(particle) {
-    const container = this.container, options = container.actualOptions, mouse = container.interactivity.mouse, events = ((particle == null ? void 0 : particle.interactivity) ?? options.interactivity).events, divs = events.onDiv;
+    const container = this.container, options = container.actualOptions, mouse = container.interactivity.mouse, events = (particle?.interactivity ?? options.interactivity).events, divs = events.onDiv;
     return !!mouse.position && events.onHover.enable && isInArray(bounceMode, events.onHover.mode) || isDivModeEnabled(bounceMode, divs);
   }
   loadModeOptions(options, ...sources) {
@@ -1244,14 +1243,14 @@ var Bouncer = class extends ExternalInteractorBase {
       options.bounce = new Bounce();
     }
     for (const source of sources) {
-      options.bounce.load(source == null ? void 0 : source.bounce);
+      options.bounce.load(source?.bounce);
     }
   }
   reset() {
   }
 };
 
-// node_modules/@tsparticles/interaction-external-bounce/browser/index.js
+// client/node_modules/@tsparticles/interaction-external-bounce/browser/index.js
 async function loadExternalBounceInteraction(engine, refresh = true) {
   engine.checkVersion("3.8.1");
   await engine.addInteractor("externalBounce", (container) => {
@@ -1259,7 +1258,7 @@ async function loadExternalBounceInteraction(engine, refresh = true) {
   }, refresh);
 }
 
-// node_modules/@tsparticles/interaction-external-bubble/browser/Options/Classes/BubbleBase.js
+// client/node_modules/@tsparticles/interaction-external-bubble/browser/Options/Classes/BubbleBase.js
 var BubbleBase = class {
   constructor() {
     this.distance = 200;
@@ -1294,7 +1293,7 @@ var BubbleBase = class {
   }
 };
 
-// node_modules/@tsparticles/interaction-external-bubble/browser/Options/Classes/BubbleDiv.js
+// client/node_modules/@tsparticles/interaction-external-bubble/browser/Options/Classes/BubbleDiv.js
 var BubbleDiv = class extends BubbleBase {
   constructor() {
     super();
@@ -1311,7 +1310,7 @@ var BubbleDiv = class extends BubbleBase {
   }
 };
 
-// node_modules/@tsparticles/interaction-external-bubble/browser/Options/Classes/Bubble.js
+// client/node_modules/@tsparticles/interaction-external-bubble/browser/Options/Classes/Bubble.js
 var Bubble = class extends BubbleBase {
   load(data) {
     super.load(data);
@@ -1326,7 +1325,7 @@ var Bubble = class extends BubbleBase {
   }
 };
 
-// node_modules/@tsparticles/interaction-external-bubble/browser/Enums.js
+// client/node_modules/@tsparticles/interaction-external-bubble/browser/Enums.js
 var ProcessBubbleType;
 (function(ProcessBubbleType2) {
   ProcessBubbleType2["color"] = "color";
@@ -1334,7 +1333,7 @@ var ProcessBubbleType;
   ProcessBubbleType2["size"] = "size";
 })(ProcessBubbleType || (ProcessBubbleType = {}));
 
-// node_modules/@tsparticles/interaction-external-bubble/browser/Utils.js
+// client/node_modules/@tsparticles/interaction-external-bubble/browser/Utils.js
 function calculateBubbleValue(particleValue, modeValue, optionsValue, ratio) {
   if (modeValue >= optionsValue) {
     const value = particleValue + (modeValue - optionsValue) * ratio;
@@ -1345,7 +1344,7 @@ function calculateBubbleValue(particleValue, modeValue, optionsValue, ratio) {
   }
 }
 
-// node_modules/@tsparticles/interaction-external-bubble/browser/Bubbler.js
+// client/node_modules/@tsparticles/interaction-external-bubble/browser/Bubbler.js
 var bubbleMode = "bubble";
 var minDistance2 = 0;
 var defaultClickTime = 0;
@@ -1360,7 +1359,6 @@ var Bubbler = class extends ExternalInteractorBase {
   constructor(container, engine) {
     super(container);
     this._clickBubble = () => {
-      var _a;
       const container2 = this.container, options = container2.actualOptions, mouseClickPos = container2.interactivity.mouse.clickPosition, bubbleOptions = options.interactivity.modes.bubble;
       if (!bubbleOptions || !mouseClickPos) {
         return;
@@ -1405,7 +1403,7 @@ var Bubbler = class extends ExternalInteractorBase {
           },
           particlesObj: {
             optValue: getRangeMax(particle.options.opacity.value),
-            value: ((_a = particle.opacity) == null ? void 0 : _a.value) ?? defaultOpacity
+            value: particle.opacity?.value ?? defaultOpacity
           },
           type: ProcessBubbleType.opacity
         };
@@ -1465,18 +1463,17 @@ var Bubbler = class extends ExternalInteractorBase {
       }
     };
     this._hoverBubbleOpacity = (particle, ratio, divBubble) => {
-      var _a, _b;
-      const container2 = this.container, options = container2.actualOptions, modeOpacity = (divBubble == null ? void 0 : divBubble.opacity) ?? ((_a = options.interactivity.modes.bubble) == null ? void 0 : _a.opacity);
+      const container2 = this.container, options = container2.actualOptions, modeOpacity = divBubble?.opacity ?? options.interactivity.modes.bubble?.opacity;
       if (!modeOpacity) {
         return;
       }
-      const optOpacity = particle.options.opacity.value, pOpacity = ((_b = particle.opacity) == null ? void 0 : _b.value) ?? defaultOpacity, opacity = calculateBubbleValue(pOpacity, modeOpacity, getRangeMax(optOpacity), ratio);
+      const optOpacity = particle.options.opacity.value, pOpacity = particle.opacity?.value ?? defaultOpacity, opacity = calculateBubbleValue(pOpacity, modeOpacity, getRangeMax(optOpacity), ratio);
       if (opacity !== void 0) {
         particle.bubble.opacity = opacity;
       }
     };
     this._hoverBubbleSize = (particle, ratio, divBubble) => {
-      const container2 = this.container, modeSize = (divBubble == null ? void 0 : divBubble.size) ? divBubble.size * container2.retina.pixelRatio : container2.retina.bubbleModeSize;
+      const container2 = this.container, modeSize = divBubble?.size ? divBubble.size * container2.retina.pixelRatio : container2.retina.bubbleModeSize;
       if (modeSize === void 0) {
         return;
       }
@@ -1598,7 +1595,7 @@ var Bubbler = class extends ExternalInteractorBase {
     }
   }
   isEnabled(particle) {
-    const container = this.container, options = container.actualOptions, mouse = container.interactivity.mouse, events = ((particle == null ? void 0 : particle.interactivity) ?? options.interactivity).events, { onClick, onDiv, onHover } = events, divBubble = isDivModeEnabled(bubbleMode, onDiv);
+    const container = this.container, options = container.actualOptions, mouse = container.interactivity.mouse, events = (particle?.interactivity ?? options.interactivity).events, { onClick, onDiv, onHover } = events, divBubble = isDivModeEnabled(bubbleMode, onDiv);
     if (!(divBubble || onHover.enable && !!mouse.position || onClick.enable && mouse.clickPosition)) {
       return false;
     }
@@ -1609,7 +1606,7 @@ var Bubbler = class extends ExternalInteractorBase {
       options.bubble = new Bubble();
     }
     for (const source of sources) {
-      options.bubble.load(source == null ? void 0 : source.bubble);
+      options.bubble.load(source?.bubble);
     }
   }
   reset(particle) {
@@ -1617,7 +1614,7 @@ var Bubbler = class extends ExternalInteractorBase {
   }
 };
 
-// node_modules/@tsparticles/interaction-external-bubble/browser/index.js
+// client/node_modules/@tsparticles/interaction-external-bubble/browser/index.js
 async function loadExternalBubbleInteraction(engine, refresh = true) {
   engine.checkVersion("3.8.1");
   await engine.addInteractor("externalBubble", (container) => {
@@ -1625,7 +1622,7 @@ async function loadExternalBubbleInteraction(engine, refresh = true) {
   }, refresh);
 }
 
-// node_modules/@tsparticles/interaction-external-connect/browser/Options/Classes/ConnectLinks.js
+// client/node_modules/@tsparticles/interaction-external-connect/browser/Options/Classes/ConnectLinks.js
 var ConnectLinks = class {
   constructor() {
     this.opacity = 0.5;
@@ -1640,7 +1637,7 @@ var ConnectLinks = class {
   }
 };
 
-// node_modules/@tsparticles/interaction-external-connect/browser/Options/Classes/Connect.js
+// client/node_modules/@tsparticles/interaction-external-connect/browser/Options/Classes/Connect.js
 var Connect = class {
   constructor() {
     this.distance = 80;
@@ -1661,7 +1658,7 @@ var Connect = class {
   }
 };
 
-// node_modules/@tsparticles/interaction-external-connect/browser/Utils.js
+// client/node_modules/@tsparticles/interaction-external-connect/browser/Utils.js
 var gradientMin = 0;
 var gradientMax = 1;
 var defaultLinksWidth = 0;
@@ -1700,7 +1697,7 @@ function drawConnection(container, p1, p2) {
   });
 }
 
-// node_modules/@tsparticles/interaction-external-connect/browser/Connector.js
+// client/node_modules/@tsparticles/interaction-external-connect/browser/Connector.js
 var connectMode = "connect";
 var minDistance3 = 0;
 var Connector = class extends ExternalInteractorBase {
@@ -1737,7 +1734,7 @@ var Connector = class extends ExternalInteractorBase {
     }
   }
   isEnabled(particle) {
-    const container = this.container, mouse = container.interactivity.mouse, events = ((particle == null ? void 0 : particle.interactivity) ?? container.actualOptions.interactivity).events;
+    const container = this.container, mouse = container.interactivity.mouse, events = (particle?.interactivity ?? container.actualOptions.interactivity).events;
     if (!(events.onHover.enable && mouse.position)) {
       return false;
     }
@@ -1748,14 +1745,14 @@ var Connector = class extends ExternalInteractorBase {
       options.connect = new Connect();
     }
     for (const source of sources) {
-      options.connect.load(source == null ? void 0 : source.connect);
+      options.connect.load(source?.connect);
     }
   }
   reset() {
   }
 };
 
-// node_modules/@tsparticles/interaction-external-connect/browser/index.js
+// client/node_modules/@tsparticles/interaction-external-connect/browser/index.js
 async function loadExternalConnectInteraction(engine, refresh = true) {
   engine.checkVersion("3.8.1");
   await engine.addInteractor("externalConnect", (container) => {
@@ -1763,7 +1760,7 @@ async function loadExternalConnectInteraction(engine, refresh = true) {
   }, refresh);
 }
 
-// node_modules/@tsparticles/interaction-external-grab/browser/Options/Classes/GrabLinks.js
+// client/node_modules/@tsparticles/interaction-external-grab/browser/Options/Classes/GrabLinks.js
 var GrabLinks = class {
   constructor() {
     this.blink = false;
@@ -1789,7 +1786,7 @@ var GrabLinks = class {
   }
 };
 
-// node_modules/@tsparticles/interaction-external-grab/browser/Options/Classes/Grab.js
+// client/node_modules/@tsparticles/interaction-external-grab/browser/Options/Classes/Grab.js
 var Grab = class {
   constructor() {
     this.distance = 100;
@@ -1806,7 +1803,7 @@ var Grab = class {
   }
 };
 
-// node_modules/@tsparticles/interaction-external-grab/browser/Utils.js
+// client/node_modules/@tsparticles/interaction-external-grab/browser/Utils.js
 var defaultWidth = 0;
 function drawGrabLine(context, width, begin, end, colorLine, opacity) {
   drawLine(context, begin, end);
@@ -1821,7 +1818,7 @@ function drawGrab(container, particle, lineColor, opacity, mousePos) {
   });
 }
 
-// node_modules/@tsparticles/interaction-external-grab/browser/Grabber.js
+// client/node_modules/@tsparticles/interaction-external-grab/browser/Grabber.js
 var grabMode = "grab";
 var minDistance4 = 0;
 var minOpacity = 0;
@@ -1840,7 +1837,6 @@ var Grabber = class extends ExternalInteractorBase {
     container.retina.grabModeDistance = grab.distance * container.retina.pixelRatio;
   }
   interact() {
-    var _a;
     const container = this.container, options = container.actualOptions, interactivity = options.interactivity;
     if (!interactivity.modes.grab || !interactivity.events.onHover.enable || container.interactivity.status !== mouseMoveEvent) {
       return;
@@ -1863,7 +1859,7 @@ var Grabber = class extends ExternalInteractorBase {
       if (opacityLine <= minOpacity) {
         continue;
       }
-      const optColor = grabLineOptions.color ?? ((_a = particle.options.links) == null ? void 0 : _a.color);
+      const optColor = grabLineOptions.color ?? particle.options.links?.color;
       if (!container.particles.grabLineColor && optColor) {
         const linksOptions = interactivity.modes.grab.links;
         container.particles.grabLineColor = getLinkRandomColor(this._engine, optColor, linksOptions.blink, linksOptions.consent);
@@ -1876,7 +1872,7 @@ var Grabber = class extends ExternalInteractorBase {
     }
   }
   isEnabled(particle) {
-    const container = this.container, mouse = container.interactivity.mouse, events = ((particle == null ? void 0 : particle.interactivity) ?? container.actualOptions.interactivity).events;
+    const container = this.container, mouse = container.interactivity.mouse, events = (particle?.interactivity ?? container.actualOptions.interactivity).events;
     return events.onHover.enable && !!mouse.position && isInArray(grabMode, events.onHover.mode);
   }
   loadModeOptions(options, ...sources) {
@@ -1884,14 +1880,14 @@ var Grabber = class extends ExternalInteractorBase {
       options.grab = new Grab();
     }
     for (const source of sources) {
-      options.grab.load(source == null ? void 0 : source.grab);
+      options.grab.load(source?.grab);
     }
   }
   reset() {
   }
 };
 
-// node_modules/@tsparticles/interaction-external-grab/browser/index.js
+// client/node_modules/@tsparticles/interaction-external-grab/browser/index.js
 async function loadExternalGrabInteraction(engine, refresh = true) {
   engine.checkVersion("3.8.1");
   await engine.addInteractor("externalGrab", (container) => {
@@ -1899,7 +1895,7 @@ async function loadExternalGrabInteraction(engine, refresh = true) {
   }, refresh);
 }
 
-// node_modules/@tsparticles/interaction-external-pause/browser/Pauser.js
+// client/node_modules/@tsparticles/interaction-external-pause/browser/Pauser.js
 var pauseMode = "pause";
 var Pauser = class extends ExternalInteractorBase {
   constructor(container) {
@@ -1929,7 +1925,7 @@ var Pauser = class extends ExternalInteractorBase {
   }
 };
 
-// node_modules/@tsparticles/interaction-external-pause/browser/index.js
+// client/node_modules/@tsparticles/interaction-external-pause/browser/index.js
 async function loadExternalPauseInteraction(engine, refresh = true) {
   engine.checkVersion("3.8.1");
   await engine.addInteractor("externalPause", (container) => {
@@ -1937,7 +1933,7 @@ async function loadExternalPauseInteraction(engine, refresh = true) {
   }, refresh);
 }
 
-// node_modules/@tsparticles/interaction-external-push/browser/Options/Classes/Push.js
+// client/node_modules/@tsparticles/interaction-external-push/browser/Options/Classes/Push.js
 var Push = class {
   constructor() {
     this.default = true;
@@ -1964,7 +1960,7 @@ var Push = class {
   }
 };
 
-// node_modules/@tsparticles/interaction-external-push/browser/Pusher.js
+// client/node_modules/@tsparticles/interaction-external-push/browser/Pusher.js
 var pushMode = "push";
 var minQuantity = 0;
 var Pusher = class extends ExternalInteractorBase {
@@ -2000,14 +1996,14 @@ var Pusher = class extends ExternalInteractorBase {
       options.push = new Push();
     }
     for (const source of sources) {
-      options.push.load(source == null ? void 0 : source.push);
+      options.push.load(source?.push);
     }
   }
   reset() {
   }
 };
 
-// node_modules/@tsparticles/interaction-external-push/browser/index.js
+// client/node_modules/@tsparticles/interaction-external-push/browser/index.js
 async function loadExternalPushInteraction(engine, refresh = true) {
   engine.checkVersion("3.8.1");
   await engine.addInteractor("externalPush", (container) => {
@@ -2015,7 +2011,7 @@ async function loadExternalPushInteraction(engine, refresh = true) {
   }, refresh);
 }
 
-// node_modules/@tsparticles/interaction-external-remove/browser/Options/Classes/Remove.js
+// client/node_modules/@tsparticles/interaction-external-remove/browser/Options/Classes/Remove.js
 var Remove = class {
   constructor() {
     this.quantity = 2;
@@ -2031,7 +2027,7 @@ var Remove = class {
   }
 };
 
-// node_modules/@tsparticles/interaction-external-remove/browser/Remover.js
+// client/node_modules/@tsparticles/interaction-external-remove/browser/Remover.js
 var removeMode = "remove";
 var Remover = class extends ExternalInteractorBase {
   constructor(container) {
@@ -2059,14 +2055,14 @@ var Remover = class extends ExternalInteractorBase {
       options.remove = new Remove();
     }
     for (const source of sources) {
-      options.remove.load(source == null ? void 0 : source.remove);
+      options.remove.load(source?.remove);
     }
   }
   reset() {
   }
 };
 
-// node_modules/@tsparticles/interaction-external-remove/browser/index.js
+// client/node_modules/@tsparticles/interaction-external-remove/browser/index.js
 async function loadExternalRemoveInteraction(engine, refresh = true) {
   engine.checkVersion("3.8.1");
   await engine.addInteractor("externalRemove", (container) => {
@@ -2074,7 +2070,7 @@ async function loadExternalRemoveInteraction(engine, refresh = true) {
   }, refresh);
 }
 
-// node_modules/@tsparticles/interaction-external-repulse/browser/Options/Classes/RepulseBase.js
+// client/node_modules/@tsparticles/interaction-external-repulse/browser/Options/Classes/RepulseBase.js
 var RepulseBase = class {
   constructor() {
     this.distance = 200;
@@ -2109,7 +2105,7 @@ var RepulseBase = class {
   }
 };
 
-// node_modules/@tsparticles/interaction-external-repulse/browser/Options/Classes/RepulseDiv.js
+// client/node_modules/@tsparticles/interaction-external-repulse/browser/Options/Classes/RepulseDiv.js
 var RepulseDiv = class extends RepulseBase {
   constructor() {
     super();
@@ -2126,7 +2122,7 @@ var RepulseDiv = class extends RepulseBase {
   }
 };
 
-// node_modules/@tsparticles/interaction-external-repulse/browser/Options/Classes/Repulse.js
+// client/node_modules/@tsparticles/interaction-external-repulse/browser/Options/Classes/Repulse.js
 var Repulse = class extends RepulseBase {
   load(data) {
     super.load(data);
@@ -2141,7 +2137,7 @@ var Repulse = class extends RepulseBase {
   }
 };
 
-// node_modules/@tsparticles/interaction-external-repulse/browser/Repulser.js
+// client/node_modules/@tsparticles/interaction-external-repulse/browser/Repulser.js
 var repulseMode = "repulse";
 var minDistance5 = 0;
 var repulseRadiusFactor = 6;
@@ -2207,7 +2203,7 @@ var Repulser = class extends ExternalInteractorBase {
       if (!repulseOptions) {
         return;
       }
-      const { easing, speed, factor, maxSpeed } = repulseOptions, easingFunc = this._engine.getEasing(easing), velocity = ((divRepulse == null ? void 0 : divRepulse.speed) ?? speed) * factor;
+      const { easing, speed, factor, maxSpeed } = repulseOptions, easingFunc = this._engine.getEasing(easing), velocity = (divRepulse?.speed ?? speed) * factor;
       for (const particle of query) {
         const { dx, dy, distance } = getDistances(particle.position, position), repulseFactor = clamp(easingFunc(easingOffset - distance / repulseRadius) * velocity, minSpeed, maxSpeed), normVec = Vector.create(!distance ? velocity : dx / distance * repulseFactor, !distance ? velocity : dy / distance * repulseFactor);
         particle.position.addTo(normVec);
@@ -2281,7 +2277,7 @@ var Repulser = class extends ExternalInteractorBase {
     }
   }
   isEnabled(particle) {
-    const container = this.container, options = container.actualOptions, mouse = container.interactivity.mouse, events = ((particle == null ? void 0 : particle.interactivity) ?? options.interactivity).events, divs = events.onDiv, hover = events.onHover, click = events.onClick, divRepulse = isDivModeEnabled(repulseMode, divs);
+    const container = this.container, options = container.actualOptions, mouse = container.interactivity.mouse, events = (particle?.interactivity ?? options.interactivity).events, divs = events.onDiv, hover = events.onHover, click = events.onClick, divRepulse = isDivModeEnabled(repulseMode, divs);
     if (!(divRepulse || hover.enable && !!mouse.position || click.enable && mouse.clickPosition)) {
       return false;
     }
@@ -2293,14 +2289,14 @@ var Repulser = class extends ExternalInteractorBase {
       options.repulse = new Repulse();
     }
     for (const source of sources) {
-      options.repulse.load(source == null ? void 0 : source.repulse);
+      options.repulse.load(source?.repulse);
     }
   }
   reset() {
   }
 };
 
-// node_modules/@tsparticles/interaction-external-repulse/browser/index.js
+// client/node_modules/@tsparticles/interaction-external-repulse/browser/index.js
 async function loadExternalRepulseInteraction(engine, refresh = true) {
   engine.checkVersion("3.8.1");
   await engine.addInteractor("externalRepulse", (container) => {
@@ -2308,7 +2304,7 @@ async function loadExternalRepulseInteraction(engine, refresh = true) {
   }, refresh);
 }
 
-// node_modules/@tsparticles/interaction-external-slow/browser/Options/Classes/Slow.js
+// client/node_modules/@tsparticles/interaction-external-slow/browser/Options/Classes/Slow.js
 var Slow = class {
   constructor() {
     this.factor = 3;
@@ -2327,7 +2323,7 @@ var Slow = class {
   }
 };
 
-// node_modules/@tsparticles/interaction-external-slow/browser/Slower.js
+// client/node_modules/@tsparticles/interaction-external-slow/browser/Slower.js
 var slowMode = "slow";
 var minRadius4 = 0;
 var Slower = class extends ExternalInteractorBase {
@@ -2350,7 +2346,7 @@ var Slower = class extends ExternalInteractorBase {
   interact() {
   }
   isEnabled(particle) {
-    const container = this.container, mouse = container.interactivity.mouse, events = ((particle == null ? void 0 : particle.interactivity) ?? container.actualOptions.interactivity).events;
+    const container = this.container, mouse = container.interactivity.mouse, events = (particle?.interactivity ?? container.actualOptions.interactivity).events;
     return events.onHover.enable && !!mouse.position && isInArray(slowMode, events.onHover.mode);
   }
   loadModeOptions(options, ...sources) {
@@ -2358,7 +2354,7 @@ var Slower = class extends ExternalInteractorBase {
       options.slow = new Slow();
     }
     for (const source of sources) {
-      options.slow.load(source == null ? void 0 : source.slow);
+      options.slow.load(source?.slow);
     }
   }
   reset(particle) {
@@ -2376,7 +2372,7 @@ var Slower = class extends ExternalInteractorBase {
   }
 };
 
-// node_modules/@tsparticles/interaction-external-slow/browser/index.js
+// client/node_modules/@tsparticles/interaction-external-slow/browser/index.js
 async function loadExternalSlowInteraction(engine, refresh = true) {
   engine.checkVersion("3.8.1");
   await engine.addInteractor("externalSlow", (container) => {
@@ -2384,7 +2380,7 @@ async function loadExternalSlowInteraction(engine, refresh = true) {
   }, refresh);
 }
 
-// node_modules/@tsparticles/shape-image/browser/Utils.js
+// client/node_modules/@tsparticles/shape-image/browser/Utils.js
 var stringStart = 0;
 var defaultOpacity2 = 1;
 var currentColorRegex = /(#(?:[0-9a-f]{2}){2,4}|(#[0-9a-f]{3})|(rgb|hsl)a?\((-?\d+%?[,\s]+){2,3}\s*[\d.]+%?\))|currentcolor/gi;
@@ -2435,8 +2431,7 @@ async function downloadSvgImage(image) {
   image.loading = false;
 }
 function replaceImageColor(image, imageData, color, particle) {
-  var _a;
-  const svgColoredData = replaceColorSvg(image, color, ((_a = particle.opacity) == null ? void 0 : _a.value) ?? defaultOpacity2), imageRes = {
+  const svgColoredData = replaceColorSvg(image, color, particle.opacity?.value ?? defaultOpacity2), imageRes = {
     color,
     gif: imageData.gif,
     data: {
@@ -2473,11 +2468,11 @@ function replaceImageColor(image, imageData, color, particle) {
   });
 }
 
-// node_modules/@tsparticles/shape-image/browser/GifUtils/Constants.js
+// client/node_modules/@tsparticles/shape-image/browser/GifUtils/Constants.js
 var InterlaceOffsets = [0, 4, 2, 1];
 var InterlaceSteps = [8, 8, 4, 2];
 
-// node_modules/@tsparticles/shape-image/browser/GifUtils/ByteStream.js
+// client/node_modules/@tsparticles/shape-image/browser/GifUtils/ByteStream.js
 var ByteStream = class {
   constructor(bytes) {
     this.pos = 0;
@@ -2527,7 +2522,7 @@ var ByteStream = class {
   }
 };
 
-// node_modules/@tsparticles/shape-image/browser/GifUtils/Enums/DisposalMethod.js
+// client/node_modules/@tsparticles/shape-image/browser/GifUtils/Enums/DisposalMethod.js
 var DisposalMethod;
 (function(DisposalMethod2) {
   DisposalMethod2[DisposalMethod2["Replace"] = 0] = "Replace";
@@ -2540,7 +2535,7 @@ var DisposalMethod;
   DisposalMethod2[DisposalMethod2["UndefinedD"] = 7] = "UndefinedD";
 })(DisposalMethod || (DisposalMethod = {}));
 
-// node_modules/@tsparticles/shape-image/browser/GifUtils/Types/GIFDataHeaders.js
+// client/node_modules/@tsparticles/shape-image/browser/GifUtils/Types/GIFDataHeaders.js
 var GIFDataHeaders;
 (function(GIFDataHeaders2) {
   GIFDataHeaders2[GIFDataHeaders2["Extension"] = 33] = "Extension";
@@ -2552,7 +2547,7 @@ var GIFDataHeaders;
   GIFDataHeaders2[GIFDataHeaders2["EndOfFile"] = 59] = "EndOfFile";
 })(GIFDataHeaders || (GIFDataHeaders = {}));
 
-// node_modules/@tsparticles/shape-image/browser/GifUtils/Utils.js
+// client/node_modules/@tsparticles/shape-image/browser/GifUtils/Utils.js
 var origin2 = {
   x: 0,
   y: 0
@@ -2706,7 +2701,7 @@ async function parseImageBlock(byteStream, gif, avgAlpha, getFrameIndex, getTran
           }
         }
       }
-      progressCallback == null ? void 0 : progressCallback(byteStream.pos / (byteStream.data.length - 1), getFrameIndex(false) + 1, image, { x: frame.left, y: frame.top }, { width: gif.width, height: gif.height });
+      progressCallback?.(byteStream.pos / (byteStream.data.length - 1), getFrameIndex(false) + 1, image, { x: frame.left, y: frame.top }, { width: gif.width, height: gif.height });
     }
     frame.image = image;
     frame.bitmap = await createImageBitmap(image);
@@ -2744,7 +2739,7 @@ async function parseImageBlock(byteStream, gif, avgAlpha, getFrameIndex, getTran
     }
     frame.image = image;
     frame.bitmap = await createImageBitmap(image);
-    progressCallback == null ? void 0 : progressCallback((byteStream.pos + 1) / byteStream.data.length, getFrameIndex(false) + 1, frame.image, { x: frame.left, y: frame.top }, { width: gif.width, height: gif.height });
+    progressCallback?.((byteStream.pos + 1) / byteStream.data.length, getFrameIndex(false) + 1, frame.image, { x: frame.left, y: frame.top }, { width: gif.width, height: gif.height });
   }
 }
 async function parseBlock(byteStream, gif, avgAlpha, getFrameIndex, getTransparencyIndex, progressCallback) {
@@ -2881,7 +2876,7 @@ async function decodeGIF(gifURL, progressCallback, avgAlpha) {
 }
 function drawGif(data) {
   const { context, radius, particle, delta } = data, image = particle.image;
-  if (!(image == null ? void 0 : image.gifData) || !image.gif) {
+  if (!image?.gifData || !image.gif) {
     return;
   }
   const offscreenCanvas = new OffscreenCanvas(image.gifData.width, image.gifData.height), offscreenContext = offscreenCanvas.getContext("2d");
@@ -2969,7 +2964,7 @@ async function loadGifImage(image) {
   image.loading = false;
 }
 
-// node_modules/@tsparticles/shape-image/browser/ImageDrawer.js
+// client/node_modules/@tsparticles/shape-image/browser/ImageDrawer.js
 var double5 = 2;
 var defaultAlpha2 = 1;
 var sides2 = 12;
@@ -2997,7 +2992,7 @@ var ImageDrawer = class {
     this._engine.images.push(image);
   }
   draw(data) {
-    const { context, radius, particle, opacity } = data, image = particle.image, element = image == null ? void 0 : image.element;
+    const { context, radius, particle, opacity } = data, image = particle.image, element = image?.element;
     if (!image) {
       return;
     }
@@ -3098,7 +3093,7 @@ var ImageDrawer = class {
   }
 };
 
-// node_modules/@tsparticles/shape-image/browser/Options/Classes/Preload.js
+// client/node_modules/@tsparticles/shape-image/browser/Options/Classes/Preload.js
 var Preload = class {
   constructor() {
     this.src = "";
@@ -3129,7 +3124,7 @@ var Preload = class {
   }
 };
 
-// node_modules/@tsparticles/shape-image/browser/ImagePreloader.js
+// client/node_modules/@tsparticles/shape-image/browser/ImagePreloader.js
 var ImagePreloaderPlugin = class {
   constructor(engine) {
     this.id = "imagePreloader";
@@ -3140,7 +3135,7 @@ var ImagePreloaderPlugin = class {
     return {};
   }
   loadOptions(options, source) {
-    if (!(source == null ? void 0 : source.preload)) {
+    if (!source?.preload) {
       return;
     }
     if (!options.preload) {
@@ -3163,7 +3158,7 @@ var ImagePreloaderPlugin = class {
   }
 };
 
-// node_modules/@tsparticles/shape-image/browser/index.js
+// client/node_modules/@tsparticles/shape-image/browser/index.js
 var extLength = 3;
 function addLoadImageToEngine(engine) {
   if (engine.loadImage) {
@@ -3211,7 +3206,7 @@ async function loadImageShape(engine, refresh = true) {
   await engine.addShape(new ImageDrawer(engine), refresh);
 }
 
-// node_modules/@tsparticles/updater-life/browser/Options/Classes/LifeDelay.js
+// client/node_modules/@tsparticles/updater-life/browser/Options/Classes/LifeDelay.js
 var LifeDelay = class extends ValueWithRandom {
   constructor() {
     super();
@@ -3228,7 +3223,7 @@ var LifeDelay = class extends ValueWithRandom {
   }
 };
 
-// node_modules/@tsparticles/updater-life/browser/Options/Classes/LifeDuration.js
+// client/node_modules/@tsparticles/updater-life/browser/Options/Classes/LifeDuration.js
 var LifeDuration = class extends ValueWithRandom {
   constructor() {
     super();
@@ -3245,7 +3240,7 @@ var LifeDuration = class extends ValueWithRandom {
   }
 };
 
-// node_modules/@tsparticles/updater-life/browser/Options/Classes/Life.js
+// client/node_modules/@tsparticles/updater-life/browser/Options/Classes/Life.js
 var Life = class {
   constructor() {
     this.count = 0;
@@ -3264,7 +3259,7 @@ var Life = class {
   }
 };
 
-// node_modules/@tsparticles/updater-life/browser/Utils.js
+// client/node_modules/@tsparticles/updater-life/browser/Utils.js
 var noTime = 0;
 var infiniteValue = -1;
 var noLife = 0;
@@ -3322,7 +3317,7 @@ function updateLife(particle, delta, canvasSize) {
   }
 }
 
-// node_modules/@tsparticles/updater-life/browser/LifeUpdater.js
+// client/node_modules/@tsparticles/updater-life/browser/LifeUpdater.js
 var noTime2 = 0;
 var identity3 = 1;
 var infiniteValue2 = -1;
@@ -3360,7 +3355,7 @@ var LifeUpdater = class {
       options.life = new Life();
     }
     for (const source of sources) {
-      options.life.load(source == null ? void 0 : source.life);
+      options.life.load(source?.life);
     }
   }
   update(particle, delta) {
@@ -3371,7 +3366,7 @@ var LifeUpdater = class {
   }
 };
 
-// node_modules/@tsparticles/updater-life/browser/index.js
+// client/node_modules/@tsparticles/updater-life/browser/index.js
 async function loadLifeUpdater(engine, refresh = true) {
   engine.checkVersion("3.8.1");
   await engine.addParticleUpdater("life", async (container) => {
@@ -3379,15 +3374,15 @@ async function loadLifeUpdater(engine, refresh = true) {
   }, refresh);
 }
 
-// node_modules/@tsparticles/shape-line/browser/Utils.js
+// client/node_modules/@tsparticles/shape-line/browser/Utils.js
 function drawLine2(data) {
   const { context, particle, radius } = data, shapeData = particle.shapeData, centerY = 0;
   context.moveTo(-radius, centerY);
   context.lineTo(radius, centerY);
-  context.lineCap = (shapeData == null ? void 0 : shapeData.cap) ?? "butt";
+  context.lineCap = shapeData?.cap ?? "butt";
 }
 
-// node_modules/@tsparticles/shape-line/browser/LineDrawer.js
+// client/node_modules/@tsparticles/shape-line/browser/LineDrawer.js
 var sides3 = 1;
 var LineDrawer = class {
   constructor() {
@@ -3401,13 +3396,13 @@ var LineDrawer = class {
   }
 };
 
-// node_modules/@tsparticles/shape-line/browser/index.js
+// client/node_modules/@tsparticles/shape-line/browser/index.js
 async function loadLineShape(engine, refresh = true) {
   engine.checkVersion("3.8.1");
   await engine.addShape(new LineDrawer(), refresh);
 }
 
-// node_modules/@tsparticles/move-parallax/browser/ParallaxMover.js
+// client/node_modules/@tsparticles/move-parallax/browser/ParallaxMover.js
 var half6 = 0.5;
 var ParallaxMover = class {
   init() {
@@ -3436,7 +3431,7 @@ var ParallaxMover = class {
   }
 };
 
-// node_modules/@tsparticles/move-parallax/browser/index.js
+// client/node_modules/@tsparticles/move-parallax/browser/index.js
 async function loadParallaxMover(engine, refresh = true) {
   engine.checkVersion("3.8.1");
   await engine.addMover("parallax", () => {
@@ -3444,7 +3439,7 @@ async function loadParallaxMover(engine, refresh = true) {
   }, refresh);
 }
 
-// node_modules/@tsparticles/interaction-particles-attract/browser/Attractor.js
+// client/node_modules/@tsparticles/interaction-particles-attract/browser/Attractor.js
 var attractFactor = 1e3;
 var identity4 = 1;
 var Attractor2 = class extends ParticlesInteractorBase {
@@ -3479,7 +3474,7 @@ var Attractor2 = class extends ParticlesInteractorBase {
   }
 };
 
-// node_modules/@tsparticles/interaction-particles-attract/browser/index.js
+// client/node_modules/@tsparticles/interaction-particles-attract/browser/index.js
 async function loadParticlesAttractInteraction(engine, refresh = true) {
   engine.checkVersion("3.8.1");
   await engine.addInteractor("particlesAttract", (container) => {
@@ -3487,7 +3482,7 @@ async function loadParticlesAttractInteraction(engine, refresh = true) {
   }, refresh);
 }
 
-// node_modules/@tsparticles/interaction-particles-collisions/browser/Absorb.js
+// client/node_modules/@tsparticles/interaction-particles-collisions/browser/Absorb.js
 var half7 = 0.5;
 var absorbFactor = 10;
 var minAbsorbFactor = 0;
@@ -3515,7 +3510,7 @@ function absorb(p1, p2, delta, pixelRatio) {
   }
 }
 
-// node_modules/@tsparticles/interaction-particles-collisions/browser/Bounce.js
+// client/node_modules/@tsparticles/interaction-particles-collisions/browser/Bounce.js
 var fixBounceSpeed = (p) => {
   if (p.collisionMaxSpeed === void 0) {
     p.collisionMaxSpeed = getRangeValue(p.options.collisions.maxSpeed);
@@ -3530,7 +3525,7 @@ function bounce(p1, p2) {
   fixBounceSpeed(p2);
 }
 
-// node_modules/@tsparticles/interaction-particles-collisions/browser/Destroy.js
+// client/node_modules/@tsparticles/interaction-particles-collisions/browser/Destroy.js
 function destroy(p1, p2) {
   if (!p1.unbreakable && !p2.unbreakable) {
     bounce(p1, p2);
@@ -3545,7 +3540,7 @@ function destroy(p1, p2) {
   }
 }
 
-// node_modules/@tsparticles/interaction-particles-collisions/browser/ResolveCollision.js
+// client/node_modules/@tsparticles/interaction-particles-collisions/browser/ResolveCollision.js
 function resolveCollision(p1, p2, delta, pixelRatio) {
   switch (p1.options.collisions.mode) {
     case CollisionMode.absorb: {
@@ -3563,7 +3558,7 @@ function resolveCollision(p1, p2, delta, pixelRatio) {
   }
 }
 
-// node_modules/@tsparticles/interaction-particles-collisions/browser/Collider.js
+// client/node_modules/@tsparticles/interaction-particles-collisions/browser/Collider.js
 var double6 = 2;
 var Collider = class extends ParticlesInteractorBase {
   constructor(container) {
@@ -3600,7 +3595,7 @@ var Collider = class extends ParticlesInteractorBase {
   }
 };
 
-// node_modules/@tsparticles/interaction-particles-collisions/browser/index.js
+// client/node_modules/@tsparticles/interaction-particles-collisions/browser/index.js
 async function loadParticlesCollisionsInteraction(engine, refresh = true) {
   engine.checkVersion("3.8.1");
   await engine.addInteractor("particlesCollisions", (container) => {
@@ -3608,7 +3603,7 @@ async function loadParticlesCollisionsInteraction(engine, refresh = true) {
   }, refresh);
 }
 
-// node_modules/@tsparticles/interaction-particles-links/browser/CircleWarp.js
+// client/node_modules/@tsparticles/interaction-particles-links/browser/CircleWarp.js
 var double7 = 2;
 var CircleWarp = class extends Circle {
   constructor(x, y, radius, canvasSize) {
@@ -3639,7 +3634,7 @@ var CircleWarp = class extends Circle {
   }
 };
 
-// node_modules/@tsparticles/interaction-particles-links/browser/Options/Classes/LinksShadow.js
+// client/node_modules/@tsparticles/interaction-particles-links/browser/Options/Classes/LinksShadow.js
 var LinksShadow = class {
   constructor() {
     this.blur = 5;
@@ -3661,7 +3656,7 @@ var LinksShadow = class {
   }
 };
 
-// node_modules/@tsparticles/interaction-particles-links/browser/Options/Classes/LinksTriangle.js
+// client/node_modules/@tsparticles/interaction-particles-links/browser/Options/Classes/LinksTriangle.js
 var LinksTriangle = class {
   constructor() {
     this.enable = false;
@@ -3686,7 +3681,7 @@ var LinksTriangle = class {
   }
 };
 
-// node_modules/@tsparticles/interaction-particles-links/browser/Options/Classes/Links.js
+// client/node_modules/@tsparticles/interaction-particles-links/browser/Options/Classes/Links.js
 var Links = class {
   constructor() {
     this.blink = false;
@@ -3739,7 +3734,7 @@ var Links = class {
   }
 };
 
-// node_modules/@tsparticles/interaction-particles-links/browser/Linker.js
+// client/node_modules/@tsparticles/interaction-particles-links/browser/Linker.js
 var squarePower2 = 2;
 var opacityOffset = 1;
 var origin3 = {
@@ -3809,7 +3804,7 @@ var Linker = class extends ParticlesInteractorBase {
     const query = container.particles.quadTree.query(range);
     for (const p2 of query) {
       const linkOpt2 = p2.options.links;
-      if (p1 === p2 || !(linkOpt2 == null ? void 0 : linkOpt2.enable) || linkOpt1.id !== linkOpt2.id || p2.spawning || p2.destroyed || !p2.links || p1.links.some((t) => t.destination === p2) || p2.links.some((t) => t.destination === p1)) {
+      if (p1 === p2 || !linkOpt2?.enable || linkOpt1.id !== linkOpt2.id || p2.spawning || p2.destroyed || !p2.links || p1.links.some((t) => t.destination === p2) || p2.links.some((t) => t.destination === p1)) {
         continue;
       }
       const pos2 = p2.getPosition();
@@ -3829,29 +3824,28 @@ var Linker = class extends ParticlesInteractorBase {
     }
   }
   isEnabled(particle) {
-    var _a;
-    return !!((_a = particle.options.links) == null ? void 0 : _a.enable);
+    return !!particle.options.links?.enable;
   }
   loadParticlesOptions(options, ...sources) {
     if (!options.links) {
       options.links = new Links();
     }
     for (const source of sources) {
-      options.links.load(source == null ? void 0 : source.links);
+      options.links.load(source?.links);
     }
   }
   reset() {
   }
 };
 
-// node_modules/@tsparticles/interaction-particles-links/browser/interaction.js
+// client/node_modules/@tsparticles/interaction-particles-links/browser/interaction.js
 async function loadLinksInteraction(engine, refresh = true) {
   await engine.addInteractor("particlesLinks", async (container) => {
     return Promise.resolve(new Linker(container, engine));
   }, refresh);
 }
 
-// node_modules/@tsparticles/interaction-particles-links/browser/Utils.js
+// client/node_modules/@tsparticles/interaction-particles-links/browser/Utils.js
 function drawTriangle(context, p1, p2, p3) {
   context.beginPath();
   context.moveTo(p1.x, p1.y);
@@ -3949,7 +3943,7 @@ function setLinkFrequency(particles, dictionary) {
   return res;
 }
 
-// node_modules/@tsparticles/interaction-particles-links/browser/LinkInstance.js
+// client/node_modules/@tsparticles/interaction-particles-links/browser/LinkInstance.js
 var minOpacity2 = 0;
 var minWidth = 0;
 var minDistance7 = 0;
@@ -3959,16 +3953,15 @@ var LinkInstance = class {
   constructor(container, engine) {
     this._drawLinkLine = (p1, link) => {
       const p1LinksOptions = p1.options.links;
-      if (!(p1LinksOptions == null ? void 0 : p1LinksOptions.enable)) {
+      if (!p1LinksOptions?.enable) {
         return;
       }
       const container2 = this._container, options = container2.actualOptions, p2 = link.destination, pos1 = p1.getPosition(), pos2 = p2.getPosition();
       let opacity = link.opacity;
       container2.canvas.draw((ctx) => {
-        var _a;
         let colorLine;
-        const twinkle = (_a = p1.options.twinkle) == null ? void 0 : _a.lines;
-        if (twinkle == null ? void 0 : twinkle.enable) {
+        const twinkle = p1.options.twinkle?.lines;
+        if (twinkle?.enable) {
           const twinkleFreq = twinkle.frequency, twinkleRgb = rangeColorToRgb(this._engine, twinkle.color), twinkling = getRandom() < twinkleFreq;
           if (twinkling && twinkleRgb) {
             colorLine = twinkleRgb;
@@ -4000,7 +3993,7 @@ var LinkInstance = class {
     };
     this._drawLinkTriangle = (p1, link1, link2) => {
       const linksOptions = p1.options.links;
-      if (!(linksOptions == null ? void 0 : linksOptions.enable)) {
+      if (!linksOptions?.enable) {
         return;
       }
       const triangleOptions = linksOptions.triangles;
@@ -4036,16 +4029,15 @@ var LinkInstance = class {
       });
     };
     this._drawTriangles = (options, p1, link, p1Links) => {
-      var _a, _b, _c;
       const p2 = link.destination;
-      if (!(((_a = options.links) == null ? void 0 : _a.triangles.enable) && ((_b = p2.options.links) == null ? void 0 : _b.triangles.enable))) {
+      if (!(options.links?.triangles.enable && p2.options.links?.triangles.enable)) {
         return;
       }
-      const vertices = (_c = p2.links) == null ? void 0 : _c.filter((t) => {
+      const vertices = p2.links?.filter((t) => {
         const linkFreq = this._getLinkFrequency(p2, t.destination), minCount = 0;
         return p2.options.links && linkFreq <= p2.options.links.frequency && p1Links.findIndex((l) => l.destination === t.destination) >= minCount;
       });
-      if (!(vertices == null ? void 0 : vertices.length)) {
+      if (!vertices?.length) {
         return;
       }
       for (const vertex of vertices) {
@@ -4071,7 +4063,7 @@ var LinkInstance = class {
   }
   drawParticle(context, particle) {
     const { links, options } = particle;
-    if (!(links == null ? void 0 : links.length)) {
+    if (!links?.length) {
       return;
     }
     const p1Links = links.filter((l) => options.links && (options.links.frequency >= maxFrequency || this._getLinkFrequency(particle, l.destination) <= options.links.frequency));
@@ -4101,7 +4093,7 @@ var LinkInstance = class {
   }
 };
 
-// node_modules/@tsparticles/interaction-particles-links/browser/LinksPlugin.js
+// client/node_modules/@tsparticles/interaction-particles-links/browser/LinksPlugin.js
 var LinksPlugin = class {
   constructor(engine) {
     this.id = "links";
@@ -4117,20 +4109,20 @@ var LinksPlugin = class {
   }
 };
 
-// node_modules/@tsparticles/interaction-particles-links/browser/plugin.js
+// client/node_modules/@tsparticles/interaction-particles-links/browser/plugin.js
 async function loadLinksPlugin(engine, refresh = true) {
   const plugin = new LinksPlugin(engine);
   await engine.addPlugin(plugin, refresh);
 }
 
-// node_modules/@tsparticles/interaction-particles-links/browser/index.js
+// client/node_modules/@tsparticles/interaction-particles-links/browser/index.js
 async function loadParticlesLinksInteraction(engine, refresh = true) {
   engine.checkVersion("3.8.1");
   await loadLinksInteraction(engine, refresh);
   await loadLinksPlugin(engine, refresh);
 }
 
-// node_modules/@tsparticles/shape-polygon/browser/Utils.js
+// client/node_modules/@tsparticles/shape-polygon/browser/Utils.js
 var piDeg = 180;
 var origin4 = { x: 0, y: 0 };
 var sidesOffset = 2;
@@ -4149,7 +4141,7 @@ function drawPolygon(data, start, side) {
   }
 }
 
-// node_modules/@tsparticles/shape-polygon/browser/PolygonDrawerBase.js
+// client/node_modules/@tsparticles/shape-polygon/browser/PolygonDrawerBase.js
 var defaultSides = 5;
 var PolygonDrawerBase = class {
   draw(data) {
@@ -4158,11 +4150,11 @@ var PolygonDrawerBase = class {
   }
   getSidesCount(particle) {
     const polygon = particle.shapeData;
-    return Math.round(getRangeValue((polygon == null ? void 0 : polygon.sides) ?? defaultSides));
+    return Math.round(getRangeValue(polygon?.sides ?? defaultSides));
   }
 };
 
-// node_modules/@tsparticles/shape-polygon/browser/PolygonDrawer.js
+// client/node_modules/@tsparticles/shape-polygon/browser/PolygonDrawer.js
 var sidesCenterFactor = 3.5;
 var yFactor = 2.66;
 var sidesFactor = 3;
@@ -4189,7 +4181,7 @@ var PolygonDrawer = class extends PolygonDrawerBase {
   }
 };
 
-// node_modules/@tsparticles/shape-polygon/browser/TriangleDrawer.js
+// client/node_modules/@tsparticles/shape-polygon/browser/TriangleDrawer.js
 var yFactor2 = 1.66;
 var sides4 = 3;
 var double8 = 2;
@@ -4219,7 +4211,7 @@ var TriangleDrawer = class extends PolygonDrawerBase {
   }
 };
 
-// node_modules/@tsparticles/shape-polygon/browser/index.js
+// client/node_modules/@tsparticles/shape-polygon/browser/index.js
 async function loadGenericPolygonShape(engine, refresh = true) {
   engine.checkVersion("3.8.1");
   await engine.addShape(new PolygonDrawer(), refresh);
@@ -4234,7 +4226,7 @@ async function loadPolygonShape(engine, refresh = true) {
   await loadTriangleShape(engine, refresh);
 }
 
-// node_modules/@tsparticles/updater-rotate/browser/Options/Classes/RotateAnimation.js
+// client/node_modules/@tsparticles/updater-rotate/browser/Options/Classes/RotateAnimation.js
 var RotateAnimation = class {
   constructor() {
     this.enable = false;
@@ -4261,7 +4253,7 @@ var RotateAnimation = class {
   }
 };
 
-// node_modules/@tsparticles/updater-rotate/browser/Options/Classes/Rotate.js
+// client/node_modules/@tsparticles/updater-rotate/browser/Options/Classes/Rotate.js
 var Rotate = class extends ValueWithRandom {
   constructor() {
     super();
@@ -4285,7 +4277,7 @@ var Rotate = class extends ValueWithRandom {
   }
 };
 
-// node_modules/@tsparticles/updater-rotate/browser/RotateUpdater.js
+// client/node_modules/@tsparticles/updater-rotate/browser/RotateUpdater.js
 var double9 = 2;
 var doublePI3 = Math.PI * double9;
 var identity5 = 1;
@@ -4342,7 +4334,7 @@ var RotateUpdater = class {
       options.rotate = new Rotate();
     }
     for (const source of sources) {
-      options.rotate.load(source == null ? void 0 : source.rotate);
+      options.rotate.load(source?.rotate);
     }
   }
   update(particle, delta) {
@@ -4358,7 +4350,7 @@ var RotateUpdater = class {
   }
 };
 
-// node_modules/@tsparticles/updater-rotate/browser/index.js
+// client/node_modules/@tsparticles/updater-rotate/browser/index.js
 async function loadRotateUpdater(engine, refresh = true) {
   engine.checkVersion("3.8.1");
   await engine.addParticleUpdater("rotate", (container) => {
@@ -4366,7 +4358,7 @@ async function loadRotateUpdater(engine, refresh = true) {
   }, refresh);
 }
 
-// node_modules/@tsparticles/shape-square/browser/Utils.js
+// client/node_modules/@tsparticles/shape-square/browser/Utils.js
 var fixFactorSquared = 2;
 var fixFactor = Math.sqrt(fixFactorSquared);
 var double10 = 2;
@@ -4375,7 +4367,7 @@ function drawSquare(data) {
   context.rect(-fixedRadius, -fixedRadius, fixedDiameter, fixedDiameter);
 }
 
-// node_modules/@tsparticles/shape-square/browser/SquareDrawer.js
+// client/node_modules/@tsparticles/shape-square/browser/SquareDrawer.js
 var sides5 = 4;
 var SquareDrawer = class {
   constructor() {
@@ -4389,13 +4381,13 @@ var SquareDrawer = class {
   }
 };
 
-// node_modules/@tsparticles/shape-square/browser/index.js
+// client/node_modules/@tsparticles/shape-square/browser/index.js
 async function loadSquareShape(engine, refresh = true) {
   engine.checkVersion("3.8.1");
   await engine.addShape(new SquareDrawer(), refresh);
 }
 
-// node_modules/@tsparticles/shape-star/browser/Utils.js
+// client/node_modules/@tsparticles/shape-star/browser/Utils.js
 var defaultInset = 2;
 var origin5 = { x: 0, y: 0 };
 function drawStar(data) {
@@ -4409,7 +4401,7 @@ function drawStar(data) {
   }
 }
 
-// node_modules/@tsparticles/shape-star/browser/StarDrawer.js
+// client/node_modules/@tsparticles/shape-star/browser/StarDrawer.js
 var defaultInset2 = 2;
 var defaultSides2 = 5;
 var StarDrawer = class {
@@ -4421,21 +4413,21 @@ var StarDrawer = class {
   }
   getSidesCount(particle) {
     const star = particle.shapeData;
-    return Math.round(getRangeValue((star == null ? void 0 : star.sides) ?? defaultSides2));
+    return Math.round(getRangeValue(star?.sides ?? defaultSides2));
   }
   particleInit(container, particle) {
     const star = particle.shapeData;
-    particle.starInset = getRangeValue((star == null ? void 0 : star.inset) ?? defaultInset2);
+    particle.starInset = getRangeValue(star?.inset ?? defaultInset2);
   }
 };
 
-// node_modules/@tsparticles/shape-star/browser/index.js
+// client/node_modules/@tsparticles/shape-star/browser/index.js
 async function loadStarShape(engine, refresh = true) {
   engine.checkVersion("3.8.1");
   await engine.addShape(new StarDrawer(), refresh);
 }
 
-// node_modules/@tsparticles/updater-stroke-color/browser/StrokeColorUpdater.js
+// client/node_modules/@tsparticles/updater-stroke-color/browser/StrokeColorUpdater.js
 var defaultOpacity3 = 1;
 var StrokeColorUpdater = class {
   constructor(container, engine) {
@@ -4443,12 +4435,11 @@ var StrokeColorUpdater = class {
     this._engine = engine;
   }
   init(particle) {
-    var _a;
     const container = this._container, options = particle.options;
     const stroke = itemFromSingleOrMultiple(options.stroke, particle.id, options.reduceDuplicates);
     particle.strokeWidth = getRangeValue(stroke.width) * container.retina.pixelRatio;
     particle.strokeOpacity = getRangeValue(stroke.opacity ?? defaultOpacity3);
-    particle.strokeAnimation = (_a = stroke.color) == null ? void 0 : _a.animation;
+    particle.strokeAnimation = stroke.color?.animation;
     const strokeHslColor = rangeColorToHsl(this._engine, stroke.color) ?? particle.getFillColor();
     if (strokeHslColor) {
       particle.strokeColor = getHslAnimationFromHsl(strokeHslColor, particle.strokeAnimation, container.retina.reduceFactor);
@@ -4456,7 +4447,7 @@ var StrokeColorUpdater = class {
   }
   isEnabled(particle) {
     const color = particle.strokeAnimation, { strokeColor } = particle;
-    return !particle.destroyed && !particle.spawning && !!color && ((strokeColor == null ? void 0 : strokeColor.h.value) !== void 0 && strokeColor.h.enable || (strokeColor == null ? void 0 : strokeColor.s.value) !== void 0 && strokeColor.s.enable || (strokeColor == null ? void 0 : strokeColor.l.value) !== void 0 && strokeColor.l.enable);
+    return !particle.destroyed && !particle.spawning && !!color && (strokeColor?.h.value !== void 0 && strokeColor.h.enable || strokeColor?.s.value !== void 0 && strokeColor.s.enable || strokeColor?.l.value !== void 0 && strokeColor.l.enable);
   }
   update(particle, delta) {
     if (!this.isEnabled(particle)) {
@@ -4466,7 +4457,7 @@ var StrokeColorUpdater = class {
   }
 };
 
-// node_modules/@tsparticles/updater-stroke-color/browser/index.js
+// client/node_modules/@tsparticles/updater-stroke-color/browser/index.js
 async function loadStrokeColorUpdater(engine, refresh = true) {
   engine.checkVersion("3.8.1");
   await engine.addParticleUpdater("strokeColor", (container) => {
@@ -4474,7 +4465,7 @@ async function loadStrokeColorUpdater(engine, refresh = true) {
   }, refresh);
 }
 
-// node_modules/@tsparticles/slim/browser/index.js
+// client/node_modules/@tsparticles/slim/browser/index.js
 async function loadSlim(engine, refresh = true) {
   engine.checkVersion("3.8.1");
   await loadParallaxMover(engine, false);

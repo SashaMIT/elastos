@@ -1,50 +1,50 @@
 "use client";
 import {
-  Portal
-} from "./chunk-WG4AZ7NC.js";
+  createCollection
+} from "./chunk-5O3UZ4WE.js";
 import {
   VisuallyHidden
-} from "./chunk-GVIJQRML.js";
+} from "./chunk-REXQ5MAF.js";
+import {
+  Portal
+} from "./chunk-E6LMAOHG.js";
 import {
   Branch,
   Root
-} from "./chunk-2JPX52RK.js";
-import {
-  createCollection
-} from "./chunk-A6F63KQO.js";
+} from "./chunk-OSCKFPQL.js";
 import {
   Presence
-} from "./chunk-KHW2GGBR.js";
+} from "./chunk-MLZJABZR.js";
 import {
   composeEventHandlers,
   useControllableState
-} from "./chunk-SUL2DYLC.js";
+} from "./chunk-ILVG5NBT.js";
 import {
   useCallbackRef,
   useLayoutEffect2
-} from "./chunk-77MTKFCU.js";
+} from "./chunk-UUKKEGQJ.js";
 import {
   Primitive,
   createContextScope,
   dispatchDiscreteCustomEvent
-} from "./chunk-ZDHCAE57.js";
+} from "./chunk-TFXR2K5M.js";
 import {
   useComposedRefs
-} from "./chunk-EDRO45RL.js";
+} from "./chunk-63HEPLPE.js";
 import {
   require_react_dom
-} from "./chunk-SQFPIQGA.js";
+} from "./chunk-ATCYXUJR.js";
 import {
   require_jsx_runtime
-} from "./chunk-QX4ZPKKX.js";
+} from "./chunk-VNID673C.js";
 import {
   require_react
-} from "./chunk-DBR6V4P4.js";
+} from "./chunk-K3CCW6BN.js";
 import {
   __toESM
-} from "./chunk-SNAQBZPT.js";
+} from "./chunk-VHXUCOYC.js";
 
-// node_modules/@radix-ui/react-toast/dist/index.mjs
+// client/node_modules/@radix-ui/react-toast/dist/index.mjs
 var React = __toESM(require_react(), 1);
 var ReactDOM = __toESM(require_react_dom(), 1);
 var import_jsx_runtime = __toESM(require_jsx_runtime(), 1);
@@ -113,9 +113,8 @@ var ToastViewport = React.forwardRef(
     const hasToasts = context.toastCount > 0;
     React.useEffect(() => {
       const handleKeyDown = (event) => {
-        var _a;
         const isHotkeyPressed = hotkey.length !== 0 && hotkey.every((key) => event[key] || event.code === key);
-        if (isHotkeyPressed) (_a = ref.current) == null ? void 0 : _a.focus();
+        if (isHotkeyPressed) ref.current?.focus();
       };
       document.addEventListener("keydown", handleKeyDown);
       return () => document.removeEventListener("keydown", handleKeyDown);
@@ -178,7 +177,6 @@ var ToastViewport = React.forwardRef(
       const viewport = ref.current;
       if (viewport) {
         const handleKeyDown = (event) => {
-          var _a, _b, _c;
           const isMetaKey = event.altKey || event.ctrlKey || event.metaKey;
           const isTabKey = event.key === "Tab" && !isMetaKey;
           if (isTabKey) {
@@ -186,7 +184,7 @@ var ToastViewport = React.forwardRef(
             const isTabbingBackwards = event.shiftKey;
             const targetIsViewport = event.target === viewport;
             if (targetIsViewport && isTabbingBackwards) {
-              (_a = headFocusProxyRef.current) == null ? void 0 : _a.focus();
+              headFocusProxyRef.current?.focus();
               return;
             }
             const tabbingDirection = isTabbingBackwards ? "backwards" : "forwards";
@@ -195,7 +193,7 @@ var ToastViewport = React.forwardRef(
             if (focusFirst(sortedCandidates.slice(index + 1))) {
               event.preventDefault();
             } else {
-              isTabbingBackwards ? (_b = headFocusProxyRef.current) == null ? void 0 : _b.focus() : (_c = tailFocusProxyRef.current) == null ? void 0 : _c.focus();
+              isTabbingBackwards ? headFocusProxyRef.current?.focus() : tailFocusProxyRef.current?.focus();
             }
           }
         };
@@ -257,9 +255,8 @@ var FocusProxy = React.forwardRef(
         ref: forwardedRef,
         style: { position: "fixed" },
         onFocus: (event) => {
-          var _a;
           const prevFocusedElement = event.relatedTarget;
-          const isFocusFromOutsideViewport = !((_a = context.viewport) == null ? void 0 : _a.contains(prevFocusedElement));
+          const isFocusFromOutsideViewport = !context.viewport?.contains(prevFocusedElement);
           if (isFocusFromOutsideViewport) onFocusFromOutsideViewport();
         }
       }
@@ -351,9 +348,8 @@ var ToastImpl = React.forwardRef(
     const closeTimerRef = React.useRef(0);
     const { onToastAdd, onToastRemove } = context;
     const handleClose = useCallbackRef(() => {
-      var _a;
-      const isFocusInToast = node == null ? void 0 : node.contains(document.activeElement);
-      if (isFocusInToast) (_a = context.viewport) == null ? void 0 : _a.focus();
+      const isFocusInToast = node?.contains(document.activeElement);
+      if (isFocusInToast) context.viewport?.focus();
       onClose();
     });
     const startTimer = React.useCallback(
@@ -370,13 +366,13 @@ var ToastImpl = React.forwardRef(
       if (viewport) {
         const handleResume = () => {
           startTimer(closeTimerRemainingTimeRef.current);
-          onResume == null ? void 0 : onResume();
+          onResume?.();
         };
         const handlePause = () => {
           const elapsedTime = (/* @__PURE__ */ new Date()).getTime() - closeTimerStartTimeRef.current;
           closeTimerRemainingTimeRef.current = closeTimerRemainingTimeRef.current - elapsedTime;
           window.clearTimeout(closeTimerRef.current);
-          onPause == null ? void 0 : onPause();
+          onPause?.();
         };
         viewport.addEventListener(VIEWPORT_PAUSE, handlePause);
         viewport.addEventListener(VIEWPORT_RESUME, handleResume);
@@ -431,7 +427,7 @@ var ToastImpl = React.forwardRef(
                 style: { userSelect: "none", touchAction: "none", ...props.style },
                 onKeyDown: composeEventHandlers(props.onKeyDown, (event) => {
                   if (event.key !== "Escape") return;
-                  onEscapeKeyDown == null ? void 0 : onEscapeKeyDown(event.nativeEvent);
+                  onEscapeKeyDown?.(event.nativeEvent);
                   if (!event.nativeEvent.defaultPrevented) {
                     context.isFocusedToastEscapeKeyDownRef.current = true;
                     handleClose();
