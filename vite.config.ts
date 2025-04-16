@@ -52,12 +52,8 @@ export default defineConfig({
     outDir: path.resolve(__dirname, "dist/public"),
     emptyOutDir: true,
     rollupOptions: {
-      external: ['react', 'react-dom'],
       output: {
         manualChunks(id) {
-          if (id.includes('node_modules/react') || id.includes('node_modules/react-dom')) {
-            return 'react';
-          }
           if (id.includes('node_modules/framer-motion')) {
             return 'framer-motion';
           }
