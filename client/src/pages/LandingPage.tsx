@@ -26,7 +26,7 @@ import FaqComponent from '@/components/FaqComponent';
 import { useHashrateData } from '../hooks/useHashrateData';
 import { useMarketCapData } from '../hooks/useMarketCapData';
 import { useElaSupply } from '../hooks/useElaSupply';
-import { Shield, Lock, Bitcoin, Star, ArrowUpRight, ArrowDownRight, Wallet, ChartBar, Server, Clock, X } from 'lucide-react';
+import { Shield, Lock, Bitcoin, Star, ArrowUpRight, ArrowDownRight, Wallet, BarChart, Server, Clock, X } from 'lucide-react';
 import { HeroScrollDemo } from "@/components/HeroScrollDemo";
 import { SecurityStats } from "@/components/SecurityStats";
 import { TextGenerateEffect } from "@/components/ui/text-generate-effect";

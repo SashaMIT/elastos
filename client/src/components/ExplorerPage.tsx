@@ -5,7 +5,7 @@ import {
   ArrowUpRight,
   ArrowLeft,
   Box, 
-  CircleCheck, 
+  CheckCircle, 
   Code, 
   Coins, 
   ExternalLink, 
@@ -255,7 +255,7 @@ const ecosystemFeatures = [
                 <div className="space-y-2 mb-6">
                   {chain.features.slice(0, 3).map((feature, idx) => (
                     <div key={idx} className="flex items-center">
-                      <CircleCheck className="w-4 h-4 text-green-400 mr-2" />
+                      <CheckCircle className="w-4 h-4 text-green-400 mr-2" />
                       <span className="text-gray-300 text-sm">{feature}</span>
                     </div>
                   ))}
