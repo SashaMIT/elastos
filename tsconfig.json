@@ -1,5 +1,5 @@
 {
-  "include": ["client/src/components/**/*", "client/src/lib/**/*", "client/src/hooks/**/*", "client/src/pages/LandingPage.tsx", "client/src/pages/SecurityPage.tsx", "client/src/pages/BuyElaPage.tsx", "db/**/*", "client/src/types/**/*"],
+  "include": ["client/src/components/**/*", "client/src/lib/**/*", "client/src/hooks/**/*", "client/src/pages/LandingPage.tsx", "client/src/pages/SecurityPage.tsx", "client/src/pages/BuyElaPage.tsx", "db/**/*", "client/src/types/**/*", "client/src/custom.d.ts"],
   "exclude": ["node_modules", "build", "dist", "**/*.test.ts", "server/**/*"],
   "compilerOptions": {
     "incremental": true,
