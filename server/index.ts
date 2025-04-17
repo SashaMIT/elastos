@@ -15,7 +15,7 @@ async function startServer(): Promise<void> {
     const vite = await createServer({
       server: { middlewareMode: true },
       appType: 'custom',
-      root: join(__dirname, '..', 'client'),
+      root: join(__dirname, '..', '..', 'client'),
     });
 
     app.use(vite.middlewares);
