@@ -15,35 +15,35 @@ export function MarqueeDemo() {
   const topOffset =
     typeof window !== "undefined" && window.innerWidth < 768 ? "-60px" : "-30px";
 
-  // Use public directory images with consistent paths
+  // Using the same path pattern as MarqueeDemo2 which works
   const items = [
     {
       name: "Alibaba",
-      image: "/Ali.png",
+      image: "/images/Ali.png",
     },
     {
       name: "Binance",
-      image: "/Binance.png",
+      image: "/images/Binance.png",
     },
     {
       name: "BitMain",
-      image: "/Bitmain.png",
+      image: "/images/Bitmain.png",
     },
     {
       name: "OKex",
-      image: "/OKMINER.png",
+      image: "/images/OKMINER.png",
     },
     {
       name: "Tencent",
-      image: "/Ten-w.png",
+      image: "/images/Ten-w.png",
     },
     {
       name: "Via BTC",
-      image: "/Via.png",
+      image: "/images/Via.png",
     },
     {
       name: "F2Pool",
-      image: "/f2.png",
+      image: "/images/f2.png",
     },
   ];
 
