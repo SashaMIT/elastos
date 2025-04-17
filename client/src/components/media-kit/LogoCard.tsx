@@ -6,7 +6,7 @@ import {
   CardDescription,
   CardHeader,
   CardTitle
-} from "@/components/ui/card";
+} from "@/components/ui/Card";
 import { Logo } from "@/lib/media-kit-utils";
 
 interface LogoCardProps {

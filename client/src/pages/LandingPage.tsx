@@ -9,7 +9,7 @@ import { CenteredSpinner } from "@/components/ui/centered-spinner";
 import { TestimonialsSection } from "@/components/TestimonialsSection";
 import { ImageZoom } from "@/components/ui/zoomable-image";
 
-import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
+import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/Card';
 import {
   Dialog,
   DialogContent,

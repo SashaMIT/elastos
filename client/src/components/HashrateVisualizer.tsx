@@ -1,5 +1,5 @@
 import React, { useState, FC } from 'react';
-import { Card, CardHeader, CardTitle, CardContent } from '@/components/ui/card';
+import { Card, CardHeader, CardTitle, CardContent } from '@/components/ui/Card';
 import { Info } from "lucide-react";
 import { Zap, Calculator, Cpu, Network, Server, Smartphone, Laptop, Building2, Monitor, Shield, Lock } from 'lucide-react';
 import BlockVisualizer from './BlockVisualizer';

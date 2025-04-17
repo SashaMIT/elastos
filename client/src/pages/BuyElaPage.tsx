@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { motion } from "framer-motion";
-import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
+import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/Card';
 import { Shield, Lock, Bitcoin, Star, Wallet, ExternalLink, CheckCircle, CheckCircle2, Info } from 'lucide-react';
 import {
   Tooltip,
