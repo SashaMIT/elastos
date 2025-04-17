@@ -1,7 +1,6 @@
 import { neon } from '@neondatabase/serverless';
 import { drizzle } from 'drizzle-orm/neon-http';
 import * as schema from './schema';
-import ws from 'ws';
 
 // Add fallback for DATABASE_URL
 const dbUrl = process.env.DATABASE_URL || 'postgres://default:password@localhost:5432/elastos';

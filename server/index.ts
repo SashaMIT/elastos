@@ -1,231 +1,33 @@
-import express, { type Request, Response, NextFunction } from "express";
-import { registerRoutes } from "./routes";
-import { setupVite, serveStatic } from "./vite";
-import { createServer } from "http";
-import { watch } from "fs";
-import compression from "compression";
+import express from 'express';
+import { createServer } from 'vite';
+import { fileURLToPath } from 'url';
+import { dirname, join } from 'path';
+import { setupRoutes } from './routes';
 
-// Ignore temporary Vite files
-const ignoredPaths = [
-  /\.timestamp-\d+-[a-f0-9]+\.mjs$/,
-  /node_modules/,
-  /dist/,
-  /\.vite/
-];
-
-function shouldIgnorePath(path: string): boolean {
-  return ignoredPaths.some(pattern => pattern.test(path));
-}
-
-// Disable custom watch implementation to reduce file watchers
-// if (process.env.NODE_ENV === 'development') {
-//   watch('.', { recursive: true, persistent: false }, (_, filename) => {
-//     if (filename && !shouldIgnorePath(filename)) {
-//       // Only reload for relevant file changes
-//       console.log(`File ${filename} changed`);
-//     }
-//   });
-// }
-
-function log(message: string) {
-  const formattedTime = new Date().toLocaleTimeString("en-US", {
-    hour: "2-digit",
-    minute: "2-digit",
-    second: "2-digit",
-    hour12: true,
-  });
-
-  console.log(`${formattedTime} [express] ${message}`);
-}
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = dirname(__filename);
 
 const app = express();
+const port = process.env.PORT || 3000;
 
-// Add security headers
-app.use((req, res, next) => {
-  res.setHeader('X-Content-Type-Options', 'nosniff');
-  res.setHeader('X-Frame-Options', 'DENY');
-  res.setHeader('X-XSS-Protection', '1; mode=block');
-  res.setHeader('Referrer-Policy', 'strict-origin-when-cross-origin');
-  res.setHeader('Content-Security-Policy', "default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval'; style-src 'self' 'unsafe-inline'; img-src 'self' data: https:; font-src 'self' data:; connect-src 'self' https:;");
-  next();
-});
-
-// Enable gzip compression for all responses
-app.use(compression());
-app.use(express.json());
-app.use(express.urlencoded({ extended: false }));
-
-// In-memory store for rate limiting
-const requestLimiter = {
-  videoRequests: new Map(),
-  cleanupInterval: null as NodeJS.Timeout | null
-};
-
-// Initialize cleanup interval
-if (!requestLimiter.cleanupInterval) {
-  // Clean up rate limiting data every hour
-  requestLimiter.cleanupInterval = setInterval(() => {
-    const oneHourAgo = Date.now() - (60 * 60 * 1000);
-    for (const [key, timestamp] of requestLimiter.videoRequests.entries()) {
-      if (timestamp < oneHourAgo) {
-        requestLimiter.videoRequests.delete(key);
-      }
-    }
-  }, 60 * 60 * 1000);
-}
-
-// Add protection for video assets and expire headers for static content
-app.use((req, res, next) => {
-  // Check if the request is for a video file
-  const isVideoAsset = /\.(mp4)$/i.test(req.path);
-
-  if (isVideoAsset) {
-    // Check referrer - only allow from your own domain
-    const referer = req.get('Referer') || '';
-    const allowedDomains = ['elastos.net', 'www.elastos.net', 'elastosnet.replit.app'];
-    const isValidReferer = allowedDomains.some(domain => referer.includes(domain));
-
-    // Get client IP for rate limiting
-    const clientIp = req.ip || req.connection.remoteAddress;
-    const videoId = req.path;
-    const requestKey = `${clientIp}:${videoId}`;
-    const now = Date.now();
-    const lastRequest = requestLimiter.videoRequests.get(requestKey) || 0;
-
-    // Allow only one video request per 30 minutes per IP per video
-    const rateLimitWindow = 30 * 60 * 1000; // 30 minutes
-
-    if (!isValidReferer) {
-      // Block hotlinking
-      return res.status(403).send('Direct video access not allowed');
-    }
-
-    if (now - lastRequest < rateLimitWindow) {
-      // Set rate limit headers
-      res.setHeader('X-RateLimit-Limit', '1');
-      res.setHeader('X-RateLimit-Remaining', '0');
-      res.setHeader('X-RateLimit-Reset', new Date(lastRequest + rateLimitWindow).toUTCString());
-      return res.status(429).send('Too many requests. Please try again later.');
-    }
-
-    // Update rate limiter
-    requestLimiter.videoRequests.set(requestKey, now);
-
-    // Add strong caching headers for videos (1 week)
-    const oneWeekInSeconds = 7 * 24 * 60 * 60;
-    res.setHeader('Cache-Control', `public, max-age=${oneWeekInSeconds}, immutable`);
-    res.setHeader('Expires', new Date(Date.now() + oneWeekInSeconds * 1000).toUTCString());
-  } else if (/\.(jpg|jpeg|png|gif|ico|css|js|svg|webp|woff|woff2|ttf|eot)$/i.test(req.path)) {
-    // Set expires headers for non-video static content (1 week)
-    const oneWeekInSeconds = 60 * 60 * 24 * 7;
-    res.setHeader('Cache-Control', `public, max-age=${oneWeekInSeconds}`);
-    res.setHeader('Expires', new Date(Date.now() + oneWeekInSeconds * 1000).toUTCString());
-  }
-
-  next();
-});
-
-let server: any = null;
-let isShuttingDown = false;
-
-// Handle graceful shutdown
-async function shutdown() {
-  if (isShuttingDown) return;
-  isShuttingDown = true;
-
-  console.log('Shutting down gracefully...');
-
+async function startServer(): Promise<void> {
   try {
-    // Close the server
-    if (server) {
-      await new Promise((resolve) => {
-        server.close(() => {
-          console.log('Server closed');
-          resolve(true);
-        });
-      });
-    }
+    const vite = await createServer({
+      server: { middlewareMode: true },
+      appType: 'custom',
+      root: join(__dirname, '..', 'client'),
+    });
 
-    // Clear any intervals
-    if (requestLimiter.cleanupInterval) {
-      clearInterval(requestLimiter.cleanupInterval);
-    }
+    app.use(vite.middlewares);
+    setupRoutes(app);
 
-    // Exit immediately after cleanup
-    process.exit(0);
+    app.listen(port, () => {
+      console.log(`Server running at http://localhost:${port}`);
+    });
   } catch (error) {
-    console.error('Error during shutdown:', error);
+    console.error('Error starting server:', error);
     process.exit(1);
   }
 }
 
-// Only handle SIGINT and SIGTERM, remove SIGUSR2
-process.on('SIGTERM', shutdown);
-process.on('SIGINT', shutdown);
-
-app.use((req, res, next) => {
-  const start = Date.now();
-  const path = req.path;
-  let capturedJsonResponse: Record<string, any> | undefined = undefined;
-
-  const originalResJson = res.json;
-  res.json = function (bodyJson, ...args) {
-    capturedJsonResponse = bodyJson;
-    return originalResJson.apply(res, [bodyJson, ...args]);
-  };
-
-  res.on("finish", () => {
-    const duration = Date.now() - start;
-    if (path.startsWith("/api")) {
-      let logLine = `${req.method} ${path} ${res.statusCode} in ${duration}ms`;
-      if (capturedJsonResponse) {
-        logLine += ` :: ${JSON.stringify(capturedJsonResponse)}`;
-      }
-
-      if (logLine.length > 80) {
-        logLine = logLine.slice(0, 79) + "…";
-      }
-
-      log(logLine);
-    }
-  });
-
-  next();
-});
-
-(async () => {
-  registerRoutes(app);
-  server = createServer(app);
-
-  // Handle server errors
-  server.on('error', (error: any) => {
-    console.error('Server error:', error);
-  });
-
-  // Handle unhandled promise rejections
-  process.on('unhandledRejection', (error: any) => {
-    console.error('Unhandled rejection:', error);
-  });
-
-  app.use((err: any, _req: Request, res: Response, _next: NextFunction) => {
-    const status = err.status || err.statusCode || 500;
-    const message = err.message || "Internal Server Error";
-
-    res.status(status).json({ message });
-    throw err;
-  });
-
-  // importantly only setup vite in development and after
-  // setting up all the other routes so the catch-all route
-  // doesn't interfere with the other routes
-  if (app.get("env") === "development") {
-    await setupVite(app, server);
-  } else {
-    serveStatic(app);
-  }
-
-  const PORT = process.env.PORT || 5001;
-  server.listen(PORT, "0.0.0.0", () => {
-    log(`serving on port ${PORT}`);
-  });
-})();
+startServer();
