@@ -10,7 +10,9 @@ import {
   CardTitle 
 } from "@/components/ui/Card";
 import { Button } from "@/components/ui/button";
-import { AppPreview } from "@/lib/media-kit-utils";
+import { appPreviews } from "@/lib/media-kit-utils";
+
+type AppPreview = typeof appPreviews[number];
 
 interface AppPreviewCardProps {
   preview: AppPreview;

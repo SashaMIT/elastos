@@ -102,13 +102,11 @@ export const CodeBlock = ({
         wrapLines={true}
         showLineNumbers={true}
         lineProps={(lineNumber: number) => ({
-          style: {
-            backgroundColor: activeHighlightLines.includes(lineNumber)
-              ? "rgba(255,255,255,0.1)"
-              : "transparent",
-            display: "block",
-            width: "100%",
-          },
+          backgroundColor: activeHighlightLines.includes(lineNumber)
+            ? "rgba(255,255,255,0.1)"
+            : "transparent",
+          display: "block",
+          width: "100%",
         })}
         PreTag="div"
       >
