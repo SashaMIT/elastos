@@ -2,6 +2,11 @@ import express from 'express';
 import { setupRoutes } from './routes.js';
 import { setupVite, serveStatic } from './vite.js';
 import compression from 'compression';
+import { fileURLToPath } from 'url';
+import { dirname, join } from 'path';
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = dirname(__filename);
 
 const app = express();
 const port = parseInt(process.env.PORT || '10000', 10);
@@ -24,7 +29,17 @@ setupRoutes(app);
 if (process.env.NODE_ENV === 'development') {
   await setupVite(app);
 } else {
-  serveStatic(app);
+  // In production, serve from the dist/public directory
+  app.use(express.static(join(__dirname, '..', 'public'), {
+    maxAge: '1w',
+    etag: true,
+    lastModified: true
+  }));
+
+  // Catch-all route to serve index.html
+  app.get("*", (_req, res) => {
+    res.sendFile(join(__dirname, '..', 'public', 'index.html'));
+  });
 }
 
 // Start server

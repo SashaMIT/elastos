@@ -28,7 +28,8 @@ export async function setupVite(app: express.Application): Promise<void> {
 }
 
 export function serveStatic(app: express.Application) {
-  const publicPath = join(__dirname, "../dist/public");
+  // Use the correct path for production
+  const publicPath = join(__dirname, "..", "public");
 
   // Add CORS middleware
   app.use((_req, res, next) => {
