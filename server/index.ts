@@ -1,6 +1,6 @@
 import express from 'express';
 import { setupRoutes } from './routes.js';
-import { setupVite, serveStatic } from './vite.js';
+import { setupVite } from './vite.js';
 import compression from 'compression';
 import { fileURLToPath } from 'url';
 import { dirname, join } from 'path';
@@ -38,8 +38,8 @@ setupRoutes(app);
 if (process.env.NODE_ENV === 'development') {
   await setupVite(app);
 } else {
-  // In production, serve from the dist/public directory
-  const publicPath = join(__dirname, '..', 'public');
+  // In production, serve from the public directory
+  const publicPath = join(__dirname, '..', '..', 'public');
   console.log('Serving static files from:', publicPath);
   
   app.use(express.static(publicPath, {
