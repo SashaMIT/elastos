@@ -74,7 +74,7 @@ if (process.env.NODE_ENV === 'development') {
   await setupVite(app);
 } else {
   try {
-    // In production, serve from the public directory
+    // In production, serve from the dist/public directory
     const publicPath = join(__dirname, '..', 'public');
     console.log('Serving static files from:', publicPath);
     
@@ -94,43 +94,17 @@ if (process.env.NODE_ENV === 'development') {
       }
     }));
 
-    // Also serve from the root public directory
-    const rootPublicPath = join(__dirname, '..', '..', 'public');
-    console.log('Also serving static files from:', rootPublicPath);
-    
-    app.use(express.static(rootPublicPath, {
-      maxAge: '1w',
-      etag: true,
-      lastModified: true,
-      index: false,
-      setHeaders: (res, path) => {
-        if (path.endsWith('.js')) {
-          res.setHeader('Content-Type', 'application/javascript');
-        }
-        if (path.match(/\.(js|css|png|jpg|jpeg|gif|ico|svg|woff|woff2|ttf|eot)$/)) {
-          res.setHeader('Cache-Control', 'public, max-age=604800, immutable');
-        }
-      }
-    }));
-
     // Catch-all route to serve index.html
     app.get("*", (_req, res) => {
       try {
-        // Try both possible locations for index.html
         const indexPath = join(publicPath, 'index.html');
-        const rootIndexPath = join(rootPublicPath, 'index.html');
-        
         console.log('Checking for index.html at:', indexPath);
-        console.log('Checking for index.html at:', rootIndexPath);
         
         if (existsSync(indexPath)) {
           console.log('Serving index.html from:', indexPath);
           res.sendFile(indexPath);
-        } else if (existsSync(rootIndexPath)) {
-          console.log('Serving index.html from:', rootIndexPath);
-          res.sendFile(rootIndexPath);
         } else {
-          console.log('Index.html not found in either location');
+          console.log('Index.html not found at:', indexPath);
           res.status(404).send('Not found');
         }
       } catch (error) {
