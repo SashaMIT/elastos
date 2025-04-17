@@ -10,35 +10,35 @@ export function MarqueeDemo() {
   const items = [
     {
       name: "Alibaba",
-      image: "/marque/Ali.png",
+      image: "/images/Ali.png",
     },
     {
       name: "Ant Financial",
-      image: "/marque/Ant-w.png",
+      image: "/images/Ant-w.png",
     },
     {
       name: "Binance",
-      image: "/marque/Binance.png",
+      image: "/images/Binance.png",
     },
     {
       name: "BitMain",
-      image: "/marque/Bit-w.png",
+      image: "/images/Bitmain.png",
     },
     {
       name: "OKex",
-      image: "/marque/Ok-w.png",
+      image: "/images/OKMINER.png",
     },
     {
       name: "Tencent",
-      image: "/marque/Ten-w.png",
+      image: "/images/Ten-w.png",
     },
     {
       name: "Via BTC",
-      image: "/marque/Via.png",
+      image: "/images/Via.png",
     },
     {
       name: "F2Pool",
-      image: "/marque/f2.png",
+      image: "/images/f2.png",
     },
   ];
 

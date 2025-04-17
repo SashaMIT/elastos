@@ -61,10 +61,10 @@ const localLogos: Logo[] = [
     id: "main-logo",
     name: "Main Logo",
     description: "Primary logo",
-    preview: "/path/to/logo.png",
+    preview: "/images/Elastos Logo Light - 1.png",
     variants: {
-      light: { path: "/path/to/light.png" },
-      dark: { path: "/path/to/dark.png" }
+      light: { path: "/images/Elastos Logo Light - 1.png" },
+      dark: { path: "/images/Elastos Logo Dark - 1.png" }
     }
   }
 ];

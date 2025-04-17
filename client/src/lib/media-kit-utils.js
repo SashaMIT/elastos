@@ -14,11 +14,11 @@ export const logos = [
     variants: {
       light: {
         png: "/images/Elastos Logo Light - 1.png",
-        svg: "/logo-assets/elastos-logo-light.svg"
+        svg: "/images/Elastos Logo Light - 1.png"
       },
       dark: {
         png: "/images/Elastos Logo Dark - 1.png",
-        svg: "/logo-assets/elastos-logo-dark.svg"
+        svg: "/images/Elastos Logo Dark - 1.png"
       }
     }
   },
@@ -125,5 +125,23 @@ export const appPreviews = [
     name: "Elastos Essentials Tablet (10-inch)",
     description: "Elastos Essentials tablet application UI (10-inch)",
     image: "/logo-assets/ELASTOS ESSENTIALS 10 tablet #1.jpg"
+  },
+  {
+    id: "essentials-1",
+    name: "Essentials 1",
+    description: "Elastos Essentials App Preview",
+    image: "/images/Website Graphics/Elastos Essentials.png"
+  },
+  {
+    id: "essentials-7",
+    name: "Essentials 7",
+    description: "Elastos Essentials App Preview",
+    image: "/images/Website Graphics/Elastos Essentials.png"
+  },
+  {
+    id: "essentials-10",
+    name: "Essentials 10",
+    description: "Elastos Essentials App Preview",
+    image: "/images/Website Graphics/Elastos Essentials.png"
   }
 ];
