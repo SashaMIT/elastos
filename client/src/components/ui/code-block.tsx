@@ -1,8 +1,8 @@
 "use client"
 
 import React from "react"
-import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
-import { atomDark } from "react-syntax-highlighter/dist/cjs/styles/prism"
+import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
+import { atomDark as styles } from 'react-syntax-highlighter/dist/esm/styles/prism';
 import { Check, Copy } from "lucide-react"
 
 type CodeBlockProps = {
@@ -92,7 +92,7 @@ export const CodeBlock = ({
       </div>
       <SyntaxHighlighter
         language={activeLanguage}
-        style={atomDark}
+        style={styles}
         customStyle={{
           margin: 0,
           padding: 0,

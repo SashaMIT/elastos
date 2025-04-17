@@ -1,4 +1,4 @@
-import { VisionPage } from './components/VisionPage';
+import VisionPage from './components/VisionPage';
 import WhitepaperPage from './pages/WhitepaperPage'; 
 import Explorer from './pages/Explorer'; 
 import Dao from './pages/Dao'; // Added import for Dao page

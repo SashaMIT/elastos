@@ -14,7 +14,7 @@ import { WorldComputerBanner } from "@/components/blocks/world-computer-banner";
 import { DetailedVisionSection } from "@/components/blocks/detailed-vision-section";
 import { LogoCarouselDemo } from "@/components/LogoCarouselDemo";
 
-export function VisionPage() {
+export default function VisionPage() {
   const technologies = [
     { name: "Elastos Blockchain", desc: "Security & trust layer" },
     { name: "Elastos DID", desc: "Identity & authentication layer" },

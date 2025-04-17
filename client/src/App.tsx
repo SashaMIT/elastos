@@ -1,12 +1,12 @@
 import React, { Suspense, lazy } from 'react';
 import { Route, Routes } from 'react-router-dom';
-import { Spinner } from '@/components/ui/spinner';
+import { Spinner } from './components/ui/spinner';
 import { OrganizationStructuredData } from './components/StructuredData';
 
 // Use lazy loading for page components
 const LandingPage = lazy(() => import('./pages/LandingPage'));
 const SecurityPage = lazy(() => import('./pages/SecurityPage'));
-const VisionPage = lazy(() => import('./pages/VisionPage'));
+const VisionPage = lazy(() => import('./components/VisionPage'));
 const ValueCalcPage = lazy(() => import('./pages/ValueCalcPage'));
 const BuyElaPage = lazy(() => import('./pages/BuyElaPage'));
 const ElaUtilityPage = lazy(() => import('./pages/ElaUtilityPage'));
