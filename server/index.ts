@@ -14,8 +14,17 @@ const port = parseInt(process.env.PORT || '10000', 10);
 // Enable compression
 app.use(compression());
 
-// Add CORS middleware
+// Add security headers
 app.use((_req, res, next) => {
+  res.setHeader('Content-Security-Policy', `
+    default-src 'self';
+    script-src 'self' 'unsafe-inline' 'unsafe-eval';
+    style-src 'self' 'unsafe-inline';
+    font-src 'self' data:;
+    img-src 'self' data: blob:;
+    connect-src 'self' https://api.coingecko.com;
+  `.replace(/\s+/g, ' ').trim());
+  
   res.setHeader('Access-Control-Allow-Origin', '*');
   res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS');
   res.setHeader('Access-Control-Allow-Headers', 'Content-Type');
@@ -30,7 +39,10 @@ if (process.env.NODE_ENV === 'development') {
   await setupVite(app);
 } else {
   // In production, serve from the dist/public directory
-  app.use(express.static(join(__dirname, '..', 'public'), {
+  const publicPath = join(__dirname, '..', 'public');
+  console.log('Serving static files from:', publicPath);
+  
+  app.use(express.static(publicPath, {
     maxAge: '1w',
     etag: true,
     lastModified: true
@@ -38,7 +50,8 @@ if (process.env.NODE_ENV === 'development') {
 
   // Catch-all route to serve index.html
   app.get("*", (_req, res) => {
-    res.sendFile(join(__dirname, '..', 'public', 'index.html'));
+    console.log('Serving index.html from:', join(publicPath, 'index.html'));
+    res.sendFile(join(publicPath, 'index.html'));
   });
 }
 

@@ -86,6 +86,8 @@ export default defineConfig({
     commonjsOptions: {
       include: [/node_modules/],
       transformMixedEsModules: true
-    }
+    },
+    assetsDir: 'assets',
+    manifest: true
   }
 });
