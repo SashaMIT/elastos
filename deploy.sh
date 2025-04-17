@@ -40,7 +40,22 @@ fi
 echo "🛑 Stopping preview server..."
 lsof -ti:4175 | xargs kill -9 2>/dev/null || true
 
-echo "✨ Deployment preparation complete!"
+# Check if index.html exists in dist/public
+if [ -f "dist/public/index.html" ]; then
+  echo "✅ index.html found in dist/public/"
+else
+  echo "❌ index.html NOT found in dist/public/"
+  exit 1
+fi
+
+# Make sure public directory is accessible from server
+mkdir -p dist/server/public
+cp -r dist/public/* dist/server/public/ || true
+
+echo "✅ Files copied to dist/server/public/"
+ls -la dist/server/public/
+
+echo "✅ Deploy prep complete!"
 echo "📝 Next steps:"
 echo "1. Push the changes to your production repository/branch"
 echo "2. Deploy the contents of the 'dist' directory to your production server"

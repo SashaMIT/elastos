@@ -74,8 +74,8 @@ if (process.env.NODE_ENV === 'development') {
   await setupVite(app);
 } else {
   try {
-    // In production, serve from the dist/public directory
-    const publicPath = join(__dirname, '..', 'public');
+    // In production, serve from the dist/public directory (one level up from server)
+    const publicPath = join(__dirname, '..', '..', 'public');
     console.log('Serving static files from:', publicPath);
     
     // Serve static files with proper MIME types
@@ -105,7 +105,17 @@ if (process.env.NODE_ENV === 'development') {
           res.sendFile(indexPath);
         } else {
           console.log('Index.html not found at:', indexPath);
-          res.status(404).send('Not found');
+          // As a fallback, look for index.html in the current directory
+          const fallbackPath = join(process.cwd(), 'dist', 'public', 'index.html');
+          console.log('Trying fallback path:', fallbackPath);
+          
+          if (existsSync(fallbackPath)) {
+            console.log('Serving index.html from fallback path:', fallbackPath);
+            res.sendFile(fallbackPath);
+          } else {
+            console.log('Index.html not found at fallback path:', fallbackPath);
+            res.status(404).send('Not found');
+          }
         }
       } catch (error) {
         console.error('Error serving index.html:', error);
