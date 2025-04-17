@@ -82,6 +82,9 @@ export default defineConfig({
             return 'icons';
           }
         }
+      },
+      input: {
+        main: path.resolve(__dirname, 'client/index.html')
       }
     },
     commonjsOptions: {
@@ -90,7 +93,9 @@ export default defineConfig({
     },
     assetsDir: 'assets',
     manifest: true,
-    sourcemap: true
+    sourcemap: true,
+    copyPublicDir: true,
+    assetsInlineLimit: 4096, // 4kb - files smaller than this will be inlined as base64
   },
   base: '/',
 });

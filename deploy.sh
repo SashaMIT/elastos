@@ -52,6 +52,54 @@ fi
 mkdir -p dist/server/public
 cp -r dist/public/* dist/server/public/ || true
 
+# Copy additional assets from client/public to dist/public and dist/server/public
+echo "📦 Copying additional static assets..."
+if [ -d "client/public/images" ]; then
+  mkdir -p dist/public/images
+  mkdir -p dist/server/public/images
+  cp -r client/public/images/* dist/public/images/ || true
+  cp -r client/public/images/* dist/server/public/images/ || true
+  echo "✅ Images copied from client/public"
+fi
+
+if [ -d "client/public/fonts" ]; then
+  mkdir -p dist/public/fonts
+  mkdir -p dist/server/public/fonts
+  cp -r client/public/fonts/* dist/public/fonts/ || true
+  cp -r client/public/fonts/* dist/server/public/fonts/ || true
+  echo "✅ Fonts copied from client/public"
+fi
+
+if [ -d "client/public/logo-assets" ]; then
+  mkdir -p dist/public/logo-assets
+  mkdir -p dist/server/public/logo-assets
+  cp -r client/public/logo-assets/* dist/public/logo-assets/ || true
+  cp -r client/public/logo-assets/* dist/server/public/logo-assets/ || true
+  echo "✅ Logo assets copied from client/public"
+fi
+
+if [ -d "client/public/whitepapers" ]; then
+  mkdir -p dist/public/whitepapers
+  mkdir -p dist/server/public/whitepapers
+  cp -r client/public/whitepapers/* dist/public/whitepapers/ || true
+  cp -r client/public/whitepapers/* dist/server/public/whitepapers/ || true
+  echo "✅ Whitepapers copied from client/public"
+fi
+
+if [ -d "client/public/marque" ]; then
+  mkdir -p dist/public/marque
+  mkdir -p dist/server/public/marque
+  cp -r client/public/marque/* dist/public/marque/ || true
+  cp -r client/public/marque/* dist/server/public/marque/ || true
+  echo "✅ Marque assets copied from client/public"
+fi
+
+# Also copy any other files at root level (robots.txt, sitemap.xml, etc.)
+cp -r client/public/*.txt dist/public/ 2>/dev/null || true
+cp -r client/public/*.xml dist/public/ 2>/dev/null || true
+cp -r client/public/*.txt dist/server/public/ 2>/dev/null || true
+cp -r client/public/*.xml dist/server/public/ 2>/dev/null || true
+
 echo "✅ Files copied to dist/server/public/"
 ls -la dist/server/public/
 
