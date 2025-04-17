@@ -18,16 +18,22 @@ app.use(compression());
 app.use((_req, res, next) => {
   res.setHeader('Content-Security-Policy', `
     default-src 'self';
-    script-src 'self' 'unsafe-inline' 'unsafe-eval';
-    style-src 'self' 'unsafe-inline';
-    font-src 'self' data:;
-    img-src 'self' data: blob:;
-    connect-src 'self' https://api.coingecko.com;
+    script-src 'self' 'unsafe-inline' 'unsafe-eval' https: blob:;
+    style-src 'self' 'unsafe-inline' https:;
+    font-src 'self' data: https: *;
+    img-src 'self' data: blob: https: *;
+    connect-src 'self' https: wss: *;
+    frame-src 'self' https: *;
+    worker-src 'self' blob: *;
+    media-src 'self' https: *;
+    object-src 'none';
   `.replace(/\s+/g, ' ').trim());
   
+  // Add CORS headers
   res.setHeader('Access-Control-Allow-Origin', '*');
-  res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS');
-  res.setHeader('Access-Control-Allow-Headers', 'Content-Type');
+  res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, DELETE');
+  res.setHeader('Access-Control-Allow-Headers', 'Content-Type, Authorization');
+  res.setHeader('X-Content-Type-Options', 'nosniff');
   next();
 });
 
@@ -39,13 +45,24 @@ if (process.env.NODE_ENV === 'development') {
   await setupVite(app);
 } else {
   // In production, serve from the public directory
-  const publicPath = join(__dirname, '..', '..', 'public');
+  const publicPath = join(__dirname, '..', 'public');
   console.log('Serving static files from:', publicPath);
   
+  // Serve static files with proper MIME types
   app.use(express.static(publicPath, {
     maxAge: '1w',
     etag: true,
-    lastModified: true
+    lastModified: true,
+    index: false,
+    setHeaders: (res, path) => {
+      if (path.endsWith('.js')) {
+        res.setHeader('Content-Type', 'application/javascript');
+      }
+      // Add cache control for assets
+      if (path.match(/\.(js|css|png|jpg|jpeg|gif|ico|svg|woff|woff2|ttf|eot)$/)) {
+        res.setHeader('Cache-Control', 'public, max-age=604800, immutable');
+      }
+    }
   }));
 
   // Catch-all route to serve index.html

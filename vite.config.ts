@@ -88,6 +88,8 @@ export default defineConfig({
       transformMixedEsModules: true
     },
     assetsDir: 'assets',
-    manifest: true
-  }
+    manifest: true,
+    sourcemap: true
+  },
+  base: '/'
 });
