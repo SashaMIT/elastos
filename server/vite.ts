@@ -30,14 +30,19 @@ export async function setupVite(app: express.Application): Promise<void> {
 export function serveStatic(app: express.Application) {
   const publicPath = join(__dirname, "../dist/public");
 
-  // Serve static files with cache control and no host checking
+  // Add CORS middleware
+  app.use((_req, res, next) => {
+    res.setHeader('Access-Control-Allow-Origin', '*');
+    res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS');
+    res.setHeader('Access-Control-Allow-Headers', 'Content-Type');
+    next();
+  });
+
+  // Serve static files with cache control
   app.use(express.static(publicPath, {
     maxAge: '1w',
     etag: true,
-    lastModified: true,
-    setHeaders: (res) => {
-      res.setHeader('Access-Control-Allow-Origin', '*');
-    }
+    lastModified: true
   }));
 
   // Catch-all route to serve index.html
