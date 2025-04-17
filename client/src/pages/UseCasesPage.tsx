@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/Card";
 import { BackgroundCells } from "@/components/blocks/background-ripple-effect";
 import { Button } from "@/components/ui/button";
 import { SplashCursor } from "@/components/ui/splash-cursor";

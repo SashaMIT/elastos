@@ -2,7 +2,7 @@ import { ArrowRight, BookCopy, Box, Code, DownloadIcon, FileText, LucideIcon, Sh
 import { Link } from "react-router-dom";
 import Layout from "@/components/Layout";
 import { Button } from "@/components/ui/button";
-import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
+import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/Card";
 import React from "react";
 import { SEO } from "@/components/SEO";
 import { Helmet } from 'react-helmet';

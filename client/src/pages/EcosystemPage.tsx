@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Card } from '@/components/ui/card';
+import { Card } from '@/components/ui/Card';
 import { Button } from '@/components/ui/button';
 import { Lens } from "@/components/ui/lens";
 import { ExternalLink, Share2, Terminal, Wallet, Image, Building2 } from 'lucide-react';

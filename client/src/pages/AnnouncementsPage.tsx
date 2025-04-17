@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 import { StackedCircularFooter } from "@/components/ui/stacked-circular-footer";
 import { ScrollToTop } from "@/components/ScrollToTop";
 import { Calendar, CalendarDays, ChevronRight, Clock, ExternalLink, Loader2 } from "lucide-react";
-import { Card, CardContent, CardFooter } from "@/components/ui/card";
+import { Card, CardContent, CardFooter } from "@/components/ui/Card";
 import { SEO } from "@/components/SEO";
 import { Helmet } from "react-helmet";
 import { WebPageStructuredData } from "@/components/StructuredData";
