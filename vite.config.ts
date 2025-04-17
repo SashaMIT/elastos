@@ -60,7 +60,7 @@ export default defineConfig({
   },
   root: path.resolve(__dirname, "client"),
   build: {
-    outDir: path.resolve(__dirname, "public"),
+    outDir: 'public',
     emptyOutDir: true,
     rollupOptions: {
       output: {
@@ -91,5 +91,6 @@ export default defineConfig({
     manifest: true,
     sourcemap: true
   },
-  base: '/'
+  base: '/',
+  publicDir: 'public'
 });
