@@ -53,7 +53,7 @@ const fallbackNewsItems: NewsItem[] = [
 ];
 
 // RSS feed URL
-const RSS_FEED_URL = "https://rss.app/feeds/4dpMoB5Crc5ACmOz.xml";
+const RSS_FEED_URL = "https://rss.app/feeds/K1RFVF00RaYjnEgA.xml";
 const CORS_PROXY = "https://api.allorigins.win/get?url=";
 const DEFAULT_IMAGE = '/images/Elastos New Logo_Kit-03.png';
 const MAX_NEWS_ITEMS = 9; // Limit to 9 items
