@@ -30,6 +30,12 @@ export async function setupVite(app: express.Application): Promise<void> {
 export function serveStatic(app: express.Application) {
   const publicPath = join(__dirname, "../dist/public");
 
+  // Add middleware to handle host checking
+  app.use((req, res, next) => {
+    // Allow all hosts in production
+    next();
+  });
+
   // Serve static files with cache control
   app.use(express.static(publicPath, {
     maxAge: '1w', // Set max age to 1 week
