@@ -32,7 +32,8 @@
     "paths": {
       "@/*": ["./client/src/*"],
       "@db/*": ["./db/*"]
-    }
+    },
+    "sourceMap": true
   },
   "include": ["server/**/*", "db/**/*"],
   "exclude": ["node_modules", "build", "dist", "**/*.test.ts", "client/**/*"]
