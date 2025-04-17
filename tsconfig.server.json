@@ -2,7 +2,7 @@
   "extends": "./tsconfig.json",
   "compilerOptions": {
     "module": "ESNext",
-    "outDir": "dist",
+    "outDir": "dist/server",
     "noEmit": false,
     "target": "ES2020",
     "moduleResolution": "node",
@@ -26,7 +26,13 @@
     "noFallthroughCasesInSwitch": true,
     "allowSyntheticDefaultImports": true,
     "experimentalDecorators": true,
-    "emitDecoratorMetadata": true
+    "emitDecoratorMetadata": true,
+    "rootDir": ".",
+    "baseUrl": ".",
+    "paths": {
+      "@/*": ["./client/src/*"],
+      "@db/*": ["./db/*"]
+    }
   },
   "include": ["server/**/*", "db/**/*"],
   "exclude": ["node_modules", "build", "dist", "**/*.test.ts"]

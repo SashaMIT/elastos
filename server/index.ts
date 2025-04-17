@@ -2,7 +2,7 @@ import express from 'express';
 import { createServer } from 'vite';
 import { fileURLToPath } from 'url';
 import { dirname, join } from 'path';
-import { setupRoutes } from './routes';
+import { setupRoutes } from './routes.js';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
