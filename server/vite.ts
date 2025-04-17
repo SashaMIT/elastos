@@ -8,7 +8,10 @@ const __dirname = dirname(__filename);
 
 export async function setupVite(app: express.Application): Promise<void> {
   const vite = await createServer({
-    server: { middlewareMode: true },
+    server: { 
+      middlewareMode: true,
+      allowedHosts: ['elastos-network.onrender.com', 'localhost', '127.0.0.1']
+    },
     appType: 'custom',
     root: join(__dirname, '..', 'client'),
   });
