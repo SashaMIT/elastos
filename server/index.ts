@@ -4,6 +4,7 @@ import { setupVite } from './vite.js';
 import compression from 'compression';
 import { fileURLToPath } from 'url';
 import { dirname, join } from 'path';
+import { existsSync } from 'fs';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
@@ -32,8 +33,8 @@ app.use((_req, res, next) => {
 
   // Set security headers
   res.setHeader('Content-Security-Policy', csp);
-  res.setHeader('X-Content-Security-Policy', csp); // Legacy header
-  res.setHeader('X-WebKit-CSP', csp); // Legacy header
+  res.setHeader('X-Content-Security-Policy', csp);
+  res.setHeader('X-WebKit-CSP', csp);
   
   // Add CORS headers
   res.setHeader('Access-Control-Allow-Origin', '*');
@@ -64,14 +65,13 @@ if (process.env.NODE_ENV === 'development') {
       if (path.endsWith('.js')) {
         res.setHeader('Content-Type', 'application/javascript');
       }
-      // Add cache control for assets
       if (path.match(/\.(js|css|png|jpg|jpeg|gif|ico|svg|woff|woff2|ttf|eot)$/)) {
         res.setHeader('Cache-Control', 'public, max-age=604800, immutable');
       }
     }
   }));
 
-  // Also serve from the root public directory for direct access
+  // Also serve from the root public directory
   const rootPublicPath = join(__dirname, '..', '..', 'public');
   app.use(express.static(rootPublicPath, {
     maxAge: '1w',
@@ -94,10 +94,10 @@ if (process.env.NODE_ENV === 'development') {
     const indexPath = join(publicPath, 'index.html');
     const rootIndexPath = join(rootPublicPath, 'index.html');
     
-    if (require('fs').existsSync(indexPath)) {
+    if (existsSync(indexPath)) {
       console.log('Serving index.html from:', indexPath);
       res.sendFile(indexPath);
-    } else if (require('fs').existsSync(rootIndexPath)) {
+    } else if (existsSync(rootIndexPath)) {
       console.log('Serving index.html from:', rootIndexPath);
       res.sendFile(rootIndexPath);
     } else {
