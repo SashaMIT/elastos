@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Card } from '@/components/ui/card';
+import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Boxes, Hash, Clock, CheckCircle2, ServerCrash, ExternalLink, Copy, ChevronRight } from 'lucide-react';
 
 interface BlockData {

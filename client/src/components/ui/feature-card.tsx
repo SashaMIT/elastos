@@ -1,6 +1,6 @@
 import { ArrowRight } from "lucide-react";
 import { cn } from "@/lib/utils";
-import { Card } from "./card";
+import { Card, CardContent, CardHeader, CardTitle } from "./card";
 
 interface FeatureCardProps extends React.HTMLAttributes<HTMLDivElement> {
   title: string;

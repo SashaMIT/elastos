@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import HashrateVisualizer from '../components/HashrateVisualizer';
 import { useHashrateData } from '@/hooks/useHashrateData';
-import { Card, CardContent } from '@/components/ui/card';
+import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Dots_v2 } from "@/components/ui/spinner";
 import { StackedCircularFooter } from "@/components/ui/stacked-circular-footer";
 import { SEO } from '@/components/SEO'; // Import the SEO component
