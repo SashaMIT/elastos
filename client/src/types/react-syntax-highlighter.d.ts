@@ -17,6 +17,6 @@ declare module 'react-syntax-highlighter/dist/cjs/prism' {
 }
 
 declare module 'react-syntax-highlighter/dist/cjs/styles/prism' {
-  const atomDark: any;
-  export { atomDark };
+  const styles: { [key: string]: any };
+  export default styles;
 } 
