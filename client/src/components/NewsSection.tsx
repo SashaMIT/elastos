@@ -62,6 +62,7 @@ const MAX_NEWS_ITEMS = 9; // Limit to 9 items
 const CACHE_KEY = 'elastos_news_cache';
 const CACHE_EXPIRY = 30 * 60 * 1000; // 30 minutes in milliseconds
 
+// Declare the component outside of any lazy loading boundaries for better production compatibility
 export function NewsSection() {
   const scrollRef = React.useRef<HTMLDivElement>(null);
   const [canScrollLeft, setCanScrollLeft] = useState(false);
@@ -200,16 +201,22 @@ export function NewsSection() {
     }
   }, []);
 
+  // Mount effect with more resilient initialization
   useEffect(() => {
-    fetchNews();
-    // Refresh data every 30 minutes if tab is active
-    const intervalId = setInterval(() => {
-      if (document.visibilityState === 'visible') {
-        fetchNews(true);
-      }
-    }, CACHE_EXPIRY);
-
-    return () => clearInterval(intervalId);
+    // Ensure we have the DOM element available
+    if (typeof window !== 'undefined') {
+      // Immediate fetch attempt
+      fetchNews();
+      
+      // Setup refresh interval
+      const intervalId = setInterval(() => {
+        if (document.visibilityState === 'visible') {
+          fetchNews(true);
+        }
+      }, CACHE_EXPIRY);
+      
+      return () => clearInterval(intervalId);
+    }
   }, [fetchNews]);
 
   const handleRetry = () => {
@@ -217,7 +224,7 @@ export function NewsSection() {
     fetchNews(true);
   };
 
-  // Check scroll possibilities
+  // Enhanced scroll check function
   const checkScroll = useCallback(() => {
     if (!scrollRef.current) return;
 
@@ -226,27 +233,44 @@ export function NewsSection() {
     setCanScrollRight(scrollLeft < scrollWidth - clientWidth - 10); // 10px buffer
   }, []);
 
+  // Scroll event listener with enhanced cleanup
   useEffect(() => {
     const scrollContainer = scrollRef.current;
-
-    // Set up scroll event listener
-    if (scrollContainer) {
+    
+    // Ensure we have DOM available
+    if (typeof window !== 'undefined' && scrollContainer) {
+      // Create a resize observer to recalculate scroll status when element changes size
+      let resizeObserver: ResizeObserver | null = null;
+      try {
+        resizeObserver = new ResizeObserver(() => {
+          checkScroll();
+        });
+        resizeObserver.observe(scrollContainer);
+      } catch (e) {
+        console.error("ResizeObserver not available:", e);
+      }
+      
+      // Set up scroll event listener
       scrollContainer.addEventListener('scroll', checkScroll);
+      
       // Initial check
       checkScroll();
+      
+      // Check after images may have loaded
+      const timer = setTimeout(checkScroll, 500);
+      
+      // Cleanup
+      return () => {
+        if (scrollContainer) {
+          scrollContainer.removeEventListener('scroll', checkScroll);
+        }
+        if (resizeObserver) {
+          resizeObserver.disconnect();
+        }
+        clearTimeout(timer);
+      };
     }
-
-    // Check after images may have loaded
-    const timer = setTimeout(checkScroll, 500);
-
-    // Cleanup
-    return () => {
-      if (scrollContainer) {
-        scrollContainer.removeEventListener('scroll', checkScroll);
-      }
-      clearTimeout(timer);
-    };
-  }, [newsItems, checkScroll]); // Rerun when newsItems changes
+  }, [newsItems, checkScroll]);
 
   // Format date
   const formatDate = (dateString: string): string => {
@@ -348,7 +372,7 @@ export function NewsSection() {
                   style={{ width: 'calc(33.333% - 16px)' }} /* Showing 3 cards per row */
                 >
                   <div className="relative h-52 overflow-hidden">
-                    {/* Use OptimizedImage component for better image loading */}
+                    {/* Use regular img for better compatibility in production */}
                     <img 
                       src={item.image} 
                       alt=""

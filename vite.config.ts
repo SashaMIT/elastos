@@ -65,7 +65,18 @@ export default defineConfig({
     emptyOutDir: true,
     rollupOptions: {
       output: {
+        // Disable manual chunks to prevent code splitting that could cause NewsSection issues
+        // manualChunks: undefined,
+        
+        // Alternative approach: Explicitly include NewsSection in the main chunk
         manualChunks(id) {
+          // Keep NewsSection and its dependencies in the main bundle
+          if (id.includes('NewsSection') || id.includes('components/ui/spinner') ||
+              id.includes('components/ui/optimized-image') || id.includes('components/ui/skeleton')) {
+            return 'main';
+          }
+          
+          // Continue with other chunking logic
           if (id.includes('node_modules/framer-motion')) {
             return 'framer-motion';
           }
@@ -87,6 +98,9 @@ export default defineConfig({
         main: path.resolve(__dirname, 'client/index.html')
       }
     },
+    // Disable code splitting completely (alternative approach)
+    // cssCodeSplit: false,
+    // minify: true,
     commonjsOptions: {
       include: [/node_modules/],
       transformMixedEsModules: true

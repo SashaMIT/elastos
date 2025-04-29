@@ -3,8 +3,10 @@ import { Route, Routes } from 'react-router-dom';
 import { Spinner } from './components/ui/spinner';
 import { OrganizationStructuredData } from './components/StructuredData';
 
+// Import LandingPage directly to avoid issues with the NewsSection carousel in production
+import LandingPage from './pages/LandingPage';
+
 // Use lazy loading for page components
-const LandingPage = lazy(() => import('./pages/LandingPage'));
 const SecurityPage = lazy(() => import('./pages/SecurityPage'));
 const VisionPage = lazy(() => import('./components/VisionPage'));
 const ValueCalcPage = lazy(() => import('./pages/ValueCalcPage'));

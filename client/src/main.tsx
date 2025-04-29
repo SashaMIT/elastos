@@ -25,8 +25,10 @@ import { Spinner } from "@/components/ui/spinner";
 import { preloadCriticalImages } from "@/lib/preload"; // Import preload utility
 import { ErrorBoundary } from "./components/ErrorBoundary";
 
+// Import LandingPage directly to prevent issues with the NewsSection carousel in production
+import LandingPage from "./pages/LandingPage";
 
-const LandingPage = lazy(() => import("./pages/LandingPage"));
+// Lazy load other pages
 const HomePage = lazy(() => import("./pages/HomePage"));
 const SecurityPage = lazy(() => import("./pages/SecurityPage"));
 const ValueCalcPage = lazy(() => import("./pages/ValueCalcPage"));
@@ -37,8 +39,7 @@ const FaqPage = lazy(() => import("./pages/FaqPage"));
 const RoadmapPage = lazy(() => import("./pages/RoadmapPage"));
 const ElaUtilityPage = lazy(() => import("./pages/ElaUtilityPage"));
 const UseCasesPage = lazy(() => import("./pages/UseCasesPage"));
-const Wallet = lazy(() => import("./pages/Wallet")); 
-
+const Wallet = lazy(() => import("./pages/Wallet"));
 
 // Import the ScrollToTop component
 import { ScrollToTop } from "./components/ScrollToTop";
