@@ -1,18 +1,18 @@
 import {
   require_object_assign,
   require_prop_types
-} from "./chunk-KYTYHDWB.js";
+} from "./chunk-5IEVX3A5.js";
 import {
   require_react
-} from "./chunk-K3CCW6BN.js";
+} from "./chunk-A5RJMWOC.js";
 import {
   __commonJS,
   __toESM
-} from "./chunk-VHXUCOYC.js";
+} from "./chunk-RDKGUBC5.js";
 
-// client/node_modules/react-side-effect/lib/index.js
+// node_modules/react-side-effect/lib/index.js
 var require_lib = __commonJS({
-  "client/node_modules/react-side-effect/lib/index.js"(exports, module) {
+  "node_modules/react-side-effect/lib/index.js"(exports, module) {
     "use strict";
     function _interopDefault(ex) {
       return ex && typeof ex === "object" && "default" in ex ? ex["default"] : ex;
@@ -111,9 +111,9 @@ var require_lib = __commonJS({
   }
 });
 
-// client/node_modules/react-fast-compare/index.js
+// node_modules/react-fast-compare/index.js
 var require_react_fast_compare = __commonJS({
-  "client/node_modules/react-fast-compare/index.js"(exports, module) {
+  "node_modules/react-fast-compare/index.js"(exports, module) {
     var hasElementType = typeof Element !== "undefined";
     var hasMap = typeof Map === "function";
     var hasSet = typeof Set === "function";
@@ -188,7 +188,7 @@ var require_react_fast_compare = __commonJS({
   }
 });
 
-// client/node_modules/react-helmet/es/Helmet.js
+// node_modules/react-helmet/es/Helmet.js
 var import_prop_types = __toESM(require_prop_types());
 var import_react_side_effect = __toESM(require_lib());
 var import_react_fast_compare = __toESM(require_react_fast_compare());

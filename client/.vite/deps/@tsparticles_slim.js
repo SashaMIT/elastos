@@ -63,10 +63,10 @@ import {
   setRangeValue,
   updateAnimation,
   updateColor
-} from "./chunk-U56Q5JIZ.js";
-import "./chunk-VHXUCOYC.js";
+} from "./chunk-Y5VBRRH5.js";
+import "./chunk-RDKGUBC5.js";
 
-// client/node_modules/@tsparticles/move-base/browser/Utils.js
+// node_modules/@tsparticles/move-base/browser/Utils.js
 var half = 0.5;
 var double = 2;
 var minVelocity = 0;
@@ -191,7 +191,7 @@ function initSpin(particle) {
   };
 }
 
-// client/node_modules/@tsparticles/move-base/browser/BaseMover.js
+// node_modules/@tsparticles/move-base/browser/BaseMover.js
 var diffFactor = 2;
 var defaultSizeFactor = 1;
 var defaultDeltaFactor = 1;
@@ -227,7 +227,7 @@ var BaseMover = class {
   }
 };
 
-// client/node_modules/@tsparticles/move-base/browser/index.js
+// node_modules/@tsparticles/move-base/browser/index.js
 async function loadBaseMover(engine, refresh = true) {
   engine.checkVersion("3.8.1");
   await engine.addMover("base", () => {
@@ -235,7 +235,7 @@ async function loadBaseMover(engine, refresh = true) {
   }, refresh);
 }
 
-// client/node_modules/@tsparticles/shape-circle/browser/Utils.js
+// node_modules/@tsparticles/shape-circle/browser/Utils.js
 var double2 = 2;
 var doublePI2 = Math.PI * double2;
 var minAngle = 0;
@@ -249,7 +249,7 @@ function drawCircle(data) {
   context.arc(origin.x, origin.y, radius, circleRange.min, circleRange.max, false);
 }
 
-// client/node_modules/@tsparticles/shape-circle/browser/CircleDrawer.js
+// node_modules/@tsparticles/shape-circle/browser/CircleDrawer.js
 var sides = 12;
 var maxAngle = 360;
 var minAngle2 = 0;
@@ -275,13 +275,13 @@ var CircleDrawer = class {
   }
 };
 
-// client/node_modules/@tsparticles/shape-circle/browser/index.js
+// node_modules/@tsparticles/shape-circle/browser/index.js
 async function loadCircleShape(engine, refresh = true) {
   engine.checkVersion("3.8.1");
   await engine.addShape(new CircleDrawer(), refresh);
 }
 
-// client/node_modules/@tsparticles/updater-color/browser/ColorUpdater.js
+// node_modules/@tsparticles/updater-color/browser/ColorUpdater.js
 var ColorUpdater = class {
   constructor(container, engine) {
     this._container = container;
@@ -302,7 +302,7 @@ var ColorUpdater = class {
   }
 };
 
-// client/node_modules/@tsparticles/updater-color/browser/index.js
+// node_modules/@tsparticles/updater-color/browser/index.js
 async function loadColorUpdater(engine, refresh = true) {
   engine.checkVersion("3.8.1");
   await engine.addParticleUpdater("color", (container) => {
@@ -310,7 +310,7 @@ async function loadColorUpdater(engine, refresh = true) {
   }, refresh);
 }
 
-// client/node_modules/@tsparticles/plugin-hex-color/browser/HexColorManager.js
+// node_modules/@tsparticles/plugin-hex-color/browser/HexColorManager.js
 var RgbIndexes;
 (function(RgbIndexes3) {
   RgbIndexes3[RgbIndexes3["r"] = 1] = "r";
@@ -356,13 +356,13 @@ var HexColorManager = class {
   }
 };
 
-// client/node_modules/@tsparticles/plugin-hex-color/browser/index.js
+// node_modules/@tsparticles/plugin-hex-color/browser/index.js
 async function loadHexColorPlugin(engine, refresh = true) {
   engine.checkVersion("3.8.1");
   await engine.addColorManager(new HexColorManager(), refresh);
 }
 
-// client/node_modules/@tsparticles/plugin-hsl-color/browser/HslColorManager.js
+// node_modules/@tsparticles/plugin-hsl-color/browser/HslColorManager.js
 var HslIndexes;
 (function(HslIndexes2) {
   HslIndexes2[HslIndexes2["h"] = 1] = "h";
@@ -405,13 +405,13 @@ var HslColorManager = class {
   }
 };
 
-// client/node_modules/@tsparticles/plugin-hsl-color/browser/index.js
+// node_modules/@tsparticles/plugin-hsl-color/browser/index.js
 async function loadHslColorPlugin(engine, refresh = true) {
   engine.checkVersion("3.8.1");
   await engine.addColorManager(new HslColorManager(), refresh);
 }
 
-// client/node_modules/@tsparticles/updater-opacity/browser/OpacityUpdater.js
+// node_modules/@tsparticles/updater-opacity/browser/OpacityUpdater.js
 var OpacityUpdater = class {
   constructor(container) {
     this.container = container;
@@ -445,7 +445,7 @@ var OpacityUpdater = class {
   }
 };
 
-// client/node_modules/@tsparticles/updater-opacity/browser/index.js
+// node_modules/@tsparticles/updater-opacity/browser/index.js
 async function loadOpacityUpdater(engine, refresh = true) {
   engine.checkVersion("3.8.1");
   await engine.addParticleUpdater("opacity", (container) => {
@@ -453,7 +453,7 @@ async function loadOpacityUpdater(engine, refresh = true) {
   }, refresh);
 }
 
-// client/node_modules/@tsparticles/updater-out-modes/browser/Utils.js
+// node_modules/@tsparticles/updater-out-modes/browser/Utils.js
 var minVelocity2 = 0;
 var boundsMin = 0;
 function bounceHorizontal(data) {
@@ -515,7 +515,7 @@ function bounceVertical(data) {
   }
 }
 
-// client/node_modules/@tsparticles/updater-out-modes/browser/BounceOutMode.js
+// node_modules/@tsparticles/updater-out-modes/browser/BounceOutMode.js
 var BounceOutMode = class {
   constructor(container) {
     this.container = container;
@@ -547,7 +547,7 @@ var BounceOutMode = class {
   }
 };
 
-// client/node_modules/@tsparticles/updater-out-modes/browser/DestroyOutMode.js
+// node_modules/@tsparticles/updater-out-modes/browser/DestroyOutMode.js
 var minVelocity3 = 0;
 var DestroyOutMode = class {
   constructor(container) {
@@ -578,7 +578,7 @@ var DestroyOutMode = class {
   }
 };
 
-// client/node_modules/@tsparticles/updater-out-modes/browser/NoneOutMode.js
+// node_modules/@tsparticles/updater-out-modes/browser/NoneOutMode.js
 var minVelocity4 = 0;
 var NoneOutMode = class {
   constructor(container) {
@@ -609,7 +609,7 @@ var NoneOutMode = class {
   }
 };
 
-// client/node_modules/@tsparticles/updater-out-modes/browser/OutOutMode.js
+// node_modules/@tsparticles/updater-out-modes/browser/OutOutMode.js
 var minVelocity5 = 0;
 var minDistance = 0;
 var OutOutMode = class {
@@ -713,7 +713,7 @@ var OutOutMode = class {
   }
 };
 
-// client/node_modules/@tsparticles/updater-out-modes/browser/OutOfCanvasUpdater.js
+// node_modules/@tsparticles/updater-out-modes/browser/OutOfCanvasUpdater.js
 var checkOutMode = (outModes, outMode) => {
   return outModes.default === outMode || outModes.bottom === outMode || outModes.left === outMode || outModes.right === outMode || outModes.top === outMode;
 };
@@ -751,7 +751,7 @@ var OutOfCanvasUpdater = class {
   }
 };
 
-// client/node_modules/@tsparticles/updater-out-modes/browser/index.js
+// node_modules/@tsparticles/updater-out-modes/browser/index.js
 async function loadOutModesUpdater(engine, refresh = true) {
   engine.checkVersion("3.8.1");
   await engine.addParticleUpdater("outModes", (container) => {
@@ -759,7 +759,7 @@ async function loadOutModesUpdater(engine, refresh = true) {
   }, refresh);
 }
 
-// client/node_modules/@tsparticles/plugin-rgb-color/browser/RgbColorManager.js
+// node_modules/@tsparticles/plugin-rgb-color/browser/RgbColorManager.js
 var RgbIndexes2;
 (function(RgbIndexes3) {
   RgbIndexes3[RgbIndexes3["r"] = 1] = "r";
@@ -802,13 +802,13 @@ var RgbColorManager = class {
   }
 };
 
-// client/node_modules/@tsparticles/plugin-rgb-color/browser/index.js
+// node_modules/@tsparticles/plugin-rgb-color/browser/index.js
 async function loadRgbColorPlugin(engine, refresh = true) {
   engine.checkVersion("3.8.1");
   await engine.addColorManager(new RgbColorManager(), refresh);
 }
 
-// client/node_modules/@tsparticles/updater-size/browser/SizeUpdater.js
+// node_modules/@tsparticles/updater-size/browser/SizeUpdater.js
 var minLoops = 0;
 var SizeUpdater = class {
   init(particle) {
@@ -834,7 +834,7 @@ var SizeUpdater = class {
   }
 };
 
-// client/node_modules/@tsparticles/updater-size/browser/index.js
+// node_modules/@tsparticles/updater-size/browser/index.js
 async function loadSizeUpdater(engine, refresh = true) {
   engine.checkVersion("3.8.1");
   await engine.addParticleUpdater("size", () => {
@@ -842,7 +842,7 @@ async function loadSizeUpdater(engine, refresh = true) {
   }, refresh);
 }
 
-// client/node_modules/@tsparticles/basic/browser/index.js
+// node_modules/@tsparticles/basic/browser/index.js
 async function loadBasic(engine, refresh = true) {
   engine.checkVersion("3.8.1");
   await loadHexColorPlugin(engine, false);
@@ -857,7 +857,7 @@ async function loadBasic(engine, refresh = true) {
   await engine.refresh(refresh);
 }
 
-// client/node_modules/@tsparticles/plugin-easing-quad/browser/index.js
+// node_modules/@tsparticles/plugin-easing-quad/browser/index.js
 async function loadEasingQuadPlugin(engine, refresh = true) {
   engine.checkVersion("3.8.1");
   await engine.addEasing(EasingType.easeInQuad, (value) => value ** 2, false);
@@ -866,7 +866,7 @@ async function loadEasingQuadPlugin(engine, refresh = true) {
   await engine.refresh(refresh);
 }
 
-// client/node_modules/@tsparticles/shape-emoji/browser/Utils.js
+// node_modules/@tsparticles/shape-emoji/browser/Utils.js
 function drawEmoji(data, image) {
   const { context, opacity } = data, half9 = 0.5, previousAlpha = context.globalAlpha;
   if (!image) {
@@ -878,7 +878,7 @@ function drawEmoji(data, image) {
   context.globalAlpha = previousAlpha;
 }
 
-// client/node_modules/@tsparticles/shape-emoji/browser/EmojiDrawer.js
+// node_modules/@tsparticles/shape-emoji/browser/EmojiDrawer.js
 var defaultFont = '"Twemoji Mozilla", Apple Color Emoji, "Segoe UI Emoji", "Noto Color Emoji", "EmojiOne Color"';
 var noPadding = 0;
 var EmojiDrawer = class {
@@ -978,13 +978,13 @@ var EmojiDrawer = class {
   }
 };
 
-// client/node_modules/@tsparticles/shape-emoji/browser/index.js
+// node_modules/@tsparticles/shape-emoji/browser/index.js
 async function loadEmojiShape(engine, refresh = true) {
   engine.checkVersion("3.8.1");
   await engine.addShape(new EmojiDrawer(), refresh);
 }
 
-// client/node_modules/@tsparticles/interaction-external-attract/browser/Utils.js
+// node_modules/@tsparticles/interaction-external-attract/browser/Utils.js
 var minFactor = 1;
 var identity2 = 1;
 var minRadius = 0;
@@ -1031,7 +1031,7 @@ function hoverAttract(engine, container, enabledCb) {
   processAttract(engine, container, mousePos, attractRadius, new Circle(mousePos.x, mousePos.y, attractRadius), (p) => enabledCb(p));
 }
 
-// client/node_modules/@tsparticles/interaction-external-attract/browser/Options/Classes/Attract.js
+// node_modules/@tsparticles/interaction-external-attract/browser/Options/Classes/Attract.js
 var Attract = class {
   constructor() {
     this.distance = 200;
@@ -1066,7 +1066,7 @@ var Attract = class {
   }
 };
 
-// client/node_modules/@tsparticles/interaction-external-attract/browser/Attractor.js
+// node_modules/@tsparticles/interaction-external-attract/browser/Attractor.js
 var attractMode = "attract";
 var Attractor = class extends ExternalInteractorBase {
   constructor(engine, container) {
@@ -1141,7 +1141,7 @@ var Attractor = class extends ExternalInteractorBase {
   }
 };
 
-// client/node_modules/@tsparticles/interaction-external-attract/browser/index.js
+// node_modules/@tsparticles/interaction-external-attract/browser/index.js
 async function loadExternalAttractInteraction(engine, refresh = true) {
   engine.checkVersion("3.8.1");
   await engine.addInteractor("externalAttract", (container) => {
@@ -1149,7 +1149,7 @@ async function loadExternalAttractInteraction(engine, refresh = true) {
   }, refresh);
 }
 
-// client/node_modules/@tsparticles/interaction-external-bounce/browser/Utils.js
+// node_modules/@tsparticles/interaction-external-bounce/browser/Utils.js
 var squareExp = 2;
 var half2 = 0.5;
 var halfPI = Math.PI * half2;
@@ -1196,7 +1196,7 @@ function mouseBounce(container, enabledCb) {
   processBounce(container, mousePos, radius, new Circle(mousePos.x, mousePos.y, radius + tolerance), enabledCb);
 }
 
-// client/node_modules/@tsparticles/interaction-external-bounce/browser/Options/Classes/Bounce.js
+// node_modules/@tsparticles/interaction-external-bounce/browser/Options/Classes/Bounce.js
 var Bounce = class {
   constructor() {
     this.distance = 200;
@@ -1211,7 +1211,7 @@ var Bounce = class {
   }
 };
 
-// client/node_modules/@tsparticles/interaction-external-bounce/browser/Bouncer.js
+// node_modules/@tsparticles/interaction-external-bounce/browser/Bouncer.js
 var bounceMode = "bounce";
 var Bouncer = class extends ExternalInteractorBase {
   constructor(container) {
@@ -1250,7 +1250,7 @@ var Bouncer = class extends ExternalInteractorBase {
   }
 };
 
-// client/node_modules/@tsparticles/interaction-external-bounce/browser/index.js
+// node_modules/@tsparticles/interaction-external-bounce/browser/index.js
 async function loadExternalBounceInteraction(engine, refresh = true) {
   engine.checkVersion("3.8.1");
   await engine.addInteractor("externalBounce", (container) => {
@@ -1258,7 +1258,7 @@ async function loadExternalBounceInteraction(engine, refresh = true) {
   }, refresh);
 }
 
-// client/node_modules/@tsparticles/interaction-external-bubble/browser/Options/Classes/BubbleBase.js
+// node_modules/@tsparticles/interaction-external-bubble/browser/Options/Classes/BubbleBase.js
 var BubbleBase = class {
   constructor() {
     this.distance = 200;
@@ -1293,7 +1293,7 @@ var BubbleBase = class {
   }
 };
 
-// client/node_modules/@tsparticles/interaction-external-bubble/browser/Options/Classes/BubbleDiv.js
+// node_modules/@tsparticles/interaction-external-bubble/browser/Options/Classes/BubbleDiv.js
 var BubbleDiv = class extends BubbleBase {
   constructor() {
     super();
@@ -1310,7 +1310,7 @@ var BubbleDiv = class extends BubbleBase {
   }
 };
 
-// client/node_modules/@tsparticles/interaction-external-bubble/browser/Options/Classes/Bubble.js
+// node_modules/@tsparticles/interaction-external-bubble/browser/Options/Classes/Bubble.js
 var Bubble = class extends BubbleBase {
   load(data) {
     super.load(data);
@@ -1325,7 +1325,7 @@ var Bubble = class extends BubbleBase {
   }
 };
 
-// client/node_modules/@tsparticles/interaction-external-bubble/browser/Enums.js
+// node_modules/@tsparticles/interaction-external-bubble/browser/Enums.js
 var ProcessBubbleType;
 (function(ProcessBubbleType2) {
   ProcessBubbleType2["color"] = "color";
@@ -1333,7 +1333,7 @@ var ProcessBubbleType;
   ProcessBubbleType2["size"] = "size";
 })(ProcessBubbleType || (ProcessBubbleType = {}));
 
-// client/node_modules/@tsparticles/interaction-external-bubble/browser/Utils.js
+// node_modules/@tsparticles/interaction-external-bubble/browser/Utils.js
 function calculateBubbleValue(particleValue, modeValue, optionsValue, ratio) {
   if (modeValue >= optionsValue) {
     const value = particleValue + (modeValue - optionsValue) * ratio;
@@ -1344,7 +1344,7 @@ function calculateBubbleValue(particleValue, modeValue, optionsValue, ratio) {
   }
 }
 
-// client/node_modules/@tsparticles/interaction-external-bubble/browser/Bubbler.js
+// node_modules/@tsparticles/interaction-external-bubble/browser/Bubbler.js
 var bubbleMode = "bubble";
 var minDistance2 = 0;
 var defaultClickTime = 0;
@@ -1614,7 +1614,7 @@ var Bubbler = class extends ExternalInteractorBase {
   }
 };
 
-// client/node_modules/@tsparticles/interaction-external-bubble/browser/index.js
+// node_modules/@tsparticles/interaction-external-bubble/browser/index.js
 async function loadExternalBubbleInteraction(engine, refresh = true) {
   engine.checkVersion("3.8.1");
   await engine.addInteractor("externalBubble", (container) => {
@@ -1622,7 +1622,7 @@ async function loadExternalBubbleInteraction(engine, refresh = true) {
   }, refresh);
 }
 
-// client/node_modules/@tsparticles/interaction-external-connect/browser/Options/Classes/ConnectLinks.js
+// node_modules/@tsparticles/interaction-external-connect/browser/Options/Classes/ConnectLinks.js
 var ConnectLinks = class {
   constructor() {
     this.opacity = 0.5;
@@ -1637,7 +1637,7 @@ var ConnectLinks = class {
   }
 };
 
-// client/node_modules/@tsparticles/interaction-external-connect/browser/Options/Classes/Connect.js
+// node_modules/@tsparticles/interaction-external-connect/browser/Options/Classes/Connect.js
 var Connect = class {
   constructor() {
     this.distance = 80;
@@ -1658,7 +1658,7 @@ var Connect = class {
   }
 };
 
-// client/node_modules/@tsparticles/interaction-external-connect/browser/Utils.js
+// node_modules/@tsparticles/interaction-external-connect/browser/Utils.js
 var gradientMin = 0;
 var gradientMax = 1;
 var defaultLinksWidth = 0;
@@ -1697,7 +1697,7 @@ function drawConnection(container, p1, p2) {
   });
 }
 
-// client/node_modules/@tsparticles/interaction-external-connect/browser/Connector.js
+// node_modules/@tsparticles/interaction-external-connect/browser/Connector.js
 var connectMode = "connect";
 var minDistance3 = 0;
 var Connector = class extends ExternalInteractorBase {
@@ -1752,7 +1752,7 @@ var Connector = class extends ExternalInteractorBase {
   }
 };
 
-// client/node_modules/@tsparticles/interaction-external-connect/browser/index.js
+// node_modules/@tsparticles/interaction-external-connect/browser/index.js
 async function loadExternalConnectInteraction(engine, refresh = true) {
   engine.checkVersion("3.8.1");
   await engine.addInteractor("externalConnect", (container) => {
@@ -1760,7 +1760,7 @@ async function loadExternalConnectInteraction(engine, refresh = true) {
   }, refresh);
 }
 
-// client/node_modules/@tsparticles/interaction-external-grab/browser/Options/Classes/GrabLinks.js
+// node_modules/@tsparticles/interaction-external-grab/browser/Options/Classes/GrabLinks.js
 var GrabLinks = class {
   constructor() {
     this.blink = false;
@@ -1786,7 +1786,7 @@ var GrabLinks = class {
   }
 };
 
-// client/node_modules/@tsparticles/interaction-external-grab/browser/Options/Classes/Grab.js
+// node_modules/@tsparticles/interaction-external-grab/browser/Options/Classes/Grab.js
 var Grab = class {
   constructor() {
     this.distance = 100;
@@ -1803,7 +1803,7 @@ var Grab = class {
   }
 };
 
-// client/node_modules/@tsparticles/interaction-external-grab/browser/Utils.js
+// node_modules/@tsparticles/interaction-external-grab/browser/Utils.js
 var defaultWidth = 0;
 function drawGrabLine(context, width, begin, end, colorLine, opacity) {
   drawLine(context, begin, end);
@@ -1818,7 +1818,7 @@ function drawGrab(container, particle, lineColor, opacity, mousePos) {
   });
 }
 
-// client/node_modules/@tsparticles/interaction-external-grab/browser/Grabber.js
+// node_modules/@tsparticles/interaction-external-grab/browser/Grabber.js
 var grabMode = "grab";
 var minDistance4 = 0;
 var minOpacity = 0;
@@ -1887,7 +1887,7 @@ var Grabber = class extends ExternalInteractorBase {
   }
 };
 
-// client/node_modules/@tsparticles/interaction-external-grab/browser/index.js
+// node_modules/@tsparticles/interaction-external-grab/browser/index.js
 async function loadExternalGrabInteraction(engine, refresh = true) {
   engine.checkVersion("3.8.1");
   await engine.addInteractor("externalGrab", (container) => {
@@ -1895,7 +1895,7 @@ async function loadExternalGrabInteraction(engine, refresh = true) {
   }, refresh);
 }
 
-// client/node_modules/@tsparticles/interaction-external-pause/browser/Pauser.js
+// node_modules/@tsparticles/interaction-external-pause/browser/Pauser.js
 var pauseMode = "pause";
 var Pauser = class extends ExternalInteractorBase {
   constructor(container) {
@@ -1925,7 +1925,7 @@ var Pauser = class extends ExternalInteractorBase {
   }
 };
 
-// client/node_modules/@tsparticles/interaction-external-pause/browser/index.js
+// node_modules/@tsparticles/interaction-external-pause/browser/index.js
 async function loadExternalPauseInteraction(engine, refresh = true) {
   engine.checkVersion("3.8.1");
   await engine.addInteractor("externalPause", (container) => {
@@ -1933,7 +1933,7 @@ async function loadExternalPauseInteraction(engine, refresh = true) {
   }, refresh);
 }
 
-// client/node_modules/@tsparticles/interaction-external-push/browser/Options/Classes/Push.js
+// node_modules/@tsparticles/interaction-external-push/browser/Options/Classes/Push.js
 var Push = class {
   constructor() {
     this.default = true;
@@ -1960,7 +1960,7 @@ var Push = class {
   }
 };
 
-// client/node_modules/@tsparticles/interaction-external-push/browser/Pusher.js
+// node_modules/@tsparticles/interaction-external-push/browser/Pusher.js
 var pushMode = "push";
 var minQuantity = 0;
 var Pusher = class extends ExternalInteractorBase {
@@ -2003,7 +2003,7 @@ var Pusher = class extends ExternalInteractorBase {
   }
 };
 
-// client/node_modules/@tsparticles/interaction-external-push/browser/index.js
+// node_modules/@tsparticles/interaction-external-push/browser/index.js
 async function loadExternalPushInteraction(engine, refresh = true) {
   engine.checkVersion("3.8.1");
   await engine.addInteractor("externalPush", (container) => {
@@ -2011,7 +2011,7 @@ async function loadExternalPushInteraction(engine, refresh = true) {
   }, refresh);
 }
 
-// client/node_modules/@tsparticles/interaction-external-remove/browser/Options/Classes/Remove.js
+// node_modules/@tsparticles/interaction-external-remove/browser/Options/Classes/Remove.js
 var Remove = class {
   constructor() {
     this.quantity = 2;
@@ -2027,7 +2027,7 @@ var Remove = class {
   }
 };
 
-// client/node_modules/@tsparticles/interaction-external-remove/browser/Remover.js
+// node_modules/@tsparticles/interaction-external-remove/browser/Remover.js
 var removeMode = "remove";
 var Remover = class extends ExternalInteractorBase {
   constructor(container) {
@@ -2062,7 +2062,7 @@ var Remover = class extends ExternalInteractorBase {
   }
 };
 
-// client/node_modules/@tsparticles/interaction-external-remove/browser/index.js
+// node_modules/@tsparticles/interaction-external-remove/browser/index.js
 async function loadExternalRemoveInteraction(engine, refresh = true) {
   engine.checkVersion("3.8.1");
   await engine.addInteractor("externalRemove", (container) => {
@@ -2070,7 +2070,7 @@ async function loadExternalRemoveInteraction(engine, refresh = true) {
   }, refresh);
 }
 
-// client/node_modules/@tsparticles/interaction-external-repulse/browser/Options/Classes/RepulseBase.js
+// node_modules/@tsparticles/interaction-external-repulse/browser/Options/Classes/RepulseBase.js
 var RepulseBase = class {
   constructor() {
     this.distance = 200;
@@ -2105,7 +2105,7 @@ var RepulseBase = class {
   }
 };
 
-// client/node_modules/@tsparticles/interaction-external-repulse/browser/Options/Classes/RepulseDiv.js
+// node_modules/@tsparticles/interaction-external-repulse/browser/Options/Classes/RepulseDiv.js
 var RepulseDiv = class extends RepulseBase {
   constructor() {
     super();
@@ -2122,7 +2122,7 @@ var RepulseDiv = class extends RepulseBase {
   }
 };
 
-// client/node_modules/@tsparticles/interaction-external-repulse/browser/Options/Classes/Repulse.js
+// node_modules/@tsparticles/interaction-external-repulse/browser/Options/Classes/Repulse.js
 var Repulse = class extends RepulseBase {
   load(data) {
     super.load(data);
@@ -2137,7 +2137,7 @@ var Repulse = class extends RepulseBase {
   }
 };
 
-// client/node_modules/@tsparticles/interaction-external-repulse/browser/Repulser.js
+// node_modules/@tsparticles/interaction-external-repulse/browser/Repulser.js
 var repulseMode = "repulse";
 var minDistance5 = 0;
 var repulseRadiusFactor = 6;
@@ -2296,7 +2296,7 @@ var Repulser = class extends ExternalInteractorBase {
   }
 };
 
-// client/node_modules/@tsparticles/interaction-external-repulse/browser/index.js
+// node_modules/@tsparticles/interaction-external-repulse/browser/index.js
 async function loadExternalRepulseInteraction(engine, refresh = true) {
   engine.checkVersion("3.8.1");
   await engine.addInteractor("externalRepulse", (container) => {
@@ -2304,7 +2304,7 @@ async function loadExternalRepulseInteraction(engine, refresh = true) {
   }, refresh);
 }
 
-// client/node_modules/@tsparticles/interaction-external-slow/browser/Options/Classes/Slow.js
+// node_modules/@tsparticles/interaction-external-slow/browser/Options/Classes/Slow.js
 var Slow = class {
   constructor() {
     this.factor = 3;
@@ -2323,7 +2323,7 @@ var Slow = class {
   }
 };
 
-// client/node_modules/@tsparticles/interaction-external-slow/browser/Slower.js
+// node_modules/@tsparticles/interaction-external-slow/browser/Slower.js
 var slowMode = "slow";
 var minRadius4 = 0;
 var Slower = class extends ExternalInteractorBase {
@@ -2372,7 +2372,7 @@ var Slower = class extends ExternalInteractorBase {
   }
 };
 
-// client/node_modules/@tsparticles/interaction-external-slow/browser/index.js
+// node_modules/@tsparticles/interaction-external-slow/browser/index.js
 async function loadExternalSlowInteraction(engine, refresh = true) {
   engine.checkVersion("3.8.1");
   await engine.addInteractor("externalSlow", (container) => {
@@ -2380,7 +2380,7 @@ async function loadExternalSlowInteraction(engine, refresh = true) {
   }, refresh);
 }
 
-// client/node_modules/@tsparticles/shape-image/browser/Utils.js
+// node_modules/@tsparticles/shape-image/browser/Utils.js
 var stringStart = 0;
 var defaultOpacity2 = 1;
 var currentColorRegex = /(#(?:[0-9a-f]{2}){2,4}|(#[0-9a-f]{3})|(rgb|hsl)a?\((-?\d+%?[,\s]+){2,3}\s*[\d.]+%?\))|currentcolor/gi;
@@ -2468,11 +2468,11 @@ function replaceImageColor(image, imageData, color, particle) {
   });
 }
 
-// client/node_modules/@tsparticles/shape-image/browser/GifUtils/Constants.js
+// node_modules/@tsparticles/shape-image/browser/GifUtils/Constants.js
 var InterlaceOffsets = [0, 4, 2, 1];
 var InterlaceSteps = [8, 8, 4, 2];
 
-// client/node_modules/@tsparticles/shape-image/browser/GifUtils/ByteStream.js
+// node_modules/@tsparticles/shape-image/browser/GifUtils/ByteStream.js
 var ByteStream = class {
   constructor(bytes) {
     this.pos = 0;
@@ -2522,7 +2522,7 @@ var ByteStream = class {
   }
 };
 
-// client/node_modules/@tsparticles/shape-image/browser/GifUtils/Enums/DisposalMethod.js
+// node_modules/@tsparticles/shape-image/browser/GifUtils/Enums/DisposalMethod.js
 var DisposalMethod;
 (function(DisposalMethod2) {
   DisposalMethod2[DisposalMethod2["Replace"] = 0] = "Replace";
@@ -2535,7 +2535,7 @@ var DisposalMethod;
   DisposalMethod2[DisposalMethod2["UndefinedD"] = 7] = "UndefinedD";
 })(DisposalMethod || (DisposalMethod = {}));
 
-// client/node_modules/@tsparticles/shape-image/browser/GifUtils/Types/GIFDataHeaders.js
+// node_modules/@tsparticles/shape-image/browser/GifUtils/Types/GIFDataHeaders.js
 var GIFDataHeaders;
 (function(GIFDataHeaders2) {
   GIFDataHeaders2[GIFDataHeaders2["Extension"] = 33] = "Extension";
@@ -2547,7 +2547,7 @@ var GIFDataHeaders;
   GIFDataHeaders2[GIFDataHeaders2["EndOfFile"] = 59] = "EndOfFile";
 })(GIFDataHeaders || (GIFDataHeaders = {}));
 
-// client/node_modules/@tsparticles/shape-image/browser/GifUtils/Utils.js
+// node_modules/@tsparticles/shape-image/browser/GifUtils/Utils.js
 var origin2 = {
   x: 0,
   y: 0
@@ -2964,7 +2964,7 @@ async function loadGifImage(image) {
   image.loading = false;
 }
 
-// client/node_modules/@tsparticles/shape-image/browser/ImageDrawer.js
+// node_modules/@tsparticles/shape-image/browser/ImageDrawer.js
 var double5 = 2;
 var defaultAlpha2 = 1;
 var sides2 = 12;
@@ -3093,7 +3093,7 @@ var ImageDrawer = class {
   }
 };
 
-// client/node_modules/@tsparticles/shape-image/browser/Options/Classes/Preload.js
+// node_modules/@tsparticles/shape-image/browser/Options/Classes/Preload.js
 var Preload = class {
   constructor() {
     this.src = "";
@@ -3124,7 +3124,7 @@ var Preload = class {
   }
 };
 
-// client/node_modules/@tsparticles/shape-image/browser/ImagePreloader.js
+// node_modules/@tsparticles/shape-image/browser/ImagePreloader.js
 var ImagePreloaderPlugin = class {
   constructor(engine) {
     this.id = "imagePreloader";
@@ -3158,7 +3158,7 @@ var ImagePreloaderPlugin = class {
   }
 };
 
-// client/node_modules/@tsparticles/shape-image/browser/index.js
+// node_modules/@tsparticles/shape-image/browser/index.js
 var extLength = 3;
 function addLoadImageToEngine(engine) {
   if (engine.loadImage) {
@@ -3206,7 +3206,7 @@ async function loadImageShape(engine, refresh = true) {
   await engine.addShape(new ImageDrawer(engine), refresh);
 }
 
-// client/node_modules/@tsparticles/updater-life/browser/Options/Classes/LifeDelay.js
+// node_modules/@tsparticles/updater-life/browser/Options/Classes/LifeDelay.js
 var LifeDelay = class extends ValueWithRandom {
   constructor() {
     super();
@@ -3223,7 +3223,7 @@ var LifeDelay = class extends ValueWithRandom {
   }
 };
 
-// client/node_modules/@tsparticles/updater-life/browser/Options/Classes/LifeDuration.js
+// node_modules/@tsparticles/updater-life/browser/Options/Classes/LifeDuration.js
 var LifeDuration = class extends ValueWithRandom {
   constructor() {
     super();
@@ -3240,7 +3240,7 @@ var LifeDuration = class extends ValueWithRandom {
   }
 };
 
-// client/node_modules/@tsparticles/updater-life/browser/Options/Classes/Life.js
+// node_modules/@tsparticles/updater-life/browser/Options/Classes/Life.js
 var Life = class {
   constructor() {
     this.count = 0;
@@ -3259,7 +3259,7 @@ var Life = class {
   }
 };
 
-// client/node_modules/@tsparticles/updater-life/browser/Utils.js
+// node_modules/@tsparticles/updater-life/browser/Utils.js
 var noTime = 0;
 var infiniteValue = -1;
 var noLife = 0;
@@ -3317,7 +3317,7 @@ function updateLife(particle, delta, canvasSize) {
   }
 }
 
-// client/node_modules/@tsparticles/updater-life/browser/LifeUpdater.js
+// node_modules/@tsparticles/updater-life/browser/LifeUpdater.js
 var noTime2 = 0;
 var identity3 = 1;
 var infiniteValue2 = -1;
@@ -3366,7 +3366,7 @@ var LifeUpdater = class {
   }
 };
 
-// client/node_modules/@tsparticles/updater-life/browser/index.js
+// node_modules/@tsparticles/updater-life/browser/index.js
 async function loadLifeUpdater(engine, refresh = true) {
   engine.checkVersion("3.8.1");
   await engine.addParticleUpdater("life", async (container) => {
@@ -3374,7 +3374,7 @@ async function loadLifeUpdater(engine, refresh = true) {
   }, refresh);
 }
 
-// client/node_modules/@tsparticles/shape-line/browser/Utils.js
+// node_modules/@tsparticles/shape-line/browser/Utils.js
 function drawLine2(data) {
   const { context, particle, radius } = data, shapeData = particle.shapeData, centerY = 0;
   context.moveTo(-radius, centerY);
@@ -3382,7 +3382,7 @@ function drawLine2(data) {
   context.lineCap = shapeData?.cap ?? "butt";
 }
 
-// client/node_modules/@tsparticles/shape-line/browser/LineDrawer.js
+// node_modules/@tsparticles/shape-line/browser/LineDrawer.js
 var sides3 = 1;
 var LineDrawer = class {
   constructor() {
@@ -3396,13 +3396,13 @@ var LineDrawer = class {
   }
 };
 
-// client/node_modules/@tsparticles/shape-line/browser/index.js
+// node_modules/@tsparticles/shape-line/browser/index.js
 async function loadLineShape(engine, refresh = true) {
   engine.checkVersion("3.8.1");
   await engine.addShape(new LineDrawer(), refresh);
 }
 
-// client/node_modules/@tsparticles/move-parallax/browser/ParallaxMover.js
+// node_modules/@tsparticles/move-parallax/browser/ParallaxMover.js
 var half6 = 0.5;
 var ParallaxMover = class {
   init() {
@@ -3431,7 +3431,7 @@ var ParallaxMover = class {
   }
 };
 
-// client/node_modules/@tsparticles/move-parallax/browser/index.js
+// node_modules/@tsparticles/move-parallax/browser/index.js
 async function loadParallaxMover(engine, refresh = true) {
   engine.checkVersion("3.8.1");
   await engine.addMover("parallax", () => {
@@ -3439,7 +3439,7 @@ async function loadParallaxMover(engine, refresh = true) {
   }, refresh);
 }
 
-// client/node_modules/@tsparticles/interaction-particles-attract/browser/Attractor.js
+// node_modules/@tsparticles/interaction-particles-attract/browser/Attractor.js
 var attractFactor = 1e3;
 var identity4 = 1;
 var Attractor2 = class extends ParticlesInteractorBase {
@@ -3474,7 +3474,7 @@ var Attractor2 = class extends ParticlesInteractorBase {
   }
 };
 
-// client/node_modules/@tsparticles/interaction-particles-attract/browser/index.js
+// node_modules/@tsparticles/interaction-particles-attract/browser/index.js
 async function loadParticlesAttractInteraction(engine, refresh = true) {
   engine.checkVersion("3.8.1");
   await engine.addInteractor("particlesAttract", (container) => {
@@ -3482,7 +3482,7 @@ async function loadParticlesAttractInteraction(engine, refresh = true) {
   }, refresh);
 }
 
-// client/node_modules/@tsparticles/interaction-particles-collisions/browser/Absorb.js
+// node_modules/@tsparticles/interaction-particles-collisions/browser/Absorb.js
 var half7 = 0.5;
 var absorbFactor = 10;
 var minAbsorbFactor = 0;
@@ -3510,7 +3510,7 @@ function absorb(p1, p2, delta, pixelRatio) {
   }
 }
 
-// client/node_modules/@tsparticles/interaction-particles-collisions/browser/Bounce.js
+// node_modules/@tsparticles/interaction-particles-collisions/browser/Bounce.js
 var fixBounceSpeed = (p) => {
   if (p.collisionMaxSpeed === void 0) {
     p.collisionMaxSpeed = getRangeValue(p.options.collisions.maxSpeed);
@@ -3525,7 +3525,7 @@ function bounce(p1, p2) {
   fixBounceSpeed(p2);
 }
 
-// client/node_modules/@tsparticles/interaction-particles-collisions/browser/Destroy.js
+// node_modules/@tsparticles/interaction-particles-collisions/browser/Destroy.js
 function destroy(p1, p2) {
   if (!p1.unbreakable && !p2.unbreakable) {
     bounce(p1, p2);
@@ -3540,7 +3540,7 @@ function destroy(p1, p2) {
   }
 }
 
-// client/node_modules/@tsparticles/interaction-particles-collisions/browser/ResolveCollision.js
+// node_modules/@tsparticles/interaction-particles-collisions/browser/ResolveCollision.js
 function resolveCollision(p1, p2, delta, pixelRatio) {
   switch (p1.options.collisions.mode) {
     case CollisionMode.absorb: {
@@ -3558,7 +3558,7 @@ function resolveCollision(p1, p2, delta, pixelRatio) {
   }
 }
 
-// client/node_modules/@tsparticles/interaction-particles-collisions/browser/Collider.js
+// node_modules/@tsparticles/interaction-particles-collisions/browser/Collider.js
 var double6 = 2;
 var Collider = class extends ParticlesInteractorBase {
   constructor(container) {
@@ -3595,7 +3595,7 @@ var Collider = class extends ParticlesInteractorBase {
   }
 };
 
-// client/node_modules/@tsparticles/interaction-particles-collisions/browser/index.js
+// node_modules/@tsparticles/interaction-particles-collisions/browser/index.js
 async function loadParticlesCollisionsInteraction(engine, refresh = true) {
   engine.checkVersion("3.8.1");
   await engine.addInteractor("particlesCollisions", (container) => {
@@ -3603,7 +3603,7 @@ async function loadParticlesCollisionsInteraction(engine, refresh = true) {
   }, refresh);
 }
 
-// client/node_modules/@tsparticles/interaction-particles-links/browser/CircleWarp.js
+// node_modules/@tsparticles/interaction-particles-links/browser/CircleWarp.js
 var double7 = 2;
 var CircleWarp = class extends Circle {
   constructor(x, y, radius, canvasSize) {
@@ -3634,7 +3634,7 @@ var CircleWarp = class extends Circle {
   }
 };
 
-// client/node_modules/@tsparticles/interaction-particles-links/browser/Options/Classes/LinksShadow.js
+// node_modules/@tsparticles/interaction-particles-links/browser/Options/Classes/LinksShadow.js
 var LinksShadow = class {
   constructor() {
     this.blur = 5;
@@ -3656,7 +3656,7 @@ var LinksShadow = class {
   }
 };
 
-// client/node_modules/@tsparticles/interaction-particles-links/browser/Options/Classes/LinksTriangle.js
+// node_modules/@tsparticles/interaction-particles-links/browser/Options/Classes/LinksTriangle.js
 var LinksTriangle = class {
   constructor() {
     this.enable = false;
@@ -3681,7 +3681,7 @@ var LinksTriangle = class {
   }
 };
 
-// client/node_modules/@tsparticles/interaction-particles-links/browser/Options/Classes/Links.js
+// node_modules/@tsparticles/interaction-particles-links/browser/Options/Classes/Links.js
 var Links = class {
   constructor() {
     this.blink = false;
@@ -3734,7 +3734,7 @@ var Links = class {
   }
 };
 
-// client/node_modules/@tsparticles/interaction-particles-links/browser/Linker.js
+// node_modules/@tsparticles/interaction-particles-links/browser/Linker.js
 var squarePower2 = 2;
 var opacityOffset = 1;
 var origin3 = {
@@ -3838,14 +3838,14 @@ var Linker = class extends ParticlesInteractorBase {
   }
 };
 
-// client/node_modules/@tsparticles/interaction-particles-links/browser/interaction.js
+// node_modules/@tsparticles/interaction-particles-links/browser/interaction.js
 async function loadLinksInteraction(engine, refresh = true) {
   await engine.addInteractor("particlesLinks", async (container) => {
     return Promise.resolve(new Linker(container, engine));
   }, refresh);
 }
 
-// client/node_modules/@tsparticles/interaction-particles-links/browser/Utils.js
+// node_modules/@tsparticles/interaction-particles-links/browser/Utils.js
 function drawTriangle(context, p1, p2, p3) {
   context.beginPath();
   context.moveTo(p1.x, p1.y);
@@ -3943,7 +3943,7 @@ function setLinkFrequency(particles, dictionary) {
   return res;
 }
 
-// client/node_modules/@tsparticles/interaction-particles-links/browser/LinkInstance.js
+// node_modules/@tsparticles/interaction-particles-links/browser/LinkInstance.js
 var minOpacity2 = 0;
 var minWidth = 0;
 var minDistance7 = 0;
@@ -4093,7 +4093,7 @@ var LinkInstance = class {
   }
 };
 
-// client/node_modules/@tsparticles/interaction-particles-links/browser/LinksPlugin.js
+// node_modules/@tsparticles/interaction-particles-links/browser/LinksPlugin.js
 var LinksPlugin = class {
   constructor(engine) {
     this.id = "links";
@@ -4109,20 +4109,20 @@ var LinksPlugin = class {
   }
 };
 
-// client/node_modules/@tsparticles/interaction-particles-links/browser/plugin.js
+// node_modules/@tsparticles/interaction-particles-links/browser/plugin.js
 async function loadLinksPlugin(engine, refresh = true) {
   const plugin = new LinksPlugin(engine);
   await engine.addPlugin(plugin, refresh);
 }
 
-// client/node_modules/@tsparticles/interaction-particles-links/browser/index.js
+// node_modules/@tsparticles/interaction-particles-links/browser/index.js
 async function loadParticlesLinksInteraction(engine, refresh = true) {
   engine.checkVersion("3.8.1");
   await loadLinksInteraction(engine, refresh);
   await loadLinksPlugin(engine, refresh);
 }
 
-// client/node_modules/@tsparticles/shape-polygon/browser/Utils.js
+// node_modules/@tsparticles/shape-polygon/browser/Utils.js
 var piDeg = 180;
 var origin4 = { x: 0, y: 0 };
 var sidesOffset = 2;
@@ -4141,7 +4141,7 @@ function drawPolygon(data, start, side) {
   }
 }
 
-// client/node_modules/@tsparticles/shape-polygon/browser/PolygonDrawerBase.js
+// node_modules/@tsparticles/shape-polygon/browser/PolygonDrawerBase.js
 var defaultSides = 5;
 var PolygonDrawerBase = class {
   draw(data) {
@@ -4154,7 +4154,7 @@ var PolygonDrawerBase = class {
   }
 };
 
-// client/node_modules/@tsparticles/shape-polygon/browser/PolygonDrawer.js
+// node_modules/@tsparticles/shape-polygon/browser/PolygonDrawer.js
 var sidesCenterFactor = 3.5;
 var yFactor = 2.66;
 var sidesFactor = 3;
@@ -4181,7 +4181,7 @@ var PolygonDrawer = class extends PolygonDrawerBase {
   }
 };
 
-// client/node_modules/@tsparticles/shape-polygon/browser/TriangleDrawer.js
+// node_modules/@tsparticles/shape-polygon/browser/TriangleDrawer.js
 var yFactor2 = 1.66;
 var sides4 = 3;
 var double8 = 2;
@@ -4211,7 +4211,7 @@ var TriangleDrawer = class extends PolygonDrawerBase {
   }
 };
 
-// client/node_modules/@tsparticles/shape-polygon/browser/index.js
+// node_modules/@tsparticles/shape-polygon/browser/index.js
 async function loadGenericPolygonShape(engine, refresh = true) {
   engine.checkVersion("3.8.1");
   await engine.addShape(new PolygonDrawer(), refresh);
@@ -4226,7 +4226,7 @@ async function loadPolygonShape(engine, refresh = true) {
   await loadTriangleShape(engine, refresh);
 }
 
-// client/node_modules/@tsparticles/updater-rotate/browser/Options/Classes/RotateAnimation.js
+// node_modules/@tsparticles/updater-rotate/browser/Options/Classes/RotateAnimation.js
 var RotateAnimation = class {
   constructor() {
     this.enable = false;
@@ -4253,7 +4253,7 @@ var RotateAnimation = class {
   }
 };
 
-// client/node_modules/@tsparticles/updater-rotate/browser/Options/Classes/Rotate.js
+// node_modules/@tsparticles/updater-rotate/browser/Options/Classes/Rotate.js
 var Rotate = class extends ValueWithRandom {
   constructor() {
     super();
@@ -4277,7 +4277,7 @@ var Rotate = class extends ValueWithRandom {
   }
 };
 
-// client/node_modules/@tsparticles/updater-rotate/browser/RotateUpdater.js
+// node_modules/@tsparticles/updater-rotate/browser/RotateUpdater.js
 var double9 = 2;
 var doublePI3 = Math.PI * double9;
 var identity5 = 1;
@@ -4350,7 +4350,7 @@ var RotateUpdater = class {
   }
 };
 
-// client/node_modules/@tsparticles/updater-rotate/browser/index.js
+// node_modules/@tsparticles/updater-rotate/browser/index.js
 async function loadRotateUpdater(engine, refresh = true) {
   engine.checkVersion("3.8.1");
   await engine.addParticleUpdater("rotate", (container) => {
@@ -4358,7 +4358,7 @@ async function loadRotateUpdater(engine, refresh = true) {
   }, refresh);
 }
 
-// client/node_modules/@tsparticles/shape-square/browser/Utils.js
+// node_modules/@tsparticles/shape-square/browser/Utils.js
 var fixFactorSquared = 2;
 var fixFactor = Math.sqrt(fixFactorSquared);
 var double10 = 2;
@@ -4367,7 +4367,7 @@ function drawSquare(data) {
   context.rect(-fixedRadius, -fixedRadius, fixedDiameter, fixedDiameter);
 }
 
-// client/node_modules/@tsparticles/shape-square/browser/SquareDrawer.js
+// node_modules/@tsparticles/shape-square/browser/SquareDrawer.js
 var sides5 = 4;
 var SquareDrawer = class {
   constructor() {
@@ -4381,13 +4381,13 @@ var SquareDrawer = class {
   }
 };
 
-// client/node_modules/@tsparticles/shape-square/browser/index.js
+// node_modules/@tsparticles/shape-square/browser/index.js
 async function loadSquareShape(engine, refresh = true) {
   engine.checkVersion("3.8.1");
   await engine.addShape(new SquareDrawer(), refresh);
 }
 
-// client/node_modules/@tsparticles/shape-star/browser/Utils.js
+// node_modules/@tsparticles/shape-star/browser/Utils.js
 var defaultInset = 2;
 var origin5 = { x: 0, y: 0 };
 function drawStar(data) {
@@ -4401,7 +4401,7 @@ function drawStar(data) {
   }
 }
 
-// client/node_modules/@tsparticles/shape-star/browser/StarDrawer.js
+// node_modules/@tsparticles/shape-star/browser/StarDrawer.js
 var defaultInset2 = 2;
 var defaultSides2 = 5;
 var StarDrawer = class {
@@ -4421,13 +4421,13 @@ var StarDrawer = class {
   }
 };
 
-// client/node_modules/@tsparticles/shape-star/browser/index.js
+// node_modules/@tsparticles/shape-star/browser/index.js
 async function loadStarShape(engine, refresh = true) {
   engine.checkVersion("3.8.1");
   await engine.addShape(new StarDrawer(), refresh);
 }
 
-// client/node_modules/@tsparticles/updater-stroke-color/browser/StrokeColorUpdater.js
+// node_modules/@tsparticles/updater-stroke-color/browser/StrokeColorUpdater.js
 var defaultOpacity3 = 1;
 var StrokeColorUpdater = class {
   constructor(container, engine) {
@@ -4457,7 +4457,7 @@ var StrokeColorUpdater = class {
   }
 };
 
-// client/node_modules/@tsparticles/updater-stroke-color/browser/index.js
+// node_modules/@tsparticles/updater-stroke-color/browser/index.js
 async function loadStrokeColorUpdater(engine, refresh = true) {
   engine.checkVersion("3.8.1");
   await engine.addParticleUpdater("strokeColor", (container) => {
@@ -4465,7 +4465,7 @@ async function loadStrokeColorUpdater(engine, refresh = true) {
   }, refresh);
 }
 
-// client/node_modules/@tsparticles/slim/browser/index.js
+// node_modules/@tsparticles/slim/browser/index.js
 async function loadSlim(engine, refresh = true) {
   engine.checkVersion("3.8.1");
   await loadParallaxMover(engine, false);

@@ -361,10 +361,10 @@ const LandingPage = () => {
           {/* Content */}
           <div className="relative flex flex-col items-center justify-center h-full text-white p-4 sm:p-8" style={{ zIndex: 40 }}>
             <h1 className="text-xl sm:text-3xl md:text-3xl lg:text-4xl font-bold text-center mb-4 px-2">
-              Own Your Digital Life, Secured by Bitcoin.
+            Own Your Digital Life, Secured by Bitcoin.
             </h1>
             <p className="text-base sm:text-lg md:text-lg lg:text-xl text-center mb-8 text-white max-w-[90vw] md:max-w-none px-2 font-[200]">
-              Elastos puts you in control of your identity, data, and digital assets.
+            Elastos puts you in control of your identity, data, and digital assets.
             </p>
             <div className="flex gap-4">
               <a 

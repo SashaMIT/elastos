@@ -1,9 +1,9 @@
 import {
   require_jsx_runtime
-} from "./chunk-VNID673C.js";
+} from "./chunk-QO6G5LJU.js";
 import {
   require_react
-} from "./chunk-K3CCW6BN.js";
+} from "./chunk-A5RJMWOC.js";
 import {
   __privateAdd,
   __privateGet,
@@ -11,9 +11,9 @@ import {
   __privateSet,
   __privateWrapper,
   __toESM
-} from "./chunk-VHXUCOYC.js";
+} from "./chunk-RDKGUBC5.js";
 
-// client/node_modules/@tanstack/query-core/build/modern/subscribable.js
+// node_modules/@tanstack/query-core/build/modern/subscribable.js
 var Subscribable = class {
   constructor() {
     this.listeners = /* @__PURE__ */ new Set();
@@ -36,7 +36,7 @@ var Subscribable = class {
   }
 };
 
-// client/node_modules/@tanstack/query-core/build/modern/utils.js
+// node_modules/@tanstack/query-core/build/modern/utils.js
 var isServer = typeof window === "undefined" || "Deno" in globalThis;
 function noop() {
 }
@@ -136,7 +136,7 @@ function partialMatchKey(a, b) {
     return false;
   }
   if (a && b && typeof a === "object" && typeof b === "object") {
-    return Object.keys(b).every((key) => partialMatchKey(a[key], b[key]));
+    return !Object.keys(b).some((key) => !partialMatchKey(a[key], b[key]));
   }
   return false;
 }
@@ -221,7 +221,6 @@ function replaceData(prevData, data, options) {
         console.error(
           `Structural sharing requires data to be JSON serializable. To fix this, turn off structuralSharing or return JSON-serializable data from your queryFn. [${options.queryHash}]: ${error}`
         );
-        throw error;
       }
     }
     return replaceEqualDeep(prevData, data);
@@ -257,7 +256,7 @@ function ensureQueryFn(options, fetchOptions) {
   return options.queryFn;
 }
 
-// client/node_modules/@tanstack/query-core/build/modern/focusManager.js
+// node_modules/@tanstack/query-core/build/modern/focusManager.js
 var _focused, _cleanup, _setup, _a;
 var FocusManager = (_a = class extends Subscribable {
   constructor() {
@@ -322,7 +321,7 @@ var FocusManager = (_a = class extends Subscribable {
 }, _focused = new WeakMap(), _cleanup = new WeakMap(), _setup = new WeakMap(), _a);
 var focusManager = new FocusManager();
 
-// client/node_modules/@tanstack/query-core/build/modern/onlineManager.js
+// node_modules/@tanstack/query-core/build/modern/onlineManager.js
 var _online, _cleanup2, _setup2, _a2;
 var OnlineManager = (_a2 = class extends Subscribable {
   constructor() {
@@ -377,7 +376,7 @@ var OnlineManager = (_a2 = class extends Subscribable {
 }, _online = new WeakMap(), _cleanup2 = new WeakMap(), _setup2 = new WeakMap(), _a2);
 var onlineManager = new OnlineManager();
 
-// client/node_modules/@tanstack/query-core/build/modern/thenable.js
+// node_modules/@tanstack/query-core/build/modern/thenable.js
 function pendingThenable() {
   let resolve;
   let reject;
@@ -410,7 +409,7 @@ function pendingThenable() {
   return thenable;
 }
 
-// client/node_modules/@tanstack/query-core/build/modern/retryer.js
+// node_modules/@tanstack/query-core/build/modern/retryer.js
 function defaultRetryDelay(failureCount) {
   return Math.min(1e3 * 2 ** failureCount, 3e4);
 }
@@ -535,8 +534,7 @@ function createRetryer(config) {
   };
 }
 
-// client/node_modules/@tanstack/query-core/build/modern/notifyManager.js
-var defaultScheduler = (cb) => setTimeout(cb, 0);
+// node_modules/@tanstack/query-core/build/modern/notifyManager.js
 function createNotifyManager() {
   let queue = [];
   let transactions = 0;
@@ -546,7 +544,7 @@ function createNotifyManager() {
   let batchNotifyFn = (callback) => {
     callback();
   };
-  let scheduleFn = defaultScheduler;
+  let scheduleFn = (cb) => setTimeout(cb, 0);
   const schedule = (callback) => {
     if (transactions) {
       queue.push(callback);
@@ -615,7 +613,7 @@ function createNotifyManager() {
 }
 var notifyManager = createNotifyManager();
 
-// client/node_modules/@tanstack/query-core/build/modern/removable.js
+// node_modules/@tanstack/query-core/build/modern/removable.js
 var _gcTimeout, _a3;
 var Removable = (_a3 = class {
   constructor() {
@@ -646,8 +644,8 @@ var Removable = (_a3 = class {
   }
 }, _gcTimeout = new WeakMap(), _a3);
 
-// client/node_modules/@tanstack/query-core/build/modern/query.js
-var _initialState, _revertState, _cache, _client, _retryer, _defaultOptions, _abortSignalConsumed, _Query_instances, dispatch_fn, _a4;
+// node_modules/@tanstack/query-core/build/modern/query.js
+var _initialState, _revertState, _cache, _retryer, _defaultOptions, _abortSignalConsumed, _Query_instances, dispatch_fn, _a4;
 var Query = (_a4 = class extends Removable {
   constructor(config) {
     super();
@@ -655,7 +653,6 @@ var Query = (_a4 = class extends Removable {
     __privateAdd(this, _initialState);
     __privateAdd(this, _revertState);
     __privateAdd(this, _cache);
-    __privateAdd(this, _client);
     __privateAdd(this, _retryer);
     __privateAdd(this, _defaultOptions);
     __privateAdd(this, _abortSignalConsumed);
@@ -663,8 +660,7 @@ var Query = (_a4 = class extends Removable {
     __privateSet(this, _defaultOptions, config.defaultOptions);
     this.setOptions(config.options);
     this.observers = [];
-    __privateSet(this, _client, config.client);
-    __privateSet(this, _cache, __privateGet(this, _client).getQueryCache());
+    __privateSet(this, _cache, config.cache);
     this.queryKey = config.queryKey;
     this.queryHash = config.queryHash;
     __privateSet(this, _initialState, getDefaultState(this.options));
@@ -816,7 +812,6 @@ var Query = (_a4 = class extends Removable {
     const fetchFn = () => {
       const queryFn = ensureQueryFn(this.options, fetchOptions);
       const queryFnContext = {
-        client: __privateGet(this, _client),
         queryKey: this.queryKey,
         meta: this.meta
       };
@@ -835,7 +830,6 @@ var Query = (_a4 = class extends Removable {
       fetchOptions,
       options: this.options,
       queryKey: this.queryKey,
-      client: __privateGet(this, _client),
       state: this.state,
       fetchFn
     };
@@ -913,7 +907,7 @@ var Query = (_a4 = class extends Removable {
     }));
     return __privateGet(this, _retryer).start();
   }
-}, _initialState = new WeakMap(), _revertState = new WeakMap(), _cache = new WeakMap(), _client = new WeakMap(), _retryer = new WeakMap(), _defaultOptions = new WeakMap(), _abortSignalConsumed = new WeakMap(), _Query_instances = new WeakSet(), dispatch_fn = function(action) {
+}, _initialState = new WeakMap(), _revertState = new WeakMap(), _cache = new WeakMap(), _retryer = new WeakMap(), _defaultOptions = new WeakMap(), _abortSignalConsumed = new WeakMap(), _Query_instances = new WeakSet(), dispatch_fn = function(action) {
   const reducer = (state) => {
     switch (action.type) {
       case "failed":
@@ -1019,7 +1013,7 @@ function getDefaultState(options) {
   };
 }
 
-// client/node_modules/@tanstack/query-core/build/modern/queryCache.js
+// node_modules/@tanstack/query-core/build/modern/queryCache.js
 var _queries, _a5;
 var QueryCache = (_a5 = class extends Subscribable {
   constructor(config = {}) {
@@ -1034,7 +1028,7 @@ var QueryCache = (_a5 = class extends Subscribable {
     let query = this.get(queryHash);
     if (!query) {
       query = new Query({
-        client,
+        cache: this,
         queryKey,
         queryHash,
         options: client.defaultQueryOptions(options),
@@ -1110,7 +1104,7 @@ var QueryCache = (_a5 = class extends Subscribable {
   }
 }, _queries = new WeakMap(), _a5);
 
-// client/node_modules/@tanstack/query-core/build/modern/mutation.js
+// node_modules/@tanstack/query-core/build/modern/mutation.js
 var _observers, _mutationCache, _retryer2, _Mutation_instances, dispatch_fn2, _a6;
 var Mutation = (_a6 = class extends Removable {
   constructor(config) {
@@ -1339,7 +1333,7 @@ function getDefaultState2() {
   };
 }
 
-// client/node_modules/@tanstack/query-core/build/modern/mutationCache.js
+// node_modules/@tanstack/query-core/build/modern/mutationCache.js
 var _mutations, _scopes, _mutationId, _a7;
 var MutationCache = (_a7 = class extends Subscribable {
   constructor(config = {}) {
@@ -1456,7 +1450,7 @@ function scopeFor(mutation) {
   return mutation.options.scope?.id;
 }
 
-// client/node_modules/@tanstack/query-core/build/modern/infiniteQueryBehavior.js
+// node_modules/@tanstack/query-core/build/modern/infiniteQueryBehavior.js
 function infiniteQueryBehavior(pages) {
   return {
     onFetch: (context, query) => {
@@ -1492,7 +1486,6 @@ function infiniteQueryBehavior(pages) {
             return Promise.resolve(data);
           }
           const queryFnContext = {
-            client: context.client,
             queryKey: context.queryKey,
             pageParam: param,
             direction: previous ? "backward" : "forward",
@@ -1536,7 +1529,6 @@ function infiniteQueryBehavior(pages) {
           return context.options.persister?.(
             fetchFn,
             {
-              client: context.client,
               queryKey: context.queryKey,
               meta: context.options.meta,
               signal: context.signal
@@ -1563,15 +1555,17 @@ function getPreviousPageParam(options, { pages, pageParams }) {
   return pages.length > 0 ? options.getPreviousPageParam?.(pages[0], pages, pageParams[0], pageParams) : void 0;
 }
 function hasNextPage(options, data) {
-  if (!data) return false;
+  if (!data)
+    return false;
   return getNextPageParam(options, data) != null;
 }
 function hasPreviousPage(options, data) {
-  if (!data || !options.getPreviousPageParam) return false;
+  if (!data || !options.getPreviousPageParam)
+    return false;
   return getPreviousPageParam(options, data) != null;
 }
 
-// client/node_modules/@tanstack/query-core/build/modern/queryClient.js
+// node_modules/@tanstack/query-core/build/modern/queryClient.js
 var _queryCache, _mutationCache2, _defaultOptions2, _queryDefaults, _mutationDefaults, _mountCount, _unsubscribeFocus, _unsubscribeOnline, _a8;
 var QueryClient = (_a8 = class {
   constructor(config = {}) {
@@ -1592,7 +1586,8 @@ var QueryClient = (_a8 = class {
   }
   mount() {
     __privateWrapper(this, _mountCount)._++;
-    if (__privateGet(this, _mountCount) !== 1) return;
+    if (__privateGet(this, _mountCount) !== 1)
+      return;
     __privateSet(this, _unsubscribeFocus, focusManager.subscribe(async (focused) => {
       if (focused) {
         await this.resumePausedMutations();
@@ -1609,7 +1604,8 @@ var QueryClient = (_a8 = class {
   unmount() {
     var _a12, _b;
     __privateWrapper(this, _mountCount)._--;
-    if (__privateGet(this, _mountCount) !== 0) return;
+    if (__privateGet(this, _mountCount) !== 0)
+      return;
     (_a12 = __privateGet(this, _unsubscribeFocus)) == null ? void 0 : _a12.call(this);
     __privateSet(this, _unsubscribeFocus, void 0);
     (_b = __privateGet(this, _unsubscribeOnline)) == null ? void 0 : _b.call(this);
@@ -1621,13 +1617,6 @@ var QueryClient = (_a8 = class {
   isMutating(filters) {
     return __privateGet(this, _mutationCache2).findAll({ ...filters, status: "pending" }).length;
   }
-  /**
-   * Imperative (non-reactive) way to retrieve data for a QueryKey.
-   * Should only be used in callbacks or functions where reading the latest data is necessary, e.g. for optimistic updates.
-   *
-   * Hint: Do not use this function inside a component, because it won't receive updates.
-   * Use `useQuery` to create a `QueryObserver` that subscribes to changes.
-   */
   getQueryData(queryKey) {
     const options = this.defaultQueryOptions({ queryKey });
     return __privateGet(this, _queryCache).get(options.queryHash)?.state.data;
@@ -1686,17 +1675,15 @@ var QueryClient = (_a8 = class {
   }
   resetQueries(filters, options) {
     const queryCache = __privateGet(this, _queryCache);
+    const refetchFilters = {
+      type: "active",
+      ...filters
+    };
     return notifyManager.batch(() => {
       queryCache.findAll(filters).forEach((query) => {
         query.reset();
       });
-      return this.refetchQueries(
-        {
-          type: "active",
-          ...filters
-        },
-        options
-      );
+      return this.refetchQueries(refetchFilters, options);
     });
   }
   cancelQueries(filters, cancelOptions = {}) {
@@ -1714,13 +1701,11 @@ var QueryClient = (_a8 = class {
       if (filters?.refetchType === "none") {
         return Promise.resolve();
       }
-      return this.refetchQueries(
-        {
-          ...filters,
-          type: filters?.refetchType ?? filters?.type ?? "active"
-        },
-        options
-      );
+      const refetchFilters = {
+        ...filters,
+        type: filters?.refetchType ?? filters?.type ?? "active"
+      };
+      return this.refetchQueries(refetchFilters, options);
     });
   }
   refetchQueries(filters, options = {}) {
@@ -1805,10 +1790,10 @@ var QueryClient = (_a8 = class {
   }
   getMutationDefaults(mutationKey) {
     const defaults = [...__privateGet(this, _mutationDefaults).values()];
-    const result = {};
+    let result = {};
     defaults.forEach((queryDefault) => {
       if (partialMatchKey(mutationKey, queryDefault.mutationKey)) {
-        Object.assign(result, queryDefault.defaultOptions);
+        result = { ...result, ...queryDefault.defaultOptions };
       }
     });
     return result;
@@ -1860,13 +1845,13 @@ var QueryClient = (_a8 = class {
   }
 }, _queryCache = new WeakMap(), _mutationCache2 = new WeakMap(), _defaultOptions2 = new WeakMap(), _queryDefaults = new WeakMap(), _mutationDefaults = new WeakMap(), _mountCount = new WeakMap(), _unsubscribeFocus = new WeakMap(), _unsubscribeOnline = new WeakMap(), _a8);
 
-// client/node_modules/@tanstack/query-core/build/modern/queryObserver.js
-var _client2, _currentQuery, _currentQueryInitialState, _currentResult, _currentResultState, _currentResultOptions, _currentThenable, _selectError, _selectFn, _selectResult, _lastQueryWithDefinedData, _staleTimeoutId, _refetchIntervalId, _currentRefetchInterval, _trackedProps, _QueryObserver_instances, executeFetch_fn, updateStaleTimeout_fn, computeRefetchInterval_fn, updateRefetchInterval_fn, updateTimers_fn, clearStaleTimeout_fn, clearRefetchInterval_fn, updateQuery_fn, notify_fn, _a9;
+// node_modules/@tanstack/query-core/build/modern/queryObserver.js
+var _client, _currentQuery, _currentQueryInitialState, _currentResult, _currentResultState, _currentResultOptions, _currentThenable, _selectError, _selectFn, _selectResult, _lastQueryWithDefinedData, _staleTimeoutId, _refetchIntervalId, _currentRefetchInterval, _trackedProps, _QueryObserver_instances, executeFetch_fn, updateStaleTimeout_fn, computeRefetchInterval_fn, updateRefetchInterval_fn, updateTimers_fn, clearStaleTimeout_fn, clearRefetchInterval_fn, updateQuery_fn, notify_fn, _a9;
 var QueryObserver = (_a9 = class extends Subscribable {
   constructor(client, options) {
     super();
     __privateAdd(this, _QueryObserver_instances);
-    __privateAdd(this, _client2);
+    __privateAdd(this, _client);
     __privateAdd(this, _currentQuery);
     __privateAdd(this, _currentQueryInitialState);
     __privateAdd(this, _currentResult);
@@ -1884,7 +1869,7 @@ var QueryObserver = (_a9 = class extends Subscribable {
     __privateAdd(this, _currentRefetchInterval);
     __privateAdd(this, _trackedProps, /* @__PURE__ */ new Set());
     this.options = options;
-    __privateSet(this, _client2, client);
+    __privateSet(this, _client, client);
     __privateSet(this, _selectError, null);
     __privateSet(this, _currentThenable, pendingThenable());
     if (!this.options.experimental_prefetchInRender) {
@@ -1934,10 +1919,10 @@ var QueryObserver = (_a9 = class extends Subscribable {
     __privateMethod(this, _QueryObserver_instances, clearRefetchInterval_fn).call(this);
     __privateGet(this, _currentQuery).removeObserver(this);
   }
-  setOptions(options) {
+  setOptions(options, notifyOptions) {
     const prevOptions = this.options;
     const prevQuery = __privateGet(this, _currentQuery);
-    this.options = __privateGet(this, _client2).defaultQueryOptions(options);
+    this.options = __privateGet(this, _client).defaultQueryOptions(options);
     if (this.options.enabled !== void 0 && typeof this.options.enabled !== "boolean" && typeof this.options.enabled !== "function" && typeof resolveEnabled(this.options.enabled, __privateGet(this, _currentQuery)) !== "boolean") {
       throw new Error(
         "Expected enabled to be a boolean or a callback that returns a boolean"
@@ -1946,7 +1931,7 @@ var QueryObserver = (_a9 = class extends Subscribable {
     __privateMethod(this, _QueryObserver_instances, updateQuery_fn).call(this);
     __privateGet(this, _currentQuery).setOptions(this.options);
     if (prevOptions._defaulted && !shallowEqualObjects(this.options, prevOptions)) {
-      __privateGet(this, _client2).getQueryCache().notify({
+      __privateGet(this, _client).getQueryCache().notify({
         type: "observerOptionsUpdated",
         query: __privateGet(this, _currentQuery),
         observer: this
@@ -1961,7 +1946,7 @@ var QueryObserver = (_a9 = class extends Subscribable {
     )) {
       __privateMethod(this, _QueryObserver_instances, executeFetch_fn).call(this);
     }
-    this.updateResult();
+    this.updateResult(notifyOptions);
     if (mounted && (__privateGet(this, _currentQuery) !== prevQuery || resolveEnabled(this.options.enabled, __privateGet(this, _currentQuery)) !== resolveEnabled(prevOptions.enabled, __privateGet(this, _currentQuery)) || resolveStaleTime(this.options.staleTime, __privateGet(this, _currentQuery)) !== resolveStaleTime(prevOptions.staleTime, __privateGet(this, _currentQuery)))) {
       __privateMethod(this, _QueryObserver_instances, updateStaleTimeout_fn).call(this);
     }
@@ -1971,7 +1956,7 @@ var QueryObserver = (_a9 = class extends Subscribable {
     }
   }
   getOptimisticResult(options) {
-    const query = __privateGet(this, _client2).getQueryCache().build(__privateGet(this, _client2), options);
+    const query = __privateGet(this, _client).getQueryCache().build(__privateGet(this, _client), options);
     const result = this.createResult(query, options);
     if (shouldAssignObserverCurrentProperties(this, result)) {
       __privateSet(this, _currentResult, result);
@@ -2010,8 +1995,8 @@ var QueryObserver = (_a9 = class extends Subscribable {
     });
   }
   fetchOptimistic(options) {
-    const defaultedOptions = __privateGet(this, _client2).defaultQueryOptions(options);
-    const query = __privateGet(this, _client2).getQueryCache().build(__privateGet(this, _client2), defaultedOptions);
+    const defaultedOptions = __privateGet(this, _client).defaultQueryOptions(options);
+    const query = __privateGet(this, _client).getQueryCache().build(__privateGet(this, _client), defaultedOptions);
     return query.fetch().then(() => this.createResult(query, defaultedOptions));
   }
   fetch(fetchOptions) {
@@ -2050,18 +2035,40 @@ var QueryObserver = (_a9 = class extends Subscribable {
       }
     }
     let { error, errorUpdatedAt, status } = newState;
-    data = newState.data;
-    let skipSelect = false;
+    if (options.select && newState.data !== void 0) {
+      if (prevResult && newState.data === prevResultState?.data && options.select === __privateGet(this, _selectFn)) {
+        data = __privateGet(this, _selectResult);
+      } else {
+        try {
+          __privateSet(this, _selectFn, options.select);
+          data = options.select(newState.data);
+          data = replaceData(prevResult?.data, data, options);
+          __privateSet(this, _selectResult, data);
+          __privateSet(this, _selectError, null);
+        } catch (selectError) {
+          __privateSet(this, _selectError, selectError);
+        }
+      }
+    } else {
+      data = newState.data;
+    }
     if (options.placeholderData !== void 0 && data === void 0 && status === "pending") {
       let placeholderData;
       if (prevResult?.isPlaceholderData && options.placeholderData === prevResultOptions?.placeholderData) {
         placeholderData = prevResult.data;
-        skipSelect = true;
       } else {
         placeholderData = typeof options.placeholderData === "function" ? options.placeholderData(
           __privateGet(this, _lastQueryWithDefinedData)?.state.data,
           __privateGet(this, _lastQueryWithDefinedData)
         ) : options.placeholderData;
+        if (options.select && placeholderData !== void 0) {
+          try {
+            placeholderData = options.select(placeholderData);
+            __privateSet(this, _selectError, null);
+          } catch (selectError) {
+            __privateSet(this, _selectError, selectError);
+          }
+        }
       }
       if (placeholderData !== void 0) {
         status = "success";
@@ -2071,21 +2078,6 @@ var QueryObserver = (_a9 = class extends Subscribable {
           options
         );
         isPlaceholderData = true;
-      }
-    }
-    if (options.select && data !== void 0 && !skipSelect) {
-      if (prevResult && data === prevResultState?.data && options.select === __privateGet(this, _selectFn)) {
-        data = __privateGet(this, _selectResult);
-      } else {
-        try {
-          __privateSet(this, _selectFn, options.select);
-          data = options.select(data);
-          data = replaceData(prevResult?.data, data, options);
-          __privateSet(this, _selectResult, data);
-          __privateSet(this, _selectError, null);
-        } catch (selectError) {
-          __privateSet(this, _selectError, selectError);
-        }
       }
     }
     if (__privateGet(this, _selectError)) {
@@ -2160,7 +2152,7 @@ var QueryObserver = (_a9 = class extends Subscribable {
     }
     return nextResult;
   }
-  updateResult() {
+  updateResult(notifyOptions) {
     const prevResult = __privateGet(this, _currentResult);
     const nextResult = this.createResult(__privateGet(this, _currentQuery), this.options);
     __privateSet(this, _currentResultState, __privateGet(this, _currentQuery).state);
@@ -2172,6 +2164,7 @@ var QueryObserver = (_a9 = class extends Subscribable {
       return;
     }
     __privateSet(this, _currentResult, nextResult);
+    const defaultNotifyOptions = {};
     const shouldNotifyListeners = () => {
       if (!prevResult) {
         return true;
@@ -2193,7 +2186,10 @@ var QueryObserver = (_a9 = class extends Subscribable {
         return changed && includedProps.has(typedKey);
       });
     };
-    __privateMethod(this, _QueryObserver_instances, notify_fn).call(this, { listeners: shouldNotifyListeners() });
+    if (notifyOptions?.listeners !== false && shouldNotifyListeners()) {
+      defaultNotifyOptions.listeners = true;
+    }
+    __privateMethod(this, _QueryObserver_instances, notify_fn).call(this, { ...defaultNotifyOptions, ...notifyOptions });
   }
   onQueryUpdate() {
     this.updateResult();
@@ -2201,7 +2197,7 @@ var QueryObserver = (_a9 = class extends Subscribable {
       __privateMethod(this, _QueryObserver_instances, updateTimers_fn).call(this);
     }
   }
-}, _client2 = new WeakMap(), _currentQuery = new WeakMap(), _currentQueryInitialState = new WeakMap(), _currentResult = new WeakMap(), _currentResultState = new WeakMap(), _currentResultOptions = new WeakMap(), _currentThenable = new WeakMap(), _selectError = new WeakMap(), _selectFn = new WeakMap(), _selectResult = new WeakMap(), _lastQueryWithDefinedData = new WeakMap(), _staleTimeoutId = new WeakMap(), _refetchIntervalId = new WeakMap(), _currentRefetchInterval = new WeakMap(), _trackedProps = new WeakMap(), _QueryObserver_instances = new WeakSet(), executeFetch_fn = function(fetchOptions) {
+}, _client = new WeakMap(), _currentQuery = new WeakMap(), _currentQueryInitialState = new WeakMap(), _currentResult = new WeakMap(), _currentResultState = new WeakMap(), _currentResultOptions = new WeakMap(), _currentThenable = new WeakMap(), _selectError = new WeakMap(), _selectFn = new WeakMap(), _selectResult = new WeakMap(), _lastQueryWithDefinedData = new WeakMap(), _staleTimeoutId = new WeakMap(), _refetchIntervalId = new WeakMap(), _currentRefetchInterval = new WeakMap(), _trackedProps = new WeakMap(), _QueryObserver_instances = new WeakSet(), executeFetch_fn = function(fetchOptions) {
   __privateMethod(this, _QueryObserver_instances, updateQuery_fn).call(this);
   let promise = __privateGet(this, _currentQuery).fetch(
     this.options,
@@ -2254,7 +2250,7 @@ var QueryObserver = (_a9 = class extends Subscribable {
     __privateSet(this, _refetchIntervalId, void 0);
   }
 }, updateQuery_fn = function() {
-  const query = __privateGet(this, _client2).getQueryCache().build(__privateGet(this, _client2), this.options);
+  const query = __privateGet(this, _client).getQueryCache().build(__privateGet(this, _client), this.options);
   if (query === __privateGet(this, _currentQuery)) {
     return;
   }
@@ -2272,7 +2268,7 @@ var QueryObserver = (_a9 = class extends Subscribable {
         listener(__privateGet(this, _currentResult));
       });
     }
-    __privateGet(this, _client2).getQueryCache().notify({
+    __privateGet(this, _client).getQueryCache().notify({
       query: __privateGet(this, _currentQuery),
       type: "observerResultsUpdated"
     });
@@ -2304,7 +2300,7 @@ function shouldAssignObserverCurrentProperties(observer, optimisticResult) {
   return false;
 }
 
-// client/node_modules/@tanstack/query-core/build/modern/queriesObserver.js
+// node_modules/@tanstack/query-core/build/modern/queriesObserver.js
 function difference(array1, array2) {
   return array1.filter((x) => !array2.includes(x));
 }
@@ -2313,12 +2309,12 @@ function replaceAt(array, index, value) {
   copy[index] = value;
   return copy;
 }
-var _client3, _result, _queries2, _options, _observers2, _combinedResult, _lastCombine, _lastResult, _observerMatches, _QueriesObserver_instances, trackResult_fn, combineResult_fn, findMatchingObservers_fn, onUpdate_fn, notify_fn2, _a10;
+var _client2, _result, _queries2, _options, _observers2, _combinedResult, _lastCombine, _lastResult, _QueriesObserver_instances, trackResult_fn, combineResult_fn, findMatchingObservers_fn, onUpdate_fn, notify_fn2, _a10;
 var QueriesObserver = (_a10 = class extends Subscribable {
   constructor(client, queries, options) {
     super();
     __privateAdd(this, _QueriesObserver_instances);
-    __privateAdd(this, _client3);
+    __privateAdd(this, _client2);
     __privateAdd(this, _result);
     __privateAdd(this, _queries2);
     __privateAdd(this, _options);
@@ -2326,8 +2322,7 @@ var QueriesObserver = (_a10 = class extends Subscribable {
     __privateAdd(this, _combinedResult);
     __privateAdd(this, _lastCombine);
     __privateAdd(this, _lastResult);
-    __privateAdd(this, _observerMatches, []);
-    __privateSet(this, _client3, client);
+    __privateSet(this, _client2, client);
     __privateSet(this, _options, options);
     __privateSet(this, _queries2, []);
     __privateSet(this, _observers2, []);
@@ -2354,12 +2349,12 @@ var QueriesObserver = (_a10 = class extends Subscribable {
       observer.destroy();
     });
   }
-  setQueries(queries, options) {
+  setQueries(queries, options, notifyOptions) {
     __privateSet(this, _queries2, queries);
     __privateSet(this, _options, options);
     if (true) {
       const queryHashes = queries.map(
-        (query) => __privateGet(this, _client3).defaultQueryOptions(query).queryHash
+        (query) => __privateGet(this, _client2).defaultQueryOptions(query).queryHash
       );
       if (new Set(queryHashes).size !== queryHashes.length) {
         console.warn(
@@ -2370,9 +2365,8 @@ var QueriesObserver = (_a10 = class extends Subscribable {
     notifyManager.batch(() => {
       const prevObservers = __privateGet(this, _observers2);
       const newObserverMatches = __privateMethod(this, _QueriesObserver_instances, findMatchingObservers_fn).call(this, __privateGet(this, _queries2));
-      __privateSet(this, _observerMatches, newObserverMatches);
       newObserverMatches.forEach(
-        (match) => match.observer.setOptions(match.defaultedQueryOptions)
+        (match) => match.observer.setOptions(match.defaultedQueryOptions, notifyOptions)
       );
       const newObservers = newObserverMatches.map((match) => match.observer);
       const newResult = newObservers.map(
@@ -2420,11 +2414,12 @@ var QueriesObserver = (_a10 = class extends Subscribable {
         return __privateMethod(this, _QueriesObserver_instances, combineResult_fn).call(this, r ?? result, combine);
       },
       () => {
-        return __privateMethod(this, _QueriesObserver_instances, trackResult_fn).call(this, result, matches);
+        return __privateMethod(this, _QueriesObserver_instances, trackResult_fn).call(this, result, queries);
       }
     ];
   }
-}, _client3 = new WeakMap(), _result = new WeakMap(), _queries2 = new WeakMap(), _options = new WeakMap(), _observers2 = new WeakMap(), _combinedResult = new WeakMap(), _lastCombine = new WeakMap(), _lastResult = new WeakMap(), _observerMatches = new WeakMap(), _QueriesObserver_instances = new WeakSet(), trackResult_fn = function(result, matches) {
+}, _client2 = new WeakMap(), _result = new WeakMap(), _queries2 = new WeakMap(), _options = new WeakMap(), _observers2 = new WeakMap(), _combinedResult = new WeakMap(), _lastCombine = new WeakMap(), _lastResult = new WeakMap(), _QueriesObserver_instances = new WeakSet(), trackResult_fn = function(result, queries) {
+  const matches = __privateMethod(this, _QueriesObserver_instances, findMatchingObservers_fn).call(this, queries);
   return matches.map((match, index) => {
     const observerResult = result[index];
     return !match.defaultedQueryOptions.notifyOnChangeProps ? match.observer.trackResult(observerResult, (accessedProp) => {
@@ -2452,7 +2447,7 @@ var QueriesObserver = (_a10 = class extends Subscribable {
   );
   const observers = [];
   queries.forEach((options) => {
-    const defaultedOptions = __privateGet(this, _client3).defaultQueryOptions(options);
+    const defaultedOptions = __privateGet(this, _client2).defaultQueryOptions(options);
     const match = prevObserversMap.get(defaultedOptions.queryHash);
     if (match) {
       observers.push({
@@ -2462,7 +2457,7 @@ var QueriesObserver = (_a10 = class extends Subscribable {
     } else {
       observers.push({
         defaultedQueryOptions: defaultedOptions,
-        observer: new QueryObserver(__privateGet(this, _client3), defaultedOptions)
+        observer: new QueryObserver(__privateGet(this, _client2), defaultedOptions)
       });
     }
   });
@@ -2476,8 +2471,7 @@ var QueriesObserver = (_a10 = class extends Subscribable {
 }, notify_fn2 = function() {
   if (this.hasListeners()) {
     const previousResult = __privateGet(this, _combinedResult);
-    const newTracked = __privateMethod(this, _QueriesObserver_instances, trackResult_fn).call(this, __privateGet(this, _result), __privateGet(this, _observerMatches));
-    const newResult = __privateMethod(this, _QueriesObserver_instances, combineResult_fn).call(this, newTracked, __privateGet(this, _options)?.combine);
+    const newResult = __privateMethod(this, _QueriesObserver_instances, combineResult_fn).call(this, __privateMethod(this, _QueriesObserver_instances, trackResult_fn).call(this, __privateGet(this, _result), __privateGet(this, _queries2)), __privateGet(this, _options)?.combine);
     if (previousResult !== newResult) {
       notifyManager.batch(() => {
         this.listeners.forEach((listener) => {
@@ -2488,7 +2482,7 @@ var QueriesObserver = (_a10 = class extends Subscribable {
   }
 }, _a10);
 
-// client/node_modules/@tanstack/query-core/build/modern/infiniteQueryObserver.js
+// node_modules/@tanstack/query-core/build/modern/infiniteQueryObserver.js
 var InfiniteQueryObserver = class extends QueryObserver {
   constructor(client, options) {
     super(client, options);
@@ -2498,11 +2492,14 @@ var InfiniteQueryObserver = class extends QueryObserver {
     this.fetchNextPage = this.fetchNextPage.bind(this);
     this.fetchPreviousPage = this.fetchPreviousPage.bind(this);
   }
-  setOptions(options) {
-    super.setOptions({
-      ...options,
-      behavior: infiniteQueryBehavior()
-    });
+  setOptions(options, notifyOptions) {
+    super.setOptions(
+      {
+        ...options,
+        behavior: infiniteQueryBehavior()
+      },
+      notifyOptions
+    );
   }
   getOptimisticResult(options) {
     options.behavior = infiniteQueryBehavior();
@@ -2550,17 +2547,17 @@ var InfiniteQueryObserver = class extends QueryObserver {
   }
 };
 
-// client/node_modules/@tanstack/query-core/build/modern/mutationObserver.js
-var _client4, _currentResult2, _currentMutation, _mutateOptions, _MutationObserver_instances, updateResult_fn, notify_fn3, _a11;
+// node_modules/@tanstack/query-core/build/modern/mutationObserver.js
+var _client3, _currentResult2, _currentMutation, _mutateOptions, _MutationObserver_instances, updateResult_fn, notify_fn3, _a11;
 var MutationObserver = (_a11 = class extends Subscribable {
   constructor(client, options) {
     super();
     __privateAdd(this, _MutationObserver_instances);
-    __privateAdd(this, _client4);
+    __privateAdd(this, _client3);
     __privateAdd(this, _currentResult2);
     __privateAdd(this, _currentMutation);
     __privateAdd(this, _mutateOptions);
-    __privateSet(this, _client4, client);
+    __privateSet(this, _client3, client);
     this.setOptions(options);
     this.bindMethods();
     __privateMethod(this, _MutationObserver_instances, updateResult_fn).call(this);
@@ -2571,9 +2568,9 @@ var MutationObserver = (_a11 = class extends Subscribable {
   }
   setOptions(options) {
     const prevOptions = this.options;
-    this.options = __privateGet(this, _client4).defaultMutationOptions(options);
+    this.options = __privateGet(this, _client3).defaultMutationOptions(options);
     if (!shallowEqualObjects(this.options, prevOptions)) {
-      __privateGet(this, _client4).getMutationCache().notify({
+      __privateGet(this, _client3).getMutationCache().notify({
         type: "observerOptionsUpdated",
         mutation: __privateGet(this, _currentMutation),
         observer: this
@@ -2606,11 +2603,11 @@ var MutationObserver = (_a11 = class extends Subscribable {
   mutate(variables, options) {
     __privateSet(this, _mutateOptions, options);
     __privateGet(this, _currentMutation)?.removeObserver(this);
-    __privateSet(this, _currentMutation, __privateGet(this, _client4).getMutationCache().build(__privateGet(this, _client4), this.options));
+    __privateSet(this, _currentMutation, __privateGet(this, _client3).getMutationCache().build(__privateGet(this, _client3), this.options));
     __privateGet(this, _currentMutation).addObserver(this);
     return __privateGet(this, _currentMutation).execute(variables);
   }
-}, _client4 = new WeakMap(), _currentResult2 = new WeakMap(), _currentMutation = new WeakMap(), _mutateOptions = new WeakMap(), _MutationObserver_instances = new WeakSet(), updateResult_fn = function() {
+}, _client3 = new WeakMap(), _currentResult2 = new WeakMap(), _currentMutation = new WeakMap(), _mutateOptions = new WeakMap(), _MutationObserver_instances = new WeakSet(), updateResult_fn = function() {
   const state = __privateGet(this, _currentMutation)?.state ?? getDefaultState2();
   __privateSet(this, _currentResult2, {
     ...state,
@@ -2645,7 +2642,7 @@ var MutationObserver = (_a11 = class extends Subscribable {
   });
 }, _a11);
 
-// client/node_modules/@tanstack/query-core/build/modern/hydration.js
+// node_modules/@tanstack/query-core/build/modern/hydration.js
 function defaultTransformerFn(data) {
   return data;
 }
@@ -2657,7 +2654,7 @@ function dehydrateMutation(mutation) {
     ...mutation.meta && { meta: mutation.meta }
   };
 }
-function dehydrateQuery(query, serializeData, shouldRedactErrors) {
+function dehydrateQuery(query, serializeData) {
   return {
     state: {
       ...query.state,
@@ -2669,9 +2666,6 @@ function dehydrateQuery(query, serializeData, shouldRedactErrors) {
     queryHash: query.queryHash,
     ...query.state.status === "pending" && {
       promise: query.promise?.then(serializeData).catch((error) => {
-        if (!shouldRedactErrors(error)) {
-          return Promise.reject(error);
-        }
         if (true) {
           console.error(
             `A query that was dehydrated as pending ended up rejecting. [${query.queryHash}]: ${error}; The error will be redacted in production builds`
@@ -2689,19 +2683,15 @@ function defaultShouldDehydrateMutation(mutation) {
 function defaultShouldDehydrateQuery(query) {
   return query.state.status === "success";
 }
-function defaultShouldRedactErrors(_) {
-  return true;
-}
 function dehydrate(client, options = {}) {
   const filterMutation = options.shouldDehydrateMutation ?? client.getDefaultOptions().dehydrate?.shouldDehydrateMutation ?? defaultShouldDehydrateMutation;
   const mutations = client.getMutationCache().getAll().flatMap(
     (mutation) => filterMutation(mutation) ? [dehydrateMutation(mutation)] : []
   );
   const filterQuery = options.shouldDehydrateQuery ?? client.getDefaultOptions().dehydrate?.shouldDehydrateQuery ?? defaultShouldDehydrateQuery;
-  const shouldRedactErrors = options.shouldRedactErrors ?? client.getDefaultOptions().dehydrate?.shouldRedactErrors ?? defaultShouldRedactErrors;
   const serializeData = options.serializeData ?? client.getDefaultOptions().dehydrate?.serializeData ?? defaultTransformerFn;
   const queries = client.getQueryCache().getAll().flatMap(
-    (query) => filterQuery(query) ? [dehydrateQuery(query, serializeData, shouldRedactErrors)] : []
+    (query) => filterQuery(query) ? [dehydrateQuery(query, serializeData)] : []
   );
   return { mutations, queries };
 }
@@ -2762,48 +2752,15 @@ function hydrate(client, dehydratedState, options) {
   });
 }
 
-// client/node_modules/@tanstack/query-core/build/modern/streamedQuery.js
-function streamedQuery({
-  queryFn,
-  refetchMode
-}) {
-  return async (context) => {
-    if (refetchMode !== "append") {
-      const query = context.client.getQueryCache().find({ queryKey: context.queryKey, exact: true });
-      if (query && query.state.data !== void 0) {
-        query.setState({
-          status: "pending",
-          data: void 0,
-          error: null,
-          fetchStatus: "fetching"
-        });
-      }
-    }
-    const stream = await queryFn(context);
-    for await (const chunk of stream) {
-      if (context.signal.aborted) {
-        break;
-      }
-      context.client.setQueryData(
-        context.queryKey,
-        (prev = []) => {
-          return prev.concat(chunk);
-        }
-      );
-    }
-    return context.client.getQueryData(context.queryKey);
-  };
-}
-
-// client/node_modules/@tanstack/query-core/build/modern/types.js
+// node_modules/@tanstack/query-core/build/modern/types.js
 var dataTagSymbol = Symbol("dataTagSymbol");
 var dataTagErrorSymbol = Symbol("dataTagErrorSymbol");
 var unsetMarker = Symbol("unsetMarker");
 
-// client/node_modules/@tanstack/react-query/build/modern/useQueries.js
+// node_modules/@tanstack/react-query/build/modern/useQueries.js
 var React5 = __toESM(require_react(), 1);
 
-// client/node_modules/@tanstack/react-query/build/modern/QueryClientProvider.js
+// node_modules/@tanstack/react-query/build/modern/QueryClientProvider.js
 var React = __toESM(require_react(), 1);
 var import_jsx_runtime = __toESM(require_jsx_runtime(), 1);
 var QueryClientContext = React.createContext(
@@ -2832,13 +2789,13 @@ var QueryClientProvider = ({
   return (0, import_jsx_runtime.jsx)(QueryClientContext.Provider, { value: client, children });
 };
 
-// client/node_modules/@tanstack/react-query/build/modern/isRestoring.js
+// node_modules/@tanstack/react-query/build/modern/isRestoring.js
 var React2 = __toESM(require_react(), 1);
 var IsRestoringContext = React2.createContext(false);
 var useIsRestoring = () => React2.useContext(IsRestoringContext);
 var IsRestoringProvider = IsRestoringContext.Provider;
 
-// client/node_modules/@tanstack/react-query/build/modern/QueryErrorResetBoundary.js
+// node_modules/@tanstack/react-query/build/modern/QueryErrorResetBoundary.js
 var React3 = __toESM(require_react(), 1);
 var import_jsx_runtime2 = __toESM(require_jsx_runtime(), 1);
 function createValue() {
@@ -2864,10 +2821,10 @@ var QueryErrorResetBoundary = ({
   return (0, import_jsx_runtime2.jsx)(QueryErrorResetBoundaryContext.Provider, { value, children: typeof children === "function" ? children(value) : children });
 };
 
-// client/node_modules/@tanstack/react-query/build/modern/errorBoundaryUtils.js
+// node_modules/@tanstack/react-query/build/modern/errorBoundaryUtils.js
 var React4 = __toESM(require_react(), 1);
 
-// client/node_modules/@tanstack/react-query/build/modern/utils.js
+// node_modules/@tanstack/react-query/build/modern/utils.js
 function shouldThrowError(throwError, params) {
   if (typeof throwError === "function") {
     return throwError(...params);
@@ -2877,7 +2834,7 @@ function shouldThrowError(throwError, params) {
 function noop2() {
 }
 
-// client/node_modules/@tanstack/react-query/build/modern/errorBoundaryUtils.js
+// node_modules/@tanstack/react-query/build/modern/errorBoundaryUtils.js
 var ensurePreventErrorBoundaryRetry = (options, errorResetBoundary) => {
   if (options.suspense || options.throwOnError || options.experimental_prefetchInRender) {
     if (!errorResetBoundary.isReset()) {
@@ -2894,13 +2851,12 @@ var getHasError = ({
   result,
   errorResetBoundary,
   throwOnError,
-  query,
-  suspense
+  query
 }) => {
-  return result.isError && !errorResetBoundary.isReset() && !result.isFetching && query && (suspense && result.data === void 0 || shouldThrowError(throwOnError, [result.error, query]));
+  return result.isError && !errorResetBoundary.isReset() && !result.isFetching && query && shouldThrowError(throwOnError, [result.error, query]);
 };
 
-// client/node_modules/@tanstack/react-query/build/modern/suspense.js
+// node_modules/@tanstack/react-query/build/modern/suspense.js
 var defaultThrowOnError = (_error, query) => query.state.data === void 0;
 var ensureSuspenseTimers = (defaultedOptions) => {
   const originalStaleTime = defaultedOptions.staleTime;
@@ -2917,7 +2873,7 @@ var fetchOptimistic = (defaultedOptions, observer, errorResetBoundary) => observ
   errorResetBoundary.clearReset();
 });
 
-// client/node_modules/@tanstack/react-query/build/modern/useQueries.js
+// node_modules/@tanstack/react-query/build/modern/useQueries.js
 function useQueries({
   queries,
   ...options
@@ -2963,7 +2919,10 @@ function useQueries({
   React5.useEffect(() => {
     observer.setQueries(
       defaultedQueries,
-      options
+      options,
+      {
+        listeners: false
+      }
     );
   }, [defaultedQueries, options, observer]);
   const shouldAtLeastOneSuspend = optimisticResult.some(
@@ -2991,8 +2950,7 @@ function useQueries({
         result,
         errorResetBoundary,
         throwOnError: query.throwOnError,
-        query: client.getQueryCache().get(query.queryHash),
-        suspense: query.suspense
+        query: client.getQueryCache().get(query.queryHash)
       });
     }
   );
@@ -3002,7 +2960,7 @@ function useQueries({
   return getCombinedResult(trackResult());
 }
 
-// client/node_modules/@tanstack/react-query/build/modern/useBaseQuery.js
+// node_modules/@tanstack/react-query/build/modern/useBaseQuery.js
 var React6 = __toESM(require_react(), 1);
 function useBaseQuery(options, Observer, queryClient) {
   if (true) {
@@ -3019,13 +2977,6 @@ function useBaseQuery(options, Observer, queryClient) {
   client.getDefaultOptions().queries?._experimental_beforeQuery?.(
     defaultedOptions
   );
-  if (true) {
-    if (!defaultedOptions.queryFn) {
-      console.error(
-        `[${defaultedOptions.queryHash}]: No queryFn was passed as an option, and no default queryFn was found. The queryFn parameter is only optional when using a default queryFn. More info here: https://tanstack.com/query/latest/docs/framework/react/guides/default-query-function`
-      );
-    }
-  }
   defaultedOptions._optimisticResults = isRestoring ? "isRestoring" : "optimistic";
   ensureSuspenseTimers(defaultedOptions);
   ensurePreventErrorBoundaryRetry(defaultedOptions, errorResetBoundary);
@@ -3052,7 +3003,7 @@ function useBaseQuery(options, Observer, queryClient) {
     () => observer.getCurrentResult()
   );
   React6.useEffect(() => {
-    observer.setOptions(defaultedOptions);
+    observer.setOptions(defaultedOptions, { listeners: false });
   }, [defaultedOptions, observer]);
   if (shouldSuspend(defaultedOptions, result)) {
     throw fetchOptimistic(defaultedOptions, observer, errorResetBoundary);
@@ -3061,8 +3012,7 @@ function useBaseQuery(options, Observer, queryClient) {
     result,
     errorResetBoundary,
     throwOnError: defaultedOptions.throwOnError,
-    query: client.getQueryCache().get(defaultedOptions.queryHash),
-    suspense: defaultedOptions.suspense
+    query: client.getQueryCache().get(defaultedOptions.queryHash)
   })) {
     throw result.error;
   }
@@ -3086,12 +3036,12 @@ function useBaseQuery(options, Observer, queryClient) {
   return !defaultedOptions.notifyOnChangeProps ? observer.trackResult(result) : result;
 }
 
-// client/node_modules/@tanstack/react-query/build/modern/useQuery.js
+// node_modules/@tanstack/react-query/build/modern/useQuery.js
 function useQuery(options, queryClient) {
   return useBaseQuery(options, QueryObserver, queryClient);
 }
 
-// client/node_modules/@tanstack/react-query/build/modern/useSuspenseQuery.js
+// node_modules/@tanstack/react-query/build/modern/useSuspenseQuery.js
 function useSuspenseQuery(options, queryClient) {
   if (true) {
     if (options.queryFn === skipToken) {
@@ -3111,7 +3061,7 @@ function useSuspenseQuery(options, queryClient) {
   );
 }
 
-// client/node_modules/@tanstack/react-query/build/modern/useSuspenseInfiniteQuery.js
+// node_modules/@tanstack/react-query/build/modern/useSuspenseInfiniteQuery.js
 function useSuspenseInfiniteQuery(options, queryClient) {
   if (true) {
     if (options.queryFn === skipToken) {
@@ -3130,7 +3080,7 @@ function useSuspenseInfiniteQuery(options, queryClient) {
   );
 }
 
-// client/node_modules/@tanstack/react-query/build/modern/useSuspenseQueries.js
+// node_modules/@tanstack/react-query/build/modern/useSuspenseQueries.js
 function useSuspenseQueries(options, queryClient) {
   return useQueries(
     {
@@ -3154,7 +3104,7 @@ function useSuspenseQueries(options, queryClient) {
   );
 }
 
-// client/node_modules/@tanstack/react-query/build/modern/usePrefetchQuery.js
+// node_modules/@tanstack/react-query/build/modern/usePrefetchQuery.js
 function usePrefetchQuery(options, queryClient) {
   const client = useQueryClient(queryClient);
   if (!client.getQueryState(options.queryKey)) {
@@ -3162,7 +3112,7 @@ function usePrefetchQuery(options, queryClient) {
   }
 }
 
-// client/node_modules/@tanstack/react-query/build/modern/usePrefetchInfiniteQuery.js
+// node_modules/@tanstack/react-query/build/modern/usePrefetchInfiniteQuery.js
 function usePrefetchInfiniteQuery(options, queryClient) {
   const client = useQueryClient(queryClient);
   if (!client.getQueryState(options.queryKey)) {
@@ -3170,21 +3120,18 @@ function usePrefetchInfiniteQuery(options, queryClient) {
   }
 }
 
-// client/node_modules/@tanstack/react-query/build/modern/queryOptions.js
+// node_modules/@tanstack/react-query/build/modern/queryOptions.js
 function queryOptions(options) {
   return options;
 }
 
-// client/node_modules/@tanstack/react-query/build/modern/infiniteQueryOptions.js
+// node_modules/@tanstack/react-query/build/modern/infiniteQueryOptions.js
 function infiniteQueryOptions(options) {
   return options;
 }
 
-// client/node_modules/@tanstack/react-query/build/modern/HydrationBoundary.js
+// node_modules/@tanstack/react-query/build/modern/HydrationBoundary.js
 var React7 = __toESM(require_react(), 1);
-var hasProperty = (obj, key) => {
-  return typeof obj === "object" && obj !== null && key in obj;
-};
 var HydrationBoundary = ({
   children,
   options = {},
@@ -3209,8 +3156,7 @@ var HydrationBoundary = ({
         if (!existingQuery) {
           newQueries.push(dehydratedQuery);
         } else {
-          const hydrationIsNewer = dehydratedQuery.state.dataUpdatedAt > existingQuery.state.dataUpdatedAt || // RSC special serialized then-able chunks
-          hasProperty(dehydratedQuery.promise, "status") && hasProperty(existingQuery.promise, "status") && dehydratedQuery.promise.status !== existingQuery.promise.status;
+          const hydrationIsNewer = dehydratedQuery.state.dataUpdatedAt > existingQuery.state.dataUpdatedAt;
           const queryAlreadyQueued = hydrationQueue?.find(
             (query) => query.queryHash === dehydratedQuery.queryHash
           );
@@ -3238,7 +3184,7 @@ var HydrationBoundary = ({
   return children;
 };
 
-// client/node_modules/@tanstack/react-query/build/modern/useIsFetching.js
+// node_modules/@tanstack/react-query/build/modern/useIsFetching.js
 var React8 = __toESM(require_react(), 1);
 function useIsFetching(filters, queryClient) {
   const client = useQueryClient(queryClient);
@@ -3253,7 +3199,7 @@ function useIsFetching(filters, queryClient) {
   );
 }
 
-// client/node_modules/@tanstack/react-query/build/modern/useMutationState.js
+// node_modules/@tanstack/react-query/build/modern/useMutationState.js
 var React9 = __toESM(require_react(), 1);
 function useIsMutating(filters, queryClient) {
   const client = useQueryClient(queryClient);
@@ -3296,7 +3242,7 @@ function useMutationState(options = {}, queryClient) {
   );
 }
 
-// client/node_modules/@tanstack/react-query/build/modern/useMutation.js
+// node_modules/@tanstack/react-query/build/modern/useMutation.js
 var React10 = __toESM(require_react(), 1);
 function useMutation(options, queryClient) {
   const client = useQueryClient(queryClient);
@@ -3329,7 +3275,7 @@ function useMutation(options, queryClient) {
   return { ...result, mutate, mutateAsync: result.mutate };
 }
 
-// client/node_modules/@tanstack/react-query/build/modern/useInfiniteQuery.js
+// node_modules/@tanstack/react-query/build/modern/useInfiniteQuery.js
 function useInfiniteQuery(options, queryClient) {
   return useBaseQuery(
     options,
@@ -3355,11 +3301,9 @@ export {
   QueryObserver,
   dataTagErrorSymbol,
   dataTagSymbol,
-  defaultScheduler,
   defaultShouldDehydrateMutation,
   defaultShouldDehydrateQuery,
   dehydrate,
-  streamedQuery as experimental_streamedQuery,
   focusManager,
   hashKey,
   hydrate,

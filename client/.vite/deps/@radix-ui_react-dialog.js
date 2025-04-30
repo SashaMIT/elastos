@@ -1,54 +1,54 @@
 "use client";
 import {
-  useId
-} from "./chunk-OR7E356R.js";
-import {
-  Portal
-} from "./chunk-E6LMAOHG.js";
-import {
-  DismissableLayer
-} from "./chunk-OSCKFPQL.js";
-import {
-  Presence
-} from "./chunk-MLZJABZR.js";
-import {
-  composeEventHandlers,
-  useControllableState
-} from "./chunk-ILVG5NBT.js";
-import {
-  useCallbackRef
-} from "./chunk-UUKKEGQJ.js";
-import {
+  DismissableLayer,
+  Portal,
+  Presence,
   Primitive,
+  composeEventHandlers,
   createContext2,
-  createContextScope
-} from "./chunk-TFXR2K5M.js";
+  createContextScope,
+  useCallbackRef,
+  useControllableState,
+  useLayoutEffect2
+} from "./chunk-L3BK2RNK.js";
 import {
   createSlot,
   useComposedRefs
-} from "./chunk-63HEPLPE.js";
-import "./chunk-ATCYXUJR.js";
+} from "./chunk-FTY7CAVT.js";
+import "./chunk-YU2QM6W5.js";
 import {
   require_jsx_runtime
-} from "./chunk-VNID673C.js";
+} from "./chunk-QO6G5LJU.js";
 import {
   require_react
-} from "./chunk-K3CCW6BN.js";
+} from "./chunk-A5RJMWOC.js";
 import {
   __toESM
-} from "./chunk-VHXUCOYC.js";
+} from "./chunk-RDKGUBC5.js";
 
 // client/node_modules/@radix-ui/react-dialog/dist/index.mjs
-var React12 = __toESM(require_react(), 1);
+var React13 = __toESM(require_react(), 1);
+
+// client/node_modules/@radix-ui/react-id/dist/index.mjs
+var React = __toESM(require_react(), 1);
+var useReactId = React[" useId ".trim().toString()] || (() => void 0);
+var count = 0;
+function useId(deterministicId) {
+  const [id, setId] = React.useState(useReactId());
+  useLayoutEffect2(() => {
+    if (!deterministicId) setId((reactId) => reactId ?? String(count++));
+  }, [deterministicId]);
+  return deterministicId || (id ? `radix-${id}` : "");
+}
 
 // client/node_modules/@radix-ui/react-focus-scope/dist/index.mjs
-var React = __toESM(require_react(), 1);
+var React2 = __toESM(require_react(), 1);
 var import_jsx_runtime = __toESM(require_jsx_runtime(), 1);
 var AUTOFOCUS_ON_MOUNT = "focusScope.autoFocusOnMount";
 var AUTOFOCUS_ON_UNMOUNT = "focusScope.autoFocusOnUnmount";
 var EVENT_OPTIONS = { bubbles: false, cancelable: true };
 var FOCUS_SCOPE_NAME = "FocusScope";
-var FocusScope = React.forwardRef((props, forwardedRef) => {
+var FocusScope = React2.forwardRef((props, forwardedRef) => {
   const {
     loop = false,
     trapped = false,
@@ -56,12 +56,12 @@ var FocusScope = React.forwardRef((props, forwardedRef) => {
     onUnmountAutoFocus: onUnmountAutoFocusProp,
     ...scopeProps
   } = props;
-  const [container, setContainer] = React.useState(null);
+  const [container, setContainer] = React2.useState(null);
   const onMountAutoFocus = useCallbackRef(onMountAutoFocusProp);
   const onUnmountAutoFocus = useCallbackRef(onUnmountAutoFocusProp);
-  const lastFocusedElementRef = React.useRef(null);
+  const lastFocusedElementRef = React2.useRef(null);
   const composedRefs = useComposedRefs(forwardedRef, (node) => setContainer(node));
-  const focusScope = React.useRef({
+  const focusScope = React2.useRef({
     paused: false,
     pause() {
       this.paused = true;
@@ -70,7 +70,7 @@ var FocusScope = React.forwardRef((props, forwardedRef) => {
       this.paused = false;
     }
   }).current;
-  React.useEffect(() => {
+  React2.useEffect(() => {
     if (trapped) {
       let handleFocusIn2 = function(event) {
         if (focusScope.paused || !container) return;
@@ -106,7 +106,7 @@ var FocusScope = React.forwardRef((props, forwardedRef) => {
       };
     }
   }, [trapped, container, focusScope.paused]);
-  React.useEffect(() => {
+  React2.useEffect(() => {
     if (container) {
       focusScopesStack.add(focusScope);
       const previouslyFocusedElement = document.activeElement;
@@ -137,7 +137,7 @@ var FocusScope = React.forwardRef((props, forwardedRef) => {
       };
     }
   }, [container, onMountAutoFocus, onUnmountAutoFocus, focusScope]);
-  const handleKeyDown = React.useCallback(
+  const handleKeyDown = React2.useCallback(
     (event) => {
       if (!loop && !trapped) return;
       if (focusScope.paused) return;
@@ -246,19 +246,19 @@ function removeLinks(items) {
 }
 
 // client/node_modules/@radix-ui/react-focus-guards/dist/index.mjs
-var React2 = __toESM(require_react(), 1);
-var count = 0;
+var React3 = __toESM(require_react(), 1);
+var count2 = 0;
 function useFocusGuards() {
-  React2.useEffect(() => {
+  React3.useEffect(() => {
     const edgeGuards = document.querySelectorAll("[data-radix-focus-guard]");
     document.body.insertAdjacentElement("afterbegin", edgeGuards[0] ?? createFocusGuard());
     document.body.insertAdjacentElement("beforeend", edgeGuards[1] ?? createFocusGuard());
-    count++;
+    count2++;
     return () => {
-      if (count === 1) {
+      if (count2 === 1) {
         document.querySelectorAll("[data-radix-focus-guard]").forEach((node) => node.remove());
       }
-      count--;
+      count2--;
     };
   }, []);
 }
@@ -306,10 +306,10 @@ function __spreadArray(to, from, pack) {
 }
 
 // client/node_modules/react-remove-scroll/dist/es2015/Combination.js
-var React11 = __toESM(require_react());
+var React12 = __toESM(require_react());
 
 // client/node_modules/react-remove-scroll/dist/es2015/UI.js
-var React7 = __toESM(require_react());
+var React8 = __toESM(require_react());
 
 // client/node_modules/react-remove-scroll-bar/dist/es2015/constants.js
 var zeroRightClassName = "right-scroll-bar-position";
@@ -356,8 +356,8 @@ function useCallbackRef2(initialValue, callback) {
 }
 
 // client/node_modules/use-callback-ref/dist/es2015/useMergeRef.js
-var React3 = __toESM(require_react());
-var useIsomorphicLayoutEffect = typeof window !== "undefined" ? React3.useLayoutEffect : React3.useEffect;
+var React4 = __toESM(require_react());
+var useIsomorphicLayoutEffect = typeof window !== "undefined" ? React4.useLayoutEffect : React4.useEffect;
 var currentValues = /* @__PURE__ */ new WeakMap();
 function useMergeRefs(refs, defaultValue) {
   var callbackRef = useCallbackRef2(defaultValue || null, function(newValue) {
@@ -388,7 +388,7 @@ function useMergeRefs(refs, defaultValue) {
 }
 
 // client/node_modules/use-sidecar/dist/es2015/hoc.js
-var React4 = __toESM(require_react());
+var React5 = __toESM(require_react());
 
 // client/node_modules/use-sidecar/dist/es2015/hook.js
 var import_react2 = __toESM(require_react());
@@ -480,11 +480,11 @@ function createSidecarMedium(options) {
 }
 
 // client/node_modules/use-sidecar/dist/es2015/renderProp.js
-var React5 = __toESM(require_react());
+var React6 = __toESM(require_react());
 var import_react3 = __toESM(require_react());
 
 // client/node_modules/use-sidecar/dist/es2015/exports.js
-var React6 = __toESM(require_react());
+var React7 = __toESM(require_react());
 var SideCar = function(_a) {
   var sideCar = _a.sideCar, rest = __rest(_a, ["sideCar"]);
   if (!sideCar) {
@@ -494,7 +494,7 @@ var SideCar = function(_a) {
   if (!Target) {
     throw new Error("Sidecar medium not found");
   }
-  return React6.createElement(Target, __assign({}, rest));
+  return React7.createElement(Target, __assign({}, rest));
 };
 SideCar.isSideCarExport = true;
 function exportSidecar(medium, exported) {
@@ -509,9 +509,9 @@ var effectCar = createSidecarMedium();
 var nothing = function() {
   return;
 };
-var RemoveScroll = React7.forwardRef(function(props, parentRef) {
-  var ref = React7.useRef(null);
-  var _a = React7.useState({
+var RemoveScroll = React8.forwardRef(function(props, parentRef) {
+  var ref = React8.useRef(null);
+  var _a = React8.useState({
     onScrollCapture: nothing,
     onWheelCapture: nothing,
     onTouchMoveCapture: nothing
@@ -520,11 +520,11 @@ var RemoveScroll = React7.forwardRef(function(props, parentRef) {
   var SideCar2 = sideCar;
   var containerRef = useMergeRefs([ref, parentRef]);
   var containerProps = __assign(__assign({}, rest), callbacks);
-  return React7.createElement(
-    React7.Fragment,
+  return React8.createElement(
+    React8.Fragment,
     null,
-    enabled && React7.createElement(SideCar2, { sideCar: effectCar, removeScrollBar, shards, noIsolation, inert, setCallbacks, allowPinchZoom: !!allowPinchZoom, lockRef: ref, gapMode }),
-    forwardProps ? React7.cloneElement(React7.Children.only(children), __assign(__assign({}, containerProps), { ref: containerRef })) : React7.createElement(Container, __assign({}, containerProps, { className, ref: containerRef }), children)
+    enabled && React8.createElement(SideCar2, { sideCar: effectCar, removeScrollBar, shards, noIsolation, inert, setCallbacks, allowPinchZoom: !!allowPinchZoom, lockRef: ref, gapMode }),
+    forwardProps ? React8.cloneElement(React8.Children.only(children), __assign(__assign({}, containerProps), { ref: containerRef })) : React8.createElement(Container, __assign({}, containerProps, { className, ref: containerRef }), children)
   );
 });
 RemoveScroll.defaultProps = {
@@ -538,13 +538,13 @@ RemoveScroll.classNames = {
 };
 
 // client/node_modules/react-remove-scroll/dist/es2015/SideEffect.js
-var React10 = __toESM(require_react());
+var React11 = __toESM(require_react());
 
 // client/node_modules/react-remove-scroll-bar/dist/es2015/component.js
-var React9 = __toESM(require_react());
+var React10 = __toESM(require_react());
 
 // client/node_modules/react-style-singleton/dist/es2015/hook.js
-var React8 = __toESM(require_react());
+var React9 = __toESM(require_react());
 
 // client/node_modules/get-nonce/dist/es2015/index.js
 var currentNonce;
@@ -608,7 +608,7 @@ var stylesheetSingleton = function() {
 var styleHookSingleton = function() {
   var sheet = stylesheetSingleton();
   return function(styles, isDynamic) {
-    React8.useEffect(function() {
+    React9.useEffect(function() {
       sheet.add(styles);
       return function() {
         sheet.remove();
@@ -682,7 +682,7 @@ var getCurrentUseCounter = function() {
   return isFinite(counter) ? counter : 0;
 };
 var useLockAttribute = function() {
-  React9.useEffect(function() {
+  React10.useEffect(function() {
     document.body.setAttribute(lockAttribute, (getCurrentUseCounter() + 1).toString());
     return function() {
       var newCounter = getCurrentUseCounter() - 1;
@@ -697,10 +697,10 @@ var useLockAttribute = function() {
 var RemoveScrollBar = function(_a) {
   var noRelative = _a.noRelative, noImportant = _a.noImportant, _b = _a.gapMode, gapMode = _b === void 0 ? "margin" : _b;
   useLockAttribute();
-  var gap = React9.useMemo(function() {
+  var gap = React10.useMemo(function() {
     return getGapWidth(gapMode);
   }, [gapMode]);
-  return React9.createElement(Style, { styles: getStyles(gap, !noRelative, gapMode, !noImportant ? "!important" : "") });
+  return React10.createElement(Style, { styles: getStyles(gap, !noRelative, gapMode, !noImportant ? "!important" : "") });
 };
 
 // client/node_modules/react-remove-scroll/dist/es2015/aggresiveCapture.js
@@ -841,16 +841,16 @@ var generateStyle = function(id) {
 var idCounter = 0;
 var lockStack = [];
 function RemoveScrollSideCar(props) {
-  var shouldPreventQueue = React10.useRef([]);
-  var touchStartRef = React10.useRef([0, 0]);
-  var activeAxis = React10.useRef();
-  var id = React10.useState(idCounter++)[0];
-  var Style2 = React10.useState(styleSingleton)[0];
-  var lastProps = React10.useRef(props);
-  React10.useEffect(function() {
+  var shouldPreventQueue = React11.useRef([]);
+  var touchStartRef = React11.useRef([0, 0]);
+  var activeAxis = React11.useRef();
+  var id = React11.useState(idCounter++)[0];
+  var Style2 = React11.useState(styleSingleton)[0];
+  var lastProps = React11.useRef(props);
+  React11.useEffect(function() {
     lastProps.current = props;
   }, [props]);
-  React10.useEffect(function() {
+  React11.useEffect(function() {
     if (props.inert) {
       document.body.classList.add("block-interactivity-".concat(id));
       var allow_1 = __spreadArray([props.lockRef.current], (props.shards || []).map(extractRef), true).filter(Boolean);
@@ -866,7 +866,7 @@ function RemoveScrollSideCar(props) {
     }
     return;
   }, [props.inert, props.lockRef.current, props.shards]);
-  var shouldCancelEvent = React10.useCallback(function(event, parent) {
+  var shouldCancelEvent = React11.useCallback(function(event, parent) {
     if ("touches" in event && event.touches.length === 2 || event.type === "wheel" && event.ctrlKey) {
       return !lastProps.current.allowPinchZoom;
     }
@@ -902,7 +902,7 @@ function RemoveScrollSideCar(props) {
     var cancelingAxis = activeAxis.current || currentAxis;
     return handleScroll(cancelingAxis, parent, event, cancelingAxis === "h" ? deltaX : deltaY, true);
   }, []);
-  var shouldPrevent = React10.useCallback(function(_event) {
+  var shouldPrevent = React11.useCallback(function(_event) {
     var event = _event;
     if (!lockStack.length || lockStack[lockStack.length - 1] !== Style2) {
       return;
@@ -929,7 +929,7 @@ function RemoveScrollSideCar(props) {
       }
     }
   }, []);
-  var shouldCancel = React10.useCallback(function(name, delta, target, should) {
+  var shouldCancel = React11.useCallback(function(name, delta, target, should) {
     var event = { name, delta, target, should, shadowParent: getOutermostShadowParent(target) };
     shouldPreventQueue.current.push(event);
     setTimeout(function() {
@@ -938,17 +938,17 @@ function RemoveScrollSideCar(props) {
       });
     }, 1);
   }, []);
-  var scrollTouchStart = React10.useCallback(function(event) {
+  var scrollTouchStart = React11.useCallback(function(event) {
     touchStartRef.current = getTouchXY(event);
     activeAxis.current = void 0;
   }, []);
-  var scrollWheel = React10.useCallback(function(event) {
+  var scrollWheel = React11.useCallback(function(event) {
     shouldCancel(event.type, getDeltaXY(event), event.target, shouldCancelEvent(event, props.lockRef.current));
   }, []);
-  var scrollTouchMove = React10.useCallback(function(event) {
+  var scrollTouchMove = React11.useCallback(function(event) {
     shouldCancel(event.type, getTouchXY(event), event.target, shouldCancelEvent(event, props.lockRef.current));
   }, []);
-  React10.useEffect(function() {
+  React11.useEffect(function() {
     lockStack.push(Style2);
     props.setCallbacks({
       onScrollCapture: scrollWheel,
@@ -968,11 +968,11 @@ function RemoveScrollSideCar(props) {
     };
   }, []);
   var removeScrollBar = props.removeScrollBar, inert = props.inert;
-  return React10.createElement(
-    React10.Fragment,
+  return React11.createElement(
+    React11.Fragment,
     null,
-    inert ? React10.createElement(Style2, { styles: generateStyle(id) }) : null,
-    removeScrollBar ? React10.createElement(RemoveScrollBar, { gapMode: props.gapMode }) : null
+    inert ? React11.createElement(Style2, { styles: generateStyle(id) }) : null,
+    removeScrollBar ? React11.createElement(RemoveScrollBar, { gapMode: props.gapMode }) : null
   );
 }
 function getOutermostShadowParent(node) {
@@ -991,8 +991,8 @@ function getOutermostShadowParent(node) {
 var sidecar_default = exportSidecar(effectCar, RemoveScrollSideCar);
 
 // client/node_modules/react-remove-scroll/dist/es2015/Combination.js
-var ReactRemoveScroll = React11.forwardRef(function(props, ref) {
-  return React11.createElement(RemoveScroll, __assign({}, props, { ref, sideCar: sidecar_default }));
+var ReactRemoveScroll = React12.forwardRef(function(props, ref) {
+  return React12.createElement(RemoveScroll, __assign({}, props, { ref, sideCar: sidecar_default }));
 });
 ReactRemoveScroll.classNames = RemoveScroll.classNames;
 var Combination_default = ReactRemoveScroll;
@@ -1132,8 +1132,8 @@ var Dialog = (props) => {
     onOpenChange,
     modal = true
   } = props;
-  const triggerRef = React12.useRef(null);
-  const contentRef = React12.useRef(null);
+  const triggerRef = React13.useRef(null);
+  const contentRef = React13.useRef(null);
   const [open = false, setOpen] = useControllableState({
     prop: openProp,
     defaultProp: defaultOpen,
@@ -1150,7 +1150,7 @@ var Dialog = (props) => {
       descriptionId: useId(),
       open,
       onOpenChange: setOpen,
-      onOpenToggle: React12.useCallback(() => setOpen((prevOpen) => !prevOpen), [setOpen]),
+      onOpenToggle: React13.useCallback(() => setOpen((prevOpen) => !prevOpen), [setOpen]),
       modal,
       children
     }
@@ -1158,7 +1158,7 @@ var Dialog = (props) => {
 };
 Dialog.displayName = DIALOG_NAME;
 var TRIGGER_NAME = "DialogTrigger";
-var DialogTrigger = React12.forwardRef(
+var DialogTrigger = React13.forwardRef(
   (props, forwardedRef) => {
     const { __scopeDialog, ...triggerProps } = props;
     const context = useDialogContext(TRIGGER_NAME, __scopeDialog);
@@ -1186,11 +1186,11 @@ var [PortalProvider, usePortalContext] = createDialogContext(PORTAL_NAME, {
 var DialogPortal = (props) => {
   const { __scopeDialog, forceMount, children, container } = props;
   const context = useDialogContext(PORTAL_NAME, __scopeDialog);
-  return (0, import_jsx_runtime2.jsx)(PortalProvider, { scope: __scopeDialog, forceMount, children: React12.Children.map(children, (child) => (0, import_jsx_runtime2.jsx)(Presence, { present: forceMount || context.open, children: (0, import_jsx_runtime2.jsx)(Portal, { asChild: true, container, children: child }) })) });
+  return (0, import_jsx_runtime2.jsx)(PortalProvider, { scope: __scopeDialog, forceMount, children: React13.Children.map(children, (child) => (0, import_jsx_runtime2.jsx)(Presence, { present: forceMount || context.open, children: (0, import_jsx_runtime2.jsx)(Portal, { asChild: true, container, children: child }) })) });
 };
 DialogPortal.displayName = PORTAL_NAME;
 var OVERLAY_NAME = "DialogOverlay";
-var DialogOverlay = React12.forwardRef(
+var DialogOverlay = React13.forwardRef(
   (props, forwardedRef) => {
     const portalContext = usePortalContext(OVERLAY_NAME, props.__scopeDialog);
     const { forceMount = portalContext.forceMount, ...overlayProps } = props;
@@ -1200,7 +1200,7 @@ var DialogOverlay = React12.forwardRef(
 );
 DialogOverlay.displayName = OVERLAY_NAME;
 var Slot = createSlot("DialogOverlay.RemoveScroll");
-var DialogOverlayImpl = React12.forwardRef(
+var DialogOverlayImpl = React13.forwardRef(
   (props, forwardedRef) => {
     const { __scopeDialog, ...overlayProps } = props;
     const context = useDialogContext(OVERLAY_NAME, __scopeDialog);
@@ -1220,7 +1220,7 @@ var DialogOverlayImpl = React12.forwardRef(
   }
 );
 var CONTENT_NAME = "DialogContent";
-var DialogContent = React12.forwardRef(
+var DialogContent = React13.forwardRef(
   (props, forwardedRef) => {
     const portalContext = usePortalContext(CONTENT_NAME, props.__scopeDialog);
     const { forceMount = portalContext.forceMount, ...contentProps } = props;
@@ -1229,12 +1229,12 @@ var DialogContent = React12.forwardRef(
   }
 );
 DialogContent.displayName = CONTENT_NAME;
-var DialogContentModal = React12.forwardRef(
+var DialogContentModal = React13.forwardRef(
   (props, forwardedRef) => {
     const context = useDialogContext(CONTENT_NAME, props.__scopeDialog);
-    const contentRef = React12.useRef(null);
+    const contentRef = React13.useRef(null);
     const composedRefs = useComposedRefs(forwardedRef, context.contentRef, contentRef);
-    React12.useEffect(() => {
+    React13.useEffect(() => {
       const content = contentRef.current;
       if (content) return hideOthers(content);
     }, []);
@@ -1263,11 +1263,11 @@ var DialogContentModal = React12.forwardRef(
     );
   }
 );
-var DialogContentNonModal = React12.forwardRef(
+var DialogContentNonModal = React13.forwardRef(
   (props, forwardedRef) => {
     const context = useDialogContext(CONTENT_NAME, props.__scopeDialog);
-    const hasInteractedOutsideRef = React12.useRef(false);
-    const hasPointerDownOutsideRef = React12.useRef(false);
+    const hasInteractedOutsideRef = React13.useRef(false);
+    const hasPointerDownOutsideRef = React13.useRef(false);
     return (0, import_jsx_runtime2.jsx)(
       DialogContentImpl,
       {
@@ -1303,11 +1303,11 @@ var DialogContentNonModal = React12.forwardRef(
     );
   }
 );
-var DialogContentImpl = React12.forwardRef(
+var DialogContentImpl = React13.forwardRef(
   (props, forwardedRef) => {
     const { __scopeDialog, trapFocus, onOpenAutoFocus, onCloseAutoFocus, ...contentProps } = props;
     const context = useDialogContext(CONTENT_NAME, __scopeDialog);
-    const contentRef = React12.useRef(null);
+    const contentRef = React13.useRef(null);
     const composedRefs = useComposedRefs(forwardedRef, contentRef);
     useFocusGuards();
     return (0, import_jsx_runtime2.jsxs)(import_jsx_runtime2.Fragment, { children: [
@@ -1342,7 +1342,7 @@ var DialogContentImpl = React12.forwardRef(
   }
 );
 var TITLE_NAME = "DialogTitle";
-var DialogTitle = React12.forwardRef(
+var DialogTitle = React13.forwardRef(
   (props, forwardedRef) => {
     const { __scopeDialog, ...titleProps } = props;
     const context = useDialogContext(TITLE_NAME, __scopeDialog);
@@ -1351,7 +1351,7 @@ var DialogTitle = React12.forwardRef(
 );
 DialogTitle.displayName = TITLE_NAME;
 var DESCRIPTION_NAME = "DialogDescription";
-var DialogDescription = React12.forwardRef(
+var DialogDescription = React13.forwardRef(
   (props, forwardedRef) => {
     const { __scopeDialog, ...descriptionProps } = props;
     const context = useDialogContext(DESCRIPTION_NAME, __scopeDialog);
@@ -1360,7 +1360,7 @@ var DialogDescription = React12.forwardRef(
 );
 DialogDescription.displayName = DESCRIPTION_NAME;
 var CLOSE_NAME = "DialogClose";
-var DialogClose = React12.forwardRef(
+var DialogClose = React13.forwardRef(
   (props, forwardedRef) => {
     const { __scopeDialog, ...closeProps } = props;
     const context = useDialogContext(CLOSE_NAME, __scopeDialog);
@@ -1392,7 +1392,7 @@ var TitleWarning = ({ titleId }) => {
 If you want to hide the \`${titleWarningContext.titleName}\`, you can wrap it with our VisuallyHidden component.
 
 For more information, see https://radix-ui.com/primitives/docs/components/${titleWarningContext.docsSlug}`;
-  React12.useEffect(() => {
+  React13.useEffect(() => {
     if (titleId) {
       const hasTitle = document.getElementById(titleId);
       if (!hasTitle) console.error(MESSAGE);
@@ -1404,7 +1404,7 @@ var DESCRIPTION_WARNING_NAME = "DialogDescriptionWarning";
 var DescriptionWarning = ({ contentRef, descriptionId }) => {
   const descriptionWarningContext = useWarningContext(DESCRIPTION_WARNING_NAME);
   const MESSAGE = `Warning: Missing \`Description\` or \`aria-describedby={undefined}\` for {${descriptionWarningContext.contentName}}.`;
-  React12.useEffect(() => {
+  React13.useEffect(() => {
     const describedById = contentRef.current?.getAttribute("aria-describedby");
     if (descriptionId && describedById) {
       const hasDescription = document.getElementById(descriptionId);

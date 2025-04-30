@@ -9,5 +9,7 @@ services:
         value: 20.11.1
       - key: NODE_ENV
         value: production
+      - key: BUILD_TIMESTAMP
+        generateValue: true
     healthCheckPath: /
     autoDeploy: true 

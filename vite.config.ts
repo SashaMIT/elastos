@@ -92,7 +92,11 @@ export default defineConfig({
           if (id.includes('lucide-react')) {
             return 'icons';
           }
-        }
+        },
+        // Add cache busting with a content hash for all files
+        entryFileNames: 'assets/[name].[hash].js',
+        chunkFileNames: 'assets/[name].[hash].js',
+        assetFileNames: 'assets/[name].[hash].[ext]'
       },
       input: {
         main: path.resolve(__dirname, 'client/index.html')

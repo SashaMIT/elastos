@@ -1,15 +1,15 @@
 "use client";
 import {
   require_react_dom
-} from "./chunk-ATCYXUJR.js";
+} from "./chunk-YU2QM6W5.js";
 import {
   require_react
-} from "./chunk-K3CCW6BN.js";
+} from "./chunk-A5RJMWOC.js";
 import {
   __toESM
-} from "./chunk-VHXUCOYC.js";
+} from "./chunk-RDKGUBC5.js";
 
-// client/node_modules/react-medium-image-zoom/dist/index.js
+// node_modules/react-medium-image-zoom/dist/index.js
 var import_react = __toESM(require_react());
 var import_react_dom = __toESM(require_react_dom());
 function ICompress() {

@@ -54,6 +54,11 @@ app.use((_req, res, next) => {
     res.setHeader('X-Content-Security-Policy', csp);
     res.setHeader('X-WebKit-CSP', csp);
     
+    // Add cache control headers to prevent excessive caching
+    res.setHeader('Cache-Control', 'no-cache, no-store, must-revalidate');
+    res.setHeader('Pragma', 'no-cache');
+    res.setHeader('Expires', '0');
+    
     // Add CORS headers
     res.setHeader('Access-Control-Allow-Origin', '*');
     res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, DELETE');

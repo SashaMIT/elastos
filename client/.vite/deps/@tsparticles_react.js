@@ -1,17 +1,17 @@
 import {
   tsParticles
-} from "./chunk-U56Q5JIZ.js";
+} from "./chunk-Y5VBRRH5.js";
 import {
   require_jsx_runtime
-} from "./chunk-VNID673C.js";
+} from "./chunk-QO6G5LJU.js";
 import {
   require_react
-} from "./chunk-K3CCW6BN.js";
+} from "./chunk-A5RJMWOC.js";
 import {
   __toESM
-} from "./chunk-VHXUCOYC.js";
+} from "./chunk-RDKGUBC5.js";
 
-// client/node_modules/@tsparticles/react/dist/Particles.js
+// node_modules/@tsparticles/react/dist/Particles.js
 var import_jsx_runtime = __toESM(require_jsx_runtime(), 1);
 var import_react = __toESM(require_react(), 1);
 var f = (t) => {
@@ -27,7 +27,7 @@ var f = (t) => {
   }, [i, t, t.url, t.options]), (0, import_jsx_runtime.jsx)("div", { id: i, className: t.className });
 };
 
-// client/node_modules/@tsparticles/react/dist/index.js
+// node_modules/@tsparticles/react/dist/index.js
 var import_jsx_runtime2 = __toESM(require_jsx_runtime());
 var import_react2 = __toESM(require_react());
 async function n(t) {

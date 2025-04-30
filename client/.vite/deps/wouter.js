@@ -1,14 +1,14 @@
 import {
   require_react
-} from "./chunk-K3CCW6BN.js";
+} from "./chunk-A5RJMWOC.js";
 import {
   __commonJS,
   __toESM
-} from "./chunk-VHXUCOYC.js";
+} from "./chunk-RDKGUBC5.js";
 
-// client/node_modules/use-sync-external-store/cjs/use-sync-external-store-shim.development.js
+// node_modules/use-sync-external-store/cjs/use-sync-external-store-shim.development.js
 var require_use_sync_external_store_shim_development = __commonJS({
-  "client/node_modules/use-sync-external-store/cjs/use-sync-external-store-shim.development.js"(exports) {
+  "node_modules/use-sync-external-store/cjs/use-sync-external-store-shim.development.js"(exports) {
     "use strict";
     (function() {
       function is(x, y) {
@@ -70,9 +70,9 @@ var require_use_sync_external_store_shim_development = __commonJS({
   }
 });
 
-// client/node_modules/use-sync-external-store/shim/index.js
+// node_modules/use-sync-external-store/shim/index.js
 var require_shim = __commonJS({
-  "client/node_modules/use-sync-external-store/shim/index.js"(exports, module) {
+  "node_modules/use-sync-external-store/shim/index.js"(exports, module) {
     "use strict";
     if (false) {
       module.exports = null;
@@ -82,7 +82,7 @@ var require_shim = __commonJS({
   }
 });
 
-// client/node_modules/regexparam/dist/index.mjs
+// node_modules/regexparam/dist/index.mjs
 function parse(input, loose) {
   if (input instanceof RegExp) return { keys: false, pattern: input };
   var c, o, tmp, ext, keys = [], pattern = "", arr = input.split("/");
@@ -108,7 +108,7 @@ function parse(input, loose) {
   };
 }
 
-// client/node_modules/wouter/esm/react-deps.js
+// node_modules/wouter/esm/react-deps.js
 var React = __toESM(require_react(), 1);
 var import_react = __toESM(require_react(), 1);
 var import_shim = __toESM(require_shim(), 1);
@@ -124,7 +124,7 @@ var useEvent = (fn) => {
   return ref[1];
 };
 
-// client/node_modules/wouter/esm/use-browser-location.js
+// node_modules/wouter/esm/use-browser-location.js
 var eventPopstate = "popstate";
 var eventPushState = "pushState";
 var eventReplaceState = "replaceState";
@@ -170,7 +170,7 @@ if (typeof history !== "undefined" && typeof window[patchKey] === "undefined") {
   Object.defineProperty(window, patchKey, { value: true });
 }
 
-// client/node_modules/wouter/esm/index.js
+// node_modules/wouter/esm/index.js
 var _relativePath = (base, path) => !path.toLowerCase().indexOf(base.toLowerCase()) ? path.slice(base.length) || "/" : "~" + path;
 var baseDefaults = (base = "") => base === "/" ? "" : base;
 var absolutePath = (to, base) => to[0] === "~" ? to.slice(1) : baseDefaults(base) + to;
@@ -192,8 +192,6 @@ var defaultRouter = {
   // this option is used to override the current location during SSR
   ssrPath: void 0,
   ssrSearch: void 0,
-  // optional context to track render state during SSR
-  ssrContext: void 0,
   // customizes how `href` props are transformed for <Link />
   hrefs: (x) => x
 };
@@ -258,24 +256,11 @@ var h_route = ({ children, component }, params) => {
   return typeof children === "function" ? children(params) : children;
 };
 var useCachedParams = (value) => {
-  let prev = (0, import_react.useRef)(Params0);
-  const curr = prev.current;
-  return prev.current = // Update cache if number of params changed or any value changed
-  Object.keys(value).length !== Object.keys(curr).length || Object.entries(value).some(([k, v]) => v !== curr[k]) ? value : curr;
+  let prev = (0, import_react.useRef)(Params0), curr = prev.current;
+  for (const k in value) if (value[k] !== curr[k]) curr = value;
+  if (Object.keys(value).length === 0) curr = value;
+  return prev.current = curr;
 };
-function useSearchParams() {
-  const [location2, navigate2] = useLocation();
-  const search = useSearch2();
-  const searchParams = (0, import_react.useMemo)(() => new URLSearchParams(search), [search]);
-  let tempSearchParams = searchParams;
-  const setSearchParams = useEvent((nextInit, options) => {
-    tempSearchParams = new URLSearchParams(
-      typeof nextInit === "function" ? nextInit(tempSearchParams) : nextInit
-    );
-    navigate2(location2 + "?" + tempSearchParams, options);
-  });
-  return [searchParams, setSearchParams];
-}
 var Route = ({ path, nest, match, ...renderProps }) => {
   const router = useRouter();
   const [location2] = useLocationFromRouter(router);
@@ -353,16 +338,11 @@ var Switch = ({ children, location: location2 }) => {
 };
 var Redirect = (props) => {
   const { to, href = to } = props;
-  const router = useRouter();
-  const [, navigate2] = useLocationFromRouter(router);
+  const [, navigate2] = useLocation();
   const redirect = useEvent(() => navigate2(to || href, props));
-  const { ssrContext } = router;
   useIsomorphicLayoutEffect(() => {
     redirect();
   }, []);
-  if (ssrContext) {
-    ssrContext.redirectTo = to;
-  }
   return null;
 };
 export {
@@ -376,8 +356,7 @@ export {
   useParams,
   useRoute,
   useRouter,
-  useSearch2 as useSearch,
-  useSearchParams
+  useSearch2 as useSearch
 };
 /*! Bundled license information:
 

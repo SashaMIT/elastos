@@ -2,24 +2,23 @@
 import {
   useCallbackRef,
   useLayoutEffect2
-} from "./chunk-UUKKEGQJ.js";
+} from "./chunk-SU6BXGAN.js";
 import {
   Primitive,
   createContextScope
-} from "./chunk-TFXR2K5M.js";
-import "./chunk-63HEPLPE.js";
-import "./chunk-ATCYXUJR.js";
+} from "./chunk-KGFYQTY2.js";
+import "./chunk-YU2QM6W5.js";
 import {
   require_jsx_runtime
-} from "./chunk-VNID673C.js";
+} from "./chunk-QO6G5LJU.js";
 import {
   require_react
-} from "./chunk-K3CCW6BN.js";
+} from "./chunk-A5RJMWOC.js";
 import {
   __toESM
-} from "./chunk-VHXUCOYC.js";
+} from "./chunk-RDKGUBC5.js";
 
-// client/node_modules/@radix-ui/react-avatar/dist/index.mjs
+// node_modules/@radix-ui/react-avatar/dist/index.mjs
 var React = __toESM(require_react(), 1);
 var import_jsx_runtime = __toESM(require_jsx_runtime(), 1);
 var AVATAR_NAME = "Avatar";
@@ -47,7 +46,7 @@ var AvatarImage = React.forwardRef(
     const { __scopeAvatar, src, onLoadingStatusChange = () => {
     }, ...imageProps } = props;
     const context = useAvatarContext(IMAGE_NAME, __scopeAvatar);
-    const imageLoadingStatus = useImageLoadingStatus(src, imageProps);
+    const imageLoadingStatus = useImageLoadingStatus(src, imageProps.referrerPolicy);
     const handleLoadingStatusChange = useCallbackRef((status) => {
       onLoadingStatusChange(status);
       context.onImageLoadingStatusChange(status);
@@ -77,66 +76,31 @@ var AvatarFallback = React.forwardRef(
   }
 );
 AvatarFallback.displayName = FALLBACK_NAME;
-function resolveLoadingStatus(image, src) {
-  if (!image) {
-    return "idle";
-  }
-  if (!src) {
-    return "error";
-  }
-  if (image.src !== src) {
-    image.src = src;
-  }
-  return image.complete && image.naturalWidth > 0 ? "loaded" : "loading";
-}
-function useImageLoadingStatus(src, { referrerPolicy, crossOrigin }) {
-  const isHydrated = useIsHydrated();
-  const imageRef = React.useRef(null);
-  const image = (() => {
-    if (!isHydrated) return null;
-    if (!imageRef.current) {
-      imageRef.current = new window.Image();
+function useImageLoadingStatus(src, referrerPolicy) {
+  const [loadingStatus, setLoadingStatus] = React.useState("idle");
+  useLayoutEffect2(() => {
+    if (!src) {
+      setLoadingStatus("error");
+      return;
     }
-    return imageRef.current;
-  })();
-  const [loadingStatus, setLoadingStatus] = React.useState(
-    () => resolveLoadingStatus(image, src)
-  );
-  useLayoutEffect2(() => {
-    setLoadingStatus(resolveLoadingStatus(image, src));
-  }, [image, src]);
-  useLayoutEffect2(() => {
+    let isMounted = true;
+    const image = new window.Image();
     const updateStatus = (status) => () => {
+      if (!isMounted) return;
       setLoadingStatus(status);
     };
-    if (!image) return;
-    const handleLoad = updateStatus("loaded");
-    const handleError = updateStatus("error");
-    image.addEventListener("load", handleLoad);
-    image.addEventListener("error", handleError);
+    setLoadingStatus("loading");
+    image.onload = updateStatus("loaded");
+    image.onerror = updateStatus("error");
+    image.src = src;
     if (referrerPolicy) {
       image.referrerPolicy = referrerPolicy;
     }
-    if (typeof crossOrigin === "string") {
-      image.crossOrigin = crossOrigin;
-    }
     return () => {
-      image.removeEventListener("load", handleLoad);
-      image.removeEventListener("error", handleError);
+      isMounted = false;
     };
-  }, [image, crossOrigin, referrerPolicy]);
+  }, [src, referrerPolicy]);
   return loadingStatus;
-}
-function subscribe() {
-  return () => {
-  };
-}
-function useIsHydrated() {
-  return React.useSyncExternalStore(
-    subscribe,
-    () => true,
-    () => false
-  );
 }
 var Root = Avatar;
 var Image = AvatarImage;
