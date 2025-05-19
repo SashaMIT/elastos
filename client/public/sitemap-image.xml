@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+  <url>
+    <loc>https://elastos.net</loc>
+    <image:image>
+      <image:loc>https://elastos.net/images/Elastos-Logo.png</image:loc>
+      <image:title>Elastos Logo</image:title>
+      <image:caption>Official Elastos Logo</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://elastos.net/images/Elastos-Logo-Dark.png</image:loc>
+      <image:title>Elastos Dark Logo</image:title>
+      <image:caption>Elastos Logo - Dark Version</image:caption>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://elastos.net/media-kit</loc>
+    <image:image>
+      <image:loc>https://elastos.net/images/Roadmap/Community crowd.png</image:loc>
+      <image:title>Elastos Community</image:title>
+      <image:caption>Elastos Community Gathering</image:caption>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://elastos.net/ecosystem</loc>
+    <image:image>
+      <image:loc>https://elastos.net/images/ecosystem/ecosystem-hero.png</image:loc>
+      <image:title>Elastos Ecosystem</image:title>
+      <image:caption>Overview of the Elastos Ecosystem</image:caption>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://elastos.net/roadmap</loc>
+    <image:image>
+      <image:loc>https://elastos.net/images/Roadmap/roadmap-hero.png</image:loc>
+      <image:title>Elastos Roadmap</image:title>
+      <image:caption>Elastos Development Roadmap</image:caption>
+    </image:image>
+  </url>
+</urlset> 

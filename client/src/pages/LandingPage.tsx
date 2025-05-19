@@ -312,47 +312,32 @@ const LandingPage = () => {
             <img 
               src="/images/Hero image.png" 
               alt="Elastos Hero" 
-              className="absolute inset-0 w-full h-full object-cover z-10" 
+              className="absolute inset-0 w-full h-full object-cover z-20" 
             />
+            {/* Video will be enabled once the file is added to /public/videos/ */}
+            {/* 
             <div className="absolute inset-0 w-full h-full z-20 overflow-hidden">
-              <iframe 
+              <video
                 className={`absolute top-0 left-0 w-[100%] h-[100%] ${window.innerWidth <= 768 ? 'scale-[3.07]' : 'scale-[1.35]'}`}
-                src="https://www.youtube.com/embed/PEtrJlSQB3w?autoplay=1&mute=1&controls=0&showinfo=0&rel=0&loop=1&playlist=PEtrJlSQB3w&enablejsapi=1"
-                title="Elastos Hero"
-                frameBorder="0"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                autoPlay
+                muted
+                loop
+                playsInline
                 style={{
-                  pointerEvents: "none",
                   objectFit: "cover",
-                  objectPosition: "center"
+                  objectPosition: "center",
+                  pointerEvents: "none"
                 }}
-              ></iframe>
-              <script dangerouslySetInnerHTML={{
-                __html: `
-                // Initialize YouTube API for controlling the player
-                var tag = document.createElement('script');
-                tag.src = "https://www.youtube.com/iframe_api";
-                var firstScriptTag = document.getElementsByTagName('script')[0];
-                firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
-                
-                var player;
-                function onYouTubeIframeAPIReady() {
-                  player = new YT.Player('hero-youtube-video', {
-                    events: {
-                      'onStateChange': onPlayerStateChange
-                    }
-                  });
-                }
-                
-                function onPlayerStateChange(event) {
-                  // Ensure continuous playback
-                  if(event.data === YT.PlayerState.ENDED) {
-                    player.playVideo(); // Restart video if it somehow ends
-                  }
-                }
-                `
-              }} />
+              >
+                <source src="/videos/elastos-hero-bg.mp4" type="video/mp4" />
+                <img 
+                  src="/images/Hero image.png" 
+                  alt="Elastos Hero" 
+                  className="absolute inset-0 w-full h-full object-cover" 
+                />
+              </video>
             </div>
+            */}
           </div>
 
           {/* Overlay for better text readability */}

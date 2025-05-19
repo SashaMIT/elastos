@@ -1,0 +1,58 @@
+# Global rules for all crawlers
+User-agent: *
+Allow: /
+Crawl-delay: 10
+
+# Google-specific rules
+User-agent: Googlebot
+Allow: /
+Crawl-delay: 5
+Allow: /news/
+Allow: /announcements/
+Allow: /blog/
+Allow: /images/
+Allow: /videos/
+Allow: /docs/
+
+# Bing-specific rules
+User-agent: Bingbot
+Allow: /
+Crawl-delay: 5
+Allow: /news/
+Allow: /announcements/
+Allow: /blog/
+Allow: /images/
+Allow: /videos/
+Allow: /docs/
+
+# Block sensitive areas only
+Disallow: /admin/
+Disallow: /private/
+Disallow: /api/
+Disallow: /internal/
+Disallow: /temp/
+Disallow: /draft/
+Disallow: /test/
+Disallow: /dev/
+Disallow: /staging/
+Disallow: /beta/
+Disallow: /debug/
+Disallow: /console/
+Disallow: /cgi-bin/
+Disallow: /*.env
+Disallow: /*.config
+Disallow: /*.ini
+Disallow: /*.conf
+Disallow: /*.htaccess
+Disallow: /*.htpasswd
+Disallow: /*.git/
+Disallow: /*.svn/
+
+# Host directive
+Host: https://elastos.net
+
+# Sitemap locations
+Sitemap: https://elastos.net/sitemap.xml
+Sitemap: https://elastos.net/sitemap-image.xml
+Sitemap: https://elastos.net/sitemap-video.xml
+Sitemap: https://elastos.net/sitemap-news.xml 
