@@ -36,7 +36,7 @@ const features = [
     poster: "/images/Carousel/EssentialsTea.png"
   },
   {
-    title: "Cyber Republic: Our community-governed DAO, powered by merged-mined ELA.",
+    title: "Elastos DAO: Our community-governed DAO, powered by merged-mined ELA.",
     buttonText: "Learn More",
     // video: "https://youtu.be/RpIFm57cLt4",
     youtubeEmbed: false,
@@ -165,7 +165,7 @@ export function FeaturesCarousel() {
                          index === 1 ? "/images/Carousel/BeL2Tea.png" : 
                          index === 2 ? "/images/Carousel/EssentialsTea.png" : 
                          "/images/Carousel/CyberRepublicTea.png"}
-                    alt={`${index === 0 ? 'Elacity' : index === 1 ? 'BeL2' : index === 2 ? 'Essentials' : 'Cyber Republic'} Preview`}
+                    alt={`${index === 0 ? 'Elacity' : index === 1 ? 'BeL2' : index === 2 ? 'Essentials' : 'Elastos DAO'} Preview`}
                     className={`absolute inset-0 w-full h-full object-cover transform-gpu z-0 ${
                       // No scaling/zoom for all images
                       !isVisible ? 'opacity-0' : 'opacity-100'

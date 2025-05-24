@@ -42,8 +42,8 @@ export default function TeamFoundationPage() {
       ]
     },
     {
-      name: "Cyber Republic DAO",
-      description: "The Cyber Republic DAO team oversees community governance, proposal reviews, and treasury management for the ecosystem. They ensure the decentralized governance of Elastos is maintained with integrity.",
+      name: "Elastos DAO",
+      description: "The Elastos DAO team oversees community governance, proposal reviews, and treasury management for the ecosystem. They ensure the decentralized governance of Elastos is maintained with integrity.",
       videoSrc: "/videos/CyberRepublicTeam.mp4",
       links: [
         { text: "DAO Portal", url: "/dao", icon: <ArrowRight className="w-4 h-4" /> }
@@ -285,10 +285,6 @@ export default function TeamFoundationPage() {
           </div>
         </div>
       </section>
-
-
-
-
 
       {/* Logo Carousel Section */}
       <section className="py-16 bg-white dark:bg-[#171717]">

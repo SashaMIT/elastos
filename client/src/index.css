@@ -5,6 +5,13 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Prevent horizontal scrolling globally */
+html, body {
+  overflow-x: hidden;
+  width: 100%;
+  position: relative;
+}
+
 @layer utilities {
   .image-rendering-high-quality {
     image-rendering: high-quality;

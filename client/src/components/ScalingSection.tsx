@@ -14,7 +14,7 @@ const ecosystemProjects = [
     image: "/images/Ecosystem/Essentials.png"
   },
   {
-    name: "Cyber Republic DAO",
+    name: "Elastos DAO",
     description: "A community-driven governance system for Elastos",
     url: "https://cyberrepublic.org",
     image: "/images/Ecosystem/Cyber Republic.png"
@@ -40,8 +40,10 @@ const ecosystemProjects = [
   {
     name: "Chainge Finance",
     description: "Cross-chain DEX swaps from over 30+ blockchains",
+    tempUnavailable: true,
     url: "https://dapp.chainge.finance",
-    image: "/images/Ecosystem/Chainge Finance ELA.png"
+    image: "/images/Ecosystem/Chainge Finance ELA.png",
+    disabled: true
   }
 ];
 
@@ -49,11 +51,11 @@ export function ScalingSection() {
   const [activeTab, setActiveTab] = useState('public');
 
   return (
-    <div className="w-full bg-background dark:bg-[#171717] text-foreground py-10">
+    <div className="w-full bg-background dark:bg-[#171717] text-foreground py-10 overflow-x-hidden">
       <h2 className="text-4xl md:text-5xl lg:text-6xl font-[200] text-center mb-12">
         Elastos SmartWeb Architecture
       </h2>
-      <div className="container mx-auto px-4 lg:px-[180px] max-w-1xl">
+      <div className="container mx-auto px-4 lg:px-[180px] max-w-1xl overflow-x-hidden">
         <div className="flex justify-center mb-16">
           <div className="rounded-full border-[0.5px] border-[#95B5FF]/30 bg-[#95B5FF]/10 dark:bg-[#95B5FF]/10 flex">
             <button
@@ -167,8 +169,8 @@ export function ScalingSection() {
               {ecosystemProjects.map((project) => (
                 <Card 
                   key={project.name}
-                  className="border-0 shadow-none hover:shadow-none relative rounded-3xl overflow-hidden bg-white dark:bg-[#171717] p-8 cursor-pointer transition-all"
-                  onClick={() => window.open(project.url, '_blank')}
+                  className={`border-0 shadow-none hover:shadow-none relative rounded-3xl overflow-hidden bg-white dark:bg-[#171717] p-8 transition-all ${project.disabled ? 'opacity-50 cursor-not-allowed' : 'cursor-pointer'}`}
+                  onClick={() => !project.disabled && window.open(project.url, '_blank')}
                 >
                   <div className="relative z-10">
                     <Lens>
@@ -181,9 +183,14 @@ export function ScalingSection() {
                     <div className="mt-4">
                       <h3 className="text-2xl font-bold font-sans text-gray-900 dark:text-white mb-4 flex items-center gap-2">
                         {project.name}
-                        <ExternalLink className="w-5 h-5 flex-shrink-0" />
+                        {!project.disabled && <ExternalLink className="w-5 h-5 flex-shrink-0" />}
                       </h3>
-                      <p className="text-gray-600 dark:text-neutral-200">{project.description}</p>
+                      <p className="text-gray-600 dark:text-neutral-200">
+                        {project.description}
+                        {project.tempUnavailable && (
+                          <span className="text-red-500 font-semibold"> (Temporarily Unavailable)</span>
+                        )}
+                      </p>
                     </div>
                   </div>
                 </Card>

@@ -309,35 +309,27 @@ const LandingPage = () => {
         <div className="relative w-full h-[700px] overflow-hidden rounded-3xl">
           {/* Video Background */}
           <div className="absolute inset-0 w-full h-full">
-            <img 
-              src="/images/Hero image.png" 
-              alt="Elastos Hero" 
-              className="absolute inset-0 w-full h-full object-cover z-20" 
-            />
-            {/* Video will be enabled once the file is added to /public/videos/ */}
-            {/* 
             <div className="absolute inset-0 w-full h-full z-20 overflow-hidden">
-              <video
-                className={`absolute top-0 left-0 w-[100%] h-[100%] ${window.innerWidth <= 768 ? 'scale-[3.07]' : 'scale-[1.35]'}`}
-                autoPlay
-                muted
-                loop
-                playsInline
+              <iframe
+                className={`absolute top-0 left-0 w-[100%] h-[100%] ${window.innerWidth <= 768 ? 'scale-[3.7]' : 'scale-[1.35]'}`}
+                src="https://www.youtube.com/embed/PEtrJlSQB3w?autoplay=1&mute=1&loop=1&playlist=PEtrJlSQB3w&controls=0&showinfo=0&rel=0&iv_load_policy=3&modestbranding=1&disablekb=1&fs=0&cc_load_policy=0&playsinline=1&enablejsapi=1"
+                title="Elastos Hero Video"
+                frameBorder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowFullScreen
                 style={{
                   objectFit: "cover",
                   objectPosition: "center",
                   pointerEvents: "none"
                 }}
-              >
-                <source src="/videos/elastos-hero-bg.mp4" type="video/mp4" />
-                <img 
-                  src="/images/Hero image.png" 
-                  alt="Elastos Hero" 
-                  className="absolute inset-0 w-full h-full object-cover" 
-                />
-              </video>
+              />
+              <img 
+                src="/images/Hero image.png" 
+                alt="Elastos Hero" 
+                className="absolute inset-0 w-full h-full object-cover"
+                style={{ display: 'none' }}
+              />
             </div>
-            */}
           </div>
 
           {/* Overlay for better text readability */}

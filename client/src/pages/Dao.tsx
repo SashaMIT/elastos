@@ -1,4 +1,3 @@
-
 import React from "react";
 import DaoPage from './DaoPage';
 import { Helmet } from "react-helmet";
@@ -24,7 +23,7 @@ export default function Dao() {
       <SEO 
         title="Elastos DAO | Decentralized Governance for the World Computer"
         description="Learn about Elastos DAO's community-powered governance system for a truly decentralized internet, with transparent proposals, voting, and ecosystem funding."
-        keywords="Elastos DAO, crypto governance, decentralized autonomous organization, ELA staking, blockchain governance, Web3 DAO, Cyber Republic"
+        keywords="Elastos DAO, crypto governance, decentralized autonomous organization, ELA staking, blockchain governance, Web3 DAO, Elastos DAO"
         ogImage="/images/ElastosDAO.png"
         canonicalUrl="/dao"
       />

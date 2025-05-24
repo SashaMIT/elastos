@@ -476,7 +476,7 @@ const UseCasesPage: React.FC = () => {
                 <div className="md:w-1/2 text-left">
                   <h2 className="text-2xl md:text-3xl font-bold mb-4">Build Your Own Elastos Application</h2>
                   <p className="text-muted-foreground mb-6">
-                    Ready to build the next revolutionary dApp? Elastos provides comprehensive SDKs, tools, and infrastructure to bring your vision to life. Plus, you can apply for funding through the Cyber Republic DAO to accelerate your project.
+                    Ready to build the next revolutionary dApp? Elastos provides comprehensive SDKs, tools, and infrastructure to bring your vision to life. Plus, you can apply for funding through the Elastos DAO to accelerate your project.
                   </p>
                   <div className="flex flex-wrap gap-4 mt-8">
                     <button

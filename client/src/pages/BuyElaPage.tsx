@@ -49,7 +49,9 @@ const BuyElaPage = () => {
       { 
         name: 'Chainge Finance', 
         url: 'https://dapp.chainge.finance/',
-        description: 'Cross-chain trading with Force Bridge'
+        description: 'Cross-chain trading with Force Bridge',
+        tempUnavailable: true,
+        disabled: true
       },
       { 
         name: 'Glide Finance', 
@@ -300,13 +302,18 @@ const BuyElaPage = () => {
                   {exchanges.dex.map((exchange) => (
                     <a
                       key={exchange.name}
-                      href={exchange.url}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="inline-flex items-center gap-1 px-4 py-1 bg-[#F7921A]/10 border border-[#F7921A]/30 text-white rounded-full text-xs font-medium whitespace-nowrap transition-colors hover:bg-[#F7921A]/20"
+                      href={exchange.disabled ? undefined : exchange.url}
+                      target={exchange.disabled ? undefined : "_blank"}
+                      rel={exchange.disabled ? undefined : "noopener noreferrer"}
+                      className={`inline-flex items-center gap-1 px-4 py-1 bg-[#F7921A]/10 border border-[#F7921A]/30 text-white rounded-full text-xs font-medium whitespace-nowrap transition-colors ${exchange.disabled ? 'opacity-50 cursor-not-allowed' : 'hover:bg-[#F7921A]/20 cursor-pointer'}`}
                     >
-                      {exchange.name}
-                      <ExternalLink size={12} />
+                      <span>
+                        {exchange.name}
+                        {exchange.tempUnavailable && (
+                          <span className="text-red-400 font-semibold ml-1">(Temporarily Unavailable)</span>
+                        )}
+                      </span>
+                      {!exchange.disabled && <ExternalLink size={12} />}
                     </a>
                   ))}
                 </div>

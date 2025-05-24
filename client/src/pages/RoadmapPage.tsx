@@ -43,7 +43,7 @@ export default function RoadmapPage() {
       content: (
         <div className="text-base text-neutral-800 dark:text-neutral-200 font-[200]">
           <p className="mb-4"><strong>2019:</strong> Launch of ESC sidechain for EVM smartcontracts and Elastos Hive</p>
-          <p className="mb-4"><strong>2019:</strong> First Elastos Cyber Republic Council DAO elections</p>
+          <p className="mb-4"><strong>2019:</strong> First Elastos DAO Council elections</p>
           <p className="mb-4"><strong>2020:</strong> W3C-compliant DID Sidechain activation</p>
           <p className="mb-4"><strong>2020:</strong> Release of Elastos Essentials super wallet</p>
         </div>
@@ -199,7 +199,7 @@ export default function RoadmapPage() {
             <ImageZoom
               key="10"
               src="/images/Roadmap/Cyber Republic DAO meetup.jpeg"
-              alt="Cyber Republic DAO meetup"
+              alt="Elastos DAO meetup"
               className="w-full h-[200px] object-cover"
             />
             <ImageZoom

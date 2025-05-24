@@ -544,7 +544,7 @@ export function BridgePage() {
                           Shadow Token Bridge via Glide Finance
                         </TabsTrigger>
                         <TabsTrigger value="change" className="flex-1 data-[state=active]:bg-[#8BABFF]/20 data-[state=active]:text-white font-[200]">
-                          Chainge Finance Bridge
+                          Chainge Finance Bridge <span className="text-red-400 font-semibold">(Temporarily Unavailable)</span>
                         </TabsTrigger>
                       </TabsList>
 
@@ -1172,17 +1172,12 @@ export function BridgePage() {
                               About Chainge Finance
                             </h4>
                             <p className="text-white/80 mb-4 leading-relaxed font-[200]">
-                              Chainge Finance provides a user-friendly cross-chain bridge that allows you to transfer ELA between Elastos Smart Chain and multiple other blockchains, including Ethereum. Their DCRM technology ensures secure and fast cross-chain transfers.
+                              Chainge Finance bridge service is currently <span className="text-red-400 font-semibold">temporarily unavailable</span>. Please use the Shadow Token Bridge via Glide Finance for cross-chain transfers.
                             </p>
                             <div className="flex flex-wrap gap-4 mt-4">
-                              <a
-                                href="https://chainge.finance"
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                className="inline-flex px-3 py-2 bg-[rgba(92,142,255,0.15)] text-white rounded-full font-[200] transition-all items-center gap-1 border border-[rgba(92,142,255,0.25)] text-sm"
-                              >
-                                Go to Chainge Finance
-                              </a>
+                              <span className="inline-flex px-3 py-2 bg-red-500/20 text-red-400 rounded-full font-[200] items-center gap-1 border border-red-500/25 text-sm cursor-not-allowed">
+                                Temporarily Unavailable
+                              </span>
                             </div>
                           </div>
                         </div>

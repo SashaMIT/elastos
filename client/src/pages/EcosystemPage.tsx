@@ -14,6 +14,8 @@ type Project = {
   url: string;
   category: string;
   image: string;
+  disabled?: boolean;
+  tempUnavailable?: boolean;
 };
 
 const projects: Project[] = [
@@ -72,7 +74,9 @@ const projects: Project[] = [
     description: "Cross-chain DEX swaps from over 30+ blockchains",
     url: "https://dapp.chainge.finance",
     category: "Finance and DeFi",
-    image: "/images/Ecosystem/Chainge Finance ELA.png"
+    image: "/images/Ecosystem/Chainge Finance ELA.png",
+    disabled: true,
+    tempUnavailable: true
   },
   {
     name: "CoinCreate",
@@ -96,14 +100,14 @@ const projects: Project[] = [
     image: "/images/Ecosystem/Crypto.png"
   },
   {
-    name: "Cyber Republic DAO",
+    name: "Elastos DAO",
     description: "A community-driven governance system for Elastos",
     url: "https://cyberrepublic.org",
     category: "Governance",
     image: "/images/Ecosystem/Cyber Republic.png"
   },
   {
-    name: "Cyber Republic X",
+    name: "Elastos DAO X",
     description: "Secretariat-run updates and governance communications",
     url: "https://x.com/Cyber__Republic",
     category: "Social",
@@ -347,7 +351,9 @@ const projects: Project[] = [
     description: "Cross-chain DEX swaps from over 30+ blockchains",
     url: "https://dapp.chainge.finance",
     category: "Finance and DeFi",
-    image: "/images/Ecosystem/Chainge Finance ELA.png"
+    image: "/images/Ecosystem/Chainge Finance ELA.png",
+    disabled: true,
+    tempUnavailable: true
   },
 
   // Digital Assets & IP
@@ -377,7 +383,7 @@ const projects: Project[] = [
 
   // Governance
   {
-    name: "Cyber Republic DAO",
+    name: "Elastos DAO",
     description: "A community-driven governance system for Elastos",
     url: "https://cyberrepublic.org",
     category: "Governance",
@@ -393,7 +399,7 @@ const projects: Project[] = [
     image: "/images/Ecosystem/Elastos Info X.png"
   },
   {
-    name: "Cyber Republic X",
+    name: "Elastos DAO X",
     description: "Secretariat-run updates and governance communications",
     url: "https://x.com/Cyber__Republic",
     category: "Social",
@@ -456,7 +462,7 @@ export default function EcosystemPage() {
   const uniqueProjects = Array.from(new Map(projects.map(project => [project.name, project])).values());
 
   // Priority list
-  const priorityOrder = ["Essentials", "Elacity", "BeL2 Lending Demo", "Cyber Republic DAO", "Glide Finance", "Coinbase", "Uniswap", "Chainge Finance"];
+  const priorityOrder = ["Essentials", "Elacity", "BeL2 Lending Demo", "Elastos DAO", "Glide Finance", "Coinbase", "Uniswap", "Chainge Finance"];
 
   // Filter and sort projects
   const filteredProjects = selectedCategory
@@ -474,7 +480,7 @@ export default function EcosystemPage() {
   });
 
   return (
-    <div className="min-h-screen bg-white dark:bg-[#171717] text-black dark:text-white">
+    <div className="min-h-screen bg-white dark:bg-[#171717] text-black dark:text-white overflow-x-hidden">
       <Helmet>
         {/* Google Tag */}
         <script async src="https://www.googletagmanager.com/gtag/js?id=G-775BN8EH1L"></script>
@@ -500,13 +506,13 @@ export default function EcosystemPage() {
         url="/ecosystem"
         imageUrl="/images/Elastosbanner.jpg"
       />
-      <div className="flex flex-col lg:flex-row">
+      <div className="flex flex-col lg:flex-row overflow-x-hidden">
         {/* Mobile Category Selector */}
-        <div className="lg:hidden p-4 pt-4 overflow-x-auto">
-          <div className="flex space-x-2">
+        <div className="lg:hidden p-4 pt-4">
+          <div className="flex flex-wrap justify-center gap-2">
             <Button
               variant="ghost"
-              className={`flex-shrink-0 ${!selectedCategory ? 'bg-gray-200/50 dark:bg-white/10' : ''}`}
+              className={`flex-shrink-0 text-xs px-3 py-1 ${!selectedCategory ? 'bg-gray-200/50 dark:bg-white/10' : ''}`}
               onClick={() => setSelectedCategory(null)}
             >
               All
@@ -515,7 +521,7 @@ export default function EcosystemPage() {
               <Button
                 key={category}
                 variant="ghost"
-                className={`flex-shrink-0 ${selectedCategory === category ? 'bg-gray-200/50 dark:bg-white/10' : ''}`}
+                className={`flex-shrink-0 text-xs px-3 py-1 ${selectedCategory === category ? 'bg-gray-200/50 dark:bg-white/10' : ''}`}
                 onClick={() => setSelectedCategory(category)}
               >
                 {category}
@@ -557,13 +563,13 @@ export default function EcosystemPage() {
           })}
         </div>
 
-        <div className="w-full lg:ml-64 p-4 lg:p-8">
-          <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-4 lg:gap-6">
+        <div className="w-full lg:ml-64 p-4 lg:p-8 overflow-x-hidden">
+          <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-4 lg:gap-6 w-full">
             {sortedProjects.map((project) => (
               <div 
                 key={project.name} 
-                className="w-full relative rounded-3xl overflow-hidden bg-white dark:bg-[#171717] p-4 sm:p-8 cursor-pointer transition-shadow" 
-                onClick={() => window.open(project.url, '_blank')}
+                className={`w-full relative rounded-3xl overflow-hidden bg-white dark:bg-[#171717] p-4 sm:p-8 transition-shadow ${project.disabled ? 'opacity-50 cursor-not-allowed' : 'cursor-pointer'}`}
+                onClick={() => !project.disabled && window.open(project.url, '_blank')}
               >
                 <div className="relative z-10">
                   <Lens 
@@ -584,9 +590,14 @@ export default function EcosystemPage() {
                   >
                     <h3 className="text-2xl font-bold text-gray-800 dark:text-white mb-4 flex items-center gap-2">
                       {project.name}
-                      <ExternalLink className="w-5 h-5 flex-shrink-0" />
+                      {!project.disabled && <ExternalLink className="w-5 h-5 flex-shrink-0" />}
                     </h3>
-                    <p className="text-gray-700 dark:text-neutral-200 mb-4">{project.description}</p>
+                    <p className="text-gray-700 dark:text-neutral-200 mb-4">
+                      {project.description}
+                      {project.tempUnavailable && (
+                        <span className="text-red-500 font-semibold"> (Temporarily Unavailable)</span>
+                      )}
+                    </p>
                     <div className="mt-auto">
                       <span className="px-4 py-1 bg-[#5C8EFF]/10 border border-[#5C8EFF]/30 text-[#5C8EFF] dark:text-white rounded-full text-xs font-medium whitespace-nowrap">
                         {project.category}

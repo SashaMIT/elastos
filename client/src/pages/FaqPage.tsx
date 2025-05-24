@@ -67,7 +67,7 @@ const FaqPage = () => {
             <SEO 
               title="Elastos FAQ | Frequently Asked Questions"
               description="Find answers to the most common questions about Elastos technology, token economics, governance, and ecosystem."
-              keywords="Elastos FAQ, Elastos questions, ELA token, Cyber Republic, blockchain FAQ"
+              keywords="Elastos FAQ, Elastos questions, ELA token, Elastos DAO, blockchain FAQ"
               ogImage="/images/Elastosbanner.jpg"
               canonicalUrl="/faq"
             />

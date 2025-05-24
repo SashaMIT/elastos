@@ -127,20 +127,20 @@ const coreComponents = [
 const timelineEvents = [
   {
     year: "2018",
-    title: "Cyber Republic Founded",
-    description: "Cyber Republic is established as Elastos' community growth and governance initiative.",
+    title: "Elastos DAO Founded",
+    description: "Elastos DAO is established as Elastos' community growth and governance initiative.",
     icon: <History className="w-5 h-5 text-[#F7921A]" />
   },
   {
     year: "2019",
-    title: "First CR Council Election",
-    description: "The first CR Council election is held. Community begins funding real-world dApps and initiatives.",
+    title: "First DAO Council Election",
+    description: "The first DAO Council election is held. Community begins funding real-world dApps and initiatives.",
     icon: <Vote className="w-5 h-5 text-[#8BABFF]" />
   },
   {
     year: "2020",
     title: "Full DAO Implementation",
-    description: "Full DAO framework implemented. The Cyber Republic brand is deprecated as the DAO takes full control under the Elastos banner.",
+    description: "Full DAO framework implemented. The Elastos DAO takes full control under the Elastos banner.",
     icon: <Building2 className="w-5 h-5 text-[#8BABFF]" />
   },
   {
@@ -343,7 +343,7 @@ const DaoPage: React.FC = () => {
             </h2>
             <div className="bg-[#1A1A1A] rounded-xl p-8 border border-white/10 shadow-lg">
               <p className="text-white/80 text-lg leading-relaxed mb-6 font-[200]">
-                Formerly known as the Cyber Republic, the Elastos DAO is the decentralized autonomous organization that governs the development, direction, and funding of the Elastos ecosystem. It puts ELA holders in control, letting them participate in elections, submit proposals, fund projects, and maintain ecosystem integrity—without corporate gatekeepers. Elastos DAO is not just governance for a blockchain—it is governance for a new internet.
+                The Elastos DAO is the decentralized autonomous organization that governs the development, direction, and funding of the Elastos ecosystem. It puts ELA holders in control, letting them participate in elections, submit proposals, fund projects, and maintain ecosystem integrity—without corporate gatekeepers. Elastos DAO is not just governance for a blockchain—it is governance for a new internet.
               </p>
 
             </div>
@@ -465,7 +465,7 @@ const DaoPage: React.FC = () => {
                   {tech.icon}
                 </div>
                 <div className="text-lg font-bold mb-2 relative z-10 px-6 flex justify-between items-center font-[200]">
-                  <div className="absolute left-0 inset-y-0 h-6 group-hover:h-8 w-1 rounded-tr-full rounded-br-full bg-neutral-700 group-hover:bg-[#F7921A] transition-all duration-200 origin-center" />
+                  <div className="absolute left-0 inset-y-0 h-6 group-hover:h-8 w-1 rounded-tr-full rounded-br-full bg-neutral-700 group-hover:bg-[#F7921A] transition-all duration-200" />
                   <span className="group-hover:translate-x-2 transition duration-200 inline-block text-neutral-100 text-base font-[200]">
                     {tech.title}
                   </span>
@@ -544,7 +544,7 @@ const DaoPage: React.FC = () => {
             className="text-center mb-12"
           >
             <h2 className="text-3xl font-bold text-white mb-4 font-[200]">
-              From Cyber Republic to Elastos DAO
+              Elastos DAO Evolution
             </h2>
             <p className="text-lg text-white/70 max-w-3xl mx-auto font-[200]">
               A journey of decentralized governance evolution

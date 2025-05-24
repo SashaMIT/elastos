@@ -1,4 +1,3 @@
-
 import React from "react";
 import { cn } from "@/lib/utils";
 import { motion } from "framer-motion";
@@ -45,7 +44,7 @@ export function FeaturesSectionWithTechStack() {
     },
     {
       title: "Governed by Its People",
-      description: "Through the Elastos DAO and Cyber Republic, the ecosystem evolves based on transparent, community-led governance—enabling anyone to propose, fund, and build.",
+      description: "Through the Elastos DAO, the ecosystem evolves based on transparent, community-led governance—enabling anyone to propose, fund, and build.",
       icon: <IconUsers className="h-12 w-12 text-[#F6921A]" />,
       className: "col-span-1 md:col-span-2 dark:border-neutral-800"
     },

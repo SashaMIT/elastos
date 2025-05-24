@@ -106,7 +106,7 @@ export function MediaKitPage() {
   };
 
   return (
-    <div className="min-h-screen bg-[#171717] text-white">
+    <div className="min-h-screen bg-[#171717] text-white overflow-x-hidden">
       <Helmet>
         {/* Google Tag */}
         <script async src="https://www.googletagmanager.com/gtag/js?id=G-775BN8EH1L"></script>
