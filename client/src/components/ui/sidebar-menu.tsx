@@ -156,10 +156,10 @@ export const SidebarMenu = () => {
                 <MessageCircle className="h-4 w-4 text-[#94b5ff]" />
                 <span>Social Channels</span>
               </Link>
-              <Link to="/ambassador-program" className="py-2 hover:text-[#F6921A] flex items-center gap-2 text-white">
+              <a href="https://ambassador.elastos.net" target="_blank" rel="noopener noreferrer" className="py-2 hover:text-[#F6921A] flex items-center gap-2 text-white">
                 <Star className="h-4 w-4 text-[#94b5ff]" />
                 <span>Ambassador Program</span>
-              </Link>
+              </a>
 
               <h4 className="font-[200] text-sm text-[#94b5ff] mb-2 mt-4">Resources</h4>
               <Link to="/media-kit" className="py-2 hover:text-[#F6921A] flex items-center gap-2 text-white">
