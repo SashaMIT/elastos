@@ -33,7 +33,7 @@ app.use((err: any, req: express.Request, res: express.Response, next: express.Ne
 });
 
 // Add security headers - Move this BEFORE any other middleware
-app.use((_req, res, next) => {
+app.use((req, res, next) => {
   try {
     // Set CSP header explicitly
     const csp = [
@@ -54,10 +54,12 @@ app.use((_req, res, next) => {
     res.setHeader('X-Content-Security-Policy', csp);
     res.setHeader('X-WebKit-CSP', csp);
     
-    // Add cache control headers to prevent excessive caching
-    res.setHeader('Cache-Control', 'no-cache, no-store, must-revalidate');
-    res.setHeader('Pragma', 'no-cache');
-    res.setHeader('Expires', '0');
+    // Add cache control headers only for HTML (not for static assets)
+    if (req.path === '/' || req.path.endsWith('.html') || !req.path.includes('.')) {
+      res.setHeader('Cache-Control', 'no-cache, no-store, must-revalidate');
+      res.setHeader('Pragma', 'no-cache');
+      res.setHeader('Expires', '0');
+    }
     
     // Add CORS headers
     res.setHeader('Access-Control-Allow-Origin', '*');
@@ -93,7 +95,16 @@ if (process.env.NODE_ENV === 'development') {
         if (path.endsWith('.js')) {
           res.setHeader('Content-Type', 'application/javascript');
         }
-        if (path.match(/\.(js|css|png|jpg|jpeg|gif|ico|svg|woff|woff2|ttf|eot)$/)) {
+        if (path.endsWith('.webp')) {
+          res.setHeader('Content-Type', 'image/webp');
+        }
+        if (path.endsWith('.png')) {
+          res.setHeader('Content-Type', 'image/png');
+        }
+        if (path.endsWith('.jpg') || path.endsWith('.jpeg')) {
+          res.setHeader('Content-Type', 'image/jpeg');
+        }
+        if (path.match(/\.(js|css|png|jpg|jpeg|gif|ico|svg|woff|woff2|ttf|eot|webp)$/)) {
           res.setHeader('Cache-Control', 'public, max-age=604800, immutable');
         }
       }
