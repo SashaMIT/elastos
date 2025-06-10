@@ -61,8 +61,21 @@ app.use((req, res, next) => {
       res.setHeader('Expires', '0');
     }
     
-    // Add CORS headers
-    res.setHeader('Access-Control-Allow-Origin', '*');
+    // Add optimized CORS headers for specific domains
+    const allowedOrigins = process.env.ALLOWED_DOMAINS?.split(',') || [
+      'https://elastos.net', 
+      'https://www.elastos.net',
+      'https://elastos-network.onrender.com'
+    ];
+    
+    const origin = req.headers.origin;
+    if (origin && allowedOrigins.includes(origin)) {
+      res.setHeader('Access-Control-Allow-Origin', origin);
+    } else if (!origin) {
+      // For same-origin requests (like elastos.net accessing itself)
+      res.setHeader('Access-Control-Allow-Origin', 'https://elastos.net');
+    }
+    
     res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, DELETE');
     res.setHeader('Access-Control-Allow-Headers', 'Content-Type, Authorization');
     res.setHeader('X-Content-Type-Options', 'nosniff');
@@ -85,27 +98,35 @@ if (process.env.NODE_ENV === 'development') {
     const publicPath = join(__dirname, '..', '..', 'public');
     console.log('Serving static files from:', publicPath);
     
-    // Serve static files with proper MIME types
+    // Serve static files with optimized performance
     app.use(express.static(publicPath, {
-      maxAge: '1w',
+      maxAge: '30d', // Increased cache time
       etag: true,
       lastModified: true,
       index: false,
+      dotfiles: 'ignore',
       setHeaders: (res, path) => {
+        // Set proper MIME types
         if (path.endsWith('.js')) {
           res.setHeader('Content-Type', 'application/javascript');
-        }
-        if (path.endsWith('.webp')) {
+        } else if (path.endsWith('.webp')) {
           res.setHeader('Content-Type', 'image/webp');
-        }
-        if (path.endsWith('.png')) {
+        } else if (path.endsWith('.png')) {
           res.setHeader('Content-Type', 'image/png');
-        }
-        if (path.endsWith('.jpg') || path.endsWith('.jpeg')) {
+        } else if (path.endsWith('.jpg') || path.endsWith('.jpeg')) {
           res.setHeader('Content-Type', 'image/jpeg');
         }
+        
+        // Aggressive caching for static assets
         if (path.match(/\.(js|css|png|jpg|jpeg|gif|ico|svg|woff|woff2|ttf|eot|webp)$/)) {
-          res.setHeader('Cache-Control', 'public, max-age=604800, immutable');
+          res.setHeader('Cache-Control', 'public, max-age=31536000, immutable'); // 1 year
+          res.setHeader('Vary', 'Accept-Encoding');
+        }
+        
+        // Special headers for images
+        if (path.match(/\.(png|jpg|jpeg|gif|webp)$/)) {
+          res.setHeader('X-Content-Type-Options', 'nosniff');
+          res.setHeader('Accept-Ranges', 'bytes');
         }
       }
     }));
