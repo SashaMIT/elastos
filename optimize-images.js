@@ -153,16 +153,35 @@ async function main() {
   const imageDir = './client/public/images';
   const optimizedDir = './client/public/images-optimized';
   
+  // Check if imageDir exists
+  try {
+    await fs.access(imageDir);
+    console.log(`✅ Found image directory: ${imageDir}`);
+  } catch (error) {
+    console.error(`❌ Image directory not found: ${imageDir}`);
+    console.error('Error:', error.message);
+    process.exit(1);
+  }
+  
   // Create optimized directory
   try {
     await fs.mkdir(optimizedDir, { recursive: true });
+    console.log(`✅ Created optimized directory: ${optimizedDir}`);
   } catch (error) {
-    // Directory might already exist
+    console.error(`❌ Failed to create optimized directory: ${optimizedDir}`);
+    console.error('Error:', error.message);
+    process.exit(1);
   }
   
   // Find all images
+  console.log(`🔍 Searching for images in: ${imageDir}`);
   const images = await findImages(imageDir);
   console.log(`Found ${images.length} images to process\n`);
+  
+  if (images.length === 0) {
+    console.error('❌ No images found to optimize!');
+    process.exit(1);
+  }
   
   // Sort by priority (large files first)
   const priorityImages = images.filter(img => 
