@@ -1,6 +1,7 @@
 import React from "react";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Shield, Wallet, Layers, Key } from "lucide-react";
+import { WebPImage } from "@/components/ui/webp-image";
 
 function LandingPage() {
   return (
@@ -112,14 +113,14 @@ export function HeroSection() {
         <div className="lg:col-span-5 flex items-center justify-center">
           <div className="relative w-full max-w-md">
             <div className="absolute inset-0 bg-gradient-to-r from-[#F6921A]/30 to-purple-500/30 rounded-full blur-3xl opacity-70"></div>
-            <img
+            <WebPImage
               src="/images/ElastOS 1.png"
               alt="Elastos Smart Web"
               className="relative z-10 w-full h-auto rounded-lg shadow-xl dark:shadow-orange-500/20"
             />
             <div className="absolute -bottom-4 -right-4 bg-white dark:bg-[#222222] p-2 rounded-lg shadow-lg z-20 flex items-center gap-2">
               <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-12">
-                <img 
+                <WebPImage 
                   src="/images/Elastos New Logo_Kit-03.png" 
                   alt="Elastos Logo" 
                   className="h-8 w-auto mb-3 sm:mb-0 sm:h-8"

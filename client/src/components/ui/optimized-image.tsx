@@ -1,6 +1,6 @@
 import React from "react";
 import { cn } from "@/lib/utils";
-import { optimizeImageUrl } from "@/lib/imageUtils";
+import { WebPImage } from "./webp-image";
 
 interface OptimizedImageProps extends React.ImgHTMLAttributes<HTMLImageElement> {
   src: string;
@@ -13,6 +13,7 @@ interface OptimizedImageProps extends React.ImgHTMLAttributes<HTMLImageElement> 
   quality?: number;
   blurEffect?: boolean;
   fallback?: string;
+  priority?: boolean;
 }
 
 export function OptimizedImage({
@@ -26,34 +27,29 @@ export function OptimizedImage({
   quality = 80,
   blurEffect = false,
   fallback,
+  priority = false,
   ...props
 }: OptimizedImageProps) {
-  const optimizedSrc = optimizeImageUrl(src, { width, height, quality, format });
-
   // Handle loading state and missing images
   const [isLoading, setIsLoading] = React.useState(true);
-  const [hasError, setHasError] = React.useState(false);
 
   return (
     <div className={cn("overflow-hidden relative", aspectRatio, className)}>
       {blurEffect && isLoading && (
         <div className="absolute inset-0 bg-gray-200 dark:bg-gray-800 animate-pulse" />
       )}
-      <img
-        src={hasError && fallback ? fallback : optimizedSrc}
+      <WebPImage
+        src={src}
         alt={alt}
         className={cn(
           "w-full h-full object-cover transition-opacity duration-300",
           isLoading ? "opacity-0" : "opacity-100"
         )}
         onLoad={() => setIsLoading(false)}
-        onError={() => {
-          setIsLoading(false);
-          setHasError(true);
-        }}
+        fallbackSrc={fallback}
         width={width}
         height={height}
-        loading="lazy"
+        priority={priority}
         {...props}
       />
     </div>

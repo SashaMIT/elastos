@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { motion } from "framer-motion";
+import { WebPImage } from "@/components/ui/webp-image";
 import { StackedCircularFooter } from "@/components/ui/stacked-circular-footer";
 import {
   ArrowDown,
@@ -694,7 +695,7 @@ export function BridgePage() {
                                             First, select the networks you'd like to bridge to and from. One of the networks must be Elastos as the Glide bridge doesn't support bridging ETH → Heco or Heco → ETH.
                                           </p>
                                           <div className="rounded-lg overflow-hidden border border-white/10 md:max-w-[52%] md:mx-auto">
-                                            <img src="/images/Bridge/step1.png" alt="Select networks" className="w-full" />
+                                            <WebPImage src="/images/Bridge/step1.png" alt="Select networks" className="w-full" />
                                           </div>
                                         </div>
 
@@ -750,7 +751,7 @@ export function BridgePage() {
                                             Choose the token you wish to bridge. For this guide, we're selecting ELA.
                                           </p>
                                           <div className="rounded-lg overflow-hidden border border-white/10 md:max-w-[52%] md:mx-auto">
-                                            <img src="/images/Bridge/step2.png" alt="Select ELA token" className="w-full" />
+                                            <WebPImage src="/images/Bridge/step2.png" alt="Select ELA token" className="w-full" />
                                           </div>
                                         </div>
 
@@ -817,7 +818,7 @@ export function BridgePage() {
                                             Enter the amount of ELA you wish to bridge. Remember the minimum requirements from ESC to ETH is 1000 ELA.
                                           </p>
                                           <div className="rounded-lg overflow-hidden border border-white/10 md:max-w-[52%] md:mx-auto">
-                                            <img src="/images/Bridge/step3.png" alt="Enter amount" className="w-full" />
+                                            <WebPImage src="/images/Bridge/step3.png" alt="Enter amount" className="w-full" />
                                           </div>
                                         </div>
 

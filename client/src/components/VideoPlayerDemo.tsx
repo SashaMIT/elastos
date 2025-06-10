@@ -2,6 +2,7 @@
 import React, { useState, useEffect } from "react";
 import { Play } from "lucide-react";
 import { useIsMobile } from "@/hooks/use-mobile";
+import { WebPImage } from "@/components/ui/webp-image";
 
 const VideoPlayerDemo = () => {
     const [videoLoaded, setVideoLoaded] = useState(false);
@@ -20,7 +21,7 @@ const VideoPlayerDemo = () => {
                         className="relative w-full rounded-xl overflow-hidden cursor-pointer shadow-lg border border-gray-800/20"
                         onClick={() => setVideoLoaded(true)}
                     >
-                        <img 
+                        <WebPImage 
                             src="/images/Elastosvideoimage.png" 
                             alt="Elastos Video Thumbnail" 
                             className="w-full rounded-xl"

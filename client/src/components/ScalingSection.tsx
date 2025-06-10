@@ -5,6 +5,7 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/Card';
 import { ExternalLink } from 'lucide-react';
 import { Link } from 'wouter';
 import { Lens } from '@/components/ui/lens';
+import { WebPImage } from '@/components/ui/webp-image';
 
 const ecosystemProjects = [
   {
@@ -88,7 +89,7 @@ export function ScalingSection() {
             <div className="grid grid-cols-1 md:grid-cols-2 items-center gap-0 md:gap-12">
               <div className="flex justify-center mb-2 md:mb-0">
                 <div className="w-48 h-48 md:w-60 md:h-60 lg:w-68 lg:h-68 xl:w-76 xl:h-76 relative">
-                  <img src="/images/Glass Circles1.png" alt="Elastos Mainchain" className="w-full h-full object-contain" />
+                  <WebPImage src="/images/Glass Circles1.png" alt="Elastos Mainchain" className="w-full h-full object-contain" />
                 </div>
               </div>
               <div className="text-center md:text-left md:max-w-lg">
@@ -132,7 +133,7 @@ export function ScalingSection() {
               </div>
               <div className="order-1 md:order-2 flex justify-center mb-2 md:mb-0">
                 <div className="w-48 h-48 md:w-60 md:h-60 lg:w-68 lg:h-68 xl:w-76 xl:h-76 relative">
-                  <img src="/images/Glass Circles2.png" alt="BeL2" className="w-full h-full object-contain" />
+                  <WebPImage src="/images/Glass Circles2.png" alt="BeL2" className="w-full h-full object-contain" />
                 </div>
               </div>
             </div>
@@ -140,7 +141,7 @@ export function ScalingSection() {
             <div className="grid grid-cols-1 md:grid-cols-2 items-center gap-0 md:gap-12">
               <div className="flex justify-center mb-2 md:mb-0">
                 <div className="w-48 h-48 md:w-60 md:h-60 lg:w-68 lg:h-68 xl:w-76 xl:h-76 relative">
-                  <img src="/images/Glass Circles3.png" alt="DePIN Network" className="w-full h-full object-contain" />
+                  <WebPImage src="/images/Glass Circles3.png" alt="DePIN Network" className="w-full h-full object-contain" />
                 </div>
               </div>
               <div className="text-center md:text-left md:max-w-lg">

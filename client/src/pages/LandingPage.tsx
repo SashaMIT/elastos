@@ -8,6 +8,7 @@ import { ScalingSection } from "@/components/ScalingSection";
 import { CenteredSpinner } from "@/components/ui/centered-spinner";
 import { TestimonialsSection } from "@/components/TestimonialsSection";
 import { ImageZoom } from "@/components/ui/zoomable-image";
+import { WebPImage } from "@/components/ui/webp-image";
 
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/Card';
 import {
@@ -323,7 +324,7 @@ const LandingPage = () => {
                   pointerEvents: "none"
                 }}
               />
-              <img 
+              <WebPImage 
                 src="/images/Hero image.png" 
                 alt="Elastos Hero" 
                 className="absolute inset-0 w-full h-full object-cover"
@@ -375,7 +376,7 @@ const LandingPage = () => {
                 <div className="p-6 pt-2">
                   <div className="flex flex-col md:flex-row md:items-center gap-6">
                     <div className="flex-1 flex items-center justify-center overflow-hidden">
-                      <img 
+                      <WebPImage 
                         src="/images/Elastos Architecture.png" 
                         alt="Elastos Architecture" 
                         className="w-full h-auto rounded-lg shadow-md cursor-pointer transition-transform hover:scale-[1.02]"
@@ -420,7 +421,7 @@ const LandingPage = () => {
 
         <div className="container mx-auto mt-32 mb-26 text-center">
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-6">
-            <img 
+            <WebPImage 
               src="/images/Elastos New Logo_Kit-03.png" 
               alt="Elastos Logo" 
               className="h-8 w-auto mb-3 sm:mb-0"

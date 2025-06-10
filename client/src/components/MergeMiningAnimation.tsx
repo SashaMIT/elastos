@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Server, Shield, Coins, Zap, Globe, Lock, GitMerge, MessageCircle } from 'lucide-react';
 import MiningAnimation from './MiningAnimation';
+import { WebPImage } from "@/components/ui/webp-image";
 import {
   Dialog,
   DialogContent,
@@ -143,7 +144,7 @@ const MergeMiningAnimation = () => {
     <div className="w-full max-w-4xl p-0 sm:p-1 md:p-0 bg-white dark:bg-[#171717] relative z-0">
       {/* Heading */}
       <h1 className="text-center text-base sm:text-lg md:text-2xl font-[200] font-sans mt-4 mb-2 flex items-center justify-center gap-1 sm:gap-2 px-2 leading-snug text-black dark:text-white">
-        <img src="/images/Elastos New Logo_Kit-03.png" alt="ELA Logo" className="h-5 sm:h-6 md:h-7 w-auto object-contain shrink-0" />
+        <WebPImage src="/images/Elastos New Logo_Kit-03.png" alt="ELA Logo" className="h-5 sm:h-6 md:h-7 w-auto object-contain shrink-0" />
         ELA: The Bitcoin-Secured BTCFi Asset
       </h1>
 

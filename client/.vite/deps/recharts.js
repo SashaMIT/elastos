@@ -1,12 +1,12 @@
 import {
-  require_prop_types
-} from "./chunk-5IEVX3A5.js";
-import {
   _assertThisInitialized,
   _extends,
   _objectWithoutPropertiesLoose,
   _setPrototypeOf
 } from "./chunk-INIIE644.js";
+import {
+  require_prop_types
+} from "./chunk-5IEVX3A5.js";
 import {
   require_react_dom
 } from "./chunk-YU2QM6W5.js";

@@ -44,3 +44,7 @@ yarn-error.log*
 server/public
 *.tar.gz
 *.timestamp-*.mjs
+
+# Image optimization temporary directories
+client/public/images-optimized/
+client/public/images-backup/

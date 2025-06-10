@@ -3,6 +3,7 @@
 import React, { useMemo } from "react";
 import { LogoCarousel } from "@/components/ui/logo-carousel";
 import { useTheme } from "@/hooks/useTheme";
+import { WebPImage } from "@/components/ui/webp-image";
 
 export function LogoCarouselDemo() {
   // Directly using dark mode styles since light mode is no longer used
@@ -15,14 +16,13 @@ export function LogoCarouselDemo() {
       id: "glide",
       url: "https://glidefinance.io/swap",
       img: () => (
-        <img
+        <WebPImage
           src="/images/glide.png"
           alt="Glide - Decentralized Exchange"
           loading="lazy"
-          width="120"
-          height="36"
+          width={120}
+          height={36}
           className="h-9 w-auto object-contain hover:opacity-80 transition-opacity cursor-pointer"
-          fetchPriority="low"
         />
       ),
     },
