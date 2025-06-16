@@ -2,6 +2,14 @@
 module.exports = {
   darkMode: ["class"],
   content: ['./src/**/*.{js,jsx,ts,tsx}'],
+  safelist: [
+    'min-h-[48px]',
+    'min-h-[44px]',
+    'min-w-[120px]',
+    'touch-auto',
+    'cursor-pointer',
+    'justify-center'
+  ],
   theme: {
     fontFamily: {
       sans: [
