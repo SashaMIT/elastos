@@ -246,7 +246,8 @@ const BuyElaPage = () => {
                 href="https://apps.apple.com/us/app/web3-essentials-crypto-wallet/id1568931743"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-1 px-4 py-1 bg-[#5C8EFF]/10 border border-[#5C8EFF]/30 text-white rounded-full text-xs font-medium whitespace-nowrap transition-colors hover:bg-[#5C8EFF]/20"
+                className="inline-flex items-center gap-1 px-4 py-2 min-h-[44px] bg-[#5C8EFF]/10 border border-[#5C8EFF]/30 text-white rounded-full text-xs font-medium whitespace-nowrap transition-colors hover:bg-[#5C8EFF]/20 relative z-10 cursor-pointer touch-auto"
+                style={{ touchAction: 'manipulation' }}
               >
                 Essentials for iOS
                 <ExternalLink size={12} />
@@ -255,7 +256,8 @@ const BuyElaPage = () => {
                 href="https://play.google.com/store/apps/details?id=io.web3essentials.app"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-1 px-4 py-1 bg-[#5C8EFF]/10 border border-[#5C8EFF]/30 text-white rounded-full text-xs font-medium whitespace-nowrap transition-colors hover:bg-[#5C8EFF]/20"
+                className="inline-flex items-center gap-1 px-4 py-2 min-h-[44px] bg-[#5C8EFF]/10 border border-[#5C8EFF]/30 text-white rounded-full text-xs font-medium whitespace-nowrap transition-colors hover:bg-[#5C8EFF]/20 relative z-10 cursor-pointer touch-auto"
+                style={{ touchAction: 'manipulation' }}
               >
                 Essentials for Android
                 <ExternalLink size={12} />

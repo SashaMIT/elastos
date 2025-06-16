@@ -98,7 +98,8 @@ const WalletPage: React.FC = () => {
                         href="https://apps.apple.com/us/app/elastos-essentials/id1568931743"
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="inline-flex px-3 py-2 bg-[rgba(92,142,255,0.15)] text-white rounded-full font-[200] transition-all items-center gap-1 border border-[rgba(92,142,255,0.25)] text-sm"
+                        className="inline-flex px-4 py-3 min-h-[48px] bg-[rgba(92,142,255,0.15)] text-white rounded-full font-[200] transition-all items-center gap-2 border border-[rgba(92,142,255,0.25)] text-sm hover:bg-[rgba(92,142,255,0.25)] active:bg-[rgba(92,142,255,0.35)] relative z-10 cursor-pointer touch-auto min-w-[120px] justify-center"
+                        style={{ touchAction: 'manipulation' }}
                       >
                         <span>App Store</span>
                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 35 34" fill="none">
@@ -111,7 +112,8 @@ const WalletPage: React.FC = () => {
                         href="https://play.google.com/store/apps/details?id=io.web3essentials.app"
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="inline-flex px-3 py-2 bg-[rgba(246,146,26,0.15)] text-white rounded-full font-[200] transition-all items-center gap-1 border border-[rgba(246,146,26,0.25)] text-sm"
+                        className="inline-flex px-4 py-3 min-h-[48px] bg-[rgba(246,146,26,0.15)] text-white rounded-full font-[200] transition-all items-center gap-2 border border-[rgba(246,146,26,0.25)] text-sm hover:bg-[rgba(246,146,26,0.25)] active:bg-[rgba(246,146,26,0.35)] relative z-10 cursor-pointer touch-auto min-w-[120px] justify-center"
+                        style={{ touchAction: 'manipulation' }}
                       >
                         <span>Google Play</span>
                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 35 34" fill="none">
