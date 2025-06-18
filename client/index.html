@@ -5,6 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="preconnect" href="https://ela.elastos.io" />
     <title>Elastos - Web3 Infrastructure Secured by Bitcoin</title>
+    
+    <!-- Build Information - will be updated during build -->
+    <meta name="build-id" content="BUILD_ID_PLACEHOLDER">
+    <meta name="build-timestamp" content="BUILD_TIMESTAMP_PLACEHOLDER">
 
     <!-- Favicon -->
     <link rel="icon" type="image/svg+xml" href="/images/Elastos%20Icon%20-%202.svg" />
@@ -65,6 +69,6 @@
   </head>
   <body>
     <div id="root"></div>
-    <script type="module" src="/src/main.tsx"></script>
+    <script type="module" src="/src/main.tsx?v=CACHE_BUST_TIMESTAMP"></script>
   </body>
 </html>

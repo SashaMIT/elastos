@@ -56,11 +56,13 @@ app.use((req, res, next) => {
     
     // Add cache control headers only for HTML (not for static assets)
     if (req.path === '/' || req.path.endsWith('.html') || !req.path.includes('.')) {
-      res.setHeader('Cache-Control', 'no-cache, no-store, must-revalidate, max-age=0');
+      res.setHeader('Cache-Control', 'no-cache, no-store, must-revalidate, max-age=0, s-maxage=0, proxy-revalidate');
       res.setHeader('Pragma', 'no-cache');
       res.setHeader('Expires', '0');
       res.setHeader('Last-Modified', new Date().toUTCString());
       res.setHeader('ETag', `"${Date.now()}"`);
+      res.setHeader('Vary', 'Accept-Encoding, User-Agent');
+      res.setHeader('X-No-Cache', 'true');
     }
     
     // Add optimized CORS headers for specific domains
