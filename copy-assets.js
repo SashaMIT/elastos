@@ -19,17 +19,23 @@ function ensureDirectoryExists(dir) {
 }
 
 // Function to copy directory recursively
-function copyDirectory(source, destination) {
+function copyDirectory(source, destination, excludeFiles = []) {
   ensureDirectoryExists(destination);
 
   const files = fs.readdirSync(source);
   for (const file of files) {
+    // Skip excluded files
+    if (excludeFiles.includes(file)) {
+      console.log(`Skipped: ${file} (excluded from copy)`);
+      continue;
+    }
+    
     const sourcePath = path.join(source, file);
     const destPath = path.join(destination, file);
     
     const stat = fs.statSync(sourcePath);
     if (stat.isDirectory()) {
-      copyDirectory(sourcePath, destPath);
+      copyDirectory(sourcePath, destPath, excludeFiles);
     } else {
       fs.copyFileSync(sourcePath, destPath);
       console.log(`Copied: ${sourcePath} -> ${destPath}`);
@@ -43,7 +49,7 @@ ensureDirectoryExists(distServerPublicDir);
 
 // Copy assets from client/public to dist/public and dist/server/public
 console.log('Copying assets from client/public to dist/public...');
-copyDirectory(clientPublicDir, distPublicDir);
+copyDirectory(clientPublicDir, distPublicDir, ['index.html']); // Exclude index.html to preserve post-build modifications
 
 console.log('Copying assets from dist/public to dist/server/public...');
 copyDirectory(distPublicDir, distServerPublicDir);
