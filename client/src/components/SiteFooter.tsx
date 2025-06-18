@@ -12,6 +12,9 @@ export default function SiteFooter() {
       <p className="text-sm text-muted-foreground">
         © 2025 Elastos. All rights reserved.
       </p>
+      <p className="text-xs text-muted-foreground/60 mt-1">
+        v{new Date().toISOString().slice(0, 19).replace(/[-:]/g, '').replace('T', '-')}
+      </p>
       <div className="flex justify-center gap-4 mt-2">
         <a 
           href="https://blog.elastos.net/privacy-policy/" 
