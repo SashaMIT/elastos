@@ -272,7 +272,7 @@ export function FeaturesCarousel() {
                         <h2 className="text-sm sm:text-xl md:text-2xl lg:text-3xl font-bold max-w-full sm:max-w-[70%] text-center sm:text-left text-shadow-lg">{feature.title}</h2>
                         <a 
                           href={
-                            index === 0 ? "https://www.nbwlabs.org/offerings" : // BTCD - NBW Labs offerings page
+                            index === 0 ? "https://blog.elastos.net/announcement/introducing-btcd-stablecoin/" : // BTCD - Official announcement
                             index === 1 ? "https://labs.ela.city" : 
                             index === 2 ? "https://bel2.org" : 
                             index === 3 ? "/wallet" : 

@@ -297,10 +297,6 @@ const LandingPage = () => {
 
   return (
     <div className="flex flex-col gap- w-full">
-      {/* TEMPORARY BUILD INDICATOR - REMOVE AFTER CACHE ISSUE RESOLVED */}
-      <div className="fixed top-0 left-0 right-0 z-[999] bg-red-500 text-white text-center py-2 text-sm font-bold">
-        🚀 BUILD DEPLOYED: {new Date().toISOString().slice(0, 19)} - VIDEO CAROUSEL ACTIVE - CACHE BUST v2
-      </div>
       <SEO 
         title="Elastos - Web3 Infrastructure Secured by Bitcoin"
         description="Elastos is building a decentralized internet infrastructure that gives you true digital ownership and privacy, secured by Bitcoin."
