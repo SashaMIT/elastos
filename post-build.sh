@@ -16,11 +16,16 @@ if [ ! -f "dist/public/index.html" ]; then
     exit 1
 fi
 
-# Inject build ID into title
-sed -i '' "s/<title>Elastos/<title>[v$BUILD_ID] Elastos/" dist/public/index.html
-
-# Inject build metadata
-sed -i '' "s/<meta name=\"description\" content=\"/<meta name=\"build-id\" content=\"$BUILD_ID\"><meta name=\"build-timestamp\" content=\"$TIMESTAMP\"><meta name=\"description\" content=\"/" dist/public/index.html
+# Inject build ID into title (cross-platform compatible)
+if [[ "$OSTYPE" == "darwin"* ]]; then
+    # macOS
+    sed -i '' "s/<title>Elastos/<title>[v$BUILD_ID] Elastos/" dist/public/index.html
+    sed -i '' "s/<meta name=\"description\" content=\"/<meta name=\"build-id\" content=\"$BUILD_ID\"><meta name=\"build-timestamp\" content=\"$TIMESTAMP\"><meta name=\"description\" content=\"/" dist/public/index.html
+else
+    # Linux
+    sed -i "s/<title>Elastos/<title>[v$BUILD_ID] Elastos/" dist/public/index.html
+    sed -i "s/<meta name=\"description\" content=\"/<meta name=\"build-id\" content=\"$BUILD_ID\"><meta name=\"build-timestamp\" content=\"$TIMESTAMP\"><meta name=\"description\" content=\"/" dist/public/index.html
+fi
 
 echo "=== Build ID injection complete ==="
 
