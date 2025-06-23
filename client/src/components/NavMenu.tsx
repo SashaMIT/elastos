@@ -70,19 +70,19 @@ export const NavMenu: React.FC<NavMenuProps> = ({ items }) => {
             <NavigationMenuItem>
               <NavigationMenuTrigger className="font-[200]">Solutions</NavigationMenuTrigger>
               <NavigationMenuContent>
-                <div className="grid w-[800px] gap-6 p-6 md:grid-cols-2">
+                <div className="grid w-[800px] gap-6 p-6 md:grid-cols-2 items-center">
                   {/* Featured Card Left */}
-                  <div className="relative">
+                  <div className="relative flex justify-center">
                     <a href="https://blog.elastos.net/announcement/introducing-btcd-stablecoin/" target="_blank" rel="noopener noreferrer">
                       <div className="w-full h-48 bg-white dark:bg-gray-900 rounded-2xl overflow-hidden group cursor-pointer border border-gray-200 dark:border-gray-700 hover:border-blue-500 transition-colors">
                         {/* Top Image Section - Landscape aspect ratio (16:9) */}
-                        <div className="h-32 relative overflow-hidden bg-gradient-to-br from-orange-500 via-yellow-600 to-amber-700">
+                        <div className="h-32 relative overflow-hidden bg-gradient-to-br from-orange-500 via-yellow-600 to-amber-700 flex items-center justify-center">
                           <picture>
                             <source srcSet="/images/BTCD1.webp" type="image/webp" />
                             <img 
                               src="/images/BTCD1.png" 
                               alt="BTCD Bitcoin Dollar Announcement"
-                              className="w-full h-full object-cover"
+                              className="max-w-full max-h-full object-contain"
                               onError={(e) => {
                                 console.error('BTCD1 image failed to load');
                                 console.error('Error details:', e);
@@ -116,54 +116,54 @@ export const NavMenu: React.FC<NavMenuProps> = ({ items }) => {
                       <h4 className="font-medium text-sm text-muted-foreground mb-3 px-2 text-[#94b5ff] uppercase tracking-wide">NETWORK</h4>
                       <div className="space-y-1">
                         <Link to="/stats">
-                          <NavigationMenuLink className={navigationMenuTriggerStyle()}>
-                            <div className="flex items-center gap-2">
+                      <NavigationMenuLink className={navigationMenuTriggerStyle()}>
+                        <div className="flex items-center gap-2">
                               <BarChart className="h-4 w-4 text-[#94b5ff]" />
                               <span>Network Stats</span>
-                            </div>
-                          </NavigationMenuLink>
-                        </Link>
+                        </div>
+                      </NavigationMenuLink>
+                    </Link>
                         <Link to="/explorer">
-                          <NavigationMenuLink className={navigationMenuTriggerStyle()}>
-                            <div className="flex items-center gap-2">
+                      <NavigationMenuLink className={navigationMenuTriggerStyle()}>
+                        <div className="flex items-center gap-2">
                               <MessageCircle className="h-4 w-4 text-[#94b5ff]" />
                               <span>Live Explorer</span>
-                            </div>
-                          </NavigationMenuLink>
-                        </Link>
+                        </div>
+                      </NavigationMenuLink>
+                    </Link>
                         <Link to="/security">
-                          <NavigationMenuLink className={navigationMenuTriggerStyle()}>
-                            <div className="flex items-center gap-2">
+                      <NavigationMenuLink className={navigationMenuTriggerStyle()}>
+                        <div className="flex items-center gap-2">
                               <Shield className="h-4 w-4 text-[#94b5ff]" />
                               <span>Security</span>
-                            </div>
-                          </NavigationMenuLink>
-                        </Link>
-                      </div>
+                        </div>
+                      </NavigationMenuLink>
+                    </Link>
+                  </div>
                     </div>
                     
-                    <div>
+                  <div>
                       <h4 className="font-medium text-sm text-muted-foreground mb-3 px-2 text-[#94b5ff] uppercase tracking-wide">PARTICIPATE</h4>
                       <div className="space-y-1">
-                        <a href="https://staking.elastos.net/" target="_blank" rel="noopener noreferrer">
-                          <NavigationMenuLink className={navigationMenuTriggerStyle()}>
-                            <div className="flex items-center gap-2">
-                              <LineChart className="h-4 w-4 text-[#94b5ff]" />
-                              <span>Staking & Nodes</span>
-                            </div>
-                          </NavigationMenuLink>
-                        </a>
+                    <a href="https://staking.elastos.net/" target="_blank" rel="noopener noreferrer">
+                      <NavigationMenuLink className={navigationMenuTriggerStyle()}>
+                        <div className="flex items-center gap-2">
+                          <LineChart className="h-4 w-4 text-[#94b5ff]" />
+                          <span>Staking & Nodes</span>
+                        </div>
+                      </NavigationMenuLink>
+                    </a>
 
                         <Link to="/buy-ela">
-                          <NavigationMenuLink className={navigationMenuTriggerStyle()}>
-                            <div className="flex items-center gap-2">
-                              <ShoppingCart className="h-4 w-4 text-[#94b5ff]" />
+                      <NavigationMenuLink className={navigationMenuTriggerStyle()}>
+                        <div className="flex items-center gap-2">
+                          <ShoppingCart className="h-4 w-4 text-[#94b5ff]" />
                               <span>Buy ELA</span>
-                            </div>
-                          </NavigationMenuLink>
-                        </Link>
+                        </div>
+                      </NavigationMenuLink>
+                    </Link>
                       </div>
-                    </div>
+                        </div>
                   </div>
                 </div>
               </NavigationMenuContent>
@@ -173,37 +173,31 @@ export const NavMenu: React.FC<NavMenuProps> = ({ items }) => {
             <NavigationMenuItem>
               <NavigationMenuTrigger className="font-[200]">Developers</NavigationMenuTrigger>
               <NavigationMenuContent>
-                <div className="grid w-[800px] gap-6 p-6 md:grid-cols-2">
+                <div className="grid w-[800px] gap-6 p-6 md:grid-cols-2 items-center">
                   {/* Featured Card Left */}
-                  <div className="relative">
+                  <div className="relative flex justify-center">
                     <div className="w-full h-48 bg-white dark:bg-gray-900 rounded-2xl overflow-hidden group cursor-pointer border border-gray-200 dark:border-gray-700">
                       {/* Top Image Section - Landscape aspect ratio (16:9) */}
-                      <div className="h-32 relative overflow-hidden bg-gradient-to-br from-indigo-500 via-purple-600 to-blue-600">
-                        <picture>
-                          <source srcSet="/images/Behind The Code etc.webp" type="image/webp" />
-                          <img 
-                            src="/images/Behind The Code etc.png" 
-                            alt="Developer Tools Behind The Code"
-                            className="w-full h-full object-cover"
-                            onError={(e) => {
-                              console.error('Developer Tools image failed to load');
-                              // Fallback to background gradient if image fails
-                              const target = e.target as HTMLImageElement;
-                              target.style.display = 'none';
-                            }}
-                          />
-                        </picture>
+                      <div className="h-32 relative overflow-hidden bg-gradient-to-br from-indigo-500 via-purple-600 to-blue-600 flex items-center justify-center">
+                        <img 
+                          src="/images/Behind The Code etc.png" 
+                          alt="Developer Tools Behind The Code"
+                          className="w-full h-full object-cover"
+                          onError={(e) => {
+                            console.error('Developer Tools image failed to load');
+                            // Fallback to background gradient if image fails
+                            const target = e.target as HTMLImageElement;
+                            target.style.display = 'none';
+                          }}
+                        />
                       </div>
                       {/* Bottom Content Section */}
                       <div className="h-16 p-4 flex items-center gap-3" style={{ backgroundColor: '#1d1d1d' }}>
                         <div className="w-8 h-8 bg-indigo-500 rounded-lg flex items-center justify-center">
-                          <Code className="w-4 h-4 text-white" />
+                          <div className="w-4 h-4 bg-white rounded-sm"></div>
                         </div>
                         <div className="flex-1">
-                          <h3 className="text-sm font-semibold text-white flex items-center gap-2">
-                            <Terminal className="w-4 h-4" />
-                            Developer Tools
-                          </h3>
+                          <h3 className="text-sm font-semibold text-white">Developer Tools</h3>
                           <p className="text-xs text-gray-400">Build fast, efficient dApps and services.</p>
                         </div>
                       </div>
@@ -212,30 +206,30 @@ export const NavMenu: React.FC<NavMenuProps> = ({ items }) => {
                   
                   {/* Quick Access Right */}
                   <div className="space-y-6">
-                    <div>
+                  <div>
                       <h4 className="font-medium text-sm text-muted-foreground mb-3 px-2 text-[#94b5ff] uppercase tracking-wide">START BUILDING</h4>
                       <div className="space-y-1">
-                        <a href="https://elastos.dev/" target="_blank" rel="noopener noreferrer">
-                          <NavigationMenuLink className={navigationMenuTriggerStyle()}>
-                            <div className="flex items-center gap-2">
-                              <Terminal className="h-4 w-4 text-[#94b5ff]" />
-                              <span>Developer Portal</span>
-                            </div>
-                          </NavigationMenuLink>
-                        </a>
-                        <a href="https://elastos.dev/sdk/welcome/" target="_blank" rel="noopener noreferrer">
-                          <NavigationMenuLink className={navigationMenuTriggerStyle()}>
-                            <div className="flex items-center gap-2">
-                              <Download className="h-4 w-4 text-[#94b5ff]" />
-                              <span>SDKs & Tools</span>
-                            </div>
-                          </NavigationMenuLink>
-                        </a>
+                    <a href="https://elastos.dev/" target="_blank" rel="noopener noreferrer">
+                      <NavigationMenuLink className={navigationMenuTriggerStyle()}>
+                        <div className="flex items-center gap-2">
+                          <Terminal className="h-4 w-4 text-[#94b5ff]" />
+                          <span>Developer Portal</span>
+                        </div>
+                      </NavigationMenuLink>
+                    </a>
+                    <a href="https://elastos.dev/sdk/welcome/" target="_blank" rel="noopener noreferrer">
+                      <NavigationMenuLink className={navigationMenuTriggerStyle()}>
+                        <div className="flex items-center gap-2">
+                          <Download className="h-4 w-4 text-[#94b5ff]" />
+                          <span>SDKs & Tools</span>
+                        </div>
+                      </NavigationMenuLink>
+                    </a>
 
                       </div>
-                    </div>
+                  </div>
                     
-                    <div>
+                  <div>
                       <h4 className="font-medium text-sm text-muted-foreground mb-3 px-2 text-[#94b5ff] uppercase tracking-wide">FUNDING</h4>
                       <div className="space-y-1">
                         <a href="https://www.cyberrepublic.org/funding" target="_blank" rel="noopener noreferrer">
@@ -246,22 +240,22 @@ export const NavMenu: React.FC<NavMenuProps> = ({ items }) => {
                             </div>
                           </NavigationMenuLink>
                         </a>
-                        <Link to="/dao">
-                          <NavigationMenuLink className={navigationMenuTriggerStyle()}>
-                            <div className="flex items-center gap-2">
-                              <PiggyBank className="h-4 w-4 text-[#94b5ff]" />
-                              <span>Elastos DAO</span>
-                            </div>
-                          </NavigationMenuLink>
-                        </Link>
+                    <Link to="/dao">
+                      <NavigationMenuLink className={navigationMenuTriggerStyle()}>
+                        <div className="flex items-center gap-2">
+                          <PiggyBank className="h-4 w-4 text-[#94b5ff]" />
+                          <span>Elastos DAO</span>
+                        </div>
+                      </NavigationMenuLink>
+                    </Link>
                         <a href="https://www.cyberrepublic.org/grants" target="_blank" rel="noopener noreferrer">
-                          <NavigationMenuLink className={navigationMenuTriggerStyle()}>
-                            <div className="flex items-center gap-2">
+                      <NavigationMenuLink className={navigationMenuTriggerStyle()}>
+                        <div className="flex items-center gap-2">
                               <Star className="h-4 w-4 text-[#94b5ff]" />
                               <span>Grants Program</span>
-                            </div>
-                          </NavigationMenuLink>
-                        </a>
+                        </div>
+                      </NavigationMenuLink>
+                    </a>
                       </div>
                     </div>
                   </div>
@@ -273,37 +267,31 @@ export const NavMenu: React.FC<NavMenuProps> = ({ items }) => {
             <NavigationMenuItem>
               <NavigationMenuTrigger className="font-[200]">Ecosystem</NavigationMenuTrigger>
               <NavigationMenuContent>
-                <div className="grid w-[800px] gap-6 p-6 md:grid-cols-2">
+                <div className="grid w-[800px] gap-6 p-6 md:grid-cols-2 items-center">
                   {/* Featured Card Left */}
-                  <div className="relative">
+                  <div className="relative flex justify-center">
                     <div className="w-full h-48 bg-white dark:bg-gray-900 rounded-2xl overflow-hidden group cursor-pointer border border-gray-200 dark:border-gray-700">
                       {/* Top Image Section - Landscape aspect ratio (16:9) */}
-                      <div className="h-32 relative overflow-hidden bg-gradient-to-br from-emerald-500 via-teal-600 to-cyan-600">
-                        <picture>
-                          <source srcSet="/images/Behind The Code 00.webp" type="image/webp" />
-                          <img 
-                            src="/images/Behind The Code 00.png" 
-                            alt="Web3 Ecosystem Behind The Code"
-                            className="w-full h-full object-cover"
-                            onError={(e) => {
-                              console.error('Web3 Ecosystem image failed to load');
-                              // Fallback to background gradient if image fails
-                              const target = e.target as HTMLImageElement;
-                              target.style.display = 'none';
-                            }}
-                          />
-                        </picture>
+                      <div className="h-32 relative overflow-hidden bg-gradient-to-br from-emerald-500 via-teal-600 to-cyan-600 flex items-center justify-center">
+                        <img 
+                          src="/images/Behind The Code 00.png" 
+                          alt="Web3 Ecosystem Behind The Code"
+                          className="w-full h-full object-cover"
+                          onError={(e) => {
+                            console.error('Web3 Ecosystem image failed to load');
+                            // Fallback to background gradient if image fails
+                            const target = e.target as HTMLImageElement;
+                            target.style.display = 'none';
+                          }}
+                        />
                       </div>
                       {/* Bottom Content Section */}
                       <div className="h-16 p-4 flex items-center gap-3" style={{ backgroundColor: '#1d1d1d' }}>
                         <div className="w-8 h-8 bg-emerald-500 rounded-lg flex items-center justify-center">
-                          <Globe className="w-4 h-4 text-white" />
+                          <div className="w-4 h-4 bg-white rounded-sm"></div>
                         </div>
                         <div className="flex-1">
-                          <h3 className="text-sm font-semibold text-white flex items-center gap-2">
-                            <Layers className="w-4 h-4" />
-                            Web3 Ecosystem
-                          </h3>
+                          <h3 className="text-sm font-semibold text-white">Web3 Ecosystem</h3>
                           <p className="text-xs text-gray-400">Discover dApps and services on Elastos.</p>
                         </div>
                       </div>
@@ -380,37 +368,31 @@ export const NavMenu: React.FC<NavMenuProps> = ({ items }) => {
             <NavigationMenuItem>
               <NavigationMenuTrigger className="font-[200]">Learn</NavigationMenuTrigger>
               <NavigationMenuContent>
-                <div className="grid w-[800px] gap-6 p-6 md:grid-cols-2">
+                <div className="grid w-[800px] gap-6 p-6 md:grid-cols-2 items-center">
                   {/* Featured Card Left */}
-                  <div className="relative">
+                  <div className="relative flex justify-center">
                     <div className="w-full h-48 bg-white dark:bg-gray-900 rounded-2xl overflow-hidden group cursor-pointer border border-gray-200 dark:border-gray-700">
                       {/* Top Image Section - Landscape aspect ratio (16:9) */}
-                      <div className="h-32 relative overflow-hidden bg-gradient-to-br from-orange-500 via-red-500 to-pink-600">
-                        <picture>
-                          <source srcSet="/images/Behind The Code  #222.webp" type="image/webp" />
-                          <img 
-                            src="/images/Behind The Code  #222.jpg" 
-                            alt="Learn Elastos Behind The Code"
-                            className="w-full h-full object-cover"
-                            onError={(e) => {
-                              console.error('Learn Elastos image failed to load');
-                              // Fallback to background gradient if image fails
-                              const target = e.target as HTMLImageElement;
-                              target.style.display = 'none';
-                            }}
-                          />
-                        </picture>
+                      <div className="h-32 relative overflow-hidden bg-gradient-to-br from-orange-500 via-red-500 to-pink-600 flex items-center justify-center">
+                        <img 
+                          src="/images/Behind The Code  #222.jpg" 
+                          alt="Learn Elastos Behind The Code"
+                          className="w-full h-full object-cover"
+                          onError={(e) => {
+                            console.error('Learn Elastos image failed to load');
+                            // Fallback to background gradient if image fails
+                            const target = e.target as HTMLImageElement;
+                            target.style.display = 'none';
+                          }}
+                        />
                       </div>
                       {/* Bottom Content Section */}
                       <div className="h-16 p-4 flex items-center gap-3" style={{ backgroundColor: '#1d1d1d' }}>
                         <div className="w-8 h-8 bg-orange-500 rounded-lg flex items-center justify-center">
-                          <BookOpen className="w-4 h-4 text-white" />
+                          <div className="w-4 h-4 bg-white rounded-sm"></div>
                         </div>
                         <div className="flex-1">
-                          <h3 className="text-sm font-semibold text-white flex items-center gap-2">
-                            <BookOpen className="w-4 h-4" />
-                            Learn Elastos
-                          </h3>
+                          <h3 className="text-sm font-semibold text-white">Learn Elastos</h3>
                           <p className="text-xs text-gray-400">Master Web3 ownership and digital freedom.</p>
                         </div>
                       </div>
@@ -474,28 +456,28 @@ export const NavMenu: React.FC<NavMenuProps> = ({ items }) => {
                       </div>
                     </div>
                     
-                    <div>
+                  <div>
                       <h4 className="font-medium text-sm text-muted-foreground mb-3 px-2 text-[#94b5ff] uppercase tracking-wide">UPDATES</h4>
                       <div className="space-y-1">
-                        <Link to="/announcements">
-                          <NavigationMenuLink className={navigationMenuTriggerStyle()}>
-                            <div className="flex items-center gap-2">
-                              <Bell className="h-4 w-4 text-[#94b5ff]" />
-                              <span>Announcements</span>
-                            </div>
-                          </NavigationMenuLink>
-                        </Link>
+                    <Link to="/announcements">
+                      <NavigationMenuLink className={navigationMenuTriggerStyle()}>
+                        <div className="flex items-center gap-2">
+                          <Bell className="h-4 w-4 text-[#94b5ff]" />
+                          <span>Announcements</span>
+                        </div>
+                      </NavigationMenuLink>
+                    </Link>
 
-                        <a href="https://www.youtube.com/@elastosinfo" target="_blank" rel="noopener noreferrer">
-                          <NavigationMenuLink className={navigationMenuTriggerStyle()}>
-                            <div className="flex items-center gap-2">
-                              <Video className="h-4 w-4 text-[#94b5ff]" />
+                    <a href="https://www.youtube.com/@elastosinfo" target="_blank" rel="noopener noreferrer">
+                      <NavigationMenuLink className={navigationMenuTriggerStyle()}>
+                        <div className="flex items-center gap-2">
+                          <Video className="h-4 w-4 text-[#94b5ff]" />
                               <span>Videos</span>
-                            </div>
-                          </NavigationMenuLink>
-                        </a>
+                        </div>
+                      </NavigationMenuLink>
+                    </a>
                       </div>
-                    </div>
+                        </div>
                   </div>
                 </div>
               </NavigationMenuContent>
@@ -507,38 +489,32 @@ export const NavMenu: React.FC<NavMenuProps> = ({ items }) => {
             <NavigationMenuItem>
               <NavigationMenuTrigger className="font-[200]">Governance</NavigationMenuTrigger>
               <NavigationMenuContent>
-                <div className="grid w-[800px] gap-6 p-6 md:grid-cols-2">
+                <div className="grid w-[800px] gap-6 p-6 md:grid-cols-2 items-center">
                   {/* Featured Card Left */}
-                  <div className="relative">
+                  <div className="relative flex justify-center">
                     <a href="https://ambassador.elastos.net" target="_blank" rel="noopener noreferrer">
                       <div className="w-full h-48 bg-white dark:bg-gray-900 rounded-2xl overflow-hidden group cursor-pointer border border-gray-200 dark:border-gray-700 hover:border-blue-500 transition-colors">
                         {/* Top Image Section - Landscape aspect ratio (16:9) */}
-                        <div className="h-32 relative overflow-hidden bg-gradient-to-br from-violet-500 via-purple-600 to-indigo-600">
-                          <picture>
-                            <source srcSet="/images/Welcome-to-Elastos-Ambassador-Program-2048x1229.webp" type="image/webp" />
-                            <img 
-                              src="/images/Welcome-to-Elastos-Ambassador-Program-2048x1229.jpg" 
-                              alt="Elastos Ambassador Program"
-                              className="w-full h-full object-cover"
-                              onError={(e) => {
-                                console.error('Ambassador Program image failed to load');
-                                // Fallback to background gradient if image fails
-                                const target = e.target as HTMLImageElement;
-                                target.style.display = 'none';
-                              }}
-                            />
-                          </picture>
+                        <div className="h-32 relative overflow-hidden bg-gradient-to-br from-violet-500 via-purple-600 to-indigo-600 flex items-center justify-center">
+                          <img 
+                            src="/images/Welcome-to-Elastos-Ambassador-Program-2048x1229.jpg" 
+                            alt="Elastos Ambassador Program"
+                            className="w-full h-full object-cover"
+                            onError={(e) => {
+                              console.error('Ambassador Program image failed to load');
+                              // Fallback to background gradient if image fails
+                              const target = e.target as HTMLImageElement;
+                              target.style.display = 'none';
+                            }}
+                          />
                         </div>
                         {/* Bottom Content Section */}
                         <div className="h-16 p-4 flex items-center gap-3" style={{ backgroundColor: '#1d1d1d' }}>
                           <div className="w-8 h-8 bg-violet-500 rounded-lg flex items-center justify-center">
-                            <Star className="w-4 h-4 text-white" />
+                            <div className="w-4 h-4 bg-white rounded-sm"></div>
                           </div>
                           <div className="flex-1">
-                            <h3 className="text-sm font-semibold text-white flex items-center gap-2">
-                              <Users className="w-4 h-4" />
-                              Ambassador Program
-                            </h3>
+                            <h3 className="text-sm font-semibold text-white">Ambassador Program</h3>
                             <p className="text-xs text-gray-400">Become an Ambassador!</p>
                           </div>
                         </div>
@@ -580,43 +556,43 @@ export const NavMenu: React.FC<NavMenuProps> = ({ items }) => {
                       </div>
                     </div>
                     
-                    <div>
+                  <div>
                       <h4 className="font-medium text-sm text-muted-foreground mb-3 px-2 text-[#94b5ff] uppercase tracking-wide">ABOUT</h4>
                       <div className="space-y-1">
-                        <Link to="/social-channels">
-                          <NavigationMenuLink className={navigationMenuTriggerStyle()}>
-                            <div className="flex items-center gap-2">
-                              <MessageCircle className="h-4 w-4 text-[#94b5ff]" />
+                    <Link to="/social-channels">
+                      <NavigationMenuLink className={navigationMenuTriggerStyle()}>
+                        <div className="flex items-center gap-2">
+                          <MessageCircle className="h-4 w-4 text-[#94b5ff]" />
                               <span>Social Channels</span>
-                            </div>
-                          </NavigationMenuLink>
-                        </Link>
-                        <a href="https://ambassador.elastos.net" target="_blank" rel="noopener noreferrer">
-                          <NavigationMenuLink className={navigationMenuTriggerStyle()}>
-                            <div className="flex items-center gap-2">
-                              <Star className="h-4 w-4 text-[#94b5ff]" />
+                        </div>
+                      </NavigationMenuLink>
+                    </Link>
+                    <a href="https://ambassador.elastos.net" target="_blank" rel="noopener noreferrer">
+                      <NavigationMenuLink className={navigationMenuTriggerStyle()}>
+                        <div className="flex items-center gap-2">
+                          <Star className="h-4 w-4 text-[#94b5ff]" />
                               <span>Ambassador Program</span>
-                            </div>
-                          </NavigationMenuLink>
-                        </a>
+                        </div>
+                      </NavigationMenuLink>
+                    </a>
                         <a href="https://blog.elastos.net/contact-us/" target="_blank" rel="noopener noreferrer">
                           <NavigationMenuLink className={navigationMenuTriggerStyle()}>
                             <div className="flex items-center gap-2">
                               <HelpCircle className="h-4 w-4 text-[#94b5ff]" />
                               <span>Contact Us</span>
-                            </div>
+                  </div>
                           </NavigationMenuLink>
                         </a>
-                        <Link to="/media-kit">
-                          <NavigationMenuLink className={navigationMenuTriggerStyle()}>
-                            <div className="flex items-center gap-2">
-                              <Download className="h-4 w-4 text-[#94b5ff]" />
+                    <Link to="/media-kit">
+                      <NavigationMenuLink className={navigationMenuTriggerStyle()}>
+                        <div className="flex items-center gap-2">
+                          <Download className="h-4 w-4 text-[#94b5ff]" />
                               <span>Media Kit</span>
-                            </div>
-                          </NavigationMenuLink>
-                        </Link>
+                        </div>
+                      </NavigationMenuLink>
+                    </Link>
                       </div>
-                    </div>
+                        </div>
                   </div>
                 </div>
               </NavigationMenuContent>
