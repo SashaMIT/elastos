@@ -2,7 +2,7 @@
 
 import React from 'react';
 import { Link } from 'wouter';
-import { Home, Shield, Code, HelpCircle, MessageCircle, Newspaper, Menu as MenuIcon, Moon, Sun, LineChart, Coins, ShoppingCart, ScrollText, Target, FileText, Terminal, Github, Download, PiggyBank, FileCode2, BookOpen, Video, Database, Star, Wallet, Repeat, Bell, Users } from "lucide-react";
+import { Home, Shield, Code, HelpCircle, MessageCircle, Newspaper, Menu as MenuIcon, Moon, Sun, LineChart, Coins, ShoppingCart, ScrollText, Target, FileText, Terminal, Github, Download, PiggyBank, FileCode2, BookOpen, Video, Database, Star, Wallet, Repeat, Bell, Users, BarChart, Boxes, Globe, Layers, Vote, Calculator } from "lucide-react";
 import { SidebarMenu } from "@/components/ui/sidebar-menu";
 import { useTheme } from "@/hooks/useTheme";
 import {
@@ -50,289 +50,573 @@ export const NavMenu: React.FC<NavMenuProps> = ({ items }) => {
           <NavigationMenu>
             <NavigationMenuList>
               <NavigationMenuItem>
-                <NavigationMenuTrigger className="text-sm font-[200] bg-[#F6921A]/5 hover:bg-[#F6921A]/10 text-white border border-[#F6921A]/50 rounded-full px-4 [&>svg]:text-[#F6921A]/50">ELA</NavigationMenuTrigger>
-                <NavigationMenuContent>
-                  <div className="grid w-[200px] gap-1 p-2">
-                    <Link to="/stats">
-                      <NavigationMenuLink className={navigationMenuTriggerStyle()}>
-                        <div className="flex items-center gap-2">
-                          <Home className="h-4 w-4 text-[#94b5ff]" />
-                          <span>Stats</span>
-                        </div>
-                      </NavigationMenuLink>
-                    </Link>
-                    <Link to="/security">
-                      <NavigationMenuLink className={navigationMenuTriggerStyle()}>
-                        <div className="flex items-center gap-2">
-                          <Shield className="h-4 w-4 text-[#94b5ff]" />
-                          <span>Security</span>
-                        </div>
-                      </NavigationMenuLink>
-                    </Link>
-                    <Link to="/supply">
-                      <NavigationMenuLink className={navigationMenuTriggerStyle()}>
-                        <div className="flex items-center gap-2">
-                          <Coins className="h-4 w-4 text-[#94b5ff]" />
-                          <span>Supply</span>
-                        </div>
-                      </NavigationMenuLink>
-                    </Link>
-                    <Link to="/bridge">
-                      <NavigationMenuLink className={navigationMenuTriggerStyle()}>
-                        <div className="flex items-center gap-2">
-                          <Repeat className="h-4 w-4 text-[#94b5ff]" />
-                          <span>Bridge</span>
-                        </div>
-                      </NavigationMenuLink>
-                    </Link>
-                    <Link to="/buy-ela">
-                      <NavigationMenuLink className={navigationMenuTriggerStyle()}>
-                        <div className="flex items-center gap-2">
-                          <ShoppingCart className="h-4 w-4 text-[#94b5ff]" />
-                          <span>Buy ELA</span>
-                        </div>
-                      </NavigationMenuLink>
-                    </Link>
-                  </div>
-                </NavigationMenuContent>
+                <a 
+                  href="https://blog.elastos.net" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="text-sm font-[200] bg-[#F6921A]/5 hover:bg-[#F6921A]/10 text-white border border-[#F6921A]/50 rounded-full px-4 h-10 inline-flex items-center justify-center transition-colors"
+                >
+                  Blog
+                </a>
               </NavigationMenuItem>
             </NavigationMenuList>
           </NavigationMenu>
         </div>
         {/* Desktop Navigation */}
         <NavigationMenu className="hidden md:flex absolute left-[46.5%] top-1/2 -translate-x-1/2 -translate-y-1/2">
-          <NavigationMenuList className="hidden md:flex gap-4 lg:gap-6 items-center justify-center w-[400px]">
+          <NavigationMenuList className="hidden md:flex gap-1 lg:gap-1.5 items-center justify-center w-[500px]">
+            
+            {/* Solutions Dropdown */}
             <NavigationMenuItem>
-              <NavigationMenuTrigger className="font-[200]">Explore</NavigationMenuTrigger>
+              <NavigationMenuTrigger className="font-[200]">Solutions</NavigationMenuTrigger>
               <NavigationMenuContent>
-                <div className="grid w-[400px] gap-1 p-2 md:w-[500px] md:grid-cols-2">
-                  <div>
-                    <h4 className="font-medium text-sm text-muted-foreground mb-2 px-2 text-[#94b5ff]">ABOUT</h4>
-                    <Link to="/vision">
-                      <NavigationMenuLink className={navigationMenuTriggerStyle()}>
-                        <div className="flex items-center gap-2">
-                          <ScrollText className="h-4 w-4 text-[#94b5ff]" />
-                          <span>Our Vision</span>
+                <div className="grid w-[800px] gap-6 p-6 md:grid-cols-2">
+                  {/* Featured Card Left */}
+                  <div className="relative">
+                    <a href="https://blog.elastos.net/announcement/introducing-btcd-stablecoin/" target="_blank" rel="noopener noreferrer">
+                      <div className="w-full h-48 bg-white dark:bg-gray-900 rounded-2xl overflow-hidden group cursor-pointer border border-gray-200 dark:border-gray-700 hover:border-blue-500 transition-colors">
+                        {/* Top Image Section - Landscape aspect ratio (16:9) */}
+                        <div className="h-32 relative overflow-hidden bg-gradient-to-br from-orange-500 via-yellow-600 to-amber-700">
+                          <picture>
+                            <source srcSet="/images/BTCD1.webp" type="image/webp" />
+                            <img 
+                              src="/images/BTCD1.png" 
+                              alt="BTCD Bitcoin Dollar Announcement"
+                              className="w-full h-full object-cover"
+                              onError={(e) => {
+                                console.error('BTCD1 image failed to load');
+                                console.error('Error details:', e);
+                                // Fallback to background gradient if image fails
+                                const target = e.target as HTMLImageElement;
+                                target.style.display = 'none';
+                              }}
+                              onLoad={() => {
+                                console.log('BTCD1 image loaded successfully');
+                              }}
+                            />
+                          </picture>
                         </div>
-                      </NavigationMenuLink>
-                    </Link>
-                    <Link to="/roadmap">
-                      <NavigationMenuLink className={navigationMenuTriggerStyle()}>
-                        <div className="flex items-center gap-2">
-                          <LineChart className="h-4 w-4 text-[#94b5ff]" />
-                          <span>Roadmap</span>
+                        {/* Bottom Content Section */}
+                        <div className="h-16 p-4 flex items-center gap-3" style={{ backgroundColor: '#1d1d1d' }}>
+                          <div className="w-8 h-8 bg-orange-500 rounded-lg flex items-center justify-center">
+                            <div className="w-4 h-4 bg-white rounded-sm"></div>
+                          </div>
+                          <div className="flex-1">
+                            <h3 className="text-sm font-semibold text-white">The Bitcoin Dollar (BTCD)</h3>
+                            <p className="text-xs text-gray-400">The World's First Bitcoin-backed Dollar</p>
+                          </div>
                         </div>
-                      </NavigationMenuLink>
-                    </Link>
-                    <Link to="/ela-utility">
-                      <NavigationMenuLink className={navigationMenuTriggerStyle()}>
-                        <div className="flex items-center gap-2">
-                          <Coins className="h-4 w-4 text-[#94b5ff]" />
-                          <span>ELA Utility</span>
-                        </div>
-                      </NavigationMenuLink>
-                    </Link>
-                    <Link to="/whitepaper">
-                      <NavigationMenuLink className={navigationMenuTriggerStyle()}>
-                        <div className="flex items-center gap-2">
-                          <FileText className="h-4 w-4 text-[#94b5ff]" />
-                          <span>Litepaper / Whitepaper</span>
-                        </div>
-                      </NavigationMenuLink>
-                    </Link>
-                    <Link to="/use-cases">
-                      <NavigationMenuLink className={navigationMenuTriggerStyle()}>
-                        <div className="flex items-center gap-2">
-                          <Target className="h-4 w-4 text-[#94b5ff]" />
-                          <span>Use Cases</span>
-                        </div>
-                      </NavigationMenuLink>
-                    </Link>
-                  </div>
-                  <div>
-                    <h4 className="font-medium text-sm text-muted-foreground mb-2 px-2 text-[#94b5ff]">NETWORK</h4>
-                    <Link to="/wallet">
-                      <NavigationMenuLink className={navigationMenuTriggerStyle()}>
-                        <div className="flex items-center gap-2">
-                          <Wallet className="h-4 w-4 text-[#94b5ff]" />
-                          <span>Wallet</span>
-                        </div>
-                      </NavigationMenuLink>
-                    </Link>
-                    <a href="https://staking.elastos.net/" target="_blank" rel="noopener noreferrer">
-                      <NavigationMenuLink className={navigationMenuTriggerStyle()}>
-                        <div className="flex items-center gap-2">
-                          <LineChart className="h-4 w-4 text-[#94b5ff]" />
-                          <span>Staking & Nodes</span>
-                        </div>
-                      </NavigationMenuLink>
+                      </div>
                     </a>
-                    <Link to="/explorer">
-                      <NavigationMenuLink className={navigationMenuTriggerStyle()}>
-                        <div className="flex items-center gap-2">
-                          <MessageCircle className="h-4 w-4 text-[#94b5ff]" />
-                          <span>Explorer</span>
-                        </div>
-                      </NavigationMenuLink>
-                    </Link>
-                    <Link to="/ecosystem">
-                      <NavigationMenuLink className={navigationMenuTriggerStyle()}>
-                        <div className="flex items-center gap-2">
-                          <ShoppingCart className="h-4 w-4 text-[#94b5ff]" />
-                          <span>Ecosystem Projects</span>
-                        </div>
-                      </NavigationMenuLink>
-                    </Link>
-                    <Link to="/faq">
-                      <NavigationMenuLink className={navigationMenuTriggerStyle()}>
-                        <div className="flex items-center gap-2">
-                          <HelpCircle className="h-4 w-4 text-[#94b5ff]" />
-                          <span>FAQs</span>
-                        </div>
-                      </NavigationMenuLink>
-                    </Link>
+                  </div>
+                  
+                  {/* Quick Access Right */}
+                  <div className="space-y-6">
+                    <div>
+                      <h4 className="font-medium text-sm text-muted-foreground mb-3 px-2 text-[#94b5ff] uppercase tracking-wide">NETWORK</h4>
+                      <div className="space-y-1">
+                        <Link to="/stats">
+                          <NavigationMenuLink className={navigationMenuTriggerStyle()}>
+                            <div className="flex items-center gap-2">
+                              <BarChart className="h-4 w-4 text-[#94b5ff]" />
+                              <span>Network Stats</span>
+                            </div>
+                          </NavigationMenuLink>
+                        </Link>
+                        <Link to="/explorer">
+                          <NavigationMenuLink className={navigationMenuTriggerStyle()}>
+                            <div className="flex items-center gap-2">
+                              <MessageCircle className="h-4 w-4 text-[#94b5ff]" />
+                              <span>Live Explorer</span>
+                            </div>
+                          </NavigationMenuLink>
+                        </Link>
+                        <Link to="/security">
+                          <NavigationMenuLink className={navigationMenuTriggerStyle()}>
+                            <div className="flex items-center gap-2">
+                              <Shield className="h-4 w-4 text-[#94b5ff]" />
+                              <span>Security</span>
+                            </div>
+                          </NavigationMenuLink>
+                        </Link>
+                      </div>
+                    </div>
+                    
+                    <div>
+                      <h4 className="font-medium text-sm text-muted-foreground mb-3 px-2 text-[#94b5ff] uppercase tracking-wide">PARTICIPATE</h4>
+                      <div className="space-y-1">
+                        <a href="https://staking.elastos.net/" target="_blank" rel="noopener noreferrer">
+                          <NavigationMenuLink className={navigationMenuTriggerStyle()}>
+                            <div className="flex items-center gap-2">
+                              <LineChart className="h-4 w-4 text-[#94b5ff]" />
+                              <span>Staking & Nodes</span>
+                            </div>
+                          </NavigationMenuLink>
+                        </a>
+
+                        <Link to="/buy-ela">
+                          <NavigationMenuLink className={navigationMenuTriggerStyle()}>
+                            <div className="flex items-center gap-2">
+                              <ShoppingCart className="h-4 w-4 text-[#94b5ff]" />
+                              <span>Buy ELA</span>
+                            </div>
+                          </NavigationMenuLink>
+                        </Link>
+                      </div>
+                    </div>
                   </div>
                 </div>
               </NavigationMenuContent>
             </NavigationMenuItem>
 
+            {/* Developers Dropdown */}
             <NavigationMenuItem>
-              <NavigationMenuTrigger className="text-sm font-[200]">
-                Build
-              </NavigationMenuTrigger>
+              <NavigationMenuTrigger className="font-[200]">Developers</NavigationMenuTrigger>
               <NavigationMenuContent>
-                <div className="grid w-[400px] gap-1 p-4 md:w-[500px] md:grid-cols-2">
-                  <div>
-                    <h4 className="font-medium text-sm text-muted-foreground mb-2 px-2 text-[#94b5ff]">DEVS</h4>
-                    <a href="https://elastos.dev/" target="_blank" rel="noopener noreferrer">
-                      <NavigationMenuLink className={navigationMenuTriggerStyle()}>
-                        <div className="flex items-center gap-2">
-                          <Terminal className="h-4 w-4 text-[#94b5ff]" />
-                          <span>Developer Portal</span>
+                <div className="grid w-[800px] gap-6 p-6 md:grid-cols-2">
+                  {/* Featured Card Left */}
+                  <div className="relative">
+                    <div className="w-full h-48 bg-white dark:bg-gray-900 rounded-2xl overflow-hidden group cursor-pointer border border-gray-200 dark:border-gray-700">
+                      {/* Top Image Section - Landscape aspect ratio (16:9) */}
+                      <div className="h-32 relative overflow-hidden bg-gradient-to-br from-indigo-500 via-purple-600 to-blue-600">
+                        <picture>
+                          <source srcSet="/images/Behind The Code etc.webp" type="image/webp" />
+                          <img 
+                            src="/images/Behind The Code etc.png" 
+                            alt="Developer Tools Behind The Code"
+                            className="w-full h-full object-cover"
+                            onError={(e) => {
+                              console.error('Developer Tools image failed to load');
+                              // Fallback to background gradient if image fails
+                              const target = e.target as HTMLImageElement;
+                              target.style.display = 'none';
+                            }}
+                          />
+                        </picture>
+                      </div>
+                      {/* Bottom Content Section */}
+                      <div className="h-16 p-4 flex items-center gap-3" style={{ backgroundColor: '#1d1d1d' }}>
+                        <div className="w-8 h-8 bg-indigo-500 rounded-lg flex items-center justify-center">
+                          <Code className="w-4 h-4 text-white" />
                         </div>
-                      </NavigationMenuLink>
-                    </a>
-                    <a href="https://elastos.dev/sdk/welcome/" target="_blank" rel="noopener noreferrer">
-                      <NavigationMenuLink className={navigationMenuTriggerStyle()}>
-                        <div className="flex items-center gap-2">
-                          <Download className="h-4 w-4 text-[#94b5ff]" />
-                          <span>SDKs & Tools</span>
+                        <div className="flex-1">
+                          <h3 className="text-sm font-semibold text-white flex items-center gap-2">
+                            <Terminal className="w-4 h-4" />
+                            Developer Tools
+                          </h3>
+                          <p className="text-xs text-gray-400">Build fast, efficient dApps and services.</p>
                         </div>
-                      </NavigationMenuLink>
-                    </a>
+                      </div>
+                    </div>
                   </div>
-                  <div>
-                    <h4 className="font-medium text-sm text-muted-foreground mb-2 px-2 text-[#94b5ff]">FUNDING</h4>
-                    <Link to="/dao">
-                      <NavigationMenuLink className={navigationMenuTriggerStyle()}>
-                        <div className="flex items-center gap-2">
-                          <PiggyBank className="h-4 w-4 text-[#94b5ff]" />
-                          <span>Elastos DAO</span>
-                        </div>
-                      </NavigationMenuLink>
-                    </Link>
-                    <a href="https://www.cyberrepublic.org/funding" target="_blank" rel="noopener noreferrer">
-                      <NavigationMenuLink className={navigationMenuTriggerStyle()}>
-                        <div className="flex items-center gap-2">
-                          <FileText className="h-4 w-4 text-[#94b5ff]" />
-                          <span>Submit a Proposal</span>
-                        </div>
-                      </NavigationMenuLink>
-                    </a>
+                  
+                  {/* Quick Access Right */}
+                  <div className="space-y-6">
+                    <div>
+                      <h4 className="font-medium text-sm text-muted-foreground mb-3 px-2 text-[#94b5ff] uppercase tracking-wide">START BUILDING</h4>
+                      <div className="space-y-1">
+                        <a href="https://elastos.dev/" target="_blank" rel="noopener noreferrer">
+                          <NavigationMenuLink className={navigationMenuTriggerStyle()}>
+                            <div className="flex items-center gap-2">
+                              <Terminal className="h-4 w-4 text-[#94b5ff]" />
+                              <span>Developer Portal</span>
+                            </div>
+                          </NavigationMenuLink>
+                        </a>
+                        <a href="https://elastos.dev/sdk/welcome/" target="_blank" rel="noopener noreferrer">
+                          <NavigationMenuLink className={navigationMenuTriggerStyle()}>
+                            <div className="flex items-center gap-2">
+                              <Download className="h-4 w-4 text-[#94b5ff]" />
+                              <span>SDKs & Tools</span>
+                            </div>
+                          </NavigationMenuLink>
+                        </a>
+
+                      </div>
+                    </div>
+                    
+                    <div>
+                      <h4 className="font-medium text-sm text-muted-foreground mb-3 px-2 text-[#94b5ff] uppercase tracking-wide">FUNDING</h4>
+                      <div className="space-y-1">
+                        <a href="https://www.cyberrepublic.org/funding" target="_blank" rel="noopener noreferrer">
+                          <NavigationMenuLink className={navigationMenuTriggerStyle()}>
+                            <div className="flex items-center gap-2">
+                              <FileText className="h-4 w-4 text-[#94b5ff]" />
+                              <span>Submit Proposal</span>
+                            </div>
+                          </NavigationMenuLink>
+                        </a>
+                        <Link to="/dao">
+                          <NavigationMenuLink className={navigationMenuTriggerStyle()}>
+                            <div className="flex items-center gap-2">
+                              <PiggyBank className="h-4 w-4 text-[#94b5ff]" />
+                              <span>Elastos DAO</span>
+                            </div>
+                          </NavigationMenuLink>
+                        </Link>
+                        <a href="https://www.cyberrepublic.org/grants" target="_blank" rel="noopener noreferrer">
+                          <NavigationMenuLink className={navigationMenuTriggerStyle()}>
+                            <div className="flex items-center gap-2">
+                              <Star className="h-4 w-4 text-[#94b5ff]" />
+                              <span>Grants Program</span>
+                            </div>
+                          </NavigationMenuLink>
+                        </a>
+                      </div>
+                    </div>
                   </div>
                 </div>
               </NavigationMenuContent>
             </NavigationMenuItem>
+
+            {/* Ecosystem Dropdown */}
             <NavigationMenuItem>
-              <NavigationMenuTrigger className="text-sm font-[200]">
-                Insights
-              </NavigationMenuTrigger>
+              <NavigationMenuTrigger className="font-[200]">Ecosystem</NavigationMenuTrigger>
               <NavigationMenuContent>
-                <div className="grid w-[400px] gap-1 p-2 md:w-[500px] md:grid-cols-2">
-                  <div>
-                    <h4 className="font-medium text-sm text-muted-foreground mb-2 px-2 text-[#94b5ff]">UPDATES</h4>
-                    <Link to="/announcements">
-                      <NavigationMenuLink className={navigationMenuTriggerStyle()}>
-                        <div className="flex items-center gap-2">
-                          <Bell className="h-4 w-4 text-[#94b5ff]" />
-                          <span>Announcements</span>
+                <div className="grid w-[800px] gap-6 p-6 md:grid-cols-2">
+                  {/* Featured Card Left */}
+                  <div className="relative">
+                    <div className="w-full h-48 bg-white dark:bg-gray-900 rounded-2xl overflow-hidden group cursor-pointer border border-gray-200 dark:border-gray-700">
+                      {/* Top Image Section - Landscape aspect ratio (16:9) */}
+                      <div className="h-32 relative overflow-hidden bg-gradient-to-br from-emerald-500 via-teal-600 to-cyan-600">
+                        <picture>
+                          <source srcSet="/images/Behind The Code 00.webp" type="image/webp" />
+                          <img 
+                            src="/images/Behind The Code 00.png" 
+                            alt="Web3 Ecosystem Behind The Code"
+                            className="w-full h-full object-cover"
+                            onError={(e) => {
+                              console.error('Web3 Ecosystem image failed to load');
+                              // Fallback to background gradient if image fails
+                              const target = e.target as HTMLImageElement;
+                              target.style.display = 'none';
+                            }}
+                          />
+                        </picture>
+                      </div>
+                      {/* Bottom Content Section */}
+                      <div className="h-16 p-4 flex items-center gap-3" style={{ backgroundColor: '#1d1d1d' }}>
+                        <div className="w-8 h-8 bg-emerald-500 rounded-lg flex items-center justify-center">
+                          <Globe className="w-4 h-4 text-white" />
                         </div>
-                      </NavigationMenuLink>
-                    </Link>
-                    <a href="https://blog.elastos.net" target="_blank" rel="noopener noreferrer">
-                      <NavigationMenuLink className={navigationMenuTriggerStyle()}>
-                        <div className="flex items-center gap-2">
-                          <BookOpen className="h-4 w-4 text-[#94b5ff]" />
-                          <span>Blogs & News</span>
+                        <div className="flex-1">
+                          <h3 className="text-sm font-semibold text-white flex items-center gap-2">
+                            <Layers className="w-4 h-4" />
+                            Web3 Ecosystem
+                          </h3>
+                          <p className="text-xs text-gray-400">Discover dApps and services on Elastos.</p>
                         </div>
-                      </NavigationMenuLink>
-                    </a>
+                      </div>
+                    </div>
                   </div>
-                  <div>
-                    <h4 className="font-medium text-sm text-muted-foreground mb-2 px-2 text-[#94b5ff]">LEARNING</h4>
-                    <a href="https://www.youtube.com/@elastosinfo" target="_blank" rel="noopener noreferrer">
-                      <NavigationMenuLink className={navigationMenuTriggerStyle()}>
-                        <div className="flex items-center gap-2">
-                          <Video className="h-4 w-4 text-[#94b5ff]" />
-                          <span>Videos & Tutorials</span>
-                        </div>
-                      </NavigationMenuLink>
-                    </a>
-                    <Link href="/team-foundation">
-                      <NavigationMenuLink className={navigationMenuTriggerStyle()}>
-                        <div className="flex items-center gap-2">
-                          <Users className="h-4 w-4 text-[#94b5ff]" />
-                          <span>Team Foundation</span>
-                        </div>
-                      </NavigationMenuLink>
-                    </Link>
+                  
+                  {/* Quick Access Right */}
+                  <div className="space-y-6">
+                    <div>
+                      <h4 className="font-medium text-sm text-muted-foreground mb-3 px-2 text-[#94b5ff] uppercase tracking-wide">APPLICATIONS</h4>
+                      <div className="space-y-1">
+                        <Link to="/ecosystem">
+                          <NavigationMenuLink className={navigationMenuTriggerStyle()}>
+                            <div className="flex items-center gap-2">
+                              <Layers className="h-4 w-4 text-[#94b5ff]" />
+                              <span>DeFi Protocols</span>
+                            </div>
+                          </NavigationMenuLink>
+                        </Link>
+                        <Link to="/ecosystem">
+                          <NavigationMenuLink className={navigationMenuTriggerStyle()}>
+                            <div className="flex items-center gap-2">
+                              <Star className="h-4 w-4 text-[#94b5ff]" />
+                              <span>NFT Platforms</span>
+                            </div>
+                          </NavigationMenuLink>
+                        </Link>
+                        <Link to="/ecosystem">
+                          <NavigationMenuLink className={navigationMenuTriggerStyle()}>
+                            <div className="flex items-center gap-2">
+                              <Globe className="h-4 w-4 text-[#94b5ff]" />
+                              <span>Gaming & Metaverse</span>
+                            </div>
+                          </NavigationMenuLink>
+                        </Link>
+                      </div>
+                    </div>
+                    
+                    <div>
+                      <h4 className="font-medium text-sm text-muted-foreground mb-3 px-2 text-[#94b5ff] uppercase tracking-wide">TOOLS</h4>
+                      <div className="space-y-1">
+                        <Link to="/wallet">
+                          <NavigationMenuLink className={navigationMenuTriggerStyle()}>
+                            <div className="flex items-center gap-2">
+                              <Wallet className="h-4 w-4 text-[#94b5ff]" />
+                              <span>Wallet</span>
+                            </div>
+                          </NavigationMenuLink>
+                        </Link>
+                        <Link to="/bridge">
+                          <NavigationMenuLink className={navigationMenuTriggerStyle()}>
+                            <div className="flex items-center gap-2">
+                              <Repeat className="h-4 w-4 text-[#94b5ff]" />
+                              <span>Bridge</span>
+                            </div>
+                          </NavigationMenuLink>
+                        </Link>
+                        <Link to="/supply">
+                          <NavigationMenuLink className={navigationMenuTriggerStyle()}>
+                            <div className="flex items-center gap-2">
+                              <Coins className="h-4 w-4 text-[#94b5ff]" />
+                              <span>Supply Info</span>
+                            </div>
+                          </NavigationMenuLink>
+                        </Link>
+                      </div>
+                    </div>
                   </div>
                 </div>
               </NavigationMenuContent>
             </NavigationMenuItem>
+
+            {/* Learn Dropdown */}
             <NavigationMenuItem>
-              <NavigationMenuTrigger className="text-sm font-[200]">
-                Connect
-              </NavigationMenuTrigger>
+              <NavigationMenuTrigger className="font-[200]">Learn</NavigationMenuTrigger>
               <NavigationMenuContent>
-                <div className="grid w-[400px] gap-1 p-2 md:w-[500px] md:grid-cols-2">
-                  <div>
-                    <h4 className="font-medium text-sm text-muted-foreground mb-2 px-2 text-[#94b5ff]">COMMUNITY</h4>
-                    <Link to="/social-channels">
-                      <NavigationMenuLink className={navigationMenuTriggerStyle()}>
-                        <div className="flex items-center gap-2">
-                          <MessageCircle className="h-4 w-4 text-[#94b5ff]" />
-                          <span className="text-white">Social Channels</span>
+                <div className="grid w-[800px] gap-6 p-6 md:grid-cols-2">
+                  {/* Featured Card Left */}
+                  <div className="relative">
+                    <div className="w-full h-48 bg-white dark:bg-gray-900 rounded-2xl overflow-hidden group cursor-pointer border border-gray-200 dark:border-gray-700">
+                      {/* Top Image Section - Landscape aspect ratio (16:9) */}
+                      <div className="h-32 relative overflow-hidden bg-gradient-to-br from-orange-500 via-red-500 to-pink-600">
+                        <picture>
+                          <source srcSet="/images/Behind The Code  #222.webp" type="image/webp" />
+                          <img 
+                            src="/images/Behind The Code  #222.jpg" 
+                            alt="Learn Elastos Behind The Code"
+                            className="w-full h-full object-cover"
+                            onError={(e) => {
+                              console.error('Learn Elastos image failed to load');
+                              // Fallback to background gradient if image fails
+                              const target = e.target as HTMLImageElement;
+                              target.style.display = 'none';
+                            }}
+                          />
+                        </picture>
+                      </div>
+                      {/* Bottom Content Section */}
+                      <div className="h-16 p-4 flex items-center gap-3" style={{ backgroundColor: '#1d1d1d' }}>
+                        <div className="w-8 h-8 bg-orange-500 rounded-lg flex items-center justify-center">
+                          <BookOpen className="w-4 h-4 text-white" />
                         </div>
-                      </NavigationMenuLink>
-                    </Link>
+                        <div className="flex-1">
+                          <h3 className="text-sm font-semibold text-white flex items-center gap-2">
+                            <BookOpen className="w-4 h-4" />
+                            Learn Elastos
+                          </h3>
+                          <p className="text-xs text-gray-400">Master Web3 ownership and digital freedom.</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  
+                  {/* Quick Access Right */}
+                  <div className="space-y-6">
+                    <div>
+                      <h4 className="font-medium text-sm text-muted-foreground mb-3 px-2 text-[#94b5ff] uppercase tracking-wide">UNDERSTANDING</h4>
+                      <div className="space-y-1">
+                        <Link to="/vision">
+                          <NavigationMenuLink className={navigationMenuTriggerStyle()}>
+                            <div className="flex items-center gap-2">
+                              <ScrollText className="h-4 w-4 text-[#94b5ff]" />
+                              <span>What is Elastos</span>
+                            </div>
+                          </NavigationMenuLink>
+                        </Link>
+                        <Link to="/vision">
+                          <NavigationMenuLink className={navigationMenuTriggerStyle()}>
+                            <div className="flex items-center gap-2">
+                              <Target className="h-4 w-4 text-[#94b5ff]" />
+                              <span>Our Vision</span>
+                            </div>
+                          </NavigationMenuLink>
+                        </Link>
+                        <Link to="/roadmap">
+                          <NavigationMenuLink className={navigationMenuTriggerStyle()}>
+                            <div className="flex items-center gap-2">
+                              <LineChart className="h-4 w-4 text-[#94b5ff]" />
+                              <span>Roadmap</span>
+                            </div>
+                          </NavigationMenuLink>
+                        </Link>
+                        <Link to="/use-cases">
+                          <NavigationMenuLink className={navigationMenuTriggerStyle()}>
+                            <div className="flex items-center gap-2">
+                              <Boxes className="h-4 w-4 text-[#94b5ff]" />
+                              <span>Use Cases</span>
+                            </div>
+                          </NavigationMenuLink>
+                        </Link>
+
+                        <Link to="/ela-utility">
+                          <NavigationMenuLink className={navigationMenuTriggerStyle()}>
+                            <div className="flex items-center gap-2">
+                              <Coins className="h-4 w-4 text-[#94b5ff]" />
+                              <span>ELA Utility</span>
+                            </div>
+                          </NavigationMenuLink>
+                        </Link>
+                        <Link to="/whitepaper">
+                          <NavigationMenuLink className={navigationMenuTriggerStyle()}>
+                            <div className="flex items-center gap-2">
+                              <FileText className="h-4 w-4 text-[#94b5ff]" />
+                              <span>Whitepaper</span>
+                            </div>
+                          </NavigationMenuLink>
+                        </Link>
+                      </div>
+                    </div>
+                    
+                    <div>
+                      <h4 className="font-medium text-sm text-muted-foreground mb-3 px-2 text-[#94b5ff] uppercase tracking-wide">UPDATES</h4>
+                      <div className="space-y-1">
+                        <Link to="/announcements">
+                          <NavigationMenuLink className={navigationMenuTriggerStyle()}>
+                            <div className="flex items-center gap-2">
+                              <Bell className="h-4 w-4 text-[#94b5ff]" />
+                              <span>Announcements</span>
+                            </div>
+                          </NavigationMenuLink>
+                        </Link>
+
+                        <a href="https://www.youtube.com/@elastosinfo" target="_blank" rel="noopener noreferrer">
+                          <NavigationMenuLink className={navigationMenuTriggerStyle()}>
+                            <div className="flex items-center gap-2">
+                              <Video className="h-4 w-4 text-[#94b5ff]" />
+                              <span>Videos</span>
+                            </div>
+                          </NavigationMenuLink>
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </NavigationMenuContent>
+            </NavigationMenuItem>
+
+
+
+            {/* Governance Dropdown */}
+            <NavigationMenuItem>
+              <NavigationMenuTrigger className="font-[200]">Governance</NavigationMenuTrigger>
+              <NavigationMenuContent>
+                <div className="grid w-[800px] gap-6 p-6 md:grid-cols-2">
+                  {/* Featured Card Left */}
+                  <div className="relative">
                     <a href="https://ambassador.elastos.net" target="_blank" rel="noopener noreferrer">
-                      <NavigationMenuLink className={navigationMenuTriggerStyle()}>
-                        <div className="flex items-center gap-2">
-                          <Star className="h-4 w-4 text-[#94b5ff]" />
-                          <span className="text-white">Ambassador Program</span>
+                      <div className="w-full h-48 bg-white dark:bg-gray-900 rounded-2xl overflow-hidden group cursor-pointer border border-gray-200 dark:border-gray-700 hover:border-blue-500 transition-colors">
+                        {/* Top Image Section - Landscape aspect ratio (16:9) */}
+                        <div className="h-32 relative overflow-hidden bg-gradient-to-br from-violet-500 via-purple-600 to-indigo-600">
+                          <picture>
+                            <source srcSet="/images/Welcome-to-Elastos-Ambassador-Program-2048x1229.webp" type="image/webp" />
+                            <img 
+                              src="/images/Welcome-to-Elastos-Ambassador-Program-2048x1229.jpg" 
+                              alt="Elastos Ambassador Program"
+                              className="w-full h-full object-cover"
+                              onError={(e) => {
+                                console.error('Ambassador Program image failed to load');
+                                // Fallback to background gradient if image fails
+                                const target = e.target as HTMLImageElement;
+                                target.style.display = 'none';
+                              }}
+                            />
+                          </picture>
                         </div>
-                      </NavigationMenuLink>
+                        {/* Bottom Content Section */}
+                        <div className="h-16 p-4 flex items-center gap-3" style={{ backgroundColor: '#1d1d1d' }}>
+                          <div className="w-8 h-8 bg-violet-500 rounded-lg flex items-center justify-center">
+                            <Star className="w-4 h-4 text-white" />
+                          </div>
+                          <div className="flex-1">
+                            <h3 className="text-sm font-semibold text-white flex items-center gap-2">
+                              <Users className="w-4 h-4" />
+                              Ambassador Program
+                            </h3>
+                            <p className="text-xs text-gray-400">Become an Ambassador!</p>
+                          </div>
+                        </div>
+                      </div>
                     </a>
                   </div>
-                  <div>
-                    <h4 className="font-medium text-sm text-muted-foreground mb-2 px-2 text-[#94b5ff]">RESOURCES</h4>
-                    <Link to="/media-kit">
-                      <NavigationMenuLink className={navigationMenuTriggerStyle()}>
-                        <div className="flex items-center gap-2">
-                          <Download className="h-4 w-4 text-[#94b5ff]" />
-                          <span className="text-white">Media Kit</span>
-                        </div>
-                      </NavigationMenuLink>
-                    </Link>
-                    <a href="https://blog.elastos.net/contact-us/" target="_blank" rel="noopener noreferrer">
-                      <NavigationMenuLink className={navigationMenuTriggerStyle()}>
-                        <div className="flex items-center gap-2">
-                          <HelpCircle className="h-4 w-4 text-[#94b5ff]" />
-                          <span className="text-white">Contact Us</span>
-                        </div>
-                      </NavigationMenuLink>
-                    </a>
+                  
+                  {/* Quick Access Right */}
+                  <div className="space-y-6">
+                    <div>
+                      <h4 className="font-medium text-sm text-muted-foreground mb-3 px-2 text-[#94b5ff] uppercase tracking-wide">DAO</h4>
+                      <div className="space-y-1">
+                        <Link to="/dao">
+                          <NavigationMenuLink className={navigationMenuTriggerStyle()}>
+                            <div className="flex items-center gap-2">
+                              <PiggyBank className="h-4 w-4 text-[#94b5ff]" />
+                              <span>Governance (DAO)</span>
+                            </div>
+                          </NavigationMenuLink>
+                        </Link>
+                        <Link to="/team-foundation">
+                          <NavigationMenuLink className={navigationMenuTriggerStyle()}>
+                            <div className="flex items-center gap-2">
+                              <Users className="h-4 w-4 text-[#94b5ff]" />
+                              <span>Team & Foundation</span>
+                            </div>
+                          </NavigationMenuLink>
+                        </Link>
+                        <Link to="/vision">
+                          <NavigationMenuLink className={navigationMenuTriggerStyle()}>
+                            <div className="flex items-center gap-2">
+                              <Target className="h-4 w-4 text-[#94b5ff]" />
+                              <span>Mission & Vision</span>
+                            </div>
+                          </NavigationMenuLink>
+                        </Link>
+
+
+                      </div>
+                    </div>
+                    
+                    <div>
+                      <h4 className="font-medium text-sm text-muted-foreground mb-3 px-2 text-[#94b5ff] uppercase tracking-wide">ABOUT</h4>
+                      <div className="space-y-1">
+                        <Link to="/social-channels">
+                          <NavigationMenuLink className={navigationMenuTriggerStyle()}>
+                            <div className="flex items-center gap-2">
+                              <MessageCircle className="h-4 w-4 text-[#94b5ff]" />
+                              <span>Social Channels</span>
+                            </div>
+                          </NavigationMenuLink>
+                        </Link>
+                        <a href="https://ambassador.elastos.net" target="_blank" rel="noopener noreferrer">
+                          <NavigationMenuLink className={navigationMenuTriggerStyle()}>
+                            <div className="flex items-center gap-2">
+                              <Star className="h-4 w-4 text-[#94b5ff]" />
+                              <span>Ambassador Program</span>
+                            </div>
+                          </NavigationMenuLink>
+                        </a>
+                        <a href="https://blog.elastos.net/contact-us/" target="_blank" rel="noopener noreferrer">
+                          <NavigationMenuLink className={navigationMenuTriggerStyle()}>
+                            <div className="flex items-center gap-2">
+                              <HelpCircle className="h-4 w-4 text-[#94b5ff]" />
+                              <span>Contact Us</span>
+                            </div>
+                          </NavigationMenuLink>
+                        </a>
+                        <Link to="/media-kit">
+                          <NavigationMenuLink className={navigationMenuTriggerStyle()}>
+                            <div className="flex items-center gap-2">
+                              <Download className="h-4 w-4 text-[#94b5ff]" />
+                              <span>Media Kit</span>
+                            </div>
+                          </NavigationMenuLink>
+                        </Link>
+                      </div>
+                    </div>
                   </div>
                 </div>
               </NavigationMenuContent>
