@@ -1,6 +1,6 @@
 "use client";
 
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Link } from 'wouter';
 import { Home, Shield, Code, HelpCircle, MessageCircle, Newspaper, Menu as MenuIcon, Moon, Sun, LineChart, Coins, ShoppingCart, ScrollText, Target, FileText, Terminal, Github, Download, PiggyBank, FileCode2, BookOpen, Video, Database, Star, Wallet, Repeat, Bell, Users, BarChart, Boxes, Globe, Layers, Vote, Calculator } from "lucide-react";
 import { SidebarMenu } from "@/components/ui/sidebar-menu";
@@ -29,6 +29,8 @@ export const NavMenu: React.FC<NavMenuProps> = ({ items }) => {
   const logoSrc = theme === 'dark' 
     ? "/images/Elastos Logo Dark - 1.png"
     : "/images/Elastos Logo Light - 1.png";
+
+
 
   return (
     <div className="flex justify-between items-center w-full px-4 bg-[#ffffff] dark:bg-background/20 backdrop-blur-lg">
@@ -64,7 +66,7 @@ export const NavMenu: React.FC<NavMenuProps> = ({ items }) => {
         </div>
         {/* Desktop Navigation */}
         <NavigationMenu className="hidden md:flex absolute left-[46.5%] top-1/2 -translate-x-1/2 -translate-y-1/2">
-          <NavigationMenuList className="hidden md:flex gap-1 lg:gap-1.5 items-center justify-center w-[500px]">
+          <NavigationMenuList className="hidden md:flex gap-1 lg:gap-1.5 items-center justify-center">
             
             {/* Solutions Dropdown */}
             <NavigationMenuItem>
@@ -74,15 +76,15 @@ export const NavMenu: React.FC<NavMenuProps> = ({ items }) => {
                   {/* Featured Card Left */}
                   <div className="relative flex justify-center">
                     <a href="https://blog.elastos.net/announcement/introducing-btcd-stablecoin/" target="_blank" rel="noopener noreferrer">
-                      <div className="w-full h-48 bg-white dark:bg-gray-900 rounded-2xl overflow-hidden group cursor-pointer border border-gray-200 dark:border-gray-700 hover:border-blue-500 transition-colors">
-                        {/* Top Image Section - Landscape aspect ratio (16:9) */}
-                        <div className="h-32 relative overflow-hidden bg-gradient-to-br from-orange-500 via-yellow-600 to-amber-700 flex items-center justify-center">
+                      <div className="w-full h-48 bg-white dark:bg-gray-900 rounded-2xl overflow-hidden group cursor-pointer border border-gray-200 dark:border-gray-700 hover:border-blue-500 transition-colors relative">
+                        {/* Full Background Image */}
+                        <div className="h-full relative overflow-hidden bg-gradient-to-br from-orange-500 via-yellow-600 to-amber-700 flex items-center justify-center">
                           <picture>
                             <source srcSet="/images/BTCD1.webp" type="image/webp" />
                             <img 
                               src="/images/BTCD1.png" 
                               alt="BTCD Bitcoin Dollar Announcement"
-                              className="max-w-full max-h-full object-contain"
+                              className="w-full h-full object-cover"
                               onError={(e) => {
                                 console.error('BTCD1 image failed to load');
                                 console.error('Error details:', e);
@@ -95,15 +97,15 @@ export const NavMenu: React.FC<NavMenuProps> = ({ items }) => {
                               }}
                             />
                           </picture>
-                        </div>
-                        {/* Bottom Content Section */}
-                        <div className="h-16 p-4 flex items-center gap-3" style={{ backgroundColor: '#1d1d1d' }}>
-                          <div className="w-8 h-8 bg-orange-500 rounded-lg flex items-center justify-center">
-                            <div className="w-4 h-4 bg-white rounded-sm"></div>
-                          </div>
-                          <div className="flex-1">
-                            <h3 className="text-sm font-semibold text-white">The Bitcoin Dollar (BTCD)</h3>
-                            <p className="text-xs text-gray-400">The World's First Bitcoin-backed Dollar</p>
+                          {/* Frosted Glass Overlay */}
+                          <div className="absolute bottom-0 left-0 right-0 h-16 p-4 flex items-center gap-3 bg-black/30 backdrop-blur-md border-t border-white/20 rounded-b-2xl">
+                            <div className="w-8 h-8 bg-orange-500 rounded-lg flex items-center justify-center">
+                              <div className="w-4 h-4 bg-white rounded-sm"></div>
+                            </div>
+                            <div className="flex-1">
+                              <h3 className="text-sm font-semibold text-white drop-shadow-lg">The Bitcoin Dollar (BTCD)</h3>
+                              <p className="text-xs text-gray-100 drop-shadow-md">The World's First Bitcoin-backed Dollar</p>
+                            </div>
                           </div>
                         </div>
                       </div>
@@ -176,9 +178,9 @@ export const NavMenu: React.FC<NavMenuProps> = ({ items }) => {
                 <div className="grid w-[800px] gap-6 p-6 md:grid-cols-2 items-center">
                   {/* Featured Card Left */}
                   <div className="relative flex justify-center">
-                    <div className="w-full h-48 bg-white dark:bg-gray-900 rounded-2xl overflow-hidden group cursor-pointer border border-gray-200 dark:border-gray-700">
-                      {/* Top Image Section - Landscape aspect ratio (16:9) */}
-                      <div className="h-32 relative overflow-hidden bg-gradient-to-br from-indigo-500 via-purple-600 to-blue-600 flex items-center justify-center">
+                    <div className="w-full h-48 bg-white dark:bg-gray-900 rounded-2xl overflow-hidden group cursor-pointer border border-gray-200 dark:border-gray-700 relative">
+                      {/* Full Background Image */}
+                      <div className="h-full relative overflow-hidden bg-gradient-to-br from-indigo-500 via-purple-600 to-blue-600 flex items-center justify-center">
                         <img 
                           src="/images/Behind The Code etc.png" 
                           alt="Developer Tools Behind The Code"
@@ -190,15 +192,15 @@ export const NavMenu: React.FC<NavMenuProps> = ({ items }) => {
                             target.style.display = 'none';
                           }}
                         />
-                      </div>
-                      {/* Bottom Content Section */}
-                      <div className="h-16 p-4 flex items-center gap-3" style={{ backgroundColor: '#1d1d1d' }}>
-                        <div className="w-8 h-8 bg-indigo-500 rounded-lg flex items-center justify-center">
-                          <div className="w-4 h-4 bg-white rounded-sm"></div>
-                        </div>
-                        <div className="flex-1">
-                          <h3 className="text-sm font-semibold text-white">Developer Tools</h3>
-                          <p className="text-xs text-gray-400">Build fast, efficient dApps and services.</p>
+                        {/* Frosted Glass Overlay */}
+                        <div className="absolute bottom-0 left-0 right-0 h-16 p-4 flex items-center gap-3 bg-black/30 backdrop-blur-md border-t border-white/20 rounded-b-2xl">
+                          <div className="w-8 h-8 bg-indigo-500 rounded-lg flex items-center justify-center">
+                            <div className="w-4 h-4 bg-white rounded-sm"></div>
+                          </div>
+                          <div className="flex-1">
+                            <h3 className="text-sm font-semibold text-white drop-shadow-lg">Developer Tools</h3>
+                            <p className="text-xs text-gray-100 drop-shadow-md">Build fast, efficient dApps and services.</p>
+                          </div>
                         </div>
                       </div>
                     </div>
@@ -270,9 +272,9 @@ export const NavMenu: React.FC<NavMenuProps> = ({ items }) => {
                 <div className="grid w-[800px] gap-6 p-6 md:grid-cols-2 items-center">
                   {/* Featured Card Left */}
                   <div className="relative flex justify-center">
-                    <div className="w-full h-48 bg-white dark:bg-gray-900 rounded-2xl overflow-hidden group cursor-pointer border border-gray-200 dark:border-gray-700">
-                      {/* Top Image Section - Landscape aspect ratio (16:9) */}
-                      <div className="h-32 relative overflow-hidden bg-gradient-to-br from-emerald-500 via-teal-600 to-cyan-600 flex items-center justify-center">
+                    <div className="w-full h-48 bg-white dark:bg-gray-900 rounded-2xl overflow-hidden group cursor-pointer border border-gray-200 dark:border-gray-700 relative">
+                      {/* Full Background Image */}
+                      <div className="h-full relative overflow-hidden bg-gradient-to-br from-emerald-500 via-teal-600 to-cyan-600 flex items-center justify-center">
                         <img 
                           src="/images/Behind The Code 00.png" 
                           alt="Web3 Ecosystem Behind The Code"
@@ -284,15 +286,15 @@ export const NavMenu: React.FC<NavMenuProps> = ({ items }) => {
                             target.style.display = 'none';
                           }}
                         />
-                      </div>
-                      {/* Bottom Content Section */}
-                      <div className="h-16 p-4 flex items-center gap-3" style={{ backgroundColor: '#1d1d1d' }}>
-                        <div className="w-8 h-8 bg-emerald-500 rounded-lg flex items-center justify-center">
-                          <div className="w-4 h-4 bg-white rounded-sm"></div>
-                        </div>
-                        <div className="flex-1">
-                          <h3 className="text-sm font-semibold text-white">Web3 Ecosystem</h3>
-                          <p className="text-xs text-gray-400">Discover dApps and services on Elastos.</p>
+                        {/* Frosted Glass Overlay */}
+                        <div className="absolute bottom-0 left-0 right-0 h-16 p-4 flex items-center gap-3 bg-black/30 backdrop-blur-md border-t border-white/20 rounded-b-2xl">
+                          <div className="w-8 h-8 bg-emerald-500 rounded-lg flex items-center justify-center">
+                            <div className="w-4 h-4 bg-white rounded-sm"></div>
+                          </div>
+                          <div className="flex-1">
+                            <h3 className="text-sm font-semibold text-white drop-shadow-lg">Web3 Ecosystem</h3>
+                            <p className="text-xs text-gray-100 drop-shadow-md">Discover dApps and services on Elastos.</p>
+                          </div>
                         </div>
                       </div>
                     </div>
@@ -371,29 +373,36 @@ export const NavMenu: React.FC<NavMenuProps> = ({ items }) => {
                 <div className="grid w-[800px] gap-6 p-6 md:grid-cols-2 items-center">
                   {/* Featured Card Left */}
                   <div className="relative flex justify-center">
-                    <div className="w-full h-48 bg-white dark:bg-gray-900 rounded-2xl overflow-hidden group cursor-pointer border border-gray-200 dark:border-gray-700">
-                      {/* Top Image Section - Landscape aspect ratio (16:9) */}
-                      <div className="h-32 relative overflow-hidden bg-gradient-to-br from-orange-500 via-red-500 to-pink-600 flex items-center justify-center">
-                        <img 
-                          src="/images/Behind The Code  #222.jpg" 
-                          alt="Learn Elastos Behind The Code"
-                          className="w-full h-full object-cover"
-                          onError={(e) => {
-                            console.error('Learn Elastos image failed to load');
-                            // Fallback to background gradient if image fails
-                            const target = e.target as HTMLImageElement;
-                            target.style.display = 'none';
-                          }}
-                        />
-                      </div>
-                      {/* Bottom Content Section */}
-                      <div className="h-16 p-4 flex items-center gap-3" style={{ backgroundColor: '#1d1d1d' }}>
-                        <div className="w-8 h-8 bg-orange-500 rounded-lg flex items-center justify-center">
-                          <div className="w-4 h-4 bg-white rounded-sm"></div>
-                        </div>
-                        <div className="flex-1">
-                          <h3 className="text-sm font-semibold text-white">Learn Elastos</h3>
-                          <p className="text-xs text-gray-400">Master Web3 ownership and digital freedom.</p>
+                    <div className="w-full h-48 bg-white dark:bg-gray-900 rounded-2xl overflow-hidden group cursor-pointer border border-gray-200 dark:border-gray-700 relative">
+                      {/* Full Background Image */}
+                      <div className="h-full relative overflow-hidden bg-gradient-to-br from-orange-500 via-red-500 to-pink-600 flex items-center justify-center">
+                        <picture>
+                          <source srcSet="/images/Behind The Code  #222.webp" type="image/webp" />
+                          <img 
+                            src="/images/Behind The Code  #222.jpg" 
+                            alt="Learn Elastos Behind The Code"
+                            className="w-full h-full object-cover"
+                            onError={(e) => {
+                              console.error('Learn Elastos image failed to load');
+                              console.error('Error details:', e);
+                              // Fallback to background gradient if image fails
+                              const target = e.target as HTMLImageElement;
+                              target.style.display = 'none';
+                            }}
+                            onLoad={() => {
+                              console.log('Learn Elastos image loaded successfully');
+                            }}
+                          />
+                        </picture>
+                        {/* Frosted Glass Overlay */}
+                        <div className="absolute bottom-0 left-0 right-0 h-16 p-4 flex items-center gap-3 bg-black/30 backdrop-blur-md border-t border-white/20 rounded-b-2xl">
+                          <div className="w-8 h-8 bg-orange-500 rounded-lg flex items-center justify-center">
+                            <div className="w-4 h-4 bg-white rounded-sm"></div>
+                          </div>
+                          <div className="flex-1">
+                            <h3 className="text-sm font-semibold text-white drop-shadow-lg">Learn Elastos</h3>
+                            <p className="text-xs text-gray-100 drop-shadow-md">Master Web3 ownership and digital freedom.</p>
+                          </div>
                         </div>
                       </div>
                     </div>
@@ -493,9 +502,9 @@ export const NavMenu: React.FC<NavMenuProps> = ({ items }) => {
                   {/* Featured Card Left */}
                   <div className="relative flex justify-center">
                     <a href="https://ambassador.elastos.net" target="_blank" rel="noopener noreferrer">
-                      <div className="w-full h-48 bg-white dark:bg-gray-900 rounded-2xl overflow-hidden group cursor-pointer border border-gray-200 dark:border-gray-700 hover:border-blue-500 transition-colors">
-                        {/* Top Image Section - Landscape aspect ratio (16:9) */}
-                        <div className="h-32 relative overflow-hidden bg-gradient-to-br from-violet-500 via-purple-600 to-indigo-600 flex items-center justify-center">
+                      <div className="w-full h-48 bg-white dark:bg-gray-900 rounded-2xl overflow-hidden group cursor-pointer border border-gray-200 dark:border-gray-700 hover:border-blue-500 transition-colors relative">
+                        {/* Full Background Image */}
+                        <div className="h-full relative overflow-hidden bg-gradient-to-br from-violet-500 via-purple-600 to-indigo-600 flex items-center justify-center">
                           <img 
                             src="/images/Welcome-to-Elastos-Ambassador-Program-2048x1229.jpg" 
                             alt="Elastos Ambassador Program"
@@ -507,15 +516,15 @@ export const NavMenu: React.FC<NavMenuProps> = ({ items }) => {
                               target.style.display = 'none';
                             }}
                           />
-                        </div>
-                        {/* Bottom Content Section */}
-                        <div className="h-16 p-4 flex items-center gap-3" style={{ backgroundColor: '#1d1d1d' }}>
-                          <div className="w-8 h-8 bg-violet-500 rounded-lg flex items-center justify-center">
-                            <div className="w-4 h-4 bg-white rounded-sm"></div>
-                          </div>
-                          <div className="flex-1">
-                            <h3 className="text-sm font-semibold text-white">Ambassador Program</h3>
-                            <p className="text-xs text-gray-400">Become an Ambassador!</p>
+                          {/* Frosted Glass Overlay */}
+                          <div className="absolute bottom-0 left-0 right-0 h-16 p-4 flex items-center gap-3 bg-black/30 backdrop-blur-md border-t border-white/20 rounded-b-2xl">
+                            <div className="w-8 h-8 bg-violet-500 rounded-lg flex items-center justify-center">
+                              <div className="w-4 h-4 bg-white rounded-sm"></div>
+                            </div>
+                            <div className="flex-1">
+                              <h3 className="text-sm font-semibold text-white drop-shadow-lg">Ambassador Program</h3>
+                              <p className="text-xs text-gray-100 drop-shadow-md">Become an Ambassador!</p>
+                            </div>
                           </div>
                         </div>
                       </div>
@@ -539,7 +548,7 @@ export const NavMenu: React.FC<NavMenuProps> = ({ items }) => {
                           <NavigationMenuLink className={navigationMenuTriggerStyle()}>
                             <div className="flex items-center gap-2">
                               <Users className="h-4 w-4 text-[#94b5ff]" />
-                              <span>Team & Foundation</span>
+                              <span>Foundation</span>
                             </div>
                           </NavigationMenuLink>
                         </Link>
@@ -571,7 +580,7 @@ export const NavMenu: React.FC<NavMenuProps> = ({ items }) => {
                       <NavigationMenuLink className={navigationMenuTriggerStyle()}>
                         <div className="flex items-center gap-2">
                           <Star className="h-4 w-4 text-[#94b5ff]" />
-                              <span>Ambassador Program</span>
+                              <span>Ambassadors</span>
                         </div>
                       </NavigationMenuLink>
                     </a>

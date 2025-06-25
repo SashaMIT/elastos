@@ -1,9 +1,10 @@
+import React, { useState } from "react";
 import { motion } from "framer-motion";
-import { ArrowRight, ChevronDown, ChevronUp, Github, Globe, Linkedin, Mail, Twitter } from "lucide-react";
-import { ScrollToTop } from "@/components/ScrollToTop";
-import { StackedCircularFooter } from "@/components/ui/stacked-circular-footer";
-import { LogoCarouselDemo } from "@/components/LogoCarouselDemo";
-import { useState } from "react";
+import { ArrowRight, ChevronDown, ChevronUp, Github, Globe, Linkedin, Mail, Twitter, Users, Calendar, Target, Award, Building, Zap, Shield, Heart } from "lucide-react";
+import { ScrollToTop } from "../components/ScrollToTop";
+import { StackedCircularFooter } from "../components/ui/stacked-circular-footer";
+import { LogoCarouselDemo } from "../components/LogoCarouselDemo";
+import { WebPImage } from "../components/ui/webp-image";
 
 export default function TeamFoundationPage() {
   const [expandedBios, setExpandedBios] = useState<{[key: number]: boolean}>({});
@@ -15,70 +16,136 @@ export default function TeamFoundationPage() {
     }));
   };
 
-  const coreDevelopmentTeams = [
+  const foundationMilestones = [
     {
-      name: "BeL2 Team",
-      description: "The BeL2 team is focused on developing Elastos's Layer 2 solutions, building technologies that enhance scalability and user experience while maintaining the security of the Bitcoin-backed mainchain.",
-      videoSrc: "/videos/BeL2Team.mp4",
-      links: [
-        { text: "BeL2 Portal", url: "https://bel2.org", icon: <Globe className="w-4 h-4" /> }
-      ]
+      year: "2000-2016",
+      title: "Genesis of Vision",
+      description: "Rong Chen develops the Elastos operating system concept at Microsoft, envisioning the first internet operating system to solve security issues."
     },
     {
-      name: "Elastos Essentials Team",
-      description: "The Elastos Essentials team develops and maintains the official Elastos wallet and identity management application, providing users with a secure way to manage their digital assets and identities.",
-      videoSrc: "/videos/EssentialsTeam.mp4",
-      links: [
-        { text: "Download App", url: "/wallet", icon: <ArrowRight className="w-4 h-4" /> }
-      ]
+      year: "2017",
+      title: "Foundation Established",
+      description: "Elastos Foundation formed by Rong Chen and Sunny Feng Han, incorporating in Singapore with global operations."
     },
     {
-      name: "Elacity Labs",
-      description: "Elacity Labs builds Web3 applications and NFT marketplaces on Elastos, creating user-friendly platforms that leverage Elastos' identity and security features for digital ownership and trading.",
-      videoSrc: "https://www.youtube.com/embed/YOUTUBE_VIDEO_ID_HERE", // Replace with actual YouTube ID
-      youtubeEmbed: true, // Add flag to indicate YouTube embed
-      links: [
-        { text: "Elacity", url: "https://labs.ela.city", icon: <Globe className="w-4 h-4" /> }
-      ]
+      year: "2018",
+      title: "Technology Launch",
+      description: "Mainnet launches with Bitcoin merge-mining, establishing one of the most secure blockchain infrastructures and conducting successful token distribution."
     },
     {
-      name: "Elastos DAO",
-      description: "The Elastos DAO team oversees community governance, proposal reviews, and treasury management for the ecosystem. They ensure the decentralized governance of Elastos is maintained with integrity.",
-      videoSrc: "/videos/CyberRepublicTeam.mp4",
-      links: [
-        { text: "DAO Portal", url: "/dao", icon: <ArrowRight className="w-4 h-4" /> }
-      ]
+      year: "2020",
+      title: "World Recognition",
+      description: "Selected for World Economic Forum Global Innovators Community, joining working groups on blockchain and data governance alongside Microsoft, IBM, and ConsenSys."
+    },
+    {
+      year: "2024",
+      title: "BeL2 Innovation",
+      description: "Foundation successfully delivers Bitcoin Elastos Layer-2 (BeL2) protocol with zero-knowledge proofs, enabling native BTC smart contracts and DeFi applications."
+    },
+    {
+      year: "2025",
+      title: "Bitcoin Dollar (BTCD)",
+      description: "Under Dr. Feng Han's management, Foundation launches the world's first fully Bitcoin-backed stablecoin, putting Bitcoin's $2 trillion market cap to work in DeFi."
     }
   ];
 
-  const keyContributors = [
+  const coreValues = [
+    {
+      icon: <Users className="w-8 h-8" />,
+      title: "User Sovereignty",
+      description: "Building infrastructure where users truly own their data, digital assets, and online identities."
+    },
+    {
+      icon: <Shield className="w-8 h-8" />,
+      title: "Security by Design", 
+      description: "Leveraging Bitcoin's security through merge-mining and sandboxed runtime environments."
+    },
+
+    {
+      icon: <Zap className="w-8 h-8" />,
+      title: "Innovation First",
+      description: "Pioneering new paradigms like the SmartWeb and Bitcoin Layer-2 solutions for real-world adoption."
+    }
+  ];
+
+  const leadershipTeam = [
     {
       name: "Rong Chen",
-      role: "Founder & Visionary",
+      role: "Founder & Visionary (2017-2023)",
       image: "/images/Rong Chen.png",
-      bioShort: "Rong Chen is the visionary behind Elastos. With over 30 years of operating systems development experience, including 18 years at Microsoft, Rong has dedicated his career to creating a safer and more decentralized internet architecture. As the first Chinese employee at Microsoft Research, he conceived the idea of a network operating system to secure internet applications, which ultimately evolved into Elastos.",
-      bioLong: "Rong Chen was among the top students of the post-Cultural Revolution \"Class of '77\" in China, gaining admission to Tsinghua University where he became one of the first software engineering graduates in the country. He later attended the Institute of Computing Technology at the Chinese Academy of Sciences and pursued graduate studies in the United States. In the mid-1980s, Rong studied operating systems at the University of Illinois at Urbana-Champaign and worked at the National Center for Supercomputing Applications (NCSA), contributing to projects that helped lay groundwork for the first web browser, Mosaic.\n\nIn 1992, Rong became the first Chinese employee at Microsoft Research, focusing on operating system design. There he conceived the idea of a network operating system – \"the network is the computer\" – to solve internet security issues by running applications in a secure sandbox, an early vision that presaged Elastos. His concept was initially prototyped as Microsoft's .NET project, but after it was not adopted, Rong left Microsoft in 2000 to pursue his vision independently.\n\nHe founded a company called Kortide in 2000 to develop his \"internet OS\" idea. Over the next decade, he persisted in building this platform and securing support. Notably, in 2013 Rong secured a $31 million investment from Foxconn to advance Elastos development. In 2016, he successfully integrated blockchain technology into the Elastos operating system framework, enabling a \"truly decentralized internet infrastructure\" for secure data ownership.\n\nRong formally launched Elastos as a blockchain-powered internet project in 2017, becoming Co-Founder and Chairman of the Elastos Foundation. He is the primary architect of Elastos' vision of a \"Smart Web\" – a decentralized internet where users own their data and digital assets. Under his leadership, the Elastos project achieved milestones such as introducing merged mining with Bitcoin in 2018 to secure the network, and releasing a suite of core products including Elastos runtime, carrier, and decentralized ID.",
+      bioShort: "Former Microsoft engineer with 30+ years in operating systems. Conceived Elastos in 2000 as the first internet OS, later integrating blockchain technology. Led the project for over two decades, establishing the \"own your data\" vision and Bitcoin merge-mining innovation.",
+      bioLong: "Rong Chen was among the top students of China's post-Cultural Revolution \"Class of '77,\" earning admission to Tsinghua University as one of the country's first software engineering graduates. After studying at the Chinese Academy of Sciences and the University of Illinois, he joined Microsoft Research in 1992 as their first Chinese employee.\n\nAt Microsoft, Rong conceived the revolutionary idea of a \"network operating system\" where applications run in secure sandboxes, isolated from direct internet access. This early vision of \"the network is the computer\" predated modern cloud computing concepts. When Microsoft didn't adopt his vision, Rong left in 2000 to develop it independently.\n\nFor 17 years, he persisted in building this platform, securing a $31 million investment from Foxconn in 2013. In 2017, recognizing blockchain's potential to enable true data ownership, he co-founded the Elastos Foundation with Sunny Feng Han. Under his leadership, Elastos achieved major milestones including Bitcoin merge-mining (2018), W3C-compliant decentralized identity, and a complete Web3 infrastructure stack.\n\nRong stepped down from the Foundation board in 2023 to focus on technical innovation while remaining an active community advisor. His vision of an internet where users control their data continues to guide Elastos' development.",
       links: [
         { icon: <Twitter className="w-4 h-4" />, url: "https://x.com/chen2rong2" }
       ]
     },
     {
-      name: "Sunny Feng Han",
-      role: "Co-Founder",
+      name: "Dr. Feng Han",
+      role: "Co-Founder & Foundation Manager (2017-Present)",
       image: "/images/Sunny.jpeg",
-      bioShort: "Dr. Sunny Feng Han is a co-founder of Elastos with a Ph.D. in Physics from Tsinghua University. He played a crucial role in translating Rong Chen's technical vision into a viable project. Sunny served on the first Cyber Republic Council, where he helped implement critical governance changes including token burning, new tokenomics, and improved transparency. As an educator, Sunny founded the MIT Blockchain Pillar and has lectured on blockchain at Tsinghua University.",
-      bioLong: "Sunny Feng Han (often known simply as Feng Han) earned a Ph.D. in Physics from Tsinghua University and later became a visiting scholar and research associate at Columbia University in the United States. Sunny has been active in the blockchain education space as the founder of the MIT Blockchain Pillar initiative and has lectured on blockchain at Tsinghua University's graduate courses. He also served as an advisor at Huawei's Central Research Institute, reflecting his influence in tech circles.\n\nSunny was instrumental in translating Rong Chen's technical vision into a viable project and community. He joined Rong as co-founder around 2017 to help launch Elastos, leveraging his academic and industry connections to promote the project globally. Within the Elastos Foundation's early leadership, Sunny was one of three initial Board Directors alongside Rong Chen and Yipeng Su.\n\nIn the community-driven Cyber Republic, Sunny took on a direct governance role: he ran for and was elected to the first Cyber Republic Council (2020), and served as a council member in its inaugural year. During that first year, he and fellow councilors tackled major issues for the ecosystem. Sunny highlights three key achievements of the council's first term: the burning of over 13 million ELA tokens to address community concerns about token oversupply, adoption of a new tokenomics model with a capped supply and Bitcoin-like halving schedule, and significantly improving the transparency of the Elastos Foundation's asset management. These moves, driven by Sunny and the council, strengthened community trust and aligned Elastos' economic model with decentralized principles.\n\nSunny has also been active in fostering partnerships: for example, in 2019 he partnered with industry figures (such as a Tencent Cloud VP and World Bank security architect) to launch a \"data capitalization\" initiative, which led to the incubation of CreDA, a decentralized credit oracle project in the Elastos ecosystem. After serving on the CR Council for the 2020–2021 term (and being re-elected for 2021–2022), Sunny stepped back from daily operations but continues to support Elastos as an advisor and thought leader.",
+      bioShort: "Co-founder of Elastos with Ph.D. in Physics from Tsinghua University. Currently manages the Elastos Foundation and leads the Bitcoin Dollar (BTCD) project. Harvard Innovation Labs incubated leader bringing academic expertise and strategic vision to blockchain innovation.",
+      bioLong: "Dr. Sunny Feng Han earned a Ph.D. in Physics from Tsinghua University and later became a visiting scholar and research associate at Columbia University. He has been active in blockchain education as founder of the MIT Blockchain Pillar initiative and has lectured on blockchain at Tsinghua University's graduate courses.\n\nAs co-founder of Elastos in 2017, Feng Han was instrumental in translating Rong Chen's technical vision into a viable project and community. He served as an early Foundation CEO and was elected to the first Elastos DAO Council (2020) - now branded as Elastos DAO - where he led critical governance changes including token burning, new tokenomics, and improved transparency.\n\nCurrently, Dr. Feng Han manages the Elastos Foundation and spearheads the groundbreaking Bitcoin Dollar (BTCD) project - the world's first fully Bitcoin-backed stablecoin. Developed by Harvard alumni and incubated at Harvard Innovation Labs, BTCD represents his vision of putting Bitcoin's $2 trillion market cap to work in decentralized finance.\n\nUnder his leadership, the Foundation has successfully delivered the BeL2 protocol and is positioned at the forefront of Bitcoin Layer-2 innovation, creating new revenue streams for Bitcoin miners while enabling Bitcoin's massive balance sheet to power the programmable economy.",
       links: [
         { icon: <Twitter className="w-4 h-4" />, url: "https://x.com/SunnyFengHan" }
       ]
     },
     {
-      name: "Yipeng Su",
-      role: "Chief Architect",
-      image: "/images/Community/Yipeng.jpg",
-      bioShort: "Yipeng Su joined Elastos in 2017 as Chief Architect and was instrumental in the project's early development. With over 20 years of experience in software and internet industries, Yipeng led both technical strategy and early operations at Elastos. He was the chief initiator of the Cyber Republic concept for community governance and helped develop the CR consensus. Yipeng has continued to shape the technical direction of Elastos, including proposing the Bonded Proof of Stake enhancement.",
-      bioLong: "Yipeng Su is the Chief Architect of Elastos and was part of the project's founding team. He has over 20 years of experience in software and internet industries. Yipeng joined the Elastos initiative on August 1, 2017, soon after the project's formal start, and played a crucial role in its early development. Prior to Elastos, he worked in senior technical roles in IT and development.\n\nAs Chief Architect, Yipeng Su led the overall technical strategy and architecture of the Elastos smart web. In the first year of the project (2017–2018), Yipeng not only oversaw engineering teams but also managed day-to-day operations of the founding team, helping run the token sale and launch the main chain (Elastos' mainnet launched in December 2017, with ELA token listing on exchanges by early 2018).\n\nHe was essentially Rong Chen's right-hand in the foundation, coordinating across technical and non-technical domains. Yipeng is credited with helping Elastos explore a decentralized operational model from the start – notably, Elastos did not appoint a traditional CEO in 2017, instead entrusting leadership to a team approach which Yipeng helped facilitate.\n\nYipeng Su was the chief initiator of the Cyber Republic (CR) concept, which is Elastos' community governance framework. When the Elastos Foundation set up the CR Interim Council in August 2018, Yipeng resigned from the Foundation's Board of Directors to serve on this council and drive decentralization. He served on the Interim CR Council (2018–2020) as the representative of the founding team/Elastos Foundation. In this role, he helped oversee the creation of the CR consensus (CRC) whitepaper and governance processes.\n\nYipeng's influence is seen in key technical proposals as well – for example, in late 2021 he proposed the concept of Bonded Proof of Stake (BPoS) to enhance Elastos' consensus security, which was adopted to complement Elastos' hybrid consensus. Internally, Yipeng has been described as a \"libero\" – moving across the field to wherever needed – engaging with core engineers on technical direction and with community contributors to gather feedback. His ability to wear both engineering and leadership hats has been fundamental to Elastos' development.",
+      name: "Dr. Jay Zou",
+      role: "Chief Technology Officer (2025-Present)",
+      image: "/images/Dr.Z.webp",
+      bioShort: "Technology executive with 20+ years in software and AI. Holds Ph.D. from EPFL with postdoc at Drexel. Appointed CTO in 2025 to lead technical operations, focusing on Bitcoin-integrated innovations and AI-blockchain convergence for the next phase of Elastos development.",
+      bioLong: "Dr. Jay Zou brings over two decades of experience in software engineering and artificial intelligence to his role as Chief Technology Officer. He earned his Ph.D. from EPFL (École Polytechnique Fédérale de Lausanne) and completed postdoctoral research at Drexel University, developing expertise in distributed systems and machine learning.\n\nPrior to joining Elastos, Dr. Zou held senior technical positions in both industry and academia, working on large-scale software systems and AI applications. His research has focused on the intersection of blockchain technology and artificial intelligence, particularly in areas of zero-knowledge proofs and agent networks.\n\nAppointed as CTO in 2025, Dr. Zou is leading Elastos' technical roadmap into its next phase of development. His priorities include advancing the Bitcoin Elastos Layer-2 (BeL2) framework, developing Bitcoin-backed stablecoins, and exploring AI-driven applications on the Elastos SmartWeb. Under his leadership, the Foundation is positioning itself at the forefront of Bitcoin Layer-2 innovation and the convergence of AI with blockchain technology.\n\nDr. Zou's global perspective and technical expertise are instrumental in expanding Elastos' reach in international markets while maintaining its commitment to user sovereignty and decentralized infrastructure.",
       links: []
+    },
+    {
+      name: "Hongjie Hu",
+      role: "Board Member & Secretary-General (2017-Present)",
+      image: "/images/Hong.webp", 
+      bioShort: "Blockchain industry veteran since 2013 and founding member of China's first blockchain association (DACA). Joined Elastos Foundation board in 2023, bringing strategic business experience to guide the Foundation's market-oriented approach and ecosystem growth initiatives.",
+      bioLong: "Hongjie Hu has been instrumental in China's blockchain development since 2013, helping establish the Distributed Applications China Association (DACA), the country's first blockchain industry organization. His early involvement in blockchain governance and standards development provided valuable experience for his role at Elastos.\n\nAs a founding member of the Elastos Foundation, Hongjie has led the Asset Management team since 2017, overseeing the Foundation's treasury and strategic investments. His business acumen and industry connections have been crucial in navigating the complex regulatory and market environments across different regions.\n\nIn 2023, Hongjie joined the Foundation's Board of Directors, bringing a market-oriented perspective as Elastos shifted from pure technology development to ecosystem growth and adoption. He has been instrumental in developing partnerships, particularly in the Bitcoin Layer-2 space, and in positioning Elastos for sustainable long-term growth.\n\nHis experience spans traditional business development, blockchain technology implementation, and community building. Under his guidance, the Foundation has strengthened its financial management practices and developed more effective strategies for ecosystem expansion and developer adoption.",
+      links: []
+    },
+    {
+      name: "Yipeng Su", 
+      role: "Chief Architect (2017-Present)",
+      image: "/images/Community/Yipeng.jpg",
+      bioShort: "Chief Architect with 20+ years in software and internet industries. Instrumental in Elastos' early development, led technical strategy and operations. Chief initiator of Cyber Republic DAO framework and architect of Elastos' hybrid consensus mechanism.",
+      bioLong: "Yipeng Su joined Elastos on August 1, 2017, soon after the project's formal inception, and has been instrumental in its technical development ever since. With over 20 years of experience in software and internet industries, he has served as both Chief Architect and operational leader during Elastos' formative years.\n\nIn 2017-2018, Yipeng not only oversaw the engineering teams but also managed day-to-day operations, helping coordinate the token sale and mainnet launch. He was essentially Rong Chen's right-hand in the foundation, bridging technical and operational domains during the critical early phase.\n\nYipeng is credited as the chief initiator of the Cyber Republic DAO framework (now branded as Elastos DAO), Elastos' groundbreaking community governance framework. When the DAO Interim Council was established in August 2018, he stepped down from the Foundation's Board to serve on the council, driving the project's decentralization efforts. He helped develop the consensus whitepaper and governance processes that continue to guide Elastos today.\n\nTechnically, Yipeng has contributed to key innovations including the proposal for Bonded Proof of Stake (BPoS) in 2021 to enhance Elastos' consensus security. His ability to move fluidly between engineering leadership and community engagement has been fundamental to Elastos' unique approach to decentralized development.",
+      links: []
+    }
+  ];
+
+  const ecosystemInitiatives = [
+    {
+      title: "Bitcoin Dollar (BTCD) Stablecoin",
+      description: "World's first fully Bitcoin-backed stablecoin launching August 2025, enabling Bitcoin holders to unlock liquidity without selling BTC or trusting custodial intermediaries.",
+      icon: <Target className="w-6 h-6" />
+    },
+    {
+      title: "Bitcoin Elastos Layer-2 (BeL2) Protocol",
+      description: "Delivered zero-knowledge proof powered BeL2 protocol enabling native BTC smart contracts and DeFi applications, positioning Elastos as critical infrastructure for Bitcoin's evolution.",
+      icon: <Zap className="w-6 h-6" />
+    },
+    {
+      title: "Decentralized Identity (DID)",
+      description: "W3C-compliant identity system allowing self-sovereign control of credentials and authentication without centralized authorities.",
+      icon: <Shield className="w-6 h-6" />
+    },
+    {
+      title: "SmartWeb Infrastructure", 
+      description: "Complete Web3 stack including peer-to-peer networking (Carrier), decentralized storage (Hive), and secure application runtime.",
+      icon: <Globe className="w-6 h-6" />
+    },
+    {
+      title: "Community Governance",
+      description: "Elastos DAO enabling token holders to participate in decision-making and ecosystem funding through democratic processes.",
+      icon: <Users className="w-6 h-6" />
+    },
+
+    {
+      title: "Global Partnerships",
+      description: "Strategic collaborations with World Economic Forum, major cloud providers, and blockchain projects to expand Elastos' reach and interoperability.",
+      icon: <Building className="w-6 h-6" />
     }
   ];
 
@@ -86,125 +153,257 @@ export default function TeamFoundationPage() {
     <div className="min-h-screen bg-white dark:bg-[#171717] text-black dark:text-white">
       <ScrollToTop />
 
-      {/* Hero Section with Image and Gradient Overlay */}
+      {/* Hero Section */}
       <div className="relative w-full h-[500px] overflow-hidden -mt-16">
-        <img 
-          src="/images/Community/Div4TBUWsAYmcEq.jpeg" 
-          alt="Elastos Team" 
+        <WebPImage 
+          src="/images/Community/Div4TBUWsAYmcEq.webp" 
+          alt="Elastos Foundation" 
           className="w-full h-full object-cover opacity-80"
         />
-        {/* Gradient overlay */}
         <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-[#171717]/70 to-[#171717]"></div>
-
-        {/* Hero content overlay */}
+        
         <div className="absolute inset-0 flex items-center justify-center">
           <div className="container mx-auto px-4">
             <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
               <div className="text-center mb-12">
                 <h1 className="text-4xl sm:text-5xl md:text-6xl font-[200] text-white mb-6">
-                  Key Contributors
+                  Elastos Foundation
                 </h1>
-                <p className="text-gray-300 max-w-2xl mx-auto text-md sm:text-base md:text-lg font-[200]">
-                  The visionaries and builders who have been pivotal in shaping Elastos
+                <p className="text-gray-300 max-w-2xl mx-auto text-md sm:text-base md:text-lg font-[200] mb-8">
+                  Building accessible, open-source services for an internet where individuals own and control their data
                 </p>
+                <div className="flex justify-center">
+                  <a 
+                    href="https://www.elastos.org/" 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="inline-flex px-3 py-2 bg-[rgba(92,142,255,0.10)] text-[#5C8EFF] rounded-full font-[200] transition-all items-center gap-1 border border-[rgba(92,142,255,0.50)] text-sm"
+                  >
+                    <span>Visit Site</span>
+                    <ArrowRight className="w-4 h-4" />
+                  </a>
+                </div>
               </div>
             </div>
           </div>
         </div>
       </div>
 
-      {/* Vision Section */}
-      <section className="py-0 relative">
+      {/* Foundation Story Section */}
+      <section className="py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="max-w-3xl mx-auto text-center mb-16">
-            <h2 className="text-3xl font-[200] mb-6 text-black dark:text-white">Building a New Internet</h2>
-            <p className="text-gray-600 dark:text-gray-400 text-base font-[200] mb-8">
-              Since its inception, Elastos has been driven by visionary individuals committed to creating a more secure, private, and user-centric internet. These key contributors come from diverse backgrounds in operating systems development, distributed computing, blockchain technology, and digital rights management.
-            </p>
-            <p className="text-gray-600 dark:text-gray-400 text-base font-[200]">
-              Together, they're building the infrastructure for a new internet where users own their data, digital assets, and identities. Their combined expertise spans decades of experience in both traditional technology and cutting-edge blockchain development.
-            </p>
+          <div className="max-w-4xl mx-auto">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="text-center mb-16"
+            >
+              <h2 className="text-3xl font-[200] mb-6 text-black dark:text-white">The Foundation Story</h2>
+              <p className="text-gray-600 dark:text-gray-400 text-lg font-[200] leading-relaxed">
+                The Elastos Foundation is a non-profit organization established in 2017 to support the development of Elastos – a blockchain-powered decentralized internet infrastructure. The Foundation's origins trace back to 2000, when founder Rong Chen envisioned building the world's first internet operating system.
+              </p>
+            </motion.div>
+
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-16">
+              <motion.div
+                initial={{ opacity: 0, x: -20 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                className="bg-gray-50 dark:bg-[#1A1A1A] rounded-xl p-8"
+              >
+                <h3 className="text-xl font-[200] text-black dark:text-white mb-4">The Vision</h3>
+                <p className="text-gray-600 dark:text-gray-400 text-base font-[200] mb-4">
+                  From Microsoft's halls to an independent pursuit spanning two decades, Rong Chen's vision of a secure, user-controlled internet evolved through partnerships with Foxconn (¥200 million RMB investment in 2013) and integration with blockchain technology.
+                </p>
+                <p className="text-gray-600 dark:text-gray-400 text-base font-[200]">
+                  In 2017, Chen partnered with blockchain researcher Sunny Feng Han to formally launch the Elastos Foundation, pivoting toward a decentralized, blockchain-driven "Smart Web" ecosystem where users have true ownership of their data and digital assets.
+                </p>
+              </motion.div>
+
+              <motion.div
+                initial={{ opacity: 0, x: 20 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                className="bg-gray-50 dark:bg-[#1A1A1A] rounded-xl p-8"
+              >
+                <h3 className="text-xl font-[200] text-black dark:text-white mb-4">Global Impact</h3>
+                <p className="text-gray-600 dark:text-gray-400 text-base font-[200] mb-4">
+                  Incorporated in Singapore with international operations, the Foundation has achieved recognition from the World Economic Forum, joining their Global Innovators Community alongside companies like Microsoft, IBM, and ConsenSys.
+                </p>
+                <p className="text-gray-600 dark:text-gray-400 text-base font-[200]">
+                  Our work contributes to global standards through W3C collaboration on decentralized identity and participation in blockchain policy discussions, helping shape the future of digital rights and data ownership.
+                </p>
+              </motion.div>
+            </div>
           </div>
         </div>
       </section>
 
-      {/* Key Contributors Section - Horizontal Layout */}
+      {/* Core Values Section */}
       <section className="py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="max-w-3xl mx-auto text-center mb-16">
-            <h2 className="text-3xl font-[200] mb-6 text-black dark:text-white">Key Contributors</h2>
-            <p className="text-gray-600 dark:text-gray-400 text-base font-[200]">
-              Meet the individuals who have guided the vision and development of Elastos
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="text-center mb-16"
+          >
+            <h2 className="text-3xl font-[200] mb-6 text-black dark:text-white">Core Values</h2>
+            <p className="text-gray-600 dark:text-gray-400 text-lg font-[200] max-w-3xl mx-auto">
+              Our values center on decentralization, innovation, and community empowerment, guided by the principle that "You own your own data."
             </p>
-          </div>
+          </motion.div>
 
-          <div className="grid grid-cols-1 gap-8 w-full mx-auto">
-            {keyContributors.map((member, index) => (
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-4xl mx-auto">
+            {coreValues.map((value, index) => (
               <motion.div
                 key={index}
-                className="bg-white dark:bg-[#212121] rounded-xl shadow-sm overflow-hidden"
                 initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
                 transition={{ delay: index * 0.1 }}
-                whileHover={{ y: -5 }}
+                className="bg-white dark:bg-[#212121] rounded-xl p-6 text-center"
               >
-                <div className="flex flex-col md:flex-row">
-                  <div className="w-full md:w-1/5 h-64 md:h-auto overflow-hidden">
-                    <img 
-                      src={member.image} 
-                      alt={member.name} 
-                      className="w-full h-full object-contain md:object-cover"
+                <div className="inline-flex items-center justify-center w-16 h-16 bg-[#5C8EFF]/10 dark:bg-[#5C8EFF]/20 rounded-full mb-4 text-[#5C8EFF]">
+                  {value.icon}
+                </div>
+                <h3 className="text-lg font-[200] text-black dark:text-white mb-3">{value.title}</h3>
+                <p className="text-gray-600 dark:text-gray-400 text-sm font-[200]">{value.description}</p>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Timeline Section */}
+      <section className="py-20">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="text-center mb-16"
+          >
+            <h2 className="text-3xl font-[200] mb-6 text-black dark:text-white">Foundation Milestones</h2>
+            <p className="text-gray-600 dark:text-gray-400 text-lg font-[200] max-w-3xl mx-auto">
+              Key achievements and pivotal moments in our journey to build a decentralized internet infrastructure
+            </p>
+          </motion.div>
+
+          <div className="relative">
+            {/* Timeline line */}
+            <div className="absolute left-8 top-0 bottom-0 w-0.5 bg-[#5C8EFF]/30 dark:bg-[#5C8EFF]/20"></div>
+            
+            <div className="space-y-12">
+              {foundationMilestones.map((milestone, index) => (
+                <motion.div
+                  key={index}
+                  initial={{ opacity: 0, x: -20 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: index * 0.1 }}
+                  className="relative pl-20"
+                >
+                  {/* Timeline dot */}
+                  <div className="absolute left-6 top-2 w-4 h-4 bg-[#5C8EFF] rounded-full border-4 border-white dark:border-[#171717]"></div>
+                  
+                  <div className="bg-white dark:bg-[#1A1A1A] rounded-xl p-6 shadow-sm">
+                    <div className="flex items-center gap-4 mb-3">
+                      <span className="inline-flex items-center px-3 py-1 rounded-full text-xs font-[200] bg-[#5C8EFF]/10 text-[#5C8EFF]">
+                        {milestone.year}
+                      </span>
+                      <h3 className="text-lg font-[200] text-black dark:text-white">{milestone.title}</h3>
+                    </div>
+                    <p className="text-gray-600 dark:text-gray-400 text-base font-[200]">{milestone.description}</p>
+                  </div>
+                </motion.div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Leadership Section */}
+      <section className="py-20">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="text-center mb-16"
+          >
+            <h2 className="text-3xl font-[200] mb-6 text-black dark:text-white">Leadership Team</h2>
+            <p className="text-gray-600 dark:text-gray-400 text-lg font-[200] max-w-3xl mx-auto">
+              Visionary leaders who have guided Elastos from conception to global recognition
+            </p>
+          </motion.div>
+
+          <div className="space-y-12">
+            {leadershipTeam.map((leader, index) => (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: index * 0.1 }}
+                className="bg-white dark:bg-[#212121] rounded-xl p-8 shadow-sm"
+              >
+                <div className="flex flex-col lg:flex-row gap-8">
+                  <div className="flex-shrink-0">
+                    <WebPImage 
+                      src={leader.image} 
+                      alt={leader.name}
+                      className="w-32 h-32 rounded-xl object-cover mx-auto lg:mx-0"
                     />
                   </div>
-                  <div className="w-full md:w-4/5 p-6">
-                    <h3 className="text-xl font-[200] text-black dark:text-white mb-1">{member.name}</h3>
-                    <span className="px-4 py-1 bg-[#5C8EFF]/10 border border-[#5C8EFF]/30 text-white rounded-full text-xs font-medium whitespace-nowrap mb-4 inline-block">
-                      {member.role}
-                    </span>
-                    <div>
-                      {expandedBios[index] ? (
-                        <>
-                          <div className="text-gray-600 dark:text-gray-400 text-base font-[200] mb-4">
-                            {member.bioLong.split('\n\n').map((paragraph, i) => (
-                              <p key={i} className="mb-3">{paragraph}</p>
-                            ))}
-                          </div>
-                          <div className="flex justify-end mt-4">
-                            <button 
-                              onClick={() => toggleBio(index)} 
-                              className="text-[#F6921A] hover:text-[#F6921A]/80 text-base bg-[#F6921A]/10 dark:bg-[#F6921A]/20 px-3 py-1.5 rounded-full inline-flex items-center"
+                  
+                  <div className="flex-1">
+                    <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between mb-4">
+                      <div>
+                        <h3 className="text-xl font-[200] text-black dark:text-white mb-1">{leader.name}</h3>
+                        <p className="text-[#5C8EFF] text-base font-[200]">{leader.role}</p>
+                      </div>
+                      
+                      {leader.links.length > 0 && (
+                        <div className="flex gap-3 mt-3 lg:mt-0">
+                          {leader.links.map((link, linkIndex) => (
+                            <a
+                              key={linkIndex}
+                              href={link.url}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className="inline-flex items-center justify-center w-10 h-10 bg-gray-100 dark:bg-[#2A2A2A] rounded-full text-gray-600 dark:text-gray-400 hover:text-[#5C8EFF] hover:bg-[#5C8EFF]/10 transition-colors"
                             >
-                              Show Less <ChevronUp className="w-4 h-4 ml-1"/>
-                            </button>
-                          </div>
-                        </>
-                      ) : (
-                        <>
-                          <p className="text-gray-600 dark:text-gray-400 text-base font-[200] mb-4">{member.bioShort}</p>
-                          <div className="flex justify-end mt-4">
-                            <button 
-                              onClick={() => toggleBio(index)} 
-                              className="text-[#F6921A] hover:text-[#F6921A]/80 text-base bg-[#F6921A]/10 dark:bg-[#F6921A]/20 px-3 py-1.5 rounded-full inline-flex items-center"
-                            >
-                              Show More <ChevronDown className="w-4 h-4 ml-1"/>
-                            </button>
-                          </div>
-                        </>
+                              {link.icon}
+                            </a>
+                          ))}
+                        </div>
                       )}
                     </div>
-                    <div className="flex space-x-3">
-                      {member.links.map((link, linkIndex) => (
-                        <a 
-                          key={linkIndex}
-                          href={link.url} 
-                          target="_blank" 
-                          rel="noopener noreferrer"
-                          className="w-8 h-8 rounded-full bg-gray-100 dark:bg-gray-800 flex items-center justify-center text-gray-600 dark:text-gray-400 hover:bg-[#5C8EFF]/20 hover:text-[#5C8EFF] transition-colors"
-                        >
-                          {link.icon}
-                        </a>
-                      ))}
-                    </div>
+                    
+                    <p className="text-gray-600 dark:text-gray-400 text-base font-[200] mb-4">
+                      {expandedBios[index] ? leader.bioLong : leader.bioShort}
+                    </p>
+                    
+                    {leader.bioLong && (
+                      <button
+                        onClick={() => toggleBio(index)}
+                        className="inline-flex items-center gap-2 text-[#5C8EFF] text-sm font-[200] hover:text-[#4A7AFF] transition-colors"
+                      >
+                        {expandedBios[index] ? (
+                          <>
+                            <ChevronUp className="w-4 h-4" />
+                            Show Less
+                          </>
+                        ) : (
+                          <>
+                            <ChevronDown className="w-4 h-4" />
+                            Read More
+                          </>
+                        )}
+                      </button>
+                    )}
                   </div>
                 </div>
               </motion.div>
@@ -213,85 +412,73 @@ export default function TeamFoundationPage() {
         </div>
       </section>
 
-      {/* Development Teams Section */}
-      <section className="py-16 relative bg-white dark:bg-[#171717]">
-        <div className="container mx-auto px-4">
+      {/* Ecosystem Initiatives */}
+      <section className="py-20">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-center mb-12"
+            className="text-center mb-16"
           >
-            <h2 className="text-3xl font-bold mb-4 text-black dark:text-white font-[200]">
-              Core Contributors
-            </h2>
-            <p className="text-lg text-gray-600 dark:text-gray-400 max-w-3xl mx-auto font-[200]">
-              Specialized teams focusing on different aspects of the Elastos ecosystem
+            <h2 className="text-3xl font-[200] mb-6 text-black dark:text-white">Ecosystem Initiatives</h2>
+            <p className="text-gray-600 dark:text-gray-400 text-lg font-[200] max-w-3xl mx-auto">
+              Supporting a broad ecosystem of projects that together form the Elastos SmartWeb infrastructure
             </p>
           </motion.div>
 
-          <div className="relative">
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 xl:border rounded-md dark:border-neutral-800 max-w-6xl mx-auto">
-              {coreDevelopmentTeams.map((team, index) => (
-                <div 
-                  key={team.name} 
-                  className={`p-6 relative overflow-hidden group hover:bg-neutral-100 dark:hover:bg-neutral-900 transition-colors duration-300 ${
-                    index < coreDevelopmentTeams.length - 4 ? 'border-b dark:border-neutral-800' : ''
-                  } ${
-                    index % 4 !== 3 ? 'md:border-r dark:border-neutral-800' : ''
-                  }`}
-                >
-                  <motion.div
-                    whileHover={{ scale: 1.03 }}
-                    className="flex flex-col h-full"
-                    initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ delay: index * 0.1 }}
-                  >
-                    <div className="mb-4">
-                      <div className="w-8 h-8 flex items-center justify-center rounded-full bg-[#1E1E1E] dark:bg-[#2E2E2E]">
-                        {team.links[0].icon || <Globe className="w-4 h-4 text-[#8BABFF]" />}
-                      </div>
-                    </div>
-                    <h3 className="text-lg font-semibold mb-2 text-[#8BABFF] font-[200]">
-                      {team.name}
-                    </h3>
-                    <p className="text-gray-600 dark:text-neutral-300 text-sm mb-4 font-[200]">
-                      {team.description}
-                    </p>
-                    <div className="mt-auto pt-4">
-                      {team.links.map((link, linkIndex) => (
-                        <a
-                          key={linkIndex}
-                          href={link.url}
-                          target={link.url.startsWith('/') ? "_self" : "_blank"}
-                          rel="noopener noreferrer"
-                          className="inline-flex px-3 py-2 bg-[rgba(92,142,255,0.15)] text-black dark:text-white rounded-full font-[200] transition-all items-center gap-1 border border-[rgba(92,142,255,0.25)] text-sm"
-                        >
-                          <span>{link.text}</span>
-                          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 35 34" fill="none">
-                            <circle cx="17.333" cy="17" r="16.75" stroke="#5C8EFF" strokeOpacity="0.25" strokeWidth="1.5"/>
-                            <path d="M17.3338 22.9405L23.2741 17.0002L17.3338 11.0598L16.4162 11.9774L20.7628 16.324H10.8622V17.6763H20.7628L16.4162 22.0229L17.3338 22.9405Z" fill="#5C8EFF"/>
-                            <path d="M20.7628 17.6638H10.8747V16.3365H20.7628H20.7929L20.7716 16.3152L16.4338 11.9774L17.3338 11.0775L23.2564 17.0002L17.3338 22.9228L16.4338 22.0229L20.7716 17.6851L20.7929 17.6638H20.7628Z" stroke="#5C8EFF" strokeOpacity="0.25" strokeWidth="1.5"/>
-                          </svg>
-                        </a>
-                      ))}
-                    </div>
-                  </motion.div>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {ecosystemInitiatives.map((initiative, index) => (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: index * 0.1 }}
+                className="bg-white dark:bg-[#1A1A1A] rounded-xl p-6 shadow-sm hover:shadow-lg transition-shadow"
+              >
+                <div className="inline-flex items-center justify-center w-12 h-12 bg-[#5C8EFF]/10 dark:bg-[#5C8EFF]/20 rounded-full mb-4 text-[#5C8EFF]">
+                  {initiative.icon}
                 </div>
-              ))}
-            </div>
+                <h3 className="text-lg font-[200] text-black dark:text-white mb-3">{initiative.title}</h3>
+                <p className="text-gray-600 dark:text-gray-400 text-sm font-[200]">{initiative.description}</p>
+              </motion.div>
+            ))}
           </div>
         </div>
       </section>
 
-      {/* Logo Carousel Section */}
-      <section className="py-16 bg-white dark:bg-[#171717]">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <LogoCarouselDemo />
+      {/* Call to Action */}
+      <section className="py-20 bg-white dark:bg-[#171717]">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+          >
+            <h2 className="text-3xl font-[200] text-black dark:text-white mb-6">Learn More About the Elastos Foundation</h2>
+            <p className="text-gray-600 dark:text-gray-400 text-lg font-[200] max-w-2xl mx-auto mb-8">
+              Discover more about the Foundation's mission, projects, and vision for building an internet where users own their data, digital assets, and online identities.
+            </p>
+            <div className="flex justify-center">
+              <a
+                href="https://www.elastos.org/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex px-3 py-2 bg-[rgba(92,142,255,0.10)] text-[#5C8EFF] rounded-full font-[200] transition-all items-center gap-1 border border-[rgba(92,142,255,0.50)] text-sm"
+              >
+                <span>Visit Elastos.org</span>
+                <ArrowRight className="w-4 h-4" />
+              </a>
+            </div>
+          </motion.div>
         </div>
       </section>
+
+      {/* Logo Carousel */}
+      <div className="py-16">
+        <LogoCarouselDemo />
+      </div>
 
       {/* Footer */}
       <StackedCircularFooter />

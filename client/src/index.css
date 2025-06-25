@@ -199,6 +199,16 @@ html, body {
   color: #f87171 !important;
 }
 
+/* Simple fix for navigation menu viewport width calculation on fresh load */
+.absolute.left-1\/2.-translate-x-1\/2.top-full.flex.justify-center {
+  width: 100vw;
+  max-width: 800px;
+}
+
+[data-radix-navigation-menu-viewport] {
+  min-width: 600px !important;
+}
+
 @keyframes marquee {
   to {
     transform: translateX(-50%);
