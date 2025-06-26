@@ -65,9 +65,7 @@ export default defineConfig({
     alias: {
       "@": path.resolve(__dirname, "client", "src"),
       "@db": path.resolve(__dirname, "db"),
-      'framer-motion': 'framer-motion',
-      'react': path.resolve(__dirname, 'client/node_modules/react'),
-      'react-dom': path.resolve(__dirname, 'client/node_modules/react-dom')
+      'framer-motion': 'framer-motion'
     }
   },
   root: path.resolve(__dirname, "client"),
