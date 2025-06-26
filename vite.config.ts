@@ -14,6 +14,16 @@ export default defineConfig({
     host: true,
     port: 3000,
     strictPort: true,
+    fs: {
+      allow: [
+        // Allow serving files from the root directory where node_modules is located
+        path.resolve(__dirname),
+        // Explicitly allow access to node_modules where React is installed
+        path.resolve(__dirname, 'node_modules'),
+        // Allow client directory
+        path.resolve(__dirname, 'client'),
+      ]
+    },
     watch: {
       ignored: ['**/server/**', '**/timestamp-*.mjs', '**/node_modules/**', '**/.git/**', '**/client/public/**', '**/dist/**', '**/.vite/**'],
       usePolling: false
@@ -55,7 +65,9 @@ export default defineConfig({
     alias: {
       "@": path.resolve(__dirname, "client", "src"),
       "@db": path.resolve(__dirname, "db"),
-      'framer-motion': 'framer-motion'
+      'framer-motion': 'framer-motion',
+      'react': path.resolve(__dirname, 'client/node_modules/react'),
+      'react-dom': path.resolve(__dirname, 'client/node_modules/react-dom')
     }
   },
   root: path.resolve(__dirname, "client"),
