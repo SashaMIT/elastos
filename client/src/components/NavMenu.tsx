@@ -178,9 +178,10 @@ export const NavMenu: React.FC<NavMenuProps> = ({ items }) => {
                 <div className="grid w-[800px] gap-6 p-6 md:grid-cols-2 items-center">
                   {/* Featured Card Left */}
                   <div className="relative flex justify-center">
-                    <div className="w-full h-48 bg-white dark:bg-gray-900 rounded-2xl overflow-hidden group cursor-pointer border border-gray-200 dark:border-gray-700 relative">
-                      {/* Full Background Image */}
-                      <div className="h-full relative overflow-hidden bg-gradient-to-br from-indigo-500 via-purple-600 to-blue-600 flex items-center justify-center">
+                    <a href="https://elastos.dev/" target="_blank" rel="noopener noreferrer">
+                      <div className="w-full h-48 bg-white dark:bg-gray-900 rounded-2xl overflow-hidden group cursor-pointer border border-gray-200 dark:border-gray-700 hover:border-blue-500 transition-colors relative">
+                        {/* Full Background Image */}
+                        <div className="h-full relative overflow-hidden bg-gradient-to-br from-indigo-500 via-purple-600 to-blue-600 flex items-center justify-center">
                         <picture>
                           <source srcSet="/images/Behind The Code 0000.webp" type="image/webp" />
                           <img 
@@ -206,7 +207,8 @@ export const NavMenu: React.FC<NavMenuProps> = ({ items }) => {
                           </div>
                         </div>
                       </div>
-                    </div>
+                      </div>
+                    </a>
                   </div>
                   
                   {/* Quick Access Right */}
@@ -275,9 +277,10 @@ export const NavMenu: React.FC<NavMenuProps> = ({ items }) => {
                 <div className="grid w-[800px] gap-6 p-6 md:grid-cols-2 items-center">
                   {/* Featured Card Left */}
                   <div className="relative flex justify-center">
-                    <div className="w-full h-48 bg-white dark:bg-gray-900 rounded-2xl overflow-hidden group cursor-pointer border border-gray-200 dark:border-gray-700 relative">
-                      {/* Full Background Image */}
-                      <div className="h-full relative overflow-hidden bg-gradient-to-br from-emerald-500 via-teal-600 to-cyan-600 flex items-center justify-center">
+                    <a href="https://elastos.net/ecosystem" target="_blank" rel="noopener noreferrer">
+                      <div className="w-full h-48 bg-white dark:bg-gray-900 rounded-2xl overflow-hidden group cursor-pointer border border-gray-200 dark:border-gray-700 hover:border-emerald-500 transition-colors relative">
+                        {/* Full Background Image */}
+                        <div className="h-full relative overflow-hidden bg-gradient-to-br from-emerald-500 via-teal-600 to-cyan-600 flex items-center justify-center">
                         <img 
                           src="/images/Behind The Code 00.png" 
                           alt="Web3 Ecosystem Behind The Code"
@@ -300,7 +303,8 @@ export const NavMenu: React.FC<NavMenuProps> = ({ items }) => {
                           </div>
                         </div>
                       </div>
-                    </div>
+                      </div>
+                    </a>
                   </div>
                   
                   {/* Quick Access Right */}
@@ -376,9 +380,10 @@ export const NavMenu: React.FC<NavMenuProps> = ({ items }) => {
                 <div className="grid w-[800px] gap-6 p-6 md:grid-cols-2 items-center">
                   {/* Featured Card Left */}
                   <div className="relative flex justify-center">
-                    <div className="w-full h-48 bg-white dark:bg-gray-900 rounded-2xl overflow-hidden group cursor-pointer border border-gray-200 dark:border-gray-700 relative">
-                      {/* Full Background Image */}
-                      <div className="h-full relative overflow-hidden bg-gradient-to-br from-orange-500 via-red-500 to-pink-600 flex items-center justify-center">
+                    <a href="https://elastos.net/vision" target="_blank" rel="noopener noreferrer">
+                      <div className="w-full h-48 bg-white dark:bg-gray-900 rounded-2xl overflow-hidden group cursor-pointer border border-gray-200 dark:border-gray-700 hover:border-orange-500 transition-colors relative">
+                        {/* Full Background Image */}
+                        <div className="h-full relative overflow-hidden bg-gradient-to-br from-orange-500 via-red-500 to-pink-600 flex items-center justify-center">
                         <picture>
                           <source srcSet="/images/Learn Elastos.webp" type="image/webp" />
                           <img 
@@ -408,7 +413,8 @@ export const NavMenu: React.FC<NavMenuProps> = ({ items }) => {
                           </div>
                         </div>
                       </div>
-                    </div>
+                      </div>
+                    </a>
                   </div>
                   
                   {/* Quick Access Right */}
