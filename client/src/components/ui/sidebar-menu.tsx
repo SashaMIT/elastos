@@ -137,7 +137,7 @@ export const SidebarMenu = () => {
 
               <h4 className="font-[200] text-xs text-[#94b5ff] mb-3 mt-6 uppercase tracking-wide">FUNDING</h4>
               <SheetClose asChild>
-                <a href="https://www.cyberrepublic.org/funding" target="_blank" rel="noopener noreferrer" className="py-3 hover:text-[#F6921A] hover:bg-white/5 rounded-lg px-2 flex items-center gap-3 text-white transition-all">
+                <a href="https://elastos.com/funding" target="_blank" rel="noopener noreferrer" className="py-3 hover:text-[#F6921A] hover:bg-white/5 rounded-lg px-2 flex items-center gap-3 text-white transition-all">
                   <FileText className="h-4 w-4 text-[#94b5ff] flex-shrink-0" />
                   <span>Submit Proposal</span>
                 </a>
@@ -145,11 +145,11 @@ export const SidebarMenu = () => {
               <SheetClose asChild>
                 <Link to="/dao" className="py-3 hover:text-[#F6921A] hover:bg-white/5 rounded-lg px-2 flex items-center gap-3 text-white transition-all">
                   <PiggyBank className="h-4 w-4 text-[#94b5ff] flex-shrink-0" />
-                  <span>Elastos DAO</span>
+                  <span>The Elastos DAO</span>
                 </Link>
               </SheetClose>
               <SheetClose asChild>
-                <a href="https://www.cyberrepublic.org/grants" target="_blank" rel="noopener noreferrer" className="py-3 hover:text-[#F6921A] hover:bg-white/5 rounded-lg px-2 flex items-center gap-3 text-white transition-all">
+                <a href="https://elastos.com/funding" target="_blank" rel="noopener noreferrer" className="py-3 hover:text-[#F6921A] hover:bg-white/5 rounded-lg px-2 flex items-center gap-3 text-white transition-all">
                   <Star className="h-4 w-4 text-[#94b5ff] flex-shrink-0" />
                   <span>Grants Program</span>
                 </a>
@@ -214,12 +214,6 @@ export const SidebarMenu = () => {
               <h4 className="font-[200] text-xs text-[#94b5ff] mb-3 uppercase tracking-wide">UNDERSTANDING</h4>
               <SheetClose asChild>
                 <Link to="/vision" className="py-3 hover:text-[#F6921A] hover:bg-white/5 rounded-lg px-2 flex items-center gap-3 text-white transition-all">
-                  <ScrollText className="h-4 w-4 text-[#94b5ff] flex-shrink-0" />
-                  <span>What is Elastos</span>
-                </Link>
-              </SheetClose>
-              <SheetClose asChild>
-                <Link to="/vision" className="py-3 hover:text-[#F6921A] hover:bg-white/5 rounded-lg px-2 flex items-center gap-3 text-white transition-all">
                   <Target className="h-4 w-4 text-[#94b5ff] flex-shrink-0" />
                   <span>Our Vision</span>
                 </Link>
@@ -275,7 +269,7 @@ export const SidebarMenu = () => {
               <SheetClose asChild>
                 <Link to="/dao" className="py-3 hover:text-[#F6921A] hover:bg-white/5 rounded-lg px-2 flex items-center gap-3 text-white transition-all">
                   <PiggyBank className="h-4 w-4 text-[#94b5ff] flex-shrink-0" />
-                  <span>Elastos DAO</span>
+                  <span>The Elastos DAO</span>
                 </Link>
               </SheetClose>
               <SheetClose asChild>

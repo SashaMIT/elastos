@@ -102,7 +102,7 @@ const projects: Project[] = [
   {
     name: "Elastos DAO",
     description: "A community-driven governance system for Elastos",
-    url: "https://cyberrepublic.org",
+    url: "https://elastos.com",
     category: "Governance",
     image: "/images/Ecosystem/Cyber Republic.png"
   },
@@ -385,7 +385,7 @@ const projects: Project[] = [
   {
     name: "Elastos DAO",
     description: "A community-driven governance system for Elastos",
-    url: "https://cyberrepublic.org",
+    url: "https://elastos.com",
     category: "Governance",
     image: "/images/Ecosystem/Cyber Republic.png"
   },

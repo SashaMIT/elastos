@@ -168,7 +168,7 @@ const MobileSidebar = ({
               <SidebarMenuItem label="BUILD">
                 <SidebarMenuItem label="Developer Portal" href="https://elastos.dev/" target="_blank" />
                 <SidebarMenuItem label="SDKs & Tools" href="https://elastos.dev/sdk/welcome/" target="_blank" />
-                <SidebarMenuItem label="Elastos DAO" href="https://cyberrepublic.org/" target="_blank" />
+                <SidebarMenuItem label="Elastos DAO" href="https://elastos.com" target="_blank" />
               </SidebarMenuItem>
               <SidebarMenuItem label="CONNECT">
                 <SidebarMenuItem label="Social Channels" href="/social-channels" />

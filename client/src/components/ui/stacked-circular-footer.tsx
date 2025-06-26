@@ -66,8 +66,8 @@ export function StackedCircularFooter() {
                 <div className="flex flex-col gap-2">
                   <a href="https://elastos.dev/" target="_blank" rel="noopener noreferrer" className="hover:text-primary">Developer Portal</a>
                   <a href="https://elastos.dev/sdk/welcome/" target="_blank" rel="noopener noreferrer" className="hover:text-primary">SDKs & Tools</a>
-                  <Link href="/dao" className="hover:text-primary">Elastos DAO</Link>
-                  <a href="https://www.cyberrepublic.org/funding" target="_blank" rel="noopener noreferrer" className="hover:text-primary">Submit a Proposal</a>
+                  <Link href="/dao" className="hover:text-primary">The Elastos DAO</Link>
+                  <a href="https://elastos.com/funding" target="_blank" rel="noopener noreferrer" className="hover:text-primary">Submit a Proposal</a>
                 </div>
               </div>
 

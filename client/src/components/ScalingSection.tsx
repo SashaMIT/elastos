@@ -17,7 +17,7 @@ const ecosystemProjects = [
   {
     name: "Elastos DAO",
     description: "A community-driven governance system for Elastos",
-    url: "https://cyberrepublic.org",
+    url: "https://elastos.com",
     image: "/images/Ecosystem/Cyber Republic.png"
   },
   {

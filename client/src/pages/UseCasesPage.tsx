@@ -183,7 +183,7 @@ const UseCasesPage: React.FC = () => {
       description: "DAO frameworks for community-led decision making, with transparent voting mechanisms secured by Elastos DID for authentication and verification of participants.",
       image: "/images/usecases/Decentralized Governance 3.jpg",
       category: "Governance",
-      link: "https://www.cyberrepublic.org",
+      link: "https://elastos.com",
       modalContent: `<b>Decentralized Governance</b>
   Transparent decisions. Verified voters. Immutable records.
   Elastos DAO infrastructure lets you build governance systems with real identity, not bots. Use DID to authenticate voters, ESC to manage proposals, and Hive to store minutes or on-chain referenda.
@@ -492,7 +492,7 @@ const UseCasesPage: React.FC = () => {
                     </button>
                     <button
                       className="inline-flex px-3 py-2 bg-[rgba(246,146,26,0.15)] text-white rounded-full font-[200] transition-all items-center gap-1 border border-[rgba(246,146,26,0.25)] text-sm"
-                      onClick={() => window.open("https://cyberrepublic.org", "_blank")}
+                      onClick={() => window.open("https://elastos.com", "_blank")}
                     >
                       <span>Apply for Funding</span>
                       <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 35 34" fill="none">

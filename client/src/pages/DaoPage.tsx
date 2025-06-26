@@ -296,9 +296,14 @@ const DaoPage: React.FC = () => {
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.5 }}
                 >
-                  <h1 className="text-4xl sm:text-4xl md:text-5xl font-[200] text-white mb-6">
-                    Elastos DAO: Governance for the World Computer
-                  </h1>
+                  {/* Elastos DAO Logo */}
+                  <div className="flex justify-center mb-6">
+                    <img 
+                      src="/images/Elastos DAO Logo Dark - 1.png" 
+                      alt="The Elastos DAO" 
+                      className="h-16 sm:h-18 md:h-20 lg:h-22 w-auto object-contain"
+                    />
+                  </div>
                   <p className="text-gray-300 max-w-2xl mx-auto text-md sm:text-base md:text-lg font-[200]">
                     Community-powered governance for a truly decentralized internet, where stakeholders shape the future through transparent proposals, voting, and funding.
                   </p>
@@ -339,11 +344,11 @@ const DaoPage: React.FC = () => {
             className="max-w-6xl mx-auto"
           >
             <h2 className="text-3xl font-bold text-white text-center mb-6">
-              What is Elastos DAO?
+              What is The Elastos DAO?
             </h2>
             <div className="bg-[#1A1A1A] rounded-xl p-8 border border-white/10 shadow-lg">
               <p className="text-white/80 text-lg leading-relaxed mb-6 font-[200]">
-                The Elastos DAO is the decentralized autonomous organization that governs the development, direction, and funding of the Elastos ecosystem. It puts ELA holders in control, letting them participate in elections, submit proposals, fund projects, and maintain ecosystem integrity—without corporate gatekeepers. Elastos DAO is not just governance for a blockchain—it is governance for a new internet.
+                The Elastos DAO is the decentralized autonomous organization that governs the development, direction, and funding of the Elastos ecosystem. It puts ELA holders in control, letting them participate in elections, submit proposals, fund projects, and maintain ecosystem integrity—without corporate gatekeepers. The Elastos DAO is not just governance for a blockchain—it is governance for a new internet.
               </p>
 
             </div>

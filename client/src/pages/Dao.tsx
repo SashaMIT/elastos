@@ -21,15 +21,15 @@ export default function Dao() {
       </Helmet>
       
       <SEO 
-        title="Elastos DAO | Decentralized Governance for the World Computer"
-        description="Learn about Elastos DAO's community-powered governance system for a truly decentralized internet, with transparent proposals, voting, and ecosystem funding."
+        title="The Elastos DAO | Decentralized Governance for the World Computer"
+        description="Learn about The Elastos DAO's community-powered governance system for a truly decentralized internet, with transparent proposals, voting, and ecosystem funding."
         keywords="Elastos DAO, crypto governance, decentralized autonomous organization, ELA staking, blockchain governance, Web3 DAO, Elastos DAO"
         ogImage="/images/ElastosDAO.png"
         canonicalUrl="/dao"
       />
       
       <WebPageStructuredData
-        title="Elastos DAO | Decentralized Governance for the World Computer"
+        title="The Elastos DAO | Decentralized Governance for the World Computer"
         description="Community-powered governance for a truly decentralized internet, where stakeholders shape the future through transparent proposals, voting, and funding."
         url="/dao"
         imageUrl="/images/ElastosDAO.png"

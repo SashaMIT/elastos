@@ -237,7 +237,7 @@ export const NavMenu: React.FC<NavMenuProps> = ({ items }) => {
                   <div>
                       <h4 className="font-medium text-sm text-muted-foreground mb-3 px-2 text-[#94b5ff] uppercase tracking-wide">FUNDING</h4>
                       <div className="space-y-1">
-                        <a href="https://www.cyberrepublic.org/funding" target="_blank" rel="noopener noreferrer">
+                        <a href="https://elastos.com/funding" target="_blank" rel="noopener noreferrer">
                           <NavigationMenuLink className={navigationMenuTriggerStyle()}>
                             <div className="flex items-center gap-2">
                               <FileText className="h-4 w-4 text-[#94b5ff]" />
@@ -249,11 +249,11 @@ export const NavMenu: React.FC<NavMenuProps> = ({ items }) => {
                       <NavigationMenuLink className={navigationMenuTriggerStyle()}>
                         <div className="flex items-center gap-2">
                           <PiggyBank className="h-4 w-4 text-[#94b5ff]" />
-                          <span>Elastos DAO</span>
+                          <span>The Elastos DAO</span>
                         </div>
                       </NavigationMenuLink>
                     </Link>
-                        <a href="https://www.cyberrepublic.org/grants" target="_blank" rel="noopener noreferrer">
+                        <a href="https://elastos.com/funding" target="_blank" rel="noopener noreferrer">
                       <NavigationMenuLink className={navigationMenuTriggerStyle()}>
                         <div className="flex items-center gap-2">
                               <Star className="h-4 w-4 text-[#94b5ff]" />
@@ -419,14 +419,6 @@ export const NavMenu: React.FC<NavMenuProps> = ({ items }) => {
                         <Link to="/vision">
                           <NavigationMenuLink className={navigationMenuTriggerStyle()}>
                             <div className="flex items-center gap-2">
-                              <ScrollText className="h-4 w-4 text-[#94b5ff]" />
-                              <span>What is Elastos</span>
-                            </div>
-                          </NavigationMenuLink>
-                        </Link>
-                        <Link to="/vision">
-                          <NavigationMenuLink className={navigationMenuTriggerStyle()}>
-                            <div className="flex items-center gap-2">
                               <Target className="h-4 w-4 text-[#94b5ff]" />
                               <span>Our Vision</span>
                             </div>
@@ -546,7 +538,7 @@ export const NavMenu: React.FC<NavMenuProps> = ({ items }) => {
                           <NavigationMenuLink className={navigationMenuTriggerStyle()}>
                             <div className="flex items-center gap-2">
                               <PiggyBank className="h-4 w-4 text-[#94b5ff]" />
-                              <span>Governance (DAO)</span>
+                              <span>The Elastos DAO</span>
                             </div>
                           </NavigationMenuLink>
                         </Link>
