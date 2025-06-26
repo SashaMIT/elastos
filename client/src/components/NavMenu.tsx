@@ -2,7 +2,7 @@
 
 import React, { useEffect } from 'react';
 import { Link } from 'wouter';
-import { Home, Shield, Code, HelpCircle, MessageCircle, Newspaper, Menu as MenuIcon, Moon, Sun, LineChart, Coins, ShoppingCart, ScrollText, Target, FileText, Terminal, Github, Download, PiggyBank, FileCode2, BookOpen, Video, Database, Star, Wallet, Repeat, Bell, Users, BarChart, Boxes, Globe, Layers, Vote, Calculator } from "lucide-react";
+import { Home, Shield, Code, HelpCircle, MessageCircle, Newspaper, Menu as MenuIcon, Moon, Sun, LineChart, Coins, ShoppingCart, ScrollText, Target, FileText, Terminal, Github, Download, PiggyBank, FileCode2, BookOpen, Video, Database, Star, Wallet, Repeat, Bell, Users, BarChart, Boxes, Globe, Layers, Vote, Calculator, GraduationCap, Crown, Sparkles } from "lucide-react";
 import { SidebarMenu } from "@/components/ui/sidebar-menu";
 import { useTheme } from "@/hooks/useTheme";
 import {
@@ -181,21 +181,24 @@ export const NavMenu: React.FC<NavMenuProps> = ({ items }) => {
                     <div className="w-full h-48 bg-white dark:bg-gray-900 rounded-2xl overflow-hidden group cursor-pointer border border-gray-200 dark:border-gray-700 relative">
                       {/* Full Background Image */}
                       <div className="h-full relative overflow-hidden bg-gradient-to-br from-indigo-500 via-purple-600 to-blue-600 flex items-center justify-center">
-                        <img 
-                          src="/images/Behind The Code etc.png" 
-                          alt="Developer Tools Behind The Code"
-                          className="w-full h-full object-cover"
-                          onError={(e) => {
-                            console.error('Developer Tools image failed to load');
-                            // Fallback to background gradient if image fails
-                            const target = e.target as HTMLImageElement;
-                            target.style.display = 'none';
-                          }}
-                        />
+                        <picture>
+                          <source srcSet="/images/Behind The Code 0000.webp" type="image/webp" />
+                          <img 
+                            src="/images/Behind The Code 0000.jpg" 
+                            alt="Developer Tools Behind The Code"
+                            className="w-full h-full object-cover"
+                            onError={(e) => {
+                              console.error('Developer Tools image failed to load');
+                              // Fallback to background gradient if image fails
+                              const target = e.target as HTMLImageElement;
+                              target.style.display = 'none';
+                            }}
+                          />
+                        </picture>
                         {/* Frosted Glass Overlay */}
                         <div className="absolute bottom-0 left-0 right-0 h-16 p-4 flex items-center gap-3 bg-black/30 backdrop-blur-md border-t border-white/20 rounded-b-2xl">
                           <div className="w-8 h-8 bg-indigo-500 rounded-lg flex items-center justify-center">
-                            <div className="w-4 h-4 bg-white rounded-sm"></div>
+                            <Code className="w-4 h-4 text-white" />
                           </div>
                           <div className="flex-1">
                             <h3 className="text-sm font-semibold text-white drop-shadow-lg">Developer Tools</h3>
@@ -377,9 +380,9 @@ export const NavMenu: React.FC<NavMenuProps> = ({ items }) => {
                       {/* Full Background Image */}
                       <div className="h-full relative overflow-hidden bg-gradient-to-br from-orange-500 via-red-500 to-pink-600 flex items-center justify-center">
                         <picture>
-                          <source srcSet="/images/Behind The Code  #222.webp" type="image/webp" />
+                          <source srcSet="/images/Learn Elastos.webp" type="image/webp" />
                           <img 
-                            src="/images/Behind The Code  #222.jpg" 
+                            src="/images/Learn Elastos.jpg" 
                             alt="Learn Elastos Behind The Code"
                             className="w-full h-full object-cover"
                             onError={(e) => {
@@ -397,7 +400,7 @@ export const NavMenu: React.FC<NavMenuProps> = ({ items }) => {
                         {/* Frosted Glass Overlay */}
                         <div className="absolute bottom-0 left-0 right-0 h-16 p-4 flex items-center gap-3 bg-black/30 backdrop-blur-md border-t border-white/20 rounded-b-2xl">
                           <div className="w-8 h-8 bg-orange-500 rounded-lg flex items-center justify-center">
-                            <div className="w-4 h-4 bg-white rounded-sm"></div>
+                            <GraduationCap className="w-4 h-4 text-white" />
                           </div>
                           <div className="flex-1">
                             <h3 className="text-sm font-semibold text-white drop-shadow-lg">Learn Elastos</h3>
@@ -505,21 +508,24 @@ export const NavMenu: React.FC<NavMenuProps> = ({ items }) => {
                       <div className="w-full h-48 bg-white dark:bg-gray-900 rounded-2xl overflow-hidden group cursor-pointer border border-gray-200 dark:border-gray-700 hover:border-blue-500 transition-colors relative">
                         {/* Full Background Image */}
                         <div className="h-full relative overflow-hidden bg-gradient-to-br from-violet-500 via-purple-600 to-indigo-600 flex items-center justify-center">
-                          <img 
-                            src="/images/Welcome-to-Elastos-Ambassador-Program-2048x1229.jpg" 
-                            alt="Elastos Ambassador Program"
-                            className="w-full h-full object-cover"
-                            onError={(e) => {
-                              console.error('Ambassador Program image failed to load');
-                              // Fallback to background gradient if image fails
-                              const target = e.target as HTMLImageElement;
-                              target.style.display = 'none';
-                            }}
-                          />
+                          <picture>
+                            <source srcSet="/images/Ambassador Program.webp" type="image/webp" />
+                            <img 
+                              src="/images/Ambassador Program.jpg" 
+                              alt="Elastos Ambassador Program"
+                              className="w-full h-full object-cover"
+                              onError={(e) => {
+                                console.error('Ambassador Program image failed to load');
+                                // Fallback to background gradient if image fails
+                                const target = e.target as HTMLImageElement;
+                                target.style.display = 'none';
+                              }}
+                            />
+                          </picture>
                           {/* Frosted Glass Overlay */}
                           <div className="absolute bottom-0 left-0 right-0 h-16 p-4 flex items-center gap-3 bg-black/30 backdrop-blur-md border-t border-white/20 rounded-b-2xl">
                             <div className="w-8 h-8 bg-violet-500 rounded-lg flex items-center justify-center">
-                              <div className="w-4 h-4 bg-white rounded-sm"></div>
+                              <Crown className="w-4 h-4 text-white" />
                             </div>
                             <div className="flex-1">
                               <h3 className="text-sm font-semibold text-white drop-shadow-lg">Ambassador Program</h3>
